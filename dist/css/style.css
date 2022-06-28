@@ -7883,4 +7883,8 @@ figure {
   .iti__flag {
     background-image: url(../img/flags@2x.png);
   }
+
+  .iti__flag {
+    background-image: url("../img/flags/flags@2x.png");
+  }
 }
