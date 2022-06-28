@@ -1,0 +1,45 @@
+.about-preview {
+    &__title {
+        margin-bottom: 3rem;
+
+        @media (max-width: $md3+px) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__text {
+    }
+
+    &__read-more {
+        display: inline-flex;
+        align-items: center;
+        font-size: 1.4rem;
+        line-height: 1.21em;
+
+        @media (max-width: $md3+px) {
+            font-size: 13px;
+            line-height: 16px;
+        }
+
+        & i {
+            color: $mainColor;
+            font-size: 0.4em;
+            margin-left: 1.2em;
+        }
+
+        &.text-is-show {
+            & i {
+                transform: scale(1, -1);
+            }
+        }
+    }
+
+    & .text-collapse-line {
+        display: none;
+    }
+
+    & .text-collapse {
+        display: none;
+        padding-bottom: 1px;
+    }
+}

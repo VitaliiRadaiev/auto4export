@@ -1,0 +1,177 @@
+.featured-vehicles {
+    overflow: hidden;
+    &__head {
+
+    }
+
+    &__tubs {
+        
+    }
+
+    &__body {
+    }
+
+    &__content {
+        position: relative;
+
+        @media (min-width: 992px) {
+            &:after {
+                position: absolute;
+                content: "";
+                top: 50%;
+                left: 0;
+                height: calc(100% + 10px);
+                width: 100vw;
+                transform: translateY(-50%) translateX(-100%);
+                background-color: #fff;
+                opacity: 0.9;
+                z-index: 3;
+            }
+            &::before {
+                position: absolute;
+                content: "";
+                top: 50%;
+                right: 0;
+                height: calc(100% + 10px);
+                width: 100vw;
+                transform: translateY(-50%) translateX(100%);
+                background-color: #fff;
+                opacity: 0.9;
+                z-index: 4;
+            }
+        }
+    }
+
+    &__slider {
+        overflow: visible;
+        & .swiper-slide {
+            width: auto;
+            padding-right: 2rem;
+
+            @media (max-width: $md2+px) {
+                padding-right: 30px;
+            }
+
+            @media (max-width: $md3+px) {
+                padding-right: 20px;
+            }
+        }
+
+        & .swiper-lazy-preloader {
+            border-color: $mainColor;
+            border-top-color: transparent;
+        }
+    }
+
+    &__btn {
+        position: absolute;
+        top: 8.5rem;
+        z-index: 5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 4rem;
+        width: 4rem;
+        border-radius: 50%;
+        color: #fff;
+        cursor: pointer;
+        background-color: $mainColor;
+        font-size: 1.2rem;
+        transition: all 0.3s ease;
+
+        @media (max-width: $md2+px) {
+            display: none;
+        }
+
+        @media (min-width: 992px) {
+            &:hover {
+                background-color: $hover;
+            }
+        }
+    }
+
+    &__btn-prev {
+        left: 3rem;
+
+        & i {
+            transform: scale(-1, 1);
+        }
+    }
+
+    &__btn-next {
+        right: 3rem;
+    }
+}
+
+.featured-vehicles-card {
+    width: 29.2rem;
+
+    @media (max-width: $md3+px) {
+        width: 230px;
+    }
+    &__img {
+        height: 0;
+        padding-bottom: 71.91%;
+        border-radius: 1rem;
+        overflow: hidden;
+        margin-bottom: 2rem;
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 1.4rem;
+        line-height: 1.21em;
+        margin-bottom: 1.4rem;
+        text-transform: uppercase;
+
+        @media (max-width: $md3+px) {
+            font-size: 13px;
+            line-height: 16px;
+            margin-bottom: 10px;
+        }
+    }
+
+    &__bottom {
+        display: flex;
+    }
+
+    &__bottom-item {
+        flex: 0 1 50%;
+    }
+
+    &__label {
+        font-size: 1.4rem;
+        line-height: 1.28em;
+        color: $textColorSecondary;
+        margin-bottom: 0.4rem;
+
+        @media (max-width: $md3+px) {
+            font-size: 13px;
+            line-height: 18px;
+            margin-bottom: 6px;
+        }
+    }
+
+    &__price {
+        font-weight: 700;
+        font-size: 2rem;
+        line-height: 1.2em;
+        color: $mainColor;
+
+        @media (max-width: $md3+px) {
+            font-size: 18px;
+            line-height: 22px;
+        }
+    }
+
+    &__location {
+        font-weight: 400;
+        font-size: 1.6rem;
+        line-height: 1.1875em;
+
+        @media (max-width: $md3+px) {
+            font-size: 14px;
+            line-height: 17px;
+        }
+    }
+}

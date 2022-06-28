@@ -1,0 +1,52 @@
+
+
+//<ШРИФТЫ>===========================================================================================================
+$mainFontFamily: 'Lato', sans-serif;
+$fontAwesome: "Font Awesome 5 Free";
+//</ШРИФТЫ>===========================================================================================================
+
+//<РАЗМЕРЫ КОНТЕЙНЕРА>===========================================================================================================
+$minwidth: 320px;
+$mw: 1170;
+$md1: 1267.98;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+//</РАЗМЕРЫ КОНТЕЙНЕРА>===========================================================================================================
+
+$textColor: #191919;
+$textColorSecondary: #8C8C8C;
+$hover: #1471A6;
+$active:  #1675ab;
+$mainColor: #1886C4;
+$secondColor: #0A3B56;
+$dangerColor:  #FF4444;
+$successColor:#00C367;
+$infoColor: #BC62EF;
+$lightColor: #fff;
+$warningColor: #FFC31C;
+$bg: #F3F1EF;
+$bgSecondary: #EBE8E4;
+$bgSecondaryHover: #cdcac7;
+$borderColor: #D2D2D2;
+
+
+:root {
+    --bs-primary: #191919;
+    --bs-secondary: #0A3B56;
+    --bs-success: #00C367;
+    --bs-info: #BC62EF;
+    --bs-warning: #FFC31C;
+    --bs-danger: #FF4444;
+    --bs-light: #fff;
+    --bs-dark: #000;
+
+    --bs-primary-rgb: 25, 25, 25;
+    --bs-secondary-rgb: 10, 59, 86;
+    --bs-success-rgb: 0, 195, 103;
+    --bs-info-rgb: 188, 98, 239;
+    --bs-warning-rgb: 255, 195, 28;
+    --bs-danger-rgb: 255, 68, 68;
+    --bs-light-rgb: 255, 255, 255;
+    --bs-dark-rgb: 0, 0, 0;
+}

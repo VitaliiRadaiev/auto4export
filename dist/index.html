@@ -1,0 +1,3228 @@
+<!DOCTYPE html>
+<html lang="en" data-set-font-size>
+<head>
+	<meta charset="UTF-8">
+	<title>auto4export</title>
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+		body.page-is-load ._preload-body {
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		body.page-is-load ._preload-body:before {
+			display: none;
+		}
+
+		.mouse-dot {
+			font-size: 10px;
+			height: 2em;
+			width: 2em;
+			transition: transform, background-color, height, width .3s ease;
+			position: absolute;
+			z-index: 99999;
+			border-radius: 50%;
+			background-color: #222222;
+			transform: translate(-50%, -50%) scale(1);
+			pointer-events: none;
+			left: -30px;
+			top: -30px;
+			box-shadow: 0 0 15px rgba(243, 241, 239, 0.4);
+		}
+
+		.mouse-dot.hide {
+			transform: translate(-50%, -50%) scale(0);
+		}
+
+		.mouse-dot.hover {}
+
+		._preload-body {
+			background-color: #fff;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 999;
+			transition: all .6s ease .2s;
+		}
+
+		._preload-body:before {
+			position: absolute;
+			content: '';
+			z-index: 999;
+			top: 50%;
+			left: 50%;
+			height: 50px;
+			width: 50px;
+			border-radius: 50%;
+			border: 4px solid #6e6e6e;
+			border-right: 4px solid #fff;
+			transform: translate(-50%, -50%);
+			animation: preloadBody 2s linear infinite;
+		}
+
+		@keyframes preloadBody {
+			from {
+				transform: translate(-50%, -50%) rotate(0);
+			}
+
+			to {
+				transform: translate(-50%, -50%) rotate(360deg);
+			}
+		}
+	</style>
+	
+<script src="js/vendors.js"></script>
+<script src="js/app.js"></script>
+<!-- <script
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7Q82l2QjSzJJk1uUW3OzUBGPTlbk8w1g&callback=initMap&libraries=&v=weekly"
+defer
+></script> -->
+</head>
+
+<body>
+	<div class="_preload-body"></div>
+	<!-- == TOP LINE ================== -->
+
+	<header class="header " data-header data-popup="add-right-padding">
+    <div class="header__row-1">
+        <div class="header__body container">
+            <div class="header__logo">
+                <a href="#">
+                    <img src="img/logo/logo.svg" alt="">
+                </a>
+            </div>
+            <div class="header__logo-mob">
+                <a href="#">
+                    <img src="img/logo/logo-mob.svg" alt="">
+                </a>
+            </div>
+            <div class="header__search">
+                <form action="/">
+                    <div class="search-head">
+                        <input type="text" class="search-head__input" placeholder="Search">
+                        <button class="search-head__submit">
+                            <img class="img-svg" src="img/icons/search.svg" alt="">
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="header__language">
+                <div class="language">
+                    <div class="language__select">
+                        <img src="img/photo/flag-us.png" alt="">
+                    </div>
+                    <ul class="language__list">
+                        <li>
+                            <a href="#">
+                                <img src="img/photo/flag-es.jpg" alt="">
+                                <span>es</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <a href="#" class="header__btn-login btn-login">
+                <img src="img/icons/log-in.svg" alt="" class="img-svg">
+                Log in
+            </a>
+            <a href="#" class="header__sing-up btn-sing-up not-hover">
+                <img src="img/icons/add-user.svg" alt="" class="img-svg">
+                Sing Up
+            </a>
+            <div class="header__burger" data-burger>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <div class="header__row-2">
+        <div class="header__body container">
+            <div class="header__col-1">
+                <div class="header__vehicle-finder vehicle-finder" data-vehicle-finder>
+                    <div class="vehicle-finder__title">
+                        <img src="img/icons/search.svg" alt="" class="img-svg">
+                        Vehicle Finder
+                    </div>
+                    <div class="vehicle-finder__box">
+                        <div class="vehicle-finder__box-menu">
+                            <ul class="vehicle-finder__menu">
+                                <li>
+                                    <a href="#" data-vehicle-finder-trigger="0"
+                                        class="vehicle-finder__menu-item active">
+                                        Popular makes
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" data-vehicle-finder-trigger="1" class="vehicle-finder__menu-item">
+                                        Vehicle types
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" data-vehicle-finder-trigger="2" class="vehicle-finder__menu-item">
+                                        Title
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" data-vehicle-finder-trigger="3" class="vehicle-finder__menu-item">
+                                        Featured lots
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="vehicle-finder__box-content active" data-vehicle-finder-content="0">
+                            <h2 class="vehicle-finder__box-title">Popular Makes</h2>
+                            <ul class="vehicle-list vehicle-list--col-2">
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>HARLEY-DAVIDSON</strong>
+                                        <span>127</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>HONDA</strong>
+                                        <span>98</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>KAWASAKI</strong>
+                                        <span>44</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>YAMAHA</strong>
+                                        <span>44</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>SUZUKI</strong>
+                                        <span>42</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>BMW</strong>
+                                        <span>23</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>DUCATI</strong>
+                                        <span>21</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>CAN-AM</strong>
+                                        <span>21</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>INDIAN MOTORCYCLE CO.</strong>
+                                        <span>21</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>POLARIS</strong>
+                                        <span>19</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>VESPA</strong>
+                                        <span>16</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>VICTORY MOTORCYCLES</strong>
+                                        <span>15</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>KTM</strong>
+                                        <span>13</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>OTHER</strong>
+                                        <span>13</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>TRIUMPH MOTORCYCLE</strong>
+                                        <span>13</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>GENUINE SCOOTER CO.</strong>
+                                        <span>12</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>APRILIA</strong>
+                                        <span>9</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>KYMCO USA INC</strong>
+                                        <span>9</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>HUSQVARNA</strong>
+                                        <span>7</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>OTHER</strong>
+                                        <span>5</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <a href="#" class="link">
+                                View More
+                            </a>
+                        </div>
+                        <div class="vehicle-finder__box-content" data-vehicle-finder-content="1">
+                            <h2 class="vehicle-finder__box-title">Vehicle types</h2>
+                            <ul class="vehicle-list vehicle-list--col-2">
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>HARLEY-DAVIDSON</strong>
+                                        <span>127</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>HONDA</strong>
+                                        <span>98</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>KAWASAKI</strong>
+                                        <span>44</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>YAMAHA</strong>
+                                        <span>44</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>SUZUKI</strong>
+                                        <span>42</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>BMW</strong>
+                                        <span>23</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>DUCATI</strong>
+                                        <span>21</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>CAN-AM</strong>
+                                        <span>21</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>INDIAN MOTORCYCLE CO.</strong>
+                                        <span>21</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>POLARIS</strong>
+                                        <span>19</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>VESPA</strong>
+                                        <span>16</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>VICTORY MOTORCYCLES</strong>
+                                        <span>15</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>KTM</strong>
+                                        <span>13</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>OTHER</strong>
+                                        <span>13</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>TRIUMPH MOTORCYCLE</strong>
+                                        <span>13</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>GENUINE SCOOTER CO.</strong>
+                                        <span>12</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>APRILIA</strong>
+                                        <span>9</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>KYMCO USA INC</strong>
+                                        <span>9</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>HUSQVARNA</strong>
+                                        <span>7</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>OTHER</strong>
+                                        <span>5</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <a href="#" class="link">
+                                View More
+                            </a>
+                        </div>
+                        <div class="vehicle-finder__box-content" data-vehicle-finder-content="2">
+                            <h2 class="vehicle-finder__box-title">Title</h2>
+                            <ul class="vehicle-list vehicle-list--col-2">
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>HARLEY-DAVIDSON</strong>
+                                        <span>127</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>HONDA</strong>
+                                        <span>98</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>KAWASAKI</strong>
+                                        <span>44</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>YAMAHA</strong>
+                                        <span>44</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>SUZUKI</strong>
+                                        <span>42</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>BMW</strong>
+                                        <span>23</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>DUCATI</strong>
+                                        <span>21</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>CAN-AM</strong>
+                                        <span>21</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>INDIAN MOTORCYCLE CO.</strong>
+                                        <span>21</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>POLARIS</strong>
+                                        <span>19</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>VESPA</strong>
+                                        <span>16</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>VICTORY MOTORCYCLES</strong>
+                                        <span>15</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>KTM</strong>
+                                        <span>13</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>OTHER</strong>
+                                        <span>13</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>TRIUMPH MOTORCYCLE</strong>
+                                        <span>13</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>GENUINE SCOOTER CO.</strong>
+                                        <span>12</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>APRILIA</strong>
+                                        <span>9</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>KYMCO USA INC</strong>
+                                        <span>9</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>HUSQVARNA</strong>
+                                        <span>7</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>OTHER</strong>
+                                        <span>5</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <a href="#" class="link">
+                                View More
+                            </a>
+                        </div>
+                        <div class="vehicle-finder__box-content" data-vehicle-finder-content="3">
+                            <h2 class="vehicle-finder__box-title">Featured lots</h2>
+                            <ul class="vehicle-list vehicle-list--col-2">
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>Exotics Cars</strong>
+                                        <span>127</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>Cheap Cars</strong>
+                                        <span>98</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>Hail Damage Cars</strong>
+                                        <span>44</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>Flood Damage Cars</strong>
+                                        <span>44</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>Accidents Cars</strong>
+                                        <span>16</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>Repossessed Cars</strong>
+                                        <span>15</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>Rental Cars</strong>
+                                        <span>13</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>Buy It Now</strong>
+                                        <span>13</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <a href="#" class="link">
+                                View More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header__col-2">
+                <nav class="header__menu menu">
+                    <ul class="menu__list">
+                        <li class="menu-item-has-children">
+                            <a class="menu__link" href="#">
+                                Live Auctions
+                            </a>
+                            <ul class="sub-menu">
+                                <li><a class="sub-menu__link" href="#">By Locations</a></li>
+                                <li><a class="sub-menu__link" href="#">Live Auctions</a></li>
+                                <li><a class="sub-menu__link" href="#">Auctions Calendar</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a class="menu__link" href="#">
+                                SUPPORT
+                            </a>
+                            <ul class="sub-menu">
+                                <li><a class="sub-menu__link" href="#">How to Buy</a></li>
+                                <li><a class="sub-menu__link" href="#">Shipping</a></li>
+                                <li><a class="sub-menu__link" href="#">Fee Calculator</a></li>
+                                <li><a class="sub-menu__link" href="#">Blogs</a></li>
+                                <li><a class="sub-menu__link" href="#">Video Guides</a></li>
+                                <li><a class="sub-menu__link" href="#">Contact Us</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="menu__link" href="#">faq</a>
+                        </li>
+                        <li>
+                            <a class="menu__link" href="#">ABOUT US</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="header__time">
+                    <img src="img/icons/clock.svg" alt="" class="img-svg">
+                    7 am to 6 pm EST Mon - Fri
+                </div>
+            </div>
+            <div class="header__col-3">
+                <div class="header__contact">
+                    <div class="contact-head">
+                        <a href="#" class="contact-head__top-phone not-hover">
+                            <img src="img/icons/phone.svg" alt="" class="img-svg">
+                            +1 (770) 544-70-03
+                        </a>
+                        <div class="contact-head__dropdown-box">
+                            <div class="contact-head__dropdown-box-row">
+                                <a href="" class="contact-head__phone">
+                                    <img src="img/icons/phone.svg" alt="" class="img-svg">
+                                    +1 (770) 544-70-03
+                                </a>
+                                <a href="" class="contact-head__phone">
+                                    <img src="img/icons/phone.svg" alt="" class="img-svg">
+                                    +1 (850) 319-34-67
+                                </a>
+                            </div>
+                            <div class="contact-head__dropdown-box-row">
+                                <div class="contact-head__address">
+                                    <img src="img/icons/local.svg" alt="" class="img-svg">
+                                    Bid N Drive Inc. <br>
+                                    2305 Fourth st., <br>
+                                    Tucker, GA 30084
+                                </div>
+                            </div>
+                            <div class="contact-head__dropdown-box-row">
+                                <a href="#" class="contact-head__mail">sales@auto4export.com</a>
+                                <ul class="social">
+                                    <li>
+                                        <a href="#">
+                                            <img src="img/icons/facebook.svg" alt="" class="img-svg">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <img src="img/icons/instagram.svg" alt="" class="img-svg">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <img src="img/icons/youtube.svg" alt="" class="img-svg">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header__social">
+                    <ul class="social social--second">
+                        <li>
+                            <a href="#">
+                                <img src="img/icons/viber-white.svg" alt="" class="img-svg">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/icons/telegram-white.svg" alt="" class="img-svg">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/icons/whatsapp-white.svg" alt="" class="img-svg">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</header>
+
+<div class="mobile-menu" data-mobile-menu>
+    <div class="mobile-menu__body">
+        <div class="mobile-menu__arrow"><i class="icon-chevron-right"></i></div>
+        <div class="mobile-menu__inner">
+            <div class="mobile-menu__row mobile-menu__row--1">
+                <ul class="mobile-menu__list">
+                    <li class="menu-item-has-children">
+                        <a class="mobile-menu__list-link" href="#">Vehicle Finder</a>
+                        <ul class="mobile-menu__sub-menu">
+                            <li>
+                                <a class="mobile-menu__sub-menu-link" href="#">Popular makes</a>
+                            </li>
+                            <li>
+                                <a class="mobile-menu__sub-menu-link" href="#">Vehicle types</a>
+                            </li>
+                            <li>
+                                <a class="mobile-menu__sub-menu-link" href="#">Title</a>
+                            </li>
+                            <li>
+                                <a class="mobile-menu__sub-menu-link" href="#">Featured lots</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a class="mobile-menu__list-link" href="#">Live Auctions </a>
+                        <ul class="mobile-menu__sub-menu">
+                            <li>
+                                <a class="mobile-menu__sub-menu-link" href="#">By Locations</a>
+                            </li>
+                            <li>
+                                <a class="mobile-menu__sub-menu-link" href="#">Live Auctions</a>
+                            </li>
+                            <li>
+                                <a class="mobile-menu__sub-menu-link" href="#">Auctions Calendar</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a class="mobile-menu__list-link" href="#">Support</a>
+                        <ul class="mobile-menu__sub-menu">
+                            <li><a class="mobile-menu__sub-menu-link" href="#">How to Buy</a></li>
+                            <li><a class="mobile-menu__sub-menu-link" href="#">Shipping</a></li>
+                            <li><a class="mobile-menu__sub-menu-link" href="#">Fee Calculator</a></li>
+                            <li><a class="mobile-menu__sub-menu-link" href="#">Blogs</a></li>
+                            <li><a class="mobile-menu__sub-menu-link" href="#">Video Guides</a></li>
+                            <li><a class="mobile-menu__sub-menu-link" href="#">Contact Us</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="mobile-menu__list-link" href="#">Faq</a>
+                    </li>
+                    <li>
+                        <a class="mobile-menu__list-link" href="#">About us</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="mobile-menu__row mobile-menu__row--2">
+                <div class="language">
+                    <div class="language__select">
+                        <img src="img/photo/flag-us.png" alt="">
+                    </div>
+                    <ul class="language__list">
+                        <li>
+                            <a href="#">
+                                <img src="img/photo/flag-es.jpg" alt="">
+                                <span>es</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <a href="#" class="btn-login">
+                    <img src="img/icons/log-in.svg" alt="" class="img-svg">
+                    Log in
+                </a>
+            </div>
+            <div class="mobile-menu__row mobile-menu__row--3">
+                <a href="#" class="btn-sing-up not-hover">
+                    <img src="img/icons/add-user.svg" alt="" class="img-svg">
+                    Sing Up
+                </a>
+            </div>
+            <div class="mobile-menu__row mobile-menu__row--4">
+                <div class="header__time">
+                    <img src="img/icons/clock.svg" alt="" class="img-svg">
+                    7 am to 6 pm EST Mon - Fri
+                </div>
+                <div class="contact-head">
+                    <div class="contact-head__dropdown-box">
+                        <div class="contact-head__dropdown-box-row">
+                            <a href="" class="contact-head__phone">
+                                <img src="img/icons/phone.svg" alt="" class="img-svg">
+                                +1 (770) 544-70-03
+                            </a>
+                            <ul class="social social--second">
+                                <li>
+                                    <a href="#">
+                                        <img src="img/icons/viber-white.svg" alt="" class="img-svg">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="img/icons/telegram-white.svg" alt="" class="img-svg">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="img/icons/whatsapp-white.svg" alt="" class="img-svg">
+                                    </a>
+                                </li>
+                            </ul>
+                            <a href="" class="contact-head__phone">
+                                <img src="img/icons/phone.svg" alt="" class="img-svg">
+                                +1 (850) 319-34-67
+                            </a>
+                        </div>
+                        <div class="contact-head__dropdown-box-row">
+                            <div class="contact-head__address">
+                                <img src="img/icons/local.svg" alt="" class="img-svg">
+                                Bid N Drive Inc. <br>
+                                2305 Fourth st., <br>
+                                Tucker, GA 30084
+                            </div>
+                        </div>
+                        <div class="contact-head__dropdown-box-row">
+                            <a href="#" class="contact-head__mail">sales@auto4export.com</a>
+                            <ul class="social">
+                                <li>
+                                    <a href="#">
+                                        <img src="img/icons/facebook.svg" alt="" class="img-svg">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="img/icons/instagram.svg" alt="" class="img-svg">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="img/icons/youtube.svg" alt="" class="img-svg">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+	<!-- == // TOP LINE ================== -->
+
+	<main class="_page home-page" data-padding-top-header-size>
+		<div class="padding-wrap pt-0">
+    <section class="promo-header">
+        <div class="promo-header__bg">
+            <div class="container">
+                <img src="img/photo/promo-header-map.png" alt="">
+            </div>
+        </div>
+        <div class="promo-header__body container">
+            <h1 class="promo-header__title">
+                Buy Venicles from USA Auto Auctions
+            </h1>
+            <div class="promo-header__filter">
+                <form action="/">
+                    <div class="top-filter">
+                        <div class="top-filter__item top-filter__item--1">
+                            <div class="select-wrap">
+                                <select name="" class="_select">
+                                    <option value="">All type</option>
+                                    <option value="1">Lorem, ipsum dolor.</option>
+                                    <option value="2">Lorem, ipsum.</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="top-filter__item top-filter__item--2">
+                            <div class="select-wrap">
+                                <select name="" class="_select">
+                                    <option value="">Makes</option>
+                                    <option value="1">Lorem, ipsum dolor.</option>
+                                    <option value="2">Lorem, ipsum.</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="top-filter__item top-filter__item--3">
+                            <div class="select-wrap">
+                                <select name="" class="_select">
+                                    <option value="">Models</option>
+                                    <option value="1">Lorem, ipsum dolor.</option>
+                                    <option value="2">Lorem, ipsum.</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="top-filter__item top-filter__item--4">
+                            <div class="top-filter__time">
+                                From
+                                <div class="select-wrap">
+                                    <select name="" class="_select">
+                                        <option value="1" selected>1990</option>
+                                        <option value="2">1991</option>
+                                        <option value="3">1992</option>
+                                        <option value="4">1993</option>
+                                        <option value="5">1994</option>
+                                        <option value="6">1995</option>
+                                        <option value="7">1996</option>
+                                        <option value="8">1997</option>
+                                        <option value="9">1998</option>
+                                        <option value="10">1999</option>
+                                        <option value="11">2000</option>
+                                        <option value="12">2001</option>
+                                        <option value="13">2002</option>
+                                        <option value="14">2003</option>
+                                        <option value="15">2004</option>
+                                        <option value="16">2005</option>
+                                        <option value="17">2006</option>
+                                        <option value="18">2007</option>
+                                        <option value="19">2008</option>
+                                        <option value="20">2009</option>
+                                        <option value="21">2010</option>
+                                        <option value="22">2011</option>
+                                        <option value="23">2012</option>
+                                        <option value="24">2013</option>
+                                        <option value="25">2014</option>
+                                        <option value="26">2015</option>
+                                        <option value="27">2016</option>
+                                        <option value="28">2017</option>
+                                        <option value="29">2018</option>
+                                        <option value="30">2019</option>
+                                        <option value="31">2020</option>
+                                        <option value="32">2021</option>
+                                    </select>
+                                </div>
+                                to
+                                <div class="select-wrap">
+                                    <select name="" class="_select">
+                                        <option value="1" selected>2021</option>
+                                        <option value="2">2020</option>
+                                        <option value="3">2019</option>
+                                        <option value="4">2018</option>
+                                        <option value="5">2017</option>
+                                        <option value="6">2016</option>
+                                        <option value="7">2015</option>
+                                        <option value="8">2014</option>
+                                        <option value="9">2013</option>
+                                        <option value="10">2012</option>
+                                        <option value="11">2011</option>
+                                        <option value="12">2010</option>
+                                        <option value="13">2009</option>
+                                        <option value="14">2008</option>
+                                        <option value="15">2007</option>
+                                        <option value="16">2006</option>
+                                        <option value="17">2005</option>
+                                        <option value="18">2004</option>
+                                        <option value="19">2003</option>
+                                        <option value="20">2002</option>
+                                        <option value="21">2001</option>
+                                        <option value="22">2000</option>
+                                        <option value="23">1999</option>
+                                        <option value="24">1998</option>
+                                        <option value="25">1997</option>
+                                        <option value="26">1996</option>
+                                        <option value="27">1995</option>
+                                        <option value="28">1994</option>
+                                        <option value="29">1993</option>
+                                        <option value="30">1992</option>
+                                        <option value="31">1991</option>
+                                        <option value="32">1990</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="top-filter__item top-filter__item--5">
+                            <label class="top-filter__checkbox">
+                                <input type="checkbox">
+                                <div class="top-filter__checkbox-switch"></div>
+                                <div class="top-filter__checkbox-title">Clean Title</div>
+                            </label>
+                        </div>
+                        <div class="top-filter__item top-filter__item--6">
+                            <button class="top-filter__submit not-hover">
+                                <img class="img-svg" src="img/icons/search.svg" alt="">
+                                Search
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="promo-header__advantages swiper" data-promo-header-advantages data-mobile="false">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="promo-header__advantages-item">
+                            <div class="promo-header__advantages-icon">
+                                <img src="img/photo/promo-header-advantages-icon-1.svg" alt="">
+                            </div>
+                            <div class="promo-header__advantages-text">
+                                Over <strong>100,000+</strong> used, wholesale, <br> salvage and repairable cars in the
+                                catalog
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="promo-header__advantages-item">
+                            <div class="promo-header__advantages-icon">
+                                <img src="img/photo/promo-header-advantages-icon-2.svg" alt="">
+                            </div>
+                            <div class="promo-header__advantages-text">
+                                <strong>190+</strong> satisfied <br> customers
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="promo-header__advantages-item">
+                            <div class="promo-header__advantages-icon">
+                                <img src="img/photo/promo-header-advantages-icon-3.svg" alt="">
+                            </div>
+                            <div class="promo-header__advantages-text">
+                                <strong>Real time bidding</strong> on the <br> Auto4Export website
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+</div>
+
+		<div class="padding-wrap">
+    <section class="featured-vehicles" data-tabs>
+        <div class="container">
+            <div class="featured-vehicles__head head">
+                <div class="head__col-1">
+                    <h2 class="head__title">Featured Vehicles</h2>
+                </div>
+                <div class="head__col-2">
+                    <ul class="buttons-group">
+                        <li>
+                            <a href="#" class="active" data-tab-trigger="0">Buy now under 5000$</a>
+                        </li>
+                        <li>
+                            <a href="#" class="" data-tab-trigger="1">Run & Drive</a>
+                        </li>
+                        <li>
+                            <a href="#" class="" data-tab-trigger="2">Clean Title</a>
+                        </li>
+                        <li>
+                            <a href="#" class="" data-tab-trigger="3">Auction Today</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="head__col-3">
+                    <a href="#" class="link">See All</a>
+                </div>
+
+            </div>
+            <div class="featured-vehicles__body">
+                <div class="featured-vehicles__content" data-tab-content="0">
+                    <div class="featured-vehicles__slider swiper" data-slider="featured-vehicles-slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="featured-vehicles-card">
+                                    <div class="featured-vehicles-card__img ibg">
+                                        <a href="#">
+                                            <img class="swiper-lazy" data-src="img/photo/featured-vehicles-card-img-1.jpg" alt="">
+                                            <div class="swiper-lazy-preloader"></div>
+                                        </a>
+                                    </div>
+                                    <div class="featured-vehicles-card__title">
+                                        <a href="#">
+                                            2013 Chevrolet Impala Ls 3.6L
+                                        </a>
+                                    </div>
+                                    <div class="featured-vehicles-card__bottom">
+                                        <div class="featured-vehicles-card__bottom-item">
+                                            <div class="featured-vehicles-card__label">Current Bid</div>
+                                            <div class="featured-vehicles-card__price">$2,850</div>
+                                        </div>
+                                        <div class="featured-vehicles-card__bottom-item">
+                                            <div class="featured-vehicles-card__label">Location</div>
+                                            <div class="featured-vehicles-card__location">SC - Columbia</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="featured-vehicles-card">
+                                    <div class="featured-vehicles-card__img ibg">
+                                        <a href="#">
+                                            <img class="swiper-lazy" data-src="img/photo/featured-vehicles-card-img-2.jpg" alt="">
+                                            <div class="swiper-lazy-preloader"></div>
+                                        </a>
+                                    </div>
+                                    <div class="featured-vehicles-card__title">
+                                        <a href="#">
+                                            2018 CHRYSLER PACIFICA
+                                        </a>
+                                    </div>
+                                    <div class="featured-vehicles-card__bottom">
+                                        <div class="featured-vehicles-card__bottom-item">
+                                            <div class="featured-vehicles-card__label">Current Bid</div>
+                                            <div class="featured-vehicles-card__price">$3,100</div>
+                                        </div>
+                                        <div class="featured-vehicles-card__bottom-item">
+                                            <div class="featured-vehicles-card__label">Location</div>
+                                            <div class="featured-vehicles-card__location">IN - Dyer</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="featured-vehicles-card">
+                                    <div class="featured-vehicles-card__img ibg">
+                                        <a href="#">
+                                            <img class="swiper-lazy" data-src="img/photo/featured-vehicles-card-img-3.jpg" alt="">
+                                            <div class="swiper-lazy-preloader"></div>
+                                        </a>
+                                    </div>
+                                    <div class="featured-vehicles-card__title">
+                                        <a href="#">
+                                            2015 MASERATI QUATTROPOR
+                                        </a>
+                                    </div>
+                                    <div class="featured-vehicles-card__bottom">
+                                        <div class="featured-vehicles-card__bottom-item">
+                                            <div class="featured-vehicles-card__label">Current Bid</div>
+                                            <div class="featured-vehicles-card__price">$2,850</div>
+                                        </div>
+                                        <div class="featured-vehicles-card__bottom-item">
+                                            <div class="featured-vehicles-card__label">Location</div>
+                                            <div class="featured-vehicles-card__location">MI - Detroit</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="featured-vehicles-card">
+                                    <div class="featured-vehicles-card__img ibg">
+                                        <a href="#">
+                                            <img class="swiper-lazy" data-src="img/photo/featured-vehicles-card-img-4.jpg" alt="">
+                                            <div class="swiper-lazy-preloader"></div>
+                                        </a>
+                                    </div>
+                                    <div class="featured-vehicles-card__title">
+                                        <a href="#">
+                                            2005 Cadillac Escalade
+                                        </a>
+                                    </div>
+                                    <div class="featured-vehicles-card__bottom">
+                                        <div class="featured-vehicles-card__bottom-item">
+                                            <div class="featured-vehicles-card__label">Current Bid</div>
+                                            <div class="featured-vehicles-card__price">$2,230</div>
+                                        </div>
+                                        <div class="featured-vehicles-card__bottom-item">
+                                            <div class="featured-vehicles-card__label">Location</div>
+                                            <div class="featured-vehicles-card__location">SC - Columbia</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="featured-vehicles-card">
+                                    <div class="featured-vehicles-card__img ibg">
+                                        <a href="#">
+                                            <img class="swiper-lazy" data-src="img/photo/featured-vehicles-card-img-5.jpg" alt="">
+                                            <div class="swiper-lazy-preloader"></div>
+                                        </a>
+                                    </div>
+                                    <div class="featured-vehicles-card__title">
+                                        <a href="#">
+                                            2016 Hyundai Elantra
+                                        </a>
+                                    </div>
+                                    <div class="featured-vehicles-card__bottom">
+                                        <div class="featured-vehicles-card__bottom-item">
+                                            <div class="featured-vehicles-card__label">Current Bid</div>
+                                            <div class="featured-vehicles-card__price">$1,550</div>
+                                        </div>
+                                        <div class="featured-vehicles-card__bottom-item">
+                                            <div class="featured-vehicles-card__label">Location</div>
+                                            <div class="featured-vehicles-card__location">TN - Knoxville</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="featured-vehicles-card">
+                                    <div class="featured-vehicles-card__img ibg">
+                                        <a href="#">
+                                            <img class="swiper-lazy" data-src="img/photo/featured-vehicles-card-img-1.jpg" alt="">
+                                            <div class="swiper-lazy-preloader"></div>
+                                        </a>
+                                    </div>
+                                    <div class="featured-vehicles-card__title">
+                                        <a href="#">
+                                            2013 Chevrolet Impala Ls 3.6L
+                                        </a>
+                                    </div>
+                                    <div class="featured-vehicles-card__bottom">
+                                        <div class="featured-vehicles-card__bottom-item">
+                                            <div class="featured-vehicles-card__label">Current Bid</div>
+                                            <div class="featured-vehicles-card__price">$2,850</div>
+                                        </div>
+                                        <div class="featured-vehicles-card__bottom-item">
+                                            <div class="featured-vehicles-card__label">Location</div>
+                                            <div class="featured-vehicles-card__location">SC - Columbia</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="featured-vehicles__btn featured-vehicles__btn-prev"><i class="icon-chevron-right"></i></div>
+                        <div class="featured-vehicles__btn featured-vehicles__btn-next"><i class="icon-chevron-right"></i></div>
+                    </div>
+                </div>
+                <div class="featured-vehicles__content" data-tab-content="1">
+                    <div class="featured-vehicles__slider swiper" data-slider="featured-vehicles-slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="featured-vehicles-card">
+                                    <div class="featured-vehicles-card__img ibg">
+                                        <a href="#">
+                                            <img class="swiper-lazy" data-src="img/photo/featured-vehicles-card-img-4.jpg" alt="">
+                                            <div class="swiper-lazy-preloader"></div>
+                                        </a>
+                                    </div>
+                                    <div class="featured-vehicles-card__title">
+                                        <a href="#">
+                                            2005 Cadillac Escalade
+                                        </a>
+                                    </div>
+                                    <div class="featured-vehicles-card__bottom">
+                                        <div class="featured-vehicles-card__bottom-item">
+                                            <div class="featured-vehicles-card__label">Current Bid</div>
+                                            <div class="featured-vehicles-card__price">$2,230</div>
+                                        </div>
+                                        <div class="featured-vehicles-card__bottom-item">
+                                            <div class="featured-vehicles-card__label">Location</div>
+                                            <div class="featured-vehicles-card__location">SC - Columbia</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="featured-vehicles-card">
+                                    <div class="featured-vehicles-card__img ibg">
+                                        <a href="#">
+                                            <img class="swiper-lazy" data-src="img/photo/featured-vehicles-card-img-5.jpg" alt="">
+                                            <div class="swiper-lazy-preloader"></div>
+                                        </a>
+                                    </div>
+                                    <div class="featured-vehicles-card__title">
+                                        <a href="#">
+                                            2016 Hyundai Elantra
+                                        </a>
+                                    </div>
+                                    <div class="featured-vehicles-card__bottom">
+                                        <div class="featured-vehicles-card__bottom-item">
+                                            <div class="featured-vehicles-card__label">Current Bid</div>
+                                            <div class="featured-vehicles-card__price">$1,550</div>
+                                        </div>
+                                        <div class="featured-vehicles-card__bottom-item">
+                                            <div class="featured-vehicles-card__label">Location</div>
+                                            <div class="featured-vehicles-card__location">TN - Knoxville</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="featured-vehicles-card">
+                                    <div class="featured-vehicles-card__img ibg">
+                                        <a href="#">
+                                            <img class="swiper-lazy" data-src="img/photo/featured-vehicles-card-img-1.jpg" alt="">
+                                            <div class="swiper-lazy-preloader"></div>
+                                        </a>
+                                    </div>
+                                    <div class="featured-vehicles-card__title">
+                                        <a href="#">
+                                            2013 Chevrolet Impala Ls 3.6L
+                                        </a>
+                                    </div>
+                                    <div class="featured-vehicles-card__bottom">
+                                        <div class="featured-vehicles-card__bottom-item">
+                                            <div class="featured-vehicles-card__label">Current Bid</div>
+                                            <div class="featured-vehicles-card__price">$2,850</div>
+                                        </div>
+                                        <div class="featured-vehicles-card__bottom-item">
+                                            <div class="featured-vehicles-card__label">Location</div>
+                                            <div class="featured-vehicles-card__location">SC - Columbia</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="featured-vehicles-card">
+                                    <div class="featured-vehicles-card__img ibg">
+                                        <a href="#">
+                                            <img class="swiper-lazy" data-src="img/photo/featured-vehicles-card-img-1.jpg" alt="">
+                                            <div class="swiper-lazy-preloader"></div>
+                                        </a>
+                                    </div>
+                                    <div class="featured-vehicles-card__title">
+                                        <a href="#">
+                                            2013 Chevrolet Impala Ls 3.6L
+                                        </a>
+                                    </div>
+                                    <div class="featured-vehicles-card__bottom">
+                                        <div class="featured-vehicles-card__bottom-item">
+                                            <div class="featured-vehicles-card__label">Current Bid</div>
+                                            <div class="featured-vehicles-card__price">$2,850</div>
+                                        </div>
+                                        <div class="featured-vehicles-card__bottom-item">
+                                            <div class="featured-vehicles-card__label">Location</div>
+                                            <div class="featured-vehicles-card__location">SC - Columbia</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="featured-vehicles-card">
+                                    <div class="featured-vehicles-card__img ibg">
+                                        <a href="#">
+                                            <img class="swiper-lazy" data-src="img/photo/featured-vehicles-card-img-2.jpg" alt="">
+                                            <div class="swiper-lazy-preloader"></div>
+                                        </a>
+                                    </div>
+                                    <div class="featured-vehicles-card__title">
+                                        <a href="#">
+                                            2018 CHRYSLER PACIFICA
+                                        </a>
+                                    </div>
+                                    <div class="featured-vehicles-card__bottom">
+                                        <div class="featured-vehicles-card__bottom-item">
+                                            <div class="featured-vehicles-card__label">Current Bid</div>
+                                            <div class="featured-vehicles-card__price">$3,100</div>
+                                        </div>
+                                        <div class="featured-vehicles-card__bottom-item">
+                                            <div class="featured-vehicles-card__label">Location</div>
+                                            <div class="featured-vehicles-card__location">IN - Dyer</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="featured-vehicles-card">
+                                    <div class="featured-vehicles-card__img ibg">
+                                        <a href="#">
+                                            <img class="swiper-lazy" data-src="img/photo/featured-vehicles-card-img-3.jpg" alt="">
+                                            <div class="swiper-lazy-preloader"></div>
+                                        </a>
+                                    </div>
+                                    <div class="featured-vehicles-card__title">
+                                        <a href="#">
+                                            2015 MASERATI QUATTROPOR
+                                        </a>
+                                    </div>
+                                    <div class="featured-vehicles-card__bottom">
+                                        <div class="featured-vehicles-card__bottom-item">
+                                            <div class="featured-vehicles-card__label">Current Bid</div>
+                                            <div class="featured-vehicles-card__price">$2,850</div>
+                                        </div>
+                                        <div class="featured-vehicles-card__bottom-item">
+                                            <div class="featured-vehicles-card__label">Location</div>
+                                            <div class="featured-vehicles-card__location">MI - Detroit</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="featured-vehicles__btn featured-vehicles__btn-prev"><i class="icon-chevron-right"></i></div>
+                        <div class="featured-vehicles__btn featured-vehicles__btn-next"><i class="icon-chevron-right"></i></div>
+                    </div>
+                </div>
+                <div class="featured-vehicles__content" data-tab-content="2">
+                    <div class="featured-vehicles__slider swiper" data-slider="featured-vehicles-slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="featured-vehicles-card">
+                                    <div class="featured-vehicles-card__img ibg">
+                                        <a href="#">
+                                            <img class="swiper-lazy" data-src="img/photo/featured-vehicles-card-img-1.jpg" alt="">
+                                            <div class="swiper-lazy-preloader"></div>
+                                        </a>
+                                    </div>
+                                    <div class="featured-vehicles-card__title">
+                                        <a href="#">
+                                            2013 Chevrolet Impala Ls 3.6L
+                                        </a>
+                                    </div>
+                                    <div class="featured-vehicles-card__bottom">
+                                        <div class="featured-vehicles-card__bottom-item">
+                                            <div class="featured-vehicles-card__label">Current Bid</div>
+                                            <div class="featured-vehicles-card__price">$2,850</div>
+                                        </div>
+                                        <div class="featured-vehicles-card__bottom-item">
+                                            <div class="featured-vehicles-card__label">Location</div>
+                                            <div class="featured-vehicles-card__location">SC - Columbia</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="featured-vehicles-card">
+                                    <div class="featured-vehicles-card__img ibg">
+                                        <a href="#">
+                                            <img class="swiper-lazy" data-src="img/photo/featured-vehicles-card-img-2.jpg" alt="">
+                                            <div class="swiper-lazy-preloader"></div>
+                                        </a>
+                                    </div>
+                                    <div class="featured-vehicles-card__title">
+                                        <a href="#">
+                                            2018 CHRYSLER PACIFICA
+                                        </a>
+                                    </div>
+                                    <div class="featured-vehicles-card__bottom">
+                                        <div class="featured-vehicles-card__bottom-item">
+                                            <div class="featured-vehicles-card__label">Current Bid</div>
+                                            <div class="featured-vehicles-card__price">$3,100</div>
+                                        </div>
+                                        <div class="featured-vehicles-card__bottom-item">
+                                            <div class="featured-vehicles-card__label">Location</div>
+                                            <div class="featured-vehicles-card__location">IN - Dyer</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="featured-vehicles-card">
+                                    <div class="featured-vehicles-card__img ibg">
+                                        <a href="#">
+                                            <img class="swiper-lazy" data-src="img/photo/featured-vehicles-card-img-3.jpg" alt="">
+                                            <div class="swiper-lazy-preloader"></div>
+                                        </a>
+                                    </div>
+                                    <div class="featured-vehicles-card__title">
+                                        <a href="#">
+                                            2015 MASERATI QUATTROPOR
+                                        </a>
+                                    </div>
+                                    <div class="featured-vehicles-card__bottom">
+                                        <div class="featured-vehicles-card__bottom-item">
+                                            <div class="featured-vehicles-card__label">Current Bid</div>
+                                            <div class="featured-vehicles-card__price">$2,850</div>
+                                        </div>
+                                        <div class="featured-vehicles-card__bottom-item">
+                                            <div class="featured-vehicles-card__label">Location</div>
+                                            <div class="featured-vehicles-card__location">MI - Detroit</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="featured-vehicles-card">
+                                    <div class="featured-vehicles-card__img ibg">
+                                        <a href="#">
+                                            <img class="swiper-lazy" data-src="img/photo/featured-vehicles-card-img-4.jpg" alt="">
+                                            <div class="swiper-lazy-preloader"></div>
+                                        </a>
+                                    </div>
+                                    <div class="featured-vehicles-card__title">
+                                        <a href="#">
+                                            2005 Cadillac Escalade
+                                        </a>
+                                    </div>
+                                    <div class="featured-vehicles-card__bottom">
+                                        <div class="featured-vehicles-card__bottom-item">
+                                            <div class="featured-vehicles-card__label">Current Bid</div>
+                                            <div class="featured-vehicles-card__price">$2,230</div>
+                                        </div>
+                                        <div class="featured-vehicles-card__bottom-item">
+                                            <div class="featured-vehicles-card__label">Location</div>
+                                            <div class="featured-vehicles-card__location">SC - Columbia</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="featured-vehicles-card">
+                                    <div class="featured-vehicles-card__img ibg">
+                                        <a href="#">
+                                            <img class="swiper-lazy" data-src="img/photo/featured-vehicles-card-img-5.jpg" alt="">
+                                            <div class="swiper-lazy-preloader"></div>
+                                        </a>
+                                    </div>
+                                    <div class="featured-vehicles-card__title">
+                                        <a href="#">
+                                            2016 Hyundai Elantra
+                                        </a>
+                                    </div>
+                                    <div class="featured-vehicles-card__bottom">
+                                        <div class="featured-vehicles-card__bottom-item">
+                                            <div class="featured-vehicles-card__label">Current Bid</div>
+                                            <div class="featured-vehicles-card__price">$1,550</div>
+                                        </div>
+                                        <div class="featured-vehicles-card__bottom-item">
+                                            <div class="featured-vehicles-card__label">Location</div>
+                                            <div class="featured-vehicles-card__location">TN - Knoxville</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="featured-vehicles-card">
+                                    <div class="featured-vehicles-card__img ibg">
+                                        <a href="#">
+                                            <img class="swiper-lazy" data-src="img/photo/featured-vehicles-card-img-1.jpg" alt="">
+                                            <div class="swiper-lazy-preloader"></div>
+                                        </a>
+                                    </div>
+                                    <div class="featured-vehicles-card__title">
+                                        <a href="#">
+                                            2013 Chevrolet Impala Ls 3.6L
+                                        </a>
+                                    </div>
+                                    <div class="featured-vehicles-card__bottom">
+                                        <div class="featured-vehicles-card__bottom-item">
+                                            <div class="featured-vehicles-card__label">Current Bid</div>
+                                            <div class="featured-vehicles-card__price">$2,850</div>
+                                        </div>
+                                        <div class="featured-vehicles-card__bottom-item">
+                                            <div class="featured-vehicles-card__label">Location</div>
+                                            <div class="featured-vehicles-card__location">SC - Columbia</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="featured-vehicles__btn featured-vehicles__btn-prev"><i class="icon-chevron-right"></i></div>
+                        <div class="featured-vehicles__btn featured-vehicles__btn-next"><i class="icon-chevron-right"></i></div>
+                    </div>
+                </div>
+                <div class="featured-vehicles__content" data-tab-content="3">
+                    <div class="featured-vehicles__slider swiper" data-slider="featured-vehicles-slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="featured-vehicles-card">
+                                    <div class="featured-vehicles-card__img ibg">
+                                        <a href="#">
+                                            <img class="swiper-lazy" data-src="img/photo/featured-vehicles-card-img-4.jpg" alt="">
+                                            <div class="swiper-lazy-preloader"></div>
+                                        </a>
+                                    </div>
+                                    <div class="featured-vehicles-card__title">
+                                        <a href="#">
+                                            2005 Cadillac Escalade
+                                        </a>
+                                    </div>
+                                    <div class="featured-vehicles-card__bottom">
+                                        <div class="featured-vehicles-card__bottom-item">
+                                            <div class="featured-vehicles-card__label">Current Bid</div>
+                                            <div class="featured-vehicles-card__price">$2,230</div>
+                                        </div>
+                                        <div class="featured-vehicles-card__bottom-item">
+                                            <div class="featured-vehicles-card__label">Location</div>
+                                            <div class="featured-vehicles-card__location">SC - Columbia</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="featured-vehicles-card">
+                                    <div class="featured-vehicles-card__img ibg">
+                                        <a href="#">
+                                            <img class="swiper-lazy" data-src="img/photo/featured-vehicles-card-img-5.jpg" alt="">
+                                            <div class="swiper-lazy-preloader"></div>
+                                        </a>
+                                    </div>
+                                    <div class="featured-vehicles-card__title">
+                                        <a href="#">
+                                            2016 Hyundai Elantra
+                                        </a>
+                                    </div>
+                                    <div class="featured-vehicles-card__bottom">
+                                        <div class="featured-vehicles-card__bottom-item">
+                                            <div class="featured-vehicles-card__label">Current Bid</div>
+                                            <div class="featured-vehicles-card__price">$1,550</div>
+                                        </div>
+                                        <div class="featured-vehicles-card__bottom-item">
+                                            <div class="featured-vehicles-card__label">Location</div>
+                                            <div class="featured-vehicles-card__location">TN - Knoxville</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="featured-vehicles-card">
+                                    <div class="featured-vehicles-card__img ibg">
+                                        <a href="#">
+                                            <img class="swiper-lazy" data-src="img/photo/featured-vehicles-card-img-1.jpg" alt="">
+                                            <div class="swiper-lazy-preloader"></div>
+                                        </a>
+                                    </div>
+                                    <div class="featured-vehicles-card__title">
+                                        <a href="#">
+                                            2013 Chevrolet Impala Ls 3.6L
+                                        </a>
+                                    </div>
+                                    <div class="featured-vehicles-card__bottom">
+                                        <div class="featured-vehicles-card__bottom-item">
+                                            <div class="featured-vehicles-card__label">Current Bid</div>
+                                            <div class="featured-vehicles-card__price">$2,850</div>
+                                        </div>
+                                        <div class="featured-vehicles-card__bottom-item">
+                                            <div class="featured-vehicles-card__label">Location</div>
+                                            <div class="featured-vehicles-card__location">SC - Columbia</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="featured-vehicles-card">
+                                    <div class="featured-vehicles-card__img ibg">
+                                        <a href="#">
+                                            <img class="swiper-lazy" data-src="img/photo/featured-vehicles-card-img-1.jpg" alt="">
+                                            <div class="swiper-lazy-preloader"></div>
+                                        </a>
+                                    </div>
+                                    <div class="featured-vehicles-card__title">
+                                        <a href="#">
+                                            2013 Chevrolet Impala Ls 3.6L
+                                        </a>
+                                    </div>
+                                    <div class="featured-vehicles-card__bottom">
+                                        <div class="featured-vehicles-card__bottom-item">
+                                            <div class="featured-vehicles-card__label">Current Bid</div>
+                                            <div class="featured-vehicles-card__price">$2,850</div>
+                                        </div>
+                                        <div class="featured-vehicles-card__bottom-item">
+                                            <div class="featured-vehicles-card__label">Location</div>
+                                            <div class="featured-vehicles-card__location">SC - Columbia</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="featured-vehicles-card">
+                                    <div class="featured-vehicles-card__img ibg">
+                                        <a href="#">
+                                            <img class="swiper-lazy" data-src="img/photo/featured-vehicles-card-img-2.jpg" alt="">
+                                            <div class="swiper-lazy-preloader"></div>
+                                        </a>
+                                    </div>
+                                    <div class="featured-vehicles-card__title">
+                                        <a href="#">
+                                            2018 CHRYSLER PACIFICA
+                                        </a>
+                                    </div>
+                                    <div class="featured-vehicles-card__bottom">
+                                        <div class="featured-vehicles-card__bottom-item">
+                                            <div class="featured-vehicles-card__label">Current Bid</div>
+                                            <div class="featured-vehicles-card__price">$3,100</div>
+                                        </div>
+                                        <div class="featured-vehicles-card__bottom-item">
+                                            <div class="featured-vehicles-card__label">Location</div>
+                                            <div class="featured-vehicles-card__location">IN - Dyer</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="featured-vehicles-card">
+                                    <div class="featured-vehicles-card__img ibg">
+                                        <a href="#">
+                                            <img class="swiper-lazy" data-src="img/photo/featured-vehicles-card-img-3.jpg" alt="">
+                                            <div class="swiper-lazy-preloader"></div>
+                                        </a>
+                                    </div>
+                                    <div class="featured-vehicles-card__title">
+                                        <a href="#">
+                                            2015 MASERATI QUATTROPOR
+                                        </a>
+                                    </div>
+                                    <div class="featured-vehicles-card__bottom">
+                                        <div class="featured-vehicles-card__bottom-item">
+                                            <div class="featured-vehicles-card__label">Current Bid</div>
+                                            <div class="featured-vehicles-card__price">$2,850</div>
+                                        </div>
+                                        <div class="featured-vehicles-card__bottom-item">
+                                            <div class="featured-vehicles-card__label">Location</div>
+                                            <div class="featured-vehicles-card__location">MI - Detroit</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="featured-vehicles__btn featured-vehicles__btn-prev"><i class="icon-chevron-right"></i></div>
+                        <div class="featured-vehicles__btn featured-vehicles__btn-next"><i class="icon-chevron-right"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+		<div class="padding-wrap">
+			<section class="vehicle-type">
+				<div class="container">
+					<h2 class="vehicle-type__title title-2">Shop by Vehicle Type</h2>
+					<ul class="vehicle-type__list">
+						<li>
+							<a href="#" class="vehicle-type-card">
+								<div class="vehicle-type-card__img-wrap">
+									<div class="vehicle-type-card__hover">
+										<img src="img/photo/vehicle-type-card-hover.svg" alt="">
+									</div>
+									<div class="vehicle-type-card__img">
+										<img src="img/photo/vehicle-type-card-img-1.png" alt="">
+									</div>
+								</div>
+								<div class="vehicle-type-card__bottom">
+									<div class="vehicle-type-card__title">Cars</div>
+									<div class="vehicle-type-card__count">567</div>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="vehicle-type-card">
+								<div class="vehicle-type-card__img-wrap">
+									<div class="vehicle-type-card__hover">
+										<img src="img/photo/vehicle-type-card-hover.svg" alt="">
+									</div>
+									<div class="vehicle-type-card__img">
+										<img src="img/photo/vehicle-type-card-img-2.png" alt="">
+									</div>
+								</div>
+								<div class="vehicle-type-card__bottom">
+									<div class="vehicle-type-card__title">Trucks</div>
+									<div class="vehicle-type-card__count">433</div>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="vehicle-type-card">
+								<div class="vehicle-type-card__img-wrap">
+									<div class="vehicle-type-card__hover">
+										<img src="img/photo/vehicle-type-card-hover.svg" alt="">
+									</div>
+									<div class="vehicle-type-card__img">
+										<img src="img/photo/vehicle-type-card-img-3.png" alt="">
+									</div>
+								</div>
+								<div class="vehicle-type-card__bottom">
+									<div class="vehicle-type-card__title">ATV</div>
+									<div class="vehicle-type-card__count">214</div>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="vehicle-type-card">
+								<div class="vehicle-type-card__img-wrap">
+									<div class="vehicle-type-card__hover">
+										<img src="img/photo/vehicle-type-card-hover.svg" alt="">
+									</div>
+									<div class="vehicle-type-card__img">
+										<img src="img/photo/vehicle-type-card-img-4.png" alt="">
+									</div>
+								</div>
+								<div class="vehicle-type-card__bottom">
+									<div class="vehicle-type-card__title">Motorcycle</div>
+									<div class="vehicle-type-card__count">388</div>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="vehicle-type-card">
+								<div class="vehicle-type-card__img-wrap">
+									<div class="vehicle-type-card__hover">
+										<img src="img/photo/vehicle-type-card-hover.svg" alt="">
+									</div>
+									<div class="vehicle-type-card__img">
+										<img src="img/photo/vehicle-type-card-img-5.png" alt="">
+									</div>
+								</div>
+								<div class="vehicle-type-card__bottom">
+									<div class="vehicle-type-card__title">Boats</div>
+									<div class="vehicle-type-card__count">56</div>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="vehicle-type-card">
+								<div class="vehicle-type-card__img-wrap">
+									<div class="vehicle-type-card__hover">
+										<img src="img/photo/vehicle-type-card-hover.svg" alt="">
+									</div>
+									<div class="vehicle-type-card__img">
+										<img src="img/photo/vehicle-type-card-img-6.png" alt="">
+									</div>
+								</div>
+								<div class="vehicle-type-card__bottom">
+									<div class="vehicle-type-card__title">RV</div>
+									<div class="vehicle-type-card__count">75</div>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="vehicle-type-card">
+								<div class="vehicle-type-card__img-wrap">
+									<div class="vehicle-type-card__hover">
+										<img src="img/photo/vehicle-type-card-hover.svg" alt="">
+									</div>
+									<div class="vehicle-type-card__img">
+										<img src="img/photo/vehicle-type-card-img-7.png" alt="">
+									</div>
+								</div>
+								<div class="vehicle-type-card__bottom">
+									<div class="vehicle-type-card__title">Construction Equipment</div>
+									<div class="vehicle-type-card__count">134</div>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="vehicle-type-card">
+								<div class="vehicle-type-card__img-wrap">
+									<div class="vehicle-type-card__hover">
+										<img src="img/photo/vehicle-type-card-hover.svg" alt="">
+									</div>
+									<div class="vehicle-type-card__img">
+										<img src="img/photo/vehicle-type-card-img-8.png" alt="">
+									</div>
+								</div>
+								<div class="vehicle-type-card__bottom">
+									<div class="vehicle-type-card__title">Buses</div>
+									<div class="vehicle-type-card__count">53</div>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="vehicle-type-card">
+								<div class="vehicle-type-card__img-wrap">
+									<div class="vehicle-type-card__hover">
+										<img src="img/photo/vehicle-type-card-hover.svg" alt="">
+									</div>
+									<div class="vehicle-type-card__img">
+										<img src="img/photo/vehicle-type-card-img-9.png" alt="">
+									</div>
+								</div>
+								<div class="vehicle-type-card__bottom">
+									<div class="vehicle-type-card__title">Snowmobiles</div>
+									<div class="vehicle-type-card__count">361</div>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="vehicle-type-card">
+								<div class="vehicle-type-card__img-wrap">
+									<div class="vehicle-type-card__hover">
+										<img src="img/photo/vehicle-type-card-hover.svg" alt="">
+									</div>
+									<div class="vehicle-type-card__img">
+										<img src="img/photo/vehicle-type-card-img-10.png" alt="">
+									</div>
+								</div>
+								<div class="vehicle-type-card__bottom">
+									<div class="vehicle-type-card__title">Trailers</div>
+									<div class="vehicle-type-card__count">75</div>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="vehicle-type-card">
+								<div class="vehicle-type-card__img-wrap">
+									<div class="vehicle-type-card__hover">
+										<img src="img/photo/vehicle-type-card-hover.svg" alt="">
+									</div>
+									<div class="vehicle-type-card__img">
+										<img src="img/photo/vehicle-type-card-img-11.png" alt="">
+									</div>
+								</div>
+								<div class="vehicle-type-card__bottom">
+									<div class="vehicle-type-card__title">Jet Ski</div>
+									<div class="vehicle-type-card__count">188</div>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="vehicle-type-card">
+								<div class="vehicle-type-card__img-wrap">
+									<div class="vehicle-type-card__hover">
+										<img src="img/photo/vehicle-type-card-hover.svg" alt="">
+									</div>
+									<div class="vehicle-type-card__img">
+										<img src="img/photo/vehicle-type-card-img-12.png" alt="">
+									</div>
+								</div>
+								<div class="vehicle-type-card__bottom">
+									<div class="vehicle-type-card__title">Other</div>
+									<div class="vehicle-type-card__count">566</div>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</section>
+		</div>
+
+		<div class="padding-wrap">
+			<section class="search-vehicles" data-tabs>
+				<div class="container">
+					<div class="head">
+						<div class="head__col-1">
+							<h2 class="head__title">Search Vehicles by</h2>
+						</div>
+						<div class="head__col-2">
+							<ul class="buttons-group">
+								<li>
+									<a href="#" class="active" data-tab-trigger="0">Make</a>
+								</li>
+								<li>
+									<a href="#" class="" data-tab-trigger="1">Title</a>
+								</li>
+								<li>
+									<a href="#" class="" data-tab-trigger="2">Damage</a>
+								</li>
+								<li>
+									<a href="#" class="" data-tab-trigger="3">State</a>
+								</li>
+							</ul>
+						</div>
+						<div class="head__col-3">
+							<a href="#" class="link">See All</a>
+						</div>
+
+					</div>
+					<div data-tab-content="0">
+						<ul class="vehicle-list vehicle-list--col-3">
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>HARLEY-DAVIDSON</strong>
+									<span>127</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>HONDA</strong>
+									<span>98</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>KAWASAKI</strong>
+									<span>44</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>YAMAHA</strong>
+									<span>44</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>SUZUKI</strong>
+									<span>42</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>BMW</strong>
+									<span>23</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>DUCATI</strong>
+									<span>21</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>CAN-AM</strong>
+									<span>21</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>INDIAN MOTORCYCLE CO.</strong>
+									<span>21</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>POLARIS</strong>
+									<span>19</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>VESPA</strong>
+									<span>16</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>VICTORY MOTORCYCLES</strong>
+									<span>15</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>KTM</strong>
+									<span>13</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>OTHER</strong>
+									<span>13</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>TRIUMPH MOTORCYCLE</strong>
+									<span>13</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>GENUINE SCOOTER CO.</strong>
+									<span>12</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>APRILIA</strong>
+									<span>9</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>KYMCO USA INC</strong>
+									<span>9</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>HUSQVARNA</strong>
+									<span>7</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>OTHER</strong>
+									<span>5</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>Bitter</strong>
+									<span>16</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>BMW</strong>
+									<span>15</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>Borgward</strong>
+									<span>13</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>Brabus</strong>
+									<span>13</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>Bricklin</strong>
+									<span>13</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>Brilliance</strong>
+									<span>12</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>Bristol</strong>
+									<span>9</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>Bufori</strong>
+									<span>9</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>Bugatti</strong>
+									<span>7</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>Buick</strong>
+									<span>5</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div data-tab-content="1">
+						<ul class="vehicle-list vehicle-list--col-3">
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>DUCATI</strong>
+									<span>21</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>CAN-AM</strong>
+									<span>21</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>INDIAN MOTORCYCLE CO.</strong>
+									<span>21</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>POLARIS</strong>
+									<span>19</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>VESPA</strong>
+									<span>16</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>VICTORY MOTORCYCLES</strong>
+									<span>15</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>KTM</strong>
+									<span>13</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>OTHER</strong>
+									<span>13</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>TRIUMPH MOTORCYCLE</strong>
+									<span>13</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>GENUINE SCOOTER CO.</strong>
+									<span>12</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>APRILIA</strong>
+									<span>9</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>KYMCO USA INC</strong>
+									<span>9</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>HUSQVARNA</strong>
+									<span>7</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>OTHER</strong>
+									<span>5</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>Bitter</strong>
+									<span>16</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>BMW</strong>
+									<span>15</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>Borgward</strong>
+									<span>13</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>Brabus</strong>
+									<span>13</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>Bricklin</strong>
+									<span>13</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>Brilliance</strong>
+									<span>12</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>Bristol</strong>
+									<span>9</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>Bufori</strong>
+									<span>9</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>Bugatti</strong>
+									<span>7</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>Buick</strong>
+									<span>5</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div data-tab-content="2">
+						<ul class="vehicle-list vehicle-list--col-3">
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>HARLEY-DAVIDSON</strong>
+									<span>127</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>HONDA</strong>
+									<span>98</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>KAWASAKI</strong>
+									<span>44</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>YAMAHA</strong>
+									<span>44</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>SUZUKI</strong>
+									<span>42</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>BMW</strong>
+									<span>23</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>DUCATI</strong>
+									<span>21</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>CAN-AM</strong>
+									<span>21</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>INDIAN MOTORCYCLE CO.</strong>
+									<span>21</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>POLARIS</strong>
+									<span>19</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>VESPA</strong>
+									<span>16</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>VICTORY MOTORCYCLES</strong>
+									<span>15</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>KTM</strong>
+									<span>13</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>OTHER</strong>
+									<span>13</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>TRIUMPH MOTORCYCLE</strong>
+									<span>13</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>GENUINE SCOOTER CO.</strong>
+									<span>12</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>APRILIA</strong>
+									<span>9</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>KYMCO USA INC</strong>
+									<span>9</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>HUSQVARNA</strong>
+									<span>7</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>OTHER</strong>
+									<span>5</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>Bitter</strong>
+									<span>16</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>BMW</strong>
+									<span>15</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>Borgward</strong>
+									<span>13</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>Brabus</strong>
+									<span>13</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>Bricklin</strong>
+									<span>13</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>Brilliance</strong>
+									<span>12</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>Bristol</strong>
+									<span>9</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>Bufori</strong>
+									<span>9</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>Bugatti</strong>
+									<span>7</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>Buick</strong>
+									<span>5</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div data-tab-content="3">
+						<ul class="vehicle-list vehicle-list--col-3">
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>DUCATI</strong>
+									<span>21</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>CAN-AM</strong>
+									<span>21</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>INDIAN MOTORCYCLE CO.</strong>
+									<span>21</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>POLARIS</strong>
+									<span>19</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>VESPA</strong>
+									<span>16</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>VICTORY MOTORCYCLES</strong>
+									<span>15</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>KTM</strong>
+									<span>13</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>OTHER</strong>
+									<span>13</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>TRIUMPH MOTORCYCLE</strong>
+									<span>13</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>GENUINE SCOOTER CO.</strong>
+									<span>12</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>APRILIA</strong>
+									<span>9</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>KYMCO USA INC</strong>
+									<span>9</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>HUSQVARNA</strong>
+									<span>7</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>OTHER</strong>
+									<span>5</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>Bitter</strong>
+									<span>16</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>BMW</strong>
+									<span>15</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>Borgward</strong>
+									<span>13</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>Brabus</strong>
+									<span>13</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>Bricklin</strong>
+									<span>13</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>Brilliance</strong>
+									<span>12</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>Bristol</strong>
+									<span>9</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>Bufori</strong>
+									<span>9</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>Bugatti</strong>
+									<span>7</span>
+								</a>
+							</li>
+							<li>
+								<a class="vehicle-list__item" href="#">
+									<strong>Buick</strong>
+									<span>5</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+		</div>
+
+		<div class="padding-wrap">
+			<section class="how-it-works">
+				<div class="container">
+					<div class="how-it-works__row-1">
+						<h2 class="how-it-works__title">How it Works</h2>
+						<div class="how-it-works__list-wrap">
+							<ul class="how-it-works__list">
+								<li>
+									<div class="how-it-works__list-icon">
+										<img src="img/photo/how-it-works-icon-1.svg" alt="">
+									</div>
+									<div class="how-it-works__list-text">Register on <br> our website</div>
+								</li>
+								<li>
+									<div class="how-it-works__list-icon">
+										<img src="img/photo/how-it-works-icon-5.svg" alt="">
+									</div>
+									<div class="how-it-works__list-text">Sign the contract and make a deposit</div>
+								</li>
+								<li>
+									<div class="how-it-works__list-icon">
+										<img src="img/photo/how-it-works-icon-2.svg" alt="">
+									</div>
+									<div class="how-it-works__list-text">Find your car <br>
+										at the auction</div>
+								</li>
+								<li>
+									<div class="how-it-works__list-icon">
+										<img src="img/photo/how-it-works-icon-6.svg" alt="">
+									</div>
+									<div class="how-it-works__list-text">Bidding at auction</div>
+								</li>
+								<li>
+									<div class="how-it-works__list-icon">
+										<img src="img/photo/how-it-works-icon-3.svg" alt="">
+									</div>
+									<div class="how-it-works__list-text">Delivery to <br>
+										US Port</div>
+								</li>
+								<li>
+									<div class="how-it-works__list-icon">
+										<img src="img/photo/how-it-works-icon-7.svg" alt="">
+									</div>
+									<div class="how-it-works__list-text">Sea Shipping <br>
+										to your county</div>
+								</li>
+								<li>
+									<div class="how-it-works__list-icon">
+										<img src="img/photo/how-it-works-icon-4.svg" alt="">
+									</div>
+									<div class="how-it-works__list-text">Customs
+										Clearance</div>
+								</li>
+							</ul>
+							<div class="how-it-works__img-decor">
+								<picture>
+									<source srcset="img/photo/how-it-works-decor-1-desk.svg" media="(min-width: 992px)">
+									<source srcset="img/photo/how-it-works-decor-1-tablet.svg"
+										media="(min-width: 768px)">
+									<img src="img/photo/how-it-works-decor-1-mob.png" alt="img">
+								</picture>
+							</div>
+						</div>
+						<div class="how-it-works__img">
+							<picture>
+								<source srcset="img/photo/how-it-works-img-desk.png" media="(min-width: 992px)">
+								<source srcset="img/photo/how-it-works-img-tablet.png" media="(min-width: 768px)">
+								<img src="img/photo/how-it-works-img-mob.png" alt="img">
+							</picture>
+						</div>
+					</div>
+					<div class="how-it-works__row-2">
+						<div class="how-it-works__list-wrap">
+							<ul class="how-it-works__list">
+								<li>
+									<div class="how-it-works__list-icon">
+										<img src="img/photo/how-it-works-icon-8.svg" alt="">
+									</div>
+									<div class="how-it-works__list-text">
+										Free <br>
+										membership
+									</div>
+								</li>
+								<li>
+									<div class="how-it-works__list-icon">
+										<img src="img/photo/how-it-works-icon-9.svg" alt="">
+									</div>
+									<div class="how-it-works__list-text">
+										No business <br>
+										license required
+									</div>
+								</li>
+								<li>
+									<div class="how-it-works__list-icon">
+										<img src="img/photo/how-it-works-icon-10.svg" alt="">
+									</div>
+									<div class="how-it-works__list-text">
+										100% <br>
+										Refundable deposit
+									</div>
+								</li>
+								<li>
+									<div class="how-it-works__list-icon">
+										<img src="img/photo/how-it-works-icon-11.svg" alt="">
+									</div>
+									<div class="how-it-works__list-text">
+										Lowest fees
+										guaranteed
+									</div>
+								</li>
+								<li>
+									<div class="how-it-works__list-icon">
+										<img src="img/photo/how-it-works-icon-12.svg" alt="">
+									</div>
+									<div class="how-it-works__list-text">
+										Transportation assistance
+									</div>
+								</li>
+								<li>
+									<div class="how-it-works__list-icon">
+										<img src="img/photo/how-it-works-icon-13.svg" alt="">
+									</div>
+									<div class="how-it-works__list-text">
+										200+ <br>
+										locations nationwide
+									</div>
+								</li>
+							</ul>
+							<div class="how-it-works__img-decor">
+								<picture>
+									<source srcset="img/photo/how-it-works-decor-2-desk.svg" media="(min-width: 992px)">
+									<source srcset="img/photo/how-it-works-decor-2-tablet.svg"
+										media="(min-width: 768px)">
+									<img src="img/photo/how-it-works-decor-2-mob.svg" alt="img">
+								</picture>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+
+		<div class="padding-wrap">
+			<section class="question">
+				<div class="question__bg">
+					<picture>
+						<source srcset="img/photo/guestion-bg-desk.jpg" media="(min-width: 992px)">
+						<source srcset="img/photo/guestion-bg-tablet.jpg" media="(min-width: 768px)">
+						<img src="img/photo/guestion-bg-mob.jpg" alt="img">
+					</picture>
+				</div>
+				<div class="question__body container">
+					<div class="question__head">
+						<h2 class="question__title">Do You Have Any Questions? </h2>
+						<div class="question__label">
+							<img src="img/photo/question-icon.svg" alt="">
+							Leave a request to contact a manager!
+						</div>
+					</div>
+					<form action="#">
+						<div class="question__form">
+							<div class="question__form-item question__form-item-1">
+								<input type="text" class="input" placeholder="Your Name">
+							</div>
+							<div class="question__form-item question__form-item-2" data-mask="9{*}">
+								<input type="text" class="input" placeholder="Your Phone Number">
+							</div>
+							<div class="question__form-item question__form-item-3">
+								<button type="submit" class="question__submit btn-default">
+									<i class="icon-arrow-right"></i>
+									Send
+								</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</section>
+		</div>
+
+		<div class="padding-wrap">
+			<div class="container">
+				<ul class="list-col-2">
+					<li>
+						<section class="about-preview" data-about-preview>
+    <h2 class="about-preview__title">About Auto4Export</h2>
+    <div class="about-preview__text text-content">
+        <p>
+            Auto4Export offers thousands of vehicles for sale online for export directly from any wholesale USA Auto Auction: new, used, salvage cars, motorcycles, trucks, boats, jet skis, ATV's, and construction & industrial equipments.
+        </p>
+        <p>
+            We have been a licensed used car dealer since 2009, thousands of vehicles sold and a lot of satisfied customers from all over the world: Africa, Middle-East, Europe.. etc
+        </p>
+        <p>
+            We are your reliable partners who offers the full service in car buying from the USA. We offer help in searching, bidding, purchasing, domestic and international transportation, and also assist in clearance documents.
+        </p>
+        <hr class="text-collapse-line">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium iure architecto fuga voluptatem, nihil aspernatur incidunt dolores blanditiis sit illum quisquam sint quibusdam quaerat laudantium voluptatibus, obcaecati eius pariatur. Nam.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium iure architecto fuga voluptatem, nihil aspernatur incidunt dolores blanditiis sit illum quisquam sint quibusdam quaerat laudantium voluptatibus, obcaecati eius pariatur. Nam.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium iure architecto fuga voluptatem, nihil aspernatur incidunt dolores blanditiis sit illum quisquam sint quibusdam quaerat laudantium voluptatibus, obcaecati eius pariatur. Nam.
+        </p>
+    </div>
+    <a href="#" class="about-preview__read-more">
+        Read more
+        <i class="icon-chevron-down"></i>
+    </a>
+</section>
+					</li>
+					<li>
+						<section class="popular-questions">
+							<div class="popular-questions__head">
+								<h2 class="popular-questions__title">Popular Questions</h2>
+								<a href="#" class="popular-questions__link btn-default">
+									<img class="img-svg" src="img/icons/question.svg" alt="">
+									Ask
+								</a>
+							</div>
+							<ul class="popular-questions__list" data-spoller="one">
+								<li>
+									<div class="popular-questions__list-title" data-spoller-trigger>
+										Do I need a dealer’s license to buy from you?
+									</div>
+									<div class="popular-questions__list-text text-content">
+										<p>It’s completely free! There is no cost to join with a Standard Membership.
+										</p>
+									</div>
+								</li>
+								<li>
+									<div class="popular-questions__list-title" data-spoller-trigger>
+										How much does it cost to join?
+									</div>
+									<div class="popular-questions__list-text text-content">
+										<p>It’s completely free! There is no cost to join with a Standard Membership.
+										</p>
+									</div>
+								</li>
+								<li>
+									<div class="popular-questions__list-title" data-spoller-trigger>
+										Where are your vehicles located?
+									</div>
+									<div class="popular-questions__list-text text-content">
+										<p>It’s completely free! There is no cost to join with a Standard Membership.
+										</p>
+									</div>
+								</li>
+								<li>
+									<div class="popular-questions__list-title" data-spoller-trigger>
+										How do I get started?
+									</div>
+									<div class="popular-questions__list-text text-content">
+										<p>It’s completely free! There is no cost to join with a Standard Membership.
+										</p>
+									</div>
+								</li>
+								<li>
+									<div class="popular-questions__list-title" data-spoller-trigger>
+										Do you offer shipping?
+									</div>
+									<div class="popular-questions__list-text text-content">
+										<p>It’s completely free! There is no cost to join with a Standard Membership.
+										</p>
+									</div>
+								</li>
+							</ul>
+						</section>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="padding-wrap">
+			<sectin class="last-reviews">
+    <div class="container">
+        <div class="last-reviews__head">
+            <h2 class="last-reviews__title">Last Reviews</h2>
+            <a href="#" class="link">See All</a>
+        </div>
+        <div class="last-reviews__slider swiper" data-slider="last-reviews">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="review-card">
+                        <div class="review-card__head">
+                            <div class="review-card__photo ibg">
+                                <img src="img/photo/review-photo-1.jpg" alt="">
+                            </div>
+                            <div class="review-card__inner">
+                                <div class="review-card__name">Núria Moura</div>
+                                <div class="review-card__location">Ukraine</div>
+                                <div class="review-card__stars">
+                                    <div class="rating" data-rating="5">
+    <div class="rating__stars rating__stars-1">
+        <div class="rating__star">
+            <span class="icon-star-full"></span>
+        </div>
+        <div class="rating__star">
+            <span class="icon-star-full"></span>
+        </div>
+        <div class="rating__star">
+            <span class="icon-star-full"></span>
+        </div>
+        <div class="rating__star">
+            <span class="icon-star-full"></span>
+        </div>
+        <div class="rating__star">
+            <span class="icon-star-full"></span>
+        </div>
+    </div>
+    <div class="rating__stars rating__stars-2">
+        <div class="rating__star">
+            <span class="icon-star-full"></span>
+        </div>
+        <div class="rating__star">
+            <span class="icon-star-full"></span>
+        </div>
+        <div class="rating__star">
+            <span class="icon-star-full"></span>
+        </div>
+        <div class="rating__star">
+            <span class="icon-star-full"></span>
+        </div>
+        <div class="rating__star">
+            <span class="icon-star-full"></span>
+        </div>
+    </div>
+</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review-card__text-wrap">
+                            <div class="review-card__text">
+                                First things first, the customer support was outstanding. I would like to thank the
+                                whole team for such professionalism! Initially I was a bit skeptical about using them,
+                                but they have proven to be very safe. I have bought several vehicles through a better
+                                bid and I could not be happier with how efficient everything was. I recommend them to
+                                anyone looking for a great deal.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="review-card">
+                        <div class="review-card__head">
+                            <div class="review-card__photo ibg">
+                                <img src="img/photo/review-photo-2.jpg" alt="">
+                            </div>
+                            <div class="review-card__inner">
+                                <div class="review-card__name">Henry Itondo</div>
+                                <div class="review-card__location">England</div>
+                                <div class="review-card__stars">
+                                    <div class="rating" data-rating="4">
+    <div class="rating__stars rating__stars-1">
+        <div class="rating__star">
+            <span class="icon-star-full"></span>
+        </div>
+        <div class="rating__star">
+            <span class="icon-star-full"></span>
+        </div>
+        <div class="rating__star">
+            <span class="icon-star-full"></span>
+        </div>
+        <div class="rating__star">
+            <span class="icon-star-full"></span>
+        </div>
+        <div class="rating__star">
+            <span class="icon-star-full"></span>
+        </div>
+    </div>
+    <div class="rating__stars rating__stars-2">
+        <div class="rating__star">
+            <span class="icon-star-full"></span>
+        </div>
+        <div class="rating__star">
+            <span class="icon-star-full"></span>
+        </div>
+        <div class="rating__star">
+            <span class="icon-star-full"></span>
+        </div>
+        <div class="rating__star">
+            <span class="icon-star-full"></span>
+        </div>
+        <div class="rating__star">
+            <span class="icon-star-full"></span>
+        </div>
+    </div>
+</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review-card__text-wrap">
+                            <div class="review-card__text">
+                                Thanks for filling the void for rebuilders! I got my car basically as a steal, without any special licenses. Your site was so easy to navigate and use, and not to mention your customer service was fantastic. Incredibly helpful and responsive. I’ve tried another similar service and I like you guys the best!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="review-card">
+                        <div class="review-card__head">
+                            <div class="review-card__photo ibg">
+                                <img src="img/photo/review-photo-3.jpg" alt="">
+                            </div>
+                            <div class="review-card__inner">
+                                <div class="review-card__name">Stina Gunnarsdottir</div>
+                                <div class="review-card__location">Germany</div>
+                                <div class="review-card__stars">
+                                    <div class="rating" data-rating="5">
+    <div class="rating__stars rating__stars-1">
+        <div class="rating__star">
+            <span class="icon-star-full"></span>
+        </div>
+        <div class="rating__star">
+            <span class="icon-star-full"></span>
+        </div>
+        <div class="rating__star">
+            <span class="icon-star-full"></span>
+        </div>
+        <div class="rating__star">
+            <span class="icon-star-full"></span>
+        </div>
+        <div class="rating__star">
+            <span class="icon-star-full"></span>
+        </div>
+    </div>
+    <div class="rating__stars rating__stars-2">
+        <div class="rating__star">
+            <span class="icon-star-full"></span>
+        </div>
+        <div class="rating__star">
+            <span class="icon-star-full"></span>
+        </div>
+        <div class="rating__star">
+            <span class="icon-star-full"></span>
+        </div>
+        <div class="rating__star">
+            <span class="icon-star-full"></span>
+        </div>
+        <div class="rating__star">
+            <span class="icon-star-full"></span>
+        </div>
+    </div>
+</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review-card__text-wrap">
+                            <div class="review-card__text">
+                                I’m a father of two and have another one on the way, so I’ve been looking for a family car in addition to the car we currently own as our family is growing. I was looking for something newer, more spacious, in my price range and something I could get fast. They have the option to filter so I was able to find exactly what I was looking for. 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="review-card">
+                        <div class="review-card__head">
+                            <div class="review-card__photo ibg">
+                                <img src="img/photo/review-photo-4.jpg" alt="">
+                            </div>
+                            <div class="review-card__inner">
+                                <div class="review-card__name">Abayo Stevens</div>
+                                <div class="review-card__location">Denmark</div>
+                                <div class="review-card__stars">
+                                    <div class="rating" data-rating="4">
+    <div class="rating__stars rating__stars-1">
+        <div class="rating__star">
+            <span class="icon-star-full"></span>
+        </div>
+        <div class="rating__star">
+            <span class="icon-star-full"></span>
+        </div>
+        <div class="rating__star">
+            <span class="icon-star-full"></span>
+        </div>
+        <div class="rating__star">
+            <span class="icon-star-full"></span>
+        </div>
+        <div class="rating__star">
+            <span class="icon-star-full"></span>
+        </div>
+    </div>
+    <div class="rating__stars rating__stars-2">
+        <div class="rating__star">
+            <span class="icon-star-full"></span>
+        </div>
+        <div class="rating__star">
+            <span class="icon-star-full"></span>
+        </div>
+        <div class="rating__star">
+            <span class="icon-star-full"></span>
+        </div>
+        <div class="rating__star">
+            <span class="icon-star-full"></span>
+        </div>
+        <div class="rating__star">
+            <span class="icon-star-full"></span>
+        </div>
+    </div>
+</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review-card__text-wrap">
+                            <div class="review-card__text">
+                                Hands down the best marketplace for used vehicles I’ve used so far. The site is easy to use, the bidding process is incredibly simple and it`s so exciting to be a part of a live auction, there’s nothing quite like it. The fact that you guys are official copart brokers was what initially attracted me. Now I have access to vehicles I normally couldn’t buy since I’m not a dealer.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</sectin>
+		</div>
+
+		<div class="padding-wrap pb-0">
+			<section class="register">
+				<div class="register__bg">
+					<picture>
+						<source srcset="img/photo/register-bg-desk.jpg" media="(min-width: 992px)" >
+						<source srcset="img/photo/register-bg-tablet.jpg" media="(min-width: 768px)" >
+						<img src="img/photo/register-bg-mob.jpg" alt="img">
+					</picture>
+				</div>
+				<div class="register__body container">
+					<div class="register__col-1">
+						<h2 class="register__title">
+							Register Now and Bid
+						</h2>
+						<div class="register__subtitle">
+							Get access to dealer-only auction price and save up to 50%
+						</div>
+						<div class="register__login">
+							Already have an account?
+							<a href="#" class="btn-login">
+								<img src="img/icons/log-in.svg" alt="" class="img-svg">
+								Log in
+							</a>
+						</div>
+					</div>
+					<div class="register__col-2">
+						<form action="/">
+							<div class="form">
+								<div class="form__items">
+									<div class="form__item form__item--half">
+										<input class="input" type="text" placeholder="First Name">
+									</div>
+									<div class="form__item form__item--half">
+										<input class="input" type="text" placeholder="Last Name">
+									</div>
+									<div class="form__item form__item--half" data-mask="9{*}" data-phone-location>
+										<input class="input" type="text" placeholder="">
+									</div>
+									<div class="form__item form__item--half">
+										<input class="input" type="email" placeholder="Email">
+									</div>
+								</div>
+								<div class="form__text">
+									By clicking <strong>"Register Now"</strong> you agree to Salvagebid's <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a>
+								</div>
+								<div class="form__bottom">
+									<button class="btn-default">
+										<img class="img-svg" src="img/icons/add-user.svg" alt="">
+										Register Now
+									</button>
+									<div class="form__use-social">
+										<div class="form__use-social-label">OR CONTINUE WITH</div>
+										<ul class="form__use-social-list">
+											<li>
+												<a href="#">
+													<img class="img-svg" src="img/icons/facebook-color.svg" alt="">
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<img class="img-svg" src="img/icons/google-color.svg" alt="">
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</section>
+		</div>
+	</main>
+
+	<!-- == FOOTER ================== -->
+	
+	<!-- == // FOOTER ================== -->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="js/jQueryScripts.min.js"></script>
+</body>
+
+</html>
