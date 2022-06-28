@@ -719,10 +719,13 @@ if(lastReviewsSlider) {
 		let spollers = document.querySelectorAll('[data-spoller]');
 		if (spollers.length) {
 			spollers.forEach(spoller => {
+				if(spoller.hasAttribute('data-spoller-mob') && document.documentElement.clientWidth > 767.98) return;
+
 				let isOneActiveItem = spoller.dataset.spoller.trim() === 'one' ? true : false;
 				let triggers = spoller.querySelectorAll('[data-spoller-trigger]');
 				if (triggers.length) {
 					triggers.forEach(trigger => {
+
 						let parent = trigger.parentElement;
 						let content = trigger.nextElementSibling;
 
@@ -733,6 +736,7 @@ if(lastReviewsSlider) {
 						}
 
 						trigger.addEventListener('click', (e) => {
+							if(spoller.hasAttribute('data-spoller-mob') && document.documentElement.clientWidth > 767.98) return;
 							e.preventDefault();
 							parent.classList.toggle('active');
 							trigger.classList.toggle('active');
