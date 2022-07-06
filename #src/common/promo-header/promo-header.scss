@@ -201,6 +201,59 @@
                 border-bottom: 1px solid rgba(#d6d6d6, 0.4);
             }
         }
+
+        & .select-wrap {
+            & .select__title {
+                background-color: #fff;
+                position: relative;
+                z-index: 2;
+            }
+            & .select__options {
+                z-index: 1;
+                padding-top: 0;
+                padding-bottom: 1.6rem;
+                max-height: none;
+                top: 100%;
+                border-radius: 0 0 1rem 1rem;
+
+                &:before {
+                    pointer-events: none;
+                    position: absolute;
+                    content: '';
+                    left: 0;
+                    bottom: 0;
+                    z-index: 3;
+                    height: 7.2rem;
+                    width: 100%;
+                    background: linear-gradient(180deg, rgba(255, 255, 255, 0.0001) 0%, #FFFFFF 98.99%);
+                }
+            }
+
+            & .select__inner {
+                overflow: auto;
+                max-height: 26.2rem;
+                padding-bottom: 3rem;
+
+                &::-webkit-scrollbar {
+                    width: 2px;
+                    height: 2px;
+                }
+                &::-webkit-scrollbar-thumb {
+                    background: $mainColor;
+                    border-radius: 10px;
+        
+                }
+                &::-webkit-scrollbar-thumb:hover {
+                    background: #b3afb3;
+                }
+                &::-webkit-scrollbar-track {
+                    background: #EFEFEF;
+                    border-radius: 10px;
+                    box-shadow: inset 0px 0px 0px 0px #f0f0f0;
+                }
+        
+            }
+        }
     }
 
     &__item--1,
@@ -213,9 +266,30 @@
     }
 
     &__item--1 {
+        & .select-wrap {
+            & .select._active {
+                & .select__title {
+                    border-radius: 1rem 0 0 0rem;
+                }
+            }
+            & .select__title {
+                border-radius: 1rem 0 0 1rem;
+            }
+        }
         @media (max-width: $md2+px) {
             position: relative;
             z-index: 6;
+
+            & .select-wrap {
+                & .select._active {
+                    & .select__title {
+                        border-radius: 1rem 1rem 0 0rem;
+                    }
+                }
+                & .select__title {
+                    border-radius: 1rem 1rem 0 1rem;
+                }
+            }
         }
     }
 
@@ -223,6 +297,12 @@
         @media (max-width: $md2+px) {
             position: relative;
             z-index: 5;
+
+            & .select-wrap {
+                & .select__title {
+                    border-radius: 0rem 1rem 0 0rem;
+                }
+            }
         }
     }
 

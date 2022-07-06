@@ -271,6 +271,7 @@ class App {
 	componentsScriptsBeforePageLoad() {
 		@@include('../common/about-preview/about-preview.js');
 		@@include('../common/rating/rating.js');
+		@@include('../common/time-filter/time-filter.js');
 	}
 
 	componentsScripts() {

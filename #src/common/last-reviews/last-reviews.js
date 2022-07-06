@@ -28,5 +28,9 @@ if(lastReviewsSlider) {
         },
 
     });
+
+    window.addEventListener('resize', () => {
+        sliderData.update();
+    })
     
 }

@@ -271,6 +271,24 @@ figure {
 			padding: 0 20px;
 			order: 1;
 		}
+
+		&::-webkit-scrollbar {
+			width: 1px;
+			height: 1px;
+		}
+		&::-webkit-scrollbar-thumb {
+			background: #fff;
+			border-radius: 10px;
+
+		}
+		&::-webkit-scrollbar-thumb:hover {
+			background: #fff;
+		}
+		&::-webkit-scrollbar-track {
+			background: #fff;
+			border-radius: 10px;
+			box-shadow: inset 0px 0px 0px 0px #fff;
+		}
 	}
 
 	&__col-3 {

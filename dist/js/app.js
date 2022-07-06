@@ -654,6 +654,10 @@ if(lastReviewsSlider) {
         },
 
     });
+
+    window.addEventListener('resize', () => {
+        sliderData.update();
+    })
     
 };
 	}
@@ -940,7 +944,7 @@ if(lastReviewsSlider) {
                 const select = selects[index];
                 const select_body_options = select.querySelector('.select__options');
                 select.classList.remove('_active');
-                _slideUp(select_body_options, 100);
+                _slideUp(select_body_options, 0);
             }
         }
     }
@@ -981,7 +985,7 @@ if(lastReviewsSlider) {
         select_parent.insertAdjacentHTML('beforeend',
             '<div class="select__item">' +
             `<div class="select__title">${(select.dataset.select === 'price') ? label : ''}` + select_type_content + '</div>' +
-            '<div class="select__options">' + select_get_options(select_options) + '</div>' +
+            '<div class="select__options"><div class="select__inner">' + select_get_options(select_options) + '</div></div>' +
             '</div></div>');
 
         select_actions(select, select_parent);
@@ -1000,10 +1004,10 @@ if(lastReviewsSlider) {
                 const select_body_options = select.querySelector('.select__options');
                 if (select != select_item.closest('.select')) {
                     select.classList.remove('_active');
-                    _slideUp(select_body_options, 100);
+                    _slideUp(select_body_options, 0);
                 }
             }
-            _slideToggle(select_body_options, 100);
+            _slideToggle(select_body_options, 0);
             select.classList.toggle('_active');
         });
 
@@ -1139,6 +1143,81 @@ if(aboutPreview) {
             let starsLine = rating.querySelector('.rating__stars-1');
 
             starsLine.style.width = `calc(${count / 5 * 100}% - ${0.4}rem)`;
+        })
+    }
+};
+		let timeFilter = document.querySelector('[data-time-filter]');
+if(timeFilter) {
+
+    let columns = timeFilter.querySelectorAll('.time-filter__dropdown-col');
+    let top = timeFilter.querySelector('.time-filter__top');
+    let inputStart = timeFilter.querySelector('[data-time-filter-start]');
+    let inputEnd = timeFilter.querySelector('[data-time-filter-end]');
+    let startValue = timeFilter.querySelector('.time-filter__start-value');
+    let endValue = timeFilter.querySelector('.time-filter__end-value');
+
+    if(top) {
+        document.addEventListener('click', (e) => {
+            if(e.target.closest('.time-filter__top')) {
+                timeFilter.classList.toggle('active');
+            } else {
+                if(!e.target.closest('.time-filter')) {
+                    timeFilter.classList.remove('active');
+                }
+            }
+        })
+    }
+
+    if(columns.length) {
+        columns.forEach(column => {
+            let scrollWrap = column.querySelector('.time-filter__dropdown-scroll-wrap');
+            let items = column.querySelectorAll('.time-filter__dropdown-item');
+
+            if(scrollWrap.scrollTop > 10) {
+                column.classList.add('scroll-top');
+            }
+
+            if((scrollWrap.scrollHeight - (scrollWrap.scrollTop + scrollWrap.clientHeight)) > 10) {
+                column.classList.add('scroll-bottom');
+            }
+
+            scrollWrap.addEventListener('scroll', () => {
+                if(scrollWrap.scrollTop > 10) {
+                    column.classList.add('scroll-top');
+                } else {
+                    column.classList.remove('scroll-top');
+                }
+    
+                if((scrollWrap.scrollHeight - (scrollWrap.scrollTop + scrollWrap.clientHeight)) > 10) {
+                    column.classList.add('scroll-bottom');
+                } else {
+                    column.classList.remove('scroll-bottom');
+                }
+            })
+
+            if(items.length) {
+                items.forEach(item => {
+                    item.addEventListener('click', () => {
+                        item.classList.add('active');
+
+                        items.forEach(i => {
+                            if(i === item) return;
+
+                            i.classList.remove('active');
+                        })
+
+                        if(item.closest('.start-value')) {
+                            inputStart.value = item.innerText.trim();
+                            startValue.innerText = item.innerText.trim();
+                        }
+
+                        if(item.closest('.end-value')) {
+                            inputEnd.value = item.innerText.trim();
+                            endValue.innerText = item.innerText.trim();
+                        }
+                    })
+                })
+            }
         })
     }
 };

@@ -91,7 +91,7 @@
                 const select = selects[index];
                 const select_body_options = select.querySelector('.select__options');
                 select.classList.remove('_active');
-                _slideUp(select_body_options, 100);
+                _slideUp(select_body_options, 0);
             }
         }
     }
@@ -132,7 +132,7 @@
         select_parent.insertAdjacentHTML('beforeend',
             '<div class="select__item">' +
             `<div class="select__title">${(select.dataset.select === 'price') ? label : ''}` + select_type_content + '</div>' +
-            '<div class="select__options">' + select_get_options(select_options) + '</div>' +
+            '<div class="select__options"><div class="select__inner">' + select_get_options(select_options) + '</div></div>' +
             '</div></div>');
 
         select_actions(select, select_parent);
@@ -151,10 +151,10 @@
                 const select_body_options = select.querySelector('.select__options');
                 if (select != select_item.closest('.select')) {
                     select.classList.remove('_active');
-                    _slideUp(select_body_options, 100);
+                    _slideUp(select_body_options, 0);
                 }
             }
-            _slideToggle(select_body_options, 100);
+            _slideToggle(select_body_options, 0);
             select.classList.toggle('_active');
         });
 
