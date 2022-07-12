@@ -134,6 +134,44 @@ class Utils {
 			})
 		}
 	}
+
+	replaceToInlineSvg(query) {
+		let map = new Map();
+		const images = document.querySelectorAll(query);
+	
+		const forEach = (i) => {
+			if(i < 0) {
+				return
+			} else {
+				let svg = map.get(images[i].src);
+				if (svg) {
+					images[i].parentNode.replaceChild(svg.cloneNode(true), images[i]);
+					forEach(i - 1)
+	
+				} else {
+					let xhr = new XMLHttpRequest();
+					xhr.open('GET', images[i].src);
+		
+					xhr.onload = () => {
+						if (xhr.readyState === xhr.DONE) {
+							if (xhr.status === 200) {
+								let svg = xhr.responseXML.documentElement;
+								images[i].parentNode.replaceChild(svg, images[i]);
+		
+								map.set(images[i].src, svg);
+	
+								forEach(i - 1)
+							}
+						}
+					}
+					xhr.send(null);
+				}
+				
+			}
+		}
+	
+		forEach(images.length -1);
+	}
 }
 
 

@@ -1,109 +1,120 @@
 .pagination {
-    display: flex;
-    justify-content: center;
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 1.18em;
+    text-align: center;
+
+    @media (max-width: $md3+px) {
+        font-size: 14px;
+    }
 
     &__arrow {
-        height: 5rem;
-        width: 5rem;
-        border-radius: 50%;
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: $lightColor;
-        color: $textColor;
-        transition: all .3s ease;
-        font-size: 1.8rem;
+        min-height: 4.8rem;
+        border-radius: 1rem;
+        padding: 1rem 3rem;
+        transition: all 0.3s ease;
         cursor: pointer;
-        flex: 0 0 auto;
+        background-color: $bg;
+        opacity: 1 !important;
 
         @media (max-width: $md3+px) {
-            font-size: 14px;
-            height: 36px;
-            width: 36px;
+            font-size: 0;
+            min-height: 38px;
+            min-width: 38px;
+            padding: 1rem;
+            border-radius: 6px;
+
+            &:before {
+                font-family: 'icomoon';
+                content: "\e903";
+                font-size: 10px;
+            }
+
+            &--prev {
+                &:before {
+                    transform: scale(-1, 1);
+                }
+            }
         }
 
         @media (min-width: 992px) {
             &:hover {
-                color: $lightColor !important;
-                background-color: $hover;
+                background-color: $mainColor;
+                color: #fff;
             }
         }
 
-        &:active {
-            color: $lightColor !important;
-            background-color: $active !important;
-        }
-
-        & svg {
-            height: 1em;
-            width: auto;
+        &.disabled {
+            pointer-events: none;
+            color: $textColorSecondary;
         }
     }
 
     &__list {
-        margin: 0 2rem;
-        display: flex;
         padding-left: 0;
+        margin-bottom: 0;
+        display: flex;
+        gap: 1.9rem;
 
         @media (max-width: $md3+px) {
-            margin: 0 15px;
+            gap: 10px;
         }
 
-        & > li {
-            height: 5rem;
-            min-width: 5rem;
-            border-radius: 50%;
+        & li.dots {
             display: flex;
             justify-content: center;
-            align-items: center;
-            background-color: $lightColor;
-            color: $textColor;
-            flex: 0 0 auto;
-            text-align: center;
-            transition: all .3s ease;
+            align-items: flex-end;
+            min-height: 4.8rem;
+            min-width: 4.8rem;
+            border-radius: 1rem;
+            padding: 1.4rem 1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            background-color: $bg;
+            border-radius: 6px;
 
             @media (max-width: $md3+px) {
-                height: 36px;
-                min-width: 36px;
-                font-size: 14px;
-            }
-
-            &:not(:last-child) {
-                margin-right: 0.6rem;
-
-                @media (max-width: $md3+px) {
-                    margin-right: 4px;
-                }
-            }
-
-            @media (min-width: 992px) {
-                &:hover:not(.dots) {
-                    color: $lightColor !important;
-                    background-color: $hover;
-                }
-            }
-    
-            &:active:not(.dots) {
-                color: $lightColor !important;
-                background-color: $active !important;
+                min-height: 38px;
+                min-width: 38px;
+                padding: 1rem 1rem
             }
         }
     }
 
     &__item {
-        color: inherit !important;
         display: flex;
-        align-items: center;
         justify-content: center;
-        text-align: center;
-        height: 100%;
-        min-width: 5rem;
+        align-items: center;
+        min-height: 4.8rem;
+        min-width: 4.8rem;
+        border-radius: 1rem;
         padding: 1rem 1rem;
-        transition: all 0s ease;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        background-color: $bg;
+        opacity: 1 !important;
+        border-radius: 6px;
 
         @media (max-width: $md3+px) {
-            min-width: 36px;
-            padding: 6px 8px;
+            min-height: 38px;
+            min-width: 38px;
+        }
+
+        @media (min-width: 992px) {
+            &:hover:not(.active) {
+                background-color: $mainColor;
+                color: #fff;
+            }
+        }
+
+        &.active {
+            color: #fff;
+            background-color: $secondColor;
         }
     }
+
+
 }

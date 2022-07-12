@@ -5,6 +5,8 @@ class App {
 	constructor() {
 		this.utils = new Utils();
 		this.dynamicAdapt = new DynamicAdapt('max');
+		this.scrollAnimation = null;
+		this.allRangeSliders = [];
 	}
 
 	init() {
@@ -18,7 +20,7 @@ class App {
 			if (this.utils.iOS()) {
 				document.body.classList.add('mobile-ios');
 			}
-
+			this.utils.replaceToInlineSvg('.img-svg');
 			this.dynamicAdapt.init();
 			this.headerHandler();
 			this.popupHandler();
@@ -29,6 +31,8 @@ class App {
 			this.spollerInit();
 			this.setFontSize();
 			this.componentsScriptsBeforePageLoad();
+			this.initCopy();
+			this.initDatepicker();
 		});
 
 
@@ -39,6 +43,7 @@ class App {
 			this.setPaddingTopHeaderSize();
 			this.slidersInit();
 			this.componentsScripts();
+			this.initScrollAnimation();
 		});
 
 	}
@@ -55,6 +60,7 @@ class App {
 		@@include('../common/carousel/carousel.js');
 		@@include('../common/featured-vehicles/featured-vehicles.js');
 		@@include('../common/last-reviews/last-reviews.js');
+		@@include('../common/search-top-filter/search-top-filter.js');
 	}
 
 
@@ -118,7 +124,7 @@ class App {
 		let spollers = document.querySelectorAll('[data-spoller]');
 		if (spollers.length) {
 			spollers.forEach(spoller => {
-				if(spoller.hasAttribute('data-spoller-mob') && document.documentElement.clientWidth > 767.98) return;
+				if (spoller.hasAttribute('data-spoller-mob') && document.documentElement.clientWidth > 767.98) return;
 
 				let isOneActiveItem = spoller.dataset.spoller.trim() === 'one' ? true : false;
 				let triggers = spoller.querySelectorAll('[data-spoller-trigger]');
@@ -135,7 +141,7 @@ class App {
 						}
 
 						trigger.addEventListener('click', (e) => {
-							if(spoller.hasAttribute('data-spoller-mob') && document.documentElement.clientWidth > 767.98) return;
+							if (spoller.hasAttribute('data-spoller-mob') && document.documentElement.clientWidth > 767.98) return;
 							e.preventDefault();
 							parent.classList.toggle('active');
 							trigger.classList.toggle('active');
@@ -178,7 +184,7 @@ class App {
 		}
 
 		let cuntryItems = document.querySelectorAll('[data-phone-location]');
-		if(cuntryItems.length) {
+		if (cuntryItems.length) {
 			cuntryItems.forEach(cuntryItem => {
 				let input = cuntryItem.querySelector('input[type="text"]');
 				intlTelInput(input, {
@@ -254,7 +260,7 @@ class App {
 		if (elements.length) {
 			elements.forEach(el => {
 				const setFontSize = () => {
-					if (document.documentElement.clientWidth > 992) {
+					if (document.documentElement.clientWidth > 991.98) {
 						let value = 10 / 1920 * el.clientWidth;
 						if (value > 14) value = 10;
 						el.style.fontSize = value + 'px';
@@ -268,14 +274,88 @@ class App {
 		}
 	}
 
+	initCopy() {
+		let copyElements = document.querySelectorAll('[data-copy]');
+		if (copyElements.length) {
+			copyElements.forEach(copyEl => {
+				copyEl.addEventListener('click', (e) => {
+					e.preventDefault();
+					navigator.clipboard.writeText(copyEl.innerText);
+					copyEl.classList.add('copied');
+
+					setTimeout(() => {
+						copyEl.classList.remove('copied');
+					}, 1000)
+				})
+			})
+		}
+	}
+
+	initScrollAnimation() {
+		const handler = (el, scrollBox) => {
+			if (scrollBox.scrollTop > 10) {
+				el.classList.add('scroll-top');
+			} else {
+				el.classList.remove('scroll-top');
+			}
+
+			if ((scrollBox.scrollHeight - (scrollBox.scrollTop + scrollBox.clientHeight)) > 10) {
+				el.classList.add('scroll-bottom');
+			} else {
+				el.classList.remove('scroll-bottom');
+			}
+		}
+
+		let elements = document.querySelectorAll('[data-scroll-animation]');
+
+		if (elements.length) {
+			elements.forEach(el => {
+				let scrollBox = el.firstElementChild;
+
+				// init 
+				handler(el, scrollBox);
+
+				scrollBox.addEventListener('scroll', () => handler(el, scrollBox));
+			})
+
+			this.scrollAnimation = {
+				update() {
+					elements.forEach(el => {
+						let scrollBox = el.firstElementChild;
+						handler(el, scrollBox);
+					})
+				}
+			}
+		}
+	}
+
+	initDatepicker() {
+		let elements = document.querySelectorAll('[data-datepicker]');
+		if (elements.length) {
+			elements.forEach(el => {
+				let input = el.querySelector('input');
+				let picker = datepicker(input, {
+					formatter: (input, date, instance) => {
+						const value = date.toLocaleDateString()
+						input.value = value
+					},
+				})
+			})
+		}
+	}
+
 	componentsScriptsBeforePageLoad() {
 		@@include('../common/about-preview/about-preview.js');
 		@@include('../common/rating/rating.js');
 		@@include('../common/time-filter/time-filter.js');
+		@@include('../common/main-filter/main-filter.js');
+		@@include('../common/price-range/price-range.js');
 	}
 
 	componentsScripts() {
 		@@include('../common/promo-header/promo-header.js');
+		@@include('../common/border-dashed/border-dashed.js');
+		@@include('../common/card/card.js');
 	}
 
 }

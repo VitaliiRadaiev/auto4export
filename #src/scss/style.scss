@@ -17,6 +17,8 @@
 // ==== PLUGINS ===========================================================================================
 @import "plugins/swiper-bundle";
 @import "plugins/intlTelInput.min";
+@import "plugins/datepicker";
+@import "plugins/nouislider";
 // ==== // PLUGINS ===========================================================================================
 
 // ==== VARS ===========================================================================================
@@ -42,9 +44,18 @@
 @import "../common/last-reviews/last-reviews";
 @import "../common/rating/rating";
 @import "../common/time-filter/time-filter";
+@import "../common/border-dashed/border-dashed";
+@import "../common/breadcrumbs/breadcrumbs";
+@import "../common/slider-buttons/slider-buttons";
+@import "../common/search-top-filter/search-top-filter";
+@import "../common/pagination/pagination";
+@import "../common/main-filter/main-filter";
+@import "../common/price-range/price-range";
+@import "../common/popup/popup";
 // ==== // COMMON BLOCKS =====================================================
 
 // ==== PAGES =====================================================
 @import "pages/home";
+@import "pages/search";
 // ==== AND PAGES =====================================================
 

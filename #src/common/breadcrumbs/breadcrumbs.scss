@@ -1,26 +1,37 @@
 .breadcrumbs {
     padding-left: 0;
-    padding-top: 5rem;
-    margin-bottom: 6.4rem;
-    display: flex;
-    flex-wrap: wrap;
+    margin-bottom: 2rem;
     font-weight: 400;
-    font-size: 1.2rem;
-    line-height: 1.5em;
+    font-size: 1.4rem;
+    line-height: 1.21em;
     color: $textColorSecondary;
 
+    @media (max-width: $md3+px) {
+        margin-bottom: 1rem;
+        font-size: 13px;
+        line-height: 16px;
+    }
+
     & > li {
+        display: inline-block;
         &:not(:last-child) {
+            margin-right: 1.8rem;
+
+            @media (max-width: $md3+px) {
+                margin-right: 1.3rem;
+            }
             &:after {
-                content: '/';
-                margin-left: 0.5rem;
-                margin-right: 0.5rem;
+                content: "-";
+                margin-left: 2rem;
+
+                @media (max-width: $md3+px) {
+                    margin-left: 1.5rem;
+                }
             }
         }
     }
 
     & a {
-        color: $textColor;
-        transition: all .3s ease;
+        transition: all 0.3s ease;
     }
 }

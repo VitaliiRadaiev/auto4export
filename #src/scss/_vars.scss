@@ -21,20 +21,18 @@ $active:  #1675ab;
 $mainColor: #1886C4;
 $secondColor: #0A3B56;
 $dangerColor:  #FF4444;
-$successColor:#00C367;
+$successColor:#5BC749;
 $infoColor: #BC62EF;
 $lightColor: #fff;
 $warningColor: #FFC31C;
-$bg: #F3F1EF;
-$bgSecondary: #EBE8E4;
-$bgSecondaryHover: #cdcac7;
+$bg: #F9F9F9;
 $borderColor: #D2D2D2;
 
 
 :root {
     --bs-primary: #191919;
     --bs-secondary: #0A3B56;
-    --bs-success: #00C367;
+    --bs-success: #5BC749;
     --bs-info: #BC62EF;
     --bs-warning: #FFC31C;
     --bs-danger: #FF4444;
@@ -43,7 +41,7 @@ $borderColor: #D2D2D2;
 
     --bs-primary-rgb: 25, 25, 25;
     --bs-secondary-rgb: 10, 59, 86;
-    --bs-success-rgb: 0, 195, 103;
+    --bs-success-rgb: 91, 199, 73;
     --bs-info-rgb: 188, 98, 239;
     --bs-warning-rgb: 255, 195, 28;
     --bs-danger-rgb: 255, 68, 68;

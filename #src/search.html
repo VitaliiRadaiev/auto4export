@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en" data-set-font-size>
+@@include('_head.html',{
+"title": "auto4export"
+})
+
+<body>
+    <div class="_preload-body"></div>
+    <!-- == TOP LINE ================== -->
+
+    @@include('common/header/_header.html',{
+    "mod": ""
+    })
+    <!-- == // TOP LINE ================== -->
+    <div class="main-filter-mobile" data-main-filter-mobile>
+        <div class="main-filter-mobile__body">
+            <div class="main-filter-mobile__arrow">
+                <i class="icon-chevron-right"></i>
+            </div>
+            <div class="main-filter-mobile__inner"></div>
+        </div>
+    </div>
+
+    <main class="_page search-page" data-padding-top-header-size>
+        <div class="p-50"></div>
+
+        @@include('common/breadcrumbs/_breadcrumbs.html', {
+        "arr": ['<a href="#">Home</a>', '<a href="#">Search Page</a>', 'Vehicle Det']
+        })
+
+        <div class="container">
+            <h1 class="title-1">2022 Used Damaged Zhiguli for sale</h1>
+        </div>
+
+        <div class="container">
+            <div class="main-search">
+                <div class="main-search__left">
+                    <div class="main-search__main-filter">
+                        <div data-da=".main-filter-mobile__inner,991.98,last">
+                            <form action="/">
+                                @@include('common/main-filter/_main-filter.html')
+                            </form>
+                        </div>
+                    </div>
+                    <div class="main-search__question">
+                        <div class="main-search__question-bg border-rudius ibg">
+                            <img src="img/photo/question-box-bg.jpg" alt="">
+                        </div>
+                        <div class="main-search__question-body">
+                            <h2 class="main-search__question-title">
+                                Do You <br> Have Any Questions? 
+                            </h2>
+                            <a href="#popup-question" data-popup="open-popup" class="main-search__question-btn btn-default">
+                                <img src="img/icons/question.svg" alt="">
+                                Ask Question
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-search__rigth">
+                    <div class="main-search__row-1">
+                        @@include('common/search-top-filter/_search-top-filter.html')
+                    </div>
+                    <div class="main-search__row-2">
+                        <button type="button" class="main-search__btn-filter">
+                            <img class="img-svg" src="img/icons/filter.svg" alt="">
+                        </button>
+                        <div class="main-search__result">
+                            <span>Showing result:</span> 1-24 of 48
+                        </div>
+                        <div class="main-search__sort">
+                            <label>Sort by</label>
+                            <div class="select-wrap">
+                                <select name="" class="_select">
+                                    <option value="1" selected>Date</option>
+                                    <option value="2">Hign to Low</option>
+                                    <option value="3">Low to Hign</option>
+                                    <option value="3">Popular</option>
+                                    <option value="3">Recent</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="main-search__view-buttons">
+                            <button data-action="set-list" class="main-search__view-btn btn-set-list active"
+                                type="button">
+                                <img class="img-svg" src="img/icons/list.svg" alt="">
+                            </button>
+                            <button data-action="set-grid" class="main-search__view-btn btn-set-grid " type="button">
+                                <img class="img-svg" src="img/icons/grid.svg" alt="">
+                            </button>
+                        </div>
+                    </div>
+                    <div class="main-search__row-3">
+
+                        <ul class="main-search__list">
+                            <li>
+                                @@include('common/card/_card.html', {
+                                "img": "img/photo/card-img-1.jpg",
+                                "title": "2013 Chevrolet Impala Ls 3.6L",
+                                "currentPrice": "131",
+                                "nowPrice": "2,850",
+                                "rating": "4.8",
+                                "icons": [{"icon": "img/photo/steering-wheel.svg", "color": "#1886C4"}, {"icon":
+                                "img/photo/carsharing.svg", "color": "#5BC749"}]
+                                })
+                            </li>
+                            <li>
+                                @@include('common/card/_card.html', {
+                                "img": "img/photo/card-img-1.jpg",
+                                "title": "2008 INFINITI G35",
+                                "currentPrice": "850",
+                                "nowPrice": false,
+                                "rating": "4.8",
+                                "icons": [{"icon": "img/photo/steering-wheel.svg", "color": "#1886C4"}, {"icon":
+                                "img/photo/carsharing.svg", "color": "#5BC749"}]
+                                })
+                            </li>
+                            <li>
+                                @@include('common/card/_card.html', {
+                                "img": "img/photo/card-img-2.jpg",
+                                "title": "2008 FORD ESCAPE LIM",
+                                "currentPrice": "131",
+                                "nowPrice": "3,440",
+                                "rating": "2.2",
+                                "icons": [{"icon": "img/photo/steering-wheel.svg", "color": "#1886C4"}, {"icon":
+                                "img/photo/carsharing.svg", "color": "#5BC749"}]
+                                })
+                            </li>
+                            <li>
+                                @@include('common/card/_card.html', {
+                                "img": "img/photo/card-img-3.jpg",
+                                "title": "2011 HYUNDAI SONATA SE",
+                                "currentPrice": "300",
+                                "nowPrice": "4,100",
+                                "rating": "3.5",
+                                "icons": [{"icon": "img/photo/steering-wheel.svg", "color": "#1886C4"}, {"icon":
+                                "img/photo/carsharing.svg", "color": "#5BC749"}]
+                                })
+                            </li>
+                            <li>
+                                @@include('common/card/_card.html', {
+                                "img": "img/photo/card-img-4.jpg",
+                                "title": "2011 CHEVROLET IMPALA LT",
+                                "currentPrice": "131",
+                                "nowPrice": "2,850",
+                                "rating": "2.2",
+                                "icons": [{"icon": "img/photo/steering-wheel.svg", "color": "#1886C4"}, {"icon":
+                                "img/photo/carsharing.svg", "color": "#5BC749"}]
+                                })
+                            </li>
+                            <li>
+                                @@include('common/card/_card.html', {
+                                "img": "img/photo/card-img-5.jpg",
+                                "title": "2020 NISSAN FRONTIER S",
+                                "currentPrice": "131",
+                                "nowPrice": "3,440",
+                                "rating": "4.8",
+                                "icons": [{"icon": "img/photo/steering-wheel.svg", "color": "#1886C4"}, {"icon":
+                                "img/photo/carsharing.svg", "color": "#5BC749"}]
+                                })
+                            </li>
+                            <li>
+                                @@include('common/card/_card.html', {
+                                "img": "img/photo/card-img-6.jpg",
+                                "title": "2006 PONTIAC G6 SE1",
+                                "currentPrice": "300",
+                                "nowPrice": "4,100",
+                                "rating": "4.8",
+                                "icons": [{"icon": "img/photo/steering-wheel.svg", "color": "#1886C4"}, {"icon":
+                                "img/photo/carsharing.svg", "color": "#5BC749"}]
+                                })
+                            </li>
+                            <li>
+                                @@include('common/card/_card.html', {
+                                "img": "img/photo/card-img-7.jpg",
+                                "title": "2011 CHEVROLET IMPALA LT",
+                                "currentPrice": "131",
+                                "nowPrice": "2,850",
+                                "rating": "3.5",
+                                "icons": [{"icon": "img/photo/steering-wheel.svg", "color": "#1886C4"}, {"icon":
+                                "img/photo/carsharing.svg", "color": "#5BC749"}]
+                                })
+                            </li>
+                            <li>
+                                @@include('common/card/_card.html', {
+                                "img": "img/photo/card-img-8.jpg",
+                                "title": "2011 NISSAN ROGUE S",
+                                "currentPrice": "131",
+                                "nowPrice": "3,440",
+                                "rating": "4.8",
+                                "icons": [{"icon": "img/photo/steering-wheel.svg", "color": "#1886C4"}, {"icon":
+                                "img/photo/carsharing.svg", "color": "#5BC749"}]
+                                })
+                            </li>
+                            <li>
+                                @@include('common/card/_card.html', {
+                                "img": "img/photo/card-img-9.jpg",
+                                "title": "1993 FORD F150",
+                                "currentPrice": "200",
+                                "nowPrice": false,
+                                "rating": "4.8",
+                                "icons": [{"icon": "img/photo/steering-wheel.svg", "color": "#1886C4"}, {"icon":
+                                "img/photo/carsharing.svg", "color": "#5BC749"}]
+                                })
+                            </li>
+                        </ul>
+
+                        <div class="main-search__pagination">
+                            @@include('common/pagination/_pagination.html')
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-70"></div>
+    </main>
+
+    <!-- == FOOTER ================== -->
+    @@include('common/footer/_footer.html',{})
+    <!-- == // FOOTER ================== -->
+
+    @@include('common/popup/_popup-question.html')
+    @@include('common/popup/_popup-message.html')
+
+    <script>
+        // Это пример вызова сообщения после срабатывания формы "Ask a Question", скрипт нужно будет удалить
+        let form = document.querySelector('#popup-question');
+        if(form) {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                window.popup.openMessage('#popup-message-1');
+            })
+        }
+    </script>
+
+    @@include('_js-bottom.html',{})
+</body>
+
+</html>

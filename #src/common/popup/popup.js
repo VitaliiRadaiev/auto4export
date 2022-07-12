@@ -161,5 +161,18 @@ window.popup = {
 		if (!popup) return;
 
 		popupClose(popup);
+	},
+	openMessage(id) {
+		if (!id) return;
+
+		let popup = document.querySelector(id);
+
+		if (!popup) return;
+
+		popupOpen(popup);
+
+		setTimeout(() => {
+			popupClose(popup);
+		}, 3000);
 	}
 }

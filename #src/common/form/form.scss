@@ -1,4 +1,11 @@
 .form {
+    &__title {
+        margin-bottom: 3rem;
+
+        @media (max-width: $md3+px) {
+            margin-bottom: 2rem;
+        }
+    }
     &__items {
         display: flex;
         flex-wrap: wrap;
@@ -87,12 +94,10 @@
             height: auto;
         }
     }
-}
-.input {
-}
-.btn-default {
-}
-.img-svg {
+
+    &__submit {
+        width: 100%;
+    }
 }
 
 .input {
@@ -109,6 +114,7 @@
     font-size: 1.8rem;
     line-height: 1.22em;
     font-weight: 400;
+    border: 1px solid $borderColor;
 
     @media (max-width: $md3+px) {
         height: 58px;
@@ -133,25 +139,54 @@
     display: flex;
     align-items: center;
     width: 100%;
-    background: rgba(40, 83, 143, 0.05);
-    border-radius: 0.8rem;
-    height: 10rem;
-    padding: 0.8rem 1.5rem;
-    border: 1px solid transparent;
+    background: #fff;
+    border-radius: 1rem;
+    height: 19rem;
+    padding: 2.2rem 3rem;
+    border: none;
     outline: none;
-    font-size: 1.4rem;
-    line-height: 1.58em;
-    letter-spacing: 0.05em;
+    box-shadow: none;
+    font-size: 1.8rem;
+    line-height: 1.22em;
     font-weight: 400;
+    border: 1px solid $borderColor;
+    resize: none;
+
+    &::-webkit-scrollbar {
+        width: 1px;
+        height: 1px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: #fff;
+        border-radius: 10px;
+
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background: #fff;
+    }
+    &::-webkit-scrollbar-track {
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: inset 0px 0px 0px 0px #fff;
+    }
+
+    @media (max-width: $md3+px) {
+        height: 58px;
+        padding: 10px 20px;
+        font-size: 14px;
+        line-height: 17px;
+        border-radius: 6px;
+    }
 
     &:focus {
-        border-color: $secondColor;
+        &::placeholder {
+            opacity: 0;
+        }
     }
 
     &::placeholder {
-        font-size: 14px;
-        font-weight: 400;
-        letter-spacing: 0.05em;
+        transition: all 0.3s ease;
+        color: $textColorSecondary;
     }
 }
 
@@ -159,6 +194,7 @@
     display: flex;
     align-items: center;
     position: relative;
+    cursor: pointer;
 
     & input {
         position: absolute;
@@ -168,28 +204,38 @@
 
         &:checked ~ {
             & .checkbox-radio__square {
-                background-color: $active;
-                border-color: $active;
-                background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDEwIDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0wLjk5OTk5OSA0LjYzNTg4TDIuNDc0NzEgNi4xMTA1OUMyLjg2NTIzIDYuNTAxMTEgMy40OTg0IDYuNTAxMTEgMy44ODg5MiA2LjExMDU5TDkgMC45OTk1MTIiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMS4yIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==");
+                background-color: $mainColor;
+                border-color: $mainColor;
+                background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDEwIDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik05Ljc2NzY0IDAuMjU4MjUyQzkuNDU4MjQgLTAuMDg2MTkyNSA4Ljk1NTgyIC0wLjA4NTk3NTQgOC42NDYwMSAwLjI1ODI1MkwzLjU5Nzg3IDUuODcwODhMMS4zNTQxOSAzLjM3NjQzQzEuMDQ0MzggMy4wMzE5OCAwLjU0MjE3NCAzLjAzMTk4IDAuMjMyMzYgMy4zNzY0M0MtMC4wNzc0NTM0IDMuNzIwODcgLTAuMDc3NDUzNCA0LjI3OTIxIDAuMjMyMzYgNC42MjM2NUwzLjAzNjg0IDcuNzQxNjFDMy4xOTE2NSA3LjkxMzczIDMuMzk0NjQgOCAzLjU5NzY1IDhDMy44MDA2NyA4IDQuMDAzODYgNy45MTM5NCA0LjE1ODY3IDcuNzQxNjFMOS43Njc2NCAxLjUwNTQ2QzEwLjA3NzUgMS4xNjEyNSAxMC4wNzc1IDAuNjAyNjc1IDkuNzY3NjQgMC4yNTgyNTJaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K");
             }
         }
     }
 
     &__square {
         flex: 0 0 auto;
-        height: 1.2rem;
-        width: 1.2rem;
-        border: 1px solid $mainColor;
-        margin-right: 1rem;
+        height: 2rem;
+        width: 2rem;
+        border: 1px solid #d6dbdc;
+        margin-right: 1.4rem;
         background-position: center;
-        background-size: 85%;
+        background-size: 65%;
         background-repeat: no-repeat;
+        border-radius: 0.4rem;
+
+        @media (max-width: $md3+px) {
+            margin-right: 10px;
+        }
     }
 
     &__text {
         font-weight: 400;
-        font-size: 14px;
-        line-height: 1.5em;
+        font-size: 1.6rem;
+        line-height: 1.25em;
+
+        @media (max-width: $md3+px) {
+            font-size: 13px;
+            line-height: 14px;
+        }
     }
 }
 
@@ -219,5 +265,7 @@
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    .iti__flag {background-image: url("../img/flags/flags@2x.png");}
-  }
+    .iti__flag {
+        background-image: url("../img/flags/flags@2x.png");
+    }
+}
