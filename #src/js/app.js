@@ -356,6 +356,7 @@ class App {
 		@@include('../common/promo-header/promo-header.js');
 		@@include('../common/border-dashed/border-dashed.js');
 		@@include('../common/card/card.js');
+		@@include('../common/categories-box/categories-box.js');
 	}
 
 }

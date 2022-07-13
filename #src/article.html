@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" data-set-font-size>
+@@include('_head.html',{
+"title": "auto4export"
+})
+
+<body>
+    <div class="_preload-body"></div>
+    <!-- == TOP LINE ================== -->
+
+    @@include('common/header/_header.html',{
+    "mod": "header--user-authorized"
+    })
+    <!-- == // TOP LINE ================== -->
+
+    <main class="_page blog-page" data-padding-top-header-size>
+        <div class="p-50"></div>
+
+        @@include('common/breadcrumbs/_breadcrumbs.html', {
+        "arr": ['<a href="#">Home</a>', '<a href="#">Blogs</a>']
+        })
+
+        <div class="container">
+            <h1 class="title-1">911 GT3 with Manthey Kit Is Quicker at the 'Ring</h1>
+        </div>
+
+        <div class="article">
+            <div class="article__head">
+                <div class="container">
+                    <div class="article__meta blog-card__meta">
+                        <div class="blog-card__meta-item">
+                            <img class="img-svg" src="img/icons/calendar.svg" alt="">
+                            28 Jun 2022
+                        </div>
+                        <div class="blog-card__meta-item">
+                            <img class="img-svg" src="img/icons/eye.svg" alt="">
+                            1456
+                        </div>
+                        <div class="blog-card__meta-item">
+                            <img class="img-svg" src="img/icons/chat.svg" alt="">
+                            23
+                        </div>
+
+                    </div>
+                    <div class="article__hero">
+                        <div class="article__hero-img border-rudius ibg">
+                            <img src="img/photo/article-hero-img.jpg" alt="">
+                        </div>
+                        <ul class="share-list border-rudius">
+                            <li>
+                                <a href="#">
+                                    <img src="img/icons/facebook-color.svg" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="img/icons/twiter-color.svg" alt="">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="article__body">
+                <div class="container">
+                    <div class="blog-grid blog-grid--second">
+                        <div class="blog-grid__content">
+                            <div class="article__text text-content">
+                                <h3>
+                                    Currently only offered in Europe, the Manthey kit helped cut 4.19 seconds off the normal GT3's lap time on the Nürburgring Nordschleife.
+                                </h3>
+                                <ul>
+                                    <li>
+                                        <p>
+                                            The 2022 Porsche 911 GT3 with the Manthey Performance Kit is 4.19 seconds quicker around the Nürburgring than the normal GT3, according to Porsche.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            The Porsche-backed, dealer-installed Manthey kit includes a host of aerodynamic and chassis upgrades.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            Unfortunately, the Manthey kit is currently only available in Europe, but it's possible it will come stateside in the future.
+                                        </p>
+                                    </li>
+                                </ul>
+                                <hr>
+                                <p>
+                                    The Porsche 911 GT3 is a phenomenal track car. In stock form, Porsche says it lapped the famed Nürburgring Nordschleife (a.k.a. the North Loop) in just under seven minutes. Fitted with the new factory-backed Manthey Performance kit, the company says, the GT3 went around the 'Ring 4.19 seconds quicker, posting a 6:55.7 lap time. That's awesome. Less awesome is that the kit is currently only sold in Europe.
+                                </p>
+
+                                <div class="float-wrap">
+                                    <figure class="float-left">
+                                        <img src="img/photo/article-img-1.jpg" alt="">
+                                    </figure>
+                                    <p>A Porsche spokesperson told us the company is still considering making the Manthey setup available in the U.S., but a final decision is still up in the air. Meanwhile, lucky European customers who can afford a new 911 GT3 can expect to spend the equivalent of $48,000 U.S. on the dealer-installed setup. What performance upgrade does that money buy? We'll tell you.</p>
+                                </div>
+
+                                <p>The Manthey Performance kit was co-developed by Porsche engineers in Weissach and Manthey's Nordschleife specialists. The kit primarily focuses on the GT3's aerodynamics and chassis components, preserving the coupe's naturally aspirated 4.0-liter flat-six. The U.S.-spec engine produces 502 horsepower at 8400 rpm and 346 pound-feet of torque at 6100 rpm. Equipped with the seven-speed dual-clutch automatic transmission, the GT3 we tested hit 60 mph in 2.7 seconds, stopped from 70 mph in 133 feet, and generated 1.11 g of cornering grip.</p>
+                            
+                                <figure>
+                                    <img src="img/photo/article-img-2.jpg" alt="">
+                                    <figcaption>911 Carrera</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="blog-grid__side-column">
+                            @@include('common/categories-box/_categories-box.html')
+
+                            <form action="/">
+                                <div class="search-head">
+                                    <input type="text" class="search-head__input" placeholder="Quick search">
+                                    <button class="search-head__submit">
+                                        <img class="img-svg" src="img/icons/search.svg" alt="">
+                                    </button>
+                                </div>
+                            </form>
+
+                            @@include('common/question-box/_question-box.html')
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-70"></div>
+    </main>
+
+    <!-- == FOOTER ================== -->
+    @@include('common/footer/_footer.html',{})
+    <!-- == // FOOTER ================== -->
+
+    @@include('common/popup/_popup-question.html')
+    @@include('common/popup/_popup-message.html')
+
+    <script>
+        // Это пример вызова сообщения после срабатывания формы "Ask a Question", скрипт нужно будет удалить
+        let form = document.querySelector('#popup-question');
+        if (form) {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                window.popup.openMessage('#popup-message-1');
+            })
+        }
+    </script>
+
+    @@include('_js-bottom.html',{})
+</body>
+
+</html>

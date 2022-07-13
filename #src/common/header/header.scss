@@ -251,6 +251,78 @@
     &__social {
     }
 
+    &__action {
+        display: none;
+        padding-left: 0;
+        margin-bottom: 0;
+        margin-right: 5rem;
+        gap: 4rem;
+
+        & a {
+            display: block;
+        }
+
+        & label {
+            display: flex;
+            align-items: center;
+            color: $textColorSecondary;
+            margin-bottom: 0.1rem;
+            font-size: 1.4rem;
+            line-height: 1.21em;
+
+            & img,
+            & svg {
+                flex: 0 0 auto;
+                margin-right: 1rem;
+                width: 1.8rem;
+                height: auto;
+            }
+        }
+
+        & span {
+            font-weight: 700;
+            font-size: 1.8rem;
+            line-height: 1.22em;
+            color: #fff;
+        }
+    }
+
+    &__account {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        height: 4.8rem;
+        width: 4.8rem;
+        border-radius: 1rem;
+        margin-right: 1.8rem;
+        border: 1px solid rgba(#c9cfd1, 0.2);
+
+        @media (max-width: $md3+px) {
+            height: 36px;
+            width: 36px;
+            border-radius: 6px;
+        }
+
+        & img,
+        & svg {
+            width: 1.8rem;
+            height: auto;
+
+            @media (max-width: $md3+px) {
+                width: 13px;
+            }
+        }
+    }
+
+    &__make-deposit {
+        display: none !important;
+
+        &.btn-default {
+            min-height: 4.8rem;
+            min-width: 18.6rem;
+        }
+    }
+
     &--is-scroll {
         & .header__row-1 {
             & .header__body {
@@ -280,6 +352,63 @@
             height: 5rem;
         }
     }
+
+    &--user-authorized {
+        & .header__row-1 {
+            background-color: $secondColor;
+        }
+
+        & .header__action {
+            @media (min-width: 992px) {
+                display: flex;
+            }
+        }
+
+        & .header__account {
+            display: flex;
+
+            @media (max-width: $md3+px) {
+                margin-left: auto;
+                margin-right: 0;
+            }
+        }
+
+        & .header__make-deposit {
+            @media (min-width: 992px) {
+                display: flex !important;
+            }
+        }
+
+        & .header__btn-login {
+            display: none;
+        }
+
+        & .header__sing-up {
+            display: none;
+        }
+
+        & .header__burger {
+            background-color: $mainColor;
+        }
+
+        & .header__logo-mob {
+            display: none;
+        }
+
+        & .header__search {
+            @media (max-width: $md3+px) {
+                flex: 0 1 100%;
+            }
+        }
+
+        & .header__row-1 .header__body {
+            @media (max-width: $md3+px) {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+        }
+    }
 }
 
 .search-head {
@@ -299,6 +428,7 @@
         font-size: 1.6rem;
         line-height: 1em;
         color: $textColor;
+        border: 1px solid $borderColor;
 
         @media (max-width: $md3+px) {
             height: 36px;

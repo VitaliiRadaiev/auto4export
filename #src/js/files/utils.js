@@ -155,11 +155,13 @@ class Utils {
 					xhr.onload = () => {
 						if (xhr.readyState === xhr.DONE) {
 							if (xhr.status === 200) {
+
 								let svg = xhr.responseXML.documentElement;
 								images[i].parentNode.replaceChild(svg, images[i]);
-		
 								map.set(images[i].src, svg);
-	
+								forEach(i - 1)
+
+							} else {
 								forEach(i - 1)
 							}
 						}

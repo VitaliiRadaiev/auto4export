@@ -9,7 +9,7 @@
     <!-- == TOP LINE ================== -->
 
     @@include('common/header/_header.html',{
-    "mod": ""
+        "mod": "header--user-authorized"
     })
     <!-- == // TOP LINE ================== -->
     <div class="main-filter-mobile" data-main-filter-mobile>
@@ -42,20 +42,7 @@
                             </form>
                         </div>
                     </div>
-                    <div class="main-search__question">
-                        <div class="main-search__question-bg border-rudius ibg">
-                            <img src="img/photo/question-box-bg.jpg" alt="">
-                        </div>
-                        <div class="main-search__question-body">
-                            <h2 class="main-search__question-title">
-                                Do You <br> Have Any Questions? 
-                            </h2>
-                            <a href="#popup-question" data-popup="open-popup" class="main-search__question-btn btn-default">
-                                <img src="img/icons/question.svg" alt="">
-                                Ask Question
-                            </a>
-                        </div>
-                    </div>
+                    @@include('common/question-box/_question-box.html')
                 </div>
                 <div class="main-search__rigth">
                     <div class="main-search__row-1">

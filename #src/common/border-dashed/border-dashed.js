@@ -34,6 +34,13 @@ const setSize = (borderDashed, svg) => {
         d="M2 2 L 12 10 H${w-12} Q ${w-2} 15 ${w-2} 20 L ${w-2} ${h-12} Q ${w-8} ${h-2} ${w-12} ${h-2} L 12 ${h-2} Q 2 ${h-8} 2 ${h-12} z"
         stroke="#D4D9DB" stroke-width="3" stroke-linecap="round" stroke-dasharray="0.1 8" />
         `
+    } else if (borderDashed.dataset.borderDashed === 'simple') {
+        
+        svg.innerHTML = `
+        <path fill-rule="evenodd" clip-rule="evenodd"
+        d="M12 2 H${w-12} Q ${w-2} 6 ${w-2} 12 L ${w-2} ${h-12} Q ${w-6} ${h-2} ${w-12} ${h-2} L 12 ${h-2} Q 2 ${h-6} 2 ${h-12} L 2 12 Q 6 2 12 2"
+        stroke="#D4D9DB" stroke-width="3" stroke-linecap="round" stroke-dasharray="0.1 8" />
+        `
     }
 }
 

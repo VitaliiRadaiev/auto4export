@@ -52,10 +52,14 @@
 @import "../common/main-filter/main-filter";
 @import "../common/price-range/price-range";
 @import "../common/popup/popup";
+@import "../common/question-box/question-box";
+@import "../common/categories-box/categories-box";
 // ==== // COMMON BLOCKS =====================================================
 
 // ==== PAGES =====================================================
 @import "pages/home";
 @import "pages/search";
+@import "pages/blog";
+@import "pages/article";
 // ==== AND PAGES =====================================================
 

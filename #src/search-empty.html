@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" data-set-font-size>
+@@include('_head.html',{
+"title": "auto4export"
+})
+
+<body>
+    <div class="_preload-body"></div>
+    <!-- == TOP LINE ================== -->
+
+    @@include('common/header/_header.html',{
+    "mod": "header--user-authorized"
+    })
+    <!-- == // TOP LINE ================== -->
+    <div class="main-filter-mobile" data-main-filter-mobile>
+        <div class="main-filter-mobile__body">
+            <div class="main-filter-mobile__arrow">
+                <i class="icon-chevron-right"></i>
+            </div>
+            <div class="main-filter-mobile__inner"></div>
+        </div>
+    </div>
+
+    <main class="_page search-page" data-padding-top-header-size>
+        <div class="p-50"></div>
+
+        @@include('common/breadcrumbs/_breadcrumbs.html', {
+        "arr": ['<a href="#">Home</a>', '<a href="#">Search Page</a>', 'Vehicle Det']
+        })
+
+        <div class="container">
+            <h1 class="title-1">2022 Used Damaged Zhiguli for sale</h1>
+        </div>
+
+        <div class="container">
+            <div class="main-search">
+                <div class="main-search__left">
+                    <div class="main-search__main-filter">
+                        <div data-da=".main-filter-mobile__inner,991.98,last">
+                            <form action="/">
+                                @@include('common/main-filter/_main-filter.html')
+                            </form>
+                        </div>
+                    </div>
+                    @@include('common/question-box/_question-box.html')
+                </div>
+                <div class="main-search__rigth">
+                    <div class="main-search__row-1">
+                        @@include('common/search-top-filter/_search-top-filter.html')
+                    </div>
+                    <div class="main-search__row-2">
+                        <button type="button" class="main-search__btn-filter">
+                            <img class="img-svg" src="img/icons/filter.svg" alt="">
+                        </button>
+                        <div class="main-search__result">
+                            <span>Showing result:</span> 0
+                        </div>
+                        <div class="main-search__sort">
+                            <label>Sort by</label>
+                            <div class="select-wrap">
+                                <select name="" class="_select">
+                                    <option value="1" selected>Date</option>
+                                    <option value="2">Hign to Low</option>
+                                    <option value="3">Low to Hign</option>
+                                    <option value="3">Popular</option>
+                                    <option value="3">Recent</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="main-search__view-buttons">
+                            <button data-action="set-list" class="main-search__view-btn btn-set-list active"
+                                type="button">
+                                <img class="img-svg" src="img/icons/list.svg" alt="">
+                            </button>
+                            <button data-action="set-grid" class="main-search__view-btn btn-set-grid " type="button">
+                                <img class="img-svg" src="img/icons/grid.svg" alt="">
+                            </button>
+                        </div>
+                    </div>
+                    <div class="main-search__row-3">
+                        <div class="main-search__no-result">
+                            <div class="main-search__no-result-border" data-border-dashed="simple"></div>
+                            <div class="main-search__no-result-body">
+                                <img src="img/icons/search-no-result.svg" alt="">
+                                <p>Sorry, no results were found for your search</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-70"></div>
+    </main>
+
+    <!-- == FOOTER ================== -->
+    @@include('common/footer/_footer.html',{})
+    <!-- == // FOOTER ================== -->
+
+    @@include('common/popup/_popup-question.html')
+    @@include('common/popup/_popup-message.html')
+
+    <script>
+        // Это пример вызова сообщения после срабатывания формы "Ask a Question", скрипт нужно будет удалить
+        let form = document.querySelector('#popup-question');
+        if(form) {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                window.popup.openMessage('#popup-message-1');
+            })
+        }
+    </script>
+
+    @@include('_js-bottom.html',{})
+</body>
+
+</html>

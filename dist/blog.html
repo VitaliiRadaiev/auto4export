@@ -1,4 +1,98 @@
-<header class="header @@mod" data-header data-popup="add-right-padding">
+<!DOCTYPE html>
+<html lang="en" data-set-font-size>
+<head>
+	<meta charset="UTF-8">
+	<title>auto4export</title>
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+		body.page-is-load ._preload-body {
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		body.page-is-load ._preload-body:before {
+			display: none;
+		}
+
+		.mouse-dot {
+			font-size: 10px;
+			height: 2em;
+			width: 2em;
+			transition: transform, background-color, height, width .3s ease;
+			position: absolute;
+			z-index: 99999;
+			border-radius: 50%;
+			background-color: #222222;
+			transform: translate(-50%, -50%) scale(1);
+			pointer-events: none;
+			left: -30px;
+			top: -30px;
+			box-shadow: 0 0 15px rgba(243, 241, 239, 0.4);
+		}
+
+		.mouse-dot.hide {
+			transform: translate(-50%, -50%) scale(0);
+		}
+
+		.mouse-dot.hover {}
+
+		._preload-body {
+			background-color: #fff;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 999;
+			transition: all .6s ease .2s;
+		}
+
+		._preload-body:before {
+			position: absolute;
+			content: '';
+			z-index: 999;
+			top: 50%;
+			left: 50%;
+			height: 50px;
+			width: 50px;
+			border-radius: 50%;
+			border: 4px solid #6e6e6e;
+			border-right: 4px solid #fff;
+			transform: translate(-50%, -50%);
+			animation: preloadBody 2s linear infinite;
+		}
+
+		@keyframes preloadBody {
+			from {
+				transform: translate(-50%, -50%) rotate(0);
+			}
+
+			to {
+				transform: translate(-50%, -50%) rotate(360deg);
+			}
+		}
+	</style>
+	
+<script src="js/vendors.js"></script>
+<script src="js/app.js"></script>
+<!-- <script
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7Q82l2QjSzJJk1uUW3OzUBGPTlbk8w1g&callback=initMap&libraries=&v=weekly"
+defer
+></script> -->
+</head>
+
+<body>
+    <div class="_preload-body"></div>
+    <!-- == TOP LINE ================== -->
+
+    <header class="header header--user-authorized" data-header data-popup="add-right-padding">
     <div class="header__row-1">
         <div class="header__body container">
             <div class="header__logo">
@@ -817,3 +911,583 @@
         </div>
     </div>
 </div>
+    <!-- == // TOP LINE ================== -->
+
+    <main class="_page blog-page" data-padding-top-header-size>
+        <div class="p-50"></div>
+
+        <div class="container">
+    <ul class="breadcrumbs">
+         <li><a href="#">Home</a></li> <li><a href="#">Blogs</a></li>
+    </ul>
+</div>
+
+        <div class="blog">
+            <div class="blog__head">
+                <div class="container">
+                    <div class="blog-hero border-rudius">
+                        <div class="blog-hero__text-wrap">
+                            <h1 class="blog-hero__title">
+                                911 GT3 with Manthey Kit Is Quicker at the 'Ring
+                            </h1>
+                            <a href="#" class="link">More</a>
+                        </div>
+                        <div class="blog-hero__img ibg">
+                            <img src="img/photo/blog-hero-img.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="blog__body">
+                <div class="container">
+                    <div class="blog-grid">
+                        <div class="blog-grid__content">
+                            <ul class="blog-list">
+                                <li>
+                                    <a href="#" class="blog-card not-hover">
+                                        <div class="blog-card__img border-rudius ibg">
+                                            <img src="img/photo/blog-card-img-1.jpg" alt="">
+                                        </div>
+                                        <div class="blog-card__inner">
+                                            <h4 class="blog-card__title">
+                                                NHTSA Looking into Ford Bronco Engine Failures
+                                            </h4>
+                                            <div class="blog-card__text text-content">
+                                                <p>
+                                                    The ultra-popular Ford Bronco is now being investigated for a possible recall after 32 owners complained that their 2021 model SUVs stopped running suddenly and would not restart. The National Highway Traffic Safety Administration's Office of Defects Investigation is currently at the stage of reviewing three separate petitions filed in March asking for an investigation into the issue.
+                                                </p>
+                                            </div>
+                                            <div class="blog-card__meta">
+                                                <div class="blog-card__meta-item">
+                                                    <img class="img-svg" src="img/icons/calendar.svg" alt="">
+                                                    28 Jun 2022
+                                                </div>
+                                                <div class="blog-card__meta-item">
+                                                    <img class="img-svg" src="img/icons/eye.svg" alt="">
+                                                    1456
+                                                </div>
+                                                <div class="blog-card__meta-item">
+                                                    <img class="img-svg" src="img/icons/chat.svg" alt="">
+                                                    23
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="blog-card not-hover">
+                                        <div class="blog-card__img border-rudius ibg">
+                                            <img src="img/photo/blog-card-img-2.jpg" alt="">
+                                        </div>
+                                        <div class="blog-card__inner">
+                                            <h4 class="blog-card__title">Schedoni Ferrari F50 Luggage: Today's Auction Pick</h4>
+                                            <div class="blog-card__text text-content">
+                                                <p>
+                                                    Maybe you want this for your Ferrari. Maybe this is as close as you're ever going to get to a Ferrari. Either way, these bags are stylish. Second only to cold-starting a 12-cylinder Ferrari is sinking into the driver's seat and taking a long, deep inhale, preferably before any unburned gas enters the cabin. It's the leather. Rich, aromatic, and impossibly supple, Italian leather is as intoxicating as the country's fashion, design, art, and food. Of course, it's expensive as hell.
+                                                </p>
+                                            </div>
+                                            <div class="blog-card__meta">
+                                                <div class="blog-card__meta-item">
+                                                    <img class="img-svg" src="img/icons/calendar.svg" alt="">
+                                                    28 Jun 2022
+                                                </div>
+                                                <div class="blog-card__meta-item">
+                                                    <img class="img-svg" src="img/icons/eye.svg" alt="">
+                                                    1456
+                                                </div>
+                                                <div class="blog-card__meta-item">
+                                                    <img class="img-svg" src="img/icons/chat.svg" alt="">
+                                                    23
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="blog-card not-hover">
+                                        <div class="blog-card__img border-rudius ibg">
+                                            <img src="img/photo/blog-card-img-3.jpg" alt="">
+                                        </div>
+                                        <div class="blog-card__inner">
+                                            <h4 class="blog-card__title">
+                                                2022 Mercedes-Benz EQB Electric SUV Pricing Announced
+                                            </h4>
+                                            <div class="blog-card__text text-content">
+                                                <p>
+                                                    The boxy electric crossover based on the gas-powered GLB will start at $56,800 for the 225-hp single-motor variant. Last year, Mercedes unveiled the EQB, an electric crossover derived from the boxy, compact GLB. The EQB shares much of its chassis with its gasoline-powered brother but trades the four-cylinder engine for a 66.5-kWh battery and either a single or dual-motor setup. Now Mercedes-Benz has revealed pricing information for the 2022 EQB before it goes on sale later this year.
+                                                </p>
+                                            </div>
+                                            <div class="blog-card__meta">
+                                                <div class="blog-card__meta-item">
+                                                    <img class="img-svg" src="img/icons/calendar.svg" alt="">
+                                                    28 Jun 2022
+                                                </div>
+                                                <div class="blog-card__meta-item">
+                                                    <img class="img-svg" src="img/icons/eye.svg" alt="">
+                                                    1456
+                                                </div>
+                                                <div class="blog-card__meta-item">
+                                                    <img class="img-svg" src="img/icons/chat.svg" alt="">
+                                                    23
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="blog-card not-hover">
+                                        <div class="blog-card__img border-rudius ibg">
+                                            <img src="img/photo/blog-card-img-4.jpg" alt="">
+                                        </div>
+                                        <div class="blog-card__inner">
+                                            <h4 class="blog-card__title">Buick Electra-X Concept Gives Hints about the Future Electric Sub-Brand</h4>
+                                            <div class="blog-card__text text-content">
+                                                <p>
+                                                    Designed in and for China, the Electra-X bears a futuristic design that could appear on the first SUV from Buick’s upcoming sub-brand. Buick has become a bit of an afterthought in the United States, with sales tapering off since the late 1990s. Meanwhile, the premium American brand has become a hit over in China. Over a million Buicks were sold in China as recently as 2018 (just over 200,000 Buicks found homes stateside that year), and Buick has registered more than 10 million sales there since its arrival in 1998. Given Buick's significance in that market, the company has now previewed its electric future for China with the Electra-X concept, which may also hint at what’s coming for the recently announced Electra sub-brand in the U.S.
+                                                </p>
+                                            </div>
+                                            <div class="blog-card__meta">
+                                                <div class="blog-card__meta-item">
+                                                    <img class="img-svg" src="img/icons/calendar.svg" alt="">
+                                                    28 Jun 2022
+                                                </div>
+                                                <div class="blog-card__meta-item">
+                                                    <img class="img-svg" src="img/icons/eye.svg" alt="">
+                                                    1456
+                                                </div>
+                                                <div class="blog-card__meta-item">
+                                                    <img class="img-svg" src="img/icons/chat.svg" alt="">
+                                                    23
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="blog-card not-hover">
+                                        <div class="blog-card__img border-rudius ibg">
+                                            <img src="img/photo/blog-card-img-5.jpg" alt="">
+                                        </div>
+                                        <div class="blog-card__inner">
+                                            <h4 class="blog-card__title">
+                                                2023 Polestar 2 BST Edition 270 Is a 'Star with a Stripe and Go-Fast Parts
+                                            </h4>
+                                            <div class="blog-card__text text-content">
+                                                <p>
+                                                    Even when equipped with the optional Performance pack, the 2023 Polestar 2 hardly gives off race-car vibes. That changes with the introduction of the limited-production BST edition 270, which is available with a single matte-black stripe and the number "2" on the hood. It doesn't get much racier than that. Well, actually it does.
+                                                </p>
+                                            </div>
+                                            <div class="blog-card__meta">
+                                                <div class="blog-card__meta-item">
+                                                    <img class="img-svg" src="img/icons/calendar.svg" alt="">
+                                                    28 Jun 2022
+                                                </div>
+                                                <div class="blog-card__meta-item">
+                                                    <img class="img-svg" src="img/icons/eye.svg" alt="">
+                                                    1456
+                                                </div>
+                                                <div class="blog-card__meta-item">
+                                                    <img class="img-svg" src="img/icons/chat.svg" alt="">
+                                                    23
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="blog-card not-hover">
+                                        <div class="blog-card__img border-rudius ibg">
+                                            <img src="img/photo/blog-card-img-6.jpg" alt="">
+                                        </div>
+                                        <div class="blog-card__inner">
+                                            <h4 class="blog-card__title">
+                                                2023 BMW X1 Revealed with a Characterful New Design
+                                            </h4>
+                                            <div class="blog-card__text text-content">
+                                                <p>
+                                                    The new X1 has an almost cartoonish look and starts at $39,595 for the 241-hp xDrive28i model set to arrive in the U.S. late this year. BMW is showing off the new X1, and the small crossover's new look is eye-catching. With its large kidney grilles, angular surfaces, and large black plastic cladding, it's certainly more characterful than its predecessor, although we're not sure if we're sold on the exaggerated design. It's longer, wider, and taller than before and has a longer wheelbase, which should result in more interior space for passengers and cargo.
+                                                </p>
+                                            </div>
+                                            <div class="blog-card__meta">
+                                                <div class="blog-card__meta-item">
+                                                    <img class="img-svg" src="img/icons/calendar.svg" alt="">
+                                                    28 Jun 2022
+                                                </div>
+                                                <div class="blog-card__meta-item">
+                                                    <img class="img-svg" src="img/icons/eye.svg" alt="">
+                                                    1456
+                                                </div>
+                                                <div class="blog-card__meta-item">
+                                                    <img class="img-svg" src="img/icons/chat.svg" alt="">
+                                                    23
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+
+                            
+<div class="pagination">
+	<ul class="pagination__list">
+		<li>
+			<a href="" class="pagination__arrow pagination__arrow--prev disabled">
+				Previous
+			</a>
+		</li>
+		<li>
+			<a href="#" class="pagination__item active">1</a>
+		</li>
+		<li>
+			<a href="#" class="pagination__item">2</a>
+		</li>
+		<li>
+			<a href="#" class="pagination__item">3</a>
+		</li>
+		<li class="dots">
+			...
+		</li>
+		<li>
+			<a href="" class="pagination__arrow pagination__arrow--next">
+				Next
+			</a>
+		</li>
+	</ul>
+</div>
+                        </div>
+                        <div class="blog-grid__side-column">
+                            <div class="categories-box border-rudius" data-categories-box>
+    <div class="categories-box__border" data-border-dashed="simple"></div>
+    <div class="categories-box__body">
+        <h2 class="categories-box__title">Categories</h2>
+        <div class="categories-box__list-wrap">
+            <ul class="categories-box__list">
+                <li>
+                    <a href="#" class="active">All</a>
+                </li>
+                <li>
+                    <a href="#">Company</a>
+                </li>
+                <li>
+                    <a href="#">Products</a>
+                </li>
+                <li>
+                    <a href="#">News & Reviews</a>
+                </li>
+                <li>
+                    <a href="#">Technology</a>
+                </li>
+                <li>
+                    <a href="#">Motorsports</a>
+                </li>
+                <li>
+                    <a href="#">History</a>
+                </li>
+                <li>
+                    <a href="#">Christophorus</a>
+                </li>
+                <li>
+                    <a href="#">Media Search</a>
+                </li>
+                <li>
+                    <a href="#">360°</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+                            <form action="/">
+                                <div class="search-head">
+                                    <input type="text" class="search-head__input" placeholder="Quick search">
+                                    <button class="search-head__submit">
+                                        <img class="img-svg" src="img/icons/search.svg" alt="">
+                                    </button>
+                                </div>
+                            </form>
+
+                            <div class="question-box">
+    <div class="question-box__bg border-rudius ibg">
+        <img src="img/photo/question-box-bg.jpg" alt="">
+    </div>
+    <div class="question-box__body">
+        <h2 class="question-box__title">
+            Do You <br> Have Any Questions? 
+        </h2>
+        <a href="#popup-question" data-popup="open-popup" class="question-box__btn btn-default">
+            <img src="img/icons/question.svg" alt="">
+            Ask Question
+        </a>
+    </div>
+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-70"></div>
+    </main>
+
+    <!-- == FOOTER ================== -->
+    <footer class="footer" data-footer>
+    <div class="footer__bg">
+        <picture>
+            <source srcset="img/photo/footer-bg.jpg" media="(min-width: 992px)">
+            <img src="img/photo/footer-bg-tablet.jpg" alt="img">
+        </picture>
+    </div>
+    <div class="footer__body container">
+        <div class="footer__row-1" data-spoller="one" data-spoller-mob>
+            <div class="footer__col footer__col-1 footer__drop-down-mob">
+                <div class="footer__title" data-spoller-trigger>
+                    <a href="#">Vehicle Finder</a>
+                </div>
+                <div class="footer__list-wrap footer__list-wrap-col-1">
+                    <ul class="footer__list">
+                        <li>
+                            <a href="#">Cars</a>
+                        </li>
+                        <li>
+                            <a href="#">Trucks</a>
+                        </li>
+                        <li>
+                            <a href="#">ATV</a>
+                        </li>
+                        <li>
+                            <a href="#">Motorcycle</a>
+                        </li>
+                        <li>
+                            <a href="#">Boats</a>
+                        </li>
+                        <li>
+                            <a href="#">RV</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__col footer__col-2">
+                <div class="footer__title">
+                </div>
+                <ul class="footer__list" data-da=".footer__list-wrap-col-1,991.98,last">
+                    <li>
+                        <a href="#">Construction Equipment</a>
+                    </li>
+                    <li>
+                        <a href="#">Buses</a>
+                    </li>
+                    <li>
+                        <a href="#">Snowmobiles</a>
+                    </li>
+                    <li>
+                        <a href="#">Trailers</a>
+                    </li>
+                    <li>
+                        <a href="#">Jet Ski</a>
+                    </li>
+                    <li>
+                        <a href="#">Other</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__col footer__col-3 footer__drop-down-mob" data-da=".footer__col-2,991.98,first">
+                <div class="footer__title" data-spoller-trigger>
+                    <a href="#">Live Auctions</a>
+                </div>
+                <div class="footer__list-wrap">
+                    <ul class="footer__list">
+                        <li>
+                            <a href="#">By Locations</a>
+                        </li>
+                        <li>
+                            <a href="#">Live Auctions</a>
+                        </li>
+                        <li>
+                            <a href="#">Auctions Calendar</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__col footer__col-4 footer__drop-down-mob" data-da=".footer__col-2,991.98,last">
+                <div class="footer__title" data-spoller-trigger>
+                    <a href="#">Support</a>
+                </div>
+                <div class="footer__list-wrap footer__list-wrap-col-4">
+                    <ul class="footer__list">
+                        <li>
+                            <a href="#">How to Buy</a>
+                        </li>
+                        <li>
+                            <a href="#">Shipping</a>
+                        </li>
+                        <li>
+                            <a href="#">Fee Calculator</a>
+                        </li>
+                        <li>
+                            <a href="#">Faqs</a>
+                        </li>
+                        <li>
+                            <a href="#">Blogs</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__col footer__col-5">
+                <div class="footer__title">
+                </div>
+                <ul class="footer__list" data-da=".footer__list-wrap-col-4,991.98,last">
+                    <li>
+                        <a href="#">About Us</a>
+                    </li>
+                </ul>
+
+                <div data-da=".contact-head__dropdown-box-row-3,991.98,last">
+                    <ul class="social">
+                        <li>
+                            <a href="#">
+                                <img src="img/icons/facebook.svg" alt="" class="img-svg">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/icons/instagram.svg" alt="" class="img-svg">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/icons/youtube.svg" alt="" class="img-svg">
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="footer__logo">
+                        <a href="#">
+                            <img src="img/logo/footer-logo.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__col footer__col-6">
+                <div class="footer__title">
+                    <a href="#">Contacts</a>
+                </div>
+                <div class="contact-head">
+                    <div class="contact-head__dropdown-box">
+                        <div class="contact-head__dropdown-box-row contact-head__dropdown-box-row-1">
+                            <a href="" class="contact-head__phone">
+                                <img src="img/icons/phone.svg" alt="" class="img-svg">
+                                +1 (770) 544-70-03
+                            </a>
+                            <a href="" class="contact-head__phone">
+                                <img src="img/icons/phone.svg" alt="" class="img-svg">
+                                +1 (850) 319-34-67
+                            </a>
+                        </div>
+                        <div class="contact-head__dropdown-box-row contact-head__dropdown-box-row-2">
+                            <div class="contact-head__address">
+                                <img src="img/icons/local.svg" alt="" class="img-svg">
+                                Bid N Drive Inc. <br>
+                                2305 Fourth st., <br>
+                                Tucker, GA 30084
+                            </div>
+                            <a href="#" class="contact-head__mail">sales@auto4export.com</a>
+                        </div>
+                        <div class="contact-head__dropdown-box-row contact-head__dropdown-box-row-3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__row-2">
+            <div class="footer__copy">Copyrights © 2021. All Rights Reserved</div>
+            <ul class="footer__payment-list">
+                <li>
+                    <a href="#">
+                        <img src="img/photo/payment-list-icon-1.svg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="img/photo/payment-list-icon-2.svg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="img/photo/payment-list-icon-3.svg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="img/photo/payment-list-icon-4.svg" alt="">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</footer>
+    <!-- == // FOOTER ================== -->
+
+    <div class="popup" id="popup-question">
+   
+	<div class="popup__body">
+		<div class="popup__content border-rudius">
+            <div class="popup__close" data-popup="close-popup">
+                <img src="img/icons/close.svg" alt="">
+            </div>
+
+            <form id="question" action="/">
+                <div class="form">
+                    <h2 class="form__title">Ask a Question</h2>
+                    <div class="form__items">
+                        <div class="form__item">
+                            <input type="text" class="input" placeholder="Your Name">
+                        </div>
+                        <div class="form__item">
+                            <input type="email" class="input" placeholder="Email">
+                        </div>
+                        <div class="form__item">
+                            <textarea class="textarea" placeholder="Your Question"></textarea>
+                        </div>
+                    </div>
+                    <div class="form__submit-wrap">
+                        <button type="submit" class="form__submit btn-default">
+                            <i class="icon-arrow-right"></i>
+                            Send
+                        </button>
+                    </div>
+                </div>
+            </form>
+		</div>
+	</div>
+</div>
+    <div class="popup" id="popup-message-1">
+	<div class="popup__body">
+		<div class="popup__content border-rudius">
+            <div class="popup__message">
+                <img src="img/icons/circle-check.svg" alt="">
+                <p>
+                    Thank you, your question has been sent
+                </p>
+            </div>
+		</div>
+	</div>
+</div>
+
+    <script>
+        // Это пример вызова сообщения после срабатывания формы "Ask a Question", скрипт нужно будет удалить
+        let form = document.querySelector('#popup-question');
+        if (form) {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                window.popup.openMessage('#popup-message-1');
+            })
+        }
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="js/jQueryScripts.min.js"></script>
+</body>
+
+</html>

@@ -1,4 +1,98 @@
-<header class="header @@mod" data-header data-popup="add-right-padding">
+<!DOCTYPE html>
+<html lang="en" data-set-font-size>
+<head>
+	<meta charset="UTF-8">
+	<title>auto4export</title>
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+		body.page-is-load ._preload-body {
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		body.page-is-load ._preload-body:before {
+			display: none;
+		}
+
+		.mouse-dot {
+			font-size: 10px;
+			height: 2em;
+			width: 2em;
+			transition: transform, background-color, height, width .3s ease;
+			position: absolute;
+			z-index: 99999;
+			border-radius: 50%;
+			background-color: #222222;
+			transform: translate(-50%, -50%) scale(1);
+			pointer-events: none;
+			left: -30px;
+			top: -30px;
+			box-shadow: 0 0 15px rgba(243, 241, 239, 0.4);
+		}
+
+		.mouse-dot.hide {
+			transform: translate(-50%, -50%) scale(0);
+		}
+
+		.mouse-dot.hover {}
+
+		._preload-body {
+			background-color: #fff;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 999;
+			transition: all .6s ease .2s;
+		}
+
+		._preload-body:before {
+			position: absolute;
+			content: '';
+			z-index: 999;
+			top: 50%;
+			left: 50%;
+			height: 50px;
+			width: 50px;
+			border-radius: 50%;
+			border: 4px solid #6e6e6e;
+			border-right: 4px solid #fff;
+			transform: translate(-50%, -50%);
+			animation: preloadBody 2s linear infinite;
+		}
+
+		@keyframes preloadBody {
+			from {
+				transform: translate(-50%, -50%) rotate(0);
+			}
+
+			to {
+				transform: translate(-50%, -50%) rotate(360deg);
+			}
+		}
+	</style>
+	
+<script src="js/vendors.js"></script>
+<script src="js/app.js"></script>
+<!-- <script
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7Q82l2QjSzJJk1uUW3OzUBGPTlbk8w1g&callback=initMap&libraries=&v=weekly"
+defer
+></script> -->
+</head>
+
+<body>
+    <div class="_preload-body"></div>
+    <!-- == TOP LINE ================== -->
+
+    <header class="header header--user-authorized" data-header data-popup="add-right-padding">
     <div class="header__row-1">
         <div class="header__body container">
             <div class="header__logo">
@@ -817,3 +911,436 @@
         </div>
     </div>
 </div>
+    <!-- == // TOP LINE ================== -->
+
+    <main class="_page blog-page" data-padding-top-header-size>
+        <div class="p-50"></div>
+
+        <div class="container">
+    <ul class="breadcrumbs">
+         <li><a href="#">Home</a></li> <li><a href="#">Blogs</a></li>
+    </ul>
+</div>
+
+        <div class="container">
+            <h1 class="title-1">911 GT3 with Manthey Kit Is Quicker at the 'Ring</h1>
+        </div>
+
+        <div class="article">
+            <div class="article__head">
+                <div class="container">
+                    <div class="article__meta blog-card__meta">
+                        <div class="blog-card__meta-item">
+                            <img class="img-svg" src="img/icons/calendar.svg" alt="">
+                            28 Jun 2022
+                        </div>
+                        <div class="blog-card__meta-item">
+                            <img class="img-svg" src="img/icons/eye.svg" alt="">
+                            1456
+                        </div>
+                        <div class="blog-card__meta-item">
+                            <img class="img-svg" src="img/icons/chat.svg" alt="">
+                            23
+                        </div>
+
+                    </div>
+                    <div class="article__hero">
+                        <div class="article__hero-img border-rudius ibg">
+                            <img src="img/photo/article-hero-img.jpg" alt="">
+                        </div>
+                        <ul class="share-list border-rudius">
+                            <li>
+                                <a href="#">
+                                    <img src="img/icons/facebook-color.svg" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="img/icons/twiter-color.svg" alt="">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="article__body">
+                <div class="container">
+                    <div class="blog-grid blog-grid--second">
+                        <div class="blog-grid__content">
+                            <div class="article__text text-content">
+                                <h3>
+                                    Currently only offered in Europe, the Manthey kit helped cut 4.19 seconds off the normal GT3's lap time on the Nürburgring Nordschleife.
+                                </h3>
+                                <ul>
+                                    <li>
+                                        <p>
+                                            The 2022 Porsche 911 GT3 with the Manthey Performance Kit is 4.19 seconds quicker around the Nürburgring than the normal GT3, according to Porsche.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            The Porsche-backed, dealer-installed Manthey kit includes a host of aerodynamic and chassis upgrades.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            Unfortunately, the Manthey kit is currently only available in Europe, but it's possible it will come stateside in the future.
+                                        </p>
+                                    </li>
+                                </ul>
+                                <hr>
+                                <p>
+                                    The Porsche 911 GT3 is a phenomenal track car. In stock form, Porsche says it lapped the famed Nürburgring Nordschleife (a.k.a. the North Loop) in just under seven minutes. Fitted with the new factory-backed Manthey Performance kit, the company says, the GT3 went around the 'Ring 4.19 seconds quicker, posting a 6:55.7 lap time. That's awesome. Less awesome is that the kit is currently only sold in Europe.
+                                </p>
+
+                                <div class="float-wrap">
+                                    <figure class="float-left">
+                                        <img src="img/photo/article-img-1.jpg" alt="">
+                                    </figure>
+                                    <p>A Porsche spokesperson told us the company is still considering making the Manthey setup available in the U.S., but a final decision is still up in the air. Meanwhile, lucky European customers who can afford a new 911 GT3 can expect to spend the equivalent of $48,000 U.S. on the dealer-installed setup. What performance upgrade does that money buy? We'll tell you.</p>
+                                </div>
+
+                                <p>The Manthey Performance kit was co-developed by Porsche engineers in Weissach and Manthey's Nordschleife specialists. The kit primarily focuses on the GT3's aerodynamics and chassis components, preserving the coupe's naturally aspirated 4.0-liter flat-six. The U.S.-spec engine produces 502 horsepower at 8400 rpm and 346 pound-feet of torque at 6100 rpm. Equipped with the seven-speed dual-clutch automatic transmission, the GT3 we tested hit 60 mph in 2.7 seconds, stopped from 70 mph in 133 feet, and generated 1.11 g of cornering grip.</p>
+                            
+                                <figure>
+                                    <img src="img/photo/article-img-2.jpg" alt="">
+                                    <figcaption>911 Carrera</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="blog-grid__side-column">
+                            <div class="categories-box border-rudius" data-categories-box>
+    <div class="categories-box__border" data-border-dashed="simple"></div>
+    <div class="categories-box__body">
+        <h2 class="categories-box__title">Categories</h2>
+        <div class="categories-box__list-wrap">
+            <ul class="categories-box__list">
+                <li>
+                    <a href="#" class="active">All</a>
+                </li>
+                <li>
+                    <a href="#">Company</a>
+                </li>
+                <li>
+                    <a href="#">Products</a>
+                </li>
+                <li>
+                    <a href="#">News & Reviews</a>
+                </li>
+                <li>
+                    <a href="#">Technology</a>
+                </li>
+                <li>
+                    <a href="#">Motorsports</a>
+                </li>
+                <li>
+                    <a href="#">History</a>
+                </li>
+                <li>
+                    <a href="#">Christophorus</a>
+                </li>
+                <li>
+                    <a href="#">Media Search</a>
+                </li>
+                <li>
+                    <a href="#">360°</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+                            <form action="/">
+                                <div class="search-head">
+                                    <input type="text" class="search-head__input" placeholder="Quick search">
+                                    <button class="search-head__submit">
+                                        <img class="img-svg" src="img/icons/search.svg" alt="">
+                                    </button>
+                                </div>
+                            </form>
+
+                            <div class="question-box">
+    <div class="question-box__bg border-rudius ibg">
+        <img src="img/photo/question-box-bg.jpg" alt="">
+    </div>
+    <div class="question-box__body">
+        <h2 class="question-box__title">
+            Do You <br> Have Any Questions? 
+        </h2>
+        <a href="#popup-question" data-popup="open-popup" class="question-box__btn btn-default">
+            <img src="img/icons/question.svg" alt="">
+            Ask Question
+        </a>
+    </div>
+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-70"></div>
+    </main>
+
+    <!-- == FOOTER ================== -->
+    <footer class="footer" data-footer>
+    <div class="footer__bg">
+        <picture>
+            <source srcset="img/photo/footer-bg.jpg" media="(min-width: 992px)">
+            <img src="img/photo/footer-bg-tablet.jpg" alt="img">
+        </picture>
+    </div>
+    <div class="footer__body container">
+        <div class="footer__row-1" data-spoller="one" data-spoller-mob>
+            <div class="footer__col footer__col-1 footer__drop-down-mob">
+                <div class="footer__title" data-spoller-trigger>
+                    <a href="#">Vehicle Finder</a>
+                </div>
+                <div class="footer__list-wrap footer__list-wrap-col-1">
+                    <ul class="footer__list">
+                        <li>
+                            <a href="#">Cars</a>
+                        </li>
+                        <li>
+                            <a href="#">Trucks</a>
+                        </li>
+                        <li>
+                            <a href="#">ATV</a>
+                        </li>
+                        <li>
+                            <a href="#">Motorcycle</a>
+                        </li>
+                        <li>
+                            <a href="#">Boats</a>
+                        </li>
+                        <li>
+                            <a href="#">RV</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__col footer__col-2">
+                <div class="footer__title">
+                </div>
+                <ul class="footer__list" data-da=".footer__list-wrap-col-1,991.98,last">
+                    <li>
+                        <a href="#">Construction Equipment</a>
+                    </li>
+                    <li>
+                        <a href="#">Buses</a>
+                    </li>
+                    <li>
+                        <a href="#">Snowmobiles</a>
+                    </li>
+                    <li>
+                        <a href="#">Trailers</a>
+                    </li>
+                    <li>
+                        <a href="#">Jet Ski</a>
+                    </li>
+                    <li>
+                        <a href="#">Other</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__col footer__col-3 footer__drop-down-mob" data-da=".footer__col-2,991.98,first">
+                <div class="footer__title" data-spoller-trigger>
+                    <a href="#">Live Auctions</a>
+                </div>
+                <div class="footer__list-wrap">
+                    <ul class="footer__list">
+                        <li>
+                            <a href="#">By Locations</a>
+                        </li>
+                        <li>
+                            <a href="#">Live Auctions</a>
+                        </li>
+                        <li>
+                            <a href="#">Auctions Calendar</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__col footer__col-4 footer__drop-down-mob" data-da=".footer__col-2,991.98,last">
+                <div class="footer__title" data-spoller-trigger>
+                    <a href="#">Support</a>
+                </div>
+                <div class="footer__list-wrap footer__list-wrap-col-4">
+                    <ul class="footer__list">
+                        <li>
+                            <a href="#">How to Buy</a>
+                        </li>
+                        <li>
+                            <a href="#">Shipping</a>
+                        </li>
+                        <li>
+                            <a href="#">Fee Calculator</a>
+                        </li>
+                        <li>
+                            <a href="#">Faqs</a>
+                        </li>
+                        <li>
+                            <a href="#">Blogs</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__col footer__col-5">
+                <div class="footer__title">
+                </div>
+                <ul class="footer__list" data-da=".footer__list-wrap-col-4,991.98,last">
+                    <li>
+                        <a href="#">About Us</a>
+                    </li>
+                </ul>
+
+                <div data-da=".contact-head__dropdown-box-row-3,991.98,last">
+                    <ul class="social">
+                        <li>
+                            <a href="#">
+                                <img src="img/icons/facebook.svg" alt="" class="img-svg">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/icons/instagram.svg" alt="" class="img-svg">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/icons/youtube.svg" alt="" class="img-svg">
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="footer__logo">
+                        <a href="#">
+                            <img src="img/logo/footer-logo.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__col footer__col-6">
+                <div class="footer__title">
+                    <a href="#">Contacts</a>
+                </div>
+                <div class="contact-head">
+                    <div class="contact-head__dropdown-box">
+                        <div class="contact-head__dropdown-box-row contact-head__dropdown-box-row-1">
+                            <a href="" class="contact-head__phone">
+                                <img src="img/icons/phone.svg" alt="" class="img-svg">
+                                +1 (770) 544-70-03
+                            </a>
+                            <a href="" class="contact-head__phone">
+                                <img src="img/icons/phone.svg" alt="" class="img-svg">
+                                +1 (850) 319-34-67
+                            </a>
+                        </div>
+                        <div class="contact-head__dropdown-box-row contact-head__dropdown-box-row-2">
+                            <div class="contact-head__address">
+                                <img src="img/icons/local.svg" alt="" class="img-svg">
+                                Bid N Drive Inc. <br>
+                                2305 Fourth st., <br>
+                                Tucker, GA 30084
+                            </div>
+                            <a href="#" class="contact-head__mail">sales@auto4export.com</a>
+                        </div>
+                        <div class="contact-head__dropdown-box-row contact-head__dropdown-box-row-3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__row-2">
+            <div class="footer__copy">Copyrights © 2021. All Rights Reserved</div>
+            <ul class="footer__payment-list">
+                <li>
+                    <a href="#">
+                        <img src="img/photo/payment-list-icon-1.svg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="img/photo/payment-list-icon-2.svg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="img/photo/payment-list-icon-3.svg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="img/photo/payment-list-icon-4.svg" alt="">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</footer>
+    <!-- == // FOOTER ================== -->
+
+    <div class="popup" id="popup-question">
+   
+	<div class="popup__body">
+		<div class="popup__content border-rudius">
+            <div class="popup__close" data-popup="close-popup">
+                <img src="img/icons/close.svg" alt="">
+            </div>
+
+            <form id="question" action="/">
+                <div class="form">
+                    <h2 class="form__title">Ask a Question</h2>
+                    <div class="form__items">
+                        <div class="form__item">
+                            <input type="text" class="input" placeholder="Your Name">
+                        </div>
+                        <div class="form__item">
+                            <input type="email" class="input" placeholder="Email">
+                        </div>
+                        <div class="form__item">
+                            <textarea class="textarea" placeholder="Your Question"></textarea>
+                        </div>
+                    </div>
+                    <div class="form__submit-wrap">
+                        <button type="submit" class="form__submit btn-default">
+                            <i class="icon-arrow-right"></i>
+                            Send
+                        </button>
+                    </div>
+                </div>
+            </form>
+		</div>
+	</div>
+</div>
+    <div class="popup" id="popup-message-1">
+	<div class="popup__body">
+		<div class="popup__content border-rudius">
+            <div class="popup__message">
+                <img src="img/icons/circle-check.svg" alt="">
+                <p>
+                    Thank you, your question has been sent
+                </p>
+            </div>
+		</div>
+	</div>
+</div>
+
+    <script>
+        // Это пример вызова сообщения после срабатывания формы "Ask a Question", скрипт нужно будет удалить
+        let form = document.querySelector('#popup-question');
+        if (form) {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                window.popup.openMessage('#popup-message-1');
+            })
+        }
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="js/jQueryScripts.min.js"></script>
+</body>
+
+</html>
