@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" data-set-font-size>
+@@include('_head.html',{
+"title": "auto4export"
+})
+
+<body>
+    <div class="_preload-body"></div>
+    <!-- == TOP LINE ================== -->
+
+    @@include('common/header/_header.html',{
+    "mod": "header--user-authorized"
+    })
+    <!-- == // TOP LINE ================== -->
+
+    <main class="_page card-detail-page" data-padding-top-header-size>
+        <div class="p-50"></div>
+
+        @@include('common/breadcrumbs/_breadcrumbs.html', {
+        "arr": ['<a href="#">Home</a>', '<a href="#">Vehicle Finder</a>', '<a href="#">Cars</a>', 'Chevrolet']
+        })
+
+        <div class="container">
+            <div class="card-detail-head">
+                <h1 class="card-detail-head__title">2013 Chevrolet Impala Ls 3.6L</h1>
+                <ul class="card__state-icons">
+                    <li>
+                        <div class="card__rating" data-car-rating="4.8">4.8</div>
+                    </li>
+                    <li>
+                        <div class="card__state-icon" style="background-color: #1886C4;">
+                            <img src="img/photo/steering-wheel.svg" alt="">
+                        </div>
+                        <div class="card__state-tooltipe">
+                            <h5 style="color: #1886C4;">Run and Drive</h5>
+                            <p>
+                                Vehicle would start under its own operation.
+                            </p>
+                            <p>
+                                Vehicle transmission would shift into gear.
+                            </p>
+                            <p>
+                                Vehicle can move forward under its own power.
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card__state-icon" style="background-color: #5BC749;">
+                            <img src="img/photo/carsharing.svg" alt="">
+                        </div>
+                        <div class="card__state-tooltipe">
+                            <h5 style="color: #5BC749;">Clean Title</h5>
+                            <p>
+                                The car has clean documents. This means that the car is allowed to move in the USA.
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+
+                <button type="button" class="card__star"> 
+                    <!-- class="card__star active" -->
+                    <img class="img-svg" src="img/icons/star.svg" alt="">
+                </button>
+            </div>
+        </div>
+
+        <div class="padding-wrap pt-0">
+            <div class="container">
+                <div class="car-detail-grid">
+                    <div class="car-detail-grid__col-1">
+                        @@include('common/car-detail-images/_car-detail-images.html')
+
+                        <div>
+                            <div class="p-70"></div>
+                            <h2 class="car-detail-grid__title">FAQ</h2>
+                            <ul class="accordion" data-spoller>
+                                <li>
+                                    <div class="accordion__title" data-spoller-trigger>How do I start bidding?</div>
+                                    <div class="accordion__text text-content">
+                                        <p>
+                                            It’s completely free! There is no cost to join with a Standard Membership.
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="accordion__title" data-spoller-trigger>How much does it cost to join?</div>
+                                    <div class="accordion__text text-content">
+                                        <p>
+                                            It’s completely free! There is no cost to join with a Standard Membership.
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="accordion__title" data-spoller-trigger>Where are your vehicles located?</div>
+                                    <div class="accordion__text text-content">
+                                        <p>
+                                            It’s completely free! There is no cost to join with a Standard Membership.
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="accordion__title" data-spoller-trigger>How do I get started?</div>
+                                    <div class="accordion__text text-content">
+                                        <p>
+                                            It’s completely free! There is no cost to join with a Standard Membership.
+                                        </p>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, praesentium odio consequatur aspernatur ab alias dignissimos temporibus in id non unde accusamus quam deserunt. Blanditiis voluptatem veritatis consectetur voluptatibus necessitatibus?
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="accordion__title" data-spoller-trigger>Do you offer shipping?</div>
+                                    <div class="accordion__text text-content">
+                                        <p>
+                                            It’s completely free! There is no cost to join with a Standard Membership.
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="car-detail-grid__col-2" data-set-grid="table">
+                        <div class="car-detail-grid__row">
+                            <h2 class="car-detail-grid__title">Venicle Information</h2>
+                            <ul class="simple-table-list">
+                                <li>
+                                    <label>LOT:</label>
+                                    <p data-copy >30874242</p>
+                                </li>
+                                <li>
+                                    <label>VIN:</label>
+                                    <p data-copy >1FALP6536WK134349</p>
+                                </li>
+                                <li>
+                                    <label>Mileage:</label>
+                                    <p>138,412 </p>
+                                </li>
+                                <li>
+                                    <label>Keys:</label>
+                                    <p>46 861 Actual </p>
+                                </li>
+                                <li>
+                                    <label>Damage:</label>
+                                    <p>Run and Drive </p>
+                                </li>
+                                <li>
+                                    <label>Engine:</label>
+                                    <p>NORMAL WEAR</p>
+                                </li>
+                                <li>
+                                    <label>Fuel:</label>
+                                    <p>NORMAL WEAR</p>
+                                </li>
+                                <li>
+                                    <label>Transmission:</label>
+                                    <p>$28,190 USD</p>
+                                </li>
+                                <li>
+                                    <label>Lot Quality:</label>
+                                    <p>SEDAN 4DR</p>
+                                </li>
+                                <li>
+                                    <label>Color:</label>
+                                    <p>CAR WHITE 2.5L 4</p>
+                                </li>
+                                <li>
+                                    <label>Run and Drive:</label>
+                                    <p>4</p>
+                                </li>
+                                <li>
+                                    <label>Title:</label>
+                                    <p>AUTOMATIC</p>
+                                </li>
+                                <li>
+                                    <label>Cycinder:</label>
+                                    <p>Front-wheel Drive</p>
+                                </li>
+                                <li>
+                                    <label>Loss:</label>
+                                    <p class="text-primary">YES</p>
+                                </li>
+                                <li>
+                                    <label>Key:</label>
+                                    <p class="text-secondary">There are no Notes for this Lot</p>
+                                </li>
+                                <li>
+                                    <label>Start Date:</label>
+                                    <p class="text-secondary">There are no Notes for this Lot</p>
+                                </li>
+                                <li>
+                                    <label>ACV:</label>
+                                    <p class="text-secondary">There are no Notes for this Lot</p>
+                                </li>
+                                <li>
+                                    <label>Sale Document:</label>
+                                    <p class="text-secondary">There are no Notes for this Lot</p>
+                                </li>
+                                <li>
+                                    <label>Restraint System:</label>
+                                    <p class="text-secondary">There are no Notes for this Lot</p>
+                                </li>
+                                <li>
+                                    <label>Air Bags:</label>
+                                    <p class="text-secondary">There are no Notes for this Lot</p>
+                                </li>
+                                <li>
+                                    <label>Driver AirBag:</label>
+                                    <p class="text-primary">YES</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="car-detail-grid__row">
+                            <h2 class="car-detail-grid__title">Status Report</h2>
+                            <ul class="simple-table-list">
+                                <li>
+                                    <label>Condition Grade:</label>
+                                    <p>3 - Average</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="car-detail-grid__row">
+                            <h2 class="car-detail-grid__title">Options</h2>
+                            <ul class="simple-table-list">
+                                <li>
+                                    <label>Dual, Side</label>
+                                    <p>Hard Roof Top</p>
+                                </li>
+                                <li>
+                                    <label>Cloth</label>
+                                    <p>FM Radio</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="car-detail-grid__col-3">
+                        @@include('common/bid-card/_bid-card.html')
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="p-70"></div>
+    </main>
+
+    <!-- == FOOTER ================== -->
+    @@include('common/footer/_footer.html',{})
+    <!-- == // FOOTER ================== -->
+
+    @@include('_js-bottom.html',{})
+</body>
+
+</html>

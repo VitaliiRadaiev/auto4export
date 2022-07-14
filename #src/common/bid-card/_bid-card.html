@@ -1,0 +1,80 @@
+<form action="/">
+    <div class="bid-card">
+        <div class="bid-card__border" data-border-dashed="top-left"></div>
+        <div class="bid-card__body">
+            <div class="bid-card__row bid-card__row-1">
+                <div class="bid-card__status">
+                    <label>Bid Status</label>
+                    <p class="text-danger">OUTBID</p>
+                </div>
+            </div>
+            <div class="bid-card__row bid-card__row-2">
+                <ul class="bid-card__price card__prices">
+                    <li>
+                        <label>Current Bid</label>
+                        <p class="text-primary">$131</p>
+                    </li>
+                    <li>
+                        <label>Recommended Bid</label>
+                        <p class="text-success">$2,850</p>
+                    </li>
+                    <li>
+                        <label>Time Left</label>
+                        <p class="text-danger">00:00:56</p>
+                    </li>
+                </ul>
+
+                <ul class="simple-table-list">
+                    <li>
+                        <label>Location</label>
+                        <p>TN - Knoxville</p>
+                    </li>
+                </ul>
+
+                <div class="bid-card-value">
+                    <div class="bid-card-value__title">
+                        Place Your Maximum Bid <span>($25 Bid Increments)</span>
+                    </div>
+                    <div class="bid-card-value__body" data-min-value="131" data-increments="25">
+                        <div class="bid-card-value__btn minus"></div>
+                        <input type="text" class="bid-card-value__input">
+                        <div class="bid-card-value__btn plus"></div>
+                    </div>
+                </div>
+
+                <div class="bid-card__fee">
+                    <div class="bid-card__fee-title">Fee Estimator</div>
+                    <div class="bid-card__fee-list">
+                        <ul class="simple-table-list">
+                            <li>
+                                <label>Final Fee</label>
+                                <p>$131</p>
+                            </li>
+                            <li>
+                                <label>Auction Fee</label>
+                                <p>$131</p>
+                            </li>
+                            <li>
+                                <label>Transction Fee</label>
+                                <p>$131</p>
+                            </li>
+                            <li>
+                                <label>Documentation Fee</label>
+                                <p>$131</p>
+                            </li>
+                            <li>
+                                <label>Total Fee</label>
+                                <p>$131</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="bid-card__submit btn-default">
+                    <img src="img/icons/bid-now.svg" alt="">
+                    Place a Bid
+                </button>
+            </div>
+        </div>
+    </div>
+</form>

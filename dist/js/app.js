@@ -344,6 +344,7 @@ class App {
 			this.componentsScriptsBeforePageLoad();
 			this.initCopy();
 			this.initDatepicker();
+			this.initSetGrid();
 		});
 
 
@@ -1252,6 +1253,75 @@ if(topFilter) {
 		}
 	}
 
+	initSetGrid() {
+		let setGridElement = document.querySelector('[data-set-grid]');
+		if(setGridElement) {
+			let items = Array.from(setGridElement.children);
+
+			const checkHeight = (pushEl, container) => {
+				let containerItems = Array.from(container.children);
+				let containerItemsHeight = containerItems.reduce((previousValue, item) => {
+					return item.clientHeight + previousValue + 70;
+				}, 0);
+				if((pushEl.clientHeight + 70) < (container.clientHeight - containerItemsHeight)) {
+					return true;
+				} else {
+					return false;
+				}
+			}
+			const setGrid = () => {
+				if(document.documentElement.clientWidth > 991.98) {
+					if(setGridElement.classList.contains('_grid')) {
+						setGridElement.classList.remove('_grid');
+						setGridElement.append(...items);
+						setGridElement.querySelectorAll('.column').forEach(column => {
+							column.remove();
+						})
+					}
+					return
+				}
+				if(document.documentElement.clientWidth < 768) {
+					if(setGridElement.classList.contains('_grid')) {
+						setGridElement.classList.remove('_grid');
+						setGridElement.append(...items);
+						setGridElement.querySelectorAll('.column').forEach(column => {
+							column.remove();
+						})
+					}
+					return
+				}
+				if(!setGridElement.classList.contains('_grid')) {
+					if(items.length > 2) {
+						setGridElement.classList.add('_grid');
+						let col1 = document.createElement('div');
+						let col2 = document.createElement('div');
+						col1.className = 'column';
+						col2.className = 'column';
+						setGridElement.prepend(col2);
+						setGridElement.prepend(col1);
+						col1.append(items[0]);
+						col2.append(items[1]);
+						col2.append(items[2]);
+						let remainingItems  = items.slice(2);
+		
+						remainingItems.forEach(item => {
+							if(checkHeight(item, col2)) {
+								col2.append(item);
+							} else {
+								col1.append(item);
+							}
+						})
+					}
+				}
+
+			}
+
+			setGrid();
+
+			window.addEventListener('resize', setGrid);
+		}
+	}
+
 	componentsScriptsBeforePageLoad() {
 		let aboutPreview = document.querySelector('[data-about-preview]');
 if(aboutPreview) {
@@ -1935,6 +2005,43 @@ if(categoriesBox) {
         })
     }
 };
+		let carDetailImages = document.querySelector('[data-slider="car-detail-images"]');
+if (carDetailImages) {
+    let thumb = new Swiper(carDetailImages.querySelector('.car-detail-images__thumb .swiper'), {
+        slidesPerView: 6,
+        spaceBetween: 0,
+        speed: 600,
+        slidesPerGroup: 2,
+        lazy: {
+            loadPrevNext: true,
+        },
+        watchSlidesVisibility: true,
+        navigation: {
+            nextEl: carDetailImages.querySelector('.slider-btn.btn-next'),
+            prevEl: carDetailImages.querySelector('.slider-btn.btn-prev'),
+        },
+    });
+
+    let main = new Swiper(carDetailImages.querySelector('.car-detail-images__main .swiper'), {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        speed: 600,
+        preloadImages: false,
+        lazy: {
+            loadPrevNext: true,
+        },
+        pagination: {
+            el: carDetailImages.querySelector('.swiper-pagination'),
+            clickable: true,
+        },
+        watchSlidesVisibility: true,
+        thumbs: {
+            swiper: thumb,
+        },
+    });
+
+};
+		;
 	}
 
 }

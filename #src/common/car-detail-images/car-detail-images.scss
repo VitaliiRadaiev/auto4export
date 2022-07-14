@@ -1,0 +1,186 @@
+.car-detail-images {
+    @media (max-width: $md3+px) {
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+    &__main {
+        margin-bottom: 2rem;
+
+
+
+        & .swiper-slide {
+            a {
+                display: block;
+                height: 55rem;
+                overflow: hidden;
+                border-radius: 1rem;
+
+                @media (max-width: $md2+px) {
+                    height: 513px;
+                }
+
+                @media (max-width: $md3+px) {
+                    border-radius: 0;
+                    height: 0;
+                    padding-bottom: 68.125%;
+
+                }
+            }
+        }
+
+        & .swiper-pagination {
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 2rem;
+            width: calc(100% - 11rem);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+
+            @media (min-width: 768px) {
+                display: none;
+            }
+
+            & .swiper-pagination-bullet {
+                margin: 0;
+                opacity: 1;
+                background-color: #fff;
+                flex: 1 1 auto;
+                height: 2px;
+                border-radius: 10px;
+
+                &.swiper-pagination-bullet-active {
+                    background-color: $mainColor;
+                }
+            }
+        }
+    }
+
+    &__thumb {
+        position: relative;
+        margin-right: -2.1rem;
+
+        @media (max-width: $md3+px) {
+            display: none;
+        }
+
+        &:before {
+            position: absolute;
+            content: '';
+            z-index: 2;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 2rem;
+            background-color: #fff;
+        }
+
+        & .swiper-slide {
+            cursor: pointer;
+            transition: all .3s ease;
+            padding-right: 2rem;
+
+            &.swiper-slide-thumb-active {
+                & .car-detail-images__img:before {
+                    border-color: $mainColor;
+                }
+            }
+
+            @media (min-width: 992px) {
+                &:hover:not(.swiper-slide-thumb-active) {
+                    opacity: 0.7;
+                }
+            }
+
+            & .car-detail-images__img {
+                height: 8rem;
+                width: 100%;
+                border-radius: 1rem;
+                position: relative;
+                //border: 0.4rem solid $mainColor;
+                overflow: hidden;
+
+                @media (max-width: $md3+px) {
+                    border-radius: 6px;
+                }
+
+                &:before {
+                    position: absolute;
+                    content: '';
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 1;
+                    border: 0.4rem solid transparent;
+                    border-radius: 1rem;
+                    transition: all .3s ease;
+
+                    @media (max-width: $md3+px) {
+                        border-radius: 6px;
+                    }
+                }
+            }
+        }
+
+        & .slider-btn {
+            position: absolute;
+            z-index: 3;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: all .3s ease;
+
+            &.swiper-button-disabled {
+                opacity: 0;
+                pointer-events: none;
+            }
+
+            &.btn-prev {
+                left: 0;
+
+                &.swiper-button-disabled {
+                    & ~ .car-detail-images__shadow-left {
+                        opacity: 0;
+                    }
+                }
+            }
+            &.btn-next {
+                right: 2.1rem;
+
+                &.swiper-button-disabled {
+                    & ~ .car-detail-images__shadow-right {
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+
+    }
+
+    &__shadow-left {
+        transition: all .3s ease;
+        pointer-events: none;
+        opacity: 1;
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 11rem;
+        background: linear-gradient(90deg, #FFFFFF 0%, rgba(255, 255, 255, 0.0001) 100%);
+    }
+
+    &__shadow-right {
+        transition: all .3s ease;
+        pointer-events: none;
+        opacity: 1;
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        right: 2rem;
+        height: 100%;
+        width: 11rem;
+        background: linear-gradient(-90deg, #FFFFFF 0%, rgba(255, 255, 255, 0.0001) 100%);
+    }
+}
+
