@@ -442,6 +442,7 @@ class App {
 		@@include('../common/main-filter/main-filter.js');
 		@@include('../common/price-range/price-range.js');
 		@@include('../common/timer/timer.js');
+		@@include('../common/auction-history/auction-history.js');
 	}
 
 	componentsScripts() {
@@ -451,6 +452,7 @@ class App {
 		@@include('../common/categories-box/categories-box.js');
 		@@include('../common/car-detail-images/car-detail-images.js');
 		@@include('../common/bid-card/bid-card.js');
+		
 	}
 
 }

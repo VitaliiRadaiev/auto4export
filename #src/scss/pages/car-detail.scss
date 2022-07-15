@@ -32,6 +32,11 @@
                 margin-bottom: 0;
             }
         }
+
+        & .card__state-tooltipe {
+            right: auto;
+            left: 0;
+        }
     }
 
     & .card__star {
@@ -58,14 +63,14 @@
         @media (max-width: $md2+px) {
             margin-bottom: 70px;
 
-            & > *:not(:last-child) {
+            & > *:not(:last-child), & div[data-da] > *:not(:last-child) {
                 margin-bottom: 30px;
             }
         }
 
         @media (max-width: $md3+px) {
             margin-bottom: 30px;
-            & > *:not(:last-child) {
+            & > *:not(:last-child), & div[data-da] > *:not(:last-child) {
                 margin-bottom: 20px;
             }
         }
@@ -77,13 +82,13 @@
         @media (max-width: $md2+px) {
             flex: 0 1 100%;
 
-            & > *:not(:last-child) {
+            & > *:not(:last-child), & div[data-da] > *:not(:last-child) {
                 margin-bottom: 30px;
             }
         }
 
         @media (max-width: $md3+px) {
-            & > *:not(:last-child) {
+            & > *:not(:last-child), & div[data-da] > *:not(:last-child) {
                 margin-bottom: 20px;
             }
         }
@@ -92,11 +97,11 @@
     &__col-3 {
         flex: 0 0 37rem;
 
-        & > * {
-            &:not(:last-child) {
-                margin-bottom: 2rem;
-            }
+        
+        & > *:not(:last-child), & div[data-da] > *:not(:last-child) {
+            margin-bottom: 2rem;
         }
+    
 
         @media (max-width: $md2+px) {
             flex: 0 1 100%;
@@ -432,5 +437,73 @@
                 margin-bottom: 2rem;
             }
         }
+    }
+}
+
+.warning-box {
+    background-color: $dangerColor;
+    color: #fff;
+    padding: 2rem 3rem;
+
+    @media (max-width: $md3+px) {
+        padding: 20px;
+    }
+
+    &__text {
+        &.text-content {
+            font-size: 1.6rem;
+            line-height: 1.1875em;
+
+            @media (max-width: $md3+px) {
+                font-size: 14px;
+                line-height: 17px;
+            }
+        }
+    }
+}
+
+.buy-now {
+
+    &__price {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 3rem;
+
+        @media (max-width: $md3+px) {
+            margin-bottom: 20px;
+        }
+
+        & label {
+            font-size: 1.6rem;
+            line-height: 1.12em;
+
+            @media (max-width: $md3+px) {
+                font-size: 14px;
+                line-height: 17px;
+            }
+        }
+
+        & p {
+            font-weight: 700;
+            font-size: 2rem;
+            line-height: 1.2em;
+            margin-bottom: 0;
+
+            @media (max-width: $md3+px) {
+                font-size: 16px;
+                line-height: 19px;
+            }
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+
+    &__btn {
+        flex: 1 1 auto;
     }
 }

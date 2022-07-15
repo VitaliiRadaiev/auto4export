@@ -72,12 +72,21 @@
             font-weight: 700;
             font-size: 2rem;
             line-height: 1.2em;
-            text-transform: uppercase;
             margin-bottom: 0;
 
             @media (max-width: $md3+px) {
                 font-size: 16px;
                 line-height: 19px;
+            }
+
+            &.text-secondary {
+                font-size: 1.6rem;
+                line-height: 1.1875em;
+
+                @media (max-width: $md3+px) {
+                    font-size: 14px;
+                    line-height: 17px;
+                }
             }
         }
     }
@@ -122,6 +131,24 @@
                 flex: 0 1 calc(38.86% - 10px);
                 align-self: flex-end;
             }
+        }
+    }
+
+    &__text {
+        margin-bottom: 3rem;
+        font-size: 1.6rem;
+        line-height: 1.1875em;
+
+        @media (max-width: $md2+px) and (min-width: 768px) {
+            & br {
+                display: none;
+            }
+        }
+
+        @media (max-width: $md3+px) {
+            margin-bottom: 2rem;
+            font-size: 14px;
+            line-height: 17px;
         }
     }
 
@@ -229,6 +256,23 @@
         }
         @media (max-width: $md3+px) {
             margin-bottom: 14px;
+        }
+    }
+
+    &--live {
+        & .bid-card__submit {
+            @media (max-width: $md2+px) {
+                margin-bottom: 0;
+                flex: 0 1 100%;
+            }
+        }
+    }
+    &--lost {
+        & .bid-card__submit {
+            @media (max-width: $md2+px) {
+                margin-bottom: 0;
+                flex: 0 1 100%;
+            }
         }
     }
 }

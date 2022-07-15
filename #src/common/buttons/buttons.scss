@@ -86,4 +86,23 @@
         width: auto;
         margin-right: 0.55em;
     }
+
+    &--second {
+        background-color: $successColor;
+
+        @media (min-width: 992px) {
+            &:hover {
+                background-color: #4da63e;
+            }
+        }
+    }
+    &--third {
+        background-color: $secondColor;
+
+        @media (min-width: 992px) {
+            &:hover {
+                background-color: #082f44;
+            }
+        }
+    }
 }

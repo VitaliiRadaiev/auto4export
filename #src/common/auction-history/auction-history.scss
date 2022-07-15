@@ -1,0 +1,158 @@
+.auction-history {
+    background-color: #fff3f3;
+    padding: 2rem 3rem;
+
+    @media (max-width: $md3+px) {
+        padding: 20px;
+    }
+
+    &__head {
+        position: relative;
+        display: flex;
+        align-items: center;
+        font-size: 1.6rem;
+        line-height: 1.1875em;
+        padding-right: 1.5rem;
+        cursor: pointer;
+
+        @media (max-width: $md3+px) {
+            font-size: 14px;
+            line-height: 17px;
+        }
+
+        &:before {
+            font-family: "icomoon" !important;
+            position: absolute;
+            content: "\e902";
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+            right: 0;
+            -webkit-transition: -webkit-transform 0.3s ease;
+            transition: -webkit-transform 0.3s ease;
+            -o-transition: transform 0.3s ease;
+            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+            font-size: 0.6rem;
+        }
+
+        & img,
+        & svg {
+            flex: 0 0 auto;
+            width: 2rem;
+            height: auto;
+            margin-right: 1rem;
+
+            @media (max-width: $md3+px) {
+                width: 18px;
+            }
+        }
+    }
+    &__list-wrap {
+        display: none;
+    }
+    &__list {
+        padding-left: 0;
+        margin-bottom: 0;
+        padding-top: 2rem;
+
+        @media (max-width: $md3+px) {
+            padding-top: 14px;
+        }
+
+        & > li {
+            &:not(:last-child) {
+                padding-bottom: 2rem;
+                margin-bottom: 2rem;
+                position: relative;
+
+                @media (max-width: $md3+px) {
+                    padding-bottom: 14px;
+                    margin-bottom: 14px;
+                }
+
+                &:before {
+                    position: absolute;
+                    content: "";
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    height: 1px;
+                    width: calc(100% + 6rem);
+                    background-color: #e8dcdc;
+
+                    @media (max-width: $md3+px) {
+                        width: calc(100% + 40px);
+                    }
+                }
+            }
+        }
+    }
+
+    &--open {
+        & .auction-history__head {
+            color: $dangerColor;
+
+            &::before {
+                transform: translateY(-50%) scale(1, -1);
+            }
+        }
+    }
+}
+
+.auction-history-card {
+    display: flex;
+    gap: 1.6rem;
+
+    &__img {
+        flex: 0 0 auto;
+        width: 6rem;
+        height: 4.4rem;
+        overflow: hidden;
+
+        @media (max-width: $md3+px) {
+            width: 40px;
+            height: 30px;
+        }
+    }
+
+    &__list {
+        flex: 1 1 auto;
+        padding-left: 0;
+        margin-bottom: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.4rem;
+        font-size: 1.4rem;
+        line-height: 1.21em;
+
+        @media (max-width: $md3+px) {
+            gap: 10px;
+            font-size: 13px;
+            line-height: 16px;
+        }
+
+        & > li {
+            flex: 0 1 calc(50% - 0.7rem);
+
+            @media (max-width: $md2+px) and (min-width: 768px) {
+                flex: 0 1 calc(25% - calc(1.4rem * 3 / 4));
+            }
+        }
+
+        & label {
+            display: inline-block;
+            color: $textColorSecondary;
+            margin-bottom: 0.4rem;
+
+            @media (max-width: $md3+px) {
+                margin-bottom: 2px;
+            }
+        }
+
+        & p {
+            margin-bottom: 0;
+        }
+    }
+}
