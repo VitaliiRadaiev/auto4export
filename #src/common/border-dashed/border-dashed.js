@@ -1,10 +1,10 @@
 const setSize = (borderDashed, svg) => {
     let w = borderDashed.clientWidth;
     let h = borderDashed.clientHeight
-    
+
     svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
 
-    if(borderDashed.dataset.borderDashed === 'top-right') {
+    if (borderDashed.dataset.borderDashed === 'top-right') {
         svg.innerHTML = `
         <path fill-rule="evenodd" clip-rule="evenodd"
         d="M2 28 Q 2 18  12 18 H${w - 18} L${w - 2} 2 L${w - 2} ${h - 12} Q ${w - 2} ${h - 8} ${w - 12} ${h - 2} L12 ${h - 2} Q 2 ${h - 8} 2 ${h - 12} z"
@@ -12,10 +12,10 @@ const setSize = (borderDashed, svg) => {
         `
     } else if (borderDashed.dataset.borderDashed === 'top-left') {
 
-        if(document.documentElement.clientWidth < 992) {
+        if (document.documentElement.clientWidth < 992) {
             svg.innerHTML = `
             <path fill-rule="evenodd" clip-rule="evenodd"
-            d="M12 2 H${w - 12} Q ${w - 2} 8 ${w - 2} 12 L ${w -2} ${h - 12} Q ${w - 2} ${h - 8} ${w - 12} ${h - 2} L 12 ${h - 2} Q 2 ${h - 8} 2 ${h - 12} L 2 12 Q 8 2 12 2 z"
+            d="M12 2 H${w - 12} Q ${w - 2} 8 ${w - 2} 12 L ${w - 2} ${h - 12} Q ${w - 2} ${h - 8} ${w - 12} ${h - 2} L 12 ${h - 2} Q 2 ${h - 8} 2 ${h - 12} L 2 12 Q 8 2 12 2 z"
             stroke="#D4D9DB" stroke-width="3" stroke-linecap="round" stroke-dasharray="0.1 8" />
             `
 
@@ -24,21 +24,21 @@ const setSize = (borderDashed, svg) => {
 
         svg.innerHTML = `
         <path fill-rule="evenodd" clip-rule="evenodd"
-        d="M2 2 H${w - 12} Q ${w - 2} 8 ${w - 2} 12 L ${w -2} ${h - 12} Q ${w - 2} ${h - 8} ${w - 12} ${h - 2} L 18 ${h - 2} Q 10 ${h - 8} 10 ${h - 12} L 10 12 z"
+        d="M2 2 H${w - 12} Q ${w - 2} 8 ${w - 2} 12 L ${w - 2} ${h - 12} Q ${w - 2} ${h - 8} ${w - 12} ${h - 2} L 18 ${h - 2} Q 10 ${h - 8} 10 ${h - 12} L 10 12 z"
         stroke="#D4D9DB" stroke-width="3" stroke-linecap="round" stroke-dasharray="0.1 8" />
         `
     } else if (borderDashed.dataset.borderDashed === 'top-left-top') {
-        
+
         svg.innerHTML = `
         <path fill-rule="evenodd" clip-rule="evenodd"
-        d="M2 2 L 12 10 H${w-12} Q ${w-2} 15 ${w-2} 20 L ${w-2} ${h-12} Q ${w-8} ${h-2} ${w-12} ${h-2} L 12 ${h-2} Q 2 ${h-8} 2 ${h-12} z"
+        d="M2 2 L 12 10 H${w - 12} Q ${w - 2} 15 ${w - 2} 20 L ${w - 2} ${h - 12} Q ${w - 8} ${h - 2} ${w - 12} ${h - 2} L 12 ${h - 2} Q 2 ${h - 8} 2 ${h - 12} z"
         stroke="#D4D9DB" stroke-width="3" stroke-linecap="round" stroke-dasharray="0.1 8" />
         `
     } else if (borderDashed.dataset.borderDashed === 'simple') {
-        
+
         svg.innerHTML = `
         <path fill-rule="evenodd" clip-rule="evenodd"
-        d="M12 2 H${w-12} Q ${w-2} 6 ${w-2} 12 L ${w-2} ${h-12} Q ${w-6} ${h-2} ${w-12} ${h-2} L 12 ${h-2} Q 2 ${h-6} 2 ${h-12} L 2 12 Q 6 2 12 2"
+        d="M12 2 H${w - 12} Q ${w - 2} 6 ${w - 2} 12 L ${w - 2} ${h - 12} Q ${w - 6} ${h - 2} ${w - 12} ${h - 2} L 12 ${h - 2} Q 2 ${h - 6} 2 ${h - 12} L 2 12 Q 6 2 12 2"
         stroke="#D4D9DB" stroke-width="3" stroke-linecap="round" stroke-dasharray="0.1 8" />
         `
     }
@@ -57,7 +57,12 @@ if (borderDashedAll.length) {
         `)
         let svg = borderDashed.querySelector('.border-dashed');
 
-        setSize(borderDashed, svg);
+        let id = setInterval(() => {
+            setSize(borderDashed, svg);
+        }, 40)
+        setTimeout(() => {
+            clearInterval(id);
+        }, 1000)
 
         window.addEventListener('resize', () => {
             setSize(borderDashed, svg);
@@ -66,15 +71,15 @@ if (borderDashedAll.length) {
 
     window.borderDashed = {
         update() {
-            let id = setInterval(() => {
-                borderDashedAll.forEach(borderDashed => {
-                    let svg = borderDashed.querySelector('.border-dashed');
+            borderDashedAll.forEach(borderDashed => {
+                let svg = borderDashed.querySelector('.border-dashed');
+                let id = setInterval(() => {
                     setSize(borderDashed, svg);
-                })
-            }, 40)
-            setTimeout(() => {
-                clearInterval(id);
-            },1000)
+                }, 40)
+                setTimeout(() => {
+                    clearInterval(id);
+                }, 1000)
+            })
         }
     }
 }

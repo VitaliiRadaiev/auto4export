@@ -345,6 +345,7 @@ class App {
 			this.initCopy();
 			this.initDatepicker();
 			this.initSetGrid();
+			this.initTooltipe();
 		});
 
 
@@ -1255,7 +1256,7 @@ if(topFilter) {
 
 	initSetGrid() {
 		let setGridElement = document.querySelector('[data-set-grid]');
-		if(setGridElement) {
+		if (setGridElement) {
 			let items = Array.from(setGridElement.children);
 
 			const checkHeight = (pushEl, container) => {
@@ -1263,15 +1264,15 @@ if(topFilter) {
 				let containerItemsHeight = containerItems.reduce((previousValue, item) => {
 					return item.clientHeight + previousValue + 70;
 				}, 0);
-				if((pushEl.clientHeight + 70) < (container.clientHeight - containerItemsHeight)) {
+				if ((pushEl.clientHeight + 70) < (container.clientHeight - containerItemsHeight)) {
 					return true;
 				} else {
 					return false;
 				}
 			}
 			const setGrid = () => {
-				if(document.documentElement.clientWidth > 991.98) {
-					if(setGridElement.classList.contains('_grid')) {
+				if (document.documentElement.clientWidth > 991.98) {
+					if (setGridElement.classList.contains('_grid')) {
 						setGridElement.classList.remove('_grid');
 						setGridElement.append(...items);
 						setGridElement.querySelectorAll('.column').forEach(column => {
@@ -1280,8 +1281,8 @@ if(topFilter) {
 					}
 					return
 				}
-				if(document.documentElement.clientWidth < 768) {
-					if(setGridElement.classList.contains('_grid')) {
+				if (document.documentElement.clientWidth < 768) {
+					if (setGridElement.classList.contains('_grid')) {
 						setGridElement.classList.remove('_grid');
 						setGridElement.append(...items);
 						setGridElement.querySelectorAll('.column').forEach(column => {
@@ -1290,8 +1291,8 @@ if(topFilter) {
 					}
 					return
 				}
-				if(!setGridElement.classList.contains('_grid')) {
-					if(items.length > 2) {
+				if (!setGridElement.classList.contains('_grid')) {
+					if (items.length > 2) {
 						setGridElement.classList.add('_grid');
 						let col1 = document.createElement('div');
 						let col2 = document.createElement('div');
@@ -1302,10 +1303,10 @@ if(topFilter) {
 						col1.append(items[0]);
 						col2.append(items[1]);
 						col2.append(items[2]);
-						let remainingItems  = items.slice(2);
-		
+						let remainingItems = items.slice(2);
+
 						remainingItems.forEach(item => {
-							if(checkHeight(item, col2)) {
+							if (checkHeight(item, col2)) {
 								col2.append(item);
 							} else {
 								col1.append(item);
@@ -1319,6 +1320,26 @@ if(topFilter) {
 			setGrid();
 
 			window.addEventListener('resize', setGrid);
+		}
+	}
+
+	initTooltipe() {
+		let tooltips = document.querySelectorAll('[data-tooltip]');
+		if (tooltips.length) {
+			tooltips.forEach(tooltip => {
+				let icon = document.createElement('div');
+				icon.className = 'tooltip-icon';
+				icon.innerHTML = `
+				<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M0 7.00004C0 3.14024 3.1402 0 7 0C10.8598 0 14 3.14024 14 7.00004C14 10.8598 10.8598 14 7 14C3.1402 14 0 10.8598 0 7.00004ZM1.27273 7.00004C1.27273 10.1581 3.84194 12.7273 7 12.7273C10.158 12.7273 12.7273 10.1581 12.7273 7.00004C12.7273 3.84202 10.1581 1.27273 7 1.27273C3.84194 1.27273 1.27273 3.84202 1.27273 7.00004ZM6.99992 2.9697C6.53215 2.9697 6.1516 3.3505 6.1516 3.81856C6.1516 4.28621 6.53215 4.66667 6.99992 4.66667C7.46768 4.66667 7.84823 4.28621 7.84823 3.81856C7.84823 3.3505 7.46768 2.9697 6.99992 2.9697ZM6.36364 6.57576C6.36364 6.22432 6.64856 5.93939 7 5.93939C7.35144 5.93939 7.63636 6.22432 7.63636 6.57576V10.3939C7.63636 10.7454 7.35144 11.0303 7 11.0303C6.64856 11.0303 6.36364 10.7454 6.36364 10.3939V6.57576Z" fill="#8C8C8C"/>
+				</svg>`
+
+				tooltip.append(icon);
+
+				tippy(icon, {
+					content: tooltip.dataset.tooltip,
+				});
+			})
 		}
 	}
 
@@ -1681,6 +1702,64 @@ if (mainFilter) {
 
 }
 ;
+		{
+    let timers = document.querySelectorAll('[data-timer]');
+    if (timers.length) {
+
+        timers.forEach(timer => {
+
+            function countdown(container, dateEnd) {
+                let timer, days, hours, minutes, seconds;
+                let hoursEl = container.querySelector(".timer__hours");
+                let minutesEl = container.querySelector(".timer__minutes");
+                let secondsEl = container.querySelector(".timer__seconds");
+
+                dateEnd = new Date(dateEnd);
+                dateEnd = dateEnd.getTime();
+
+                if (isNaN(dateEnd)) {
+                    console.log('%c%s', 'color: red;', 'timer error, incorrect date format, use this option - (12/03/2020 02:00:00 AM)')
+                    return;
+                }
+    
+                timer = setInterval(calculate, 1000);
+    
+                function calculate() {
+                    let dateStart = new Date();
+                    dateStart = new Date(dateStart.getUTCFullYear(),
+                        dateStart.getUTCMonth(),
+                        dateStart.getUTCDate(),
+                        dateStart.getUTCHours(),
+                        dateStart.getUTCMinutes(),
+                        dateStart.getUTCSeconds());
+                    let timeRemaining = parseInt((dateEnd - dateStart.getTime()) / 1000)
+    
+                    if (timeRemaining >= 0) {
+                        // days = parseInt(timeRemaining / 86400);
+                        // timeRemaining = (timeRemaining % 86400);
+                        hours = parseInt(timeRemaining / 3600);
+                        timeRemaining = (timeRemaining % 3600);
+                        minutes = parseInt(timeRemaining / 60);
+                        timeRemaining = (timeRemaining % 60);
+                        seconds = parseInt(timeRemaining);
+    
+    
+                        //document.getElementById("days").innerHTML = parseInt(days, 10);
+                        hoursEl.innerHTML = ("0" + hours).slice(-2);
+                        minutesEl.innerHTML = ("0" + minutes).slice(-2);
+                        secondsEl.innerHTML = ("0" + seconds).slice(-2);
+                    } else {
+                        return;
+                    }
+                }
+    
+                function display(days, hours, minutes, seconds) { }
+            }
+    
+            countdown(timer ,timer.dataset.timer);
+        })
+    }
+};
 	}
 
 	componentsScripts() {
@@ -1731,10 +1810,10 @@ if (mainFilter) {
 		const setSize = (borderDashed, svg) => {
     let w = borderDashed.clientWidth;
     let h = borderDashed.clientHeight
-    
+
     svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
 
-    if(borderDashed.dataset.borderDashed === 'top-right') {
+    if (borderDashed.dataset.borderDashed === 'top-right') {
         svg.innerHTML = `
         <path fill-rule="evenodd" clip-rule="evenodd"
         d="M2 28 Q 2 18  12 18 H${w - 18} L${w - 2} 2 L${w - 2} ${h - 12} Q ${w - 2} ${h - 8} ${w - 12} ${h - 2} L12 ${h - 2} Q 2 ${h - 8} 2 ${h - 12} z"
@@ -1742,10 +1821,10 @@ if (mainFilter) {
         `
     } else if (borderDashed.dataset.borderDashed === 'top-left') {
 
-        if(document.documentElement.clientWidth < 992) {
+        if (document.documentElement.clientWidth < 992) {
             svg.innerHTML = `
             <path fill-rule="evenodd" clip-rule="evenodd"
-            d="M12 2 H${w - 12} Q ${w - 2} 8 ${w - 2} 12 L ${w -2} ${h - 12} Q ${w - 2} ${h - 8} ${w - 12} ${h - 2} L 12 ${h - 2} Q 2 ${h - 8} 2 ${h - 12} L 2 12 Q 8 2 12 2 z"
+            d="M12 2 H${w - 12} Q ${w - 2} 8 ${w - 2} 12 L ${w - 2} ${h - 12} Q ${w - 2} ${h - 8} ${w - 12} ${h - 2} L 12 ${h - 2} Q 2 ${h - 8} 2 ${h - 12} L 2 12 Q 8 2 12 2 z"
             stroke="#D4D9DB" stroke-width="3" stroke-linecap="round" stroke-dasharray="0.1 8" />
             `
 
@@ -1754,21 +1833,21 @@ if (mainFilter) {
 
         svg.innerHTML = `
         <path fill-rule="evenodd" clip-rule="evenodd"
-        d="M2 2 H${w - 12} Q ${w - 2} 8 ${w - 2} 12 L ${w -2} ${h - 12} Q ${w - 2} ${h - 8} ${w - 12} ${h - 2} L 18 ${h - 2} Q 10 ${h - 8} 10 ${h - 12} L 10 12 z"
+        d="M2 2 H${w - 12} Q ${w - 2} 8 ${w - 2} 12 L ${w - 2} ${h - 12} Q ${w - 2} ${h - 8} ${w - 12} ${h - 2} L 18 ${h - 2} Q 10 ${h - 8} 10 ${h - 12} L 10 12 z"
         stroke="#D4D9DB" stroke-width="3" stroke-linecap="round" stroke-dasharray="0.1 8" />
         `
     } else if (borderDashed.dataset.borderDashed === 'top-left-top') {
-        
+
         svg.innerHTML = `
         <path fill-rule="evenodd" clip-rule="evenodd"
-        d="M2 2 L 12 10 H${w-12} Q ${w-2} 15 ${w-2} 20 L ${w-2} ${h-12} Q ${w-8} ${h-2} ${w-12} ${h-2} L 12 ${h-2} Q 2 ${h-8} 2 ${h-12} z"
+        d="M2 2 L 12 10 H${w - 12} Q ${w - 2} 15 ${w - 2} 20 L ${w - 2} ${h - 12} Q ${w - 8} ${h - 2} ${w - 12} ${h - 2} L 12 ${h - 2} Q 2 ${h - 8} 2 ${h - 12} z"
         stroke="#D4D9DB" stroke-width="3" stroke-linecap="round" stroke-dasharray="0.1 8" />
         `
     } else if (borderDashed.dataset.borderDashed === 'simple') {
-        
+
         svg.innerHTML = `
         <path fill-rule="evenodd" clip-rule="evenodd"
-        d="M12 2 H${w-12} Q ${w-2} 6 ${w-2} 12 L ${w-2} ${h-12} Q ${w-6} ${h-2} ${w-12} ${h-2} L 12 ${h-2} Q 2 ${h-6} 2 ${h-12} L 2 12 Q 6 2 12 2"
+        d="M12 2 H${w - 12} Q ${w - 2} 6 ${w - 2} 12 L ${w - 2} ${h - 12} Q ${w - 6} ${h - 2} ${w - 12} ${h - 2} L 12 ${h - 2} Q 2 ${h - 6} 2 ${h - 12} L 2 12 Q 6 2 12 2"
         stroke="#D4D9DB" stroke-width="3" stroke-linecap="round" stroke-dasharray="0.1 8" />
         `
     }
@@ -1787,7 +1866,12 @@ if (borderDashedAll.length) {
         `)
         let svg = borderDashed.querySelector('.border-dashed');
 
-        setSize(borderDashed, svg);
+        let id = setInterval(() => {
+            setSize(borderDashed, svg);
+        }, 40)
+        setTimeout(() => {
+            clearInterval(id);
+        }, 1000)
 
         window.addEventListener('resize', () => {
             setSize(borderDashed, svg);
@@ -1796,15 +1880,15 @@ if (borderDashedAll.length) {
 
     window.borderDashed = {
         update() {
-            let id = setInterval(() => {
-                borderDashedAll.forEach(borderDashed => {
-                    let svg = borderDashed.querySelector('.border-dashed');
+            borderDashedAll.forEach(borderDashed => {
+                let svg = borderDashed.querySelector('.border-dashed');
+                let id = setInterval(() => {
                     setSize(borderDashed, svg);
-                })
-            }, 40)
-            setTimeout(() => {
-                clearInterval(id);
-            },1000)
+                }, 40)
+                setTimeout(() => {
+                    clearInterval(id);
+                }, 1000)
+            })
         }
     }
 };
@@ -2041,7 +2125,48 @@ if (carDetailImages) {
     });
 
 };
-		;
+		{
+    const getNum = (value) => {
+        return +value.replace('$', '');
+    }
+
+    let bidValue = document.querySelector('[data-bid-value]');
+    if (bidValue) {
+        let input = bidValue.querySelector('.bid-card-value__input');
+        let btnMinus = bidValue.querySelector('.bid-card-value__btn.minus');
+        let btnPlus = bidValue.querySelector('.bid-card-value__btn.plus');
+        let minValue = +bidValue.dataset.minValue;
+        let increments = +bidValue.dataset.increment;
+
+        if (input && btnMinus && btnPlus) {
+            // init
+            if (!input.value.trim()) {
+                input.value = minValue
+            }
+
+            if(getNum(input.value) < minValue) {
+                input.value = minValue
+            }
+
+            btnPlus.addEventListener('click', () => {
+                input.value = getNum(input.value) + increments;
+
+                if(getNum(input.value) > minValue) {
+                    bidValue.classList.remove('min-value');
+                }
+            })
+
+            btnMinus.addEventListener('click', () => {
+                input.value = getNum(input.value) - increments;
+
+                if(getNum(input.value) <= minValue) {
+                    input.value = minValue
+                    bidValue.classList.add('min-value');
+                }
+            })
+        }
+    }
+};
 	}
 
 }

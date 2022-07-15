@@ -34,6 +34,7 @@ class App {
 			this.initCopy();
 			this.initDatepicker();
 			this.initSetGrid();
+			this.initTooltipe();
 		});
 
 
@@ -347,7 +348,7 @@ class App {
 
 	initSetGrid() {
 		let setGridElement = document.querySelector('[data-set-grid]');
-		if(setGridElement) {
+		if (setGridElement) {
 			let items = Array.from(setGridElement.children);
 
 			const checkHeight = (pushEl, container) => {
@@ -355,15 +356,15 @@ class App {
 				let containerItemsHeight = containerItems.reduce((previousValue, item) => {
 					return item.clientHeight + previousValue + 70;
 				}, 0);
-				if((pushEl.clientHeight + 70) < (container.clientHeight - containerItemsHeight)) {
+				if ((pushEl.clientHeight + 70) < (container.clientHeight - containerItemsHeight)) {
 					return true;
 				} else {
 					return false;
 				}
 			}
 			const setGrid = () => {
-				if(document.documentElement.clientWidth > 991.98) {
-					if(setGridElement.classList.contains('_grid')) {
+				if (document.documentElement.clientWidth > 991.98) {
+					if (setGridElement.classList.contains('_grid')) {
 						setGridElement.classList.remove('_grid');
 						setGridElement.append(...items);
 						setGridElement.querySelectorAll('.column').forEach(column => {
@@ -372,8 +373,8 @@ class App {
 					}
 					return
 				}
-				if(document.documentElement.clientWidth < 768) {
-					if(setGridElement.classList.contains('_grid')) {
+				if (document.documentElement.clientWidth < 768) {
+					if (setGridElement.classList.contains('_grid')) {
 						setGridElement.classList.remove('_grid');
 						setGridElement.append(...items);
 						setGridElement.querySelectorAll('.column').forEach(column => {
@@ -382,8 +383,8 @@ class App {
 					}
 					return
 				}
-				if(!setGridElement.classList.contains('_grid')) {
-					if(items.length > 2) {
+				if (!setGridElement.classList.contains('_grid')) {
+					if (items.length > 2) {
 						setGridElement.classList.add('_grid');
 						let col1 = document.createElement('div');
 						let col2 = document.createElement('div');
@@ -394,10 +395,10 @@ class App {
 						col1.append(items[0]);
 						col2.append(items[1]);
 						col2.append(items[2]);
-						let remainingItems  = items.slice(2);
-		
+						let remainingItems = items.slice(2);
+
 						remainingItems.forEach(item => {
-							if(checkHeight(item, col2)) {
+							if (checkHeight(item, col2)) {
 								col2.append(item);
 							} else {
 								col1.append(item);
@@ -414,12 +415,33 @@ class App {
 		}
 	}
 
+	initTooltipe() {
+		let tooltips = document.querySelectorAll('[data-tooltip]');
+		if (tooltips.length) {
+			tooltips.forEach(tooltip => {
+				let icon = document.createElement('div');
+				icon.className = 'tooltip-icon';
+				icon.innerHTML = `
+				<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M0 7.00004C0 3.14024 3.1402 0 7 0C10.8598 0 14 3.14024 14 7.00004C14 10.8598 10.8598 14 7 14C3.1402 14 0 10.8598 0 7.00004ZM1.27273 7.00004C1.27273 10.1581 3.84194 12.7273 7 12.7273C10.158 12.7273 12.7273 10.1581 12.7273 7.00004C12.7273 3.84202 10.1581 1.27273 7 1.27273C3.84194 1.27273 1.27273 3.84202 1.27273 7.00004ZM6.99992 2.9697C6.53215 2.9697 6.1516 3.3505 6.1516 3.81856C6.1516 4.28621 6.53215 4.66667 6.99992 4.66667C7.46768 4.66667 7.84823 4.28621 7.84823 3.81856C7.84823 3.3505 7.46768 2.9697 6.99992 2.9697ZM6.36364 6.57576C6.36364 6.22432 6.64856 5.93939 7 5.93939C7.35144 5.93939 7.63636 6.22432 7.63636 6.57576V10.3939C7.63636 10.7454 7.35144 11.0303 7 11.0303C6.64856 11.0303 6.36364 10.7454 6.36364 10.3939V6.57576Z" fill="#8C8C8C"/>
+				</svg>`
+
+				tooltip.append(icon);
+
+				tippy(icon, {
+					content: tooltip.dataset.tooltip,
+				});
+			})
+		}
+	}
+
 	componentsScriptsBeforePageLoad() {
 		@@include('../common/about-preview/about-preview.js');
 		@@include('../common/rating/rating.js');
 		@@include('../common/time-filter/time-filter.js');
 		@@include('../common/main-filter/main-filter.js');
 		@@include('../common/price-range/price-range.js');
+		@@include('../common/timer/timer.js');
 	}
 
 	componentsScripts() {

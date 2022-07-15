@@ -9,27 +9,16 @@
     <!-- == TOP LINE ================== -->
 
     @@include('common/header/_header.html',{
-    "mod": "header--user-authorized"
+    "mod": ""
     })
     <!-- == // TOP LINE ================== -->
 
     <main class="_page card-detail-page" data-padding-top-header-size>
         <div class="p-50"></div>
         <div class="container">
-            <div class="navigation">
-                @@include('common/breadcrumbs/_breadcrumbs.html', {
-                    "arr": ['<a href="#">Home</a>', '<a href="#">Vehicle Finder</a>', '<a href="#">Cars</a>', 'Chevrolet']
-                })
-
-                <div class="navigation__buttons">
-                    <a href="#" class="navigation__btn prev not-hover">
-                        Previous lot
-                    </a>
-                    <a href="#" class="navigation__btn next not-hover">
-                        Next lot
-                    </a>
-                </div>
-            </div>
+            @@include('common/breadcrumbs/_breadcrumbs.html', {
+            "arr": ['<a href="#">Home</a>', '<a href="#">Vehicle Finder</a>', '<a href="#">Cars</a>', 'Chevrolet']
+            })
         </div>
 
         <div class="container">
@@ -257,7 +246,7 @@
                             @@include('common/bid-card/_bid-card.html')
                         </div>
                         <div data-da=".car-detail-grid__col-2,991.98,1">
-                            <div class="info-box  border-rudius">
+                            <div class="info-box info-box--unauthorized border-rudius">
                                 <!-- info-box--unauthorized -->
                                 <div class="info-box__img">
                                     <img class="img-svg" src="img/icons/car.svg" alt="">

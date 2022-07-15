@@ -4,3 +4,4 @@
 @@include('plugins/datepicker-full.min.js');
 @@include('plugins/nouislider.js');
 @@include('plugins/wNumb.min.js');
+@@include('plugins/tippy.js');
