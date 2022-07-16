@@ -1,9 +1,24 @@
 .form {
+    & > *:last-child {
+        margin-bottom: 0;
+    }
     &__title {
         margin-bottom: 3rem;
 
         @media (max-width: $md3+px) {
             margin-bottom: 2rem;
+        }
+    }
+    &__title-sm {
+        font-weight: 700;
+        font-size: 1.6rem;
+        line-height: 1.12em;
+        margin-bottom: 2rem;
+
+        @media (max-width: $md3+px) {
+            font-size: 14px;
+            line-height: 17px;
+            margin-bottom: 14px;
         }
     }
     &__items {
@@ -26,6 +41,11 @@
         @media (min-width: 992px) {
             flex: 0 1 calc(50% - 1rem);
         }
+    }
+
+    &__item--flex {
+        flex: 1 1 auto;
+        min-width: 24rem;
     }
 
     &__text {
@@ -159,7 +179,6 @@
     &::-webkit-scrollbar-thumb {
         background: #fff;
         border-radius: 10px;
-
     }
     &::-webkit-scrollbar-thumb:hover {
         background: #fff;

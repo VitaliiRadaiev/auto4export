@@ -63,14 +63,16 @@
         @media (max-width: $md2+px) {
             margin-bottom: 70px;
 
-            & > *:not(:last-child), & div[data-da] > *:not(:last-child) {
+            & > *:not(:last-child),
+            & div[data-da] > *:not(:last-child) {
                 margin-bottom: 30px;
             }
         }
 
         @media (max-width: $md3+px) {
             margin-bottom: 30px;
-            & > *:not(:last-child), & div[data-da] > *:not(:last-child) {
+            & > *:not(:last-child),
+            & div[data-da] > *:not(:last-child) {
                 margin-bottom: 20px;
             }
         }
@@ -82,13 +84,15 @@
         @media (max-width: $md2+px) {
             flex: 0 1 100%;
 
-            & > *:not(:last-child), & div[data-da] > *:not(:last-child) {
+            & > *:not(:last-child),
+            & div[data-da] > *:not(:last-child) {
                 margin-bottom: 30px;
             }
         }
 
         @media (max-width: $md3+px) {
-            & > *:not(:last-child), & div[data-da] > *:not(:last-child) {
+            & > *:not(:last-child),
+            & div[data-da] > *:not(:last-child) {
                 margin-bottom: 20px;
             }
         }
@@ -97,11 +101,10 @@
     &__col-3 {
         flex: 0 0 37rem;
 
-        
-        & > *:not(:last-child), & div[data-da] > *:not(:last-child) {
+        & > *:not(:last-child),
+        & div[data-da] > *:not(:last-child) {
             margin-bottom: 2rem;
         }
-    
 
         @media (max-width: $md2+px) {
             flex: 0 1 100%;
@@ -463,7 +466,6 @@
 }
 
 .buy-now {
-
     &__price {
         display: flex;
         align-items: center;
@@ -505,5 +507,361 @@
 
     &__btn {
         flex: 1 1 auto;
+    }
+}
+
+.set-alert {
+    position: relative;
+
+    &__border {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: calc(100% + 1rem);
+        height: 100%;
+        z-index: 1;
+
+        @media (max-width: $md2+px) {
+            width: 100%;
+        }
+
+        & svg path {
+            stroke: $dangerColor;
+        }
+    }
+
+    &__body {
+        position: relative;
+        z-index: 2;
+        padding: 4rem;
+
+        @media (max-width: $md3+px) {
+            padding: 20px;
+        }
+    }
+
+    &__title {
+        color: $dangerColor;
+        font-weight: 700;
+        font-size: 2rem;
+        line-height: 1.2em;
+        margin-bottom: 2rem;
+
+        @media (max-width: $md3+px) {
+            font-size: 16px;
+            line-height: 19px;
+            margin-bottom: 14px;
+        }
+    }
+
+    &__text {
+        margin-bottom: 3rem;
+
+        @media (max-width: $md3+px) {
+            margin-bottom: 20px;
+        }
+
+        &.text-content {
+            font-size: 1.4rem;
+            line-height: 1.43em;
+            color: $textColorSecondary;
+
+            @media (max-width: $md3+px) {
+                font-size: 13px;
+                line-height: 18px;
+            }
+
+            & > *:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    & .input {
+        height: 4.8rem;
+        font-size: 1.6rem;
+        line-height: 1.1875em;
+        padding: 1rem 2rem;
+
+        @media (max-width: $md3+px) {
+            height: 38px;
+            font-size: 14px;
+            line-height: 17px;
+        }
+    }
+
+    .iti .input {
+        padding-left: 10rem !important;
+
+        @media (max-width: $md3+px) {
+            padding-left: 80px !important;
+        }
+    }
+
+    & .iti__selected-flag {
+        padding-left: 2rem;
+    }
+
+    & .select {
+        height: 4.8rem;
+
+        @media (max-width: $md3+px) {
+            height: 38px;
+        }
+
+        & .select__value {
+            min-height: 4.8rem;
+            padding: 0.5rem 3rem 0.5rem 2rem;
+
+            @media (max-width: $md3+px) {
+                min-height: 38px;
+            }
+
+            & span {
+                font-size: 1.6rem;
+                line-height: 1.1875em;
+
+                @media (max-width: $md3+px) {
+                    font-size: 14px;
+                    line-height: 17px;
+                }
+            }
+
+            &::before {
+                font-size: 6px;
+            }
+        }
+
+        & .select__options {
+            padding: 0 2rem 2rem;
+            font-size: 1.6rem;
+            line-height: 1.1875em;
+
+            @media (max-width: $md3+px) {
+                font-size: 14px;
+                line-height: 17px;
+                padding: 0 2rem 1rem;
+            }
+        }
+    }
+}
+
+.won-box {
+    position: relative;
+
+    &__border {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: calc(100% + 1rem);
+        height: 100%;
+        z-index: 1;
+
+        @media (max-width: $md2+px) {
+            width: 100%;
+        }
+
+        & svg path {
+            stroke: $mainColor;
+            stroke-dasharray: 5 5 !important;
+
+            @media (max-width: $md2+px) {
+                stroke-dasharray: 8 8 !important;
+            }
+
+            @media (max-width: $md3+px) {
+                stroke-dasharray: 0.1 8 !important;
+            }
+        }
+    }
+
+    &__img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        border-radius: 0 1rem 4rem 0;
+
+        & img {
+            height: 96%;
+            width: auto;
+            transform: translateX(39%);
+
+            @media (max-width: $md2+px) and (min-width: 768px) {
+                transform: translate(0);
+            }
+        }
+    }
+
+    &__body {
+        position: relative;
+        z-index: 3;
+        padding: 4rem;
+
+        @media (max-width: $md3+px) {
+            padding: 20px;
+        }
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 2rem;
+        line-height: 1.2em;
+        max-width: 18.8rem;
+        margin-bottom: 2rem;
+
+        @media (max-width: $md2+px) {
+            max-width: none;
+        }
+
+        @media (max-width: $md3+px) {
+            font-size: 16px;
+            line-height: 19px;
+            max-width: 150px;
+            margin-bottom: 10px;
+        }
+    }
+
+    &__text {
+        font-size: 1.6rem;
+        line-height: 1.12em;
+
+        @media (max-width: $md3+px) {
+            font-size: 14px;
+            line-height: 17px;
+        }
+
+        & a {
+            color: $mainColor;
+        }
+    }
+}
+
+.contact-box {
+    &__form {
+        margin-bottom: 3rem;
+
+        @media (max-width: $md3+px) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__info {
+        & > p {
+            font-size: 1.6rem;
+            line-height: 1.12em;
+            margin-bottom: 2rem;
+
+            @media (max-width: $md3+px) {
+                font-size: 14px;
+                line-height: 17px;
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    &__phones {
+        display: flex;
+        gap: 1.4rem 3rem;
+        flex-wrap: wrap;
+
+        @media (max-width: $md3+px) {
+            gap: 10px 20px;
+        }
+
+        & > * {
+            margin: 0 !important;
+
+            @media (max-width: $md3+px) {
+                font-size: 18px;
+                line-height: 22px;
+            }
+        }
+    }
+
+    & .input {
+        height: 4.8rem;
+        font-size: 1.6rem;
+        line-height: 1.1875em;
+        padding: 1rem 2rem;
+
+        @media (max-width: $md3+px) {
+            height: 38px;
+            font-size: 14px;
+            line-height: 17px;
+        }
+    }
+
+    .iti .input {
+        padding-left: 10rem !important;
+
+        @media (max-width: $md3+px) {
+            padding-left: 80px !important;
+        }
+    }
+
+    & .iti__selected-flag {
+        padding-left: 2rem;
+    }
+
+    & .select {
+        height: 4.8rem;
+
+        @media (max-width: $md3+px) {
+            height: 38px;
+        }
+
+        & .select__value {
+            min-height: 4.8rem;
+            padding: 0.5rem 3rem 0.5rem 2rem;
+
+            @media (max-width: $md3+px) {
+                min-height: 38px;
+            }
+
+            & span {
+                font-size: 1.6rem;
+                line-height: 1.1875em;
+
+                @media (max-width: $md3+px) {
+                    font-size: 14px;
+                    line-height: 17px;
+                }
+            }
+
+            &::before {
+                font-size: 6px;
+            }
+        }
+
+        & .select__options {
+            padding: 0 2rem 2rem;
+            font-size: 1.6rem;
+            line-height: 1.1875em;
+
+            @media (max-width: $md3+px) {
+                font-size: 14px;
+                line-height: 17px;
+                padding: 0 2rem 1rem;
+            }
+        }
+    }
+
+    & .textarea {
+        height: 9rem;
+        padding: 1.4rem 2rem;
+        font-size: 1.6rem;
+        line-height: 1.1875em;
+
+        @media (max-width: $md3+px) {
+            height: 8rem;
+            font-size: 14px;
+            line-height: 17px;
+            padding: 11px 20px;
+        }
     }
 }

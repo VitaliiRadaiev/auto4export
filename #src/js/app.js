@@ -443,6 +443,7 @@ class App {
 		@@include('../common/price-range/price-range.js');
 		@@include('../common/timer/timer.js');
 		@@include('../common/auction-history/auction-history.js');
+		@@include('../common/big-image-popup/big-image-popup.js');
 	}
 
 	componentsScripts() {
