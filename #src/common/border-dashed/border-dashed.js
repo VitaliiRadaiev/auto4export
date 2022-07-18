@@ -41,6 +41,17 @@ const setSize = (borderDashed, svg) => {
         d="M12 2 H${w - 12} Q ${w - 2} 6 ${w - 2} 12 L ${w - 2} ${h - 12} Q ${w - 6} ${h - 2} ${w - 12} ${h - 2} L 12 ${h - 2} Q 2 ${h - 6} 2 ${h - 12} L 2 12 Q 6 2 12 2"
         stroke="#D4D9DB" stroke-width="3" stroke-linecap="round" stroke-dasharray="0.1 8" />
         `
+    } else if (borderDashed.dataset.borderDashed === 'line') {
+            svg.innerHTML = `
+            <path d="M2 3 H ${w-2}" stroke="url(#paint0_linear_0_21156)" stroke-width="2" stroke-linecap="round" stroke-dasharray="0.1 6"/>
+            <defs>
+                <linearGradient id="paint0_linear_0_21156" x1="${w-2}" y1="0.5" x2="2" y2="0.5" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#1886C4"/>
+                <stop offset="1" stop-color="#D4D9DB"/>
+            </linearGradient>
+            </defs>
+            `
+
     }
 }
 

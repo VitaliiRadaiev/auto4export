@@ -174,6 +174,41 @@ class Utils {
 	
 		forEach(images.length -1);
 	}
+
+	setSameHeight() {
+		let elements = document.querySelectorAll('[data-set-same-height]');
+		if(elements.length) {
+			const getGropus = (elements) => {
+				let obj = {};
+
+				elements.forEach(el => {
+					let id = el.dataset.setSameHeight;
+					if(obj.hasOwnProperty(id)) {
+						obj[id].push(el);
+					} else {
+						obj[id] = [el];
+					}
+				})
+
+				return obj;
+			}
+			const setMinHeight = (groups) => {
+				for(let key in groups) {
+					let maxHeight = Math.max(...groups[key].map(i => i.clientHeight));
+					
+					groups[key].forEach(el => {
+						el.style.minHeight = maxHeight + 'px';
+					})
+				}
+			}
+
+			let groups = getGropus(elements);
+
+			if(document.documentElement.clientWidth > 767.98) {
+				setMinHeight(groups);
+			}
+		}
+	}
 }
 
 
@@ -321,7 +356,7 @@ class App {
 	}
 
 	init() {
-
+		this.setFontSize();
 
 		window.addEventListener('DOMContentLoaded', () => {
 			if (this.utils.isMobile()) {
@@ -340,7 +375,6 @@ class App {
 			this.tabsInit();
 			this.selectInit();
 			this.spollerInit();
-			this.setFontSize();
 			this.componentsScriptsBeforePageLoad();
 			this.initCopy();
 			this.initDatepicker();
@@ -353,6 +387,7 @@ class App {
 
 		window.addEventListener('load', () => {
 			document.body.classList.add('page-is-load');
+			this.utils.setSameHeight();
 			this.setPaddingTopHeaderSize();
 			this.slidersInit();
 			this.componentsScripts();
@@ -1848,6 +1883,32 @@ if(bigImgaeElements.length) {
         })
     }
 };
+		(function uploadFileHandler() {
+    let files = []
+    let inputWrapItems = document.querySelectorAll('[data-input-file]');
+    if (inputWrapItems.length) {
+        inputWrapItems.forEach(inputWrap => {
+            let input = inputWrap.querySelector('input[type="file"]');
+            let text = inputWrap.querySelector('.file-input__result');
+
+
+            const changeHandler = (event) => {
+                if (!event.target.files.length) {
+                    return
+                }
+
+                files = Array.from(event.target.files);
+
+                let result = files.map(item => item.name);
+                text.innerText = result.join(', ');
+            }
+
+            input.addEventListener('change', changeHandler);
+        })
+    }
+})()
+
+;
 	}
 
 	componentsScripts() {
@@ -1938,6 +1999,17 @@ if(bigImgaeElements.length) {
         d="M12 2 H${w - 12} Q ${w - 2} 6 ${w - 2} 12 L ${w - 2} ${h - 12} Q ${w - 6} ${h - 2} ${w - 12} ${h - 2} L 12 ${h - 2} Q 2 ${h - 6} 2 ${h - 12} L 2 12 Q 6 2 12 2"
         stroke="#D4D9DB" stroke-width="3" stroke-linecap="round" stroke-dasharray="0.1 8" />
         `
+    } else if (borderDashed.dataset.borderDashed === 'line') {
+            svg.innerHTML = `
+            <path d="M2 3 H ${w-2}" stroke="url(#paint0_linear_0_21156)" stroke-width="2" stroke-linecap="round" stroke-dasharray="0.1 6"/>
+            <defs>
+                <linearGradient id="paint0_linear_0_21156" x1="${w-2}" y1="0.5" x2="2" y2="0.5" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#1886C4"/>
+                <stop offset="1" stop-color="#D4D9DB"/>
+            </linearGradient>
+            </defs>
+            `
+
     }
 }
 

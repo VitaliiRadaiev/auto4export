@@ -10,7 +10,7 @@ class App {
 	}
 
 	init() {
-
+		this.setFontSize();
 
 		window.addEventListener('DOMContentLoaded', () => {
 			if (this.utils.isMobile()) {
@@ -29,7 +29,6 @@ class App {
 			this.tabsInit();
 			this.selectInit();
 			this.spollerInit();
-			this.setFontSize();
 			this.componentsScriptsBeforePageLoad();
 			this.initCopy();
 			this.initDatepicker();
@@ -42,6 +41,7 @@ class App {
 
 		window.addEventListener('load', () => {
 			document.body.classList.add('page-is-load');
+			this.utils.setSameHeight();
 			this.setPaddingTopHeaderSize();
 			this.slidersInit();
 			this.componentsScripts();
@@ -445,6 +445,7 @@ class App {
 		@@include('../common/auction-history/auction-history.js');
 		@@include('../common/big-image-popup/big-image-popup.js');
 		@@include('../common/form/form.js');
+		@@include('../common/input-file/input-file.js');
 	}
 
 	componentsScripts() {

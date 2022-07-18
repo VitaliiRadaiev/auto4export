@@ -1,10 +1,10 @@
 (function uploadFileHandler() {
     let files = []
-    let inputWrapItems = document.querySelectorAll('.file-input');
+    let inputWrapItems = document.querySelectorAll('[data-input-file]');
     if (inputWrapItems.length) {
         inputWrapItems.forEach(inputWrap => {
             let input = inputWrap.querySelector('input[type="file"]');
-            let text = inputWrap.querySelector('.file-input__text');
+            let text = inputWrap.querySelector('.file-input__result');
 
 
             const changeHandler = (event) => {
@@ -19,18 +19,6 @@
             }
 
             input.addEventListener('change', changeHandler);
-
-            ;['dragenter', 'dragover'].forEach(eventName => {
-                input.addEventListener(eventName, (e) => {
-                    inputWrap.classList.add('highlight');
-                });
-            })
-            ;['dragleave', 'drop'].forEach(eventName => {
-                input.addEventListener(eventName, (e) => {
-                    inputWrap.classList.remove('highlight');
-                });
-            })
-
         })
     }
 })()

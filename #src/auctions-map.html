@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en" data-set-font-size>
+@@include('_head.html',{
+"title": "auto4export"
+})
+
+<body>
+    <div class="_preload-body"></div>
+    <!-- == TOP LINE ================== -->
+
+    @@include('common/header/_header.html',{
+    "mod": "header--user-authorized"
+    })
+    <!-- == // TOP LINE ================== -->
+
+    <main class="_page auctions-page" data-padding-top-header-size>
+        <div class="p-50"></div>
+        <div class="container">
+            @@include('common/breadcrumbs/_breadcrumbs.html', {
+            "arr": ['<a href="#">Home</a>', ' Car Auctions Map']
+            })
+        </div>
+
+
+        <div class="container">
+            <h1 class="title-1">Car Auctions Map</h1>
+        </div>
+
+        <div class="padding-wrap pt-0">
+            <div class="container">
+                <form action="#">
+                    <div class="auctions-search">
+                        <div class="auctions-search__form">
+                            <div class="auctions-search__form-border" data-border-dashed="simple"></div>
+                            <div class="auctions-search__form-body">
+                                <div class="form">
+                                    <div class="form__items">
+                                        <div class="form__item" data-mask="99.99.9999">
+                                            <label for="" class="form__label">Auction Date</label>
+                                            <input class="input" type="text" placeholder="dd.mm.yy">
+                                        </div>
+                                        <div class="form__item">
+                                            <label for="" class="form__label">Choose State</label>
+                                            <div class="select-wrap">
+                                                <select name="" class="_select">
+                                                    <option value="" selected>Select</option>
+                                                    <option value="1">item 1</option>
+                                                    <option value="2">item 2</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form__bottom">
+                                        <button type="submit" class="form__submit btn-default mb-0">
+                                            <img class="img-svg" src="img/icons/search.svg" alt="">
+                                            Find Branches
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="auctions-search__map border-rudius" id="map"></div>
+
+                        <script>
+                            function initMap() {
+
+                                map = new google.maps.Map(document.getElementById('map'), {
+                                    center: { lat: 39.76741728218287, lng: -102.2333913239882 },
+
+                                    zoom: 4,
+
+                                    //styles: 
+                                });
+
+                                // var marker = new google.maps.Marker({
+
+                                //     position: { lat: markerPosition.lat, lng: markerPosition.lng },
+
+                                //     map: map,
+
+                                //     title: '',
+                                //     label: '',
+
+                                //     // icon: 'img/contact/googlMarker.svg',
+                                // });
+
+                            }
+                        </script>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="padding-wrap">
+            <div class="container">
+                <div class="auction-list">
+                    <div class="auction-list__head">
+                        <h2 class="auction-list__title">
+                            Auction List
+                            <span>241</span>
+                        </h2>
+                        <div class="auction-list__search">
+                            <form action="/">
+                                <div class="search-head">
+                                    <input type="text" class="search-head__input" placeholder="Quick search">
+                                    <button class="search-head__submit">
+                                        <img class="img-svg" src="img/icons/search.svg" alt="">
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="auction-list__table">
+                        <table class="auction-list-table">
+                            <tr>
+                                <th>
+                                    Auction Location
+                                </th>
+                                <th>
+                                    Auction Address
+                                </th>
+                                <th>
+                                    City
+                                </th>
+                                <th>
+                                    State
+                                </th>
+                                <th>
+                                    Phone Number
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="auction-list-table__mob-label">Auction Location</div>
+                                    <div class="auction-list-table__value text-primary"><strong>AK - ANCHORAGE</strong></div>
+                                </td>
+                                <td>
+                                    <div class="auction-list-table__mob-label">Auction Address</div>
+                                    <div class="auction-list-table__value">6807 NE 79th Ct Ste B, 97218 United States</div>
+                                </td>
+                                <td>
+                                    <div class="auction-list-table__mob-label">City</div>
+                                    <div class="auction-list-table__value">New York</div>
+                                </td>
+                                <td>
+                                    <div class="auction-list-table__mob-label">State</div>
+                                    <div class="auction-list-table__value">New York</div>
+                                </td>
+                                <td>
+                                    <div class="auction-list-table__mob-label">Phone Number</div>
+                                    <div class="auction-list-table__value text-primary"><a href="#"><strong>+1 (503) 123-12345</strong></a></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="auction-list-table__mob-label">Auction Location</div>
+                                    <div class="auction-list-table__value text-primary"><strong>AK - ANCHORAGE</strong></div>
+                                </td>
+                                <td>
+                                    <div class="auction-list-table__mob-label">Auction Address</div>
+                                    <div class="auction-list-table__value">6807 NE 79th Ct Ste B, 97218 United States</div>
+                                </td>
+                                <td>
+                                    <div class="auction-list-table__mob-label">City</div>
+                                    <div class="auction-list-table__value">New York</div>
+                                </td>
+                                <td>
+                                    <div class="auction-list-table__mob-label">State</div>
+                                    <div class="auction-list-table__value">New York</div>
+                                </td>
+                                <td>
+                                    <div class="auction-list-table__mob-label">Phone Number</div>
+                                    <div class="auction-list-table__value text-primary"><a href="#"><strong>+1 (503) 123-12345</strong></a></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="auction-list-table__mob-label">Auction Location</div>
+                                    <div class="auction-list-table__value text-primary"><strong>AK - ANCHORAGE</strong></div>
+                                </td>
+                                <td>
+                                    <div class="auction-list-table__mob-label">Auction Address</div>
+                                    <div class="auction-list-table__value">6807 NE 79th Ct Ste B, 97218 United States</div>
+                                </td>
+                                <td>
+                                    <div class="auction-list-table__mob-label">City</div>
+                                    <div class="auction-list-table__value">New York</div>
+                                </td>
+                                <td>
+                                    <div class="auction-list-table__mob-label">State</div>
+                                    <div class="auction-list-table__value">New York</div>
+                                </td>
+                                <td>
+                                    <div class="auction-list-table__mob-label">Phone Number</div>
+                                    <div class="auction-list-table__value text-primary"><a href="#"><strong>+1 (503) 123-12345</strong></a></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="auction-list-table__mob-label">Auction Location</div>
+                                    <div class="auction-list-table__value text-primary"><strong>AK - ANCHORAGE</strong></div>
+                                </td>
+                                <td>
+                                    <div class="auction-list-table__mob-label">Auction Address</div>
+                                    <div class="auction-list-table__value">6807 NE 79th Ct Ste B, 97218 United States</div>
+                                </td>
+                                <td>
+                                    <div class="auction-list-table__mob-label">City</div>
+                                    <div class="auction-list-table__value">New York</div>
+                                </td>
+                                <td>
+                                    <div class="auction-list-table__mob-label">State</div>
+                                    <div class="auction-list-table__value">New York</div>
+                                </td>
+                                <td>
+                                    <div class="auction-list-table__mob-label">Phone Number</div>
+                                    <div class="auction-list-table__value text-primary"><a href="#"><strong>+1 (503) 123-12345</strong></a></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="auction-list-table__mob-label">Auction Location</div>
+                                    <div class="auction-list-table__value text-primary"><strong>AK - ANCHORAGE</strong></div>
+                                </td>
+                                <td>
+                                    <div class="auction-list-table__mob-label">Auction Address</div>
+                                    <div class="auction-list-table__value">6807 NE 79th Ct Ste B, 97218 United States</div>
+                                </td>
+                                <td>
+                                    <div class="auction-list-table__mob-label">City</div>
+                                    <div class="auction-list-table__value">New York</div>
+                                </td>
+                                <td>
+                                    <div class="auction-list-table__mob-label">State</div>
+                                    <div class="auction-list-table__value">New York</div>
+                                </td>
+                                <td>
+                                    <div class="auction-list-table__mob-label">Phone Number</div>
+                                    <div class="auction-list-table__value text-primary"><a href="#"><strong>+1 (503) 123-12345</strong></a></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="auction-list-table__mob-label">Auction Location</div>
+                                    <div class="auction-list-table__value text-primary"><strong>AK - ANCHORAGE</strong></div>
+                                </td>
+                                <td>
+                                    <div class="auction-list-table__mob-label">Auction Address</div>
+                                    <div class="auction-list-table__value">6807 NE 79th Ct Ste B, 97218 United States</div>
+                                </td>
+                                <td>
+                                    <div class="auction-list-table__mob-label">City</div>
+                                    <div class="auction-list-table__value">New York</div>
+                                </td>
+                                <td>
+                                    <div class="auction-list-table__mob-label">State</div>
+                                    <div class="auction-list-table__value">New York</div>
+                                </td>
+                                <td>
+                                    <div class="auction-list-table__mob-label">Phone Number</div>
+                                    <div class="auction-list-table__value text-primary"><a href="#"><strong>+1 (503) 123-12345</strong></a></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="auction-list-table__mob-label">Auction Location</div>
+                                    <div class="auction-list-table__value text-primary"><strong>AK - ANCHORAGE</strong></div>
+                                </td>
+                                <td>
+                                    <div class="auction-list-table__mob-label">Auction Address</div>
+                                    <div class="auction-list-table__value">6807 NE 79th Ct Ste B, 97218 United States</div>
+                                </td>
+                                <td>
+                                    <div class="auction-list-table__mob-label">City</div>
+                                    <div class="auction-list-table__value">New York</div>
+                                </td>
+                                <td>
+                                    <div class="auction-list-table__mob-label">State</div>
+                                    <div class="auction-list-table__value">New York</div>
+                                </td>
+                                <td>
+                                    <div class="auction-list-table__mob-label">Phone Number</div>
+                                    <div class="auction-list-table__value text-primary"><a href="#"><strong>+1 (503) 123-12345</strong></a></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="auction-list-table__mob-label">Auction Location</div>
+                                    <div class="auction-list-table__value text-primary"><strong>AK - ANCHORAGE</strong></div>
+                                </td>
+                                <td>
+                                    <div class="auction-list-table__mob-label">Auction Address</div>
+                                    <div class="auction-list-table__value">6807 NE 79th Ct Ste B, 97218 United States</div>
+                                </td>
+                                <td>
+                                    <div class="auction-list-table__mob-label">City</div>
+                                    <div class="auction-list-table__value">New York</div>
+                                </td>
+                                <td>
+                                    <div class="auction-list-table__mob-label">State</div>
+                                    <div class="auction-list-table__value">New York</div>
+                                </td>
+                                <td>
+                                    <div class="auction-list-table__mob-label">Phone Number</div>
+                                    <div class="auction-list-table__value text-primary"><a href="#"><strong>+1 (503) 123-12345</strong></a></div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="auction-list__paggination">
+                        @@include('common/pagination/_pagination.html')
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="padding-wrap pb-0">
+            <section class="question">
+                <div class="question__bg">
+                    <picture>
+                        <source srcset="img/photo/guestion-bg-desk.jpg" media="(min-width: 992px)">
+                        <source srcset="img/photo/guestion-bg-tablet.jpg" media="(min-width: 768px)">
+                        <img src="img/photo/guestion-bg-mob.jpg" alt="img">
+                    </picture>
+                </div>
+                <div class="question__body container">
+                    <div class="question__head">
+                        <h2 class="question__title">Do You Have Any Questions? </h2>
+                        <div class="question__label">
+                            <img src="img/photo/question-icon.svg" alt="">
+                            Leave a request to contact a manager!
+                        </div>
+                    </div>
+                    <form action="#">
+                        <div class="question__form">
+                            <div class="question__form-item question__form-item-1">
+                                <input type="text" class="input" placeholder="Your Name">
+                            </div>
+                            <div class="question__form-item question__form-item-2" data-mask="9{*}">
+                                <input type="text" class="input" placeholder="Your Phone Number">
+                            </div>
+                            <div class="question__form-item question__form-item-3">
+                                <button type="submit" class="question__submit btn-default">
+                                    <i class="icon-arrow-right"></i>
+                                    Send
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- == FOOTER ================== -->
+    @@include('common/footer/_footer.html',{})
+    <!-- == // FOOTER ================== -->
+
+    @@include('_js-bottom.html',{})
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7Q82l2QjSzJJk1uUW3OzUBGPTlbk8w1g&callback=initMap&libraries=&v=weekly"
+        defer></script>
+</body>
+
+</html>
