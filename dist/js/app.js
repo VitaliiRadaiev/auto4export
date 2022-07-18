@@ -1036,7 +1036,7 @@ if(topFilter) {
         select.setAttribute('data-default', select_selected_option.value);
         select.style.display = 'none';
 
-        select_parent.insertAdjacentHTML('beforeend', '<div class="select select_' + select_modifikator + '"></div>');
+        select_parent.insertAdjacentHTML('beforeend', `<div class="select select_${select_modifikator} ${select_selected_option.value.trim() ? "not-placeholder" : ""}"></div>`);
 
         let new_select = select.parentElement.querySelector('.select');
         new_select.appendChild(select);
@@ -1116,6 +1116,7 @@ if(topFilter) {
                     select.querySelector('.select__value').innerHTML = '<span>' + select_option_text + '</span>';
                     original.value = select_option_value;
                     select_option.style.display = 'none';
+                    select.classList.add('_visited');
 
                     let event = new Event("change", { bubbles: true });
                     original.dispatchEvent(event);
@@ -1817,6 +1818,35 @@ if(bigImgaeElements.length) {
             bigImagePopup.classList.add('loaded');
         }
     })
+};
+		{
+    let inputs = document.querySelectorAll('.input');
+    if (inputs.length) {
+        inputs.forEach(input => {
+            if(input.value.trim().length > 0) {
+                input.classList.add('auto-completed');
+            }
+
+            input.addEventListener('change', () => {
+                if (input.value.trim().length > 0) {
+                    input.classList.add('completed');
+                    input.classList.remove('auto-completed');
+                } else {
+                    input.classList.remove('completed');
+                    input.classList.remove('auto-completed');
+                }
+            })
+            input.addEventListener('input', () => {
+                if (input.value.trim().length > 0) {
+                    input.classList.add('completed');
+                    input.classList.remove('auto-completed');
+                } else {
+                    input.classList.remove('completed');
+                    input.classList.remove('auto-completed');
+                }
+            })
+        })
+    }
 };
 	}
 

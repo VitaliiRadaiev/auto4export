@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" data-set-font-size>
+@@include('_head.html',{
+"title": "auto4export"
+})
+
+<body>
+    <div class="_preload-body"></div>
+    <!-- == TOP LINE ================== -->
+
+    @@include('common/header/_header.html',{
+    "mod": "header--user-authorized"
+    })
+    <!-- == // TOP LINE ================== -->
+
+    <main class="_page shipping-calculator-page" data-padding-top-header-size>
+        <div class="p-50"></div>
+        <div class="container">
+            @@include('common/breadcrumbs/_breadcrumbs.html', {
+            "arr": ['<a href="#">Home</a>', 'Shipping Calculator']
+            })
+        </div>
+
+        <div class="container">
+            <div class="hipping-calculator-head">
+                <h1 class="hipping-calculator-head__title">Shipping Calculator</h1>
+                <div class="hipping-calculator-head__text">Please indicate vehicle details, its location and the
+                    shipping destination to calculate the estimated shipping price</div>
+            </div>
+        </div>
+
+        <div class="padding-wrap pt-0">
+            <form action="/">
+                <div class="container">
+                    <div class="hipping-calculator">
+                        <div class="hipping-calculator__col-1">
+                            <div class="form">
+                                <div class="form__items">
+                                    <div class="form__item form__item--half">
+                                        <label class="form__label">Vehicle Information</label>
+                                        <input class="input" type="text" placeholder="Enter VIN/Lot Number">
+                                    </div>
+                                    <div class="form__item form__item--half">
+                                        <label class="form__label">Vehicle Type</label>
+                                        <input class="input inactive text-primary text-uppercase" value="2013 Chevrolet Impala Ls 3.6L" type="text" placeholder="">
+                                    </div>
+                                    <div class="form__item form__item--half">
+                                        <label class="form__label">Ship From</label>
+                                        <input class="input inactive" type="text" value="4354675432" placeholder="Enter ZIP Code">
+                                    </div>
+                                    <div class="form__item form__item--half">
+                                        <label class="form__label">From Port</label>
+                                        <div class="select-wrap">
+                                            <select name="" class="_select ">
+                                                <option value="" >Select Destination Country</option>
+                                                <option value="1" selected>Houston  (19 miles)</option>
+                                                <option value="2">Odessa</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form__item form__item--half">
+                                        <label class="form__label">Ship To</label>
+                                        <div class="select-wrap">
+                                            <select name="" class="_select ">
+                                                <option value="" >Select Destination Country</option>
+                                                <option value="1" selected>Ukraine</option>
+                                                <option value="2">USA</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form__item form__item--half">
+                                        <label class="form__label">To Port</label>
+                                        <div class="select-wrap">
+                                            <select name="" class="_select ">
+                                                <option value="" >Select Destination Port</option>
+                                                <option value="1" selected>Odessa</option>
+                                                <option value="2">Houston</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form__item form__item--half">
+                                        <label class="form__label">Transportation Type</label>
+                                        <div class="form__radio-group">
+                                            <label class="radio inactive">
+                                                <input type="radio" name="transportation-type">
+                                                <div class="radio__circle"></div>
+                                                <div class="radio__text">Roro</div>
+                                            </label>
+                                            <label class="radio inactive">
+                                                <input type="radio" name="transportation-type">
+                                                <div class="radio__circle"></div>
+                                                <div class="radio__text">Container</div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form__item form__item--half">
+                                        <label class="form__label d-none d-md-block"></label>
+                                        <div class="form__note">
+                                            <img src="img/icons/info.svg" alt="">
+                                            We only ship vehicles purchased through our service
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hipping-calculator__col-2">
+                            <div class="hipping-price">
+                                <div class="hipping-price__border" data-border-dashed="top-left"></div>
+                                <div class="hipping-price__body">
+                                    <div class="hipping-price__head">
+                                        <div class="hipping-price__icon">
+                                            <img src="img/icons/ship.svg" alt="">
+                                        </div>
+                                        <h2 class="hipping-price__title">
+                                            Shipping Price
+                                        </h2>
+                                    </div>
+
+                                    <div class="hipping-price__list-wrap">
+                                        <ul class="simple-table-list">
+                                            <li>
+                                                <label>Ocean Rate</label>
+                                                <p>$1,800</p>
+                                            </li>
+                                            <li>
+                                                <label>Ground Rate</label>
+                                                <p>$350</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="hipping-price__total">
+                                        <label>Total</label>
+                                        <p class="text-primary">$2,150</p>
+                                    </div>
+                                    <!-- <div class="hipping-price__path">
+
+                                    </div> -->
+                                </div>
+                            </div>
+                            <button type="submit" class="hipping-calculator__submit btn-default">
+                                <img class="img-svg" src="img/icons/calculator.svg" alt="">
+                                Calculate
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="padding-wrap pb-0">
+            <section class="question">
+                <div class="question__bg">
+                    <picture>
+                        <source srcset="img/photo/guestion-bg-desk.jpg" media="(min-width: 992px)">
+                        <source srcset="img/photo/guestion-bg-tablet.jpg" media="(min-width: 768px)">
+                        <img src="img/photo/guestion-bg-mob.jpg" alt="img">
+                    </picture>
+                </div>
+                <div class="question__body container">
+                    <div class="question__head">
+                        <h2 class="question__title">Do You Have Any Questions? </h2>
+                        <div class="question__label">
+                            <img src="img/photo/question-icon.svg" alt="">
+                            Leave a request to contact a manager!
+                        </div>
+                    </div>
+                    <form action="#">
+                        <div class="question__form">
+                            <div class="question__form-item question__form-item-1">
+                                <input type="text" class="input" placeholder="Your Name">
+                            </div>
+                            <div class="question__form-item question__form-item-2" data-mask="9{*}">
+                                <input type="text" class="input" placeholder="Your Phone Number">
+                            </div>
+                            <div class="question__form-item question__form-item-3">
+                                <button type="submit" class="question__submit btn-default">
+                                    <i class="icon-arrow-right"></i>
+                                    Send
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- == FOOTER ================== -->
+    @@include('common/footer/_footer.html',{})
+    <!-- == // FOOTER ================== -->
+
+    @@include('_js-bottom.html',{})
+</body>
+
+</html>

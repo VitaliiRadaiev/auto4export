@@ -7,13 +7,31 @@
 		height: 58px;
 	}
 
+	&.inactive {
+		pointer-events: none;
+		
+		& .select__item {
+			background-color: #F9F9F9;
+			border-color: #F9F9F9;
+		}
+	}
+
+	&._visited, &.not-placeholder {
+		& .select__item {
+			border-color: $mainColor;
+		}
+		& .select__value span {
+			color: $textColor;
+		}
+	}
+
 	&__item {
 		position: absolute;
 		top: 0;
 		left: 0;
 		width: 100%;
 		background-color: #fff;
-		border: 1px solid $mainColor;
+		border: 1px solid $borderColor;
 		transition: all .3s ease;
 		border-radius: 1rem;
 
@@ -42,7 +60,7 @@
 			font-weight: 400;
 			font-size: 1.8rem;
 			line-height: 1.222em;
-			color: $textColor;
+			color: $textColorSecondary;
 			font-family: $mainFontFamily;
 
 			@media (max-width: $md3+px) {

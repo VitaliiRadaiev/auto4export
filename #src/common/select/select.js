@@ -102,7 +102,7 @@
         select.setAttribute('data-default', select_selected_option.value);
         select.style.display = 'none';
 
-        select_parent.insertAdjacentHTML('beforeend', '<div class="select select_' + select_modifikator + '"></div>');
+        select_parent.insertAdjacentHTML('beforeend', `<div class="select select_${select_modifikator} ${select_selected_option.value.trim() ? "not-placeholder" : ""}"></div>`);
 
         let new_select = select.parentElement.querySelector('.select');
         new_select.appendChild(select);
@@ -182,6 +182,7 @@
                     select.querySelector('.select__value').innerHTML = '<span>' + select_option_text + '</span>';
                     original.value = select_option_value;
                     select_option.style.display = 'none';
+                    select.classList.add('_visited');
 
                     let event = new Event("change", { bubbles: true });
                     original.dispatchEvent(event);

@@ -73,6 +73,12 @@
         }
     }
 
+    &.inactive {
+        background-color: #F9F9F9 !important;
+        color: $textColorSecondary !important;
+        pointer-events: none;
+    }
+
     & i {
         flex: 0 0 auto;
         font-size: 0.8em;

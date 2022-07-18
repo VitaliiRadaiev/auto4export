@@ -444,6 +444,7 @@ class App {
 		@@include('../common/timer/timer.js');
 		@@include('../common/auction-history/auction-history.js');
 		@@include('../common/big-image-popup/big-image-popup.js');
+		@@include('../common/form/form.js');
 	}
 
 	componentsScripts() {

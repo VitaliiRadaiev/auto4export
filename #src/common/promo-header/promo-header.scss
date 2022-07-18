@@ -203,6 +203,11 @@
         }
 
         & .select-wrap {
+            & .select__item {
+                border: none; 
+                overflow: hidden;
+            }
+            
             & .select__title {
                 background-color: #fff;
                 position: relative;
