@@ -450,6 +450,7 @@ class App {
 		@@include('../common/form/form.js');
 		@@include('../common/input-file/input-file.js');
 		@@include('../common/auction-table/auction-table.js');
+		@@include('../common/calendar/calendar.js');
 	}
 
 	componentsScripts() {

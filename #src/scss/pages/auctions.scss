@@ -384,12 +384,42 @@
         }
     }
 
+    &__calendar-nav {
+        display: flex;
+        align-items: center;
+
+        @media (max-width: $md3+px) {
+            justify-content: space-between;
+        }
+
+        & .slider-btn {
+            position: relative;
+        }
+    }
+
+    &__calendar-nav-title {
+        font-weight: 700;
+        font-size: 2rem;
+        line-height: 1.2em;
+        padding: 0 2rem;
+    }
+
     &--with-text {
         justify-content: initial;
         gap: 2rem 7.4rem;
 
         @media (max-width: $md3+px) {
             gap: 12px;
+        }
+    }
+
+    &--calendar {
+        @media (max-width: $md2+px) {
+            flex-direction: row;
+        }
+
+        @media (max-width: $md3+px) {
+            flex-direction: column;
         }
     }
 }
@@ -682,3 +712,5 @@
         transform: translateY(-50%) rotate(0deg);
     }
 }
+
+
