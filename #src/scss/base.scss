@@ -412,7 +412,7 @@ figure {
 
 		&.prev {
 			&::before {
-				content: '';
+				content: "";
 				font-family: "icomoon" !important;
 				content: "\e900";
 				margin-right: 0.81em;
@@ -427,14 +427,13 @@ figure {
 		&.next {
 			&:after {
 				font-weight: 400;
-				content: '';
+				content: "";
 				font-family: "icomoon" !important;
 				content: "\e900";
 				margin-left: 0.81em;
 				transition: all 0s ease;
 				font-size: 0.8em;
 			}
-
 		}
 	}
 }
@@ -675,6 +674,88 @@ figure {
 
 		@media (max-width: $md2+px) {
 			flex: 0 1 100%;
+		}
+	}
+}
+
+.list-col-4 {
+	display: flex;
+	gap: 8rem;
+	flex-wrap: wrap;
+
+	@media (max-width: $md2+px) {
+		gap: 40px 68px;
+	}
+
+	@media (max-width: $md3+px) {
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	& > li {
+		flex: 0 1 calc(25% - calc(8rem * 3 / 4));
+
+		@media (max-width: $md2+px) {
+			flex: 0 1 calc(50% - 34px);
+		}
+
+		@media (max-width: $md3+px) {
+			flex: 0 1 auto;
+		}
+	}
+}
+.list {
+	padding-left: 0;
+	margin-bottom: 0;
+
+	& > li {
+		@media (max-width: $md3+px) {
+			display: flex;
+		}
+	}
+
+	&__icon {
+		height: 2.7rem;
+		margin-bottom: 1.4rem;
+
+		@media (max-width: $md3+px) {
+			flex: 0 0 28px;
+			margin-right: 14px;
+			height: 20px;
+		}
+
+		& img {
+			height: 100%;
+			width: auto;
+		}
+	}
+
+	&__inner {
+		@media (max-width: $md3+px) {
+			flex: 1 1 auto;
+		}
+	}
+
+	&__title {
+		font-size: 1.6rem;
+		line-height: 1.1875em;
+		margin-bottom: 1.4rem;
+
+		@media (max-width: $md3+px) {
+			font-size: 14px;
+			line-height: 17px;
+			margin-bottom: 14px;
+		}
+	}
+
+	&__text {
+		font-size: 1.4rem;
+		line-height: 1.21em;
+		color: $textColorSecondary;
+
+		@media (max-width: $md3+px) {
+			font-size: 13px;
+			line-height: 16px;
 		}
 	}
 }

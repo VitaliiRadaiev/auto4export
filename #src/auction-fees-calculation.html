@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en" data-set-font-size>
+@@include('_head.html',{
+"title": "auto4export"
+})
+
+<body>
+    <div class="_preload-body"></div>
+    <!-- == TOP LINE ================== -->
+
+    @@include('common/header/_header.html',{
+    "mod": "header--user-authorized"
+    })
+    <!-- == // TOP LINE ================== -->
+
+    <main class="_page auctions-page" data-padding-top-header-size>
+        <div class="p-50"></div>
+        <div class="container">
+            @@include('common/breadcrumbs/_breadcrumbs.html', {
+            "arr": ['<a href="#">Home</a>', 'Auction Fees Calculation']
+            })   
+        </div>
+
+
+        <div class="container">
+            <div class="auctions-head auctions-head--with-text">
+                <h1 class="auctions-head__title">Auction Fees Calculation</h1>
+                <div class="auctions-head__text">To participate in auctions requires registration and a
+                    fully-refundable deposit. Registration and the deposit can be made with all major credit cards
+                    or a bank wire transfer.</div>
+            </div>
+        </div>
+
+        <div class="padding-wrap pt-0">
+            <div class="container">
+                <form action="">
+                    <div class="auction-calculation">
+                        <div class="auction-calculation__col-1">
+                            <div class="auction-calculation__form">
+                                <div class="auction-calculation__form-row">
+                                    <label class="form__label">Vehicle Information</label>
+                                    <div class="auction-calculation__vehicle-input">
+                                        <input type="text" class="input" placeholder="Enter VIN/LOT">
+                                    </div>
+                                    <ul class="auction-calculation__vehicle-list d-none"></ul>
+                                </div>
+                                <div class="auction-calculation__form-row">
+                                    <label class="form__label">Enter Your Final Bid and Click Enter</label>
+                                    <div class="bid-card-value__body" data-bid-value data-min-value="100"
+                                        data-increment="100" data-mask="$9{*}">
+                                        <div class="bid-card-value__btn minus">
+                                            <img src="img/icons/minus.svg" alt="">
+                                        </div>
+                                        <input type="text" class="bid-card-value__input" value="12000">
+                                        <div class="bid-card-value__btn plus">
+                                            <img src="img/icons/plus.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="auction-calculation__form-row">
+                                    <ul class="simple-table-list">
+                                        <li>
+                                            <label>Your Maximum Bid</label>
+                                            <p><strong>$115</strong></p>
+                                        </li>
+                                        <li>
+                                            <label>Auction Fee</label>
+                                            <p><strong>$115</strong></p>
+                                        </li>
+                                        <li>
+                                            <label>Auto4export Service Fee</label>
+                                            <p><strong>$250</strong></p>
+                                        </li>
+                                        <li>
+                                            <label>Documents Fee</label>
+                                            <p><strong>$868</strong></p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="auction-calculation__form-row auction-calculation__form-row--total-price">
+                                    <label>Total Price</label>
+                                    <p class="text-primary">
+                                        $1,890
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="auction-calculation__col-2">
+                            <div class="auction-calculation-info-box">
+                                <div class="auction-calculation-info-box__border" data-border-dashed="simple"></div>
+                                <div class="auction-calculation-info-box__body">
+                                    <ul class="auction-calculation-info-box__list">
+                                        <li>
+                                            <div>
+                                                <h3 class="auction-calculation-info-box__list-title">REGISTRATION</h3>
+                                                <div class="auction-calculation-info-box__list-subtitle">
+                                                    Membership types
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="auction-calculation-info-box__list-text">
+                                                    Free Standard Membership or Premium membership valid for 1year for
+                                                    $150 Membership types
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <h3 class="auction-calculation-info-box__list-title">TRANSACTION FEE
+                                                </h3>
+                                                <div class="auction-calculation-info-box__list-subtitle">
+                                                    Each vehicle won at auction requires a $250 transaction fee
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="auction-calculation-info-box__list-value">
+                                                    $150-$250
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <h3 class="auction-calculation-info-box__list-title">MINIMUM REFUNDABLE
+                                                    DEPOSIT</h3>
+                                                <div class="auction-calculation-info-box__list-subtitle">A
+                                                    fully-refundable deposit of $400 provides the ability to start
+                                                    bidding</div>
+                                            </div>
+                                            <div>
+                                                <div class="auction-calculation-info-box__list-value">$150-$250</div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="auction-calculation-info-box__text">
+                                        Fees vary with each vehicle type. Vehicle types are searchable through and
+                                        referenced on the Vehicle Finder. Heavy Vehicles are all industrial equipment
+                                        vehicles, medium duty/box trucks, heavy duty trucks, RVs and trailers. Standard
+                                        Vehicles are all other vehicle types. Items purchased on "Crashed Toys" will
+                                        have different fees.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="padding-wrap">
+            <div class="container">
+                
+                    <h2 class="title-2">How it works</h2>
+                    <ul class="list list-col-4">
+                        <li>
+                            <div class="list__icon">
+                                <img src="img/photo/01.svg" alt="">
+                            </div>
+                            <div class="list__inner">
+                                <div class="list__title">Enter VIN/LOT</div>
+                                <div class="list__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer porta eget sem sit amet fermentum.</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list__icon">
+                                <img src="img/photo/02.svg" alt="">
+                            </div>
+                            <div class="list__inner">
+                                <div class="list__title">Enter Your Final Bid</div>
+                                <div class="list__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer porta eget sem sit amet fermentum.</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list__icon">
+                                <img src="img/photo/03.svg" alt="">
+                            </div>
+                            <div class="list__inner">
+                                <div class="list__title">Click Enter</div>
+                                <div class="list__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer porta eget sem sit amet fermentum.</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list__icon">
+                                <img src="img/photo/04.svg" alt="">
+                            </div>
+                            <div class="list__inner">
+                                <div class="list__title">See Total Price</div>
+                                <div class="list__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer porta eget sem sit amet fermentum.</div>
+                            </div>
+                        </li>
+                    </ul>
+                
+            </div>
+        </div>
+
+        <div class="padding-wrap pb-0">
+            <section class="question">
+                <div class="question__bg">
+                    <picture>
+                        <source srcset="img/photo/guestion-bg-desk.jpg" media="(min-width: 992px)">
+                        <source srcset="img/photo/guestion-bg-tablet.jpg" media="(min-width: 768px)">
+                        <img src="img/photo/guestion-bg-mob.jpg" alt="img">
+                    </picture>
+                </div>
+                <div class="question__body container">
+                    <div class="question__head">
+                        <h2 class="question__title">Do You Have Any Questions? </h2>
+                        <div class="question__label">
+                            <img src="img/photo/question-icon.svg" alt="">
+                            Leave a request to contact a manager!
+                        </div>
+                    </div>
+                    <form action="#">
+                        <div class="question__form">
+                            <div class="question__form-item question__form-item-1">
+                                <input type="text" class="input" placeholder="Your Name">
+                            </div>
+                            <div class="question__form-item question__form-item-2" data-mask="9{*}">
+                                <input type="text" class="input" placeholder="Your Phone Number">
+                            </div>
+                            <div class="question__form-item question__form-item-3">
+                                <button type="submit" class="question__submit btn-default">
+                                    <i class="icon-arrow-right"></i>
+                                    Send
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- == FOOTER ================== -->
+    @@include('common/footer/_footer.html',{})
+    <!-- == // FOOTER ================== -->
+
+    @@include('_js-bottom.html',{})
+</body>
+
+</html>

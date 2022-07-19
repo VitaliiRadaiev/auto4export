@@ -366,7 +366,11 @@ class App {
 			if (this.utils.iOS()) {
 				document.body.classList.add('mobile-ios');
 			}
+
+			document.body.classList.add('page-is-load');
+
 			this.utils.replaceToInlineSvg('.img-svg');
+
 			this.dynamicAdapt.init();
 			this.headerHandler();
 			this.popupHandler();
@@ -386,7 +390,6 @@ class App {
 
 
 		window.addEventListener('load', () => {
-			document.body.classList.add('page-is-load');
 			this.utils.setSameHeight();
 			this.setPaddingTopHeaderSize();
 			this.slidersInit();
@@ -1909,6 +1912,22 @@ if(bigImgaeElements.length) {
 })()
 
 ;
+		{
+    let auctionTableCards = document.querySelectorAll('[data-auction-table-card]');
+    if(auctionTableCards.length) {
+        auctionTableCards.forEach(auctionTableCard => {
+            let head = auctionTableCard.querySelector('.auction-table-card__head-mob');
+            let inner = auctionTableCard.querySelector('.auction-table-card__inner');
+
+            if(head && inner) {
+                head.addEventListener('click', () => {
+                    auctionTableCard.classList.toggle('auction-table-card--open');
+                    this.utils.slideToggle(inner, 300);
+                });
+            }
+        });
+    }
+};
 	}
 
 	componentsScripts() {

@@ -20,7 +20,11 @@ class App {
 			if (this.utils.iOS()) {
 				document.body.classList.add('mobile-ios');
 			}
+
+			document.body.classList.add('page-is-load');
+
 			this.utils.replaceToInlineSvg('.img-svg');
+
 			this.dynamicAdapt.init();
 			this.headerHandler();
 			this.popupHandler();
@@ -40,7 +44,6 @@ class App {
 
 
 		window.addEventListener('load', () => {
-			document.body.classList.add('page-is-load');
 			this.utils.setSameHeight();
 			this.setPaddingTopHeaderSize();
 			this.slidersInit();
@@ -446,6 +449,7 @@ class App {
 		@@include('../common/big-image-popup/big-image-popup.js');
 		@@include('../common/form/form.js');
 		@@include('../common/input-file/input-file.js');
+		@@include('../common/auction-table/auction-table.js');
 	}
 
 	componentsScripts() {
