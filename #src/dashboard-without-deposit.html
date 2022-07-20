@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" data-set-font-size>
+@@include('_head.html',{
+"title": "auto4export"
+})
+
+<body>
+    <div class="_preload-body"></div>
+    <!-- == TOP LINE ================== -->
+
+    @@include('common/header/_header.html',{
+    "mod": "header--user-authorized"
+    })
+    <!-- == // TOP LINE ================== -->
+
+    <main class="_page dashboard-page" data-padding-top-header-size>
+        <div class="p-50"></div>
+        <div class="container">
+            @@include('common/breadcrumbs/_breadcrumbs.html', {
+            "arr": ['<a href="#">Home</a>', 'My Account']
+            }) 
+        </div>
+
+
+        <div class="container">
+            <div class="dashboard-head">
+                <h1 class="dashboard-head__title">Dashboard</h1>
+                <div class="dashboard-head-nav">
+                    <a href="#" class="dashboard-head-nav__btn active">
+                        Dashboard
+                    </a>
+                    <a href="#" class="dashboard-head-nav__btn">
+                        My bids <span>8</span>
+                    </a>
+                    <a href="#" class="dashboard-head-nav__btn">
+                        Transactions <span>4</span>
+                    </a>
+                    <a href="#" class="dashboard-head-nav__btn">
+                        Watchlist <span>4</span>
+                    </a>
+                    <a href="#" class="dashboard-head-nav__btn">
+                        Documents <span>3</span>
+                    </a>
+                    <a href="#" class="dashboard-head-nav__btn">
+                        Nofitications
+                    </a>
+                    <a href="#" class="dashboard-head-nav__btn dashboard-head-nav__btn--edit">
+                        <img class="img-svg" src="img/icons/gear.svg" alt="">
+                        Edit profile
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="dashboard">
+                <div class="dashboard__messages">
+                    <div class="dashboard__messages-item">
+                        <img src="img/icons/money.svg" alt="">
+                        <p>
+                            Please <span>Make a Deposit</span> to Start Bid
+                        </p>
+                    </div>
+                    <div class="dashboard__messages-item">
+                        <img src="img/icons/folder.svg" alt="">
+                        <p>
+                            Please <span>Upload Your Documents</span> to Start Bidding
+                        </p>
+                    </div>
+                </div>
+                <div class="dashboard__row-1">
+                    <div class="dashboard-card dashboard-card--empty">
+                        <div class="dashboard-card__icon">
+                            <img class="img-svg" src="img/photo/dashboard-card__icon-1.svg" alt="">
+                        </div>
+                        <div class="dashboard-card__num">0</div>
+                        <div class="dashboard-card__title">Outbidded Bids</div>
+                        <div class="dashboard-card__bottom">
+                            
+                        </div>
+                    </div>
+                    <div class="dashboard-card dashboard-card--empty">
+                        <div class="dashboard-card__icon">
+                            <img class="img-svg" src="img/photo/dashboard-card__icon-2.svg" alt="">
+                        </div>
+                        <div class="dashboard-card__num">0</div>
+                        <div class="dashboard-card__title">Wons Bids</div>
+                        <div class="dashboard-card__bottom">
+                            <a href="" class="link">Learn more</a>
+                        </div>
+                    </div>
+                    <div class="dashboard-card dashboard-card--empty">
+                        <div class="dashboard-card__icon">
+                            <img class="img-svg" src="img/photo/dashboard-card__icon-3.svg" alt="">
+                        </div>
+                        <div class="dashboard-card__num">0</div>
+                        <div class="dashboard-card__title">Unpaid Invoice</div>
+                        <div class="dashboard-card__bottom">
+                            
+                        </div>
+                    </div>
+                    <div class="dashboard-card dashboard-card--empty">
+                        <div class="dashboard-card__icon">
+                            <img class="img-svg" src="img/photo/dashboard-card__icon-4.svg" alt="">
+                        </div>
+                        <div class="dashboard-card__num">0</div>
+                        <div class="dashboard-card__title">Seller Offer</div>
+                        <div class="dashboard-card__bottom">
+                            <a href="" class="link">Learn more</a>
+                        </div>
+                    </div>
+                    <div class="dashboard-card dashboard-card--empty">
+                        <div class="dashboard-card__icon">
+                            <img class="img-svg" src="img/photo/dashboard-card__icon-5.svg" alt="">
+                        </div>
+                        <div class="dashboard-card__num">0</div>
+                        <div class="dashboard-card__title">Vehicles from your Watchlist starts soon</div>
+                        <div class="dashboard-card__bottom">
+                            <a href="" class="link">Learn more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="dashboard__row-2">
+                    <div class="dashboard-prices">
+                        <div class="dashboard-prices__border" data-border-dashed="top-right"></div>
+                        <div class="dashboard-prices__body">
+                            <ul class="dashboard-prices__list">
+                                <li>
+                                    <div class="dashboard-prices__head">
+                                        <div class="dashboard-prices__label">Your Deposit</div>
+                                        <span class="dashboard-prices__line" data-border-dashed="line"></span>
+                                        <img src="img/photo/dashboard-prices-icon-1.svg" alt="">
+                                    </div>
+                                    <div class="dashboard-prices__value text-secondary">$0</div>
+                                    <div data-set-same-height="1">
+                                        <a href="#" class="btn-default btn-default--sm w-100">
+                                            <img class="img-svg" src="img/icons/deposit.svg" alt="">
+                                            Make Deposit
+                                        </a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="dashboard-prices__head">
+                                        <div class="dashboard-prices__label">Bidding Limit</div>
+                                        <span class="dashboard-prices__line" data-border-dashed="line"></span>
+                                        <img src="img/photo/dashboard-prices-icon-2.svg" alt="">
+                                    </div>
+                                    <div class="dashboard-prices__value text-secondary">$0</div>
+                                    <div class="dashboard-prices__text" data-tooltip="tooltip text" data-set-same-height="1">
+                                        Your bidding limit
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="dashboard-prices__head">
+                                        <div class="dashboard-prices__label">Used</div>
+                                        <span class="dashboard-prices__line" data-border-dashed="line"></span>
+                                        <img src="img/photo/dashboard-prices-icon-3.svg" alt="">
+                                    </div>
+                                    <div class="dashboard-prices__value text-secondary">$0</div>
+                                    <div class="dashboard-prices__text" data-tooltip="tooltip text" data-set-same-height="1">
+                                        Your used bidding limit
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="dashboard-prices__head">
+                                        <div class="dashboard-prices__label">Available</div>
+                                        <span class="dashboard-prices__line" data-border-dashed="line"></span>
+                                        <img src="img/photo/dashboard-prices-icon-4.svg" alt="">
+                                    </div>
+                                    <div class="dashboard-prices__value text-secondary">$0</div>
+                                    <div class="dashboard-prices__text" data-tooltip="tooltip text" data-set-same-height="1">
+                                        Your available bidding limit
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-70"></div>
+    </main>
+
+    <!-- == FOOTER ================== -->
+    @@include('common/footer/_footer.html',{})
+    <!-- == // FOOTER ================== -->
+
+    @@include('_js-bottom.html',{})
+</body>
+
+</html>

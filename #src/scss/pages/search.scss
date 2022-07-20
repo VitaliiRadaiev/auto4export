@@ -166,6 +166,10 @@
             overflow: hidden;
             border: 1px solid $borderColor;
             transition: all 0.1s ease;
+
+            @media (max-width: $md3+px) {
+                border-radius: 6px;
+            }
         }
 
         & .select__value {

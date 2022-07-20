@@ -31,10 +31,28 @@
             gap: 10px;
             margin-bottom: 20px;
         }
+
+        &--has-labels {
+            gap: 3rem 2rem;
+
+            @media (max-width: $md3+px) {
+                gap: 20px;
+            }
+        }
     }
 
     &__item {
         flex: 0 1 100%;
+
+        &.required {
+            & .form__label {
+                &::after {
+                    content: "*";
+                    color: $dangerColor;
+                    margin-left: 0.3em;
+                }
+            }
+        }
     }
 
     &__item--half {
@@ -43,9 +61,30 @@
         }
     }
 
+    &__item--third {
+        @media (min-width: 768px) {
+            flex: 0 1 calc(50% - 1rem);
+        }
+        @media (min-width: 992px) {
+            flex: 0 1 calc(33.3333333% - calc(2rem * 2 / 3));
+        }
+    }
+
+    &__item--third-md {
+        @media (min-width: 992px) {
+            flex: 0 1 calc(33.3333333% - calc(2rem * 2 / 3));
+        }
+    }
+
     &__item--flex {
         flex: 1 1 auto;
         min-width: 24rem;
+    }
+
+    &__item--empty {
+        @media (max-width: $md2+px) {
+            display: none;
+        }
     }
 
     &__label {
@@ -201,6 +240,11 @@
         border-radius: 6px;
     }
 
+    &.completed ~ .password-icon {
+        opacity: 1;
+        visibility: visible;
+    }
+
     &.completed:not(.inactive) {
         border-color: $mainColor;
     }
@@ -215,8 +259,8 @@
 
     &.inactive {
         pointer-events: none;
-        background-color: #F9F9F9;
-        border-color: #F9F9F9;
+        background-color: #f9f9f9;
+        border-color: #f9f9f9;
     }
 
     &.text-uppercase {
@@ -234,6 +278,81 @@
         color: $textColorSecondary;
     }
 }
+.input-wrap {
+    position: relative;
+}
+
+.input-tooltip {
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    right: 3rem;
+    transform: translateY(-50%);
+
+    @media (max-width: $md3+px) {
+        right: 20px;
+    }
+
+    &:hover {
+        & .input-tooltip__icon {
+            color: $mainColor;
+        }
+        & .input-tooltip__text {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    &__icon {
+        color: $textColorSecondary;
+        cursor: pointer;
+        width: 1.4rem;
+        transition: all 0.3s ease;
+
+        & img,
+        & svg {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__text {
+        position: absolute;
+        top: 100%;
+        right: -3rem;
+        background: #ffffff;
+        box-shadow: 0px 12px 24px rgba(51, 51, 51, 0.2);
+        border-radius: 1rem;
+        padding: 1.8rem 2rem;
+        min-width: 22rem;
+        font-size: 1.4rem;
+        line-height: 1.43em;
+        transition: all 0.3s ease;
+        visibility: hidden;
+        opacity: 0;
+
+        @media (max-width: $md3+px) {
+            right: -20px;
+            min-width: 280px;
+            padding: 20px;
+            font-size: 13px;
+            line-height: 18px;
+        }
+
+        & a {
+            text-decoration: none;
+        }
+
+        & > *:last-child {
+            margin-bottom: 0;
+        }
+
+        @media (max-width: $md3+px) {
+            border-radius: 6px;
+        }
+    }
+}
+
 .textarea {
     display: flex;
     align-items: center;
@@ -285,6 +404,37 @@
     &::placeholder {
         transition: all 0.3s ease;
         color: $textColorSecondary;
+    }
+}
+
+.password-icon {
+    position: absolute;
+    top: 50%;
+    right: 3rem;
+    transform: translateY(-50%);
+    z-index: 3;
+    cursor: pointer;
+    transition: all .3s ease;
+    color: $textColorSecondary;
+    width: 1.8rem;
+    opacity: 0;
+    visibility: hidden;
+
+    @media (min-width: 992px) {
+        &:hover {
+            color: $mainColor;
+        }
+    }
+
+    & svg {
+        width: 100%;
+        height: auto;
+    }
+
+    &:not(.show-password) {
+        & .line {
+            opacity: 0;
+        }
     }
 }
 
@@ -410,8 +560,8 @@
         }
 
         & .radio__circle {
-            background-color: #F9F9F9;
-            border-color: #F9F9F9;
+            background-color: #f9f9f9;
+            border-color: #f9f9f9;
         }
 
         & .radio__text {

@@ -74,7 +74,7 @@
     }
 
     &.inactive {
-        background-color: #F9F9F9 !important;
+        background-color: #f9f9f9 !important;
         color: $textColorSecondary !important;
         pointer-events: none;
     }
@@ -86,11 +86,36 @@
         margin-right: 0.65em;
     }
 
-    & svg, & img {
+    & svg,
+    & img {
         flex: 0 0 auto;
         height: 1em;
         width: auto;
         margin-right: 0.55em;
+    }
+
+    &--sm {
+        font-size: 1.6rem;
+        line-height: 1.1875em;
+        min-height: 4.8rem;
+
+        @media (max-width: $md3+px) {
+            font-size: 14px;
+            line-height: 17px;
+            min-height: 40px;
+        }
+    }
+
+    &--xs {
+        font-size: 1.6rem;
+        line-height: 1.1875em;
+        min-height: 4rem;
+
+        @media (max-width: $md3+px) {
+            font-size: 14px;
+            line-height: 17px;
+            min-height: 4rem;
+        }
     }
 
     &--second {

@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en" data-set-font-size>
+@@include('_head.html',{
+"title": "auto4export"
+})
+
+<body>
+    <div class="_preload-body"></div>
+    <!-- == TOP LINE ================== -->
+
+    @@include('common/header/_header.html',{
+    "mod": "header--user-authorized"
+    })
+    <!-- == // TOP LINE ================== -->
+
+    <main class="_page dashboard-page" data-padding-top-header-size>
+        <div class="p-50"></div>
+        <div class="container">
+            @@include('common/breadcrumbs/_breadcrumbs.html', {
+            "arr": ['<a href="#">Home</a>', 'My Account']
+            })
+        </div>
+
+        <div data-tabs>
+            <div class="container">
+                <div class="dashboard-head dashboard-head--has-select">
+                    <h1 class="dashboard-head__title">My Bids</h1>
+                    <div class="main-search__sort">
+                        <label>Sort by</label>
+                        <div class="select-wrap">
+                            <select name="" class="_select">
+                                <option value="1" selected>Date</option>
+                                <option value="2">Hign to Low</option>
+                                <option value="3">Low to Hign</option>
+                                <option value="3">Popular</option>
+                                <option value="3">Recent</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="dashboard-head-nav">
+                        <a href="#" class="dashboard-head-nav__btn dashboard-head-nav__btn--back">
+                            <img class="img-svg" src="img/icons/arrow-left.svg" alt="">
+                            Back
+                        </a>
+                        <a href="#" class="dashboard-head-nav__btn " data-tab-trigger="0">
+                            Current bids <span>6</span>
+                        </a>
+                        <a href="#" class="dashboard-head-nav__btn" data-tab-trigger="1">
+                            Won Bids <span>4</span>
+                        </a>
+                        <a href="#" class="dashboard-head-nav__btn tab-active" data-tab-trigger="2">
+                            Lost Bids <span>5</span>
+                        </a>
+                        <a href="#" class="dashboard-head-nav__btn dashboard-head-nav__btn--edit">
+                            <img class="img-svg" src="img/icons/gear.svg" alt="">
+                            Edit profile
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div data-tab-content="0">
+                    <table class="main-table main-table--col-9">
+                        <tr>
+                            <th>
+                                Lot
+                            </th>
+                            <th>
+                                VIN
+                            </th>
+                            <th>
+                                Vehicle
+                            </th>
+                            <th>
+                                Sale Date
+                            </th>
+                            <th>
+                                Current Bid
+                            </th>
+                            <th>
+                                Bid Status
+                            </th>
+                            <th>
+                                My Max Bid
+                            </th>
+                            <th></th>
+                            <th>
+                                Sale Type
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="main-table__mob-label">Lot</div>
+                                <div class="main-table__value text-primary"><strong>1425645</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">VIN</div>
+                                <div class="main-table__value">5UXZV4C5XD0B14800</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Vehicle</div>
+                                <div class="main-table__value">2021 BMW X3</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Sale Date</div>
+                                <div class="main-table__value">24.03.2022</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Current Bid</div>
+                                <div class="main-table__value"><strong>$16,000</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Bid Status</div>
+                                <div class="main-table__value text-danger"><strong>OutBid</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">My Max Bid</div>
+                                <div class="main-table__value"><strong>$15,000</strong></div>
+                            </td>
+                            <td>
+                                <a href="#" class="main-table__btn btn-default btn-default--xs">
+                                    <img src="img/icons/bid-now.svg" alt="">
+                                    Increase Bid
+                                </a>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Sale Type</div>
+                                <div class="main-table__value">Pure Sale</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="main-table__mob-label">Lot</div>
+                                <div class="main-table__value text-primary"><strong>1425645</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">VIN</div>
+                                <div class="main-table__value">5UXZV4C5XD0B14800</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Vehicle</div>
+                                <div class="main-table__value">2021 BMW X3</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Sale Date</div>
+                                <div class="main-table__value">24.03.2022</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Current Bid</div>
+                                <div class="main-table__value"><strong>$16,000</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Bid Status</div>
+                                <div class="main-table__value text-danger"><strong>OutBid</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">My Max Bid</div>
+                                <div class="main-table__value"><strong>$15,000</strong></div>
+                            </td>
+                            <td>
+                                <a href="#" class="main-table__btn btn-default btn-default--xs">
+                                    <img src="img/icons/bid-now.svg" alt="">
+                                    Increase Bid
+                                </a>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Sale Type</div>
+                                <div class="main-table__value">Pure Sale</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="main-table__mob-label">Lot</div>
+                                <div class="main-table__value text-primary"><strong>1425645</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">VIN</div>
+                                <div class="main-table__value">5UXZV4C5XD0B14800</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Vehicle</div>
+                                <div class="main-table__value">2021 BMW X3</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Sale Date</div>
+                                <div class="main-table__value">24.03.2022</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Current Bid</div>
+                                <div class="main-table__value"><strong>$16,000</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Bid Status</div>
+                                <div class="main-table__value text-danger"><strong>OutBid</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">My Max Bid</div>
+                                <div class="main-table__value"><strong>$15,000</strong></div>
+                            </td>
+                            <td>
+                                <a href="#" class="main-table__btn btn-default btn-default--xs">
+                                    <img src="img/icons/bid-now.svg" alt="">
+                                    Increase Bid
+                                </a>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Sale Type</div>
+                                <div class="main-table__value">Pure Sale</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="main-table__mob-label">Lot</div>
+                                <div class="main-table__value text-primary"><strong>1425645</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">VIN</div>
+                                <div class="main-table__value">5UXZV4C5XD0B14800</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Vehicle</div>
+                                <div class="main-table__value">2021 BMW X3</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Sale Date</div>
+                                <div class="main-table__value">24.03.2022</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Current Bid</div>
+                                <div class="main-table__value"><strong>$16,000</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Bid Status</div>
+                                <div class="main-table__value text-danger"><strong>OutBid</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">My Max Bid</div>
+                                <div class="main-table__value"><strong>$15,000</strong></div>
+                            </td>
+                            <td>
+                                <a href="#" class="main-table__btn btn-default btn-default--xs">
+                                    <img src="img/icons/bid-now.svg" alt="">
+                                    Increase Bid
+                                </a>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Sale Type</div>
+                                <div class="main-table__value">Pure Sale</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="main-table__mob-label">Lot</div>
+                                <div class="main-table__value text-primary"><strong>1425645</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">VIN</div>
+                                <div class="main-table__value">5UXZV4C5XD0B14800</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Vehicle</div>
+                                <div class="main-table__value">2021 BMW X3</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Sale Date</div>
+                                <div class="main-table__value">24.03.2022</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Current Bid</div>
+                                <div class="main-table__value"><strong>$16,000</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Bid Status</div>
+                                <div class="main-table__value text-danger"><strong>OutBid</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">My Max Bid</div>
+                                <div class="main-table__value"><strong>$15,000</strong></div>
+                            </td>
+                            <td>
+                                <a href="#" class="main-table__btn btn-default btn-default--xs">
+                                    <img src="img/icons/bid-now.svg" alt="">
+                                    Increase Bid
+                                </a>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Sale Type</div>
+                                <div class="main-table__value">Pure Sale</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="main-table__mob-label">Lot</div>
+                                <div class="main-table__value text-primary"><strong>1425645</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">VIN</div>
+                                <div class="main-table__value">5UXZV4C5XD0B14800</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Vehicle</div>
+                                <div class="main-table__value">2021 BMW X3</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Sale Date</div>
+                                <div class="main-table__value">24.03.2022</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Current Bid</div>
+                                <div class="main-table__value"><strong>$16,000</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Bid Status</div>
+                                <div class="main-table__value text-danger"><strong>OutBid</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">My Max Bid</div>
+                                <div class="main-table__value"><strong>$15,000</strong></div>
+                            </td>
+                            <td>
+                                <a href="#" class="main-table__btn btn-default btn-default--xs">
+                                    <img src="img/icons/bid-now.svg" alt="">
+                                    Increase Bid
+                                </a>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Sale Type</div>
+                                <div class="main-table__value">Pure Sale</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="main-table__mob-label">Lot</div>
+                                <div class="main-table__value text-primary"><strong>1425645</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">VIN</div>
+                                <div class="main-table__value">5UXZV4C5XD0B14800</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Vehicle</div>
+                                <div class="main-table__value">2021 BMW X3</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Sale Date</div>
+                                <div class="main-table__value">24.03.2022</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Current Bid</div>
+                                <div class="main-table__value"><strong>$16,000</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Bid Status</div>
+                                <div class="main-table__value text-danger"><strong>OutBid</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">My Max Bid</div>
+                                <div class="main-table__value"><strong>$15,000</strong></div>
+                            </td>
+                            <td>
+                                <a href="#" class="main-table__btn btn-default btn-default--xs">
+                                    <img src="img/icons/bid-now.svg" alt="">
+                                    Increase Bid
+                                </a>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Sale Type</div>
+                                <div class="main-table__value">Pure Sale</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="main-table__mob-label">Lot</div>
+                                <div class="main-table__value text-primary"><strong>1425645</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">VIN</div>
+                                <div class="main-table__value">5UXZV4C5XD0B14800</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Vehicle</div>
+                                <div class="main-table__value">2021 BMW X3</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Sale Date</div>
+                                <div class="main-table__value">24.03.2022</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Current Bid</div>
+                                <div class="main-table__value"><strong>$16,000</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Bid Status</div>
+                                <div class="main-table__value text-danger"><strong>OutBid</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">My Max Bid</div>
+                                <div class="main-table__value"><strong>$15,000</strong></div>
+                            </td>
+                            <td>
+                                <a href="#" class="main-table__btn btn-default btn-default--xs">
+                                    <img src="img/icons/bid-now.svg" alt="">
+                                    Increase Bid
+                                </a>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Sale Type</div>
+                                <div class="main-table__value">Pure Sale</div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div data-tab-content="1">
+                    <table class="main-table main-table--col-11">
+                        <tr>
+                            <th>
+                                Sale Date
+                            </th>
+                            <th>
+                                Lot
+                            </th>
+                            <th>
+                                VIN
+                            </th>
+                            <th>
+                                Vehicle
+                            </th>
+                            <th>
+                                Final Bid	
+                            </th>
+                            <th>
+                                Invoice
+                            </th>
+                            <th>
+                                Due Date
+                            </th>
+                            <th>
+                                Status
+                            </th>
+                            <th>
+                                Shipping
+                            </th>
+                            <th>
+                                Shipping Price
+                            </th>
+                            <th>
+                                Shipping Status
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="main-table__mob-label">Sale Date</div>
+                                <div class="main-table__value">11.05.2022</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Lot</div>
+                                <div class="main-table__value text-primary"><strong>45788329443567</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">VIN</div>
+                                <div class="main-table__value">5UXZV4C5XD0B14800</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Vehicle</div>
+                                <div class="main-table__value">2021 BMW X3</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Final Bid</div>
+                                <div class="main-table__value"><strong>$16,000</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Invoice</div>
+                                <div class="main-table__value text-secondary">Add Shipping before Download</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Due Date</div>
+                                <div class="main-table__value">24.10.2020</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Status</div>
+                                <div class="main-table__value text-secondary">Not paid</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Shipping</div>
+                                <div class="main-table__value"><a href="#" class="text-primary">Add Shipping</a></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Shipping Price</div>
+                                <div class="main-table__value text-secondary">-</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Shipping Status</div>
+                                <div class="main-table__value text-secondary">-</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="main-table__mob-label">Sale Date</div>
+                                <div class="main-table__value">11.05.2022</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Lot</div>
+                                <div class="main-table__value text-primary"><strong>45788329443567</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">VIN</div>
+                                <div class="main-table__value">5UXZV4C5XD0B14800</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Vehicle</div>
+                                <div class="main-table__value">2021 BMW X3</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Final Bid</div>
+                                <div class="main-table__value"><strong>$16,000</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Invoice</div>
+                                <div class="main-table__value text-secondary">Add Shipping before Download</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Due Date</div>
+                                <div class="main-table__value">24.10.2020</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Status</div>
+                                <div class="main-table__value text-secondary">Not paid</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Shipping</div>
+                                <div class="main-table__value"><span class="text-success me-3">Added</span> <a href="#" class="text-primary">Change</a> <div class="text-secondary">Cleveland - Odessa</div></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Shipping Price</div>
+                                <div class="main-table__value text-secondary">Calculation</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Shipping Status</div>
+                                <div class="main-table__value text-secondary">-</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="main-table__mob-label">Sale Date</div>
+                                <div class="main-table__value">11.05.2022</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Lot</div>
+                                <div class="main-table__value text-primary"><strong>45788329443567</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">VIN</div>
+                                <div class="main-table__value">5UXZV4C5XD0B14800</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Vehicle</div>
+                                <div class="main-table__value">2021 BMW X3</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Final Bid</div>
+                                <div class="main-table__value"><strong>$16,000</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Invoice</div>
+                                <div class="main-table__value text-secondary">Add Shipping before Download</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Due Date</div>
+                                <div class="main-table__value">24.10.2020</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Status</div>
+                                <div class="main-table__value text-secondary">Not paid</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Shipping</div>
+                                <div class="main-table__value"><span class="text-success me-3">Added</span> <a href="#" class="text-primary">Change</a> <div class="text-secondary">Cleveland - Odessa</div></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Shipping Price</div>
+                                <div class="main-table__value text-secondary"><div><strong class="text-dark">$1000</strong></div><a href="#" class="text-primary">Confirm</a></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Shipping Status</div>
+                                <div class="main-table__value text-secondary">-</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="main-table__mob-label">Sale Date</div>
+                                <div class="main-table__value">11.05.2022</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Lot</div>
+                                <div class="main-table__value text-primary"><strong>45788329443567</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">VIN</div>
+                                <div class="main-table__value">5UXZV4C5XD0B14800</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Vehicle</div>
+                                <div class="main-table__value">2021 BMW X3</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Final Bid</div>
+                                <div class="main-table__value"><strong>$16,000</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Invoice</div>
+                                <div class="main-table__value text-secondary">Add Shipping before Download</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Due Date</div>
+                                <div class="main-table__value">24.10.2020</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Status</div>
+                                <div class="main-table__value text-secondary">Not paid</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Shipping</div>
+                                <div class="main-table__value"><span class="text-success me-3">Added</span> <a href="#" class="text-primary">Change</a> <div class="text-secondary">Cleveland - Odessa</div></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Shipping Price</div>
+                                <div class="main-table__value text-secondary"><div><strong class="text-dark">$1000</strong></div><span class="text-success">Confirmed</span></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Shipping Status</div>
+                                <div class="main-table__value text-secondary">-</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="main-table__mob-label">Sale Date</div>
+                                <div class="main-table__value">11.05.2022</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Lot</div>
+                                <div class="main-table__value text-primary"><strong>45788329443567</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">VIN</div>
+                                <div class="main-table__value">5UXZV4C5XD0B14800</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Vehicle</div>
+                                <div class="main-table__value">2021 BMW X3</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Final Bid</div>
+                                <div class="main-table__value"><strong>$16,000</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Invoice</div>
+                                <div class="main-table__value text-secondary">Add Shipping before Download</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Due Date</div>
+                                <div class="main-table__value">24.10.2020</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Status</div>
+                                <div class="main-table__value text-secondary">Not paid</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Shipping</div>
+                                <div class="main-table__value"><span class="text-success me-3">Added</span> <a href="#" class="text-primary">Change</a> <div class="text-secondary">Cleveland - Odessa</div></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Shipping Price</div>
+                                <div class="main-table__value text-secondary"><div><strong class="text-dark">$1000</strong></div><span class="text-success">Confirmed</span></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Shipping Status</div>
+                                <div class="main-table__value">Sent</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="main-table__mob-label">Sale Date</div>
+                                <div class="main-table__value">11.05.2022</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Lot</div>
+                                <div class="main-table__value text-primary"><strong>45788329443567</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">VIN</div>
+                                <div class="main-table__value">5UXZV4C5XD0B14800</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Vehicle</div>
+                                <div class="main-table__value">2021 BMW X3</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Final Bid</div>
+                                <div class="main-table__value"><strong>$16,000</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Invoice</div>
+                                <div class="main-table__value text-secondary">Add Shipping before Download</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Due Date</div>
+                                <div class="main-table__value">24.10.2020</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Status</div>
+                                <div class="main-table__value text-secondary">Not paid</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Shipping</div>
+                                <div class="main-table__value"><span class="text-success me-3">Added</span> <a href="#" class="text-primary">Change</a> <div class="text-secondary">Cleveland - Odessa</div></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Shipping Price</div>
+                                <div class="main-table__value text-secondary"><div><strong class="text-dark">$1000</strong></div><span class="text-success">Confirmed</span></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Shipping Status</div>
+                                <div class="main-table__value text-success">Delivered</div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div data-tab-content="2">
+                    <table class="main-table main-table--col-9">
+                        <tr>
+                            <th>
+                                Sale Date
+                            </th>
+                            <th>
+                                Lot
+                            </th>
+                            <th>
+                                VIN
+                            </th>
+                            <th>
+                                Vehicle
+                            </th>
+                            <th></th>
+                            <th>
+                                My Max Bid
+                            </th>
+                            <th>
+                                Final bid
+                            </th>
+                            <th>
+                                Comments
+                            </th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="main-table__mob-label">Sale Date</div>
+                                <div class="main-table__value">11.05.2022</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Lot</div>
+                                <div class="main-table__value text-primary"><strong>45788329443567</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">VIN</div>
+                                <div class="main-table__value">5UXZV4C5XD0B14800</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Vehicle</div>
+                                <div class="main-table__value">2021 BMW X3</div>
+                            </td>
+                            <td></td>
+                            <td>
+                                <div class="main-table__mob-label">My Max Bid</div>
+                                <div class="main-table__value"><strong>$15,000</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Final bid</div>
+                                <div class="main-table__value"><strong>$15,000</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Comments</div>
+                                <div class="main-table__value">High price</div>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="main-table__mob-label">Sale Date</div>
+                                <div class="main-table__value">11.05.2022</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Lot</div>
+                                <div class="main-table__value text-primary"><strong>45788329443567</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">VIN</div>
+                                <div class="main-table__value">5UXZV4C5XD0B14800</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Vehicle</div>
+                                <div class="main-table__value">2021 BMW X3</div>
+                            </td>
+                            <td></td>
+                            <td>
+                                <div class="main-table__mob-label">My Max Bid</div>
+                                <div class="main-table__value"><strong>$15,000</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Final bid</div>
+                                <div class="main-table__value"><strong>$15,000</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Comments</div>
+                                <div class="main-table__value text-secondary">-</div>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="main-table__mob-label">Sale Date</div>
+                                <div class="main-table__value">11.05.2022</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Lot</div>
+                                <div class="main-table__value text-primary"><strong>45788329443567</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">VIN</div>
+                                <div class="main-table__value">5UXZV4C5XD0B14800</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Vehicle</div>
+                                <div class="main-table__value">2021 BMW X3</div>
+                            </td>
+                            <td></td>
+                            <td>
+                                <div class="main-table__mob-label">My Max Bid</div>
+                                <div class="main-table__value"><strong>$15,000</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Final bid</div>
+                                <div class="main-table__value"><strong>$15,000</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Comments</div>
+                                <div class="main-table__value">High price</div>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="main-table__mob-label">Sale Date</div>
+                                <div class="main-table__value">11.05.2022</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Lot</div>
+                                <div class="main-table__value text-primary"><strong>45788329443567</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">VIN</div>
+                                <div class="main-table__value">5UXZV4C5XD0B14800</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Vehicle</div>
+                                <div class="main-table__value">2021 BMW X3</div>
+                            </td>
+                            <td></td>
+                            <td>
+                                <div class="main-table__mob-label">My Max Bid</div>
+                                <div class="main-table__value"><strong>$15,000</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Final bid</div>
+                                <div class="main-table__value"><strong>$15,000</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Comments</div>
+                                <div class="main-table__value text-secondary">-</div>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="main-table__mob-label">Sale Date</div>
+                                <div class="main-table__value">11.05.2022</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Lot</div>
+                                <div class="main-table__value text-primary"><strong>45788329443567</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">VIN</div>
+                                <div class="main-table__value">5UXZV4C5XD0B14800</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Vehicle</div>
+                                <div class="main-table__value">2021 BMW X3</div>
+                            </td>
+                            <td></td>
+                            <td>
+                                <div class="main-table__mob-label">My Max Bid</div>
+                                <div class="main-table__value"><strong>$15,000</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Final bid</div>
+                                <div class="main-table__value"><strong>$15,000</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Comments</div>
+                                <div class="main-table__value">High price</div>
+                            </td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="p-70"></div>
+    </main>
+
+    <!-- == FOOTER ================== -->
+    @@include('common/footer/_footer.html',{})
+    <!-- == // FOOTER ================== -->
+
+    @@include('_js-bottom.html',{})
+</body>
+
+</html>
