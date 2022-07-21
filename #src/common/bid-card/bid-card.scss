@@ -207,7 +207,7 @@
             order: 1;
         }
 
-        &:hover {
+        &--show-list {
             & .bid-card__fee-title {
                 color: $textColor;
             }
@@ -224,6 +224,7 @@
         color: $mainColor;
         transition: all 0.3s ease;
         cursor: pointer;
+        user-select: none;
     }
 
     &__fee-list {

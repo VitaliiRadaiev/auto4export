@@ -1377,6 +1377,7 @@ if(topFilter) {
 
 				tippy(icon, {
 					content: tooltip.dataset.tooltip,
+					arrow: false,
 				});
 			})
 		}
@@ -2386,6 +2387,24 @@ if (carDetailImages) {
                 if(getNum(input.value) <= minValue) {
                     input.value = minValue
                     bidValue.classList.add('min-value');
+                }
+            })
+        }
+    }
+
+    let bidCardFee = document.querySelector('[data-bid-card-fee]');
+    if(bidCardFee) {
+        let title = bidCardFee.querySelector('.bid-card__fee-title');
+        if(title) {
+            title.addEventListener('click', () => {
+                bidCardFee.classList.toggle('bid-card__fee--show-list');
+            })
+
+            document.addEventListener('click', (e) => {
+                if(!e.target.closest('.bid-card__fee')) {
+                    if(!e.target.closest('.bid-card-value__body')) {
+                        bidCardFee.classList.remove('bid-card__fee--show-list');
+                    }
                 }
             })
         }

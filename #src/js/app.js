@@ -433,6 +433,7 @@ class App {
 
 				tippy(icon, {
 					content: tooltip.dataset.tooltip,
+					arrow: false,
 				});
 			})
 		}

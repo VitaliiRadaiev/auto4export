@@ -4456,6 +4456,29 @@ figure {
   margin-top: 1.4em;
 }
 
+.tippy-box {
+  background: #ffffff;
+  -webkit-box-shadow: 0px 12px 24px rgba(51, 51, 51, 0.2);
+          box-shadow: 0px 12px 24px rgba(51, 51, 51, 0.2);
+  border-radius: 1rem;
+  pointer-events: auto;
+  padding: 0;
+}
+
+.tippy-box .tippy-content {
+  padding: 2rem;
+  color: #191919;
+  font-size: 1.4rem;
+  line-height: 1.14em;
+}
+
+.tippy-box img {
+  border-radius: 1.6rem;
+  margin: 0;
+  width: 100%;
+  height: auto;
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -5539,6 +5562,27 @@ figure {
   overflow-y: auto;
   overflow-x: hidden;
   padding-bottom: 40px;
+}
+
+.mobile-menu__inner::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+
+.mobile-menu__inner::-webkit-scrollbar-thumb {
+  background: #fff;
+  border-radius: 10px;
+}
+
+.mobile-menu__inner::-webkit-scrollbar-thumb:hover {
+  background: #fff;
+}
+
+.mobile-menu__inner::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0px 0px 0px 0px transparent;
+          box-shadow: inset 0px 0px 0px 0px transparent;
 }
 
 .mobile-menu__arrow {
@@ -9768,11 +9812,11 @@ figure {
   margin-bottom: 2.5rem;
 }
 
-.bid-card__fee:hover .bid-card__fee-title {
+.bid-card__fee--show-list .bid-card__fee-title {
   color: #191919;
 }
 
-.bid-card__fee:hover .bid-card__fee-list {
+.bid-card__fee--show-list .bid-card__fee-list {
   pointer-events: auto;
   opacity: 1;
 }
@@ -9785,6 +9829,10 @@ figure {
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
   cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .bid-card__fee-list {
@@ -13376,6 +13424,10 @@ figure {
     margin-right: 4rem !important;
   }
 
+  .tippy-box img {
+    width: 64rem;
+  }
+
   .header__logo-mob {
     display: none;
   }
@@ -15435,6 +15487,11 @@ figure {
     margin: 50px 0;
   }
 
+  .tippy-box .tippy-content {
+    font-size: 13px;
+    line-height: 16px;
+  }
+
   .header__row-1 .header__body {
     min-height: 107px;
   }
@@ -17437,7 +17494,7 @@ figure {
   }
 
   .simple-table-list > li:not(:last-child) {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
   }
 
   .info-box__img {
