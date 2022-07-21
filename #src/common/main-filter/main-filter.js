@@ -4,8 +4,9 @@ if (mainFilter) {
     if (filterSelects.length) {
         filterSelects.forEach(filterSelect => {
             let head = filterSelect.querySelector('.filter-select__head');
+            let headText = filterSelect.querySelector('.filter-select__head-text');
             let collapseBox = filterSelect.querySelector('.filter-select__collapse-box');
-            let radioInputs = filterSelect.querySelectorAll('input[type="radio"]');
+            let innerInputs = Array.from(filterSelect.querySelectorAll('input[type="radio"], input[type="checkbox"]'));
             let inputSearch = filterSelect.querySelector('.filter-select__search input');
 
             head.addEventListener('click', () => {
@@ -23,27 +24,41 @@ if (mainFilter) {
                 })
             })
 
-            if (radioInputs.length) {
-                radioInputs.forEach(radio => {
-                    let textEl = radio.closest('.checkbox-radio').querySelector('.checkbox-radio__text');
-                    // init
-                    if (radio.checked) {
-                        filterSelect.classList.add('filter-select--selected');
-                        head.innerText = textEl.innerText;
-                    }
-
-                    radio.addEventListener('change', () => {
-                        if (radio.checked) {
+            if (innerInputs.length) {
+                innerInputs.forEach(checkboxRadio => {
+                    if(checkboxRadio.type === 'radio') {
+                        let textEl = checkboxRadio.closest('.checkbox-radio').querySelector('.checkbox-radio__text');
+                        // init
+                        if (checkboxRadio.checked) {
                             filterSelect.classList.add('filter-select--selected');
-                            head.innerText = textEl.innerText;
+                            headText.innerText = textEl.innerText;
                         }
-                    })
+    
+                        checkboxRadio.addEventListener('change', () => {
+                            if (checkboxRadio.checked) {
+                                filterSelect.classList.add('filter-select--selected');
+                                headText.innerText = textEl.innerText;
+                            }
+                        })
+                    } else if(checkboxRadio.type === 'checkbox') {
+                        checkboxRadio.addEventListener('change', () => {
+                            let text = innerInputs.filter(i => i.checked).map(i => i.closest('.checkbox-radio').querySelector('.checkbox-radio__text').innerText);
+                            if(text.length) {
+                                filterSelect.classList.add('filter-select--selected');
+                                headText.innerText = text.join(', ');
+                            } else {
+                                filterSelect.classList.remove('filter-select--selected');
+                                headText.innerText = 'Select'
+                            }
+                        })
+                        
+                    }
                 })
             }
 
-            if (inputSearch && radioInputs) {
-                const getFilterItems = (radioInputs) => {
-                    return Array.from(radioInputs).map(input => {
+            if (inputSearch && innerInputs) {
+                const getFilterItems = (innerInputs) => {
+                    return Array.from(innerInputs).map(input => {
                         return {
                             parent: input.closest('.filter-select__item'),
                             text: input.closest('.checkbox-radio').querySelector('.checkbox-radio__text').innerText
@@ -69,7 +84,7 @@ if (mainFilter) {
                     }
                 }
 
-                let allFilterItems = getFilterItems(radioInputs);
+                let allFilterItems = getFilterItems(innerInputs);
 
                 inputSearch.addEventListener('input', (e) => {
                     applySearch(allFilterItems, e.target.value.trim());
@@ -142,12 +157,12 @@ if (mainFilter) {
 
     let btnOpenMobileFilter = document.querySelector('.main-search__btn-filter');
     if(btnOpenMobileFilter) {
-        console.log(btnOpenMobileFilter);
+
         let mainMobileFilter = document.querySelector('[data-main-filter-mobile]');
         if(mainMobileFilter) {
 
             btnOpenMobileFilter.addEventListener('click', () => {
-                console.log('test');
+   
                 mainMobileFilter.classList.add('main-filter-mobile--open');
                 document.body.classList.add('overflow-hidden');
             })

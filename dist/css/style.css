@@ -8991,6 +8991,25 @@ figure {
   color: #8C8C8C;
   padding: 1rem 3.4rem 1rem 2rem;
   cursor: pointer;
+  position: relative;
+}
+
+.filter-select__head-text {
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 2rem;
+  width: calc(100% - 5.4rem);
+  padding: 0.5rem 0;
+  white-space: nowrap;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  max-width: calc(100vw - 40px);
+  pointer-events: none;
 }
 
 .filter-select__head:before {
@@ -13783,6 +13802,11 @@ figure {
 
   .main-filter__reset:hover {
     opacity: 0.7;
+  }
+
+  .filter-select__head:hover .filter-select__head-text {
+    width: auto;
+    padding-right: 1rem;
   }
 
   .main-filter-mobile {
