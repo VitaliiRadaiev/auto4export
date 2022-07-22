@@ -258,7 +258,7 @@
         cursor: pointer;
         position: relative;
 
-        @media (max-width: $md3+px) {
+        @media (max-width: $md3+px) { 
             height: 38px;
             font-size: 13px;
             line-height: 16px;
@@ -292,7 +292,7 @@
         &:before {
             position: absolute;
             font-family: "icomoon" !important;
-            content: "\e902";
+            content: "\e93f";
             top: 50%;
             right: 2rem;
             transform: translateY(-50%);
@@ -374,7 +374,7 @@
         &:before {
             position: absolute;
             font-family: "icomoon" !important;
-            content: "\e902";
+            content: "\e93f";
             top: 50%;
             right: 2rem;
             transform: translateY(-50%);

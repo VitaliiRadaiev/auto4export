@@ -198,6 +198,16 @@
         }
     }
 
+    &__timer {
+        @media (min-width: 992px) {
+            grid-column: span 2;
+        }
+        
+        @media (max-width: $md3+px) {
+            grid-column: span 2;
+        }
+    }
+
     &__fee {
         position: relative;
         margin-bottom: 2.5rem;

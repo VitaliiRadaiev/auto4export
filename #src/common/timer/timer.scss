@@ -1,0 +1,8 @@
+.timer {
+    white-space: nowrap;
+
+    & sub {
+        display: inline-block;
+        transform: translateY(-0.25em);
+    }
+}
