@@ -277,6 +277,18 @@
         transition: all 0.3s ease;
         color: $textColorSecondary;
     }
+
+    &--sm {
+        height: 4.8rem;
+        font-size: 1.6rem;
+        line-height: 1.1875em;
+
+        @media (max-width: $md3+px) {
+            height: 38px;
+            font-size: 14px;
+            line-height: 17px;
+        }
+    }
 }
 .input-wrap {
     position: relative;
@@ -414,7 +426,7 @@
     transform: translateY(-50%);
     z-index: 3;
     cursor: pointer;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
     color: $textColorSecondary;
     width: 1.8rem;
     opacity: 0;
@@ -473,6 +485,18 @@
         @media (max-width: $md3+px) {
             margin-right: 10px;
         }
+
+        &--lg {
+            width: 2.8rem;
+            height: 2.8rem;
+            margin-right: 1.2rem;
+
+            @media (max-width: $md3+px) {
+                width: 2.4rem;
+                height: 2.4rem;
+                margin-right: 1rem;
+            }
+        }
     }
 
     &__text {
@@ -483,6 +507,16 @@
         @media (max-width: $md3+px) {
             font-size: 13px;
             line-height: 14px;
+        }
+
+        &--sm {
+            font-size: 1.4rem;
+            line-height: 1.21em;
+
+            @media (max-width: $md3+px) {
+                font-size: 13px;
+                line-height: 16px;
+            }
         }
     }
 }
@@ -540,6 +574,17 @@
                 width: 8px;
             }
         }
+
+        &--sm {
+            width: 2.8rem;
+            height: 2.8rem;
+            margin-right: 1.2rem;
+
+            @media (max-width: $md3+px) {
+                width: 24px;
+                height: 24px;
+            }
+        }
     }
 
     &__text {
@@ -549,6 +594,16 @@
         @media (max-width: $md3+px) {
             font-size: 14px;
             line-height: 17px;
+        }
+
+        &--sm {
+            font-size: 1.4rem;
+            line-height: 1.21em;
+
+            @media (max-width: $md3+px) {
+                font-size: 12px;
+                line-height: 14px;
+            }
         }
     }
 
@@ -566,6 +621,62 @@
 
         & .radio__text {
             color: $textColorSecondary;
+        }
+    }
+}
+
+.checkbox-switch {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+
+    & input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+        visibility: hidden;
+
+        &:checked ~ .checkbox-switch__thumb {
+            background-color: $mainColor;
+            &:before {
+                background-color: #fff;
+                left: calc(4.4rem - 2rem - 0.2rem);
+            }
+        }
+    }
+
+    &__thumb {
+        flex: 0 0 auto;
+        width: 4.4rem;
+        margin-right: 1.2rem;
+        height: 2.4rem;
+        border-radius: 1.2rem;
+        background-color: #dbdbdb;
+        position: relative;
+
+        &:before {
+            position: absolute;
+            content: "";
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0.2rem;
+            height: 2rem;
+            width: 2rem;
+            border-radius: 50%;
+            background-color: #fff;
+            transition: all 0.3s ease;
+        }
+    }
+
+    &__text {
+        font-size: 1.6rem;
+        line-height: 1.18em;
+
+        @media (max-width: $md3+px) {
+            font-size: 14px;
+            line-height: 17px;
         }
     }
 }

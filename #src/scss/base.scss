@@ -560,6 +560,7 @@ figure {
 	display: inline-block;
 
 	&.copied {
+		z-index: 40;
 		&:after {
 			color: $successColor !important;
 		}
@@ -1121,5 +1122,13 @@ figure {
 		@media (min-width: 768px) {
 			width: 64rem;
 		}
+	}
+}
+
+
+// z-index
+@for $i from 1 through 50 {
+	.z-index-#{$i} {
+		z-index: $i;
 	}
 }

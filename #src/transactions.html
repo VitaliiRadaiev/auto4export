@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en" data-set-font-size>
+@@include('_head.html',{
+"title": "auto4export"
+})
+
+<body>
+    <div class="_preload-body"></div>
+    <!-- == TOP LINE ================== -->
+
+    @@include('common/header/_header.html',{
+    "mod": "header--user-authorized"
+    })
+    <!-- == // TOP LINE ================== -->
+
+    <main class="_page dashboard-page" data-padding-top-header-size>
+        <div class="p-50"></div>
+        <div class="container">
+            @@include('common/breadcrumbs/_breadcrumbs.html', {
+            "arr": ['<a href="#">Home</a>', '<a href="#">My Account </a>', 'Transactions']
+            })
+        </div>
+
+        <div data-tabs>
+            <div class="container">
+                <div class="dashboard-head ">
+                    <h1 class="dashboard-head__title">Transactions</h1>
+                    <div class="dashboard-head-nav">
+                        <a href="#" class="dashboard-head-nav__btn dashboard-head-nav__btn--back">
+                            <img class="img-svg" src="img/icons/arrow-left.svg" alt="">
+                            Back
+                        </a>
+                        <a href="#" class="dashboard-head-nav__btn tab-active" data-tab-trigger="0">
+                            Transaction list <span>4</span>
+                        </a>
+                        <a href="#" class="dashboard-head-nav__btn " data-tab-trigger="1">
+                            REQUEST A REFUND <span>8</span>
+                        </a>
+                        <a href="#" class="dashboard-head-nav__btn " data-tab-trigger="2">
+                            REFUNDS <span>8</span>
+                        </a>
+                        <a href="#" class="dashboard-head-nav__btn dashboard-head-nav__btn--edit">
+                            <img class="img-svg" src="img/icons/gear.svg" alt="">
+                            Edit profile
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div data-tab-content="0">
+                    <table class="main-table">
+                        <tr>
+                            <th>
+                                Type
+                            </th>
+                            <th>
+                                Date
+                            </th>
+                            <th>
+                                #
+                            </th>
+                            <th>
+                                Due Date
+                            </th>
+                            <th>
+                                Balance
+                            </th>
+                            <th>
+                                Total
+                            </th>
+                            <th>
+                                Status
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="main-table__mob-label">Type</div>
+                                <div class="main-table__value">Invoice</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Date</div>
+                                <div class="main-table__value">21.03.2022</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">#</div>
+                                <div class="main-table__value">#1248</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Due Date</div>
+                                <div class="main-table__value">23.03.2022</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Balance</div>
+                                <div class="main-table__value"><strong>$150</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Total</div>
+                                <div class="main-table__value"><strong>$15,000</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Status</div>
+                                <div class="main-table__value text-success">Paid</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="main-table__mob-label">Type</div>
+                                <div class="main-table__value">Invoice</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Date</div>
+                                <div class="main-table__value">21.03.2022</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">#</div>
+                                <div class="main-table__value">#1248</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Due Date</div>
+                                <div class="main-table__value">23.03.2022</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Balance</div>
+                                <div class="main-table__value"><strong>$150</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Total</div>
+                                <div class="main-table__value"><strong>$15,000</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Status</div>
+                                <div class="main-table__value text-success">Paid</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="main-table__mob-label">Type</div>
+                                <div class="main-table__value">Invoice</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Date</div>
+                                <div class="main-table__value">21.03.2022</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">#</div>
+                                <div class="main-table__value">#1248</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Due Date</div>
+                                <div class="main-table__value">23.03.2022</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Balance</div>
+                                <div class="main-table__value"><strong>$150</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Total</div>
+                                <div class="main-table__value"><strong>$15,000</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Status</div>
+                                <div class="main-table__value text-success">Paid</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="main-table__mob-label">Type</div>
+                                <div class="main-table__value">Invoice</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Date</div>
+                                <div class="main-table__value">21.03.2022</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">#</div>
+                                <div class="main-table__value">#1248</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Due Date</div>
+                                <div class="main-table__value">23.03.2022</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Balance</div>
+                                <div class="main-table__value"><strong>$150</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Total</div>
+                                <div class="main-table__value"><strong>$15,000</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Status</div>
+                                <div class="main-table__value text-danger">Not Paid</div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div data-tab-content="1">
+                    <table class="main-table">
+                        <tr>
+                            <th>
+                                ID
+                            </th>
+                            <th>
+                                Transaction Date
+                            </th>
+                            <th>
+                                Transaction Type
+                            </th>
+                            <th>
+                                Comments
+                            </th>
+                            <th>
+                                Amount
+                            </th>
+                            <th>
+                                Total
+                            </th>
+                            <th>
+                                Status
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="main-table__mob-label">ID</div>
+                                <div class="main-table__value">175611</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Transaction Date</div>
+                                <div class="main-table__value">21.03.2022</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Transaction Type</div>
+                                <div class="main-table__value">#1248</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Comments</div>
+                                <div class="main-table__value">Return my money!</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Amount</div>
+                                <div class="main-table__value"><strong>$150</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Total</div>
+                                <div class="main-table__value"><strong>$15,000</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Status</div>
+                                <div class="main-table__value text-success">Paid</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="main-table__mob-label">ID</div>
+                                <div class="main-table__value">175611</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Transaction Date</div>
+                                <div class="main-table__value">21.03.2022</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Transaction Type</div>
+                                <div class="main-table__value">#1248</div>
+                            </td>
+                            <td></td>
+                            <td>
+                                <div class="main-table__mob-label">Amount</div>
+                                <div class="main-table__value"><strong>$150</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Total</div>
+                                <div class="main-table__value"><strong>$15,000</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Status</div>
+                                <div class="main-table__value text-success">Paid</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="main-table__mob-label">ID</div>
+                                <div class="main-table__value">175611</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Transaction Date</div>
+                                <div class="main-table__value">21.03.2022</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Transaction Type</div>
+                                <div class="main-table__value">#1248</div>
+                            </td>
+                            <td></td>
+                            <td>
+                                <div class="main-table__mob-label">Amount</div>
+                                <div class="main-table__value"><strong>$150</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Total</div>
+                                <div class="main-table__value"><strong>$15,000</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Status</div>
+                                <div class="main-table__value text-success">Paid</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="main-table__mob-label">ID</div>
+                                <div class="main-table__value">175611</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Transaction Date</div>
+                                <div class="main-table__value">21.03.2022</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Transaction Type</div>
+                                <div class="main-table__value">#1248</div>
+                            </td>
+                            <td></td>
+                            <td>
+                                <div class="main-table__mob-label">Amount</div>
+                                <div class="main-table__value"><strong>$150</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Total</div>
+                                <div class="main-table__value"><strong>$15,000</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Status</div>
+                                <div class="main-table__value text-danger">Not Paid</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="main-table__mob-label">ID</div>
+                                <div class="main-table__value">175611</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Transaction Date</div>
+                                <div class="main-table__value">21.03.2022</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Transaction Type</div>
+                                <div class="main-table__value">#1248</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Comments</div>
+                                <div class="main-table__value">Return my money!</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Amount</div>
+                                <div class="main-table__value"><strong>$150</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Total</div>
+                                <div class="main-table__value"><strong>$15,000</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Status</div>
+                                <div class="main-table__value text-success">Paid</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="main-table__mob-label">ID</div>
+                                <div class="main-table__value">175611</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Transaction Date</div>
+                                <div class="main-table__value">21.03.2022</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Transaction Type</div>
+                                <div class="main-table__value">#1248</div>
+                            </td>
+                            <td></td>
+                            <td>
+                                <div class="main-table__mob-label">Amount</div>
+                                <div class="main-table__value"><strong>$150</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Total</div>
+                                <div class="main-table__value"><strong>$15,000</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Status</div>
+                                <div class="main-table__value text-success">Paid</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="main-table__mob-label">ID</div>
+                                <div class="main-table__value">175611</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Transaction Date</div>
+                                <div class="main-table__value">21.03.2022</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Transaction Type</div>
+                                <div class="main-table__value">#1248</div>
+                            </td>
+                            <td></td>
+                            <td>
+                                <div class="main-table__mob-label">Amount</div>
+                                <div class="main-table__value"><strong>$150</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Total</div>
+                                <div class="main-table__value"><strong>$15,000</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Status</div>
+                                <div class="main-table__value text-success">Paid</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="main-table__mob-label">ID</div>
+                                <div class="main-table__value">175611</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Transaction Date</div>
+                                <div class="main-table__value">21.03.2022</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Transaction Type</div>
+                                <div class="main-table__value">#1248</div>
+                            </td>
+                            <td></td>
+                            <td>
+                                <div class="main-table__mob-label">Amount</div>
+                                <div class="main-table__value"><strong>$150</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Total</div>
+                                <div class="main-table__value"><strong>$15,000</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Status</div>
+                                <div class="main-table__value text-danger">Not Paid</div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div data-tab-content="2">
+                    <table class="main-table">
+                        <tr>
+                            <th>
+                                Transaction Date
+                            </th>
+                            <th>
+                                Refund Amount
+                            </th>
+                            <th>
+                                Comments
+                            </th>
+                            <th>
+                                Status
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="main-table__mob-label">Transaction Date</div>
+                                <div class="main-table__value">21.03.2022</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Refund Amount</div>
+                                <div class="main-table__value"><strong>$150</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Comments</div>
+                                <div class="main-table__value">Return my money!</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Status</div>
+                                <div class="main-table__value text-success">Paid</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="main-table__mob-label">Transaction Date</div>
+                                <div class="main-table__value">21.03.2022</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Refund Amount</div>
+                                <div class="main-table__value"><strong>$150</strong></div>
+                            </td>
+                            <td></td>
+                            <td>
+                                <div class="main-table__mob-label">Status</div>
+                                <div class="main-table__value text-success">Paid</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="main-table__mob-label">Transaction Date</div>
+                                <div class="main-table__value">21.03.2022</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Refund Amount</div>
+                                <div class="main-table__value"><strong>$150</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Comments</div>
+                                <div class="main-table__value">Return my money!</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Status</div>
+                                <div class="main-table__value text-success">Paid</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="main-table__mob-label">Transaction Date</div>
+                                <div class="main-table__value">21.03.2022</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Refund Amount</div>
+                                <div class="main-table__value"><strong>$150</strong></div>
+                            </td>
+                            <td></td>
+                            <td>
+                                <div class="main-table__mob-label">Status</div>
+                                <div class="main-table__value text-success">Paid</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="main-table__mob-label">Transaction Date</div>
+                                <div class="main-table__value">21.03.2022</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Refund Amount</div>
+                                <div class="main-table__value"><strong>$150</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Comments</div>
+                                <div class="main-table__value">Return my money!</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Status</div>
+                                <div class="main-table__value text-success">Paid</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="main-table__mob-label">Transaction Date</div>
+                                <div class="main-table__value">21.03.2022</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Refund Amount</div>
+                                <div class="main-table__value"><strong>$150</strong></div>
+                            </td>
+                            <td></td>
+                            <td>
+                                <div class="main-table__mob-label">Status</div>
+                                <div class="main-table__value text-success">Paid</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="main-table__mob-label">Transaction Date</div>
+                                <div class="main-table__value">21.03.2022</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Refund Amount</div>
+                                <div class="main-table__value"><strong>$150</strong></div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Comments</div>
+                                <div class="main-table__value">Return my money!</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Status</div>
+                                <div class="main-table__value text-success">Paid</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="main-table__mob-label">Transaction Date</div>
+                                <div class="main-table__value">21.03.2022</div>
+                            </td>
+                            <td>
+                                <div class="main-table__mob-label">Refund Amount</div>
+                                <div class="main-table__value"><strong>$150</strong></div>
+                            </td>
+                            <td></td>
+                            <td>
+                                <div class="main-table__mob-label">Status</div>
+                                <div class="main-table__value text-success">Paid</div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="p-70"></div>
+    </main>
+
+    <!-- == FOOTER ================== -->
+    @@include('common/footer/_footer.html',{})
+    <!-- == // FOOTER ================== -->
+
+    @@include('_js-bottom.html',{})
+</body>
+
+</html>

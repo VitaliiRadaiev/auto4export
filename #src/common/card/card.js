@@ -50,12 +50,6 @@ if (btnSetList && btnSetGrid) {
         if (cards.length) {
             cards.forEach(card => {
                 card.classList.add('card--second');
-                let stateIcons = card.querySelector('.card__state-icons');
-                let row1 = card.querySelector('.card__row-1');
-
-                row1.prepend(stateIcons);
-
-
             })
         }
 
@@ -77,13 +71,13 @@ if (btnSetList && btnSetGrid) {
                 let col3 = card.querySelector('.card__col-3');
                 let vinNum = card.querySelector('.card__number--vin');
 
-                if(document.documentElement.clientWidth > 991.98) {
+                if (document.documentElement.clientWidth > 991.98) {
                     let stateIcons = card.querySelector('.card__state-icons');
                     let box = card.querySelector('.card__box-body');
-    
+
                     box.append(stateIcons);
                 }
-                if(document.documentElement.clientWidth < 768) {
+                if (document.documentElement.clientWidth < 768) {
                     col3.prepend(vinNum)
                 }
             })
@@ -111,7 +105,7 @@ if (btnSetList && btnSetGrid) {
 
                 row1.append(stateIcons);
 
-                if(document.documentElement.clientWidth < 768) {
+                if (document.documentElement.clientWidth < 768) {
                     row2.append(vinNum)
                 }
             })
@@ -119,7 +113,7 @@ if (btnSetList && btnSetGrid) {
 
         if (list) {
             list.classList.add('main-search__list--grid');
-            
+
         }
 
         window.borderDashed.update();
@@ -135,6 +129,9 @@ if (cards.length) {
         let col3 = card.querySelector('.card__col-3');
         let vinNum = card.querySelector('.card__number--vin');
         let btnBitNow = card.querySelector('.card__bid-now');
+        let btnRemove = card.querySelector('.card__remove-btn');
+        let removeBox = card.querySelector('.card__remove');
+        let btnCancel = card.querySelector('.card__cancel');
 
         if (btnBitNow) {
             let box = card.querySelector('.card__box');
@@ -147,9 +144,25 @@ if (cards.length) {
             })
         }
 
+        if(btnRemove && removeBox && btnCancel) {
+            btnRemove.addEventListener('click', (e) => {
+                e.preventDefault();
+                removeBox.classList.toggle('card__remove--show-alert');
+            })
+            btnCancel.addEventListener('click', (e) => {
+                e.preventDefault();
+                removeBox.classList.remove('card__remove--show-alert');
+            })
+        }
 
         const changePosition = () => {
-            if (card.classList.contains('card--second')) return;
+            if (card.classList.contains('card--second')) {
+                let stateIcons = card.querySelector('.card__state-icons');
+                let row1 = card.querySelector('.card__row-1');
+                row1.prepend(stateIcons);
+
+                return
+            };
 
             if (stateIcons && box && row1) {
                 if (document.documentElement.clientWidth < 992) {

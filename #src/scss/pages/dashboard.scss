@@ -1,3 +1,9 @@
+.dashboard-page {
+    position: relative;
+    z-index: 5;
+    overflow: visible;
+}
+
 .dashboard-head {
     display: flex;
     align-items: center;
@@ -510,6 +516,34 @@
     &__submit {
         @media (max-width: $md3+px) {
             width: 100%;
+        }
+    }
+}
+
+.watchlist {
+
+    &__notifications {
+        margin-bottom: 3rem;
+    }
+
+    &__list {
+        padding-left: 0;
+        margin-bottom: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        min-width: 0;
+
+        & > li {
+            min-width: 0;
+            flex: 0 1 calc(25% - calc(2rem * 3 / 4));
+
+            @media (max-width: $md2+px) {
+                flex: 0 1 calc(50% - 1rem);
+            }
+            @media (max-width: $md3+px) {
+                flex: 0 1 100%;
+            }
         }
     }
 }

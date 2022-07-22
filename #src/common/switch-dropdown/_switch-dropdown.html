@@ -1,0 +1,71 @@
+<div class="switch-dropdown" data-switch-dropdown>
+    <div class="switch-dropdown__checkbox">
+        <label class="checkbox-switch">
+            <input type="checkbox">
+            <div class="checkbox-switch__thumb"></div>
+            <div class="checkbox-switch__text">Notifications</div>
+        </label>
+    </div>
+    <div class="switch-dropdown__box">
+        <div class="switch-dropdown__box-row">
+            <h3 class="switch-dropdown__title">Notification Type</h3>
+            <ul class="switch-dropdown__checkbox-radio-list">
+                <li>
+                    <label class="checkbox-radio">
+                        <input type="radio" name="select-1" checked>
+                        <div class="checkbox-radio__square checkbox-radio__square--lg"></div>
+                        <div class="checkbox-radio__text checkbox-radio__text--sm">Email</div>
+                    </label>
+                </li>
+                <li>
+                    <label class="checkbox-radio">
+                        <input type="radio" name="select-1">
+                        <div class="checkbox-radio__square checkbox-radio__square--lg"></div>
+                        <div class="checkbox-radio__text checkbox-radio__text--sm">SMS</div>
+                    </label>
+                </li>
+                <li>
+                    <label class="checkbox-radio">
+                        <input type="radio" name="select-1">
+                        <div class="checkbox-radio__square checkbox-radio__square--lg"></div>
+                        <div class="checkbox-radio__text checkbox-radio__text--sm">Email + SMS</div>
+                    </label>
+                </li>
+            </ul>
+        </div>
+        <div class="switch-dropdown__box-row">
+            <h3 class="switch-dropdown__title">Live Auction Updates</h3>
+            <ul class="switch-dropdown__checkbox-radio-list">
+                <li>
+                    <label class="radio">
+                        <input type="radio" name="select-2" checked>
+                        <div class="radio__circle radio__circle--sm"></div>
+                        <div class="radio__text radio__text--sm">On</div>
+                    </label>
+                </li>
+                <li>
+                    <label class="radio">
+                        <input type="radio" name="select-2">
+                        <div class="radio__circle radio__circle--sm"></div>
+                        <div class="radio__text radio__text--sm">Off</div>
+                    </label>
+                </li>
+            </ul>
+        </div>
+        <div class="switch-dropdown__box-row">
+            <h3 class="switch-dropdown__title">Notification Phone Number</h3>
+            <div class="input-wrap" data-mask="9{*}" data-phone-location>
+                <input type="text" class="input input--sm">
+            </div>
+        </div>
+        <div class="switch-dropdown__box-row switch-dropdown__box-row--buttons">
+            <button type="button" class="switch-dropdown__cancel btn-default btn-default--sm btn-default--light">
+                Cancel
+            </button>
+            <button type="submit" class="btn-default btn-default--sm">
+                <img class="img-svg" src="img/icons/circle-check-sm.svg" alt="">
+                Save
+            </button>
+        </div>
+    </div>
+</div>

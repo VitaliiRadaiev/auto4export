@@ -105,7 +105,7 @@ class App {
 								i.classList.remove('tab-active');
 								getContentItem(i.dataset.tabTrigger).classList.remove('tab-active');
 							})
-
+							window.borderDashed.update();
 						})
 					})
 				}
@@ -452,6 +452,7 @@ class App {
 		@@include('../common/input-file/input-file.js');
 		@@include('../common/auction-table/auction-table.js');
 		@@include('../common/calendar/calendar.js');
+		@@include('../common/switch-dropdown/switch-dropdown.js');
 	}
 
 	componentsScripts() {

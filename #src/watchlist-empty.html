@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en" data-set-font-size>
+@@include('_head.html',{
+"title": "auto4export"
+})
+
+<body>
+    <div class="_preload-body"></div>
+    <!-- == TOP LINE ================== -->
+
+    @@include('common/header/_header.html',{
+    "mod": "header--user-authorized"
+    })
+    <!-- == // TOP LINE ================== -->
+
+    <main class="_page dashboard-page" data-padding-top-header-size>
+        <div class="p-50"></div>
+        <div class="container">
+            @@include('common/breadcrumbs/_breadcrumbs.html', {
+            "arr": ['<a href="#">Home</a>', '<a href="#">My Account</a>', 'Watchlist']
+            })
+        </div>
+
+        <div data-tabs>
+            <div class="container">
+                <div class="dashboard-head dashboard-head--has-select">
+                    <h1 class="dashboard-head__title">Watchlist</h1>
+                    <div class="main-search__sort">
+                        <label>Sort by</label>
+                        <div class="select-wrap">
+                            <select name="" class="_select">
+                                <option value="1" selected>Date</option>
+                                <option value="2">Hign to Low</option>
+                                <option value="3">Low to Hign</option>
+                                <option value="3">Popular</option>
+                                <option value="3">Recent</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="dashboard-head-nav">
+                        <a href="#" class="dashboard-head-nav__btn dashboard-head-nav__btn--back">
+                            <img class="img-svg" src="img/icons/arrow-left.svg" alt="">
+                            Back
+                        </a>
+                        <a href="#" class="dashboard-head-nav__btn tab-active" data-tab-trigger="0">
+                            Current watchlist 
+                        </a>
+                        <a href="#" class="dashboard-head-nav__btn " data-tab-trigger="1">
+                            Completed watchlist <span>3</span>
+                        </a>
+                        <a href="#" class="dashboard-head-nav__btn dashboard-head-nav__btn--edit">
+                            <img class="img-svg" src="img/icons/gear.svg" alt="">
+                            Edit profile
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="watchlist">
+                    <div class="watchlist__notifications position-relative z-index-2">
+                        @@include('common/switch-dropdown/_switch-dropdown.html')
+                    </div>
+                    <div class="position-relative z-index-1" data-tab-content="0">
+                        <div class="no-result-box no-result-box--lg">
+                            <div class="no-result-box__border" data-border-dashed="simple"></div>
+                            <div class="no-result-box__body">
+                                <div class="no-result-box__icon">
+                                    <img src="img/icons/star-crossed.svg" alt="">
+                                </div>
+                                <div class="no-result-box__text">
+                                    You have not added any items to Watchlist yet
+                                </div>
+                                <a href="#" class="btn-default btn-default--md">
+                                    <img class="img-svg" src="img/icons/search.svg" alt="">
+                                    Vehicle Finder
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="position-relative z-index-1" data-tab-content="1">
+                        <ul class="watchlist__list">
+                            <li>
+                                <a href="#" class="card card--second not-hover" data-card>
+                                    <div class="card__col-1">
+                                        <div class="card__images swiper" data-slider="card-images">
+                                            <div class="swiper-wrapper">
+                                                <div class="swiper-slide ibg">
+                                                    <img class="swiper-lazy" data-src="img/photo/card-img-2.jpg" alt="">
+                                                    <div class="swiper-lazy-preloader"></div>
+                                                </div>
+                                                <div class="swiper-slide ibg">
+                                                    <img class="swiper-lazy" data-src="img/photo/card-img-2.jpg" alt="">
+                                                    <div class="swiper-lazy-preloader"></div>
+                                                </div>
+                                                <div class="swiper-slide ibg">
+                                                    <img class="swiper-lazy" data-src="img/photo/card-img-2.jpg" alt="">
+                                                    <div class="swiper-lazy-preloader"></div>
+                                                </div>
+                                                <div class="swiper-slide ibg">
+                                                    <img class="swiper-lazy" data-src="img/photo/card-img-2.jpg" alt="">
+                                                    <div class="swiper-lazy-preloader"></div>
+                                                </div>
+                                                <div class="swiper-slide ibg">
+                                                    <img class="swiper-lazy" data-src="img/photo/card-img-2.jpg" alt="">
+                                                    <div class="swiper-lazy-preloader"></div>
+                                                </div>
+                                                <div class="swiper-slide ibg">
+                                                    <img class="swiper-lazy" data-src="img/photo/card-img-2.jpg" alt="">
+                                                    <div class="swiper-lazy-preloader"></div>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-pagination"></div>
+                                        </div>
+                                        <div class="card__remove">
+                                            <button type="button" class="card__remove-btn">
+                                                <img class="img-svg" src="img/icons/bin.svg" alt="">
+                                            </button>
+                                            <div class="card__remove-alert">
+                                                <div class="card__remove-text">
+                                                    Are you sure you want to remove the item from the list?
+                                                </div>
+                                                <div class="card__remove-buttons">
+                                                    <button type="button"
+                                                        class="card__cancel btn-default btn-default--sm btn-default--light">
+                                                        Cancel
+                                                    </button>
+                                                    <button type="button" class="btn-default btn-default--sm">
+                                                        <img class="img-svg" src="img/icons/circle-check-sm.svg" alt="">
+                                                        Save
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card__col-2">
+                                        <div class="card__row-1">
+                                            <div class="card__title">2008 FORD ESCAPE LIM</div>
+                                        </div>
+                                        <div class="card__row-2">
+                                            <div class="card__number">
+                                                <label>LOT </label>
+                                                <span data-copy>#30874242</span>
+                                            </div>
+                                            <div class="card__number card__number--vin">
+                                                <label>VIN: </label>
+                                                <span data-copy>1D7RB1GP6AS109178</span>
+                                            </div>
+                                        </div>
+                                        <div class="card__row-3">
+                                            <ul class="card__list">
+                                                <li>
+                                                    <img class="img-svg" src="img/photo/card-icon-1.svg" alt="">
+                                                    <div>
+                                                        <label>Mileage</label>
+                                                        <p>198,239</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <img class="img-svg" src="img/photo/card-icon-2.svg" alt="">
+                                                    <div>
+                                                        <label>Damage</label>
+                                                        <p>front end</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <img class="img-svg" src="img/photo/card-icon-3.svg" alt="">
+                                                    <div>
+                                                        <label>Location</label>
+                                                        <p>SC - Columbia</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <img class="img-svg" src="img/photo/card-icon-4.svg" alt="">
+                                                    <div>
+                                                        <label>Doc. Type</label>
+                                                        <p>Clean Title</p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <ul class="card__list--second">
+                                                <li>
+                                                    <div>
+                                                        <label>Mileage</label>
+                                                        <p>198,239</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div>
+                                                        <label>Damage</label>
+                                                        <p>front end</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div>
+                                                        <label>Location</label>
+                                                        <p>SC - Columbia</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div>
+                                                        <label>Sale Date</label>
+                                                        <p>06/13/2022</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div>
+                                                        <label>Doc. Type</label>
+                                                        <p>Clean Title</p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="card__col-3">
+                                        <ul class="card__list-mob">
+                                            <li>
+                                                <label>Dual, Side</label>
+                                                <p>Hard Roof Top</p>
+                                            </li>
+                                            <li>
+                                                <label>Cloth</label>
+                                                <p>FM Radio</p>
+                                            </li>
+                                            <li>
+                                                <label>Current Bid</label>
+                                                <p class="text-primary"><strong>$144</strong></p>
+                                            </li>
+                                            <li>
+                                                <label>Buy in Now</label>
+                                                <p class="text-success"><strong>$2,850</strong></p>
+                                            </li>
+
+                                        </ul>
+                                        <div class="card__box ">
+                                            <div class="card__box-border-1" data-border-dashed="top-left"></div>
+                                            <div class="card__box-border-2" data-border-dashed="top-left-top"></div>
+                                            <div class="card__box-body">
+                                                <ul class="card__state-icons">
+                                                    <li>
+                                                        <div class="card__rating" data-car-rating="4.8">4.8</div>
+                                                        <div class="card__state-tooltipe">
+                                                            <h5 style="color: #5BC749;">Rating 4.8</h5>
+                                                            <p>Rating collected by our managers</p>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="card__state-icon"
+                                                            style="background-color: #1886C4;">
+                                                            <img src="img/photo/steering-wheel.svg" alt="">
+                                                        </div>
+                                                        <div class="card__state-tooltipe">
+                                                            <h5 style="color: #1886C4;">Run and Drive</h5>
+                                                            <p>
+                                                                Vehicle would start under its own operation.
+                                                            </p>
+                                                            <p>
+                                                                Vehicle transmission would shift into gear.
+                                                            </p>
+                                                            <p>
+                                                                Vehicle can move forward under its own power.
+                                                            </p>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="card__state-icon"
+                                                            style="background-color: #5BC749;">
+                                                            <img src="img/photo/carsharing.svg" alt="">
+                                                        </div>
+                                                        <div class="card__state-tooltipe">
+                                                            <h5 style="color: #5BC749;">Clean Title</h5>
+                                                            <p>
+                                                                The car has clean documents. This means that the car is
+                                                                allowed to move in the USA.
+                                                            </p>
+                                                        </div>
+                                                    </li>
+
+                                                </ul>
+                                                <div class="card__final-bid">
+                                                    <label>Final Bid</label>
+                                                    <p class="text-primary">$1,344</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="card card--second not-hover" data-card>
+                                    <div class="card__col-1">
+                                        <div class="card__images swiper" data-slider="card-images">
+                                            <div class="swiper-wrapper">
+                                                <div class="swiper-slide ibg">
+                                                    <img class="swiper-lazy" data-src="img/photo/card-img-2.jpg" alt="">
+                                                    <div class="swiper-lazy-preloader"></div>
+                                                </div>
+                                                <div class="swiper-slide ibg">
+                                                    <img class="swiper-lazy" data-src="img/photo/card-img-2.jpg" alt="">
+                                                    <div class="swiper-lazy-preloader"></div>
+                                                </div>
+                                                <div class="swiper-slide ibg">
+                                                    <img class="swiper-lazy" data-src="img/photo/card-img-2.jpg" alt="">
+                                                    <div class="swiper-lazy-preloader"></div>
+                                                </div>
+                                                <div class="swiper-slide ibg">
+                                                    <img class="swiper-lazy" data-src="img/photo/card-img-2.jpg" alt="">
+                                                    <div class="swiper-lazy-preloader"></div>
+                                                </div>
+                                                <div class="swiper-slide ibg">
+                                                    <img class="swiper-lazy" data-src="img/photo/card-img-2.jpg" alt="">
+                                                    <div class="swiper-lazy-preloader"></div>
+                                                </div>
+                                                <div class="swiper-slide ibg">
+                                                    <img class="swiper-lazy" data-src="img/photo/card-img-2.jpg" alt="">
+                                                    <div class="swiper-lazy-preloader"></div>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-pagination"></div>
+                                        </div>
+                                        <div class="card__remove">
+                                            <button type="button" class="card__remove-btn">
+                                                <img class="img-svg" src="img/icons/bin.svg" alt="">
+                                            </button>
+                                            <div class="card__remove-alert">
+                                                <div class="card__remove-text">
+                                                    Are you sure you want to remove the item from the list?
+                                                </div>
+                                                <div class="card__remove-buttons">
+                                                    <button type="button"
+                                                        class="card__cancel btn-default btn-default--sm btn-default--light">
+                                                        Cancel
+                                                    </button>
+                                                    <button type="button" class="btn-default btn-default--sm">
+                                                        <img class="img-svg" src="img/icons/circle-check-sm.svg" alt="">
+                                                        Save
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card__col-2">
+                                        <div class="card__row-1">
+                                            <div class="card__title">2008 FORD ESCAPE LIM</div>
+                                        </div>
+                                        <div class="card__row-2">
+                                            <div class="card__number">
+                                                <label>LOT </label>
+                                                <span data-copy>#30874242</span>
+                                            </div>
+                                            <div class="card__number card__number--vin">
+                                                <label>VIN: </label>
+                                                <span data-copy>1D7RB1GP6AS109178</span>
+                                            </div>
+                                        </div>
+                                        <div class="card__row-3">
+                                            <ul class="card__list">
+                                                <li>
+                                                    <img class="img-svg" src="img/photo/card-icon-1.svg" alt="">
+                                                    <div>
+                                                        <label>Mileage</label>
+                                                        <p>198,239</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <img class="img-svg" src="img/photo/card-icon-2.svg" alt="">
+                                                    <div>
+                                                        <label>Damage</label>
+                                                        <p>front end</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <img class="img-svg" src="img/photo/card-icon-3.svg" alt="">
+                                                    <div>
+                                                        <label>Location</label>
+                                                        <p>SC - Columbia</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <img class="img-svg" src="img/photo/card-icon-4.svg" alt="">
+                                                    <div>
+                                                        <label>Doc. Type</label>
+                                                        <p>Clean Title</p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <ul class="card__list--second">
+                                                <li>
+                                                    <div>
+                                                        <label>Mileage</label>
+                                                        <p>198,239</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div>
+                                                        <label>Damage</label>
+                                                        <p>front end</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div>
+                                                        <label>Location</label>
+                                                        <p>SC - Columbia</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div>
+                                                        <label>Sale Date</label>
+                                                        <p>06/13/2022</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div>
+                                                        <label>Doc. Type</label>
+                                                        <p>Clean Title</p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="card__col-3">
+                                        <ul class="card__list-mob">
+                                            <li>
+                                                <label>Dual, Side</label>
+                                                <p>Hard Roof Top</p>
+                                            </li>
+                                            <li>
+                                                <label>Cloth</label>
+                                                <p>FM Radio</p>
+                                            </li>
+                                            <li>
+                                                <label>Current Bid</label>
+                                                <p class="text-primary"><strong>$144</strong></p>
+                                            </li>
+                                            <li>
+                                                <label>Buy in Now</label>
+                                                <p class="text-success"><strong>$2,850</strong></p>
+                                            </li>
+
+                                        </ul>
+                                        <div class="card__box ">
+                                            <div class="card__box-border-1" data-border-dashed="top-left"></div>
+                                            <div class="card__box-border-2" data-border-dashed="top-left-top"></div>
+                                            <div class="card__box-body">
+                                                <ul class="card__state-icons">
+                                                    <li>
+                                                        <div class="card__rating" data-car-rating="4.8">4.8</div>
+                                                        <div class="card__state-tooltipe">
+                                                            <h5 style="color: #5BC749;">Rating 4.8</h5>
+                                                            <p>Rating collected by our managers</p>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="card__state-icon"
+                                                            style="background-color: #1886C4;">
+                                                            <img src="img/photo/steering-wheel.svg" alt="">
+                                                        </div>
+                                                        <div class="card__state-tooltipe">
+                                                            <h5 style="color: #1886C4;">Run and Drive</h5>
+                                                            <p>
+                                                                Vehicle would start under its own operation.
+                                                            </p>
+                                                            <p>
+                                                                Vehicle transmission would shift into gear.
+                                                            </p>
+                                                            <p>
+                                                                Vehicle can move forward under its own power.
+                                                            </p>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="card__state-icon"
+                                                            style="background-color: #5BC749;">
+                                                            <img src="img/photo/carsharing.svg" alt="">
+                                                        </div>
+                                                        <div class="card__state-tooltipe">
+                                                            <h5 style="color: #5BC749;">Clean Title</h5>
+                                                            <p>
+                                                                The car has clean documents. This means that the car is
+                                                                allowed to move in the USA.
+                                                            </p>
+                                                        </div>
+                                                    </li>
+
+                                                </ul>
+                                                <div class="card__final-bid">
+                                                    <label>Final Bid</label>
+                                                    <p class="text-primary">$1,344</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="card card--second not-hover" data-card>
+                                    <div class="card__col-1">
+                                        <div class="card__images swiper" data-slider="card-images">
+                                            <div class="swiper-wrapper">
+                                                <div class="swiper-slide ibg">
+                                                    <img class="swiper-lazy" data-src="img/photo/card-img-2.jpg" alt="">
+                                                    <div class="swiper-lazy-preloader"></div>
+                                                </div>
+                                                <div class="swiper-slide ibg">
+                                                    <img class="swiper-lazy" data-src="img/photo/card-img-2.jpg" alt="">
+                                                    <div class="swiper-lazy-preloader"></div>
+                                                </div>
+                                                <div class="swiper-slide ibg">
+                                                    <img class="swiper-lazy" data-src="img/photo/card-img-2.jpg" alt="">
+                                                    <div class="swiper-lazy-preloader"></div>
+                                                </div>
+                                                <div class="swiper-slide ibg">
+                                                    <img class="swiper-lazy" data-src="img/photo/card-img-2.jpg" alt="">
+                                                    <div class="swiper-lazy-preloader"></div>
+                                                </div>
+                                                <div class="swiper-slide ibg">
+                                                    <img class="swiper-lazy" data-src="img/photo/card-img-2.jpg" alt="">
+                                                    <div class="swiper-lazy-preloader"></div>
+                                                </div>
+                                                <div class="swiper-slide ibg">
+                                                    <img class="swiper-lazy" data-src="img/photo/card-img-2.jpg" alt="">
+                                                    <div class="swiper-lazy-preloader"></div>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-pagination"></div>
+                                        </div>
+                                        <div class="card__remove">
+                                            <button type="button" class="card__remove-btn">
+                                                <img class="img-svg" src="img/icons/bin.svg" alt="">
+                                            </button>
+                                            <div class="card__remove-alert">
+                                                <div class="card__remove-text">
+                                                    Are you sure you want to remove the item from the list?
+                                                </div>
+                                                <div class="card__remove-buttons">
+                                                    <button type="button"
+                                                        class="card__cancel btn-default btn-default--sm btn-default--light">
+                                                        Cancel
+                                                    </button>
+                                                    <button type="button" class="btn-default btn-default--sm">
+                                                        <img class="img-svg" src="img/icons/circle-check-sm.svg" alt="">
+                                                        Save
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card__col-2">
+                                        <div class="card__row-1">
+                                            <div class="card__title">2008 FORD ESCAPE LIM</div>
+                                        </div>
+                                        <div class="card__row-2">
+                                            <div class="card__number">
+                                                <label>LOT </label>
+                                                <span data-copy>#30874242</span>
+                                            </div>
+                                            <div class="card__number card__number--vin">
+                                                <label>VIN: </label>
+                                                <span data-copy>1D7RB1GP6AS109178</span>
+                                            </div>
+                                        </div>
+                                        <div class="card__row-3">
+                                            <ul class="card__list">
+                                                <li>
+                                                    <img class="img-svg" src="img/photo/card-icon-1.svg" alt="">
+                                                    <div>
+                                                        <label>Mileage</label>
+                                                        <p>198,239</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <img class="img-svg" src="img/photo/card-icon-2.svg" alt="">
+                                                    <div>
+                                                        <label>Damage</label>
+                                                        <p>front end</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <img class="img-svg" src="img/photo/card-icon-3.svg" alt="">
+                                                    <div>
+                                                        <label>Location</label>
+                                                        <p>SC - Columbia</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <img class="img-svg" src="img/photo/card-icon-4.svg" alt="">
+                                                    <div>
+                                                        <label>Doc. Type</label>
+                                                        <p>Clean Title</p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <ul class="card__list--second">
+                                                <li>
+                                                    <div>
+                                                        <label>Mileage</label>
+                                                        <p>198,239</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div>
+                                                        <label>Damage</label>
+                                                        <p>front end</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div>
+                                                        <label>Location</label>
+                                                        <p>SC - Columbia</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div>
+                                                        <label>Sale Date</label>
+                                                        <p>06/13/2022</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div>
+                                                        <label>Doc. Type</label>
+                                                        <p>Clean Title</p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="card__col-3">
+                                        <ul class="card__list-mob">
+                                            <li>
+                                                <label>Dual, Side</label>
+                                                <p>Hard Roof Top</p>
+                                            </li>
+                                            <li>
+                                                <label>Cloth</label>
+                                                <p>FM Radio</p>
+                                            </li>
+                                            <li>
+                                                <label>Current Bid</label>
+                                                <p class="text-primary"><strong>$144</strong></p>
+                                            </li>
+                                            <li>
+                                                <label>Buy in Now</label>
+                                                <p class="text-success"><strong>$2,850</strong></p>
+                                            </li>
+
+                                        </ul>
+                                        <div class="card__box ">
+                                            <div class="card__box-border-1" data-border-dashed="top-left"></div>
+                                            <div class="card__box-border-2" data-border-dashed="top-left-top"></div>
+                                            <div class="card__box-body">
+                                                <ul class="card__state-icons">
+                                                    <li>
+                                                        <div class="card__rating" data-car-rating="4.8">4.8</div>
+                                                        <div class="card__state-tooltipe">
+                                                            <h5 style="color: #5BC749;">Rating 4.8</h5>
+                                                            <p>Rating collected by our managers</p>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="card__state-icon"
+                                                            style="background-color: #1886C4;">
+                                                            <img src="img/photo/steering-wheel.svg" alt="">
+                                                        </div>
+                                                        <div class="card__state-tooltipe">
+                                                            <h5 style="color: #1886C4;">Run and Drive</h5>
+                                                            <p>
+                                                                Vehicle would start under its own operation.
+                                                            </p>
+                                                            <p>
+                                                                Vehicle transmission would shift into gear.
+                                                            </p>
+                                                            <p>
+                                                                Vehicle can move forward under its own power.
+                                                            </p>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="card__state-icon"
+                                                            style="background-color: #5BC749;">
+                                                            <img src="img/photo/carsharing.svg" alt="">
+                                                        </div>
+                                                        <div class="card__state-tooltipe">
+                                                            <h5 style="color: #5BC749;">Clean Title</h5>
+                                                            <p>
+                                                                The car has clean documents. This means that the car is
+                                                                allowed to move in the USA.
+                                                            </p>
+                                                        </div>
+                                                    </li>
+
+                                                </ul>
+                                                <div class="card__final-bid">
+                                                    <label>Final Bid</label>
+                                                    <p class="text-primary">$1,344</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-70"></div>
+    </main>
+
+    <!-- == FOOTER ================== -->
+    @@include('common/footer/_footer.html',{})
+    <!-- == // FOOTER ================== -->
+
+    @@include('_js-bottom.html',{})
+</body>
+
+</html>

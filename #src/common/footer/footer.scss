@@ -1,6 +1,6 @@
 .footer {
     position: relative;
-
+    z-index: 1;
     &__bg {
         position: absolute;
         top: 0;
@@ -241,7 +241,7 @@
                 &:before {
                     font-family: "icomoon" !important;
                     position: absolute;
-                    content: "\e902";
+                    content: "\e93f";
                     top: 50%;
                     transform: translateY(-50%);
                     right: 0;
