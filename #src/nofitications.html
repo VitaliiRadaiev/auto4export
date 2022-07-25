@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" data-set-font-size>
+@@include('_head.html',{
+"title": "auto4export"
+})
+
+<body>
+    <div class="_preload-body"></div>
+    <!-- == TOP LINE ================== -->
+
+    @@include('common/header/_header.html',{
+    "mod": "header--user-authorized"
+    })
+    <!-- == // TOP LINE ================== -->
+
+    <main class="_page dashboard-page" data-padding-top-header-size>
+        <div class="p-50"></div>
+        <div class="container">
+            @@include('common/breadcrumbs/_breadcrumbs.html', {
+            "arr": ['<a href="#">Home</a>', '<a href="#">My Account </a>', 'Nofitications']
+            })
+        </div>
+
+
+        <div class="container">
+            <div class="dashboard-head ">
+                <h1 class="dashboard-head__title">Nofitications</h1>
+                <div class="dashboard-head-nav">
+                    <a href="#" class="dashboard-head-nav__btn dashboard-head-nav__btn--back">
+                        <img class="img-svg" src="img/icons/arrow-left.svg" alt="">
+                        Back
+                    </a>
+                    <a href="#" class="dashboard-head-nav__btn dashboard-head-nav__btn--edit">
+                        <img class="img-svg" src="img/icons/gear.svg" alt="">
+                        Edit profile
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2 class="title-2">Notification Phone Number</h2>
+            <form action="">
+                <div class="nofitications">
+                    <div class="nofitications__phone">
+                        <div class="nofitications__phone-input" data-mask="9{*}" data-phone-location>
+                            <input type="text" class="input">
+                        </div>
+                    </div>
+                    <div>
+                        <ul class="nofitications__list">
+                            <li>
+                                <h2 class="nofitications__list-title">Bids</h2>
+                                <ul class="nofitications__list-group">
+                                    <li>
+                                        <label class="checkbox-switch">
+                                            <input type="checkbox" checked>
+                                            <div class="checkbox-switch__thumb"></div>
+                                            <div class="checkbox-switch__text">Won bids </div>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="checkbox-switch">
+                                            <input type="checkbox">
+                                            <div class="checkbox-switch__thumb"></div>
+                                            <div class="checkbox-switch__text">Lost bids</div>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="checkbox-switch">
+                                            <input type="checkbox">
+                                            <div class="checkbox-switch__thumb"></div>
+                                            <div class="checkbox-switch__text">Outbid bids</div>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h2 class="nofitications__list-title">Notification Type</h2>
+                                <ul class="nofitications__list-group">
+                                    <li>
+                                        <label class="checkbox-switch">
+                                            <input type="checkbox">
+                                            <div class="checkbox-switch__thumb"></div>
+                                            <div class="checkbox-switch__text">Email</div>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="checkbox-switch">
+                                            <input type="checkbox" checked>
+                                            <div class="checkbox-switch__thumb"></div>
+                                            <div class="checkbox-switch__text">SMS</div>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="checkbox-switch">
+                                            <input type="checkbox">
+                                            <div class="checkbox-switch__thumb"></div>
+                                            <div class="checkbox-switch__text">Email + SMS</div>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="nofitications__list">
+                            <li>
+                                <h2 class="nofitications__list-title">Section 2</h2>
+                                <ul class="nofitications__list-group">
+                                    <li>
+                                        <label class="checkbox-switch">
+                                            <input type="checkbox" checked>
+                                            <div class="checkbox-switch__thumb"></div>
+                                            <div class="checkbox-switch__text">Section 1</div>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="checkbox-switch">
+                                            <input type="checkbox">
+                                            <div class="checkbox-switch__thumb"></div>
+                                            <div class="checkbox-switch__text">Section 2</div>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="checkbox-switch">
+                                            <input type="checkbox">
+                                            <div class="checkbox-switch__thumb"></div>
+                                            <div class="checkbox-switch__text">Section 3</div>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h2 class="nofitications__list-title">Notification Type</h2>
+                                <ul class="nofitications__list-group">
+                                    <li>
+                                        <label class="checkbox-switch">
+                                            <input type="checkbox">
+                                            <div class="checkbox-switch__thumb"></div>
+                                            <div class="checkbox-switch__text">Email</div>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="checkbox-switch">
+                                            <input type="checkbox" checked>
+                                            <div class="checkbox-switch__thumb"></div>
+                                            <div class="checkbox-switch__text">SMS</div>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="checkbox-switch">
+                                            <input type="checkbox">
+                                            <div class="checkbox-switch__thumb"></div>
+                                            <div class="checkbox-switch__text">Email + SMS</div>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="nofitications__submit btn-default" type="submit">
+                        <img class="img-svg" src="img/icons/circle-check-sm.svg" alt="">
+                        Save
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div class="p-70"></div>
+    </main>
+
+    <!-- == FOOTER ================== -->
+    @@include('common/footer/_footer.html',{})
+    <!-- == // FOOTER ================== -->
+
+    @@include('_js-bottom.html',{})
+</body>
+
+</html>

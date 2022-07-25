@@ -1892,6 +1892,7 @@ if(bigImgaeElements.length) {
     if (inputs.length) {
         inputs.forEach(input => {
             if (input.value.trim().length > 0) {
+                if(input.classList.contains('not-check')) return;
                 input.classList.add('auto-completed');
             }
 
@@ -2029,6 +2030,26 @@ if(bigImgaeElements.length) {
                 checkbox.dispatchEvent(event);
             })
         }
+    }
+};
+		{
+    let removeAll = document.querySelectorAll('[data-remove]');
+    if(removeAll.length) {
+        removeAll.forEach(removeBox => {
+            let btnRemove = removeBox.querySelector('.remove__btn');
+            let btnCancel = removeBox.querySelector('.remove__cancel');
+
+            if(btnRemove && btnCancel) {
+                btnRemove.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    removeBox.classList.toggle('remove--show-alert');
+                })
+                btnCancel.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    removeBox.classList.remove('remove--show-alert');
+                })
+            }
+        })
     }
 };
 	}
@@ -2305,9 +2326,6 @@ if (cards.length) {
         let col3 = card.querySelector('.card__col-3');
         let vinNum = card.querySelector('.card__number--vin');
         let btnBitNow = card.querySelector('.card__bid-now');
-        let btnRemove = card.querySelector('.card__remove-btn');
-        let removeBox = card.querySelector('.card__remove');
-        let btnCancel = card.querySelector('.card__cancel');
 
         if (btnBitNow) {
             let box = card.querySelector('.card__box');
@@ -2317,17 +2335,6 @@ if (cards.length) {
             })
             btnBitNow.addEventListener('mouseleave', () => {
                 box.classList.remove('border-dashed-hover');
-            })
-        }
-
-        if(btnRemove && removeBox && btnCancel) {
-            btnRemove.addEventListener('click', (e) => {
-                e.preventDefault();
-                removeBox.classList.toggle('card__remove--show-alert');
-            })
-            btnCancel.addEventListener('click', (e) => {
-                e.preventDefault();
-                removeBox.classList.remove('card__remove--show-alert');
             })
         }
 

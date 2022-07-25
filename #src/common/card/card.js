@@ -129,9 +129,6 @@ if (cards.length) {
         let col3 = card.querySelector('.card__col-3');
         let vinNum = card.querySelector('.card__number--vin');
         let btnBitNow = card.querySelector('.card__bid-now');
-        let btnRemove = card.querySelector('.card__remove-btn');
-        let removeBox = card.querySelector('.card__remove');
-        let btnCancel = card.querySelector('.card__cancel');
 
         if (btnBitNow) {
             let box = card.querySelector('.card__box');
@@ -141,17 +138,6 @@ if (cards.length) {
             })
             btnBitNow.addEventListener('mouseleave', () => {
                 box.classList.remove('border-dashed-hover');
-            })
-        }
-
-        if(btnRemove && removeBox && btnCancel) {
-            btnRemove.addEventListener('click', (e) => {
-                e.preventDefault();
-                removeBox.classList.toggle('card__remove--show-alert');
-            })
-            btnCancel.addEventListener('click', (e) => {
-                e.preventDefault();
-                removeBox.classList.remove('card__remove--show-alert');
             })
         }
 

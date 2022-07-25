@@ -1,0 +1,123 @@
+<form action="/" class="dropzone">
+    <div class="drop-zone" data-drop-zone>
+        <input class="drop-zone__input" type="file" multiple="multiple">
+        <!-- accept=".jpg, .jpeg, .png, .pdf" -->
+        <div class="drop-zone__body">
+            <div class="drop-zone__border" data-border-dashed="simple"></div>
+            <div class="drop-zone__inner">
+                <div class="drop-zone__icon">
+                    <img src="img/icons/cloud.svg" alt="">
+                </div>
+                <div class="drop-zone__title">Drag & Drop</div>
+                <div class="drop-zone__subtitle">
+                    A copy of Government issued photo ID here or <span class="text-primary">Click Here to Browse</span>
+                </div>
+                <div class="drop-zone__text">
+                    Supported files are PNG / JPG / PDF. File size can not exceed 10 MB.
+                </div>
+            </div>
+        </div>
+        <div class="drop-zone__preview dropzone-previews"></div>
+    </div>
+</form>
+
+<script>
+    let dropZoneBoxes = document.querySelectorAll('[data-drop-zone]');
+    if (dropZoneBoxes.length) {
+        dropZoneBoxes.forEach(dropZoneBox => {
+            if (dropZoneBox) {
+                let inputFile = dropZoneBox.querySelector('.drop-zone__input');
+                let fraction = dropZoneBox.querySelector('.drop-zone__fraction');
+
+                let dropZone = new Dropzone(dropZoneBox, {
+                    url: '/',
+                    previewsContainer: dropZoneBox.querySelector('.drop-zone__preview'),
+                    uploadMultiple: true,
+                    //maxFiles: 10,
+                    addRemoveLinks: true,
+                    thumbnail: function (file, dataUrl) {
+                        if (file.previewElement) {
+                            file.previewElement.classList.remove("dz-file-preview");
+                            let images = file.previewElement.querySelectorAll("[data-dz-thumbnail]");
+                            for (let i = 0; i < images.length; i++) {
+                                let thumbnailElement = images[i];
+                                thumbnailElement.alt = file.name;
+                                thumbnailElement.src = dataUrl;
+                            }
+                            setTimeout(function () { file.previewElement.classList.add("dz-image-preview"); }, 1);
+                        }
+                    },
+                    accept: function (file, done) {
+                        if (file.type === "image/jpeg" || file.type === "image/jpg" || file.type === "image/png" || file.type === "application/pdf") {
+                            done();
+                        }
+                        else {
+                            done("Error! Files of this type are not accepted");
+                        }
+                    }
+                });
+
+                let minSteps = 6,
+                    maxSteps = 60,
+                    timeBetweenSteps = 100,
+                    bytesPerStep = 100000;
+
+                dropZone.uploadFiles = function (files) {
+                    let self = this;
+
+                    for (let i = 0; i < files.length; i++) {
+
+                        let file = files[i];
+                        let totalSteps = Math.round(Math.min(maxSteps, Math.max(minSteps, file.size / bytesPerStep)));
+
+                        for (let step = 0; step < totalSteps; step++) {
+                            let duration = timeBetweenSteps * (step + 1);
+                            setTimeout(function (file, totalSteps, step) {
+                                return function () {
+                                    file.upload = {
+                                        progress: 100 * (step + 1) / totalSteps,
+                                        total: file.size,
+                                        bytesSent: (step + 1) * file.size / totalSteps
+                                    };
+
+                                    self.emit('uploadprogress', file, file.upload.progress, file.upload.bytesSent);
+                                    if (file.upload.progress == 100) {
+                                        file.status = Dropzone.SUCCESS;
+                                        self.emit("success", file, 'success', null);
+                                        self.emit("complete", file);
+                                        self.processQueue();
+                                        //document.getElementsByClassName("dz-success-mark").style.opacity = "1";
+                                    }
+                                };
+                            }(file, totalSteps, step), duration);
+                        }
+                    }
+                }
+
+                let dt = new DataTransfer();
+                const numberOfFilesHandler = () => {
+                    dropZoneBox.classList.toggle('drop-zone--has-files', dt.files.length > 0)
+                }
+
+                dropZone.on("complete", function (file) {
+                    // console.log(file);
+                });
+
+                dropZone.on("addedfile", file => {
+                    dt.items.add(file)
+                    inputFile.files = dt.files;
+
+                    numberOfFilesHandler();
+
+                    console.dir(inputFile.files)
+                })
+
+                dropZone.on("removedfile", file => {
+                    dt.items.remove(file)
+                    inputFile.files = dt.files;
+                    numberOfFilesHandler();
+                })
+            }
+        })
+    }
+</script>

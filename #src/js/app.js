@@ -453,6 +453,7 @@ class App {
 		@@include('../common/auction-table/auction-table.js');
 		@@include('../common/calendar/calendar.js');
 		@@include('../common/switch-dropdown/switch-dropdown.js');
+		@@include('../common/remove/remove.js');
 	}
 
 	componentsScripts() {

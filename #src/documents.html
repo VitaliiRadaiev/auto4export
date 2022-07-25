@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" data-set-font-size>
+<head>
+	<meta charset="UTF-8">
+	<title>auto4export</title>
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/dropzone.min.css">
+	<style>
+		body.page-is-load ._preload-body {
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		body.page-is-load ._preload-body:before {
+			display: none;
+		}
+
+		.mouse-dot {
+			font-size: 10px;
+			height: 2em;
+			width: 2em;
+			transition: transform, background-color, height, width .3s ease;
+			position: absolute;
+			z-index: 99999;
+			border-radius: 50%;
+			background-color: #222222;
+			transform: translate(-50%, -50%) scale(1);
+			pointer-events: none;
+			left: -30px;
+			top: -30px;
+			box-shadow: 0 0 15px rgba(243, 241, 239, 0.4);
+		}
+
+		.mouse-dot.hide {
+			transform: translate(-50%, -50%) scale(0);
+		}
+
+		.mouse-dot.hover {}
+
+		._preload-body {
+			background-color: #fff;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 999;
+			transition: all .6s ease .2s;
+		}
+
+		._preload-body:before {
+			position: absolute;
+			content: '';
+			z-index: 999;
+			top: 50%;
+			left: 50%;
+			height: 50px;
+			width: 50px;
+			border-radius: 50%;
+			border: 4px solid #6e6e6e;
+			border-right: 4px solid #fff;
+			transform: translate(-50%, -50%);
+			animation: preloadBody 2s linear infinite;
+		}
+
+		@keyframes preloadBody {
+			from {
+				transform: translate(-50%, -50%) rotate(0);
+			}
+
+			to {
+				transform: translate(-50%, -50%) rotate(360deg);
+			}
+		}
+	</style>
+	@@include('_js.html',{})
+    <script src="js/dropzone.min.js"></script>
+</head>
+
+<body>
+    <div class="_preload-body"></div>
+    <!-- == TOP LINE ================== -->
+
+    @@include('common/header/_header.html',{
+    "mod": "header--user-authorized"
+    })
+    <!-- == // TOP LINE ================== -->
+
+    <main class="_page dashboard-page" data-padding-top-header-size>
+        <div class="p-50"></div>
+        <div class="container">
+            @@include('common/breadcrumbs/_breadcrumbs.html', {
+            "arr": ['<a href="#">Home</a>', '<a href="#">My Account </a>', 'Documents and IDs']
+            })
+        </div>
+
+
+        <div class="container">
+            <div class="dashboard-head ">
+                <h1 class="dashboard-head__title">Documents and IDs</h1>
+                <div class="dashboard-head-nav">
+                    <a href="#" class="dashboard-head-nav__btn dashboard-head-nav__btn--back">
+                        <img class="img-svg" src="img/icons/arrow-left.svg" alt="">
+                        Back
+                    </a>
+                    <a href="#" class="dashboard-head-nav__btn dashboard-head-nav__btn--edit">
+                        <img class="img-svg" src="img/icons/gear.svg" alt="">
+                        Edit profile
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <table class="main-table main-table--lg">
+                <tr>
+                    <th>
+                        #
+                    </th>
+                    <th>
+                        File
+                    </th>
+                    <th>
+                        Date
+                    </th>
+                    <th>
+                        Status
+                    </th>
+                    <th>
+                        Action
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="main-table__mob-label">#</div>
+                        <div class="main-table__value">1</div>
+                    </td>
+                    <td>
+                        <div class="main-table__mob-label">File</div>
+                        <div class="main-table__value">
+                            <img src="img/photo/car-img-1-@3x.jpg" alt="" class="main-table__img">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="main-table__mob-label">Date</div>
+                        <div class="main-table__value">08-03-2022</div>
+                    </td>
+                    <td>
+                        <div class="main-table__mob-label">Status</div>
+                        <div class="main-table__value text-success">Verified</div>
+                    </td>
+                    <td>
+                        <a href="#" class="main-table__btn btn-default btn-default--xs">
+                            <img class="img-svg" src="img/icons/download.svg" alt="">
+                            Download
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="main-table__mob-label">#</div>
+                        <div class="main-table__value">2</div>
+                    </td>
+                    <td>
+                        <div class="main-table__mob-label">File</div>
+                        <div class="main-table__value">
+                            21.03.2022
+                        </div>
+                    </td>
+                    <td>
+                        <div class="main-table__mob-label">Date</div>
+                        <div class="main-table__value">08-03-2022</div>
+                    </td>
+                    <td>
+                        <div class="main-table__mob-label">Status</div>
+                        <div class="main-table__value text-danger">Not Verified</div>
+                    </td>
+                    <td>
+                        <a href="#" class="main-table__btn btn-default btn-default--xs">
+                            <img class="img-svg" src="img/icons/download.svg" alt="">
+                            Download
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="main-table__mob-label">#</div>
+                        <div class="main-table__value">3</div>
+                    </td>
+                    <td>
+                        <div class="main-table__mob-label">File</div>
+                        <div class="main-table__value">
+                            21.03.2022
+                        </div>
+                    </td>
+                    <td>
+                        <div class="main-table__mob-label">Date</div>
+                        <div class="main-table__value">08-03-2022</div>
+                    </td>
+                    <td>
+                        <div class="main-table__mob-label">Status</div>
+                        <div class="main-table__value text-secondary">Hold</div>
+                    </td>
+                    <td>
+                        <a href="#" class="main-table__btn btn-default btn-default--xs">
+                            <img class="img-svg" src="img/icons/download.svg" alt="">
+                            Download
+                        </a>
+                    </td>
+                </tr>
+            </table>
+
+            @@include('common/drop-zone/_drop-zone.html')
+        </div>
+
+        <div class="p-70"></div>
+    </main>
+
+    <!-- == FOOTER ================== -->
+    @@include('common/footer/_footer.html',{})
+    <!-- == // FOOTER ================== -->
+
+    @@include('_js-bottom.html',{})
+</body>
+
+</html>

@@ -689,6 +689,7 @@
 .iti__selected-flag {
     background-color: transparent !important;
     padding-left: 3rem;
+    padding-right: 0;
 
     @media (max-width: $md3+px) {
         padding-left: 20px;
@@ -698,6 +699,13 @@
     flex: 0 0 auto;
 }
 .iti__selected-dial-code {
+    font-size: 1.8rem;
+    line-height: 1.22em;
+
+    @media (max-width: $md3+px) {
+        font-size: 14px;
+        line-height: 17px;
+    }
 }
 .iti__arrow {
     display: none;

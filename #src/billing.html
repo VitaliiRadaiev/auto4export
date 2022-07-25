@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" data-set-font-size>
+@@include('_head.html',{
+	"title": "auto4export"
+})
+
+<body>
+    <div class="_preload-body"></div>
+    <!-- == TOP LINE ================== -->
+
+    @@include('common/header/_header.html',{
+    "mod": "header--user-authorized"
+    })
+    <!-- == // TOP LINE ================== -->
+
+    <main class="_page dashboard-page" data-padding-top-header-size>
+        <div class="p-50"></div>
+        <div class="container">
+            @@include('common/breadcrumbs/_breadcrumbs.html', {
+            "arr": ['<a href="#">Home</a>', '<a href="#">My Account </a>', 'Billing Information']
+            })
+        </div>
+
+
+        <div class="container">
+            <div class="dashboard-head ">
+                <h1 class="dashboard-head__title">Billing Information</h1>
+                <div class="dashboard-head-nav">
+                    <a href="#" class="dashboard-head-nav__btn dashboard-head-nav__btn--back">
+                        <img class="img-svg" src="img/icons/arrow-left.svg" alt="">
+                        Back
+                    </a>
+                    <a href="#" class="dashboard-head-nav__btn dashboard-head-nav__btn--edit">
+                        <img class="img-svg" src="img/icons/gear.svg" alt="">
+                        Edit profile
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2 class="title-2">Payment Cards</h2>
+            <ul class="payment-cards">
+                <li>
+                    <a href="#" class="payment-card payment-card--add not-hover">
+                        <div class="payment-card__border" data-border-dashed="simple"></div>
+                        <div class="payment-card__body">
+                            <div class="payment-card__icon">
+                                <img src="img/icons/credit-card-add.svg" alt="">
+                            </div>
+                            <div class="payment-card__title">
+                                Add new card
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="p-70"></div>
+    </main>
+
+    <!-- == FOOTER ================== -->
+    @@include('common/footer/_footer.html',{})
+    <!-- == // FOOTER ================== -->
+
+    @@include('_js-bottom.html',{})
+</body>
+
+</html>

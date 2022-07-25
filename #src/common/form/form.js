@@ -3,6 +3,7 @@
     if (inputs.length) {
         inputs.forEach(input => {
             if (input.value.trim().length > 0) {
+                if(input.classList.contains('not-check')) return;
                 input.classList.add('auto-completed');
             }
 

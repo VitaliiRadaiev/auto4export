@@ -3,6 +3,10 @@
     font-size: 1.4rem;
     line-height: 1.21em;
 
+    &:not(:last-child) {
+        margin-bottom: 3rem;
+    }
+
     @media (max-width: $md2+px) {
         display: block;
         line-height: 1.29em;
@@ -16,6 +20,8 @@
         font-size: 13px;
         line-height: 16px;
     }
+
+
 
     & tr {
         position: relative;
@@ -172,6 +178,24 @@
         }
     }
 
+    &__img {
+        width: 14rem;
+        height: 10rem;
+        border-radius: 1rem;
+        object-fit: cover;
+
+        @media (max-width: $md2+px) {
+            width: 84px;
+            height: 60px;
+        }
+
+        @media (max-width: $md3+px) {
+            width: 56px;
+            height: 40px;
+            border-radius: 6px;
+        }
+    }
+
     &__btn {
         &.btn-default {
             min-width: auto;
@@ -179,6 +203,14 @@
 
             @media (max-width: $md2+px) {
                 width: 100%;
+            }
+        }
+    }
+
+    &--lg {
+        @media (min-width: 992px) {
+            & td {
+                height: 14rem;
             }
         }
     }
