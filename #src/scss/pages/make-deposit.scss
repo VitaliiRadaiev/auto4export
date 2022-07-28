@@ -1,0 +1,440 @@
+.make-deposit {
+    display: flex;
+
+    @media (max-width: $md2+px) {
+        flex-direction: column;
+        gap: 5rem;
+    }
+
+    @media (max-width: $md3+px) {
+        gap: 30px;
+    }
+
+    &__col-1 {
+        flex: 0 1 25.325%;
+        padding-right: 6rem;
+
+        @media (max-width: $md2+px) {
+            display: none;
+        }
+    }
+
+    &__col-2 {
+        flex: 0 1 49.35%;
+
+        @media (max-width: $md2+px) {
+            flex: 0 1 auto;
+        }
+    }
+
+    &__col-3 {
+        @media (min-width: 992px) {
+            padding-left: 6rem;
+            flex: 0 1 25.325%;
+        }
+    }
+
+    &__body {
+        background-color: #f9f9f9;
+        border-radius: 1rem;
+        padding: 4rem;
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+
+        @media (max-width: $md3+px) {
+            border-radius: 6px;
+            padding: 20px;
+        }
+    }
+
+    &__row {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+
+        @media (max-width: $md3+px) {
+            gap: 20px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 0;
+    }
+
+    &__range {
+    }
+
+    &__number-of-vehicles {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+
+        @media (max-width: $md3+px) {
+            flex-direction: column;
+            align-items: initial;
+            justify-content: initial;
+        }
+    }
+
+    &__label {
+        font-weight: 700;
+        font-size: 1.6rem;
+        line-height: 1.1875em;
+
+        @media (max-width: $md3+px) {
+            font-size: 14px;
+            line-height: 17px;
+        }
+    }
+
+    &__number-of-vehicles-icons {
+        padding-left: 0;
+        margin-bottom: 0;
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+
+        @media (max-width: $md3+px) {
+            gap: 8px;
+        }
+
+        & > li {
+            color: #c9cfd1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &.active {
+                color: $mainColor;
+            }
+        }
+
+        & svg,
+        & img {
+            width: 2.4rem;
+            height: auto;
+
+            @media (max-width: $md3+px) {
+                width: 16px;
+            }
+        }
+    }
+
+    &__security {
+        & .make-deposit__label {
+            margin-bottom: 1.4rem;
+        }
+    }
+
+    &__info-list {
+        font-size: 1.4rem;
+        line-height: 1.21em;
+
+        @media (max-width: $md3+px) {
+            font-size: 13px;
+            line-height: 16px;
+        }
+
+        &:last-child {
+            margin-bottom: 0 !important;
+        }
+
+        @media (max-width: $md2+px) and (min-width: 768px) {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+
+            & > li {
+                margin: 0 !important;
+                flex: 0 1 calc(50% - 15px);
+            }
+        }
+    }
+
+    &__tabs {
+    }
+
+    &__tabs-nav {
+        margin-bottom: 4rem;
+        display: flex;
+        position: relative;
+
+        @media (max-width: $md3+px) {
+            margin-bottom: 30px;
+        }
+
+        &:before {
+            position: absolute;
+            content: "";
+            left: 0;
+            bottom: 0;
+            height: 2px;
+            width: 100%;
+            border-radius: 20px;
+            background-color: $borderColor;
+        }
+    }
+
+    &__tabs-nav-item {
+        flex: 0 1 33.333333%;
+    }
+
+    &__tabs-content {
+    }
+
+    &__tabs-content-inner {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+
+        @media (max-width: $md3+px) {
+            gap: 20px;
+        }
+    }
+
+    &__tabs-content-row {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+
+        @media (max-width: $md3+px) {
+            gap: 20px;
+        }
+    }
+
+    &__list {
+        & .simple-table-list {
+            & label,
+            & p {
+                background-color: #f9f9f9;
+            }
+        }
+    }
+
+    &__total {
+        padding-top: 2rem;
+        border-top: 1px solid $borderColor;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        & p {
+            margin-bottom: 0;
+            font-weight: 700;
+            font-size: 2rem;
+            line-height: 1.2em;
+
+            @media (max-width: $md3+px) {
+                font-size: 16px;
+                line-height: 19px;
+            }
+        }
+    }
+
+    &__text {
+        font-size: 1.6rem;
+        line-height: 1.1875em;
+        color: $textColorSecondary;
+        max-width: 46.3rem;
+
+        @media (max-width: $md3+px) {
+            font-size: 14px;
+            line-height: 17px;
+        }
+    }
+
+    &__submit {
+        &.btn-default {
+            @media (max-width: $md3+px) {
+                padding: 10px 16px;
+            }
+        }
+    }
+}
+
+.make-deposit-nav-item {
+    text-align: center;
+    cursor: pointer;
+    padding-bottom: 2.8rem;
+    transition: all 0.3s ease;
+    position: relative;
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+
+    @media (max-width: $md3+px) {
+        padding-bottom: 14px;
+    }
+
+    @media (min-width: 992px) {
+        &:hover {
+            color: $mainColor;
+            & .make-deposit-nav-item__icon {
+                color: $mainColor;
+            }
+        }
+    }
+
+    &.tab-active {
+        color: $mainColor;
+        & .make-deposit-nav-item__icon {
+            color: $mainColor;
+        }
+
+        &:before {
+            position: absolute;
+            content: "";
+            left: 0;
+            bottom: 0;
+            height: 2px;
+            width: 100%;
+            background-color: $mainColor;
+            border-radius: 20px;
+        }
+    }
+
+    &__icon {
+        width: 3rem;
+        height: 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $textColorSecondary;
+        margin: 0 auto 1rem;
+
+        @media (max-width: $md3+px) {
+            width: 26px;
+            height: 26px;
+        }
+
+        & img,
+        & svg {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 1.6rem;
+        line-height: 1.1875em;
+
+        @media (max-width: $md3+px) {
+            font-size: 13px;
+            line-height: 16px;
+        }
+    }
+}
+
+.cryptocurrency {
+    &__icon {
+        height: 4rem;
+        width: 3.2rem;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto 2rem;
+
+        @media (max-width: $md3+px) {
+            height: 3rem;
+            width: 2.4rem;
+            margin-bottom: 12px;
+        }
+
+        & img,
+        & svg {
+            height: 100%;
+            width: auto;
+        }
+
+        & span {
+            position: absolute;
+            top: 0;
+            left: calc(100% + 1.4rem);
+            font-size: 1.2rem;
+            line-height: 1.16em;
+            color: #fff;
+            padding: 0.3rem 0.8rem;
+            background-color: $mainColor;
+            border-radius: 0.6rem 0.6rem 0.6rem 0;
+
+            @media (max-width: $md3+px) {
+                left: calc(100% + 1rem);
+            }
+        }
+    }
+
+    &__text {
+        text-align: center;
+        font-size: 1.6rem;
+        line-height: 1.38em;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 41.8rem;
+
+        @media (max-width: $md3+px) {
+            font-size: 14px;
+            line-height: 17px;
+        }
+
+        & strong {
+            font-weight: 700;
+        }
+    }
+}
+
+.bank-wire-transfer {
+    text-align: center;
+
+    &__icon {
+        height: 4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2rem;
+
+        @media (max-width: $md3+px) {
+            height: 3rem;
+            margin-bottom: 12px;
+        }
+
+        & img,
+        & svg {
+            height: 100%;
+            width: auto;
+        }
+    }
+
+    &__text {
+        font-size: 1.6rem;
+        line-height: 1.38em;
+        margin: 0 auto 2rem;
+        width: 100%;
+        max-width: 59.8rem;
+
+        @media (max-width: $md3+px) {
+            font-size: 14px;
+            line-height: 17px;
+            margin-bottom: 10px;
+        }
+
+        & strong {
+            font-weight: 700;
+        }
+    }
+
+    &__sub-text {
+        font-size: 1.4rem;
+        line-height: 1.43em;
+        color: $textColorSecondary;
+        margin: 0 auto;
+        max-width: 35.8rem;
+
+        @media (max-width: $md3+px) {
+            font-size: 13px;
+            line-height: 16px;
+        }
+    }
+}

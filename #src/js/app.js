@@ -63,7 +63,6 @@ class App {
 
 	slidersInit() {
 		@@include('../common/carousel/carousel.js');
-		@@include('../common/featured-vehicles/featured-vehicles.js');
 		@@include('../common/last-reviews/last-reviews.js');
 		@@include('../common/search-top-filter/search-top-filter.js');
 	}

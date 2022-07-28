@@ -665,36 +665,7 @@ window.popup = {
 	}
 
 	slidersInit() {
-		{
-    let carousels = document.querySelectorAll('[data-carousel]');
-    if(carousels.length) {
-        carousels.forEach(carousel => {
-            let carouselSwiper = new Swiper(carousel.querySelector('.swiper'), {
-                speed: 800,
-                navigation: {
-                    nextEl: carousel.querySelector('[data-action="btn-next"]'),
-                    prevEl: carousel.querySelector('[data-action="btn-prev"]'),
-                },
-                breakpoints: {
-                    320: {
-                        slidesPerView: 2,
-                        spaceBetween: 15,
-                        autoHeight: true,
-                    },
-                    768: {
-                        slidesPerView: 3,
-                        spaceBetween: 20,
-                    },
-                    992: {
-                        slidesPerView: 4,
-                        spaceBetween: 25,
-                    },
-                },
-            });
-        })
-    }
-};
-		let featuredVehiclesSliders = document.querySelectorAll('[data-slider="featured-vehicles-slider"]');
+		let featuredVehiclesSliders = document.querySelectorAll('[data-slider="carousel-slider"]');
 if (featuredVehiclesSliders.length) {
     featuredVehiclesSliders.forEach(featuredVehiclesSlider => {
         let sliderData = new Swiper(featuredVehiclesSlider, {
@@ -714,8 +685,8 @@ if (featuredVehiclesSliders.length) {
             },
             watchSlidesVisibility: true,
             navigation: {
-                nextEl: featuredVehiclesSlider.querySelector('.featured-vehicles__btn-next'),
-                prevEl: featuredVehiclesSlider.querySelector('.featured-vehicles__btn-prev'),
+                nextEl: featuredVehiclesSlider.querySelector('.carousel__btn-next'),
+                prevEl: featuredVehiclesSlider.querySelector('.carousel__btn-prev'),
             }
         });
     })
@@ -1694,18 +1665,21 @@ if (mainFilter) {
             let elEnd = range.querySelector('.price-range__end-value');
 
             let qualityRange = range.dataset.range === 'quality' ? true : false;
+            let oneThumb = range.dataset.range === 'one-thumb' ? true : false;
 
             noUiSlider.create(slider, {
-                start: [+numStart, +numEnd],
-                connect: true,
+                start: oneThumb ? +numStart : [+numStart, +numEnd],
+                connect: oneThumb ? 'lower' : true,
                 range: {
                     'min': [+min],
                     'max': [+max],
                 },
                 step: +step,
-               // tooltips: true,
+                tooltips: oneThumb,
                 format: wNumb({
-                    decimals: qualityRange ? 1 : 0 
+                    decimals: qualityRange ? 1 : 0,
+                    thousand: oneThumb ? ',' : '',
+                    prefix: oneThumb ? '$' : ''
                 })
             });
 
@@ -1714,11 +1688,13 @@ if (mainFilter) {
             let numFormat = wNumb({ decimals: 0, prefix: '$' });
 
             slider.noUiSlider.on('update', function (values, handle) {
-                let value = values[handle];
+                let value = values[handle].replace(/[,|$]/g, '');
                 if (handle) {
                     if(qualityRange) {
                         inputEnd.value = value;
                         elEnd.innerHTML = value;
+                    } else if(oneThumb) {
+                        inputEnd.value = Math.round(value);
                     } else {
                         inputEnd.value = Math.round(value);
                         elEnd.innerHTML = numFormat.to(+value);
@@ -1727,12 +1703,41 @@ if (mainFilter) {
                     if(qualityRange) {
                         inputStart.value = value;
                         elStart.innerHTML = value;
+                    } else if(oneThumb) {
+                        inputStart.value = Math.round(value);
                     } else {
                         inputStart.value = Math.round(value);
                         elStart.innerHTML = numFormat.to(+value);
                     }
                 }
-            });
+
+
+                if(document.documentElement.clientWidth >= 768) {
+                    if((value / +max * 100) < 20) {
+                        range.classList.add('price-range--start');
+                    } else {
+                        range.classList.remove('price-range--start');
+                    }
+    
+                    if((value / +max * 100) > 80) {
+                        range.classList.add('price-range--end');
+                    } else {
+                        range.classList.remove('price-range--end');
+                    }
+                } else {
+                    if((value / +max * 100) < 30) {
+                        range.classList.add('price-range--start');
+                    } else {
+                        range.classList.remove('price-range--start');
+                    }
+    
+                    if((value / +max * 100) > 60) {
+                        range.classList.add('price-range--end');
+                    } else {
+                        range.classList.remove('price-range--end');
+                    }
+                }
+            }); 
 
             slider.noUiSlider.on('change', (values, handle) => {
                 let value = values[handle];

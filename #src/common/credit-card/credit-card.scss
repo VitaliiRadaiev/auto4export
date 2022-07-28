@@ -1,0 +1,10 @@
+.credit-card {
+    & .form__items {
+        @media (max-width: $md3+px) {
+            gap: 20px;
+        }
+    }
+    & .form__item--half {
+        flex: 0 1 calc(50% - 1rem);
+    }
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" data-set-font-size>
+@@include('_head.html',{
+"title": "auto4export"
+})
+
+<body>
+    <div class="_preload-body"></div>
+    <!-- == TOP LINE ================== -->
+
+    @@include('common/header/_header.html',{
+    "mod": "header--user-authorized"
+    })
+    <!-- == // TOP LINE ================== -->
+
+    <main class="_page videos-page" data-padding-top-header-size>
+        <div class="p-50"></div>
+        <div class="container">
+            @@include('common/breadcrumbs/_breadcrumbs.html', {
+            "arr": ['<a href="#">Home</a>', 'Video Guides']
+            })
+        </div>
+
+        <div class="container">
+            <h1 class="title-1">Video Guides</h1>
+        </div>
+
+        <div class="padding-wrap pt-0">
+            <div class="container">
+                <div class="main-grid">
+                    <div class="main-grid__content">
+                        <ul class="videos-list">
+                            <li>
+                                <a href="https://youtu.be/A_HjMIjzyMU" data-fancybox class="video-card">
+                                    <div class="video-card__icon">
+                                        <img src="img/icons/play.svg" alt="">
+                                    </div>
+                                    <div class="video-card__title">How to use the service</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://youtu.be/A_HjMIjzyMU" data-fancybox class="video-card">
+                                    <div class="video-card__icon">
+                                        <img src="img/icons/play.svg" alt="">
+                                    </div>
+                                    <div class="video-card__title">How the auction works</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://youtu.be/A_HjMIjzyMU" data-fancybox class="video-card">
+                                    <div class="video-card__icon">
+                                        <img src="img/icons/play.svg" alt="">
+                                    </div>
+                                    <div class="video-card__title">Is it safe to deposit money into an account</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://youtu.be/A_HjMIjzyMU" data-fancybox class="video-card">
+                                    <div class="video-card__icon">
+                                        <img src="img/icons/play.svg" alt="">
+                                    </div>
+                                    <div class="video-card__title">How to use the service</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://youtu.be/A_HjMIjzyMU" data-fancybox class="video-card">
+                                    <div class="video-card__icon">
+                                        <img src="img/icons/play.svg" alt="">
+                                    </div>
+                                    <div class="video-card__title">How the auction works</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://youtu.be/A_HjMIjzyMU" data-fancybox class="video-card">
+                                    <div class="video-card__icon">
+                                        <img src="img/icons/play.svg" alt="">
+                                    </div>
+                                    <div class="video-card__title">Is it safe to deposit money into an account</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://youtu.be/A_HjMIjzyMU" data-fancybox class="video-card">
+                                    <div class="video-card__icon">
+                                        <img src="img/icons/play.svg" alt="">
+                                    </div>
+                                    <div class="video-card__title">How to use the service</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://youtu.be/A_HjMIjzyMU" data-fancybox class="video-card">
+                                    <div class="video-card__icon">
+                                        <img src="img/icons/play.svg" alt="">
+                                    </div>
+                                    <div class="video-card__title">How the auction works</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="main-grid__side-column">
+                        <div class="categories-box border-rudius" data-categories-box>
+                            <div class="categories-box__border" data-border-dashed="simple"></div>
+                            <div class="categories-box__body">
+                                <h2 class="categories-box__title">Categories</h2>
+                                <div class="categories-box__list-wrap">
+                                    <ul class="categories-box__list">
+                                        <li>
+                                            <a href="#" class="active">All</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Service</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Delivery</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Fraud</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="p-70"></div>
+    </main>
+
+    <!-- == FOOTER ================== -->
+    @@include('common/footer/_footer.html',{})
+    <!-- == // FOOTER ================== -->
+
+    @@include('common/popup/_popup-question.html')
+    @@include('common/popup/_popup-message.html')
+
+    <script>
+        // Это пример вызова сообщения после срабатывания формы "Ask a Question", скрипт нужно будет удалить
+        let form = document.querySelector('#popup-question');
+        if (form) {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                window.popup.openMessage('#popup-message-1');
+            })
+        }
+    </script>
+
+    @@include('_js-bottom.html',{})
+</body>
+
+</html>

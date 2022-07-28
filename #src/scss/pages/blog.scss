@@ -80,59 +80,6 @@
     }
 }
 
-.blog-grid {
-    display: flex;
-    gap: 5rem;
-
-    @media (max-width: $md2+px) {
-        flex-direction: column-reverse;
-        gap: 7rem;
-    }
-
-    @media (max-width: $md3+px) {
-        gap: 30px;
-    }
-
-    &__content {
-        flex: 1 1 auto;
-    }
-
-    &__side-column {
-        flex: 0 0 34rem;
-        display: flex;
-        flex-direction: column;
-        gap: 3rem;
-
-        @media (max-width: $md2+px) {
-            flex: 0 1 auto;
-        }
-        @media (max-width: $md2+px) {
-            gap: 2rem;
-        }
-
-        & .question-box {
-            @media (max-width: $md2+px) {
-                display: none;
-            }
-        }
-
-        & .search-head__input {
-            @media (max-width: $md2+px) {
-                height: 48px;
-            }
-            @media (max-width: $md3+px) {
-                height: 38px;
-            }
-        }
-    }
-
-    &--second {
-        @media (max-width: $md2+px) {
-            flex-direction: column;
-        }
-    }
-}
-
 .blog-list {
     padding-left: 0;
     margin-bottom: 0;

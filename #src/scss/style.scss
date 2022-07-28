@@ -19,6 +19,7 @@
 @import "plugins/intlTelInput.min";
 @import "plugins/datepicker";
 @import "plugins/nouislider";
+@import "plugins/fancybox";
 // ==== // PLUGINS ===========================================================================================
 
 // ==== VARS ===========================================================================================
@@ -38,7 +39,7 @@
 @import "../common/promo-header/promo-header";
 @import "../common/card/card";
 @import "../common/select/select";
-@import "../common/featured-vehicles/featured-vehicles";
+@import "../common/carousel/carousel";
 @import "../common/form/form";
 @import "../common/about-preview/about-preview";
 @import "../common/last-reviews/last-reviews";
@@ -69,6 +70,8 @@
 @import "../common/drop-zone/drop-zone";
 @import "../common/warning-messages/warning-messages";
 @import "../common/remove/remove";
+@import "../common/credit-card/credit-card";
+@import "../common/main-grid/main-grid";
 // ==== // COMMON BLOCKS =====================================================
 
 // ==== PAGES =====================================================
@@ -81,5 +84,7 @@
 @import "pages/contact";
 @import "pages/auctions";
 @import "pages/dashboard";
+@import "pages/make-deposit";
+@import "pages/videos";
 // ==== AND PAGES =====================================================
 

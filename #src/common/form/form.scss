@@ -56,6 +56,12 @@
     }
 
     &__item--half {
+        @media (min-width: 768px) {
+            flex: 0 1 calc(50% - 1rem);
+        }
+    }
+
+    &__item--half-md {
         @media (min-width: 992px) {
             flex: 0 1 calc(50% - 1rem);
         }

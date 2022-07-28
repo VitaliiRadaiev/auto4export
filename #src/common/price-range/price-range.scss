@@ -89,8 +89,101 @@
             outline: none;
             box-shadow: none;
             padding: 0;
-            font-size: 14px;
-            line-height: 1.5em;
+            font-weight: 700;
+            font-size: 2rem;
+            line-height: 1.2em;
+            bottom: auto;
+            top: calc(100% + 1rem);
+
+            @media (max-width: $md3+px) {
+                font-size: 16px;
+                line-height: 19px;
+                top: calc(100% + 6px);
+            }
+        }
+    }
+
+    &--one-thumb {
+        & .price-range__slider {
+            margin-top: 1.2rem;
+            margin-bottom: 2rem;
+            padding: 0;
+            height: 0.6rem;
+
+            @media (max-width: $md3+px) {
+                height: 4px;
+                margin-bottom: 12px;
+            }
+
+            & .noUi-base {
+                height: 0.6rem;
+
+                @media (max-width: $md3+px) {
+                    height: 4px;
+                }
+            }
+
+            & .noUi-handle {
+                width: 3rem;
+                height: 3rem;
+                border: 0.6rem solid $mainColor;
+                top: -1.2rem;
+
+                @media (max-width: $md3+px) {
+                    top: -11px;
+                    width: 26px;
+                    height: 26px;
+                    border: 3px solid $mainColor;
+                }
+
+                &::before {
+                    height: 0.8rem;
+                    width: 0.8rem;
+
+                    @media (max-width: $md3+px) {
+                        height: 6px;
+                        width: 6px;
+                    }
+                }
+            }
+        }
+
+        & .price-range__start-value {
+            font-weight: 700;
+            font-size: 2.6rem;
+            line-height: 1em;
+            color: $textColorSecondary;
+            transition: all 0.3s ease;
+
+            @media (max-width: $md3+px) {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 17px;
+            }
+        }
+
+        & .price-range__end-value {
+            font-size: 1.6rem;
+            line-height: 1.1875em;
+            color: $textColorSecondary;
+            transition: all 0.3s ease;
+
+            @media (max-width: $md3+px) {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 17px;
+            }
+        }
+
+        &.price-range--start {
+            & .price-range__start-value {
+                opacity: 0;
+            }
+        }
+        &.price-range--end {
+            & .price-range__end-value {
+                opacity: 0;
+            }
         }
     }
 }

@@ -18,7 +18,7 @@
 
         <div class="container">
             @@include('common/breadcrumbs/_breadcrumbs.html', {
-                "arr": ['<a href="#">Home</a>', '<a href="#">Blogs</a>']
+                "arr": ['<a href="#">Home</a>', 'Blogs']
             })
         </div>
 
@@ -40,8 +40,8 @@
             </div>
             <div class="blog__body">
                 <div class="container">
-                    <div class="blog-grid">
-                        <div class="blog-grid__content">
+                    <div class="main-grid">
+                        <div class="main-grid__content">
                             <ul class="blog-list">
                                 <li>
                                     <a href="#" class="blog-card not-hover">
@@ -229,7 +229,7 @@
 
                             @@include('common/pagination/_pagination.html')
                         </div>
-                        <div class="blog-grid__side-column">
+                        <div class="main-grid__side-column">
                             @@include('common/categories-box/_categories-box.html')
 
                             <form action="/">
