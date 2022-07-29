@@ -1,0 +1,267 @@
+.how-to-buy-card {
+    position: relative;
+
+    &__border {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: calc(100% + 1.5rem);
+        height: 100%;
+        z-index: 1;
+        transition: all 0.3s ease;
+        transform: scale(-1, 1);
+
+        @media (max-width: $md2+px) {
+            transform: scale(1);
+            left: auto;
+            right: 0;
+        }
+
+        @media (max-width: $md3+px) {
+            width: calc(100% + 1.2rem);
+        }
+    }
+
+    &__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        opacity: 0;
+        transition: all 0.3s ease;
+        background-color: #fff;
+        border-radius: 1rem 0 1rem 1rem;
+        box-shadow: 0px 12px 24px rgba(51, 51, 51, 0.2);
+
+        @media (max-width: $md2+px) {
+            border-radius: 0 1rem 1rem 1rem;
+        }
+        @media (max-width: $md3+px) {
+            border-radius: 0 0.6rem 0.6rem 0.6rem;
+        }
+        
+        &:before {
+            position: absolute;
+            content: '';
+            top: 0;
+            right: 0;
+            width: 1.2rem;
+            height: 1.8rem;
+            transform: translateX(100%);
+            background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAxMiAxOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDBIMFYxOEwxMiAwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cg==);
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            z-index: 2;
+            display: block;
+
+            @media (max-width: $md2+px) {
+                right: auto;
+                left: 0;
+                transform: translate(-100%) scale(-1, 1);
+                
+            }
+        }
+    }
+
+    &__body {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        padding: 4rem 4rem 4rem 6.5rem;
+
+        @media (max-width: $md2+px) {
+            flex-direction: row-reverse;
+            padding: 4rem 6.5rem 4rem 4rem;
+        }
+
+        @media (max-width: $md3+px) {
+            display: block;
+            padding: 20px 20px 20px 20px;
+        }
+    }
+
+    &__col-1 {
+        flex: 0 0 9.5rem;
+
+        @media (max-width: $md2+px) {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        @media (max-width: $md3+px) {
+            flex-direction: row;
+            align-items: center;
+            padding-bottom: 15px;
+            border-bottom: 1px solid $borderColor;
+            margin-bottom: 20px;
+        }
+    }
+
+    &__col-2 {
+        flex: 1 1 auto;
+        border-left: 1px solid $borderColor;
+        padding-left: 4rem;
+
+        @media (max-width: $md2+px) {
+            padding-left: 0;
+            border-left: none;
+            padding-right: 4rem;
+            border-right: 1px solid $borderColor;
+        }
+
+        @media (max-width: $md3+px) {
+            padding: 0;
+            border: none;
+        }
+    }
+
+    &__icon {
+        width: 3rem;
+        margin-bottom: 2rem;
+
+        @media (max-width: $md3+px) {
+            margin-bottom: 0;
+            margin-right: 10px;
+            width: 20px;
+        }
+        & img,
+        & svg {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__num {
+        height: 2.7rem;
+
+        @media (max-width: $md3+px) {
+            height: 20px;
+        }
+        & img,
+        & svg {
+            height: 100%;
+            width: auto;
+        }
+    }
+
+    &__title {
+        margin-bottom: 3rem;
+
+        @media (max-width: $md3+px) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__text {
+        margin-bottom: 2rem;
+
+        & > *:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__text-collapse {
+        display: none;
+
+        & > *:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__btn {
+        font-size: 1.4rem;
+        line-height: 1.21em;
+        cursor: pointer;
+        position: relative;
+        transition: all 0.3s ease;
+        display: inline-block;
+        padding-right: 1.6rem;
+
+        @media (min-width: 992px) {
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+
+        &:before {
+            font-family: "icomoon" !important;
+            position: absolute;
+            content: "\e93f";
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+            right: 0;
+            -webkit-transition: -webkit-transform 0.3s ease;
+            transition: -webkit-transform 0.3s ease;
+            -o-transition: transform 0.3s ease;
+            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+            font-size: 0.6rem;
+            color: $mainColor;
+        }
+    }
+
+    & .hide-after-that {
+        display: none;
+    }
+
+    &--open {
+        & .how-to-buy-card__border {
+            opacity: 0;
+        }
+
+        & .how-to-buy-card__bg {
+            opacity: 1;
+        }
+
+        & .how-to-buy-card__btn {
+            &:before {
+                transform: translateY(-50%) scale(1, -1);
+            }
+        }
+    }
+
+    &--revers {
+        @media (min-width: 992px) {
+            & .how-to-buy-card__border {
+                transform: scale(1);
+                left: auto;
+                right: 0;
+            }
+
+            & .how-to-buy-card__bg {
+                border-radius: 0 1rem 1rem 1rem;
+
+                &:before {
+                    right: auto;
+                    left: 0;
+                    transform: translate(-100%) scale(-1, 1);
+                    
+                }
+            }
+    
+            & .how-to-buy-card__body {
+                flex-direction: row-reverse;
+                padding: 4rem 6.5rem 4rem 4rem;
+            }
+
+            & .how-to-buy-card__col-1 {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+            }
+
+            & .how-to-buy-card__col-2 {
+                padding-left: 0;
+                border-left: none;
+                padding-right: 4rem;
+                border-right: 1px solid $borderColor;
+            }
+        }
+    }
+}

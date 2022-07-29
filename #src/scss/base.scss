@@ -153,9 +153,25 @@ h3 {
 }
 
 h4 {
+	font-weight: 700;
+	font-size: 1.6rem;
+	line-height: 1.1875em;
+
+	@media (max-width: $md3+px) {
+		font-size: 14px;
+		line-height: 17px;
+	}
 }
 
 h5 {
+	font-size: 1.4rem;
+	line-height: 1.21em;
+	font-weight: 700;
+
+	@media (max-width: $md3+px) {
+		font-size: 13px;
+		line-height: 16px;
+	}
 }
 
 h6 {
@@ -850,6 +866,16 @@ figure {
 		line-height: 26px;
 	}
 
+	&--sm {
+		font-size: 1.4rem;
+		line-height: 2em;
+
+		@media (max-width: $md3+px) {
+			font-size: 13px;
+			line-height: 22px;
+		}
+	}
+
 	& h1,
 	& h2,
 	& h3,
@@ -863,14 +889,6 @@ figure {
 		}
 	}
 
-	& h2 {
-		margin-bottom: 5rem;
-
-		@media (max-width: $md3+px) {
-			margin-bottom: 20px;
-		}
-	}
-
 	& h3 {
 	}
 
@@ -878,6 +896,19 @@ figure {
 	}
 
 	& h5 {
+		margin-bottom: 2rem;
+
+		@media (max-width: $md3+px) {
+			margin-bottom: 14px;
+		}
+
+		&:not(:first-child) {
+			margin-top: 3rem;
+
+			@media (max-width: $md3+px) {
+				margin-top: 2rem;
+			}
+		}
 	}
 
 	& p,

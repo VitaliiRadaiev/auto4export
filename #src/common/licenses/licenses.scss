@@ -1,0 +1,102 @@
+.licenses {
+    position: relative;
+
+    &__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        border-radius: 1rem;
+        overflow: hidden;
+
+        @media (max-width: $md3+px) {
+            border-radius: 6px;
+        }
+    }
+
+    &__body {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        min-width: 0;
+        padding: 4rem 4rem 4rem 6rem;
+        gap: 7rem;
+        color: #fff;
+
+        @media (max-width: $md3+px) {
+            display: block;
+            padding: 20px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 0;
+
+        @media (max-width: $md3+px) {
+            margin-bottom: 16px;
+        }
+    }
+
+    &__slider {
+        flex: 0 0 auto;
+        width: 41.5rem;
+        position: relative;
+
+        @media (max-width: $md3+px) {
+            width: 100%;
+        }
+        
+
+        & .swiper-slide {
+            width: auto;
+
+            &:not(:last-child) {
+                padding-right: 2rem;
+
+                @media (max-width: $md3+px) {
+                    padding-right: 10px;
+                }
+            }
+        }
+
+        & .slider-btn {
+            position: absolute;
+            z-index: 2;
+            top: 50%;
+            transform: translateY(-50%);
+
+            @media (max-width: $md3+px) {
+                height: 30px;
+                width: 30px;
+            }
+
+            &.btn-prev {
+                left: 0;
+                transform: translateY(-50%) translateX(-50%);
+            }
+            &.btn-next {
+                right: 0;
+                transform: translateY(-50%) translateX(50%);
+            }
+        }
+    }
+
+    &__slider-item {
+        & a {
+            display: block;
+        }
+
+        & img {
+            height: 14rem;
+            width: auto;
+            border-radius: 0.6rem;
+
+            @media (max-width: $md3+px) {
+                height: 81px;
+            }
+        }
+    }
+}

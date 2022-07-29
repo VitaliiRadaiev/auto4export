@@ -2793,11 +2793,15 @@ defer
                     </div>
                     <div class="question-box">
     <div class="question-box__bg border-rudius ibg">
-        <img src="img/photo/question-box-bg.jpg" alt="">
+        <picture>
+            <source srcset="img/photo/question-box-bg.jpg" media="(min-width: 992px)" >
+            <source srcset="img/photo/question-box-bg-tablet.jpg" media="(min-width: 768px)" >
+            <img  src="img/photo/question-box-bg-mob.jpg" alt="img">
+        </picture>
     </div>
     <div class="question-box__body">
         <h2 class="question-box__title">
-            Do You <br> Have Any Questions? 
+            Do You Have <br> Any Questions? 
         </h2>
         <a href="#popup-question" data-popup="open-popup" class="question-box__btn btn-default">
             <img src="img/icons/question.svg" alt="">

@@ -750,6 +750,58 @@ if(topFilter) {
     });
     
 };
+		{
+    let licensesSlider = document.querySelector('[data-slider="licenses-slider"]');
+    if(licensesSlider) {
+        let sliderData = new Swiper(licensesSlider.querySelector('.swiper'), {
+            slidesPerView: 'auto',
+            spaceBetween: 0,
+            speed: 600,
+            navigation: {
+                nextEl: licensesSlider.querySelector('.slider-btn.btn-next'),
+                prevEl: licensesSlider.querySelector('.slider-btn.btn-prev'),
+            },
+        });
+    }
+};
+		{
+    let advantagesSlider = document.querySelector('[data-slider="advantages-slider"]');
+    if (advantagesSlider) {
+        const slider = advantagesSlider;
+        if (slider) {
+            let mySwiper;
+            function mobileSlider() {
+                if (document.documentElement.clientWidth <= 767 && slider.dataset.mobile == 'false') {
+                    mySwiper = new Swiper(slider.querySelector('.swiper'), {
+                        slidesPerView: 1,
+                        speed: 600,
+                        autoHeight: true,
+                        pagination: {
+                            el: slider.querySelector('.swiper-pagination'),
+                            clickable: true,
+                        },
+                    });
+
+                    slider.dataset.mobile = 'true';
+                }
+
+                if (document.documentElement.clientWidth > 767) {
+                    slider.dataset.mobile = 'false';
+
+                    if (slider.querySelector('.swiper').classList.contains('swiper-initialized')) {
+                        mySwiper.destroy();
+                    }
+                }
+            }
+
+            mobileSlider();
+
+            window.addEventListener('resize', () => {
+                mobileSlider();
+            })
+        }
+    }
+};
 	}
 
 
@@ -2057,6 +2109,42 @@ if(bigImgaeElements.length) {
         })
     }
 };
+		{
+    let howToBuyCards = document.querySelectorAll('[data-how-to-buy-card]');
+    if (howToBuyCards.length) {
+        howToBuyCards.forEach(howToBuyCard => {
+            let textBox = howToBuyCard.querySelector('.how-to-buy-card__text');
+            let btn = howToBuyCard.querySelector('.how-to-buy-card__btn');
+            let btnText = btn.innerText;
+            let breakEl = howToBuyCard.querySelector('.hide-after-that');
+
+            if (breakEl) {
+                let textBoxChildren = Array.from(textBox.children);
+                let index = textBoxChildren.findIndex(i => i === breakEl);
+                let hideElements = textBoxChildren.slice(index);
+                let hideElementsWrap = document.createElement('div');
+
+                hideElementsWrap.className = 'how-to-buy-card__text-collapse';
+                hideElementsWrap.append(...hideElements);
+                textBox.append(hideElementsWrap);
+
+                btn.addEventListener('click', () => {
+                    if (howToBuyCard.classList.contains('how-to-buy-card--open')) {
+
+                        howToBuyCard.classList.remove('how-to-buy-card--open');
+                        this.utils.slideUp(hideElementsWrap, 300);
+                        //window.borderDashed.update();
+                    } else {
+
+                        howToBuyCard.classList.add('how-to-buy-card--open');
+                        this.utils.slideDown(hideElementsWrap, 300);
+                       // window.borderDashed.update();
+                    }
+                })
+            }
+        })
+    }
+};
 	}
 
 	componentsScripts() {
@@ -2128,6 +2216,12 @@ if(bigImgaeElements.length) {
             return;
         }
 
+        svg.innerHTML = `
+        <path fill-rule="evenodd" clip-rule="evenodd"
+        d="M2 2 H${w - 12} Q ${w - 2} 8 ${w - 2} 12 L ${w - 2} ${h - 12} Q ${w - 2} ${h - 8} ${w - 12} ${h - 2} L 18 ${h - 2} Q 10 ${h - 8} 10 ${h - 12} L 10 12 z"
+        stroke="#D4D9DB" stroke-width="3" stroke-linecap="round" stroke-dasharray="0.1 8" />
+        `
+    } else if (borderDashed.dataset.borderDashed === 'top-left-second') {
         svg.innerHTML = `
         <path fill-rule="evenodd" clip-rule="evenodd"
         d="M2 2 H${w - 12} Q ${w - 2} 8 ${w - 2} 12 L ${w - 2} ${h - 12} Q ${w - 2} ${h - 8} ${w - 12} ${h - 2} L 18 ${h - 2} Q 10 ${h - 8} 10 ${h - 12} L 10 12 z"

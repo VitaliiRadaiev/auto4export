@@ -65,6 +65,8 @@ class App {
 		@@include('../common/carousel/carousel.js');
 		@@include('../common/last-reviews/last-reviews.js');
 		@@include('../common/search-top-filter/search-top-filter.js');
+		@@include('../common/licenses/licenses.js');
+		@@include('../common/advantages/advantages.js');
 	}
 
 
@@ -453,6 +455,7 @@ class App {
 		@@include('../common/calendar/calendar.js');
 		@@include('../common/switch-dropdown/switch-dropdown.js');
 		@@include('../common/remove/remove.js');
+		@@include('../common/how-to-buy-card/how-to-buy-card.js');
 	}
 
 	componentsScripts() {

@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+<html lang="en" data-set-font-size>
+<head>
+	<meta charset="UTF-8">
+	<title>auto4export</title>
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+		body.page-is-load ._preload-body {
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		body.page-is-load ._preload-body:before {
+			display: none;
+		}
+
+		.mouse-dot {
+			font-size: 10px;
+			height: 2em;
+			width: 2em;
+			transition: transform, background-color, height, width .3s ease;
+			position: absolute;
+			z-index: 99999;
+			border-radius: 50%;
+			background-color: #222222;
+			transform: translate(-50%, -50%) scale(1);
+			pointer-events: none;
+			left: -30px;
+			top: -30px;
+			box-shadow: 0 0 15px rgba(243, 241, 239, 0.4);
+		}
+
+		.mouse-dot.hide {
+			transform: translate(-50%, -50%) scale(0);
+		}
+
+		.mouse-dot.hover {}
+
+		._preload-body {
+			background-color: #fff;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 999;
+			transition: all .6s ease .2s;
+		}
+
+		._preload-body:before {
+			position: absolute;
+			content: '';
+			z-index: 999;
+			top: 50%;
+			left: 50%;
+			height: 50px;
+			width: 50px;
+			border-radius: 50%;
+			border: 4px solid #6e6e6e;
+			border-right: 4px solid #fff;
+			transform: translate(-50%, -50%);
+			animation: preloadBody 2s linear infinite;
+		}
+
+		@keyframes preloadBody {
+			from {
+				transform: translate(-50%, -50%) rotate(0);
+			}
+
+			to {
+				transform: translate(-50%, -50%) rotate(360deg);
+			}
+		}
+	</style>
+	
+<script src="js/vendors.js"></script>
+<script src="js/app.js"></script>
+<!-- <script
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7Q82l2QjSzJJk1uUW3OzUBGPTlbk8w1g&callback=initMap&libraries=&v=weekly"
+defer
+></script> -->
+</head>
+
+<body>
+    <div class="_preload-body"></div>
+    <!-- == TOP LINE ================== -->
+
+    <header class="header header--user-authorized" data-header data-popup="add-right-padding">
+    <div class="header__row-1">
+        <div class="header__body container">
+            <div class="header__logo">
+                <a href="#">
+                    <img src="img/logo/logo.svg" alt="">
+                </a>
+            </div>
+            <div class="header__logo-mob">
+                <a href="#">
+                    <img src="img/logo/logo-mob.svg" alt="">
+                </a>
+            </div>
+            <div class="header__search">
+                <form action="/">
+                    <div class="search-head">
+                        <input type="text" class="search-head__input" placeholder="Search">
+                        <button class="search-head__submit">
+                            <img class="img-svg" src="img/icons/search.svg" alt="">
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="header__language">
+                <div class="language">
+                    <div class="language__select">
+                        <img src="img/photo/flag-us.png" alt="">
+                    </div>
+                    <ul class="language__list">
+                        <li>
+                            <a href="#">
+                                <img src="img/photo/flag-es.jpg" alt="">
+                                <span>es</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="header__action">
+                <li>
+                    <a href="#">
+                        <label>
+                            <img class="img-svg" src="img/icons/wallet.svg" alt="">
+                            Bayer Power
+                        </label>
+                        <span>$23,000</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <label>
+                            <img class="img-svg" src="img/icons/star.svg" alt="">
+                            Watchlist
+                        </label>
+                        <span>4</span>
+                    </a>
+                </li>
+            </ul>
+            <a href="#" class="header__account">
+                <img class="img-svg" src="img/icons/user.svg" alt="">
+            </a>
+            <a href="#" class="header__make-deposit btn-default">
+                <img class="img-svg" src="img/icons/deposit.svg" alt="">
+                Make Deposit
+            </a>
+            <a href="#" class="header__btn-login btn-login">
+                <img src="img/icons/log-in.svg" alt="" class="img-svg">
+                Log in
+            </a>
+            <a href="#" class="header__sing-up btn-sing-up not-hover">
+                <img src="img/icons/add-user.svg" alt="" class="img-svg">
+                Sing Up
+            </a>
+            <div class="header__burger" data-burger>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <div class="header__row-2">
+        <div class="header__body container">
+            <div class="header__col-1">
+                <div class="header__vehicle-finder vehicle-finder" data-vehicle-finder>
+                    <div class="vehicle-finder__title">
+                        <img src="img/icons/search.svg" alt="" class="img-svg">
+                        Vehicle Finder
+                    </div>
+                    <div class="vehicle-finder__box">
+                        <div class="vehicle-finder__box-menu">
+                            <ul class="vehicle-finder__menu">
+                                <li>
+                                    <a href="#" data-vehicle-finder-trigger="0"
+                                        class="vehicle-finder__menu-item active">
+                                        Popular makes
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" data-vehicle-finder-trigger="1" class="vehicle-finder__menu-item">
+                                        Vehicle types
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" data-vehicle-finder-trigger="2" class="vehicle-finder__menu-item">
+                                        Title
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" data-vehicle-finder-trigger="3" class="vehicle-finder__menu-item">
+                                        Featured lots
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="vehicle-finder__box-content active" data-vehicle-finder-content="0">
+                            <h2 class="vehicle-finder__box-title">Popular Makes</h2>
+                            <ul class="vehicle-list vehicle-list--col-2">
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>HARLEY-DAVIDSON</strong>
+                                        <span>127</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>HONDA</strong>
+                                        <span>98</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>KAWASAKI</strong>
+                                        <span>44</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>YAMAHA</strong>
+                                        <span>44</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>SUZUKI</strong>
+                                        <span>42</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>BMW</strong>
+                                        <span>23</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>DUCATI</strong>
+                                        <span>21</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>CAN-AM</strong>
+                                        <span>21</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>INDIAN MOTORCYCLE CO.</strong>
+                                        <span>21</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>POLARIS</strong>
+                                        <span>19</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>VESPA</strong>
+                                        <span>16</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>VICTORY MOTORCYCLES</strong>
+                                        <span>15</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>KTM</strong>
+                                        <span>13</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>OTHER</strong>
+                                        <span>13</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>TRIUMPH MOTORCYCLE</strong>
+                                        <span>13</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>GENUINE SCOOTER CO.</strong>
+                                        <span>12</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>APRILIA</strong>
+                                        <span>9</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>KYMCO USA INC</strong>
+                                        <span>9</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>HUSQVARNA</strong>
+                                        <span>7</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>OTHER</strong>
+                                        <span>5</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <a href="#" class="link">
+                                View More
+                            </a>
+                        </div>
+                        <div class="vehicle-finder__box-content" data-vehicle-finder-content="1">
+                            <h2 class="vehicle-finder__box-title">Vehicle types</h2>
+                            <ul class="vehicle-list vehicle-list--col-2">
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>HARLEY-DAVIDSON</strong>
+                                        <span>127</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>HONDA</strong>
+                                        <span>98</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>KAWASAKI</strong>
+                                        <span>44</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>YAMAHA</strong>
+                                        <span>44</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>SUZUKI</strong>
+                                        <span>42</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>BMW</strong>
+                                        <span>23</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>DUCATI</strong>
+                                        <span>21</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>CAN-AM</strong>
+                                        <span>21</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>INDIAN MOTORCYCLE CO.</strong>
+                                        <span>21</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>POLARIS</strong>
+                                        <span>19</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>VESPA</strong>
+                                        <span>16</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>VICTORY MOTORCYCLES</strong>
+                                        <span>15</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>KTM</strong>
+                                        <span>13</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>OTHER</strong>
+                                        <span>13</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>TRIUMPH MOTORCYCLE</strong>
+                                        <span>13</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>GENUINE SCOOTER CO.</strong>
+                                        <span>12</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>APRILIA</strong>
+                                        <span>9</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>KYMCO USA INC</strong>
+                                        <span>9</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>HUSQVARNA</strong>
+                                        <span>7</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>OTHER</strong>
+                                        <span>5</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <a href="#" class="link">
+                                View More
+                            </a>
+                        </div>
+                        <div class="vehicle-finder__box-content" data-vehicle-finder-content="2">
+                            <h2 class="vehicle-finder__box-title">Title</h2>
+                            <ul class="vehicle-list vehicle-list--col-2">
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>HARLEY-DAVIDSON</strong>
+                                        <span>127</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>HONDA</strong>
+                                        <span>98</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>KAWASAKI</strong>
+                                        <span>44</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>YAMAHA</strong>
+                                        <span>44</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>SUZUKI</strong>
+                                        <span>42</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>BMW</strong>
+                                        <span>23</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>DUCATI</strong>
+                                        <span>21</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>CAN-AM</strong>
+                                        <span>21</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>INDIAN MOTORCYCLE CO.</strong>
+                                        <span>21</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>POLARIS</strong>
+                                        <span>19</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>VESPA</strong>
+                                        <span>16</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>VICTORY MOTORCYCLES</strong>
+                                        <span>15</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>KTM</strong>
+                                        <span>13</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>OTHER</strong>
+                                        <span>13</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>TRIUMPH MOTORCYCLE</strong>
+                                        <span>13</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>GENUINE SCOOTER CO.</strong>
+                                        <span>12</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>APRILIA</strong>
+                                        <span>9</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>KYMCO USA INC</strong>
+                                        <span>9</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>HUSQVARNA</strong>
+                                        <span>7</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>OTHER</strong>
+                                        <span>5</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <a href="#" class="link">
+                                View More
+                            </a>
+                        </div>
+                        <div class="vehicle-finder__box-content" data-vehicle-finder-content="3">
+                            <h2 class="vehicle-finder__box-title">Featured lots</h2>
+                            <ul class="vehicle-list vehicle-list--col-2">
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>Exotics Cars</strong>
+                                        <span>127</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>Cheap Cars</strong>
+                                        <span>98</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>Hail Damage Cars</strong>
+                                        <span>44</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>Flood Damage Cars</strong>
+                                        <span>44</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>Accidents Cars</strong>
+                                        <span>16</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>Repossessed Cars</strong>
+                                        <span>15</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>Rental Cars</strong>
+                                        <span>13</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="vehicle-list__item" href="#">
+                                        <strong>Buy It Now</strong>
+                                        <span>13</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <a href="#" class="link">
+                                View More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header__col-2">
+                <nav class="header__menu menu">
+                    <ul class="menu__list">
+                        <li class="menu-item-has-children">
+                            <a class="menu__link" href="#">
+                                Live Auctions
+                            </a>
+                            <ul class="sub-menu">
+                                <li><a class="sub-menu__link" href="#">By Locations</a></li>
+                                <li><a class="sub-menu__link" href="#">Live Auctions</a></li>
+                                <li><a class="sub-menu__link" href="#">Auctions Calendar</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a class="menu__link" href="#">
+                                SUPPORT
+                            </a>
+                            <ul class="sub-menu">
+                                <li><a class="sub-menu__link" href="#">How to Buy</a></li>
+                                <li><a class="sub-menu__link" href="#">Shipping</a></li>
+                                <li><a class="sub-menu__link" href="#">Fee Calculator</a></li>
+                                <li><a class="sub-menu__link" href="#">Blogs</a></li>
+                                <li><a class="sub-menu__link" href="#">Video Guides</a></li>
+                                <li><a class="sub-menu__link" href="#">Contact Us</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="menu__link" href="#">faq</a>
+                        </li>
+                        <li>
+                            <a class="menu__link" href="#">ABOUT US</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="header__time">
+                    <img src="img/icons/clock.svg" alt="" class="img-svg">
+                    7 am to 6 pm EST Mon - Fri
+                </div>
+            </div>
+            <div class="header__col-3">
+                <div class="header__contact">
+                    <div class="contact-head">
+                        <a href="#" class="contact-head__top-phone not-hover">
+                            <img src="img/icons/phone.svg" alt="" class="img-svg">
+                            +1 (770) 544-70-03
+                        </a>
+                        <div class="contact-head__dropdown-box">
+                            <div class="contact-head__dropdown-box-row">
+                                <a href="" class="contact-head__phone">
+                                    <img src="img/icons/phone.svg" alt="" class="img-svg">
+                                    +1 (770) 544-70-03
+                                </a>
+                                <a href="" class="contact-head__phone">
+                                    <img src="img/icons/phone.svg" alt="" class="img-svg">
+                                    +1 (850) 319-34-67
+                                </a>
+                            </div>
+                            <div class="contact-head__dropdown-box-row">
+                                <div class="contact-head__address">
+                                    <img src="img/icons/local.svg" alt="" class="img-svg">
+                                    Bid N Drive Inc. <br>
+                                    2305 Fourth st., <br>
+                                    Tucker, GA 30084
+                                </div>
+                            </div>
+                            <div class="contact-head__dropdown-box-row">
+                                <a href="#" class="contact-head__mail">sales@auto4export.com</a>
+                                <ul class="social">
+                                    <li>
+                                        <a href="#">
+                                            <img src="img/icons/facebook.svg" alt="" class="img-svg">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <img src="img/icons/instagram.svg" alt="" class="img-svg">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <img src="img/icons/youtube.svg" alt="" class="img-svg">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header__social">
+                    <ul class="social social--second">
+                        <li>
+                            <a href="#">
+                                <img src="img/icons/viber-white.svg" alt="" class="img-svg">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/icons/telegram-white.svg" alt="" class="img-svg">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/icons/whatsapp-white.svg" alt="" class="img-svg">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</header>
+
+<div class="mobile-menu" data-mobile-menu>
+    <div class="mobile-menu__body">
+        <div class="mobile-menu__arrow"><i class="icon-chevron-right"></i></div>
+        <div class="mobile-menu__inner">
+            <div class="mobile-menu__row mobile-menu__row--1">
+                <ul class="mobile-menu__list">
+                    <li class="menu-item-has-children">
+                        <a class="mobile-menu__list-link" href="#">Vehicle Finder</a>
+                        <ul class="mobile-menu__sub-menu">
+                            <li>
+                                <a class="mobile-menu__sub-menu-link" href="#">Popular makes</a>
+                            </li>
+                            <li>
+                                <a class="mobile-menu__sub-menu-link" href="#">Vehicle types</a>
+                            </li>
+                            <li>
+                                <a class="mobile-menu__sub-menu-link" href="#">Title</a>
+                            </li>
+                            <li>
+                                <a class="mobile-menu__sub-menu-link" href="#">Featured lots</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a class="mobile-menu__list-link" href="#">Live Auctions </a>
+                        <ul class="mobile-menu__sub-menu">
+                            <li>
+                                <a class="mobile-menu__sub-menu-link" href="#">By Locations</a>
+                            </li>
+                            <li>
+                                <a class="mobile-menu__sub-menu-link" href="#">Live Auctions</a>
+                            </li>
+                            <li>
+                                <a class="mobile-menu__sub-menu-link" href="#">Auctions Calendar</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a class="mobile-menu__list-link" href="#">Support</a>
+                        <ul class="mobile-menu__sub-menu">
+                            <li><a class="mobile-menu__sub-menu-link" href="#">How to Buy</a></li>
+                            <li><a class="mobile-menu__sub-menu-link" href="#">Shipping</a></li>
+                            <li><a class="mobile-menu__sub-menu-link" href="#">Fee Calculator</a></li>
+                            <li><a class="mobile-menu__sub-menu-link" href="#">Blogs</a></li>
+                            <li><a class="mobile-menu__sub-menu-link" href="#">Video Guides</a></li>
+                            <li><a class="mobile-menu__sub-menu-link" href="#">Contact Us</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="mobile-menu__list-link" href="#">Faq</a>
+                    </li>
+                    <li>
+                        <a class="mobile-menu__list-link" href="#">About us</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="mobile-menu__row mobile-menu__row--2">
+                <div class="language">
+                    <div class="language__select">
+                        <img src="img/photo/flag-us.png" alt="">
+                    </div>
+                    <ul class="language__list">
+                        <li>
+                            <a href="#">
+                                <img src="img/photo/flag-es.jpg" alt="">
+                                <span>es</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <a href="#" class="btn-login">
+                    <img src="img/icons/log-in.svg" alt="" class="img-svg">
+                    Log in
+                </a>
+            </div>
+            <div class="mobile-menu__row mobile-menu__row--3">
+                <a href="#" class="btn-sing-up not-hover">
+                    <img src="img/icons/add-user.svg" alt="" class="img-svg">
+                    Sing Up
+                </a>
+            </div>
+            <div class="mobile-menu__row mobile-menu__row--4">
+                <div class="header__time">
+                    <img src="img/icons/clock.svg" alt="" class="img-svg">
+                    7 am to 6 pm EST Mon - Fri
+                </div>
+                <div class="contact-head">
+                    <div class="contact-head__dropdown-box">
+                        <div class="contact-head__dropdown-box-row">
+                            <a href="" class="contact-head__phone">
+                                <img src="img/icons/phone.svg" alt="" class="img-svg">
+                                +1 (770) 544-70-03
+                            </a>
+                            <ul class="social social--second">
+                                <li>
+                                    <a href="#">
+                                        <img src="img/icons/viber-white.svg" alt="" class="img-svg">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="img/icons/telegram-white.svg" alt="" class="img-svg">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="img/icons/whatsapp-white.svg" alt="" class="img-svg">
+                                    </a>
+                                </li>
+                            </ul>
+                            <a href="" class="contact-head__phone">
+                                <img src="img/icons/phone.svg" alt="" class="img-svg">
+                                +1 (850) 319-34-67
+                            </a>
+                        </div>
+                        <div class="contact-head__dropdown-box-row">
+                            <div class="contact-head__address">
+                                <img src="img/icons/local.svg" alt="" class="img-svg">
+                                Bid N Drive Inc. <br>
+                                2305 Fourth st., <br>
+                                Tucker, GA 30084
+                            </div>
+                        </div>
+                        <div class="contact-head__dropdown-box-row">
+                            <a href="#" class="contact-head__mail">sales@auto4export.com</a>
+                            <ul class="social">
+                                <li>
+                                    <a href="#">
+                                        <img src="img/icons/facebook.svg" alt="" class="img-svg">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="img/icons/instagram.svg" alt="" class="img-svg">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="img/icons/youtube.svg" alt="" class="img-svg">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- == // TOP LINE ================== -->
+
+    <main class="_page how-to-buy-page" data-padding-top-header-size>
+        <div class="p-50"></div>
+        <div class="container">
+            <ul class="breadcrumbs">
+     <li><a href="#">Home</a></li> <li>How to Buy</li>
+</ul>
+        </div>
+
+        <div data-tabs>
+            <div class="container">
+                <h1 class="title-1">How to Buy</h1>
+            </div>
+
+            <div class="padding-wrap pt-0">
+                <div class="container">
+                    <div class="how-to-buy">
+                        <div class="how-to-buy__head">
+                            <h2 class="how-to-buy__title">
+                                4 Easy Steps to Purchase Your Car
+                            </h2>
+                            <div class="how-to-buy__head-row">
+                                <div class="how-to-buy__text text-content">
+                                    If you’re buying a car for the first time, it can be intimidating, to be sure. You want to make the best decision possible because you’re going to be spending ample time in this vehicle, not to mention the obvious financial investment you’re making. But after this 5-minute read, you’ll see the process of buying a car doesn’t have to be so stressful.
+                                </div>
+                                <a href="https://youtu.be/A_HjMIjzyMU" data-fancybox class="how-to-buy__btn btn-default">
+                                    <img class="img-svg" src="img/icons/play2.svg" alt="">
+                                    Watch Video Instruction
+                                </a>
+                            </div>
+                        </div>
+                        <div class="how-to-buy__body">
+                            <div class="how-to-buy__col how-to-buy__col--1">
+                                <div class="how-to-buy-card" data-how-to-buy-card>
+                                    <div class="how-to-buy-card__border" data-border-dashed="top-left-second"></div>
+                                    <div class="how-to-buy-card__bg"></div>
+                                    <div class="how-to-buy-card__body">
+                                        <div class="how-to-buy-card__col-1">
+                                            <div class="how-to-buy-card__icon">
+                                                <img src="img/photo/how-to-buy-card-icon-1.svg" alt="">
+                                            </div>
+                                            <div class="how-to-buy-card__num">
+                                                <img src="img/photo/01.svg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="how-to-buy-card__col-2">
+                                            <h2 class="how-to-buy-card__title">
+                                                Sing Up
+                                            </h2>
+                                            <div class="how-to-buy-card__text text-content text-content--sm">
+                                                <h5 class="text-primary text-uppercase">Register</h5>
+                                                <p>
+                                                    After registering, you will receive an automated message with a link to complete registration. To ensure that your registration is approved, it is important that you provide us with a valid email address and correct phone numbers. By registering at www.Auto4Export.com, you are agreeing with our Terms of Use.
+                                                </p>
+
+                                                <h5 class="text-primary text-uppercase">Deposit</h5>
+                                                <p>
+                                                    You must make a REFUNDABLE deposit on your account at www.Auto4Export.com before you are able to use the BID or BUY NOW functions to purchase vehicles. The minimum deposit amount required to get started is greater than $600.00 or 10% of the transaction amount (BID/BUY NOW price).
+                                                </p>
+                                                <p class="hide-after-that"></p>
+
+                                                <p>
+                                                    The deposit is required as a good faith gesture to show that the buyer is sincere and honest about the purchase he or she is making.
+                                                </p>
+
+                                                <p>
+                                                    Deposits can be made via PayPal (Visa/MasterCard capable) or paid by Direct Deposit/Wire Transfer, which goes directly into our banking account.
+                                                </p>
+
+                                                <p>
+                                                    <strong>Example:</strong> If you want to place a  bid on two separate vehicles at once, your security deposit must be at least $800.00. This amount allows the buyer to place a bid of up to $4,000.00 for each vehicle. If the buyer wishes to place a higher bid, the security deposit must be increased so that it contains a minimum of 10% of the total amount bidded for both vehicles. For example, if a buyer plans to bid $5,000.00 for one vehicle and $6,000.00 for another vehicle, the total deposit amount required to place the bid would be $1,100.00 ($500.00 for the first vehicle and $600.00 for the second). The deposit requirement applies to all transactions regardless of how many vehicles are being bidded on.
+                                                </p>
+
+                                                <p>
+                                                    If a buyer places a BID or BUY NOW request and is not successful, the security deposit can be used to bid or purchase another vehicle or can be refunded to the buyer upon your request.
+                                                </p>
+
+                                                <p class="text-secondary">
+                                                    **Note: The security deposit cannot be used towards the partial or full purchase of a vehicle. The deposit is fully refundable at any time upon the buyer’s request if there are no incomplete transactions or pending payments on the buyer’s account.
+                                                </p>
+
+                                                <p>
+                                                    <strong>IMPORTANT:</strong> Account cancellation will be accompanied by a full refund of the buyer’s security deposit. A minimum deposit of $400.00 must be kept on a buyer’s account at all times to keep an account inactive status. However, buyers are entitled to partial refunds at their request.
+                                                </p>
+
+                                                <p>
+                                                    <strong>YOU ARE ENTITLED TO A REFUND OF YOUR SECURITY DEPOSIT AT ANY TIME.</strong> Please note that a $45.00 transaction fee will be applied to all  international Wire Transfers.
+                                                </p>
+
+                                                <p class="text-secondary">
+                                                    **NOTE: Buyers that prefer to purchase in lots or bulk are able to receive open direct access to Insurance Auto Auction under our license. You need to make a deposit for direct access (10% of transaction price but not less than $1,000.00 and $75.00 non-refundable annual fee) and send a copy of your valid Photo Identification or a copy of your Passport to our Customer Service department at info@auto4export.com. You may also fax the copy to 
+                                                </p>
+                                            </div>
+                                            <div class="how-to-buy-card__btn" data-text="Close">More</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="how-to-buy-card" data-how-to-buy-card data-da=".how-to-buy__col--2,991.98,first">
+                                    <div class="how-to-buy-card__border" data-border-dashed="top-left-second"></div>
+                                    <div class="how-to-buy-card__bg"></div>
+                                    <div class="how-to-buy-card__body">
+                                        <div class="how-to-buy-card__col-1">
+                                            <div class="how-to-buy-card__icon">
+                                                <img src="img/photo/how-to-buy-card-icon-3.svg" alt="">
+                                            </div>
+                                            <div class="how-to-buy-card__num">
+                                                <img src="img/photo/03.svg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="how-to-buy-card__col-2">
+                                            <h2 class="how-to-buy-card__title">
+                                                Win
+                                            </h2>
+                                            <div class="how-to-buy-card__text text-content text-content--sm">
+                                                <h5 class="text-uppercase">Payment</h5>
+                                                <p>
+                                                    Once you have been named the highest bid on a vehicle and the sale is confirmed, you will receive a notification containing the invoice for your purchase.
+                                                </p>
+
+                                                <p>
+                                                    The invoice will include the following:
+                                                </p>
+
+                                                <ul>
+                                                    <li>
+                                                        <p>
+                                                            Final bid price
+                                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        <p>
+                                                            Auction fees
+                                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        <p>
+                                                            Domestic and export transportation fees
+                                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        <p>
+                                                            Service fee
+                                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        <p>
+                                                            Mailing fee
+                                                        </p>
+                                                    </li>
+                                                </ul>
+
+                                                <p>
+                                                    Our fee is $245 for vehicles under $2500, $295 for vehicles over $2000 to $15000, and 2% for vehicles above $15000, but no more than $700.
+                                                </p>
+
+                                                <p class="hide-after-that"></p>
+
+                                                <p>
+                                                    The deposit is required as a good faith gesture to show that the buyer is sincere and honest about the purchase he or she is making.
+                                                </p>
+
+                                                <p>
+                                                    Deposits can be made via PayPal (Visa/MasterCard capable) or paid by Direct Deposit/Wire Transfer, which goes directly into our banking account.
+                                                </p>
+
+                                                <p>
+                                                    <strong>Example:</strong> If you want to place a  bid on two separate vehicles at once, your security deposit must be at least $800.00. This amount allows the buyer to place a bid of up to $4,000.00 for each vehicle. If the buyer wishes to place a higher bid, the security deposit must be increased so that it contains a minimum of 10% of the total amount bidded for both vehicles. For example, if a buyer plans to bid $5,000.00 for one vehicle and $6,000.00 for another vehicle, the total deposit amount required to place the bid would be $1,100.00 ($500.00 for the first vehicle and $600.00 for the second). The deposit requirement applies to all transactions regardless of how many vehicles are being bidded on.
+                                                </p>
+
+                                                <p>
+                                                    If a buyer places a BID or BUY NOW request and is not successful, the security deposit can be used to bid or purchase another vehicle or can be refunded to the buyer upon your request.
+                                                </p>
+
+                                                <p class="text-secondary">
+                                                    **Note: The security deposit cannot be used towards the partial or full purchase of a vehicle. The deposit is fully refundable at any time upon the buyer’s request if there are no incomplete transactions or pending payments on the buyer’s account.
+                                                </p>
+
+                                                <p>
+                                                    <strong>IMPORTANT:</strong> Account cancellation will be accompanied by a full refund of the buyer’s security deposit. A minimum deposit of $400.00 must be kept on a buyer’s account at all times to keep an account inactive status. However, buyers are entitled to partial refunds at their request.
+                                                </p>
+
+                                                <p>
+                                                    <strong>YOU ARE ENTITLED TO A REFUND OF YOUR SECURITY DEPOSIT AT ANY TIME.</strong> Please note that a $45.00 transaction fee will be applied to all  international Wire Transfers.
+                                                </p>
+
+                                                <p class="text-secondary">
+                                                    **NOTE: Buyers that prefer to purchase in lots or bulk are able to receive open direct access to Insurance Auto Auction under our license. You need to make a deposit for direct access (10% of transaction price but not less than $1,000.00 and $75.00 non-refundable annual fee) and send a copy of your valid Photo Identification or a copy of your Passport to our Customer Service department at info@auto4export.com. You may also fax the copy to 
+                                                </p>
+                                            </div>
+                                            <div class="how-to-buy-card__btn" data-text="Close">More</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="how-to-buy__col how-to-buy__col--2">
+                                <div class="how-to-buy-card how-to-buy-card--revers" data-how-to-buy-card data-da=".how-to-buy__col--1,991.98,last">
+                                    <div class="how-to-buy-card__border" data-border-dashed="top-left-second"></div>
+                                    <div class="how-to-buy-card__bg"></div>
+                                    <div class="how-to-buy-card__body">
+                                        <div class="how-to-buy-card__col-1">
+                                            <div class="how-to-buy-card__icon">
+                                                <img src="img/photo/how-to-buy-card-icon-2.svg" alt="">
+                                            </div>
+                                            <div class="how-to-buy-card__num">
+                                                <img src="img/photo/02.svg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="how-to-buy-card__col-2">
+                                            <h2 class="how-to-buy-card__title">
+                                                Bid
+                                            </h2>
+                                            <div class="how-to-buy-card__text text-content text-content--sm">
+                                                <h5 class="text-primary text-uppercase">Search</h5>
+                                                <p>
+                                                    We provide an extensive listing of vehicles available for sale in the US, featuring a wide variety of vehicles, including cars, vans, bikes, ATVs, trucks, and more. Thousands of cars are added to our database every day. You can search through the wide variety of vehicles that we offer to find exactly what you are looking for. Whether you are looking for your dream car, a van that will be perfect for your family, a heavy-duty truck, or something to add excitement to your life, searching through our database is the first step in connecting you with the vehicle you desire.
+                                                </p>
+
+                                                <h5 class="text-uppercase">Bidding</h5>
+                                                <p>
+                                                    When you are interested in purchasing a vehicle, you will submit a pre-bid. The highest bid for a vehicle in the pre-bidding round will be transferred to the live auction. For example, you can place your maximum bid at $9,000 and if your bid was the highest bid of the pre-bidding round, it will be submitted at the live auction. 
+                                                </p>
+                                                <p class="hide-after-that"></p>
+
+                                                <p>
+                                                    The deposit is required as a good faith gesture to show that the buyer is sincere and honest about the purchase he or she is making.
+                                                </p>
+
+                                                <p>
+                                                    Deposits can be made via PayPal (Visa/MasterCard capable) or paid by Direct Deposit/Wire Transfer, which goes directly into our banking account.
+                                                </p>
+
+                                                <p>
+                                                    <strong>Example:</strong> If you want to place a  bid on two separate vehicles at once, your security deposit must be at least $800.00. This amount allows the buyer to place a bid of up to $4,000.00 for each vehicle. If the buyer wishes to place a higher bid, the security deposit must be increased so that it contains a minimum of 10% of the total amount bidded for both vehicles. For example, if a buyer plans to bid $5,000.00 for one vehicle and $6,000.00 for another vehicle, the total deposit amount required to place the bid would be $1,100.00 ($500.00 for the first vehicle and $600.00 for the second). The deposit requirement applies to all transactions regardless of how many vehicles are being bidded on.
+                                                </p>
+
+                                                <p>
+                                                    If a buyer places a BID or BUY NOW request and is not successful, the security deposit can be used to bid or purchase another vehicle or can be refunded to the buyer upon your request.
+                                                </p>
+
+                                                <p class="text-secondary">
+                                                    **Note: The security deposit cannot be used towards the partial or full purchase of a vehicle. The deposit is fully refundable at any time upon the buyer’s request if there are no incomplete transactions or pending payments on the buyer’s account.
+                                                </p>
+
+                                                <p>
+                                                    <strong>IMPORTANT:</strong> Account cancellation will be accompanied by a full refund of the buyer’s security deposit. A minimum deposit of $400.00 must be kept on a buyer’s account at all times to keep an account inactive status. However, buyers are entitled to partial refunds at their request.
+                                                </p>
+
+                                                <p>
+                                                    <strong>YOU ARE ENTITLED TO A REFUND OF YOUR SECURITY DEPOSIT AT ANY TIME.</strong> Please note that a $45.00 transaction fee will be applied to all  international Wire Transfers.
+                                                </p>
+
+                                                <p class="text-secondary">
+                                                    **NOTE: Buyers that prefer to purchase in lots or bulk are able to receive open direct access to Insurance Auto Auction under our license. You need to make a deposit for direct access (10% of transaction price but not less than $1,000.00 and $75.00 non-refundable annual fee) and send a copy of your valid Photo Identification or a copy of your Passport to our Customer Service department at info@auto4export.com. You may also fax the copy to 
+                                                </p>
+                                            </div>
+                                            <div class="how-to-buy-card__btn" data-text="Close">More</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="how-to-buy-card how-to-buy-card--revers" data-how-to-buy-card>
+                                    <div class="how-to-buy-card__border" data-border-dashed="top-left-second"></div>
+                                    <div class="how-to-buy-card__bg"></div>
+                                    <div class="how-to-buy-card__body">
+                                        <div class="how-to-buy-card__col-1">
+                                            <div class="how-to-buy-card__icon">
+                                                <img src="img/photo/how-to-buy-card-icon-4.svg" alt="">
+                                            </div>
+                                            <div class="how-to-buy-card__num">
+                                                <img src="img/photo/04.svg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="how-to-buy-card__col-2">
+                                            <h2 class="how-to-buy-card__title">
+                                                Export
+                                            </h2>
+                                            <div class="how-to-buy-card__text text-content text-content--sm">
+                                                <h5 class="text-primary text-uppercase">Shipping</h5>
+                                                <p>
+                                                    The shipping process will begin once the full payment for the purchased vehicle is cleared on our bank account. Many buyers choose to take advantage of the affordable transportation service we offer, which has proven to be reliable and efficient. You can calculate and compare service costs by visiting Shipping Calculator.
+                                                </p>
+                                                <p>
+                                                    It is typically advisable to take the vehicle to the closest shipment port; however, many prefer for the vehicle to be taken to the busiest port for shipments as the transportation costs can be significantly lower.
+                                                </p>
+                                                <p>
+                                                    The total delivery time varies anywhere from a day to a week, depending on the location of the dealer or auction site. After the vehicle has been successfully delivered to our warehouse, you will receive additional information and pictures of your car.
+                                                </p>
+
+                                                <p class="hide-after-that"></p>
+
+                                                <p>
+                                                    The deposit is required as a good faith gesture to show that the buyer is sincere and honest about the purchase he or she is making.
+                                                </p>
+
+                                                <p>
+                                                    Deposits can be made via PayPal (Visa/MasterCard capable) or paid by Direct Deposit/Wire Transfer, which goes directly into our banking account.
+                                                </p>
+
+                                                <p>
+                                                    <strong>Example:</strong> If you want to place a  bid on two separate vehicles at once, your security deposit must be at least $800.00. This amount allows the buyer to place a bid of up to $4,000.00 for each vehicle. If the buyer wishes to place a higher bid, the security deposit must be increased so that it contains a minimum of 10% of the total amount bidded for both vehicles. For example, if a buyer plans to bid $5,000.00 for one vehicle and $6,000.00 for another vehicle, the total deposit amount required to place the bid would be $1,100.00 ($500.00 for the first vehicle and $600.00 for the second). The deposit requirement applies to all transactions regardless of how many vehicles are being bidded on.
+                                                </p>
+
+                                                <p>
+                                                    If a buyer places a BID or BUY NOW request and is not successful, the security deposit can be used to bid or purchase another vehicle or can be refunded to the buyer upon your request.
+                                                </p>
+
+                                                <p class="text-secondary">
+                                                    **Note: The security deposit cannot be used towards the partial or full purchase of a vehicle. The deposit is fully refundable at any time upon the buyer’s request if there are no incomplete transactions or pending payments on the buyer’s account.
+                                                </p>
+
+                                                <p>
+                                                    <strong>IMPORTANT:</strong> Account cancellation will be accompanied by a full refund of the buyer’s security deposit. A minimum deposit of $400.00 must be kept on a buyer’s account at all times to keep an account inactive status. However, buyers are entitled to partial refunds at their request.
+                                                </p>
+
+                                                <p>
+                                                    <strong>YOU ARE ENTITLED TO A REFUND OF YOUR SECURITY DEPOSIT AT ANY TIME.</strong> Please note that a $45.00 transaction fee will be applied to all  international Wire Transfers.
+                                                </p>
+
+                                                <p class="text-secondary">
+                                                    **NOTE: Buyers that prefer to purchase in lots or bulk are able to receive open direct access to Insurance Auto Auction under our license. You need to make a deposit for direct access (10% of transaction price but not less than $1,000.00 and $75.00 non-refundable annual fee) and send a copy of your valid Photo Identification or a copy of your Passport to our Customer Service department at info@auto4export.com. You may also fax the copy to 
+                                                </p>
+                                            </div>
+                                            <div class="how-to-buy-card__btn" data-text="Close">More</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="padding-wrap pb-0">
+            <section class="question">
+                <div class="question__bg">
+                    <picture>
+                        <source srcset="img/photo/guestion-bg-desk.jpg" media="(min-width: 992px)">
+                        <source srcset="img/photo/guestion-bg-tablet.jpg" media="(min-width: 768px)">
+                        <img src="img/photo/guestion-bg-mob.jpg" alt="img">
+                    </picture>
+                </div>
+                <div class="question__body container">
+                    <div class="question__head">
+                        <h2 class="question__title">Do You Have Any Questions? </h2>
+                        <div class="question__label">
+                            <img src="img/photo/question-icon.svg" alt="">
+                            Leave a request to contact a manager!
+                        </div>
+                    </div>
+                    <form action="#">
+                        <div class="question__form">
+                            <div class="question__form-item question__form-item-1">
+                                <input type="text" class="input" placeholder="Your Name">
+                            </div>
+                            <div class="question__form-item question__form-item-2" data-mask="9{*}">
+                                <input type="text" class="input" placeholder="Your Phone Number">
+                            </div>
+                            <div class="question__form-item question__form-item-3">
+                                <button type="submit" class="question__submit btn-default">
+                                    <i class="icon-arrow-right"></i>
+                                    Send
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- == FOOTER ================== -->
+    <footer class="footer" data-footer>
+    <div class="footer__bg">
+        <picture>
+            <source srcset="img/photo/footer-bg.jpg" media="(min-width: 992px)">
+            <img src="img/photo/footer-bg-tablet.jpg" alt="img">
+        </picture>
+    </div>
+    <div class="footer__body container">
+        <div class="footer__row-1" data-spoller="one" data-spoller-mob>
+            <div class="footer__col footer__col-1 footer__drop-down-mob">
+                <div class="footer__title" data-spoller-trigger>
+                    <a href="#">Vehicle Finder</a>
+                </div>
+                <div class="footer__list-wrap footer__list-wrap-col-1">
+                    <ul class="footer__list">
+                        <li>
+                            <a href="#">Cars</a>
+                        </li>
+                        <li>
+                            <a href="#">Trucks</a>
+                        </li>
+                        <li>
+                            <a href="#">ATV</a>
+                        </li>
+                        <li>
+                            <a href="#">Motorcycle</a>
+                        </li>
+                        <li>
+                            <a href="#">Boats</a>
+                        </li>
+                        <li>
+                            <a href="#">RV</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__col footer__col-2">
+                <div class="footer__title">
+                </div>
+                <ul class="footer__list" data-da=".footer__list-wrap-col-1,991.98,last">
+                    <li>
+                        <a href="#">Construction Equipment</a>
+                    </li>
+                    <li>
+                        <a href="#">Buses</a>
+                    </li>
+                    <li>
+                        <a href="#">Snowmobiles</a>
+                    </li>
+                    <li>
+                        <a href="#">Trailers</a>
+                    </li>
+                    <li>
+                        <a href="#">Jet Ski</a>
+                    </li>
+                    <li>
+                        <a href="#">Other</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__col footer__col-3 footer__drop-down-mob" data-da=".footer__col-2,991.98,first">
+                <div class="footer__title" data-spoller-trigger>
+                    <a href="#">Live Auctions</a>
+                </div>
+                <div class="footer__list-wrap">
+                    <ul class="footer__list">
+                        <li>
+                            <a href="#">By Locations</a>
+                        </li>
+                        <li>
+                            <a href="#">Live Auctions</a>
+                        </li>
+                        <li>
+                            <a href="#">Auctions Calendar</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__col footer__col-4 footer__drop-down-mob" data-da=".footer__col-2,991.98,last">
+                <div class="footer__title" data-spoller-trigger>
+                    <a href="#">Support</a>
+                </div>
+                <div class="footer__list-wrap footer__list-wrap-col-4">
+                    <ul class="footer__list">
+                        <li>
+                            <a href="#">How to Buy</a>
+                        </li>
+                        <li>
+                            <a href="#">Shipping</a>
+                        </li>
+                        <li>
+                            <a href="#">Fee Calculator</a>
+                        </li>
+                        <li>
+                            <a href="#">Faqs</a>
+                        </li>
+                        <li>
+                            <a href="#">Blogs</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__col footer__col-5">
+                <div class="footer__title">
+                </div>
+                <ul class="footer__list" data-da=".footer__list-wrap-col-4,991.98,last">
+                    <li>
+                        <a href="#">About Us</a>
+                    </li>
+                </ul>
+
+                <div data-da=".contact-head__dropdown-box-row-3,991.98,last">
+                    <ul class="social">
+                        <li>
+                            <a href="#">
+                                <img src="img/icons/facebook.svg" alt="" class="img-svg">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/icons/instagram.svg" alt="" class="img-svg">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/icons/youtube.svg" alt="" class="img-svg">
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="footer__logo">
+                        <a href="#">
+                            <img src="img/logo/footer-logo.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__col footer__col-6">
+                <div class="footer__title">
+                    <a href="#">Contacts</a>
+                </div>
+                <div class="contact-head">
+                    <div class="contact-head__dropdown-box">
+                        <div class="contact-head__dropdown-box-row contact-head__dropdown-box-row-1">
+                            <a href="" class="contact-head__phone">
+                                <img src="img/icons/phone.svg" alt="" class="img-svg">
+                                +1 (770) 544-70-03
+                            </a>
+                            <a href="" class="contact-head__phone">
+                                <img src="img/icons/phone.svg" alt="" class="img-svg">
+                                +1 (850) 319-34-67
+                            </a>
+                        </div>
+                        <div class="contact-head__dropdown-box-row contact-head__dropdown-box-row-2">
+                            <div class="contact-head__address">
+                                <img src="img/icons/local.svg" alt="" class="img-svg">
+                                Bid N Drive Inc. <br>
+                                2305 Fourth st., <br>
+                                Tucker, GA 30084
+                            </div>
+                            <a href="#" class="contact-head__mail">sales@auto4export.com</a>
+                        </div>
+                        <div class="contact-head__dropdown-box-row contact-head__dropdown-box-row-3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__row-2">
+            <div class="footer__copy">Copyrights © 2021. All Rights Reserved</div>
+            <ul class="footer__payment-list">
+                <li>
+                    <a href="#">
+                        <img src="img/photo/payment-list-icon-1.svg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="img/photo/payment-list-icon-2.svg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="img/photo/payment-list-icon-3.svg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="img/photo/payment-list-icon-4.svg" alt="">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</footer>
+    <!-- == // FOOTER ================== -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="js/jQueryScripts.min.js"></script>
+</body>
+
+</html>

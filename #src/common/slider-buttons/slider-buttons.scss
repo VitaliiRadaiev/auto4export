@@ -29,10 +29,12 @@
     &.btn-prev {
 
         & i {
-            transform: scale(-1, 1);
+            transform: scale(-1, 1) translateX(0.07em);
         }
     }
     &.btn-next {
-       
+        & i {
+            transform:  translateX(0.07em);
+        }
     }
 }

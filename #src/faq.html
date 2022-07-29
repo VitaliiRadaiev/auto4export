@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" data-set-font-size>
+@@include('_head.html',{
+"title": "auto4export"
+})
+
+<body>
+    <div class="_preload-body"></div>
+    <!-- == TOP LINE ================== -->
+
+    @@include('common/header/_header.html',{
+    "mod": "header--user-authorized"
+    })
+    <!-- == // TOP LINE ================== -->
+
+    <main class="_page faq-page" data-padding-top-header-size>
+        <div class="p-50"></div>
+        <div class="container">
+            @@include('common/breadcrumbs/_breadcrumbs.html', {
+            "arr": ['<a href="#">Home</a>', 'Faq']
+            })
+        </div>
+
+        <div class="container">
+            <div class="faq-head">
+                <h1 class="faq-head__title">Faq</h1>
+                <div class="faq-head__search">
+                    <form action="/">
+                        <div class="search-head">
+                            <input type="text" class="search-head__input" placeholder="Quick search">
+                            <button class="search-head__submit">
+                                <img class="img-svg" src="img/icons/search.svg" alt="">
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="faq main-grid main-grid--second">
+                <div class="main-grid__content">
+                    <ul class="accordion accordion--whit-num" data-spoller>
+                        <li>
+                            <div class="accordion__title" data-spoller-trigger>
+                                <div class="accordion__num">1</div>
+                                Registration
+                            </div>
+                            <div class="accordion__text text-content">
+                                <p>
+                                    It’s completely free! There is no cost to join with a Standard Membership.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="accordion__title" data-spoller-trigger>
+                                <div class="accordion__num">2</div>
+                                Documents
+                            </div>
+                            <div class="accordion__text text-content">
+                                <div class="accordion__list">
+                                    <h4>
+                                        Is it possible to purchase a vehicle from you and register it in the US?
+                                    </h4>
+                                    <p>
+                                        Yes, purchased vehicles can be registered in the United States as long as as
+                                        ownership documents vehicle is sold with allow to do so. Please make yourself
+                                        aware
+                                        of any guidelines or requirements for this before you make a purchase.
+                                    </p>
+                                    <h4>
+                                        Why it takes so long to receive title from a dealer or from an auction?
+                                    </h4>
+                                    <p>
+                                        It usually takes around five to ten days to get the title from an auction or a
+                                        dealer. A seller has a thirty days rule during which he can provide the title of
+                                        the
+                                        car to the auction. If the car was under finance, the bank will hold the title
+                                        of
+                                        the car for the seller.
+                                    </p>
+                                    <h4>
+                                        What does a salvage title mean?
+                                    </h4>
+                                    <p>
+                                        It is a certificate issued to a vehicle when its repair costs go up to 75
+                                        percent of
+                                        the vehicles market value. This is also done when the repairs on the cars are
+                                        deemed
+                                        unfeasible by insurance companies.
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="accordion__title" data-spoller-trigger>
+                                <div class="accordion__num">3</div>
+                                Where are your vehicles located?
+                            </div>
+                            <div class="accordion__text text-content">
+                                <p>
+                                    It’s completely free! There is no cost to join with a Standard Membership.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="accordion__title" data-spoller-trigger>
+                                <div class="accordion__num">4</div>
+                                How do I get started?
+                            </div>
+                            <div class="accordion__text text-content">
+                                <p>
+                                    It’s completely free! There is no cost to join with a Standard Membership.
+                                </p>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae,
+                                    praesentium odio consequatur aspernatur ab alias dignissimos temporibus in
+                                    id non unde accusamus quam deserunt. Blanditiis voluptatem veritatis
+                                    consectetur voluptatibus necessitatibus?
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="accordion__title" data-spoller-trigger>
+                                <div class="accordion__num">5</div>
+                                Do you offer shipping?
+                            </div>
+                            <div class="accordion__text text-content">
+                                <p>
+                                    It’s completely free! There is no cost to join with a Standard Membership.
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="main-grid__side-column">
+                    @@include('common/question-box/_question-box.html', {
+                        "mod": ''
+                    })
+                </div>
+            </div>
+        </div>
+
+        <div class="p-70"></div>
+    </main>
+
+    <!-- == FOOTER ================== -->
+    @@include('common/footer/_footer.html',{})
+    <!-- == // FOOTER ================== -->
+
+    @@include('common/popup/_popup-question.html')
+    @@include('common/popup/_popup-message.html')
+
+    <script>
+        // Это пример вызова сообщения после срабатывания формы "Ask a Question", скрипт нужно будет удалить
+        let form = document.querySelector('#popup-question');
+        if (form) {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                window.popup.openMessage('#popup-message-1');
+            })
+        }
+    </script>
+
+    @@include('_js-bottom.html',{})
+</body>
+
+</html>

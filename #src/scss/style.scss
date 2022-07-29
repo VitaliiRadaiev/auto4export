@@ -72,6 +72,10 @@
 @import "../common/remove/remove";
 @import "../common/credit-card/credit-card";
 @import "../common/main-grid/main-grid";
+@import "../common/accordion/accordion";
+@import "../common/licenses/licenses";
+@import "../common/advantages/advantages";
+@import "../common/how-to-buy-card/how-to-buy-card";
 // ==== // COMMON BLOCKS =====================================================
 
 // ==== PAGES =====================================================
@@ -86,5 +90,8 @@
 @import "pages/dashboard";
 @import "pages/make-deposit";
 @import "pages/videos";
+@import "pages/faq";
+@import "pages/about";
+@import "pages/how-to-buy";
 // ==== AND PAGES =====================================================
 

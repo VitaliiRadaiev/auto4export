@@ -27,6 +27,12 @@ const setSize = (borderDashed, svg) => {
         d="M2 2 H${w - 12} Q ${w - 2} 8 ${w - 2} 12 L ${w - 2} ${h - 12} Q ${w - 2} ${h - 8} ${w - 12} ${h - 2} L 18 ${h - 2} Q 10 ${h - 8} 10 ${h - 12} L 10 12 z"
         stroke="#D4D9DB" stroke-width="3" stroke-linecap="round" stroke-dasharray="0.1 8" />
         `
+    } else if (borderDashed.dataset.borderDashed === 'top-left-second') {
+        svg.innerHTML = `
+        <path fill-rule="evenodd" clip-rule="evenodd"
+        d="M2 2 H${w - 12} Q ${w - 2} 8 ${w - 2} 12 L ${w - 2} ${h - 12} Q ${w - 2} ${h - 8} ${w - 12} ${h - 2} L 18 ${h - 2} Q 10 ${h - 8} 10 ${h - 12} L 10 12 z"
+        stroke="#D4D9DB" stroke-width="3" stroke-linecap="round" stroke-dasharray="0.1 8" />
+        `
     } else if (borderDashed.dataset.borderDashed === 'top-left-top') {
 
         svg.innerHTML = `

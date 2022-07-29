@@ -1,0 +1,121 @@
+.how-to-buy {
+
+    &__head {
+        margin-bottom: 6rem;
+
+        @media (max-width: $md2+px) {
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: $md3+px) {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 3rem;
+
+        @media (max-width: $md3+px) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__head-row {
+        display: flex;
+        gap: 4rem 14.7rem;
+        align-items: flex-start;
+
+        @media (max-width: $md2+px) {
+            flex-direction: column;
+        }
+
+        @media (max-width: $md3+px) {
+            gap: 20px;
+        }
+    }
+
+    &__text {
+        flex: 1 1 auto;
+
+        & > *:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__btn {
+        flex: 0 0 auto;
+        width: 33rem;
+
+        @media (max-width: $md2+px) {
+            width: 100%;
+        }
+    }
+
+    &__body {
+        display: flex;
+        gap: 9.8rem;
+        position: relative;
+
+        @media (max-width: $md2+px) {
+            flex-direction: column;
+            gap: 4rem;
+            padding-left: 5rem;
+        }
+
+        @media (max-width: $md3+px) {
+            padding-left: 30px;
+            gap: 20px;
+        }
+
+        &:before {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: calc(100% + 7rem);
+            width: 0.7rem;
+            background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTAiIGN5PSIxMCIgcj0iNSIgZmlsbD0iI0Q5RDlEOSIvPgo8L3N2Zz4K);
+            background-size: 0.7rem;
+            background-repeat: repeat-y;
+
+            @media (max-width: $md2+px) {
+                left: 0;
+                transform: translate(0);
+            }
+
+            @media (max-width: $md3+px) {
+                height: calc(100% + 3rem);
+                width: 0.7rem;
+                background-size: 0.6rem;
+            }
+        }
+
+        
+    }
+
+    &__col {
+        flex: 0 1 calc(50% - calc(9.8rem / 2));
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+
+        @media (max-width: $md2+px) {
+            flex: 0 1 auto;
+        }
+
+        @media (max-width: $md3+px) {
+            gap: 20px;
+        }
+    }
+
+    &__col--1 {
+    }
+
+    &__col--2 {
+        @media (min-width: 992px) {
+            padding-top: 4rem;
+        }
+    }
+}
+
