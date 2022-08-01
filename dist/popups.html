@@ -150,9 +150,51 @@ defer
                     </a>
                 </li>
             </ul>
-            <a href="#" class="header__account">
-                <img class="img-svg" src="img/icons/user.svg" alt="">
-            </a>
+            <div class="header__account">
+                <a href="#" class="header__account-link not-hover">
+                    <img class="img-svg" src="img/icons/user.svg" alt="">
+                </a>
+
+                <div class="header__account-sub-menu">
+                    <div class="header__account-sub-menu-row">
+                        <ul class="header__account-sub-menu-list">
+                            <li>
+                                <a href="#">Dashboard</a>
+                            </li>
+                            <li>
+                                <a href="#">Transactions</a>
+                            </li>
+                            <li>
+                                <a href="#">Documents and IDs</a>
+                            </li>
+                            <li>
+                                <a href="#">Billing Information</a>
+                            </li>
+                            <li>
+                                <a href="#">Watchlist</a>
+                            </li>
+                            <li>
+                                <a href="#">My Bids</a>
+                            </li>
+                            <li>
+                                <a href="#">Nofitications</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="header__account-sub-menu-row">
+                        <a href="#" class="header__account-sub-menu-link">
+                            <img class="img-svg" src="img/icons/gear.svg" alt="">
+                            Edit profile
+                        </a>
+                    </div>
+                    <div class="header__account-sub-menu-row">
+                        <a href="#" class="header__account-sub-menu-link">
+                            <img class="img-svg" src="img/icons/log-out.svg" alt="">
+                            Logout
+                        </a>
+                    </div>
+                </div>
+            </div>
             <a href="#" class="header__make-deposit btn-default">
                 <img class="img-svg" src="img/icons/deposit.svg" alt="">
                 Make Deposit
@@ -947,10 +989,40 @@ defer
                             <a href="#popup-message-1" data-popup="open-popup">Message 1</a>
                         </li>
                         <li>
+                            <a href="#popup-message-2" data-popup="open-popup">Message 2</a>
+                        </li>
+                        <li>
+                            <a href="#popup-message-3" data-popup="open-popup">Message 3</a>
+                        </li>
+                        <li>
                             <a href="#confirmBid" data-popup="open-popup">Confirm You Bid</a>
                         </li>
                         <li>
                             <a href="#tryingToBid" data-popup="open-popup">Trying To Bid</a>
+                        </li>
+                        <li>
+                            <a href="#groupShipping" data-popup="open-popup">Add Group Shipping</a>
+                        </li>
+                        <li>
+                            <a href="#groupShipping2" data-popup="open-popup">Add Group Shipping 2</a>
+                        </li>
+                        <li>
+                            <a href="#attention" data-popup="open-popup">Attention</a>
+                        </li>
+                        <li>
+                            <a href="#attention2" data-popup="open-popup">Attention Offer Price</a>
+                        </li>
+                        <li>
+                            <a href="#shipping" data-popup="open-popup">Add Shipping</a>
+                        </li>
+                        <li>
+                            <a href="#shipping2" data-popup="open-popup">Add Shipping 2</a>
+                        </li>
+                        <li>
+                            <a href="#addNewCard" data-popup="open-popup">Add New Card</a>
+                        </li>
+                        <li>
+                            <a href="#verification" data-popup="open-popup">Verification</a>
                         </li>
                     </ul>
                 </div>
@@ -1167,7 +1239,7 @@ defer
                 <img src="img/icons/close.svg" alt="">
             </div>
 
-            <form id="question" action="/">
+            <form action="/">
                 <div class="form d-flex">
                     <h2 class="form__title">Log In</h2>
                     <div class="form__items">
@@ -1228,7 +1300,7 @@ defer
                 <img src="img/icons/close.svg" alt="">
             </div>
 
-            <form id="question" action="/">
+            <form action="/">
                 <div class="form d-flex">
                     <h2 class="form__title">Reset your password</h2>
                     <div class="form__simple-text">
@@ -1261,7 +1333,7 @@ defer
                 <img src="img/icons/close.svg" alt="">
             </div>
 
-            <form id="question" action="/">
+            <form action="/">
                 <div class="form d-flex">
                     <h2 class="form__title">Sign Up</h2>
                     <div class="form__items">
@@ -1323,7 +1395,7 @@ defer
                 <img src="img/icons/close.svg" alt="">
             </div>
 
-            <form id="question" action="/">
+            <form action="/">
                 <div class="form d-flex">
                     <h2 class="form__title">Sign Up</h2>
                     <div class="form__items">
@@ -1429,6 +1501,38 @@ defer
 		</div>
 	</div>
 </div>
+    <div class="popup" id="popup-message-2">
+	<div class="popup__body">
+		<div class="popup__content border-rudius">
+            <div class="popup__close" data-popup="close-popup">
+                <img src="img/icons/close.svg" alt="">
+            </div>
+            <div class="popup-message">
+                <div class="popup-message__icon text-primary">
+                    <img class="img-svg" src="img/icons/car.svg" alt="">
+                </div>
+                <h3 class="popup-message__title">
+                    THIS VEHICLE IS BEING SOLD IN IT`S CURRENT CONDITION ON AN 'AS IS' BASIS
+                </h3>
+                <div class="popup-message__text">
+                    No vehicles are retained or owned by Auto4Export. We make all known information concerning the vehicles available on our site. We can provide no further information beyond what is listed on the site.
+                </div>
+            </div>
+		</div>
+	</div>
+</div>
+    <div class="popup" id="popup-message-3">
+	<div class="popup__body">
+		<div class="popup__content d-inline w-sm-auto border-rudius">
+            <div class="popup__message justify-content-center">
+                <img src="img/icons/user-update.svg" alt="">
+                <p>
+                    Profile updated
+                </p>
+            </div>
+		</div>
+	</div>
+</div>
     <div class="popup" id="confirmBid">
     <div class="popup__body">
         <div class="popup__content border-rudius">
@@ -1475,7 +1579,7 @@ defer
                     By clicking "Confirm My Bid", <br> you agree to <a href="#">Purchase Order Agreement</a>
                 </div>
                 <div class="confirm-bid__buttons">
-                    <button type="button" class="btn-default btn-default--light">
+                    <button type="button" class="btn-default btn-default--light" data-popup="close-popup">
                         <img class="img-svg" src="img/icons/close.svg" alt="">
                         Cancel
                     </button>
@@ -1514,6 +1618,547 @@ defer
     </div>
 </div>
 
+    <div class="popup" id="groupShipping">
+   
+	<div class="popup__body">
+		<div class="popup__content popup__content--lg border-rudius">
+            <div class="popup__close" data-popup="close-popup">
+                <img src="img/icons/close.svg" alt="">
+            </div>
+
+            <form action="/">
+                <div class="form d-flex">
+                    <h2 class="form__title">Add Group Shipping</h2>
+                    <div class="form__simple-text">
+                        Your Vehicle will be delivered
+                    </div>
+                    <div class="form__items">
+                        <div class="form__item">
+                            <label class="form__labell">From</label>
+                            <div class="input-wrap">
+                                <input type="text" class="input inactive" value="CLEVELAND WEST, OH" placeholder="Enter">
+                            </div>
+                        </div>
+                        <div class="form__item">
+                            <label class="form__labell">To</label>
+                            <div class="select-wrap">
+                                <select name="" class="_select">
+                                    <option value="" selected>Enter</option>
+                                    <option value="1" >Ukraine</option>
+                                    <option value="2">USA</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form__item">
+                            <label class="form__labell">Port</label>
+                            <div class="select-wrap">
+                                <select name="" class="_select">
+                                    <option value="" selected>Enter</option>
+                                    <option value="1" >0000</option>
+                                    <option value="2">1111</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form__info-list">
+                        <ul class="simple-table-list">
+                            <li>
+                                <label>Cleveland West, OH - Houston, 31254, TX</label>
+                                <p><strong>$256</strong></p>
+                            </li>
+                            <li>
+                                <label>Cleveland - Odessa</label>
+                                <p><strong>$1,500</strong></p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="form__price">
+                        <label>Final Price</label>
+                        <p class="text-primary">$12,000</p>
+                    </div>
+                    <div class="form__submit-wrap">
+                        <button type="submit" class="form__submit btn-default">
+                            <img class="img-svg" src="img/icons/plus-circle.svg" alt="">
+                            Add
+                        </button>
+                    </div>
+                </div>
+            </form>
+		</div>
+	</div>
+</div>
+    <div class="popup" id="groupShipping2">
+   
+	<div class="popup__body">
+		<div class="popup__content popup__content--lg border-rudius">
+            <div class="popup__close" data-popup="close-popup">
+                <img src="img/icons/close.svg" alt="">
+            </div>
+
+            <form action="/">
+                <div class="form d-flex">
+                    <h2 class="form__title">Add Group Shipping</h2>
+                    <div class="form__simple-text">
+                        Your Vehicle will be delivered
+                    </div>
+                    <div class="form__items">
+                        <div class="form__item">
+                            <label class="form__labell">From</label>
+                            <div class="input-wrap">
+                                <input type="text" class="input inactive" value="CLEVELAND WEST, OH" placeholder="Enter">
+                            </div>
+                        </div>
+                        <div class="form__item">
+                            <label class="form__labell">To</label>
+                            <div class="select-wrap">
+                                <select name="" class="_select">
+                                    <option value="" selected>Enter</option>
+                                    <option value="1" >Ukraine</option>
+                                    <option value="2">USA</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form__item">
+                            <label class="form__labell">Port</label>
+                            <div class="select-wrap">
+                                <select name="" class="_select">
+                                    <option value="" selected>Enter</option>
+                                    <option value="1" >0000</option>
+                                    <option value="2">1111</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form__item">
+                            <label class="form__labell">State</label>
+                            <div class="input-wrap">
+                                <input type="text" class="input inactive" value="Texas" placeholder="Enter">
+                            </div>
+                        </div>
+                        <div class="form__item">
+                            <label class="form__labell">Town</label>
+                            <div class="input-wrap">
+                                <input type="text" class="input inactive" value="Houston" placeholder="Enter">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form__info-list">
+                        <ul class="simple-table-list">
+                            <li>
+                                <label>Cleveland West, OH - Houston, 31254, TX</label>
+                                <p><strong>$256</strong></p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="form__price">
+                        <label>Final Price</label>
+                        <p class="text-primary">$12,000</p>
+                    </div>
+                    <div class="form__submit-wrap">
+                        <button type="submit" class="form__submit btn-default">
+                            <img class="img-svg" src="img/icons/plus-circle.svg" alt="">
+                            Add
+                        </button>
+                    </div>
+                </div>
+            </form>
+		</div>
+	</div>
+</div>
+    <div class="popup" id="attention">
+   
+	<div class="popup__body">
+		<div class="popup__content border-rudius">
+            <div class="popup__close" data-popup="close-popup">
+                <img src="img/icons/close.svg" alt="">
+            </div>
+
+            <form action="/">
+                <div class="form d-flex">
+                    <h2 class="form__title">
+                        Attention!
+                    </h2>
+                    <div class="form__simple-text form__simple-text--sm">
+                        <p>
+                            By clicking "Buy now", you are buying this lot for $17,000 plus applicable fees.
+                        </p>
+                        <p>
+                            Should you fail to complete this transaction, you will be subject to any and all applicable relist fees.
+                        </p>
+                    </div>
+                    <div class="form__info-list">
+                        <ul class="simple-table-list">
+                            <li>
+                                <label>Buy Now Price</label>
+                                <p><strong>$17,000</strong></p>
+                            </li>
+                            <li class="position-relative z-index-10">
+                                <label>
+                                    <div class="fee" data-fee>
+                                        <div class="fee__title">+Fee</div>
+                                        <div class="fee__list border-rudius">
+                                            <ul class="simple-table-list">
+                                                <li>
+                                                    <label>Auction Fees</label>
+                                                    <p><strong>$300</strong></p>
+                                                </li>
+                                                <li>
+                                                    <label>Transaction Fee</label>
+                                                    <p><strong>$100</strong></p>
+                                                </li>
+                                                <li>
+                                                    <label>Documentation Fee</label>
+                                                    <p><strong>$100</strong></p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </label>
+                                <p><strong>$500</strong></p>
+                            </li>
+                            <li>
+                                <label>Final Buy now Price</label>
+                                <p><strong>$17,500</strong></p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="form__row">
+                        <label class="checkbox-radio">
+                            <input type="checkbox" checked>
+                            <div class="checkbox-radio__square checkbox-radio__square--lg"></div>
+                            <div class="checkbox-radio__text checkbox-radio__text--sm text-nowrap">I agreement with the <a href="#">rules</a></div>
+                        </label>
+                    </div>
+                    <div class="form__buttons">
+                        <button type="button" class="btn-default btn-default--light" data-popup="close-popup">
+                            <img class="img-svg" src="img/icons/close.svg" alt="">
+                            Cancel
+                        </button>
+                        <button type="submit" class="btn-default">
+                            <img class="img-svg" src="img/icons/circle-check-sm.svg" alt="">
+                            By Now
+                        </button>
+                    </div>
+                </div>
+            </form>
+		</div>
+	</div>
+</div>
+    <div class="popup" id="attention2">
+   
+	<div class="popup__body">
+		<div class="popup__content border-rudius">
+            <div class="popup__close" data-popup="close-popup">
+                <img src="img/icons/close.svg" alt="">
+            </div>
+
+            <form action="/">
+                <div class="form d-flex">
+                    <h2 class="form__title">
+                        Attention!
+                    </h2>
+                    <div class="form__simple-text form__simple-text--sm">
+                        <p>
+                            By clicking "Buy now", you are buying this lot for $17,000 plus applicable fees.
+                        </p>
+                        <p>
+                            Should you fail to complete this transaction, you will be subject to any and all applicable relist fees.
+                        </p>
+                    </div>
+                    <div class="form__row">
+                        <div class="bid-card-value" >
+                            <label class="form__label">Final Offer Price</label>
+                            <div class="bid-card-value__body" data-bid-value data-min-value="100" data-increment="100" data-mask="$9{*}">
+                                <div class="bid-card-value__btn minus">
+                                    <img src="img/icons/minus.svg" alt="">
+                                </div>
+                                <input type="text" class="bid-card-value__input" value="16900">
+                                <div class="bid-card-value__btn plus">
+                                    <img src="img/icons/plus.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form__info-list">
+                        <ul class="simple-table-list">
+                            <li>
+                                <label>Buy Now Price</label>
+                                <p><strong>$17,000</strong></p>
+                            </li>
+                            <li class="position-relative z-index-10">
+                                <label>
+                                    <div class="fee" data-fee>
+                                        <div class="fee__title">+Fee</div>
+                                        <div class="fee__list border-rudius">
+                                            <ul class="simple-table-list">
+                                                <li>
+                                                    <label>Auction Fees</label>
+                                                    <p><strong>$300</strong></p>
+                                                </li>
+                                                <li>
+                                                    <label>Transaction Fee</label>
+                                                    <p><strong>$100</strong></p>
+                                                </li>
+                                                <li>
+                                                    <label>Documentation Fee</label>
+                                                    <p><strong>$100</strong></p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </label>
+                                <p><strong>$500</strong></p>
+                            </li>
+                            <li>
+                                <label>Final Buy now Price</label>
+                                <p><strong>$17,500</strong></p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="form__price">
+                        <label>Final Price</label>
+                        <p class="text-primary">$12,000</p>
+                    </div>
+                    <div class="form__row">
+                        <label class="checkbox-radio">
+                            <input type="checkbox" checked>
+                            <div class="checkbox-radio__square checkbox-radio__square--lg"></div>
+                            <div class="checkbox-radio__text checkbox-radio__text--sm text-nowrap">I agreement with the <a href="#">rules</a></div>
+                        </label>
+                    </div>
+                    <div class="form__buttons">
+                        <button type="button" class="btn-default btn-default--light" data-popup="close-popup">
+                            <img class="img-svg" src="img/icons/close.svg" alt="">
+                            Cancel
+                        </button>
+                        <button type="submit" class="btn-default">
+                            <img class="img-svg" src="img/icons/circle-check-sm.svg" alt="">
+                            By Now
+                        </button>
+                    </div>
+                </div>
+            </form>
+		</div>
+	</div>
+</div>
+    <div class="popup" id="shipping">
+   
+	<div class="popup__body">
+		<div class="popup__content popup__content--lg border-rudius">
+            <div class="popup__close" data-popup="close-popup">
+                <img src="img/icons/close.svg" alt="">
+            </div>
+
+            <form action="/">
+                <div class="form d-flex">
+                    <h2 class="form__title">Add Shipping</h2>
+                    <div class="form__simple-text">
+                        Your Vehicle will be delivered
+                    </div>
+                    <div class="form__items">
+                        <div class="form__item">
+                            <label class="form__labell">From</label>
+                            <div class="input-wrap">
+                                <input type="text" class="input inactive" value="CLEVELAND WEST, OH" placeholder="Enter">
+                            </div>
+                        </div>
+                        <div class="form__item">
+                            <label class="form__labell">To</label>
+                            <div class="select-wrap">
+                                <select name="" class="_select">
+                                    <option value="" selected>Enter</option>
+                                    <option value="1" >Ukraine</option>
+                                    <option value="2">USA</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form__item">
+                            <label class="form__labell">Port</label>
+                            <div class="select-wrap">
+                                <select name="" class="_select">
+                                    <option value="" selected>Enter</option>
+                                    <option value="1" >0000</option>
+                                    <option value="2">1111</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form__address">
+                        Cleveland - Odessa
+                    </div>
+                    <div class="form__submit-wrap">
+                        <button type="submit" class="form__submit btn-default">
+                            <img class="img-svg" src="img/icons/done.svg" alt="">
+                            Send Request
+                        </button>
+                    </div>
+                </div>
+            </form>
+		</div>
+	</div>
+</div>
+    <div class="popup" id="shipping2">
+   
+	<div class="popup__body">
+		<div class="popup__content popup__content--lg border-rudius">
+            <div class="popup__close" data-popup="close-popup">
+                <img src="img/icons/close.svg" alt="">
+            </div>
+
+            <form action="/">
+                <div class="form d-flex">
+                    <h2 class="form__title">Add Shipping</h2>
+                    <div class="form__simple-text">
+                        Your Vehicle will be delivered
+                    </div>
+                    <div class="form__items">
+                        <div class="form__item">
+                            <label class="form__labell">From</label>
+                            <div class="input-wrap">
+                                <input type="text" class="input inactive" value="CLEVELAND WEST, OH" placeholder="Enter">
+                            </div>
+                        </div>
+                        <div class="form__item">
+                            <label class="form__labell">To</label>
+                            <div class="select-wrap">
+                                <select name="" class="_select">
+                                    <option value="" selected>Enter</option>
+                                    <option value="1" >Ukraine</option>
+                                    <option value="2">USA</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form__item">
+                            <label class="form__labell">Port</label>
+                            <div class="select-wrap">
+                                <select name="" class="_select">
+                                    <option value="" selected>Enter</option>
+                                    <option value="1" >0000</option>
+                                    <option value="2">1111</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form__item">
+                            <label class="form__labell">State</label>
+                            <div class="input-wrap">
+                                <input type="text" class="input inactive" value="Texas" placeholder="Enter">
+                            </div>
+                        </div>
+                        <div class="form__item">
+                            <label class="form__labell">Town</label>
+                            <div class="input-wrap">
+                                <input type="text" class="input inactive" value="Houston  (19 miles)" placeholder="Enter">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form__address">
+                        Cleveland West, OH - Houston, 31254, TX
+                    </div>
+                    <div class="form__submit-wrap">
+                        <button type="submit" class="form__submit btn-default">
+                            <img class="img-svg" src="img/icons/done.svg" alt="">
+                            Send Request
+                        </button>
+                    </div>
+                </div>
+            </form>
+		</div>
+	</div>
+</div>
+    <div class="popup" id="addNewCard">
+   
+	<div class="popup__body">
+		<div class="popup__content popup__content--lg border-rudius">
+            <div class="popup__close" data-popup="close-popup">
+                <img src="img/icons/close.svg" alt="">
+            </div>
+
+            <form action="/">
+                <div class="credit-card form d-flex">
+                    <h2 class="form__title">Add New Card</h2>
+                    <div class="form__simple-text">
+                        Your Vehicle will be delivered
+                    </div>
+                    <div class="form__items">
+                        <div class="form__item" data-mask="9999 9999 9999 9999">
+                            <label class="form__label">Your Card Number</label>
+                            <div class="input-wrap">
+                                <input type="text" class="input" placeholder="---- ---- ---- ----">
+                            </div>
+                        </div>
+                        <div class="form__item">
+                            <label class="form__label">Name on Card</label>
+                            <div class="input-wrap">
+                                <input type="text" class="input" placeholder="Enter">
+                            </div>
+                        </div>
+                        <div class="form__item form__item--half" data-mask="99.99.9999">
+                            <label class="form__label">Card Valid To</label>
+                            <div class="input-wrap">
+                                <input type="text" class="input" placeholder="dd.mm.yy">
+                            </div>
+                        </div>
+                        <div class="form__item form__item--half" data-mask="9{*}">
+                            <label class="form__label">Security Code</label>
+                            <div class="input-wrap">
+                                <input type="text" class="input" placeholder="CCV">
+                            </div>
+                        </div>
+                        <div class="form__item">
+                            <label class="checkbox-switch">
+                                <input type="checkbox">
+                                <div class="checkbox-switch__thumb"></div>
+                                <div class="checkbox-switch__text">Save this card in your account</div>
+                            </label>
+                        </div>
+                    </div>                                 
+                    <div class="form__submit-wrap">
+                        <button type="submit" class="form__submit btn-default">
+                            <img class="img-svg" src="img/icons/add-card.svg" alt="">
+                            Add Card
+                        </button>
+                    </div>
+                </div>
+            </form>
+		</div>
+	</div>
+</div>
+    <div class="popup" id="verification">
+   
+	<div class="popup__body">
+		<div class="popup__content popup__content--lg border-rudius">
+            <div class="popup__close" data-popup="close-popup">
+                <img src="img/icons/close.svg" alt="">
+            </div>
+
+            <form action="/">
+                <div class="verification">
+                    <div class="verification__head">
+                        <div class="verification__head-icon">
+                            <img src="img/icons/mobile-phone.svg" alt="">
+                        </div>
+                        <div class="verification__head-text">
+                            A verification code has been sent to your phone
+                        </div>
+                    </div>
+                    <div class="verification__body">
+                        <div class="input-wrap" data-mask="9{*}">
+                            <input type="text" class="input">
+                        </div>
+                        <button type="submit" class="btn-default">
+                            <img class="img-svg" src="img/icons/circle-check-sm.svg" alt="">
+                            Confirm
+                        </button>
+                    </div>
+                    <div class="verification__bottom">
+                        <a href="#">Send code again</a>
+                        <p>SMS not coming? Write to us at info@auto4export.com</p>
+                    </div>
+                </div>
+            </form>
+		</div>
+	</div>
+</div>
 
     <script>
         // Это пример вызова сообщения после срабатывания формы "Ask a Question", скрипт нужно будет удалить

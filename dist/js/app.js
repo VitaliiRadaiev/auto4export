@@ -2163,6 +2163,28 @@ if(bigImgaeElements.length) {
         })
     }
 };
+		{
+    let feeAll = document.querySelectorAll('[data-fee]');
+    if(feeAll.length) {
+        feeAll.forEach(fee => {
+            let title = fee.querySelector('.fee__title');
+            if(title) {
+                title.addEventListener('click', () => {
+                    fee.classList.toggle('fee--show-list');
+                })
+    
+                document.addEventListener('click', (e) => {
+                    if(!e.target.closest('.fee')) {
+                        if(!e.target.closest('.bid-card-value__body')) {
+                            fee.classList.remove('fee--show-list');
+                        }
+                    }
+                })
+            }
+        })
+
+    }
+};
 	}
 
 	componentsScripts() {
@@ -2586,23 +2608,6 @@ if (carDetailImages) {
         }
     }
 
-    let bidCardFee = document.querySelector('[data-bid-card-fee]');
-    if(bidCardFee) {
-        let title = bidCardFee.querySelector('.bid-card__fee-title');
-        if(title) {
-            title.addEventListener('click', () => {
-                bidCardFee.classList.toggle('bid-card__fee--show-list');
-            })
-
-            document.addEventListener('click', (e) => {
-                if(!e.target.closest('.bid-card__fee')) {
-                    if(!e.target.closest('.bid-card-value__body')) {
-                        bidCardFee.classList.remove('bid-card__fee--show-list');
-                    }
-                }
-            })
-        }
-    }
 };
 		
 	}

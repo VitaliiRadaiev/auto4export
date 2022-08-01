@@ -54,6 +54,10 @@
 		@media (max-width: $md3+px) {
 			padding: 2rem;
 		}
+
+		&--lg {
+			max-width: 63rem;
+		}
 	}
 
 	&__close {
@@ -260,5 +264,146 @@
 
 	&__btn {
 		width: 100%;
+	}
+}
+
+.popup-message {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+
+	@media (max-width: $md3+px) {
+		gap: 10px;
+	}
+
+	&__icon {
+		display: flex;
+		height: 3.5rem;
+
+		@media (max-width: $md3+px) {
+			height: 26px;
+		}
+
+		& img,
+		& svg {
+			height: 100%;
+			width: auto;
+		}
+	}
+
+	&__title {
+		font-size: 2rem;
+		line-height: 1.2em;
+		margin-bottom: 0;
+	}
+
+	&__text {
+		font-size: 1.4rem;
+		line-height: 1.43em;
+
+		@media (max-width: $md3+px) {
+			font-size: 13px;
+			line-height: 18px;
+		}
+	}
+}
+
+.verification {
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
+
+	@media (max-width: $md3+px) {
+		gap: 20px;
+	}
+
+	&__head {
+		display: flex;
+		align-items: center;
+	}
+
+	&__head-icon {
+		flex: 0 0 auto;
+		margin-right: 2rem;
+		height: 4rem;
+
+		@media (max-width: $md3+px) {
+			height: 20px;
+			margin-right: 10px;
+		}
+
+		& img,
+		& svg {
+			height: 100%;
+			width: auto;
+		}
+	}
+
+	&__head-text {
+		max-width: 22.5rem;
+		font-weight: 700;
+		font-size: 2rem;
+		line-height: 1.2em;
+
+		@media (max-width: $md3+px) {
+			font-size: 16px;
+			line-height: 19px;
+			max-width: 176px;
+		}
+	}
+
+	&__body {
+		display: flex;
+		gap: 2rem;
+
+		@media (max-width: $md3+px) {
+			flex-direction: column;
+			gap: 10px;
+		}
+
+		& .input-wrap {
+			flex: 1 1 auto;
+		}
+
+		& .btn-default {
+			min-width: 15.3rem;
+			flex: 0 0 auto;
+
+			@media (max-width: $md3+px) {
+				width: 100%;
+			}
+		}
+	}
+
+	&__bottom {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1.4rem;
+		flex-wrap: wrap;
+
+		& a {
+			font-size: 1.6rem;
+			line-height: 1.1875em;
+			color: $mainColor;
+			border-bottom: 1px dashed rgba($mainColor, 0.6);
+
+			@media (max-width: $md3+px) {
+				font-size: 14px;
+				line-height: 17px;
+			}
+		}
+
+		& p {
+			margin-bottom: 0;
+			font-size: 1.4rem;
+			line-height: 1.21em;
+			color: $textColorSecondary;
+
+			@media (max-width: $md3+px) {
+				font-size: 13px;
+				line-height: 16px;
+			}
+		}
 	}
 }

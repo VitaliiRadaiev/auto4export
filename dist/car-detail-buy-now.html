@@ -150,9 +150,51 @@ defer
                     </a>
                 </li>
             </ul>
-            <a href="#" class="header__account">
-                <img class="img-svg" src="img/icons/user.svg" alt="">
-            </a>
+            <div class="header__account">
+                <a href="#" class="header__account-link not-hover">
+                    <img class="img-svg" src="img/icons/user.svg" alt="">
+                </a>
+
+                <div class="header__account-sub-menu">
+                    <div class="header__account-sub-menu-row">
+                        <ul class="header__account-sub-menu-list">
+                            <li>
+                                <a href="#">Dashboard</a>
+                            </li>
+                            <li>
+                                <a href="#">Transactions</a>
+                            </li>
+                            <li>
+                                <a href="#">Documents and IDs</a>
+                            </li>
+                            <li>
+                                <a href="#">Billing Information</a>
+                            </li>
+                            <li>
+                                <a href="#">Watchlist</a>
+                            </li>
+                            <li>
+                                <a href="#">My Bids</a>
+                            </li>
+                            <li>
+                                <a href="#">Nofitications</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="header__account-sub-menu-row">
+                        <a href="#" class="header__account-sub-menu-link">
+                            <img class="img-svg" src="img/icons/gear.svg" alt="">
+                            Edit profile
+                        </a>
+                    </div>
+                    <div class="header__account-sub-menu-row">
+                        <a href="#" class="header__account-sub-menu-link">
+                            <img class="img-svg" src="img/icons/log-out.svg" alt="">
+                            Logout
+                        </a>
+                    </div>
+                </div>
+            </div>
             <a href="#" class="header__make-deposit btn-default">
                 <img class="img-svg" src="img/icons/deposit.svg" alt="">
                 Make Deposit
@@ -1321,9 +1363,9 @@ defer
                     </div>
                 </div>
 
-                <div class="bid-card__fee" data-bid-card-fee>
-                    <div class="bid-card__fee-title">Fee Estimator</div>
-                    <div class="bid-card__fee-list border-rudius">
+                <div class="bid-card__fee fee" data-fee>
+                    <div class="fee__title">Fee Estimator</div>
+                    <div class="fee__list border-rudius">
                         <ul class="simple-table-list">
                             <li>
                                 <label>Final Fee</label>

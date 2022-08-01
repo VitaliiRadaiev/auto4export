@@ -202,6 +202,14 @@
             background-color: #fff;
         }
     }
+
+    & .fee {
+        position: static;
+    }
+
+    & .fee__list {
+        max-width: none;
+    }
 }
 
 .info-box {

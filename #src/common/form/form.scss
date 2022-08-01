@@ -140,6 +140,16 @@
             font-size: 14px;
             line-height: 17px;
         }
+
+        &--sm {
+            font-size: 1.4rem;
+            line-height: 1.43em;
+
+            @media (max-width: $md3+px) {
+                font-size: 14px;
+                line-height: 17px;
+            }
+        }
     }
 
     &__note {
@@ -245,6 +255,61 @@
             font-size: 14px;
             line-height: 17px;
         }
+    }
+
+    &__price {
+        padding-top: 2rem;
+        border-top: 1px solid $borderColor;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        & label {
+            font-size: 1.6rem;
+            line-height: 1.12em;
+
+            @media (max-width: $md3+px) {
+                font-size: 14px;
+                line-height: 17px;
+            }
+        }
+
+        & p {
+            font-weight: 700;
+            font-size: 2rem;
+            line-height: 1.2em;
+            margin-bottom: 0;
+
+            @media (max-width: $md3+px) {
+                font-size: 16px;
+                line-height: 19px;
+            }
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        gap: 2rem;
+
+        @media (max-width: $md3+px) {
+            flex-direction: column-reverse;
+            gap: 10px;
+        }
+
+        & .btn-default {
+            min-width: auto;
+            flex: 0 1 calc(50% - 1rem);
+
+            @media (max-width: $md3+px) {
+                flex: 0 1 100%;
+            }
+        }
+    }
+
+    &__address {
+        font-size: 1.4rem;
+        line-height: 1.21em;
+        color: $textColorSecondary;
     }
 
     & a {

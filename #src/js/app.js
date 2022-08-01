@@ -456,6 +456,7 @@ class App {
 		@@include('../common/switch-dropdown/switch-dropdown.js');
 		@@include('../common/remove/remove.js');
 		@@include('../common/how-to-buy-card/how-to-buy-card.js');
+		@@include('../common/fee/fee.js');
 	}
 
 	componentsScripts() {

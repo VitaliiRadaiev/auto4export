@@ -1,0 +1,58 @@
+<div class="popup" id="addNewCard">
+   
+	<div class="popup__body">
+		<div class="popup__content popup__content--lg border-rudius">
+            <div class="popup__close" data-popup="close-popup">
+                <img src="img/icons/close.svg" alt="">
+            </div>
+
+            <form action="/">
+                <div class="credit-card form d-flex">
+                    <h2 class="form__title">Add New Card</h2>
+                    <div class="form__simple-text">
+                        Your Vehicle will be delivered
+                    </div>
+                    <div class="form__items">
+                        <div class="form__item" data-mask="9999 9999 9999 9999">
+                            <label class="form__label">Your Card Number</label>
+                            <div class="input-wrap">
+                                <input type="text" class="input" placeholder="---- ---- ---- ----">
+                            </div>
+                        </div>
+                        <div class="form__item">
+                            <label class="form__label">Name on Card</label>
+                            <div class="input-wrap">
+                                <input type="text" class="input" placeholder="Enter">
+                            </div>
+                        </div>
+                        <div class="form__item form__item--half" data-mask="99.99.9999">
+                            <label class="form__label">Card Valid To</label>
+                            <div class="input-wrap">
+                                <input type="text" class="input" placeholder="dd.mm.yy">
+                            </div>
+                        </div>
+                        <div class="form__item form__item--half" data-mask="9{*}">
+                            <label class="form__label">Security Code</label>
+                            <div class="input-wrap">
+                                <input type="text" class="input" placeholder="CCV">
+                            </div>
+                        </div>
+                        <div class="form__item">
+                            <label class="checkbox-switch">
+                                <input type="checkbox">
+                                <div class="checkbox-switch__thumb"></div>
+                                <div class="checkbox-switch__text">Save this card in your account</div>
+                            </label>
+                        </div>
+                    </div>                                 
+                    <div class="form__submit-wrap">
+                        <button type="submit" class="form__submit btn-default">
+                            <img class="img-svg" src="img/icons/add-card.svg" alt="">
+                            Add Card
+                        </button>
+                    </div>
+                </div>
+            </form>
+		</div>
+	</div>
+</div>
