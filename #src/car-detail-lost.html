@@ -323,7 +323,9 @@
                                                     <p><strong>$17,000</strong></p>
                                                 </li>
                                                 <li>
-                                                    <label class="text-primary">Select Shipping</label>
+                                                    <label class="text-primary">
+                                                        <a href="#groupShipping" data-popup="open-popup">Select Shipping</a>
+                                                    </label>
                                                     <p class="text-secondaryxt">on request</p>
                                                 </li>
                                             </ul>
@@ -919,6 +921,8 @@
     <!-- == FOOTER ================== -->
     @@include('common/footer/_footer.html',{})
     <!-- == // FOOTER ================== -->
+
+    @@include('common/popup/_popup-add-group-shipping.html')
 
     @@include('_js-bottom.html',{})
 </body>

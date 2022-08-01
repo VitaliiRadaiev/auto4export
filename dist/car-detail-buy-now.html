@@ -1391,10 +1391,10 @@ defer
                     </div>
                 </div>
 
-                <button class="bid-card__submit btn-default">
+                <a href="#confirmBid" class="bid-card__submit btn-default" data-popup="open-popup">
                     <img class="img-svg" src="img/icons/bid-now.svg" alt="">
                     Place a Bid
-                </button>
+                </a>
             </div>
         </div>
     </div>
@@ -1423,7 +1423,7 @@ defer
                                             <p class="text-primary">$17,000</p>
                                         </div>
                                         <div class="buy-now__buttons">
-                                            <a href="#" class="buy-now__btn btn-default btn-default--second">
+                                            <a href="#attention" class="buy-now__btn btn-default btn-default--second" data-popup="open-popup">
                                                 <img src="img/icons/buy.svg" alt="">
                                                 Buy it Now
                                             </a>
@@ -1466,7 +1466,9 @@ defer
                                                     <p><strong>$17,000</strong></p>
                                                 </li>
                                                 <li>
-                                                    <label class="text-primary">Select Shipping</label>
+                                                    <label class="text-primary">
+                                                        <a href="#groupShipping" data-popup="open-popup">Select Shipping</a>
+                                                    </label>
                                                     <p class="text-secondaryxt">on request</p>
                                                 </li>
                                             </ul>
@@ -2258,6 +2260,215 @@ defer
     </div>
 </footer>
     <!-- == // FOOTER ================== -->
+
+    <div class="popup" id="confirmBid">
+    <div class="popup__body">
+        <div class="popup__content border-rudius">
+            <div class="popup__close" data-popup="close-popup">
+                <img src="img/icons/close.svg" alt="">
+            </div>
+            <div class="confirm-bid">
+                <h2 class="confirm-bid__title">
+                    Confirm You Bid
+                </h2>
+                <div class="confirm-bid__value">
+                    $131
+                </div>
+                <a href="#" class="confirm-bid__vehicle">
+                    <div class="confirm-bid__vehicle-img ibg">
+                        <img src="img/photo/car-img-1.jpg" alt="">
+                    </div>
+                    <div class="confirm-bid__vehicle-title">
+                        2013 Chevrolet Impala Ls 3.6L
+                    </div>
+                </a>
+                <div class="confirm-bid__info-list">
+                    <ul class="simple-table-list">
+                        <li>
+                            <label>VIN</label>
+                            <p>4YDT2662493150186</p>
+                        </li>
+                        <li>
+                            <label>Transaction Fee</label>
+                            <p>2022</p>
+                        </li>
+                        <li>
+                            <label>Documentation Fee</label>
+                            <p>Year</p>
+                        </li>
+                        <li>
+                            <label>Modal</label>
+                            <p>Xs</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="confirm-bid__text">
+                    By clicking "Confirm My Bid", <br> you agree to <a href="#">Purchase Order Agreement</a>
+                </div>
+                <div class="confirm-bid__buttons">
+                    <button type="button" class="btn-default btn-default--light" data-popup="close-popup">
+                        <img class="img-svg" src="img/icons/close.svg" alt="">
+                        Cancel
+                    </button>
+                    <button type="submit" class="btn-default">
+                        <img class="img-svg" src="img/icons/circle-check-sm.svg" alt="">
+                        Confirm My Bid
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ 
+    <div class="popup" id="groupShipping">
+   
+	<div class="popup__body">
+		<div class="popup__content popup__content--lg border-rudius">
+            <div class="popup__close" data-popup="close-popup">
+                <img src="img/icons/close.svg" alt="">
+            </div>
+
+            <form action="/">
+                <div class="form d-flex">
+                    <h2 class="form__title">Add Group Shipping</h2>
+                    <div class="form__simple-text">
+                        Your Vehicle will be delivered
+                    </div>
+                    <div class="form__items">
+                        <div class="form__item">
+                            <label class="form__labell">From</label>
+                            <div class="input-wrap">
+                                <input type="text" class="input inactive" value="CLEVELAND WEST, OH" placeholder="Enter">
+                            </div>
+                        </div>
+                        <div class="form__item">
+                            <label class="form__labell">To</label>
+                            <div class="select-wrap">
+                                <select name="" class="_select">
+                                    <option value="" selected>Enter</option>
+                                    <option value="1" >Ukraine</option>
+                                    <option value="2">USA</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form__item">
+                            <label class="form__labell">Port</label>
+                            <div class="select-wrap">
+                                <select name="" class="_select">
+                                    <option value="" selected>Enter</option>
+                                    <option value="1" >0000</option>
+                                    <option value="2">1111</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form__info-list">
+                        <ul class="simple-table-list">
+                            <li>
+                                <label>Cleveland West, OH - Houston, 31254, TX</label>
+                                <p><strong>$256</strong></p>
+                            </li>
+                            <li>
+                                <label>Cleveland - Odessa</label>
+                                <p><strong>$1,500</strong></p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="form__price">
+                        <label>Final Price</label>
+                        <p class="text-primary">$12,000</p>
+                    </div>
+                    <div class="form__submit-wrap">
+                        <button type="submit" class="form__submit btn-default">
+                            <img class="img-svg" src="img/icons/plus-circle.svg" alt="">
+                            Add
+                        </button>
+                    </div>
+                </div>
+            </form>
+		</div>
+	</div>
+</div>
+    <div class="popup" id="attention">
+   
+	<div class="popup__body">
+		<div class="popup__content border-rudius">
+            <div class="popup__close" data-popup="close-popup">
+                <img src="img/icons/close.svg" alt="">
+            </div>
+
+            <form action="/">
+                <div class="form d-flex">
+                    <h2 class="form__title">
+                        Attention!
+                    </h2>
+                    <div class="form__simple-text form__simple-text--sm">
+                        <p>
+                            By clicking "Buy now", you are buying this lot for $17,000 plus applicable fees.
+                        </p>
+                        <p>
+                            Should you fail to complete this transaction, you will be subject to any and all applicable relist fees.
+                        </p>
+                    </div>
+                    <div class="form__info-list">
+                        <ul class="simple-table-list">
+                            <li>
+                                <label>Buy Now Price</label>
+                                <p><strong>$17,000</strong></p>
+                            </li>
+                            <li class="position-relative z-index-10">
+                                <label>
+                                    <div class="fee" data-fee>
+                                        <div class="fee__title">+Fee</div>
+                                        <div class="fee__list border-rudius">
+                                            <ul class="simple-table-list">
+                                                <li>
+                                                    <label>Auction Fees</label>
+                                                    <p><strong>$300</strong></p>
+                                                </li>
+                                                <li>
+                                                    <label>Transaction Fee</label>
+                                                    <p><strong>$100</strong></p>
+                                                </li>
+                                                <li>
+                                                    <label>Documentation Fee</label>
+                                                    <p><strong>$100</strong></p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </label>
+                                <p><strong>$500</strong></p>
+                            </li>
+                            <li>
+                                <label>Final Buy now Price</label>
+                                <p><strong>$17,500</strong></p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="form__row">
+                        <label class="checkbox-radio">
+                            <input type="checkbox" checked>
+                            <div class="checkbox-radio__square checkbox-radio__square--lg"></div>
+                            <div class="checkbox-radio__text checkbox-radio__text--sm text-nowrap">I agreement with the <a href="#">rules</a></div>
+                        </label>
+                    </div>
+                    <div class="form__buttons">
+                        <button type="button" class="btn-default btn-default--light" data-popup="close-popup">
+                            <img class="img-svg" src="img/icons/close.svg" alt="">
+                            Cancel
+                        </button>
+                        <button type="submit" class="btn-default">
+                            <img class="img-svg" src="img/icons/circle-check-sm.svg" alt="">
+                            By Now
+                        </button>
+                    </div>
+                </div>
+            </form>
+		</div>
+	</div>
+</div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="js/jQueryScripts.min.js"></script>

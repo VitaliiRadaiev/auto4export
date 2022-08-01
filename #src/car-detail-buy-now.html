@@ -279,7 +279,7 @@
                                             <p class="text-primary">$17,000</p>
                                         </div>
                                         <div class="buy-now__buttons">
-                                            <a href="#" class="buy-now__btn btn-default btn-default--second">
+                                            <a href="#attention" class="buy-now__btn btn-default btn-default--second" data-popup="open-popup">
                                                 <img src="img/icons/buy.svg" alt="">
                                                 Buy it Now
                                             </a>
@@ -322,7 +322,9 @@
                                                     <p><strong>$17,000</strong></p>
                                                 </li>
                                                 <li>
-                                                    <label class="text-primary">Select Shipping</label>
+                                                    <label class="text-primary">
+                                                        <a href="#groupShipping" data-popup="open-popup">Select Shipping</a>
+                                                    </label>
                                                     <p class="text-secondaryxt">on request</p>
                                                 </li>
                                             </ul>
@@ -918,6 +920,10 @@
     <!-- == FOOTER ================== -->
     @@include('common/footer/_footer.html',{})
     <!-- == // FOOTER ================== -->
+
+    @@include('common/popup/_popup-confirm-bid.html') 
+    @@include('common/popup/_popup-add-group-shipping.html')
+    @@include('common/popup/_popup-attention.html')
 
     @@include('_js-bottom.html',{})
 </body>

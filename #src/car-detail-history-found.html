@@ -336,10 +336,10 @@
                                                 </div>
                                             </div>
                             
-                                            <button class="bid-card__submit btn-default">
-                                                <img src="img/icons/bid-now.svg" alt="">
+                                            <a href="#confirmBid" class="bid-card__submit btn-default" data-popup="open-popup">
+                                                <img class="img-svg" src="img/icons/bid-now.svg" alt="">
                                                 Place a Bid
-                                            </button>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -390,7 +390,9 @@
                                                     <p><strong>$17,000</strong></p>
                                                 </li>
                                                 <li>
-                                                    <label class="text-primary">Select Shipping</label>
+                                                    <label class="text-primary">
+                                                        <a href="#groupShipping" data-popup="open-popup">Select Shipping</a>
+                                                    </label>
                                                     <p class="text-secondaryxt">on request</p>
                                                 </li>
                                             </ul>
@@ -986,6 +988,9 @@
     <!-- == FOOTER ================== -->
     @@include('common/footer/_footer.html',{})
     <!-- == // FOOTER ================== -->
+
+    @@include('common/popup/_popup-confirm-bid.html') 
+    @@include('common/popup/_popup-add-group-shipping.html')
 
     @@include('_js-bottom.html',{})
 </body>
