@@ -217,21 +217,6 @@
     @@include('common/footer/_footer.html',{})
     <!-- == // FOOTER ================== -->
 
-    @@include('common/popup/_popup-question.html')
-    @@include('common/popup/_popup-message.html')
-
-    <script>
-        // Это пример вызова сообщения после срабатывания формы "Ask a Question", скрипт нужно будет удалить
-        let form = document.querySelector('#popup-question');
-        if (form) {
-            form.addEventListener('submit', (e) => {
-                e.preventDefault();
-
-                window.popup.openMessage('#popup-message-1');
-            })
-        }
-    </script>
-
     @@include('_js-bottom.html',{})
 </body>
 

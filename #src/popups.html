@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" data-set-font-size>
+@@include('_head.html',{
+"title": "auto4export"
+})
+
+<body>
+    <div class="_preload-body"></div>
+    <!-- == TOP LINE ================== -->
+
+    @@include('common/header/_header.html',{
+    "mod": "header--user-authorized"
+    })
+    <!-- == // TOP LINE ================== -->
+
+    <main class="_page contact-page" data-padding-top-header-size>
+        <div class="p-50"></div>
+        <div class="container">
+            @@include('common/breadcrumbs/_breadcrumbs.html', {
+            "arr": ['<a href="#">Home</a>', 'Contact Us']
+            })
+        </div>
+
+        <div class="container">
+            <h1 class="title-1">Popups</h1>
+        </div>
+        <div class="padding-wrap pt-0">
+            <div class="container">
+                <div class="text-content">
+                    <ul>
+                        <li>
+                            <a href="#logIn" data-popup="open-popup">Log In</a>
+                        </li>
+                        <li>
+                            <a href="#resetPassword" data-popup="open-popup">Reset Password</a>
+                        </li>
+                        <li>
+                            <a href="#signUp" data-popup="open-popup">Sign Up</a>
+                        </li>
+                        <li>
+                            <a href="#signUp2" data-popup="open-popup">Sign Up With Phone</a>
+                        </li>
+                        <li>
+                            <a href="#popup-question" data-popup="open-popup">Ask a Question</a>
+                        </li>
+                        <li>
+                            <a href="#popup-message-1" data-popup="open-popup">Message 1</a>
+                        </li>
+                        <li>
+                            <a href="#confirmBid" data-popup="open-popup">Confirm You Bid</a>
+                        </li>
+                        <li>
+                            <a href="#tryingToBid" data-popup="open-popup">Trying To Bid</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="p-70"></div>
+    </main>
+
+    <!-- == FOOTER ================== -->
+    @@include('common/footer/_footer.html',{})
+    <!-- == // FOOTER ================== -->
+
+    @@include('common/popup/_popup-login.html')
+    @@include('common/popup/_popup-reset-password.html')
+    @@include('common/popup/_popup-sign-up.html')
+    @@include('common/popup/_popup-sign-up-with-phone.html')
+    @@include('common/popup/_popup-question.html')
+    @@include('common/popup/_popup-message.html')
+    @@include('common/popup/_popup-confirm-bid.html')
+    @@include('common/popup/_popup-trying-to-bid.html')
+
+    <script>
+        // Это пример вызова сообщения после срабатывания формы "Ask a Question", скрипт нужно будет удалить
+        let form = document.querySelector('#popup-question');
+        if (form) {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                window.popup.openMessage('#popup-message-1');
+            })
+        }
+
+        // Методы попапа ==
+        // window.popup.open('#popup-id')
+        // window.popup.close('#popup-id')
+        // window.popup.openMessage('#popup-id')  -- открывает попап и после 3сек закрывает, можно использовать для всплывающих сообщений
+
+    </script>
+
+
+    @@include('_js-bottom.html',{})
+</body>
+
+</html>

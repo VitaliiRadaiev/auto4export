@@ -111,3 +111,154 @@
 		}
 	}
 }
+
+.confirm-bid {
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
+
+	@media (max-width: $md3+px) {
+		gap: 20px;
+	}
+
+	&__title {
+		text-align: center;
+		margin-bottom: 0;
+	}
+
+	&__value {
+		font-weight: 700;
+		font-size: 4rem;
+		line-height: 1.2em;
+		text-align: center;
+		color: $mainColor;
+
+		@media (max-width: $md3+px) {
+			font-size: 26px;
+			line-height: 31px;
+		}
+	}
+
+	&__vehicle {
+		display: flex;
+		align-items: center;
+		padding: 0.9rem;
+		border-radius: 1rem;
+		background-color: #f9f9f9;
+
+		@media (max-width: $md3+px) {
+			border-radius: 6px;
+		}
+	}
+
+	&__vehicle-img {
+		flex: 0 0 auto;
+		margin-right: 2rem;
+		width: 7rem;
+		height: 5rem;
+		overflow: auto;
+		border-radius: 1rem;
+
+		@media (max-width: $md3+px) {
+			border-radius: 6px;
+			width: 56px;
+			height: 40px;
+			margin-right: 13px;
+		}
+	}
+
+	&__vehicle-title {
+		font-weight: 700;
+		font-size: 1.8rem;
+		line-height: 1.22em;
+		color: $mainColor;
+		text-transform: uppercase;
+
+		@media (max-width: $md3+px) {
+			font-weight: 700;
+			font-size: 13px;
+			line-height: 16px;
+		}
+	}
+
+	&__info-list {
+	}
+
+	&__text {
+		font-size: 1.6rem;
+		line-height: 1.1875em;
+
+		@media (max-width: $md3+px) {
+			font-size: 14px;
+			line-height: 17px;
+		}
+	}
+
+	&__buttons {
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+
+		@media (max-width: $md3+px) {
+			flex-direction: column-reverse;
+			gap: 10px;
+		}
+
+		& .btn-default {
+			min-width: auto;
+			flex: 0 1 calc(50% - 1rem);
+			padding-left: 1rem;
+			padding-right: 1rem;
+
+			@media (max-width: $md3+px) {
+				width: 100%;
+			}
+		}
+	}
+
+	& a {
+		color: $mainColor;
+	}
+}
+
+.trying-to-bid {
+	&__icon {
+		display: flex;
+		align-items: center;
+		height: 4rem;
+		margin-bottom: 2rem;
+
+		@media (max-width: $md3+px) {
+			display: none;
+		}
+
+		& img,
+		& svg {
+			height: 100%;
+			width: auto;
+		}
+	}
+
+	&__title {
+		margin-bottom: 2rem;
+		padding-right: 2rem;
+
+		@media (max-width: $md3+px) {
+			margin-bottom: 10px;
+		}
+	}
+
+	&__text {
+		font-size: 1.4rem;
+		line-height: 1.43em;
+		margin-bottom: 3rem;
+
+		@media (max-width: $md3+px) {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__btn {
+		width: 100%;
+	}
+}

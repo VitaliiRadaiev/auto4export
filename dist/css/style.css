@@ -9128,6 +9128,11 @@ ul.list-with-icons span {
   color: #fff;
 }
 
+.form__simple-text {
+  font-size: 1.8rem;
+  line-height: 1.22em;
+}
+
 .form__note {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -9191,6 +9196,35 @@ ul.list-with-icons span {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: 2rem 5rem;
+}
+
+.form__link {
+  font-size: 1.4rem;
+  line-height: 1.21em;
+}
+
+.form__bottom-text {
+  border-top: 1px solid #EAEBEC;
+  padding-top: 3rem;
+  font-size: 1.6rem;
+  line-height: 1.1875em;
+}
+
+.form a {
+  color: #1886C4;
+}
+
+.form.d-flex {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 3rem;
+}
+
+.form.d-flex .form__items,
+.form.d-flex .form__title {
+  margin-bottom: 0 !important;
 }
 
 .error .input {
@@ -9389,6 +9423,58 @@ ul.list-with-icons span {
   margin-bottom: 0;
 }
 
+.phone-input {
+  position: relative;
+}
+
+.phone-input__message {
+  position: absolute;
+  top: 50%;
+  right: 3rem;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: 3;
+  pointer-events: none;
+  font-size: 1.6rem;
+  line-height: 1.1875em;
+}
+
+.phone-input--not-confirmed .input {
+  border-color: #F42C2C;
+}
+
+.phone-input--not-confirmed .phone-input__message {
+  color: #F42C2C;
+}
+
+.phone-input--confirmed .input {
+  border-color: #5BC749;
+}
+
+.phone-input--confirmed .phone-input__message {
+  color: #5BC749;
+}
+
+.phone-confirm {
+  position: absolute;
+  top: 50%;
+  right: 3rem;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: 3;
+  font-size: 1.6rem;
+  line-height: 1.1875em;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.phone-confirm--show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .textarea {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -9533,6 +9619,10 @@ ul.list-with-icons span {
   background-color: #1886C4;
   border-color: #1886C4;
   background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDEwIDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik05Ljc2NzY0IDAuMjU4MjUyQzkuNDU4MjQgLTAuMDg2MTkyNSA4Ljk1NTgyIC0wLjA4NTk3NTQgOC42NDYwMSAwLjI1ODI1MkwzLjU5Nzg3IDUuODcwODhMMS4zNTQxOSAzLjM3NjQzQzEuMDQ0MzggMy4wMzE5OCAwLjU0MjE3NCAzLjAzMTk4IDAuMjMyMzYgMy4zNzY0M0MtMC4wNzc0NTM0IDMuNzIwODcgLTAuMDc3NDUzNCA0LjI3OTIxIDAuMjMyMzYgNC42MjM2NUwzLjAzNjg0IDcuNzQxNjFDMy4xOTE2NSA3LjkxMzczIDMuMzk0NjQgOCAzLjU5NzY1IDhDMy44MDA2NyA4IDQuMDAzODYgNy45MTM5NCA0LjE1ODY3IDcuNzQxNjFMOS43Njc2NCAxLjUwNTQ2QzEwLjA3NzUgMS4xNjEyNSAxMC4wNzc1IDAuNjAyNjc1IDkuNzY3NjQgMC4yNTgyNTJaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K");
+}
+
+.checkbox-radio input:checked ~ .checkbox-radio__square.checkbox-radio__square--lg {
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOSIgdmlld0JveD0iMCAwIDEyIDkiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xMS44MjQzIDAuMTc5NDg0QzExLjU5IC0wLjA1OTgyNzkgMTEuMjEwMSAtMC4wNTk4Mjc5IDEwLjk3NTcgMC4xNzk0ODRMMy43ODczNyA3LjUyMDhMMS4wMjQyOCA0LjY5ODk1QzAuNzg5OTcyIDQuNDU5NjQgMC40MTAwOTcgNC40NTk2NiAwLjE3NTc0NiA0LjY5ODk1Qy0wLjA1ODU4MiA0LjkzODI0IC0wLjA1ODU4MiA1LjMyNjE5IDAuMTc1NzQ2IDUuNTY1NUwzLjM2MzEgOC44MjA2QzMuNTk3MzQgOS4wNTk4OCAzLjk3NzQ5IDkuMDU5NzIgNC4yMTE2MyA4LjgyMDZMMTEuODI0MyAxLjA0NjA2QzEyLjA1ODYgMC44MDY3NzMgMTIuMDU4NiAwLjQxODc5NSAxMS44MjQzIDAuMTc5NDg0WiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cg==);
 }
 
 .checkbox-radio__square {
@@ -11368,6 +11458,121 @@ ul.list-with-icons span {
 
 .popup__message p {
   margin-bottom: 0;
+}
+
+.confirm-bid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 3rem;
+}
+
+.confirm-bid__title {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.confirm-bid__value {
+  font-weight: 700;
+  font-size: 4rem;
+  line-height: 1.2em;
+  text-align: center;
+  color: #1886C4;
+}
+
+.confirm-bid__vehicle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.9rem;
+  border-radius: 1rem;
+  background-color: #f9f9f9;
+}
+
+.confirm-bid__vehicle-img {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  margin-right: 2rem;
+  width: 7rem;
+  height: 5rem;
+  overflow: auto;
+  border-radius: 1rem;
+}
+
+.confirm-bid__vehicle-title {
+  font-weight: 700;
+  font-size: 1.8rem;
+  line-height: 1.22em;
+  color: #1886C4;
+  text-transform: uppercase;
+}
+
+.confirm-bid__text {
+  font-size: 1.6rem;
+  line-height: 1.1875em;
+}
+
+.confirm-bid__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2rem;
+}
+
+.confirm-bid__buttons .btn-default {
+  min-width: auto;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 calc(50% - 1rem);
+          flex: 0 1 calc(50% - 1rem);
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.confirm-bid a {
+  color: #1886C4;
+}
+
+.trying-to-bid__icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 4rem;
+  margin-bottom: 2rem;
+}
+
+.trying-to-bid__icon img,
+.trying-to-bid__icon svg {
+  height: 100%;
+  width: auto;
+}
+
+.trying-to-bid__title {
+  margin-bottom: 2rem;
+  padding-right: 2rem;
+}
+
+.trying-to-bid__text {
+  font-size: 1.4rem;
+  line-height: 1.43em;
+  margin-bottom: 3rem;
+}
+
+.trying-to-bid__btn {
+  width: 100%;
 }
 
 .question-box {
@@ -20979,6 +21184,11 @@ form.dropzone > .dz-preview {
     line-height: 16px;
   }
 
+  .form__simple-text {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
   .form__note {
     font-size: 14px;
     line-height: 17px;
@@ -20998,6 +21208,26 @@ form.dropzone > .dz-preview {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+  }
+
+  .form__use-social-list img,
+  .form__use-social-list svg {
+    width: 38px;
+  }
+
+  .form__link {
+    font-size: 13px;
+    line-height: 16px;
+  }
+
+  .form__bottom-text {
+    padding-top: 20px;
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .form.d-flex {
+    gap: 20px;
   }
 
   .input {
@@ -21028,6 +21258,18 @@ form.dropzone > .dz-preview {
 
   .input-tooltip__text {
     border-radius: 6px;
+  }
+
+  .phone-input__message {
+    font-size: 13px;
+    line-height: 16px;
+    right: 16px;
+  }
+
+  .phone-confirm {
+    font-size: 13px;
+    line-height: 16px;
+    right: 16px;
   }
 
   .textarea {
@@ -21422,6 +21664,61 @@ form.dropzone > .dz-preview {
   .popup__message img {
     width: 2rem;
     margin-right: 10px;
+  }
+
+  .confirm-bid {
+    gap: 20px;
+  }
+
+  .confirm-bid__value {
+    font-size: 26px;
+    line-height: 31px;
+  }
+
+  .confirm-bid__vehicle {
+    border-radius: 6px;
+  }
+
+  .confirm-bid__vehicle-img {
+    border-radius: 6px;
+    width: 56px;
+    height: 40px;
+    margin-right: 13px;
+  }
+
+  .confirm-bid__vehicle-title {
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 16px;
+  }
+
+  .confirm-bid__text {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .confirm-bid__buttons {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    gap: 10px;
+  }
+
+  .confirm-bid__buttons .btn-default {
+    width: 100%;
+  }
+
+  .trying-to-bid__icon {
+    display: none;
+  }
+
+  .trying-to-bid__title {
+    margin-bottom: 10px;
+  }
+
+  .trying-to-bid__text {
+    margin-bottom: 20px;
   }
 
   .question-box__body {

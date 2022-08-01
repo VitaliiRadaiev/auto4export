@@ -132,6 +132,16 @@
         }
     }
 
+    &__simple-text {
+        font-size: 1.8rem;
+        line-height: 1.22em;
+
+        @media (max-width: $md3+px) {
+            font-size: 14px;
+            line-height: 17px;
+        }
+    }
+
     &__note {
         display: flex;
         align-items: center;
@@ -197,6 +207,10 @@
         & svg {
             width: 4.8rem;
             height: auto;
+
+            @media (max-width: $md3+px) {
+                width: 38px;
+            }
         }
     }
 
@@ -208,6 +222,47 @@
         display: flex;
         flex-wrap: wrap;
         gap: 2rem 5rem;
+    }
+
+    &__link {
+        font-size: 1.4rem;
+        line-height: 1.21em;
+
+        @media (max-width: $md3+px) {
+            font-size: 13px;
+            line-height: 16px;
+        }
+    }
+
+    &__bottom-text {
+        border-top: 1px solid $borderColor;
+        padding-top: 3rem;
+        font-size: 1.6rem;
+        line-height: 1.1875em;
+
+        @media (max-width: $md3+px) {
+            padding-top: 20px;
+            font-size: 14px;
+            line-height: 17px;
+        }
+    }
+
+    & a {
+        color: $mainColor;
+    }
+
+    &.d-flex {
+        flex-direction: column;
+        gap: 3rem;
+
+        @media (max-width: $md3+px) {
+            gap: 20px;
+        }
+
+        & .form__items,
+        & .form__title {
+            margin-bottom: 0 !important;
+        }
     }
 }
 
@@ -371,6 +426,70 @@
     }
 }
 
+.phone-input {
+    position: relative;
+
+    &__message {
+        position: absolute;
+        top: 50%;
+        right: 3rem;
+        transform: translateY(-50%);
+        z-index: 3;
+        pointer-events: none;
+        font-size: 1.6rem;
+        line-height: 1.1875em;
+
+        @media (max-width: $md3+px) {
+            font-size: 13px;
+            line-height: 16px;
+            right: 16px;
+        }
+    }
+
+    &--not-confirmed {
+        & .input {
+            border-color: $dangerColor;
+        }
+
+        & .phone-input__message {
+            color: $dangerColor;
+        }
+    }
+
+    &--confirmed {
+        & .input {
+            border-color: $successColor;
+        }
+
+        & .phone-input__message {
+            color: $successColor;
+        }
+    }
+}
+
+.phone-confirm {
+    position: absolute;
+    top: 50%;
+    right: 3rem;
+    transform: translateY(-50%);
+    z-index: 3;
+    font-size: 1.6rem;
+    line-height: 1.1875em;
+    opacity: 0;
+    pointer-events: none;
+
+    @media (max-width: $md3+px) {
+        font-size: 13px;
+        line-height: 16px;
+        right: 16px;
+    }
+
+    &--show {
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
+
 .textarea {
     display: flex;
     align-items: center;
@@ -473,6 +592,10 @@
                 background-color: $mainColor;
                 border-color: $mainColor;
                 background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDEwIDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik05Ljc2NzY0IDAuMjU4MjUyQzkuNDU4MjQgLTAuMDg2MTkyNSA4Ljk1NTgyIC0wLjA4NTk3NTQgOC42NDYwMSAwLjI1ODI1MkwzLjU5Nzg3IDUuODcwODhMMS4zNTQxOSAzLjM3NjQzQzEuMDQ0MzggMy4wMzE5OCAwLjU0MjE3NCAzLjAzMTk4IDAuMjMyMzYgMy4zNzY0M0MtMC4wNzc0NTM0IDMuNzIwODcgLTAuMDc3NDUzNCA0LjI3OTIxIDAuMjMyMzYgNC42MjM2NUwzLjAzNjg0IDcuNzQxNjFDMy4xOTE2NSA3LjkxMzczIDMuMzk0NjQgOCAzLjU5NzY1IDhDMy44MDA2NyA4IDQuMDAzODYgNy45MTM5NCA0LjE1ODY3IDcuNzQxNjFMOS43Njc2NCAxLjUwNTQ2QzEwLjA3NzUgMS4xNjEyNSAxMC4wNzc1IDAuNjAyNjc1IDkuNzY3NjQgMC4yNTgyNTJaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K");
+
+                &.checkbox-radio__square--lg {
+                    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOSIgdmlld0JveD0iMCAwIDEyIDkiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xMS44MjQzIDAuMTc5NDg0QzExLjU5IC0wLjA1OTgyNzkgMTEuMjEwMSAtMC4wNTk4Mjc5IDEwLjk3NTcgMC4xNzk0ODRMMy43ODczNyA3LjUyMDhMMS4wMjQyOCA0LjY5ODk1QzAuNzg5OTcyIDQuNDU5NjQgMC40MTAwOTcgNC40NTk2NiAwLjE3NTc0NiA0LjY5ODk1Qy0wLjA1ODU4MiA0LjkzODI0IC0wLjA1ODU4MiA1LjMyNjE5IDAuMTc1NzQ2IDUuNTY1NUwzLjM2MzEgOC44MjA2QzMuNTk3MzQgOS4wNTk4OCAzLjk3NzQ5IDkuMDU5NzIgNC4yMTE2MyA4LjgyMDZMMTEuODI0MyAxLjA0NjA2QzEyLjA1ODYgMC44MDY3NzMgMTIuMDU4NiAwLjQxODc5NSAxMS44MjQzIDAuMTc5NDg0WiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cg==);
+                }
             }
         }
     }

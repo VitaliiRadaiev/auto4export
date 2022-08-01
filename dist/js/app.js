@@ -1998,7 +1998,25 @@ if(bigImgaeElements.length) {
             })
         })
     }
-};
+
+    let phoneConfirmAll = document.querySelectorAll('[data-phone-confirm]');
+    if(phoneConfirmAll.length) {
+        phoneConfirmAll.forEach(phoneConfirm => {
+            let input = phoneConfirm.querySelector('input');
+            let btn = phoneConfirm.querySelector('.phone-confirm');
+
+            if(input && btn) {
+                input.addEventListener('input', () => {
+                    if(input.value.trim().length >= 9) {
+                        btn.classList.add('phone-confirm--show');
+                    } else {
+                        btn.classList.remove('phone-confirm--show');
+                    }
+                })
+            }
+        })
+    }
+}   ;
 		(function uploadFileHandler() {
     let files = []
     let inputWrapItems = document.querySelectorAll('[data-input-file]');
