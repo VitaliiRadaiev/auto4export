@@ -10880,6 +10880,37 @@ ul.list-with-icons span {
   margin-bottom: 1.4rem;
 }
 
+.main-filter__select .select {
+  height: 4.8rem;
+}
+
+.main-filter__select .select__item {
+  border: 1px solid transparent;
+}
+
+.main-filter__select .select__value {
+  min-height: 4.8rem;
+  padding: 1rem 3.4rem 1rem 2rem;
+}
+
+.main-filter__select .select__value:before {
+  right: 2rem;
+  font-size: 0.6rem;
+}
+
+.main-filter__select .select__value span {
+  font-size: 1.6rem;
+  line-height: 1.1875em;
+}
+
+.main-filter__select .select__options {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 2rem;
+  font-size: 1.6rem;
+  line-height: 1.1875em;
+}
+
 .main-filter__advanced {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -21817,6 +21848,28 @@ form.dropzone > .dz-preview {
     font-size: 14px;
     line-height: 17px;
     margin-bottom: 10px;
+  }
+
+  .main-filter__select .select {
+    height: 38px;
+  }
+
+  .main-filter__select .select__value {
+    min-height: 38px;
+  }
+
+  .main-filter__select .select__value:before {
+    font-size: 5px;
+  }
+
+  .main-filter__select .select__value span {
+    font-size: 13px;
+    line-height: 16px;
+  }
+
+  .main-filter__select .select__options {
+    font-size: 13px;
+    line-height: 16px;
   }
 
   .main-filter__advanced {

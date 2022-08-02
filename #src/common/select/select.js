@@ -91,7 +91,7 @@
                 const select = selects[index];
                 const select_body_options = select.querySelector('.select__options');
                 select.classList.remove('_active');
-                _slideUp(select_body_options, 0);
+                _slideUp(select_body_options, 100);
             }
         }
     }
@@ -151,10 +151,10 @@
                 const select_body_options = select.querySelector('.select__options');
                 if (select != select_item.closest('.select')) {
                     select.classList.remove('_active');
-                    _slideUp(select_body_options, 0);
+                    _slideUp(select_body_options, 100);
                 }
             }
-            _slideToggle(select_body_options, 0);
+            _slideToggle(select_body_options, 100);
             select.classList.toggle('_active');
         });
 

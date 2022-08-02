@@ -43,6 +43,58 @@
     }
 
     &__select {
+        & .select {
+            height: 4.8rem;
+
+            @media (max-width: $md3+px) {
+                height: 38px;
+            }
+        }
+
+        & .select__item {
+            border: 1px solid transparent;
+        }
+
+        & .select__value {
+            min-height: 4.8rem;
+            padding: 1rem 3.4rem 1rem 2rem;
+
+            @media (max-width: $md3+px) {
+                min-height: 38px;
+            }
+
+            &:before {
+                right: 2rem;
+                font-size: 0.6rem;
+
+                @media (max-width: $md3+px) {
+                    font-size: 5px;
+                }
+            }
+
+            & span {
+                font-size: 1.6rem;
+                line-height: 1.1875em;
+
+                @media (max-width: $md3+px) {
+                    font-size: 13px;
+                    line-height: 16px;
+                }
+            }
+        }
+
+        & .select__options {
+            padding-left: 2rem;
+            padding-right: 2rem;
+            padding-bottom: 2rem;
+            font-size: 1.6rem;
+            line-height: 1.1875em;
+
+            @media (max-width: $md3+px) {
+                font-size: 13px;
+                line-height: 16px;
+            }
+        }
     }
 
     &__row--advanced {
@@ -258,7 +310,7 @@
         cursor: pointer;
         position: relative;
 
-        @media (max-width: $md3+px) { 
+        @media (max-width: $md3+px) {
             height: 38px;
             font-size: 13px;
             line-height: 16px;
@@ -273,7 +325,6 @@
             }
         }
 
-
         &-text {
             background-color: #fff;
             position: absolute;
@@ -283,10 +334,10 @@
             width: calc(100% - 5.4rem);
             padding: 0.5rem 0;
             white-space: nowrap;
-            overflow: hidden; 
+            overflow: hidden;
             text-overflow: ellipsis;
             max-width: calc(100vw - 40px);
-            pointer-events: none;  
+            pointer-events: none;
         }
 
         &:before {

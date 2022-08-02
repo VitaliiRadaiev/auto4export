@@ -1086,7 +1086,7 @@ if(topFilter) {
                 const select = selects[index];
                 const select_body_options = select.querySelector('.select__options');
                 select.classList.remove('_active');
-                _slideUp(select_body_options, 0);
+                _slideUp(select_body_options, 100);
             }
         }
     }
@@ -1146,10 +1146,10 @@ if(topFilter) {
                 const select_body_options = select.querySelector('.select__options');
                 if (select != select_item.closest('.select')) {
                     select.classList.remove('_active');
-                    _slideUp(select_body_options, 0);
+                    _slideUp(select_body_options, 100);
                 }
             }
-            _slideToggle(select_body_options, 0);
+            _slideToggle(select_body_options, 100);
             select.classList.toggle('_active');
         });
 
@@ -1537,7 +1537,7 @@ if (mainFilter) {
 
             head.addEventListener('click', () => {
                 filterSelect.classList.toggle('filter-select--open');
-                this.utils.slideToggle(collapseBox, 300);
+                this.utils.slideToggle(collapseBox, 100);
                 this.scrollAnimation.update();
 
                 filterSelects.forEach(i => {
@@ -1546,7 +1546,7 @@ if (mainFilter) {
                     let collapseBox = i.querySelector('.filter-select__collapse-box');
 
                     i.classList.remove('filter-select--open');
-                    this.utils.slideUp(collapseBox, 300);
+                    this.utils.slideUp(collapseBox, 100);
                 })
             })
 
@@ -1662,12 +1662,12 @@ if (mainFilter) {
     let btnReset = mainFilter.querySelector('.main-filter__reset');
     if(btnReset) {
         let form = btnReset.closest('form');
-
+        let selects = mainFilter.querySelectorAll('.main-filter__select .select-wrap');
 
         form.addEventListener('reset', () => {
             if(filterSelects.length) {
                 filterSelects.forEach(filterSelect => {
-                    let head = filterSelect.querySelector('.filter-select__head');
+                    let head = filterSelect.querySelector('.filter-select__head-text');
                     filterSelect.classList.remove('filter-select--selected');
                     head.innerText = 'Select';
                 })
@@ -1676,6 +1676,20 @@ if (mainFilter) {
             if(this.allRangeSliders.length) {
                 this.allRangeSliders.forEach(rangeSlider => {
                     rangeSlider.slider.noUiSlider.set([+rangeSlider.min, +rangeSlider.max]);
+                })
+            }
+
+            if(selects.length) {
+                selects.forEach(selectWrap => {
+                    let select = selectWrap.querySelector('select');
+                    let selectInner = selectWrap.querySelector('.select');
+                    let title = selectWrap.querySelector('.select__value span');
+                    select.value = '';
+                    selectInner.classList.remove('_visited');
+                    title.innerText = select.selectedOptions[0].text;
+
+                    let event = new Event("change", { bubbles: true });
+                    select.dispatchEvent(event);
                 })
             }
         })
