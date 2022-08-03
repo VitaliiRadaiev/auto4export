@@ -244,6 +244,12 @@ figure {
 	}
 }
 
+._svg {
+	& path {
+		fill: currentColor;
+	}
+}
+
 .object-fit-contain {
 	object-fit: contain !important;
 }

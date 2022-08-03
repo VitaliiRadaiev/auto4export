@@ -5161,6 +5161,10 @@ figure {
      object-fit: cover;
 }
 
+._svg path {
+  fill: currentColor;
+}
+
 .object-fit-contain {
   -o-object-fit: contain !important;
      object-fit: contain !important;
