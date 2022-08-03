@@ -269,6 +269,7 @@ class App {
 					if (document.documentElement.clientWidth > 991.98) {
 						let value = 10 / 1920 * el.clientWidth;
 						if (value > 14) value = 10;
+						if (value < 8.5) value = value + 1;
 						el.style.fontSize = value + 'px';
 					}
 				}

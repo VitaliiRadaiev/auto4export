@@ -1235,6 +1235,7 @@ if(topFilter) {
 					if (document.documentElement.clientWidth > 991.98) {
 						let value = 10 / 1920 * el.clientWidth;
 						if (value > 14) value = 10;
+						if (value < 8.5) value = value + 1;
 						el.style.fontSize = value + 'px';
 					}
 				}
@@ -2182,15 +2183,46 @@ if(bigImgaeElements.length) {
     if(feeAll.length) {
         feeAll.forEach(fee => {
             let title = fee.querySelector('.fee__title');
+            let wrapper = fee.closest('.fee-wrap');
+            let list = fee.querySelector('.fee__list');
             if(title) {
                 title.addEventListener('click', () => {
-                    fee.classList.toggle('fee--show-list');
+                    
+                    if(fee.classList.contains('fee--show-list')) {
+                        fee.classList.remove('fee--show-list');
+
+                        if(wrapper) {
+                            wrapper.style.marginBottom = '1.4rem';
+                        }
+                    } else {
+                        fee.classList.add('fee--show-list');
+
+                        if(wrapper) {
+                            wrapper.style.marginBottom = `calc(${list.clientHeight + 'px'} + 2rem)`;
+                        }
+                    }
                 })
     
                 document.addEventListener('click', (e) => {
                     if(!e.target.closest('.fee')) {
                         if(!e.target.closest('.bid-card-value__body')) {
                             fee.classList.remove('fee--show-list');
+
+                            if(wrapper) {
+                                wrapper.style.marginBottom = '1.4rem';
+                            }
+                        }
+                    }
+                })
+
+                window.addEventListener('resize', () => {
+                    if(fee.classList.contains('fee--show-list')) {
+                        if(wrapper) {
+                            wrapper.style.marginBottom = `calc(${list.clientHeight + 'px'} + 2rem)`;
+                        }
+                    } else {
+                        if(wrapper) {
+                            wrapper.style.marginBottom = '1.4rem';
                         }
                     }
                 })
