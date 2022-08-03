@@ -148,7 +148,6 @@ class Utils {
 								let svg = xhr.responseXML.documentElement;
 								svg.classList.add('_svg');
 								img.parentNode.replaceChild(svg, img);
-								map.set(img.src, svg);
 							}
 						}
 					}
