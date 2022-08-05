@@ -373,7 +373,6 @@
         padding-left: 0;
         margin-bottom: 0;
 
-       
         & > li {
             &:not(:last-child) {
                 margin-bottom: 16px;
@@ -386,7 +385,8 @@
         align-items: center;
         color: $textColorSecondary;
 
-        & img, & svg {
+        & img,
+        & svg {
             flex: 0 0 auto;
             margin-right: 1rem;
             width: 1.8rem;
@@ -1360,6 +1360,25 @@
             font-size: 13px;
             line-height: 16px;
         }
+
+        &[data-open-vehicle-list-by-id] {
+            position: relative;
+            &:before {
+                position: absolute;
+                font-family: "icomoon" !important;
+                content: "\e940";
+                top: 50%;
+                font-weight: 400;
+                transform: translateY(-50%);
+                transition: transform 0.3s ease;
+                right: 30px;
+                font-size: 1rem;
+    
+                @media (max-width: $md3+px) {
+                    right: 20px;
+                }
+            }
+        }
     }
 
     & .header__time {
@@ -1451,6 +1470,124 @@
 
         & .mobile-menu__body {
             transform: translateX(0);
+        }
+    }
+}
+
+.vehicle-finder-mob {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $mainColor;
+    transition: all .3s ease;
+    transform: translate(-100%);
+
+    &--open {
+        transform: translate(0%); 
+    }
+
+    &__row-1 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    &__row-2 {
+        padding-left: 30px;
+        padding-right: 30px;
+        overflow-y: auto;
+        height: 100%;
+        padding-bottom: 40px;
+        padding-top: 68px;
+
+        @media (max-width: $md3+px) {
+            padding-top: 56px;
+        }
+
+        &::-webkit-scrollbar {
+            width: 2px;
+            height: 2px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: #fff;
+            border-radius: 10px;
+        }
+        &::-webkit-scrollbar-thumb:hover {
+            background: #fff;
+        }
+        &::-webkit-scrollbar-track {
+            background: transparent;
+            border-radius: 10px;
+            box-shadow: inset 0px 0px 0px 0px transparent;
+        }
+
+        @media (max-width: $md3+px) {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+
+    &__btn-back {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        border: none;
+        outline: none;
+        box-shadow: none;
+        height: 68px;
+        background-color: $mainColor;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 20px;
+        text-transform: uppercase;
+        padding-left: 30px;
+        padding-right: 30px;
+        color: #fff;
+        
+        &:before {
+            font-family: "icomoon" !important;
+            content: "\e940";
+            top: 50%;
+            font-weight: 400;
+            transform: scale(-1, 1);
+            transition: transform 0.3s ease;
+            font-size: 1rem;
+            margin-right: 1em;
+
+            @media (max-width: $md3+px) {
+                right: 20px;
+            }
+        }
+
+        @media (max-width: $md3+px) {
+            height: 56px;
+            padding: 10px 20px;
+            font-size: 13px;
+            line-height: 16px;
+        }
+    }
+
+    & .vehicle-list {
+        padding-top: 10px;
+        & > li {
+            & strong, & span {
+                background-color: $mainColor;
+            }
+
+            & span {
+                color: rgba(#fff, 0.7);
+            }
+        }
+    }
+
+    & .link {
+        &::after {
+            color: #fff;
         }
     }
 }

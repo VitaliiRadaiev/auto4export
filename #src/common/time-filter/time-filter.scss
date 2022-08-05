@@ -3,6 +3,7 @@
     font-size: 1.8rem;
     line-height: 1.222em;
     user-select: none;
+    background-color: #fff;
 
     @media (max-width: $md3+px) {
         font-size: 14px;
@@ -30,7 +31,7 @@
         min-height: 6.8rem;
         padding: 0 3rem;
         color: $textColorSecondary;
-        background-color: #fff;
+        
 
         @media (max-width: $md3+px) {
             min-height: 58px;

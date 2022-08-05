@@ -2,6 +2,8 @@ let header = document.querySelector('[data-header]');
 let vehicleFinder = document.querySelector('[data-vehicle-finder]');
 let burger = document.querySelector('[data-burger]');
 let mobileMenu = document.querySelector('[data-mobile-menu]');
+let vehicleFinderMobButtons = document.querySelectorAll('[data-open-vehicle-list-by-id]');
+let vehicleFinderMobLists = Array.from(document.querySelectorAll('[data-vehicle-list-id]'));
 
 if (header) {
     window.addEventListener('scroll', () => {
@@ -76,4 +78,21 @@ if(mobileMenu) {
             }
         })
     }
+}
+
+if(vehicleFinderMobButtons.length && vehicleFinderMobLists.length) {
+    vehicleFinderMobButtons.forEach(btn => {
+        let [list] = vehicleFinderMobLists.filter(i => i.dataset.vehicleListId === btn.dataset.openVehicleListById);
+        if(list) {
+            let btnBack = list.querySelector('.vehicle-finder-mob__btn-back');
+            btnBack.addEventListener('click', () => {
+                list.classList.remove('vehicle-finder-mob--open');
+            })
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                list.classList.add('vehicle-finder-mob--open');
+            })
+        }
+
+    })
 }
