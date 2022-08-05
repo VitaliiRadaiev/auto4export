@@ -15019,6 +15019,10 @@ form.dropzone > .dz-preview {
   border-right: none;
 }
 
+.main-search__view-btn.btn-set-list ._svg rect {
+  fill: currentColor;
+}
+
 .main-search__view-btn.btn-set-grid {
   border-radius: 0 1rem 1rem 0;
   border-left: none;
@@ -18285,6 +18289,12 @@ form.dropzone > .dz-preview {
 
   .header__burger {
     display: none;
+  }
+
+  .header__social {
+    -webkit-transform: translateY(-0.3rem);
+        -ms-transform: translateY(-0.3rem);
+            transform: translateY(-0.3rem);
   }
 
   .header--user-authorized .header__action {

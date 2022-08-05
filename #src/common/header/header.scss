@@ -252,6 +252,9 @@
     }
 
     &__social {
+        @media (min-width: 992px) {
+            transform: translateY(-0.3rem);
+        }
     }
 
     &__action {

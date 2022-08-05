@@ -280,6 +280,10 @@
             @media (max-width: $md3+px) {
                 border-radius: 6px 0 0 6px;
             }
+
+            & ._svg rect {
+                fill: currentColor;
+            }
         }
 
         &.btn-set-grid {
