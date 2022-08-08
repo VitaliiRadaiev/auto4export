@@ -51,9 +51,9 @@
                                     <div class="form__item form__item--half">
                                         <label class="form__label">From Port</label>
                                         <div class="select-wrap">
-                                            <select name="" class="_select ">
-                                                <option value="" >Select Destination Country</option>
-                                                <option value="1" selected>Houston  (19 miles)</option>
+                                            <select name="" class="_select" data-id="fromPort">
+                                                <option value="" selected>Select</option>
+                                                <option value="1" >Houston (19 miles)</option>
                                                 <option value="2">Odessa</option>
                                             </select>
                                         </div>
@@ -61,22 +61,34 @@
                                     <div class="form__item form__item--half">
                                         <label class="form__label">Ship To</label>
                                         <div class="select-wrap">
-                                            <select name="" class="_select ">
-                                                <option value="" >Select Destination Country</option>
-                                                <option value="1" selected>Ukraine</option>
-                                                <option value="2">USA</option>
+                                            <select name="" class="_select " data-select-action >
+                                                <option value="" selected>Select</option>
+                                                <option value="1" 
+                                                data-set-element-as-active-by-id="fromPort"
+                                                data-hide-element-by-id="destinationZip"
+                                                data-show-element-by-id="toPort"
+                                                >Ukraine</option>
+                                                <option value="2" 
+                                                data-set-element-as-inactive-by-id="fromPort"
+                                                data-hide-element-by-id="toPort"
+                                                data-show-element-by-id="destinationZip"
+                                                >USA</option>
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="form__item form__item--half">
+                                    <div class="form__item form__item--half" data-id="toPort">
                                         <label class="form__label">To Port</label>
                                         <div class="select-wrap">
-                                            <select name="" class="_select ">
-                                                <option value="" >Select Destination Port</option>
-                                                <option value="1" selected>Odessa</option>
+                                            <select name="" class="_select">
+                                                <option value="" selected>Select</option>
+                                                <option value="1" >Odessa</option>
                                                 <option value="2">Houston</option>
                                             </select>
                                         </div>
+                                    </div>
+                                    <div class="form__item form__item--half d-none" data-id="destinationZip">
+                                        <label class="form__label">Destination Zip</label>
+                                        <input class="input" type="text" placeholder="Enter">
                                     </div>
                                     <div class="form__item form__item--half">
                                         <label class="form__label">Transportation Type</label>
