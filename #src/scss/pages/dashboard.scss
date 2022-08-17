@@ -448,9 +448,6 @@
         font-size: 1.4rem;
         line-height: 1.29em;
         color: $textColorSecondary;
-        align-self: flex-start;
-        display: flex;
-        align-items: center;
 
         @media (max-width: $md3+px) {
             font-size: 13px;
@@ -458,6 +455,10 @@
         }
         & a {
             color: $mainColor;
+        }
+
+        & > p {
+            margin-bottom: 0;
         }
     }
 }

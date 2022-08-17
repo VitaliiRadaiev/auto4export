@@ -1487,50 +1487,50 @@ defer
         <div class="swiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <a class="ibg" href="img/photo/car-img-1-@3x.jpg" data-big-image >
+                    <a class="ibg" href="img/photo/car-img-1-@3x.jpg" data-fancybox="gallery" >
                         <img class="swiper-lazy" data-src="img/photo/car-img-1.jpg" alt="">
                         <div class="swiper-lazy-preloader"></div>
                     </a>
                 </div>
                 <div class="swiper-slide">
-                    <a class="ibg" href="img/photo/car-img-1-@3x.jpg" data-big-image >
+                    <a class="ibg" href="img/photo/car-img-2-@3x.jpg" data-fancybox="gallery" >
+                        <img class="swiper-lazy" data-src="img/photo/car-img-2.jpg" alt="">
+                        <div class="swiper-lazy-preloader"></div>
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a class="ibg" href="img/photo/car-img-1-@3x.jpg" data-fancybox="gallery" >
                         <img class="swiper-lazy" data-src="img/photo/car-img-1.jpg" alt="">
                         <div class="swiper-lazy-preloader"></div>
                     </a>
                 </div>
                 <div class="swiper-slide">
-                    <a class="ibg" href="img/photo/car-img-1-@3x.jpg" data-big-image >
+                    <a class="ibg" href="img/photo/car-img-2-@3x.jpg" data-fancybox="gallery" >
+                        <img class="swiper-lazy" data-src="img/photo/car-img-2.jpg" alt="">
+                        <div class="swiper-lazy-preloader"></div>
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a class="ibg" href="img/photo/car-img-1-@3x.jpg" data-fancybox="gallery" >
                         <img class="swiper-lazy" data-src="img/photo/car-img-1.jpg" alt="">
                         <div class="swiper-lazy-preloader"></div>
                     </a>
                 </div>
                 <div class="swiper-slide">
-                    <a class="ibg" href="img/photo/car-img-1-@3x.jpg" data-big-image >
+                    <a class="ibg" href="img/photo/car-img-2-@3x.jpg" data-fancybox="gallery" >
+                        <img class="swiper-lazy" data-src="img/photo/car-img-2.jpg" alt="">
+                        <div class="swiper-lazy-preloader"></div>
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a class="ibg" href="img/photo/car-img-1-@3x.jpg" data-fancybox="gallery" >
                         <img class="swiper-lazy" data-src="img/photo/car-img-1.jpg" alt="">
                         <div class="swiper-lazy-preloader"></div>
                     </a>
                 </div>
                 <div class="swiper-slide">
-                    <a class="ibg" href="img/photo/car-img-1-@3x.jpg" data-big-image >
-                        <img class="swiper-lazy" data-src="img/photo/car-img-1.jpg" alt="">
-                        <div class="swiper-lazy-preloader"></div>
-                    </a>
-                </div>
-                <div class="swiper-slide">
-                    <a class="ibg" href="img/photo/car-img-1-@3x.jpg" data-big-image >
-                        <img class="swiper-lazy" data-src="img/photo/car-img-1.jpg" alt="">
-                        <div class="swiper-lazy-preloader"></div>
-                    </a>
-                </div>
-                <div class="swiper-slide">
-                    <a class="ibg" href="img/photo/car-img-1-@3x.jpg" data-big-image >
-                        <img class="swiper-lazy" data-src="img/photo/car-img-1.jpg" alt="">
-                        <div class="swiper-lazy-preloader"></div>
-                    </a>
-                </div>
-                <div class="swiper-slide">
-                    <a class="ibg" href="img/photo/car-img-1-@3x.jpg" data-big-image >
-                        <img class="swiper-lazy" data-src="img/photo/car-img-1.jpg" alt="">
+                    <a class="ibg" href="img/photo/car-img-2-@3x.jpg" data-fancybox="gallery" >
+                        <img class="swiper-lazy" data-src="img/photo/car-img-2.jpg" alt="">
                         <div class="swiper-lazy-preloader"></div>
                     </a>
                 </div>
@@ -1859,8 +1859,7 @@ defer
         </div>
     </div>
 </form>
-                        </div>
-                        <div data-da=".car-detail-grid__col-2,991.98,1">
+                        
                             <div class="info-box  border-rudius">
                                 <!-- info-box--unauthorized -->
                                 <div class="info-box__img">
@@ -2783,14 +2782,20 @@ defer
                         <div class="form__item">
                             <label class="form__labell">To</label>
                             <div class="select-wrap">
-                                <select name="" class="_select">
+                                <select name="" class="_select" data-select-action>
                                     <option value="" selected>Enter</option>
-                                    <option value="1" >Ukraine</option>
-                                    <option value="2">USA</option>
+                                    <option value="1" 
+                                    data-hide-elements-by-id="zip,state,town"
+                                    data-show-element-by-id="port"
+                                    >Ukraine</option>
+                                    <option value="2"
+                                    data-hide-element-by-id="port"
+                                    data-show-elements-by-id="zip,state,town"
+                                    >USA</option>
                                 </select>
                             </div>
                         </div>
-                        <div class="form__item">
+                        <div class="form__item" data-id="port">
                             <label class="form__labell">Port</label>
                             <div class="select-wrap">
                                 <select name="" class="_select">
@@ -2798,6 +2803,24 @@ defer
                                     <option value="1" >0000</option>
                                     <option value="2">1111</option>
                                 </select>
+                            </div>
+                        </div>
+                        <div class="form__item d-none" data-id="zip">
+                            <label class="form__labell">ZIP</label>
+                            <div class="input-wrap">
+                                <input type="text" class="input" placeholder="Enter">
+                            </div>
+                        </div>
+                        <div class="form__item d-none" data-id="state">
+                            <label class="form__labell">State</label>
+                            <div class="input-wrap">
+                                <input type="text" class="input" placeholder="Enter">
+                            </div>
+                        </div>
+                        <div class="form__item d-none" data-id="town">
+                            <label class="form__labell">Town</label>
+                            <div class="input-wrap">
+                                <input type="text" class="input" placeholder="Enter">
                             </div>
                         </div>
                     </div>

@@ -64,12 +64,12 @@
                                             <select name="" class="_select " data-select-action >
                                                 <option value="" selected>Select</option>
                                                 <option value="1" 
-                                                data-set-element-as-active-by-id="fromPort"
+                                                data-set-elements-as-active-by-id="fromPort,roro,container"
                                                 data-hide-element-by-id="destinationZip"
                                                 data-show-element-by-id="toPort"
                                                 >Ukraine</option>
                                                 <option value="2" 
-                                                data-set-element-as-inactive-by-id="fromPort"
+                                                data-set-elements-as-inactive-by-id="fromPort,roro,container"
                                                 data-hide-element-by-id="toPort"
                                                 data-show-element-by-id="destinationZip"
                                                 >USA</option>
@@ -93,12 +93,12 @@
                                     <div class="form__item form__item--half">
                                         <label class="form__label">Transportation Type</label>
                                         <div class="form__radio-group">
-                                            <label class="radio inactive">
-                                                <input type="radio" name="transportation-type">
+                                            <label class="radio" data-id="roro">
+                                                <input type="radio" name="transportation-type" checked>
                                                 <div class="radio__circle"></div>
                                                 <div class="radio__text">Roro</div>
                                             </label>
-                                            <label class="radio inactive">
+                                            <label class="radio" data-id="container">
                                                 <input type="radio" name="transportation-type">
                                                 <div class="radio__circle"></div>
                                                 <div class="radio__text">Container</div>

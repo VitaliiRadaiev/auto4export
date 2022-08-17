@@ -213,6 +213,10 @@
         display: flex;
         gap: 1rem;
 
+        & a {
+            color: #fff !important;
+        }
+
         & img,
         & svg {
             width: 4.8rem;

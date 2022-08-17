@@ -1460,7 +1460,9 @@ if(timeFilter) {
     let endValue = timeFilter.querySelector('.time-filter__end-value');
 
     if(top) {
+        
         document.addEventListener('click', (e) => {
+
             if(e.target.closest('.time-filter__top')) {
                 timeFilter.classList.toggle('active');
             } else {
@@ -1468,10 +1470,24 @@ if(timeFilter) {
                     timeFilter.classList.remove('active');
                 }
             }
+
+            columns.forEach(column => {
+                let scrollWrap = column.querySelector('.time-filter__dropdown-scroll-wrap');
+    
+                if(scrollWrap.scrollTop > 10) {
+                    column.classList.add('scroll-top');
+                }
+    
+                if((scrollWrap.scrollHeight - (scrollWrap.scrollTop + scrollWrap.clientHeight)) > 10) {
+                    column.classList.add('scroll-bottom');
+                }
+
+            })
         })
     }
 
     if(columns.length) {
+        let isChosen = [false, false];
         columns.forEach(column => {
             let scrollWrap = column.querySelector('.time-filter__dropdown-scroll-wrap');
             let items = column.querySelectorAll('.time-filter__dropdown-item');
@@ -1499,6 +1515,7 @@ if(timeFilter) {
             })
 
             if(items.length) {
+                
                 items.forEach(item => {
                     item.addEventListener('click', () => {
                         item.classList.add('active');
@@ -1512,11 +1529,19 @@ if(timeFilter) {
                         if(item.closest('.start-value')) {
                             inputStart.value = item.innerText.trim();
                             startValue.innerText = item.innerText.trim();
+                            isChosen[0] = true;
                         }
 
                         if(item.closest('.end-value')) {
                             inputEnd.value = item.innerText.trim();
                             endValue.innerText = item.innerText.trim();
+                            isChosen[1] = true;
+                        }
+
+                        if(isChosen.every(i => i === true)) {
+                            isChosen[0] = false;
+                            isChosen[1] = false;
+                            timeFilter.classList.remove('active');
                         }
                     })
                 })

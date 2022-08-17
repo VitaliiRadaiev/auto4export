@@ -9405,6 +9405,10 @@ ul.list-with-icons span {
   gap: 1rem;
 }
 
+.form__use-social-list a {
+  color: #fff !important;
+}
+
 .form__use-social-list img,
 .form__use-social-list svg {
   width: 4.8rem;
@@ -12486,7 +12490,7 @@ ul.list-with-icons span {
 .auction-history__head:before {
   font-family: "icomoon" !important;
   position: absolute;
-  content: "\e902";
+  content: "\e93f";
   top: 50%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
@@ -17002,18 +17006,14 @@ form.dropzone > .dz-preview {
   font-size: 1.4rem;
   line-height: 1.29em;
   color: #8C8C8C;
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .dashboard-prices__text a {
   color: #1886C4;
+}
+
+.dashboard-prices__text > p {
+  margin-bottom: 0;
 }
 
 .watchlist__notifications {
