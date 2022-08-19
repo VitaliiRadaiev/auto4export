@@ -76,10 +76,6 @@
             flex: 0 0 37rem;
         }
 
-        @media (max-width: $md3+px) {
-            flex-direction: column-reverse;
-
-        }
     }
 
     &__submit {
