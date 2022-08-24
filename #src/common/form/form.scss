@@ -3,7 +3,7 @@
         margin-bottom: 0;
     }
     &__title {
-        margin-bottom: 3rem;
+        margin-bottom: 2.4rem;
 
         @media (max-width: $md3+px) {
             margin-bottom: 2rem;
@@ -322,7 +322,7 @@
 
     &.d-flex {
         flex-direction: column;
-        gap: 3rem;
+        gap: 2.4rem;
 
         @media (max-width: $md3+px) {
             gap: 20px;
