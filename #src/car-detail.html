@@ -260,7 +260,7 @@
                         <div data-da=".car-detail-grid__col-1,991.98,last">
                             @@include('common/bid-card/_bid-card.html')
                         
-                            <div class="info-box  border-rudius">
+                            <a href="#popup-message-2" class="info-box  border-rudius" data-popup="open-popup">
                                 <!-- info-box--unauthorized -->
                                 <div class="info-box__img">
                                     <img class="img-svg" src="img/icons/car.svg" alt="">
@@ -268,7 +268,7 @@
                                 <div class="info-box__text" data-tooltip="tooltip text">
                                     THIS VEHICLE IS BEING SOLD IN IT`S CURRENT CONDITION ON AN 'AS IS' BASIS
                                 </div>
-                            </div>
+                            </a>
                         </div>
                         <div data-da=".car-detail-grid__col-2,991.98,2">
                             <div class="calculator box">
@@ -905,6 +905,7 @@
     @@include('common/popup/_popup-confirm-bid.html') 
     @@include('common/popup/_popup-add-group-shipping.html')
     @@include('common/popup/_popup-attention.html')
+    @@include('common/popup/_popup-message-2.html')
 
     @@include('_js-bottom.html',{})
 </body>
