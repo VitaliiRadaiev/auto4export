@@ -13,16 +13,16 @@
     &__read-more {
         display: inline-flex;
         align-items: center;
-        font-size: 1.4rem;
-        line-height: 1.21em;
+        font-size: 1.6rem;
+        line-height: 1.9rem;
+        color: $textColorSecondary;
 
         @media (max-width: $md3+px) {
-            font-size: 13px;
+            font-size: 14px;
             line-height: 16px;
         }
 
         & i {
-            color: $mainColor;
             font-size: 0.4em;
             margin-left: 1.2em;
         }

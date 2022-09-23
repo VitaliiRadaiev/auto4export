@@ -7,23 +7,25 @@
     height: 4rem;
     width: 4rem;
     border-radius: 50%;
-    color: #fff !important;
+    color: #fff;
     cursor: pointer;
     background-color: $mainColor;
     font-size: 1.2rem;
     transition: all 0.3s ease;
+    z-index: 5;
 
-    @media (max-width: $md3+px) {
-        height: 20px;
-        width: 20px;
-        font-size: 8px;
+    @media (max-width: $md2+px) {
+        display: none;
     }
-
 
     @media (min-width: 992px) {
         &:hover {
             background-color: $hover;
         }
+    }
+
+    &.swiper-button-disabled, &.swiper-button-lock {
+        display: none;
     }
 
     &.btn-prev {

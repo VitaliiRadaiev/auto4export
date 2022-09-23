@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('../fonts/icomoon.eot?558efd');
-  src:  url('../fonts/icomoon.eot?558efd#iefix') format('embedded-opentype'),
-    url('../fonts/icomoon.ttf?558efd') format('truetype'),
-    url('../fonts/icomoon.woff?558efd') format('woff'),
-    url('../fonts/icomoon.svg?558efd#icomoon') format('svg');
+  src:  url('../fonts/icomoon.eot?9izybc');
+  src:  url('../fonts/icomoon.eot?9izybc#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?9izybc') format('truetype'),
+    url('../fonts/icomoon.woff?9izybc') format('woff'),
+    url('../fonts/icomoon.svg?9izybc#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,204 +25,209 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-add-user:before {
-  content: "\e900";
-}
-.icon-alarm:before {
-  content: "\e901";
-}
-.icon-arrow-left:before {
-  content: "\e902";
-}
-.icon-auction:before {
-  content: "\e903";
-}
-.icon-bid-now:before {
-  content: "\e904";
-}
-.icon-buy:before {
-  content: "\e905";
-}
-.icon-calculator:before {
-  content: "\e906";
-}
-.icon-calendar:before {
-  content: "\e907";
-}
-.icon-car .path1:before {
-  content: "\e908";
-  color: rgb(68, 68, 68);
-}
-.icon-car .path2:before {
-  content: "\e909";
-  margin-left: -1em;
-  color: rgb(68, 68, 68);
-  opacity: 0.5;
-}
-.icon-chat:before {
-  content: "\e90a";
-}
-.icon-check:before {
-  content: "\e90b";
-}
-.icon-check-green:before {
-  content: "\e90c";
-}
-.icon-circle-arrow-right:before {
+.icon-arrow-left1:before {
   content: "\e90d";
 }
-.icon-circle-check:before {
+.icon-star:before {
+  content: "\e900";
+}
+.icon-arrow-rigth:before {
+  content: "\e901";
+}
+.icon-add-user:before {
+  content: "\e902";
+}
+.icon-alarm:before {
+  content: "\e903";
+}
+.icon-arrow-left:before {
+  content: "\e904";
+}
+.icon-auction:before {
+  content: "\e905";
+}
+.icon-bid-now:before {
+  content: "\e906";
+}
+.icon-buy:before {
+  content: "\e907";
+}
+.icon-calculator:before {
+  content: "\e908";
+}
+.icon-calendar:before {
+  content: "\e909";
+}
+.icon-uniE90A:before {
+  content: "\e90a";
+}
+.icon-uniE90B:before {
+  content: "\e90b";
+}
+.icon-chat:before {
+  content: "\e90c";
+}
+.icon-check:before {
   content: "\e90e";
 }
-.icon-clock:before {
+.icon-check-green:before {
   content: "\e90f";
 }
-.icon-clock-2:before {
+.icon-circle-arrow-right:before {
   content: "\e910";
 }
-.icon-close:before {
+.icon-circle-check:before {
   content: "\e911";
 }
-.icon-copy:before {
+.icon-clock:before {
   content: "\e912";
 }
-.icon-deposit:before {
+.icon-clock-2:before {
   content: "\e913";
 }
-.icon-dot:before {
+.icon-close:before {
   content: "\e914";
 }
-.icon-email:before {
+.icon-copy:before {
   content: "\e915";
 }
-.icon-eye:before {
+.icon-deposit:before {
   content: "\e916";
 }
-.icon-facebook:before {
+.icon-dot:before {
+  content: "\e917";
+}
+.icon-email:before {
   content: "\e918";
 }
-.icon-filter:before {
+.icon-eye:before {
   content: "\e919";
 }
-.icon-folder:before {
+.icon-facebook:before {
   content: "\e91a";
 }
-.icon-gear:before {
+.icon-filter:before {
   content: "\e91b";
 }
-.icon-history:before {
+.icon-folder:before {
+  content: "\e91c";
+}
+.icon-gear:before {
   content: "\e91d";
 }
-.icon-info:before {
+.icon-history:before {
   content: "\e91e";
 }
-.icon-information:before {
+.icon-info:before {
   content: "\e91f";
 }
-.icon-instagram:before {
+.icon-information:before {
   content: "\e920";
 }
-.icon-list:before {
+.icon-instagram:before {
   content: "\e921";
 }
-.icon-local:before {
+.icon-list:before {
   content: "\e922";
 }
-.icon-log-in:before {
+.icon-local:before {
   content: "\e923";
 }
-.icon-minus:before {
+.icon-log-in:before {
   content: "\e924";
 }
-.icon-money:before {
+.icon-minus:before {
   content: "\e925";
 }
-.icon-offer:before {
+.icon-money:before {
   content: "\e926";
 }
-.icon-options:before {
+.icon-offer:before {
   content: "\e927";
 }
-.icon-paper-clip:before {
+.icon-options:before {
   content: "\e928";
 }
-.icon-pause:before {
+.icon-paper-clip:before {
   content: "\e929";
 }
-.icon-phone:before {
+.icon-pause:before {
   content: "\e92a";
 }
-.icon-play:before {
+.icon-phone:before {
   content: "\e92b";
 }
-.icon-plus:before {
+.icon-play:before {
   content: "\e92c";
 }
-.icon-question:before {
+.icon-plus:before {
   content: "\e92d";
 }
-.icon-quote:before {
+.icon-question:before {
   content: "\e92e";
 }
-.icon-rotate:before {
+.icon-quote:before {
   content: "\e92f";
 }
-.icon-search:before {
+.icon-rotate:before {
   content: "\e930";
 }
-.icon-search-no-result:before {
+.icon-search:before {
   content: "\e931";
 }
-.icon-send-message:before {
+.icon-search-no-result:before {
   content: "\e932";
 }
-.icon-ship:before {
+.icon-send-message:before {
   content: "\e933";
 }
-.icon-star:before {
+.icon-ship:before {
   content: "\e934";
 }
-.icon-telegram-white:before {
+.icon-star1:before {
   content: "\e935";
 }
-.icon-tooltip:before {
+.icon-telegram-white:before {
   content: "\e936";
 }
-.icon-update-prifile:before {
+.icon-tooltip:before {
   content: "\e937";
 }
-.icon-user:before {
+.icon-update-prifile:before {
   content: "\e938";
 }
-.icon-viber-white:before {
+.icon-user:before {
   content: "\e939";
 }
-.icon-wallet:before {
+.icon-viber-white:before {
   content: "\e93a";
 }
-.icon-whatsapp-white:before {
+.icon-wallet:before {
   content: "\e93b";
 }
-.icon-youtube:before {
+.icon-whatsapp-white:before {
   content: "\e93c";
 }
-.icon-arrow-right:before {
+.icon-youtube:before {
   content: "\e93d";
 }
-.icon-check1:before {
+.icon-arrow-right:before {
   content: "\e93e";
 }
-.icon-chevron-down:before {
+.icon-check1:before {
   content: "\e93f";
 }
-.icon-chevron-right:before {
+.icon-chevron-down:before {
   content: "\e940";
 }
-.icon-play_circle_filled:before {
+.icon-chevron-right:before {
   content: "\e941";
 }
-.icon-pause_circle_filled:before {
+.icon-play_circle_filled:before {
   content: "\e942";
+}
+.icon-pause_circle_filled:before {
+  content: "\e943";
 }
 .icon-star-empty:before {
   content: "\e9d7";

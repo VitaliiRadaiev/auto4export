@@ -334,6 +334,7 @@ class App {
 		this.dynamicAdapt = new DynamicAdapt('max');
 		this.scrollAnimation = null;
 		this.allRangeSliders = [];
+		this.setPaddingTop = null;
 	}
 
 	init() {
@@ -372,7 +373,7 @@ class App {
 
 		window.addEventListener('load', () => {
 			this.utils.setSameHeight();
-			this.setPaddingTopHeaderSize();
+			//this.setPaddingTopHeaderSize();
 			this.slidersInit();
 			this.componentsScripts();
 			this.initScrollAnimation();
@@ -671,8 +672,6 @@ if (featuredVehiclesSliders.length) {
             observer: true,
             observeParents: true,
             observeSlideChildren: true,
-            slidesPerView: 'auto',
-            spaceBetween: 0,
             speed: 600,
             freeMode: true,
             loop: true,
@@ -686,14 +685,28 @@ if (featuredVehiclesSliders.length) {
             navigation: {
                 nextEl: featuredVehiclesSlider.querySelector('.carousel__btn-next'),
                 prevEl: featuredVehiclesSlider.querySelector('.carousel__btn-prev'),
-            }
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: 'auto',
+                    spaceBetween: 0,
+                },
+                992: {
+                    slidesPerView: 4,
+                    spaceBetween: 20,
+                },
+                1268: {
+                    slidesPerView: 5,
+                    spaceBetween: 20,
+                },
+            },
         });
     })
 }
 
 ;
 		let lastReviewsSlider = document.querySelector('[data-slider="last-reviews"]');
-if(lastReviewsSlider) {
+if (lastReviewsSlider) {
     let sliderData = new Swiper(lastReviewsSlider, {
         /*
         autoplay: {
@@ -704,7 +717,14 @@ if(lastReviewsSlider) {
         observer: true,
         observeParents: true,
         speed: 600,
-        loop: true,
+        navigation: {
+            nextEl: lastReviewsSlider.querySelector('.btn-next'),
+            prevEl: lastReviewsSlider.querySelector('.btn-prev'),
+        },
+        pagination: {
+            el: lastReviewsSlider.querySelector('.swiper-pagination'),
+            clickable: true,
+        },
         breakpoints: {
             0: {
                 slidesPerView: 1,
@@ -712,7 +732,7 @@ if(lastReviewsSlider) {
                 autoHeight: true
             },
             768: {
-                slidesPerView: 2,
+                slidesPerView: 'auto',
                 spaceBetween: 20,
             },
             992: {
@@ -726,7 +746,7 @@ if(lastReviewsSlider) {
     window.addEventListener('resize', () => {
         sliderData.update();
     })
-    
+
 };
 		let topFilter = document.querySelector('[data-slider="search-top-filter"]');
 if(topFilter) {
@@ -946,6 +966,13 @@ if(topFilter) {
 					clearInterval(id);
 				}, 2000)
 				window.addEventListener('resize', setPedding);
+
+				this.setPaddingTop = () => {
+					let id = setInterval(setPedding, 50);
+					setTimeout(() => {
+						clearInterval(id);
+					}, 400)
+				}
 			}
 
 		}

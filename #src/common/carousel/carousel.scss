@@ -12,6 +12,29 @@
     &__content {
         position: relative;
 
+
+    }
+
+    &__slider {
+        overflow: visible;
+        & .swiper-slide {
+            height: auto;
+            width: auto;
+
+            @media (max-width: $md2+px) {
+                padding-right: 30px;
+            }
+
+            @media (max-width: $md3+px) {
+                padding-right: 20px;
+            }
+        }
+
+        & .swiper-lazy-preloader {
+            border-color: $mainColor;
+            border-top-color: transparent;
+        }
+
         @media (min-width: 992px) {
             &:after {
                 position: absolute;
@@ -40,27 +63,6 @@
         }
     }
 
-    &__slider {
-        overflow: visible;
-        & .swiper-slide {
-            width: auto;
-            padding-right: 2rem;
-
-            @media (max-width: $md2+px) {
-                padding-right: 30px;
-            }
-
-            @media (max-width: $md3+px) {
-                padding-right: 20px;
-            }
-        }
-
-        & .swiper-lazy-preloader {
-            border-color: $mainColor;
-            border-top-color: transparent;
-        }
-    }
-
     &__btn {
         position: absolute;
         top: 8.5rem;
@@ -76,6 +78,7 @@
         background-color: $mainColor;
         font-size: 1.2rem;
         transition: all 0.3s ease;
+        z-index: 5;
 
         @media (max-width: $md2+px) {
             display: none;
@@ -89,7 +92,7 @@
     }
 
     &__btn-prev {
-        left: 3rem;
+        left: -2rem;
 
         & i {
             transform: scale(-1, 1);
@@ -97,12 +100,19 @@
     }
 
     &__btn-next {
-        right: 3rem;
+        right: -2rem;
     }
 }
 
 .carousel-card {
-    width: 29.2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    @media (max-width: 991.98px) {
+        width: 28.8rem;
+    }
 
     @media (max-width: $md3+px) {
         width: 230px;
@@ -110,22 +120,43 @@
     &__img {
         height: 0;
         padding-bottom: 71.91%;
-        border-radius: 1rem;
         overflow: hidden;
-        margin-bottom: 2rem;
+        border-radius: 1rem 1rem 0 0;
+    }
+
+    &__body {
+        border: 1px solid #ececec;
+        flex: 1 1 auto;
+        padding: 3rem;
+        border-top: none;
+        border-radius: 0 0 1rem 1rem;
+        display: flex;
+        flex-direction: column;
+
+        @media (max-width: $md3+px) {
+            padding: 20px 20px 18px;
+        }
+
+        & hr {
+            margin-top: auto;
+            margin-bottom: 2rem;
+
+            @media (max-width: $md3+px) {
+                margin-bottom: 14px;
+            }
+        }
     }
 
     &__title {
-        font-weight: 700;
-        font-size: 1.4rem;
-        line-height: 1.21em;
-        margin-bottom: 1.4rem;
-        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 1.8rem;
+        line-height: 2.1rem;
+        margin-bottom: 2rem;
 
         @media (max-width: $md3+px) {
-            font-size: 13px;
+            font-size: 14px;
             line-height: 16px;
-            margin-bottom: 10px;
+            margin-bottom: 14px;
         }
     }
 
@@ -156,41 +187,45 @@
 
     &__bottom-item {
         flex: 0 1 50%;
+
+        &:last-child {
+            text-align: right;
+        }
     }
 
     &__label {
         font-size: 1.4rem;
         line-height: 1.28em;
         color: $textColorSecondary;
-        margin-bottom: 0.4rem;
+        margin-bottom: 0.6rem;
 
         @media (max-width: $md3+px) {
             font-size: 13px;
-            line-height: 18px;
+            line-height: 15px;
             margin-bottom: 6px;
         }
     }
 
     &__price {
-        font-weight: 700;
+        font-weight: 500;
         font-size: 2rem;
-        line-height: 1.2em;
+        line-height: 2.2rem;
         color: $mainColor;
 
         @media (max-width: $md3+px) {
             font-size: 18px;
-            line-height: 22px;
+            line-height: 21px;
         }
     }
 
     &__location {
         font-weight: 400;
         font-size: 1.6rem;
-        line-height: 1.1875em;
+        line-height: 2.2rem;
 
         @media (max-width: $md3+px) {
             font-size: 14px;
-            line-height: 17px;
+            line-height: 21px;
         }
     }
 }

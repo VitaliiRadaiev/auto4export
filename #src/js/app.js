@@ -7,6 +7,7 @@ class App {
 		this.dynamicAdapt = new DynamicAdapt('max');
 		this.scrollAnimation = null;
 		this.allRangeSliders = [];
+		this.setPaddingTop = null;
 	}
 
 	init() {
@@ -45,7 +46,7 @@ class App {
 
 		window.addEventListener('load', () => {
 			this.utils.setSameHeight();
-			this.setPaddingTopHeaderSize();
+			//this.setPaddingTopHeaderSize();
 			this.slidersInit();
 			this.componentsScripts();
 			this.initScrollAnimation();
@@ -212,6 +213,13 @@ class App {
 					clearInterval(id);
 				}, 2000)
 				window.addEventListener('resize', setPedding);
+
+				this.setPaddingTop = () => {
+					let id = setInterval(setPedding, 50);
+					setTimeout(() => {
+						clearInterval(id);
+					}, 400)
+				}
 			}
 
 		}

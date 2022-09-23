@@ -1,5 +1,5 @@
 let lastReviewsSlider = document.querySelector('[data-slider="last-reviews"]');
-if(lastReviewsSlider) {
+if (lastReviewsSlider) {
     let sliderData = new Swiper(lastReviewsSlider, {
         /*
         autoplay: {
@@ -10,7 +10,14 @@ if(lastReviewsSlider) {
         observer: true,
         observeParents: true,
         speed: 600,
-        loop: true,
+        navigation: {
+            nextEl: lastReviewsSlider.querySelector('.btn-next'),
+            prevEl: lastReviewsSlider.querySelector('.btn-prev'),
+        },
+        pagination: {
+            el: lastReviewsSlider.querySelector('.swiper-pagination'),
+            clickable: true,
+        },
         breakpoints: {
             0: {
                 slidesPerView: 1,
@@ -18,7 +25,7 @@ if(lastReviewsSlider) {
                 autoHeight: true
             },
             768: {
-                slidesPerView: 2,
+                slidesPerView: 'auto',
                 spaceBetween: 20,
             },
             992: {
@@ -32,5 +39,5 @@ if(lastReviewsSlider) {
     window.addEventListener('resize', () => {
         sliderData.update();
     })
-    
+
 }

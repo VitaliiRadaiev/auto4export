@@ -33,7 +33,7 @@
 		background-color: #fff;
 		border: 1px solid $borderColor;
 		transition: all .3s ease;
-		border-radius: 1rem;
+		border-radius: 1.2rem;
 
 		@media (max-width: $md3+px) {
 			border-radius: 6px;
@@ -65,22 +65,33 @@
 
 			@media (max-width: $md3+px) {
 				font-size: 14px;
-				line-height: 17px;
+				line-height: 16px;
 			}
 		}
 
 		&:before {
 			font-family: "icomoon" !important;
 			position: absolute;
-			content: "\e93f";
-			transition: all 0.3s ease 0s;
+			content: "\e940";
+			transition: background-color, border-color 0.3s ease 0s;
 			top: 50%;
 			transform: translateY(-50%);
-			right: 3rem;
-			font-size: 0.7rem;
-			color: $textColor;
+			right: 2rem;
+			font-size: 0.6rem;
+			padding-top: 0.2rem;
+			color: $mainColor;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 2.4rem;
+			width: 2.4rem;
+			border-radius: 50%;
+			border: 1px solid $borderColor;
 
 			@media (max-width: $md3+px) {
+				width: 20px;
+				height: 20px;
+				font-size: 0.5rem;
 				right: 20px;
 			}
 		}
@@ -92,6 +103,7 @@
 	}
 	// .select__options
 	&__options {
+		font-weight: 500;
 		display: none;
 		min-width: 100%;
 		max-height: 315px;
@@ -99,13 +111,42 @@
 		padding: 0 3rem 3rem;
 		color: $textColor;
 		font-size: 1.8rem;
-		line-height: 1.22em;
+		line-height: 1.11em;
 
 		@media (max-width: $md3+px) {
 			border-radius: 6px;
 			padding: 0 20px 20px;
 			font-size: 14px;
-			line-height: 17px;
+			line-height: 20px;
+		}
+	}
+
+	&__inner {
+		overflow: auto;
+		max-height: 26.2rem;
+		padding-bottom: 3rem;
+
+		&::-webkit-scrollbar {
+			width: 4px;
+			height: 4px;
+
+			@media (max-width: $md3+px) {
+				width: 2px;
+				height: 20px;
+			}
+		}
+		&::-webkit-scrollbar-thumb {
+			background: $mainColor;
+			border-radius: 10px;
+
+		}
+		&::-webkit-scrollbar-thumb:hover {
+			background: #b3afb3;
+		}
+		&::-webkit-scrollbar-track {
+			background: #EFEFEF;
+			border-radius: 10px;
+			box-shadow: inset 0px 0px 0px 0px #f0f0f0;
 		}
 	}
 	// .select__option
@@ -117,10 +158,10 @@
 		padding-right: 1rem;
 
 		&:not(:last-child) {
-			margin-bottom: 1.2rem;
+			margin-bottom: 1.8rem;
 
 			@media (max-width: $md3+px) {
-				margin-bottom: 8px;
+				margin-bottom: 10px;
 			}
 		}
 
@@ -138,8 +179,10 @@
 		}
 		.select__value {
 			&:before {
+				background-color: $mainColor;
+				border-color: $mainColor;
 				transform: translateY(-50%) scale(1, -1);
-				color: $mainColor;
+				color: #fff
 			}
 		}
 	}

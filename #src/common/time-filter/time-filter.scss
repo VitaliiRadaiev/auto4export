@@ -1,18 +1,23 @@
 .time-filter {
     position: relative;
     font-size: 1.8rem;
-    line-height: 1.222em;
+    line-height: 1.11em;
     user-select: none;
     background-color: #fff;
 
     @media (max-width: $md3+px) {
         font-size: 14px;
-        line-height: 17px;
+        line-height: 16px;
     }
 
     &.active {
+        box-shadow: 0px 12px 24px rgba(51, 51, 51, 0.2);
+        z-index: 10;
         & .time-filter__top {
             &::before {
+                background-color: $mainColor;
+                border-color: $mainColor;
+                color: #fff;
                 transform: translateY(-50%) scale(1, -1);
             }
         }
@@ -31,6 +36,7 @@
         min-height: 6.8rem;
         padding: 0 3rem;
         color: $textColorSecondary;
+        background-color: #fff;
         
 
         @media (max-width: $md3+px) {
@@ -42,21 +48,30 @@
             position: absolute;
             font-family: "icomoon" !important;
             position: absolute;
-            content: "\e93f";
-            -webkit-transition: all 0.3s ease 0s;
-            -o-transition: all 0.3s ease 0s;
-            transition: all 0.3s ease 0s;
+            content: "\e940";
+            transition: background-color, border-color 0.3s ease 0s;
             top: 50%;
             -webkit-transform: translateY(-50%);
             -ms-transform: translateY(-50%);
             transform: translateY(-50%);
-            right: 3rem;
-            font-size: 0.7rem;
-            color: $textColor;
+            right: 2rem;
+            padding-top: 0.2rem;
+            font-size: 0.6rem;
+            color: $mainColor;
+            display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 2.4rem;
+			width: 2.4rem;
+			border-radius: 50%;
+			border: 1px solid $borderColor;
 
-            @media (max-width: $md3+px) {
-                right: 20px;
-            }
+			@media (max-width: $md3+px) {
+				width: 20px;
+				height: 20px;
+				font-size: 0.5rem;
+				right: 20px;
+			}
         }
 
         & span {
@@ -76,7 +91,7 @@
         left: 0;
         width: 100%;
         box-shadow: 0px 12px 24px rgba(51, 51, 51, 0.2);
-        border-radius: 0 0 1rem 1rem;
+        border-radius: 0 0 1.2rem 1.2rem;
         padding: 0 3rem 1.6rem;
         display: none;
         background-color: #fff;
@@ -117,6 +132,11 @@
                 rgba(214, 214, 214, 0) 100%
             ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
             filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00d6d6d6', endColorstr='#00d6d6d6',GradientType=0 ); /* IE6-9 */
+        }
+
+        @media (max-width: $md3+px) {
+            border-radius: 0 0 1.6rem 1.6rem;
+            padding: 0 2rem 1.6rem;
         }
     }
 
@@ -181,9 +201,14 @@
     &__dropdown-item {
         cursor: pointer;
         transition: all 0.3s ease;
+        font-weight: 500;
 
         &:not(:last-child) {
-            margin-bottom: 1.2rem;
+            margin-bottom: 1.8rem;
+
+            @media (max-width: $md3+px) {
+                margin-bottom: 14px;
+            }
         }
 
         @media (min-width: 992px) {
