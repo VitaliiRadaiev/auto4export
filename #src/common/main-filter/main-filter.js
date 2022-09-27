@@ -109,7 +109,6 @@ if (mainFilter) {
     if(btnOptions) {
         let hideRows = mainFilter.querySelectorAll('.main-filter__row--hide');
         let btnText = btnOptions.innerText;
-        let img = btnOptions.querySelector('img');
 
         if(hideRows.length) {
             btnOptions.addEventListener('click', () => {
@@ -117,16 +116,18 @@ if (mainFilter) {
                     hideRows.forEach(row => {
                         row.classList.remove('show');
                     })
-                    mainFilter.classList.remove('show-hide-rows')
-                    btnOptions.innerText = btnText;
-                    btnOptions.prepend(img);
+                    mainFilter.classList.remove('show-hide-rows');
+                    btnOptions.classList.remove('filter-is-open');
+                    let regexp = new RegExp(btnOptions.dataset.text);
+                    btnOptions.innerHTML = btnOptions.innerHTML.replace(btnOptions.dataset.text, btnText);
                 } else {
                     hideRows.forEach(row => {
                         row.classList.add('show');
                     })
-                    mainFilter.classList.add('show-hide-rows')
-                    btnOptions.innerText = btnOptions.dataset.text;
-                    btnOptions.prepend(img);
+                    mainFilter.classList.add('show-hide-rows');
+                    btnOptions.classList.add('filter-is-open');
+                    let regexp = new RegExp(btnText);
+                    btnOptions.innerHTML = btnOptions.innerHTML.replace(regexp, btnOptions.dataset.text);
                 }
 
             })
@@ -137,6 +138,16 @@ if (mainFilter) {
     if(btnReset) {
         let form = btnReset.closest('form');
         let selects = mainFilter.querySelectorAll('.main-filter__select .select-wrap');
+        let outsideResetButtons = document.querySelectorAll('[data-action="reset-main-filter"]');
+
+        if(outsideResetButtons.length) {
+            outsideResetButtons.forEach(resetBtn => {
+                resetBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    btnReset.click();
+                })
+            })
+        }
 
         form.addEventListener('reset', () => {
             if(filterSelects.length) {

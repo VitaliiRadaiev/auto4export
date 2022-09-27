@@ -293,6 +293,13 @@ class App {
 		let copyElements = document.querySelectorAll('[data-copy]');
 		if (copyElements.length) {
 			copyElements.forEach(copyEl => {
+				copyEl.insertAdjacentHTML('beforeend', `
+				<svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path opacity="0.5" d="M5.56824 12.1875C4.07722 12.1875 2.86364 10.9956 2.86364 9.53117V3.125H1.75004C0.784659 3.125 0 3.89553 0 4.84367V13.2812C0 14.2293 0.784659 15 1.75004 15H9.70453C10.6699 15 11.4546 14.2293 11.4546 13.2812V12.1875H5.56824Z" fill="#D5D5D5"/>
+				<path d="M13.9999 1.71879C13.9999 0.769386 13.2165 0 12.25 0H5.56816C4.60149 0 3.81812 0.769386 3.81812 1.71879V9.53121C3.81812 10.4806 4.60149 11.25 5.56816 11.25H12.25C13.2165 11.25 13.9999 10.4806 13.9999 9.53121V1.71879Z" fill="#D5D5D5"/>
+				</svg>
+				`)
+
 				copyEl.addEventListener('click', (e) => {
 					e.preventDefault();
 					navigator.clipboard.writeText(copyEl.innerText);

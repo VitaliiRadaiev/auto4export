@@ -533,9 +533,15 @@ hr {
 	& > div:first-child {
 		overflow: auto;
 		padding-right: 0.3rem;
+		padding-bottom: 1px;
 		&::-webkit-scrollbar {
-			width: 2px;
-			height: 2px;
+			width: 4px;
+			height: 4px;
+
+			@media (max-width: $md3+px) {
+				width: 2px;
+				height: 2px;
+			}
 		}
 		&::-webkit-scrollbar-thumb {
 			background: $mainColor;
@@ -606,16 +612,65 @@ hr {
 	border-top-color: transparent !important;
 }
 
+.swiper-pagination {
+    position: static;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & .swiper-pagination-bullet  {
+        width: 6px;
+        height: 6px;
+        margin: 0 5px;
+        opacity: 1;
+        background-color: #ECECEC;
+
+		@media (max-width: $md3+px) {
+			width: 4px;
+			height: 4px;
+			margin: 0 3px;
+		}
+
+        &.swiper-pagination-bullet-active {
+            background-color: $mainColor;
+        }
+    }
+}
+
 [data-copy] {
 	cursor: pointer;
 	transition: all 0.3s ease;
 	position: relative;
-	padding-right: 2rem;
-	display: inline-block;
+	display: inline-flex;
+	gap: 0.9rem;
+
+	& svg {
+		flex: 0 0 auto;
+		width: 1.4rem;
+		height: auto;
+		color: #D5D5D5;
+		transition: all .3s ease;
+
+		@media (max-width: $md3+px) {
+			width: 12px;
+		}
+
+		& path {
+			fill: currentColor;
+		}
+	}
+
+	@media (min-width: 992px) {
+		&:hover {
+			& svg {
+				color: $mainColor;
+			}
+		}
+	}
 
 	&.copied {
 		z-index: 40;
-		&:after {
+		& svg {
 			color: $successColor !important;
 		}
 
@@ -630,7 +685,7 @@ hr {
 		right: 0;
 		content: "Copied";
 		color: #fff;
-		background-color: $secondColor;
+		background-color: #111F38;
 		border-radius: 0.6rem;
 		padding: 0.4rem 0.8rem;
 		font-size: 1.2rem;
@@ -650,18 +705,6 @@ hr {
 			opacity: 1;
 			transform: translateX(35%) translateY(0rem);
 		}
-	}
-
-	&:after {
-		font-family: "icomoon" !important;
-		position: absolute;
-		top: 50%;
-		right: 0;
-		transform: translateY(-50%);
-		display: block;
-		content: "\e912";
-		transition: all 0.3s ease;
-		color: $textColorSecondary;
 	}
 
 	@media (min-width: 992px) {
@@ -888,10 +931,6 @@ hr {
 
 .border-rudius {
 	border-radius: 1rem;
-
-	@media (max-width: $md3+px) {
-		border-radius: 6px;
-	}
 }
 
 // === TEXT CONTETN BLOCK ========================================================================

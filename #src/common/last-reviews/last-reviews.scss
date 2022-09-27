@@ -207,21 +207,3 @@
 }
 
 
-.swiper-pagination {
-    position: static;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    & .swiper-pagination-bullet  {
-        width: 4px;
-        height: 4px;
-        margin: 0 3px;
-        opacity: 1;
-        background-color: #ECECEC;
-
-        &.swiper-pagination-bullet-active {
-            background-color: $mainColor;
-        }
-    }
-}

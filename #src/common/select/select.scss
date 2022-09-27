@@ -33,11 +33,7 @@
 		background-color: #fff;
 		border: 1px solid $borderColor;
 		transition: all .3s ease;
-		border-radius: 1.2rem;
-
-		@media (max-width: $md3+px) {
-			border-radius: 6px;
-		}
+		border-radius: 3.2rem;
 	}
 	// .select__title
 	&__title {
@@ -76,7 +72,7 @@
 			transition: background-color, border-color 0.3s ease 0s;
 			top: 50%;
 			transform: translateY(-50%);
-			right: 2rem;
+			right: 1.2rem;
 			font-size: 0.6rem;
 			padding-top: 0.2rem;
 			color: $mainColor;
@@ -92,7 +88,8 @@
 				width: 20px;
 				height: 20px;
 				font-size: 0.5rem;
-				right: 20px;
+				right: 9px;
+
 			}
 		}
 	}
@@ -124,8 +121,7 @@
 	&__inner {
 		overflow: auto;
 		max-height: 26.2rem;
-		padding-bottom: 3rem;
-
+		padding-bottom: 1px;
 		&::-webkit-scrollbar {
 			width: 4px;
 			height: 4px;
@@ -176,6 +172,7 @@
 		& .select__item {
 			border-color: transparent;
 			box-shadow: 0px 12px 24px rgba(51, 51, 51, 0.2);
+			border-radius: 2rem;
 		}
 		.select__value {
 			&:before {

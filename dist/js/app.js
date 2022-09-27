@@ -1277,6 +1277,13 @@ if(topFilter) {
 		let copyElements = document.querySelectorAll('[data-copy]');
 		if (copyElements.length) {
 			copyElements.forEach(copyEl => {
+				copyEl.insertAdjacentHTML('beforeend', `
+				<svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path opacity="0.5" d="M5.56824 12.1875C4.07722 12.1875 2.86364 10.9956 2.86364 9.53117V3.125H1.75004C0.784659 3.125 0 3.89553 0 4.84367V13.2812C0 14.2293 0.784659 15 1.75004 15H9.70453C10.6699 15 11.4546 14.2293 11.4546 13.2812V12.1875H5.56824Z" fill="#D5D5D5"/>
+				<path d="M13.9999 1.71879C13.9999 0.769386 13.2165 0 12.25 0H5.56816C4.60149 0 3.81812 0.769386 3.81812 1.71879V9.53121C3.81812 10.4806 4.60149 11.25 5.56816 11.25H12.25C13.2165 11.25 13.9999 10.4806 13.9999 9.53121V1.71879Z" fill="#D5D5D5"/>
+				</svg>
+				`)
+
 				copyEl.addEventListener('click', (e) => {
 					e.preventDefault();
 					navigator.clipboard.writeText(copyEl.innerText);
@@ -1687,7 +1694,6 @@ if (mainFilter) {
     if(btnOptions) {
         let hideRows = mainFilter.querySelectorAll('.main-filter__row--hide');
         let btnText = btnOptions.innerText;
-        let img = btnOptions.querySelector('img');
 
         if(hideRows.length) {
             btnOptions.addEventListener('click', () => {
@@ -1695,16 +1701,18 @@ if (mainFilter) {
                     hideRows.forEach(row => {
                         row.classList.remove('show');
                     })
-                    mainFilter.classList.remove('show-hide-rows')
-                    btnOptions.innerText = btnText;
-                    btnOptions.prepend(img);
+                    mainFilter.classList.remove('show-hide-rows');
+                    btnOptions.classList.remove('filter-is-open');
+                    let regexp = new RegExp(btnOptions.dataset.text);
+                    btnOptions.innerHTML = btnOptions.innerHTML.replace(btnOptions.dataset.text, btnText);
                 } else {
                     hideRows.forEach(row => {
                         row.classList.add('show');
                     })
-                    mainFilter.classList.add('show-hide-rows')
-                    btnOptions.innerText = btnOptions.dataset.text;
-                    btnOptions.prepend(img);
+                    mainFilter.classList.add('show-hide-rows');
+                    btnOptions.classList.add('filter-is-open');
+                    let regexp = new RegExp(btnText);
+                    btnOptions.innerHTML = btnOptions.innerHTML.replace(regexp, btnOptions.dataset.text);
                 }
 
             })
@@ -1715,6 +1723,16 @@ if (mainFilter) {
     if(btnReset) {
         let form = btnReset.closest('form');
         let selects = mainFilter.querySelectorAll('.main-filter__select .select-wrap');
+        let outsideResetButtons = document.querySelectorAll('[data-action="reset-main-filter"]');
+
+        if(outsideResetButtons.length) {
+            outsideResetButtons.forEach(resetBtn => {
+                resetBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    btnReset.click();
+                })
+            })
+        }
 
         form.addEventListener('reset', () => {
             if(filterSelects.length) {
@@ -2801,15 +2819,20 @@ if (cardSliders.length) {
 let ratings = document.querySelectorAll('[data-car-rating]');
 if (ratings.length) {
     ratings.forEach(rating => {
+        let tooltipTitle = rating.closest('li').querySelector('.card__state-tooltipe h5');
         let value = +rating.dataset.carRating;
         if (value >= 4) {
-            rating.style.background = '#5BC749';
+            rating.style.background = '#3ECF5C';
+            if(tooltipTitle) tooltipTitle.style.color = '#3ECF5C';
         } else if (value >= 3) {
-            rating.style.background = '#DDAB3A';
+            rating.style.background = '#E3BD15';
+            if(tooltipTitle) tooltipTitle.style.color = '#E3BD15';
         } else if (value >= 2) {
-            rating.style.background = '#C77149';
+            rating.style.background = '#CFA93E';
+            if(tooltipTitle) tooltipTitle.style.color = '#CFA93E';
         } else {
-            rating.style.background = '#c92306';
+            rating.style.background = '#E3433A';
+            if(tooltipTitle) tooltipTitle.style.color = '#E3433A';
         }
     })
 }
@@ -2833,8 +2856,6 @@ if (btnSetList && btnSetGrid) {
         if (list) {
             list.classList.add('main-search__list--grid')
         }
-
-        window.borderDashed.update();
     }
 
     btnSetList.addEventListener('click', (e) => {

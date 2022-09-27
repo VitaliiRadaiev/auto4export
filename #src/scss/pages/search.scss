@@ -31,7 +31,7 @@
     }
 
     &__row-1 {
-        margin-bottom: 4.4rem;
+        margin-bottom: 3rem;
 
         @media (max-width: $md3+px) {
             margin-bottom: 20px;
@@ -56,14 +56,14 @@
     &__btn-filter {
         box-shadow: none;
         border: 1px solid $borderColor;
-        border-radius: 1rem;
+        border-radius: 3.2rem;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 4.8rem;
-        width: 4.8rem;
+        height: 4.4rem;
+        width: 4.4rem;
         background-color: transparent;
-        color: $textColorSecondary;
+        color: #D5D5D5;
         flex: 0 0 auto;
         margin-right: 2rem;
 
@@ -96,7 +96,7 @@
         @media (max-width: $md3+px) {
             font-size: 14px;
             line-height: 17px;
-            margin-right: 0;
+            margin-right: auto;
         }
 
         & span {
@@ -112,7 +112,7 @@
 
         @media (max-width: $md3+px) {
             margin-right: 0px;
-            flex: 0 0 calc(100% - 86px);
+            flex: 0 0 calc(100% - 94px);
         }
 
         & > label {
@@ -135,7 +135,7 @@
         & .select {
             position: relative;
             width: 25.5rem;
-            height: 4.8rem;
+            height: 4.4rem;
 
             @media (max-width: $md3+px) {
                 width: 100%;
@@ -148,11 +148,7 @@
                     box-shadow: 0px 12px 24px rgba(51, 51, 51, 0.2);
                 }
 
-                & .select__value {
-                    &::before {
-                        color: $mainColor;
-                    }
-                }
+          
             }
         }
 
@@ -162,18 +158,13 @@
             left: 0;
             width: 100%;
             background-color: #fff;
-            border-radius: 1rem;
             overflow: hidden;
             border: 1px solid $borderColor;
             transition: all 0.1s ease;
-
-            @media (max-width: $md3+px) {
-                border-radius: 6px;
-            }
         }
 
         & .select__value {
-            min-height: 4.8rem;
+            min-height: 4.2rem;
             padding: 0.8rem 3.5rem 0.8rem 7.2rem;
             position: relative;
 
@@ -234,18 +225,18 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 4.8rem;
-        width: 4.8rem;
+        height: 4.4rem;
+        width: 5.4rem;
         outline: none;
         border: 1px solid $borderColor;
         transition: all 0.3s ease;
         cursor: pointer;
-        color: $textColorSecondary;
+        color: #D5D5D5;
         background-color: transparent;
 
         @media (max-width: $md3+px) {
             height: 38px;
-            width: 38px;
+            width: 42px;
         }
 
         & img,
@@ -253,16 +244,22 @@
             width: 1.8rem;
             height: auto;
             background-color: transparent;
+            
 
             @media (max-width: $md3+px) {
                 width: 16px;
             }
+
+            & rect {
+                fill: currentColor;
+            }
+
         }
 
         &.active {
-            background-color: #0a3b56;
+            background-color: $secondColor;
             color: #fff;
-            border-color: #0a3b56;
+            border-color: $secondColor;
         }
 
         @media (min-width: 992px) {
@@ -274,24 +271,16 @@
         }
 
         &.btn-set-list {
-            border-radius: 1rem 0 0 1rem;
+            border-radius: 3.2rem 0 0 3.2rem;
             border-right: none;
-
-            @media (max-width: $md3+px) {
-                border-radius: 6px 0 0 6px;
-            }
-
-            & ._svg rect {
-                fill: currentColor;
-            }
         }
 
         &.btn-set-grid {
-            border-radius: 0 1rem 1rem 0;
+            border-radius: 0 3.2rem 3.2rem 0;
             border-left: none;
 
-            @media (max-width: $md3+px) {
-                border-radius: 0 6px 6px 0;
+            & rect {
+                fill: currentColor;
             }
         }
     }
@@ -309,16 +298,10 @@
 
         & > li {
             &:not(:last-child) {
-                padding-bottom: 2rem;
                 margin-bottom: 2rem;
-                border-bottom: 1px solid $borderColor;
-            }
 
-            @media (max-width: $md2+px) {
-                &:last-child {
-                    padding-bottom: 2rem;
-                    margin-bottom: 2rem;
-                    border-bottom: 1px solid $borderColor;
+                @media (max-width: $md3+px) {
+                    margin-bottom: 10px;
                 }
             }
         }
@@ -328,6 +311,10 @@
             flex-wrap: wrap;
             gap: 2rem;
             min-width: 0;
+
+            @media (max-width: $md3+px) {
+                gap: 10px;
+            }
 
             & > li {
                 flex: 0 1 calc(33.333333% - calc(2rem * 2 / 3));

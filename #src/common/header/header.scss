@@ -320,7 +320,7 @@
 
     &__social {
         @media (min-width: 992px) {
-           // transform: translateY(-0.3rem);
+            // transform: translateY(-0.3rem);
         }
     }
 
@@ -328,20 +328,22 @@
         display: none;
         padding-left: 0;
         margin-bottom: 0;
-        margin-right: 5rem;
-        gap: 4rem;
+        margin-right: 4rem;
+        gap: 3rem;
 
         & a {
-            display: block;
+            display: flex;
+            flex-direction: column;
         }
 
         & label {
             display: flex;
             align-items: center;
-            color: $textColorSecondary;
+            color: rgba(#fff, 0.7);
             margin-bottom: 0.1rem;
             font-size: 1.4rem;
-            line-height: 1.21em;
+            line-height: 1.6rem;
+            margin-bottom: 0.6rem;
 
             & img,
             & svg {
@@ -349,22 +351,24 @@
                 margin-right: 1rem;
                 width: 1.8rem;
                 height: auto;
+                color: #fff;
             }
         }
 
         & span {
-            font-weight: 700;
+            font-weight: 500;
             font-size: 1.8rem;
-            line-height: 1.22em;
+            line-height: 2.1rem;
             color: #fff;
+            padding-left: 2.8rem;
         }
     }
 
     &__account {
         display: none;
         position: relative;
-        padding-top: 0.8rem;
-        padding-bottom: 0.8rem;
+        padding-top: 0.3rem;
+        padding-bottom: 0.3rem;
 
         &:hover {
             & .header__account-link {
@@ -382,22 +386,21 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 4.8rem;
-        width: 4.8rem;
-        border-radius: 1rem;
+        height: 4.4rem;
+        width: 4.4rem;
+        border-radius: 50%;
         margin-right: 1.8rem;
         border: 1px solid rgba(#c9cfd1, 0.2);
 
         @media (max-width: $md3+px) {
             height: 36px;
             width: 36px;
-            border-radius: 6px;
             margin-right: 0;
         }
 
         & img,
         & svg {
-            width: 1.8rem;
+            width: 1.6rem;
             height: auto;
 
             @media (max-width: $md3+px) {
@@ -417,11 +420,10 @@
         border-radius: 1rem;
         padding: 3rem;
         color: $textColor;
-        min-width: 23rem;
-        font-weight: 700;
-        font-size: 1.4rem;
-        line-height: 1.43em;
-        text-transform: uppercase;
+        min-width: 24rem;
+        font-weight: 500;
+        font-size: 1.8rem;
+        line-height: 2rem;
         opacity: 0;
         visibility: hidden;
 
@@ -458,9 +460,10 @@
         & img,
         & svg {
             flex: 0 0 auto;
-            margin-right: 1rem;
+            margin-left: 1rem;
             width: 1.8rem;
             height: auto;
+            opacity: 0.5;
         }
     }
 
@@ -468,8 +471,12 @@
         display: none !important;
 
         &.btn-default {
-            min-height: 4.8rem;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            min-height: 4.4rem;
             min-width: 18.6rem;
+            font-size: 1.6rem;
+            line-height: 1.9rem;
         }
     }
 
@@ -529,14 +536,9 @@
             }
         }
 
-        & .header__btn-login {
+        & .header__buttons-group {
             display: none;
         }
-
-        & .header__sing-up {
-            display: none;
-        }
-
         & .header__burger {
             background-color: $mainColor;
         }

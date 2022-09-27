@@ -1,183 +1,201 @@
 <a href="#" class="card not-hover" data-card>
-    <div class="card__col-1">
-        <div class="card__images swiper" data-slider="card-images">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide ibg">
-                    <img class="swiper-lazy" data-src="@@img" alt="">
-                    <div class="swiper-lazy-preloader"></div>
-                </div>
-                <div class="swiper-slide ibg">
-                    <img class="swiper-lazy" data-src="@@img" alt="">
-                    <div class="swiper-lazy-preloader"></div>
-                </div>
-                <div class="swiper-slide ibg">
-                    <img class="swiper-lazy" data-src="@@img" alt="">
-                    <div class="swiper-lazy-preloader"></div>
-                </div>
-                <div class="swiper-slide ibg">
-                    <img class="swiper-lazy" data-src="@@img" alt="">
-                    <div class="swiper-lazy-preloader"></div>
-                </div>
-                <div class="swiper-slide ibg">
-                    <img class="swiper-lazy" data-src="@@img" alt="">
-                    <div class="swiper-lazy-preloader"></div>
-                </div>
-                <div class="swiper-slide ibg">
-                    <img class="swiper-lazy" data-src="@@img" alt="">
-                    <div class="swiper-lazy-preloader"></div>
-                </div>
+    <div class="card__images swiper" data-slider="card-images">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide ibg">
+                <img class="swiper-lazy" data-src="@@img" alt="">
+                <div class="swiper-lazy-preloader"></div>
             </div>
-            <div class="swiper-pagination"></div>
+            <div class="swiper-slide ibg">
+                <img class="swiper-lazy" data-src="@@img" alt="">
+                <div class="swiper-lazy-preloader"></div>
+            </div>
+            <div class="swiper-slide ibg">
+                <img class="swiper-lazy" data-src="@@img" alt="">
+                <div class="swiper-lazy-preloader"></div>
+            </div>
+            <div class="swiper-slide ibg">
+                <img class="swiper-lazy" data-src="@@img" alt="">
+                <div class="swiper-lazy-preloader"></div>
+            </div>
+            <div class="swiper-slide ibg">
+                <img class="swiper-lazy" data-src="@@img" alt="">
+                <div class="swiper-lazy-preloader"></div>
+            </div>
+            <div class="swiper-slide ibg">
+                <img class="swiper-lazy" data-src="@@img" alt="">
+                <div class="swiper-lazy-preloader"></div>
+            </div>
         </div>
+        <div class="swiper-pagination"></div>
     </div>
-    <div class="card__col-2">
-        <div class="card__row-1">
-            <div class="card__title">@@title</div>
-        </div>
-        <div class="card__row-2">
-            <div class="card__number">
-                <label>LOT </label>
-                <span data-copy>#30874242</span>
+    <div class="card__body">
+        <div class="card__col-1">
+            <div class="card__row-1">
+                <div class="card__title">@@title</div>
             </div>
-            <div class="card__number card__number--vin">
-                <label>VIN: </label>
-                <span data-copy>1D7RB1GP6AS109178</span>
+            <div class="card__row-2">
+                <div class="card__number">
+                    <label>LOT </label>
+                    <span data-copy>#30874242</span>
+                </div>
+                <div class="card__number card__number--vin">
+                    <label>VIN: </label>
+                    <span data-copy>1D7RB1GP6AS109178</span>
+                </div>
+            </div>
+            <div class="card__row-3">
+                <ul class="card__list">
+                    <li>
+                        <div>
+                            <label>Mileage</label>
+                            <p>198,239</p>
+                        </div>
+                        <img src="img/photo/card-icon-1.svg" alt="">
+                    </li>
+                    <li>
+                        <div>
+                            <label>Damage</label>
+                            <p>front end</p>
+                        </div>
+                        <img src="img/photo/card-icon-2.svg" alt="">
+                    </li>
+                    <li>
+                        <div>
+                            <label>Location</label>
+                            <p>SC - Columbia</p>
+                        </div>
+                        <img src="img/photo/card-icon-3.svg" alt="">
+                    </li>
+                    <li>
+                        <div>
+                            <label>Doc. Type</label>
+                            <p>Clean Title</p>
+                        </div>
+                        <img src="img/photo/card-icon-4.svg" alt="">
+                    </li>
+                </ul>
+                <ul class="card__list--second">
+                    <li class="card__list-item--lot">
+                        <div>
+                            <label>LOT:</label>
+                            <p data-copy>30874242</p>
+                        </div>
+                    </li>
+                    <li class="card__list-item--vin">
+                        <div>
+                            <label>VIN:</label>
+                            <p data-copy>1FALP6536WK134349</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <label>Mileage</label>
+                            <p>198,239</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <label>Location</label>
+                            <p>SC - Columbia</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <label>Damage</label>
+                            <p>front end</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <label>Doc. Type</label>
+                            <p>Clean Title</p>
+                        </div>
+                    </li>
+                    <li class="card__list-item--bid">
+                        <div>
+                            <label>Current Bid</label>
+                            <p class="text-primary"><strong>$@@currentPrice</strong></p>
+                        </div>
+                    </li>
+                    @@if(nowPrice !== false) {
+                        <li class="card__list-item--buy">
+                            <div>
+                                <label>Buy it Now</label>
+                                <p class="text-danger"><strong>$@@nowPrice</strong></p>
+                            </div>
+                        </li>
+                    }
+                </ul>
             </div>
         </div>
-        <div class="card__row-3">
-            <ul class="card__list">
+        <div class="card__col-2">
+            <!-- <ul class="card__list-mob">
                 <li>
-                    <img class="img-svg" src="img/photo/card-icon-1.svg" alt="">
-                    <div>
-                        <label>Mileage</label>
-                        <p>198,239</p>
-                    </div>
+                    <label>Dual, Side</label>
+                    <p>Hard Roof Top</p>
                 </li>
                 <li>
-                    <img class="img-svg" src="img/photo/card-icon-2.svg" alt="">
-                    <div>
-                        <label>Damage</label>
-                        <p>front end</p>
-                    </div>
+                    <label>Cloth</label>
+                    <p>FM Radio</p>
                 </li>
                 <li>
-                    <img class="img-svg" src="img/photo/card-icon-3.svg" alt="">
-                    <div>
-                        <label>Location</label>
-                        <p>SC - Columbia</p>
-                    </div>
+                    <label>Current Bid</label>
+                    <p class="text-primary"><strong>$@@currentPrice</strong></p>
                 </li>
-                <li>
-                    <img class="img-svg" src="img/photo/card-icon-4.svg" alt="">
-                    <div>
-                        <label>Doc. Type</label>
-                        <p>Clean Title</p>
-                    </div>
-                </li>
-            </ul>
-            <ul class="card__list--second">
-                <li>
-                    <div>
-                        <label>Mileage</label>
-                        <p>198,239</p>
-                    </div>
-                </li>
-                <li>
-                    <div>
-                        <label>Damage</label>
-                        <p>front end</p>
-                    </div>
-                </li>
-                <li>
-                    <div>
-                        <label>Location</label>
-                        <p>SC - Columbia</p>
-                    </div>
-                </li>
-                <li>
-                    <div>
-                        <label>Sale Date</label>
-                        <p>06/13/2022</p>
-                    </div>
-                </li>
-                <li>
-                    <div>
-                        <label>Doc. Type</label>
-                        <p>Clean Title</p>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div class="card__col-3">
-        <ul class="card__list-mob">
-            <li>
-                <label>Dual, Side</label>
-                <p>Hard Roof Top</p>
-            </li>
-            <li>
-                <label>Cloth</label>
-                <p>FM Radio</p>
-            </li>
-            <li>
-                <label>Current Bid</label>
-                <p class="text-primary"><strong>$@@currentPrice</strong></p>
-            </li>
-            @@if(nowPrice !== false) {
+                @@if(nowPrice !== false) {
                 <li>
                     <label>Buy in Now</label>
                     <p class="text-success"><strong>$@@nowPrice</strong></p>
                 </li>
-            }
-        </ul>
-        <div class="card__box ">
-            <div class="card__box-border-1" data-border-dashed="top-left"></div>
-            <div class="card__box-border-2" data-border-dashed="top-left-top"></div>
-            <div class="card__box-body">
-                <ul class="card__state-icons">
-                    <li>
-                        <div class="card__rating" data-car-rating="@@rating">@@rating</div>
-                        <div class="card__state-tooltipe">
-                            <h5 style="color: #5BC749;">Rating 4.8</h5>
-                            <p>Rating collected by our managers</p>
-                        </div>
-                    </li>
-                    @@for (var i = 0; i < icons.length; i++) { 
+                }
+            </ul> -->
+            <div class="card__box ">
+                <div class="card__box-body">
+                    <ul class="card__state-icons">
                         <li>
+                            <div class="card__rating" data-car-rating="@@rating">@@rating</div>
+                            <div class="card__state-tooltipe">
+                                <h5>Rating @@rating</h5>
+                                <p>Rating collected by our managers</p>
+                            </div>
+                        </li>
+                        @@for (var i = 0; i < icons.length; i++) { <li>
                             <div class="card__state-icon" style="background-color: `+icons[i].color+`;">
                                 <img src="`+icons[i].icon+`" alt="">
                             </div>
                             <div class="card__state-tooltipe">
                                 <h5 style="color: `+icons[i].color+`;">Clean Title</h5>
-                                <p>The car has clean documents. This means that the car is allowed to move in the USA.</p>
+                                <p>The car has clean documents. This means that the car is allowed to move in the USA.
+                                </p>
                             </div>
+                            </li>
+                            }
+                    </ul>
+                    <ul class="card__prices">
+                        <li>
+                            <label>Current Bid</label>
+                            <p class="text-primary">$@@currentPrice</p>
                         </li>
-                    }
-                </ul>
-                <ul class="card__prices">
-                    <li>
-                        <label>Current Bid</label>
-                        <p class="text-primary">$@@currentPrice</p>
-                    </li>
-                    @@if(nowPrice !== false) {
+                        @@if(nowPrice !== false) {
                         <li>
                             <label>Buy it Now</label>
-                            <p class="text-success">$@@nowPrice</p>
+                            <p class="text-danger">$@@nowPrice</p>
                         </li>
-                    }
-                </ul>
-                <button class="card__bid-now btn-default" type="button">
-                    <img class="img-svg" src="img/icons/bid-now.svg" alt="">
-                    Bid Now
-                </button>
-                <div class="card__time">
-                    <img class="img-svg" src="img/icons/clock.svg" alt="">
-                    5 hr. 18 min.
+                        }
+                    </ul>
+                    <button class="card__bid-now btn-default" type="button">
+                        Bid Now
+                        <img class="img-svg" src="img/icons/bid-now.svg" alt="">
+                    </button>
+                    <div class="card__time">
+                        <img class="img-svg" src="img/icons/clock.svg" alt="">
+                        5 hr. 18 min.
+                    </div>
+                    <button type="button" class="card__star">
+                        <!-- class="card__star active" -->
+                        <img class="img-svg" src="img/icons/star.svg" alt="">
+                    </button>
                 </div>
-                <button type="button" class="card__star"> 
-                    <!-- class="card__star active" -->
-                    <img class="img-svg" src="img/icons/star-grey.svg" alt="">
-                </button>
             </div>
         </div>
     </div>

@@ -24,15 +24,20 @@ if (cardSliders.length) {
 let ratings = document.querySelectorAll('[data-car-rating]');
 if (ratings.length) {
     ratings.forEach(rating => {
+        let tooltipTitle = rating.closest('li').querySelector('.card__state-tooltipe h5');
         let value = +rating.dataset.carRating;
         if (value >= 4) {
-            rating.style.background = '#5BC749';
+            rating.style.background = '#3ECF5C';
+            if(tooltipTitle) tooltipTitle.style.color = '#3ECF5C';
         } else if (value >= 3) {
-            rating.style.background = '#DDAB3A';
+            rating.style.background = '#E3BD15';
+            if(tooltipTitle) tooltipTitle.style.color = '#E3BD15';
         } else if (value >= 2) {
-            rating.style.background = '#C77149';
+            rating.style.background = '#CFA93E';
+            if(tooltipTitle) tooltipTitle.style.color = '#CFA93E';
         } else {
-            rating.style.background = '#c92306';
+            rating.style.background = '#E3433A';
+            if(tooltipTitle) tooltipTitle.style.color = '#E3433A';
         }
     })
 }
@@ -56,8 +61,6 @@ if (btnSetList && btnSetGrid) {
         if (list) {
             list.classList.add('main-search__list--grid')
         }
-
-        window.borderDashed.update();
     }
 
     btnSetList.addEventListener('click', (e) => {

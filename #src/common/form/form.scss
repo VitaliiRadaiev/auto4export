@@ -432,7 +432,6 @@
         padding: 10px 20px;
         font-size: 14px;
         line-height: 16px;
-        border-radius: 16px;
     }
 
     &.completed ~ .password-icon {
@@ -768,13 +767,13 @@
     }
 
     &__text {
-        font-weight: 400;
+        font-weight: 500;
         font-size: 1.6rem;
         line-height: 1.25em;
 
         @media (max-width: $md3+px) {
-            font-size: 13px;
-            line-height: 14px;
+            font-size: 14px;
+            line-height: 20px;
         }
 
         &--sm {
