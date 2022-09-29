@@ -36,11 +36,11 @@
                         <div class="hipping-calculator__col-1">
                             <div class="form">
                                 <div class="form__items">
-                                    <div class="form__item form__item--half">
+                                    <div class="form__item form__item--half-md">
                                         <label class="form__label">Vehicle Information</label>
                                         <input class="input" type="text" placeholder="Enter VIN/Lot Number">
                                     </div>
-                                    <div class="form__item form__item--half">
+                                    <div class="form__item form__item--half-md">
                                         <label class="form__label">Vehicle Type</label>
                                         <input class="input inactive text-primary" type="text" placeholder="" data-id="vehicleTypeInput">
                                         <div class="select-wrap d-none" data-id="vehicleTypeSelect">
@@ -56,7 +56,7 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="form__item form__item--half">
+                                    <div class="form__item form__item--half-md">
                                         <label class="form__label">Ship From</label>
                                         <input class="input" type="text" placeholder="Enter ZIP Code"
                                             data-input-action
@@ -65,11 +65,11 @@
                                             data-set-element-as-active-by-id="shipTo"
                                         >
                                     </div>
-                                    <div class="form__item form__item--half">
+                                    <div class="form__item form__item--half-md">
                                         <label class="form__label">From Port</label>
                                         <input class="input inactive" type="text" placeholder="" data-id="fromPort">
                                     </div>
-                                    <div class="form__item form__item--half">
+                                    <div class="form__item form__item--half-md">
                                         <label class="form__label">Ship To</label>
                                         <div class="select-wrap">
                                             <select name="" class="_select inactive" data-id="shipTo">
@@ -79,7 +79,7 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="form__item form__item--half" data-id="toPort">
+                                    <div class="form__item form__item--half-md" data-id="toPort">
                                         <label class="form__label">To Port</label>
                                         <div class="select-wrap">
                                             <select name="" class="_select inactive">
@@ -89,7 +89,7 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="form__item form__item--half d-none" data-id="town">
+                                    <div class="form__item form__item--half-md d-none" data-id="town">
                                         <label class="form__label">Town</label>
                                         <div class="select-wrap">
                                             <select name="" class="_select">
@@ -127,7 +127,6 @@
                         </div>
                         <div class="hipping-calculator__col-2">
                             <div class="hipping-price">
-                                <div class="hipping-price__border" data-border-dashed="top-left"></div>
                                 <div class="hipping-price__body">
                                     <div class="hipping-price__head">
                                         <div class="hipping-price__icon">
@@ -142,27 +141,24 @@
                                         <ul class="simple-table-list">
                                             <li>
                                                 <label>Ocean Rate</label>
-                                                <p>0</p>
+                                                <p class="text-secondary"><strong>$0</strong></p>
                                             </li>
                                             <li>
                                                 <label>Ground Rate</label>
-                                                <p>0</p>
+                                                <p class="text-secondary"><strong>$0</strong></p>
                                             </li>
                                         </ul>
                                     </div>
                                     <div class="hipping-price__total">
                                         <label>Total</label>
-                                        <p>0</p>
+                                        <p class="text-primary">$0</p>
                                     </div>
-                                    <!-- <div class="hipping-price__path">
-
-                                    </div> -->
+                                    <button type="submit" class="hipping-price__submit btn-default inactive">
+                                        Calculate
+                                        <img class="img-svg" src="img/icons/calculator.svg" alt="">
+                                    </button>
                                 </div>
                             </div>
-                            <button type="submit" class="hipping-calculator__submit btn-default inactive">
-                                <img class="img-svg" src="img/icons/calculator.svg" alt="">
-                                Calculate
-                            </button>
                         </div>
                     </div>
                 </div>
@@ -170,40 +166,7 @@
         </div>
 
         <div class="padding-wrap pb-0">
-            <section class="question">
-                <div class="question__bg">
-                    <picture>
-                        <source srcset="img/photo/guestion-bg-desk.jpg" media="(min-width: 992px)">
-                        <source srcset="img/photo/guestion-bg-tablet.jpg" media="(min-width: 768px)">
-                        <img src="img/photo/guestion-bg-mob.jpg" alt="img">
-                    </picture>
-                </div>
-                <div class="question__body container">
-                    <div class="question__head">
-                        <h2 class="question__title">Do You Have Any Questions? </h2>
-                        <div class="question__label">
-                            <img src="img/photo/question-icon.svg" alt="">
-                            Leave a request to contact a manager!
-                        </div>
-                    </div>
-                    <form action="#">
-                        <div class="question__form">
-                            <div class="question__form-item question__form-item-1">
-                                <input type="text" class="input" placeholder="Your Name">
-                            </div>
-                            <div class="question__form-item question__form-item-2" data-mask="9{*}">
-                                <input type="text" class="input" placeholder="Your Phone Number">
-                            </div>
-                            <div class="question__form-item question__form-item-3">
-                                <button type="submit" class="question__submit btn-default">
-                                    <i class="icon-arrow-right"></i>
-                                    Send
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </section>
+            @@include('common/question/_question.html')
         </div>
     </main>
 

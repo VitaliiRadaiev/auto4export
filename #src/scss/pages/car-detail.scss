@@ -206,11 +206,11 @@
             background-color: #fff;
 
             & strong {
-                font-weight: 700;
+                font-weight: 500;
 
                 @media (min-width: 768px) {
-                    font-size: 1.6rem;
-                    line-height: 1.1875em;
+                    font-size: 1.8rem;
+                    line-height: 2.1rem;
                 }
             }
         }

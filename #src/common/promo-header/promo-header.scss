@@ -116,6 +116,12 @@
             }
         }
 
+        & .swiper-wrapper {
+            @media (max-width: $md3+px) {
+                margin-bottom: 20px;
+            }
+        }
+
         & .swiper-pagination {
             @media (min-width: 768px) {
                 display: none;
@@ -236,6 +242,11 @@
                 background-color: #fff;
                 position: relative;
                 z-index: 2;
+            }
+            & .select__value {
+                &::before {
+                    right: 2rem;
+                }
             }
             & .select__options {
                 z-index: 1;

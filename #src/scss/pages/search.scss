@@ -142,6 +142,16 @@
                 height: 38px;
             }
 
+            & .select__value {
+                &::before {
+                    right: 1.2rem;
+
+                    @media (max-width: $md3+px) {
+                        right: 9px;
+                    }
+                }
+            }
+
             &._active {
                 & .select__item {
                     border-color: transparent;

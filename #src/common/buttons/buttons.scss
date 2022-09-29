@@ -83,9 +83,10 @@
     }
 
     &.inactive {
-        background-color: #f9f9f9 !important;
+        background-color: #fff !important;
         color: $textColorSecondary !important;
         pointer-events: none;
+        font-weight: 500;
     }
 
     & i {
