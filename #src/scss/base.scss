@@ -850,6 +850,29 @@ hr {
 	}
 }
 
+.mb-30 {
+	margin-bottom: 3rem !important;
+
+	@media (max-width: $md3+px) {
+		margin-bottom: 2rem !important;
+	}
+}
+
+.mt-30 {
+	margin-top: 3rem !important;
+
+	@media (max-width: $md3+px) {
+		margin-top: 2rem !important;
+	}
+}
+.mb-20 {
+	margin-bottom: 2rem !important;
+}
+
+.mt-20 {
+	margin-top: 2rem !important;
+}
+
 .list-col-2 {
 	display: flex;
 	gap: 5rem;

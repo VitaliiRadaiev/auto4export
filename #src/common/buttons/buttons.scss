@@ -152,22 +152,22 @@
         }
     }
 
-    // &--second {
-    //     background-color: $successColor;
+    &--second {
+        background-color: $successColor;
 
-    //     @media (min-width: 992px) {
-    //         &:hover {
-    //             background-color: #4da63e;
-    //         }
-    //     }
-    // }
-    // &--third {
-    //     background-color: $secondColor;
+        @media (min-width: 992px) {
+            &:hover {
+                background-color: #4da63e;
+            }
+        }
+    }
+    &--third {
+        background-color: $dangerColor;
 
-    //     @media (min-width: 992px) {
-    //         &:hover {
-    //             background-color: #082f44;
-    //         }
-    //     }
-    // }
+        @media (min-width: 992px) {
+            &:hover {
+                background-color: #A83A2C;
+            }
+        }
+    }
 }

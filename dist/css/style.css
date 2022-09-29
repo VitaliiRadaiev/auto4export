@@ -5690,6 +5690,22 @@ hr {
   padding-top: 7rem;
 }
 
+.mb-30 {
+  margin-bottom: 3rem !important;
+}
+
+.mt-30 {
+  margin-top: 3rem !important;
+}
+
+.mb-20 {
+  margin-bottom: 2rem !important;
+}
+
+.mt-20 {
+  margin-top: 2rem !important;
+}
+
 .list-col-2 {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -8341,6 +8357,14 @@ ul.list-with-icons span {
   color: #989898;
 }
 
+.btn-default--second {
+  background-color: #3ECF5C;
+}
+
+.btn-default--third {
+  background-color: #E3433A;
+}
+
 .promo-header {
   position: relative;
 }
@@ -9162,6 +9186,7 @@ ul.list-with-icons span {
 }
 
 .card__star {
+  font-size: 1rem;
   padding: 0.5rem;
   position: absolute;
   z-index: 4;
@@ -9194,12 +9219,12 @@ ul.list-with-icons span {
           transform: translate(-50%, -50%);
   z-index: 3;
   color: #fff;
-  font-size: 0.6rem;
+  font-size: 0.6em;
 }
 
 .card__star img,
 .card__star svg {
-  width: 2rem;
+  width: 2em;
   height: auto;
 }
 
@@ -9758,10 +9783,10 @@ ul.list-with-icons span {
 }
 
 .form__title-sm {
-  font-weight: 700;
-  font-size: 1.6rem;
-  line-height: 1.12em;
-  margin-bottom: 2rem;
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+  margin-bottom: 1.6rem;
 }
 
 .form__items {
@@ -10252,7 +10277,7 @@ ul.list-with-icons span {
           align-items: center;
   width: 100%;
   background: #fff;
-  border-radius: 1rem;
+  border-radius: 2.4rem;
   height: 19rem;
   padding: 2.2rem 3rem;
   border: none;
@@ -13117,25 +13142,38 @@ ul.list-with-icons span {
           align-items: center;
   font-size: 1.6rem;
   line-height: 1.1875em;
-  padding-right: 1.5rem;
+  padding-right: 2.5rem;
   cursor: pointer;
 }
 
 .auction-history__head:before {
   font-family: "icomoon" !important;
   position: absolute;
-  content: "\e93f";
+  content: "\e940";
+  -webkit-transition: background-color, border-color 0.3s ease 0s;
+  -o-transition: background-color, border-color 0.3s ease 0s;
+  transition: background-color, border-color 0.3s ease 0s;
   top: 50%;
   -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  right: 0;
-  -webkit-transition: -webkit-transform 0.3s ease;
-  transition: -webkit-transform 0.3s ease;
-  -o-transition: transform 0.3s ease;
-  transition: transform 0.3s ease;
-  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 0rem;
   font-size: 0.6rem;
+  padding-top: 0.2rem;
+  color: #3E73CF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 2.4rem;
+  width: 2.4rem;
+  border-radius: 50%;
+  background-color: #fff;
 }
 
 .auction-history__head img,
@@ -13154,27 +13192,18 @@ ul.list-with-icons span {
 
 .auction-history__list {
   padding-left: 0;
-  margin-bottom: 0;
+  margin-bottom: 1rem;
   padding-top: 2rem;
 }
 
-.auction-history__list > li:not(:last-child) {
-  padding-bottom: 2rem;
-  margin-bottom: 2rem;
-  position: relative;
+.auction-history__list > li {
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 1rem;
 }
 
-.auction-history__list > li:not(:last-child):before {
-  position: absolute;
-  content: "";
-  bottom: 0;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
-  height: 1px;
-  width: calc(100% + 6rem);
-  background-color: #e8dcdc;
+.auction-history__list > li:not(:last-child) {
+  margin-bottom: 1rem;
 }
 
 .auction-history--open .auction-history__head {
@@ -13182,6 +13211,8 @@ ul.list-with-icons span {
 }
 
 .auction-history--open .auction-history__head::before {
+  background-color: #E3433A;
+  color: #fff;
   -webkit-transform: translateY(-50%) scale(1, -1);
       -ms-transform: translateY(-50%) scale(1, -1);
           transform: translateY(-50%) scale(1, -1);
@@ -13198,8 +13229,8 @@ ul.list-with-icons span {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
-  width: 6rem;
-  height: 4.4rem;
+  width: 8.2rem;
+  height: 6rem;
   overflow: hidden;
 }
 
@@ -13214,7 +13245,7 @@ ul.list-with-icons span {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  gap: 1.4rem;
+  gap: 1.2rem 1.2rem;
   font-size: 1.4rem;
   line-height: 1.21em;
 }
@@ -13233,6 +13264,8 @@ ul.list-with-icons span {
 
 .auction-history-card__list p {
   margin-bottom: 0;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
 }
 
 .big-image-popup {
@@ -15192,7 +15225,6 @@ form.dropzone > .dz-preview {
           box-shadow: 0px 12px 24px rgba(51, 51, 51, 0.2);
   padding: 2rem;
   width: 100%;
-  max-width: 22rem;
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -15206,6 +15238,24 @@ form.dropzone > .dz-preview {
 
 .fee__list .simple-table-list p {
   font-weight: 700;
+}
+
+.fee__total {
+  padding-top: 2rem;
+  border-top: 1px solid #DBDBDB;
+  background: none !important;
+}
+
+.fee__total label {
+  font-size: 1.8rem;
+  line-height: 1em;
+  color: #191919 !important;
+}
+
+.fee__total p {
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 2.3rem;
 }
 
 .vehicle-type__list {
@@ -16496,6 +16546,7 @@ form.dropzone > .dz-preview {
   -webkit-transform: translate(0);
       -ms-transform: translate(0);
           transform: translate(0);
+  font-size: 1.5rem;
 }
 
 .car-detail-grid {
@@ -16528,6 +16579,11 @@ form.dropzone > .dz-preview {
 .car-detail-grid__col-3 > *:not(:last-child),
 .car-detail-grid__col-3 div[data-da] > *:not(:last-child) {
   margin-bottom: 2rem;
+}
+
+.car-detail-grid__col-3 > *:first-child {
+  position: relative;
+  z-index: 3;
 }
 
 .car-detail-grid__tables-wrap .car-detail-grid__title {
@@ -16643,6 +16699,10 @@ form.dropzone > .dz-preview {
   padding: 1.5rem 2rem 1.5rem 2rem;
 }
 
+.info-box--unauthorized .info-box__text {
+  padding-right: 1.8rem;
+}
+
 .info-box--unauthorized .info-box__img svg {
   color: #E3433A;
 }
@@ -16733,8 +16793,9 @@ form.dropzone > .dz-preview {
 }
 
 .warning-box__text.text-content {
-  font-size: 1.6rem;
-  line-height: 1.1875em;
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 2.1rem;
 }
 
 .buy-now__price {
@@ -16751,12 +16812,12 @@ form.dropzone > .dz-preview {
 }
 
 .buy-now__price label {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   line-height: 1.12em;
 }
 
 .buy-now__price p {
-  font-weight: 700;
+  font-weight: 500;
   font-size: 2rem;
   line-height: 1.2em;
   margin-bottom: 0;
@@ -16779,6 +16840,8 @@ form.dropzone > .dz-preview {
 
 .set-alert {
   position: relative;
+  border: 1px solid #E3433A;
+  border-radius: 1rem;
 }
 
 .set-alert__border {
@@ -16794,18 +16857,29 @@ form.dropzone > .dz-preview {
   stroke: #E3433A;
 }
 
+.set-alert__head {
+  background: #FFF5F5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2.6rem 3rem;
+  border-radius: 1rem 1rem 0 0;
+}
+
 .set-alert__body {
   position: relative;
   z-index: 2;
-  padding: 4rem;
+  padding: 3rem;
 }
 
 .set-alert__title {
   color: #E3433A;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 2rem;
   line-height: 1.2em;
-  margin-bottom: 2rem;
 }
 
 .set-alert__text {
@@ -16813,9 +16887,8 @@ form.dropzone > .dz-preview {
 }
 
 .set-alert__text.text-content {
-  font-size: 1.4rem;
-  line-height: 1.43em;
-  color: #989898;
+  font-size: 1.6rem;
+  line-height: 2.8rem;
 }
 
 .set-alert__text.text-content > *:last-child {
@@ -16823,8 +16896,8 @@ form.dropzone > .dz-preview {
 }
 
 .set-alert .input {
-  height: 4.8rem;
-  font-size: 1.6rem;
+  height: 5rem;
+  font-size: 1.8rem;
   line-height: 1.1875em;
   padding: 1rem 2rem;
 }
@@ -16838,21 +16911,17 @@ form.dropzone > .dz-preview {
 }
 
 .set-alert .select {
-  height: 4.8rem;
+  height: 5rem;
 }
 
 .set-alert .select .select__value {
-  min-height: 4.8rem;
+  min-height: 5rem;
   padding: 0.5rem 3rem 0.5rem 2rem;
 }
 
 .set-alert .select .select__value span {
-  font-size: 1.6rem;
-  line-height: 1.1875em;
-}
-
-.set-alert .select .select__value::before {
-  font-size: 6px;
+  font-size: 1.8rem;
+  line-height: 2.1rem;
 }
 
 .set-alert .select .select__options {
@@ -16863,6 +16932,8 @@ form.dropzone > .dz-preview {
 
 .won-box {
   position: relative;
+  border-radius: 1rem;
+  background-color: #3E73CF;
 }
 
 .won-box__border {
@@ -16881,9 +16952,9 @@ form.dropzone > .dz-preview {
 
 .won-box__img {
   position: absolute;
-  top: 0;
-  right: 0;
-  height: 100%;
+  top: 50%;
+  right: 2rem;
+  height: 9.3rem;
   z-index: 2;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -16891,39 +16962,36 @@ form.dropzone > .dz-preview {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  overflow: hidden;
-  border-radius: 0 1rem 4rem 0;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 16px;
 }
 
 .won-box__img img {
-  height: 96%;
+  height: 100%;
   width: auto;
-  -webkit-transform: translateX(39%);
-      -ms-transform: translateX(39%);
-          transform: translateX(39%);
 }
 
 .won-box__body {
   position: relative;
   z-index: 3;
-  padding: 4rem;
+  padding: 3rem 3rem 3rem;
+  color: #fff;
+  min-height: 11.5rem;
 }
 
 .won-box__title {
-  font-weight: 700;
+  font-weight: 500;
   font-size: 2rem;
   line-height: 1.2em;
-  max-width: 18.8rem;
-  margin-bottom: 2rem;
+  max-width: 18.7rem;
+  margin-bottom: 1.8rem;
 }
 
 .won-box__text {
   font-size: 1.6rem;
-  line-height: 1.12em;
-}
-
-.won-box__text a {
-  color: #3E73CF;
+  line-height: 1.9rem;
 }
 
 .contact-box__form {
@@ -16940,7 +17008,7 @@ form.dropzone > .dz-preview {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 1.4rem 3rem;
+  gap: 1.5rem 3rem;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -16950,10 +17018,35 @@ form.dropzone > .dz-preview {
 }
 
 .contact-box .input {
-  height: 4.8rem;
-  font-size: 1.6rem;
-  line-height: 1.1875em;
+  height: 5rem;
+  font-size: 1.8rem;
+  line-height: 2.1rem;
   padding: 1rem 2rem;
+}
+
+.contact-box .input::-webkit-input-placeholder {
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+}
+
+.contact-box .input::-moz-placeholder {
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+}
+
+.contact-box .input:-ms-input-placeholder {
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+}
+
+.contact-box .input::-ms-input-placeholder {
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+}
+
+.contact-box .input::placeholder {
+  font-size: 1.8rem;
+  line-height: 2.1rem;
 }
 
 .contact-box .iti .input {
@@ -16989,10 +17082,36 @@ form.dropzone > .dz-preview {
 }
 
 .contact-box .textarea {
-  height: 9rem;
+  height: 10rem;
   padding: 1.4rem 2rem;
-  font-size: 1.6rem;
-  line-height: 1.1875em;
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+  padding: 1rem 2rem;
+}
+
+.contact-box .textarea::-webkit-input-placeholder {
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+}
+
+.contact-box .textarea::-moz-placeholder {
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+}
+
+.contact-box .textarea:-ms-input-placeholder {
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+}
+
+.contact-box .textarea::-ms-input-placeholder {
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+}
+
+.contact-box .textarea::placeholder {
+  font-size: 1.8rem;
+  line-height: 2.1rem;
 }
 
 .hipping-calculator-head {
@@ -19444,6 +19563,14 @@ form.dropzone > .dz-preview {
     color: #989898;
   }
 
+  .btn-default--second:hover {
+    background-color: #4da63e;
+  }
+
+  .btn-default--third:hover {
+    background-color: #A83A2C;
+  }
+
   .promo-header__advantages .swiper-wrapper {
     gap: 7rem;
   }
@@ -21753,6 +21880,14 @@ form.dropzone > .dz-preview {
     padding-top: 3rem;
   }
 
+  .mb-30 {
+    margin-bottom: 2rem !important;
+  }
+
+  .mt-30 {
+    margin-top: 2rem !important;
+  }
+
   .list-col-2 {
     gap: 24px;
   }
@@ -22821,7 +22956,7 @@ form.dropzone > .dz-preview {
 
   .card__star img,
   .card__star svg {
-    width: 18px;
+    width: 1.8em;
   }
 
   .card__star:active {
@@ -23039,7 +23174,7 @@ form.dropzone > .dz-preview {
 
   .form__title-sm {
     font-size: 14px;
-    line-height: 17px;
+    line-height: 16px;
     margin-bottom: 14px;
   }
 
@@ -23201,7 +23336,7 @@ form.dropzone > .dz-preview {
     padding: 10px 20px;
     font-size: 14px;
     line-height: 17px;
-    border-radius: 6px;
+    border-radius: 20px;
   }
 
   .checkbox-radio__square {
@@ -23929,6 +24064,12 @@ form.dropzone > .dz-preview {
     line-height: 17px;
   }
 
+  .auction-history__head:before {
+    width: 20px;
+    height: 20px;
+    font-size: 0.5rem;
+  }
+
   .auction-history__head img,
   .auction-history__head svg {
     width: 18px;
@@ -23936,30 +24077,31 @@ form.dropzone > .dz-preview {
 
   .auction-history__list {
     padding-top: 14px;
+    margin-bottom: 1px;
   }
 
-  .auction-history__list > li:not(:last-child) {
-    padding-bottom: 14px;
-    margin-bottom: 14px;
+  .auction-history__list > li {
+    padding: 16px;
   }
 
-  .auction-history__list > li:not(:last-child):before {
-    width: calc(100% + 40px);
+  .auction-history-card {
+    gap: 14px;
   }
 
   .auction-history-card__img {
-    width: 40px;
-    height: 30px;
+    width: 50px;
+    height: 38px;
   }
 
   .auction-history-card__list {
     gap: 10px;
     font-size: 13px;
-    line-height: 16px;
+    line-height: 15px;
   }
 
-  .auction-history-card__list label {
-    margin-bottom: 2px;
+  .auction-history-card__list p {
+    font-size: 13px;
+    line-height: 16px;
   }
 
   .big-image-popup__img {
@@ -24418,6 +24560,16 @@ form.dropzone > .dz-preview {
   .fee__title {
     font-size: 14px;
     line-height: 16px;
+  }
+
+  .fee__total label {
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  .fee__total p {
+    font-size: 16px;
+    line-height: 19px;
   }
 
   .vehicle-type__list {
@@ -24977,6 +25129,10 @@ form.dropzone > .dz-preview {
     gap: 12px;
   }
 
+  .card-detail-head .card__star {
+    font-size: 1rem;
+  }
+
   .car-detail-grid__col-1 {
     margin-bottom: 20px;
   }
@@ -25091,7 +25247,7 @@ form.dropzone > .dz-preview {
 
   .warning-box__text.text-content {
     font-size: 14px;
-    line-height: 17px;
+    line-height: 16px;
   }
 
   .buy-now__price {
@@ -25100,12 +25256,16 @@ form.dropzone > .dz-preview {
 
   .buy-now__price label {
     font-size: 14px;
-    line-height: 17px;
+    line-height: 16px;
   }
 
   .buy-now__price p {
     font-size: 16px;
     line-height: 19px;
+  }
+
+  .set-alert__head {
+    padding: 18px 20px;
   }
 
   .set-alert__body {
@@ -25115,7 +25275,6 @@ form.dropzone > .dz-preview {
   .set-alert__title {
     font-size: 16px;
     line-height: 19px;
-    margin-bottom: 14px;
   }
 
   .set-alert__text {
@@ -25123,12 +25282,12 @@ form.dropzone > .dz-preview {
   }
 
   .set-alert__text.text-content {
-    font-size: 13px;
-    line-height: 18px;
+    font-size: 14px;
+    line-height: 26px;
   }
 
   .set-alert .input {
-    height: 38px;
+    height: 46px;
     font-size: 14px;
     line-height: 17px;
   }
@@ -25138,16 +25297,16 @@ form.dropzone > .dz-preview {
   }
 
   .set-alert .select {
-    height: 38px;
+    height: 46px;
   }
 
   .set-alert .select .select__value {
-    min-height: 38px;
+    min-height: 46px;
   }
 
   .set-alert .select .select__value span {
-    font-size: 14px;
-    line-height: 17px;
+    font-size: 15px;
+    line-height: 18px;
   }
 
   .set-alert .select .select__options {
@@ -25160,20 +25319,25 @@ form.dropzone > .dz-preview {
     stroke-dasharray: 0.1 8 !important;
   }
 
+  .won-box__img {
+    height: 60px;
+  }
+
   .won-box__body {
     padding: 20px;
+    min-height: 98px;
   }
 
   .won-box__title {
     font-size: 16px;
     line-height: 19px;
-    max-width: 150px;
+    max-width: 149px;
     margin-bottom: 10px;
   }
 
   .won-box__text {
     font-size: 14px;
-    line-height: 17px;
+    line-height: 16px;
   }
 
   .contact-box__form {
@@ -25182,7 +25346,7 @@ form.dropzone > .dz-preview {
 
   .contact-box__info > p {
     font-size: 14px;
-    line-height: 17px;
+    line-height: 16px;
     margin-bottom: 10px;
   }
 
@@ -25196,7 +25360,32 @@ form.dropzone > .dz-preview {
   }
 
   .contact-box .input {
-    height: 38px;
+    height: 46px;
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .contact-box .input::-webkit-input-placeholder {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .contact-box .input::-moz-placeholder {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .contact-box .input:-ms-input-placeholder {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .contact-box .input::-ms-input-placeholder {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .contact-box .input::placeholder {
     font-size: 14px;
     line-height: 17px;
   }
@@ -25225,10 +25414,34 @@ form.dropzone > .dz-preview {
   }
 
   .contact-box .textarea {
-    height: 8rem;
+    height: 86px;
     font-size: 14px;
     line-height: 17px;
-    padding: 11px 20px;
+  }
+
+  .contact-box .textarea::-webkit-input-placeholder {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .contact-box .textarea::-moz-placeholder {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .contact-box .textarea:-ms-input-placeholder {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .contact-box .textarea::-ms-input-placeholder {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .contact-box .textarea::placeholder {
+    font-size: 14px;
+    line-height: 17px;
   }
 
   .hipping-calculator-head {
@@ -26168,12 +26381,6 @@ form.dropzone > .dz-preview {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 calc(50% - 10px);
             flex: 0 1 calc(50% - 10px);
-  }
-
-  .won-box__img img {
-    -webkit-transform: translate(0);
-        -ms-transform: translate(0);
-            transform: translate(0);
   }
 
   .contact-card__head {

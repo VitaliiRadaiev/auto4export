@@ -12,7 +12,7 @@
         align-items: center;
         font-size: 1.6rem;
         line-height: 1.1875em;
-        padding-right: 1.5rem;
+        padding-right: 2.5rem;
         cursor: pointer;
 
         @media (max-width: $md3+px) {
@@ -23,18 +23,27 @@
         &:before {
             font-family: "icomoon" !important;
             position: absolute;
-            content: "\e93f";
+            content: "\e940";
+            transition: background-color, border-color 0.3s ease 0s;
             top: 50%;
-            -webkit-transform: translateY(-50%);
-            -ms-transform: translateY(-50%);
             transform: translateY(-50%);
-            right: 0;
-            -webkit-transition: -webkit-transform 0.3s ease;
-            transition: -webkit-transform 0.3s ease;
-            -o-transition: transform 0.3s ease;
-            transition: transform 0.3s ease;
-            transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+            right: 0rem;
             font-size: 0.6rem;
+            padding-top: 0.2rem;
+            color: $mainColor;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 2.4rem;
+            width: 2.4rem;
+            border-radius: 50%;
+            background-color: #fff;
+
+            @media (max-width: $md3+px) {
+                width: 20px;
+                height: 20px;
+                font-size: 0.5rem;
+            }
         }
 
         & img,
@@ -54,37 +63,27 @@
     }
     &__list {
         padding-left: 0;
-        margin-bottom: 0;
+        margin-bottom: 1rem;
         padding-top: 2rem;
 
         @media (max-width: $md3+px) {
             padding-top: 14px;
+            margin-bottom: 1px;
         }
 
         & > li {
+            padding: 2rem;
+            background-color: #fff;
+            border-radius: 1rem;
+
+            @media (max-width: $md3+px) {
+                padding: 16px;
+            }
+
             &:not(:last-child) {
-                padding-bottom: 2rem;
-                margin-bottom: 2rem;
-                position: relative;
+                margin-bottom: 1rem;
 
                 @media (max-width: $md3+px) {
-                    padding-bottom: 14px;
-                    margin-bottom: 14px;
-                }
-
-                &:before {
-                    position: absolute;
-                    content: "";
-                    bottom: 0;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    height: 1px;
-                    width: calc(100% + 6rem);
-                    background-color: #e8dcdc;
-
-                    @media (max-width: $md3+px) {
-                        width: calc(100% + 40px);
-                    }
                 }
             }
         }
@@ -95,6 +94,8 @@
             color: $dangerColor;
 
             &::before {
+                background-color: $dangerColor;
+                color: #fff;
                 transform: translateY(-50%) scale(1, -1);
             }
         }
@@ -105,15 +106,19 @@
     display: flex;
     gap: 1.6rem;
 
+    @media (max-width: $md3+px) {
+        gap: 14px;
+    }
+
     &__img {
         flex: 0 0 auto;
-        width: 6rem;
-        height: 4.4rem;
+        width: 8.2rem;
+        height: 6rem;
         overflow: hidden;
 
         @media (max-width: $md3+px) {
-            width: 40px;
-            height: 30px;
+            width: 50px;
+            height: 38px;
         }
     }
 
@@ -123,14 +128,14 @@
         margin-bottom: 0;
         display: flex;
         flex-wrap: wrap;
-        gap: 1.4rem;
+        gap: 1.2rem 1.2rem;
         font-size: 1.4rem;
         line-height: 1.21em;
 
         @media (max-width: $md3+px) {
             gap: 10px;
             font-size: 13px;
-            line-height: 16px;
+            line-height: 15px;
         }
 
         & > li {
@@ -145,14 +150,17 @@
             display: inline-block;
             color: $textColorSecondary;
             margin-bottom: 0.4rem;
-
-            @media (max-width: $md3+px) {
-                margin-bottom: 2px;
-            }
         }
 
         & p {
             margin-bottom: 0;
+            font-size: 1.6rem;
+            line-height: 1.9rem;
+
+            @media (max-width: $md3+px) {
+                font-size: 13px;
+                line-height: 16px;
+            }
         }
     }
 }
