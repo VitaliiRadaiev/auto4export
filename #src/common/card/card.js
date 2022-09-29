@@ -148,7 +148,7 @@ if (cards.length) {
             if (card.classList.contains('card--second')) {
                 let stateIcons = card.querySelector('.card__state-icons');
                 let row1 = card.querySelector('.card__row-1');
-                row1.prepend(stateIcons);
+                row1.append(stateIcons);
 
                 return
             };

@@ -1,15 +1,25 @@
 .accordion {
     padding-left: 0;
     margin-bottom: 0;
+    padding: 3rem;
+    border-radius: 1rem;
+    border: 1px solid $borderColor;
+
+    @media (max-width: $md3+px) {
+        padding: 2rem;
+    }
 
     & > li {
         position: relative;
 
-        &:not(:first-child) {
-            padding-top: 2.4rem;
-        }
         &:not(:last-child) {
             padding-bottom: 2.4rem;
+            margin-bottom: 2.4rem;
+
+            @media (max-width: $md3+px) {
+                padding-bottom: 20px;
+                margin-bottom: 20px;
+            }
 
             &:before {
                 position: absolute;
@@ -18,56 +28,120 @@
                 bottom: 0;
                 height: 1px;
                 width: 100%;
-                background-color: $borderColor;
+                background: #eaebec;
+            }
+        }
+
+        &:after {
+            position: absolute;
+            content: "";
+            top: -2.4rem;
+            left: 50%;
+            width: calc(100% + 6rem);
+            height: calc(100% + 2.4rem);
+            transform: translateX(-50%);
+            background-color: #f9f9f9;
+            z-index: -1;
+            opacity: 0;
+            transition: all 0.3s ease;
+
+            @media (max-width: $md3+px) {
+                top: -20px;
+                width: calc(100% + 4rem);
+                height: calc(100% + 2rem);
+            }
+        }
+
+        &.active {
+            &:after {
+                opacity: 1;
+            }
+        }
+
+        &:first-child {
+            &::after {
+                top: -3rem;
+                height: calc(100% + 3rem);
+
+                @media (max-width: $md3+px) {
+                    top: -2rem;
+                    height: calc(100% + 2rem);
+                }
+            }
+        }
+
+        &:last-child {
+            &::after {
+                height: calc(100% + 2.4rem + 3rem);
+
+                @media (max-width: $md3+px) {
+                    height: calc(100% + 2rem + 2rem);
+                }
             }
         }
     }
 
     &__title {
-        transition: all 0.3s ease;
         cursor: pointer;
-        font-weight: 700;
-        font-size: 1.4rem;
-        line-height: 1.21em;
-        text-transform: uppercase;
-        margin-bottom: 0;
         position: relative;
+        font-weight: 500;
+        font-size: 1.8rem;
+        line-height: 2.1rem;
+        transition: all 0.3s ease;
+        padding-right: 2.5rem;
 
-        &.active {
-            color: $mainColor;
-
-            &:before {
-                transform: translateY(-50%) scale(1, -1);
-            }
-        }
-
-        @media (min-width: 992px) {
-            &:hover {
-                opacity: 0.7;
-            }
+        @media (max-width: $md3+px) {
+            font-size: 14px;
+            line-height: 16px;
         }
 
         &:before {
             font-family: "icomoon" !important;
             position: absolute;
-            content: "\e93f";
+            content: "\e940";
             top: 50%;
-            -webkit-transform: translateY(-50%);
-            -ms-transform: translateY(-50%);
             transform: translateY(-50%);
             right: 0;
-            -webkit-transition: -webkit-transform 0.3s ease;
-            transition: -webkit-transform 0.3s ease;
-            -o-transition: transform 0.3s ease;
-            transition: transform 0.3s ease;
-            transition: transform 0.3s ease, -webkit-transform 0.3s ease;
-            font-size: 0.6rem;
+            display: inline-block;
+			font-size: 0.6rem;
+			padding-top: 0.2rem;
+			color: $mainColor;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 2.4rem;
+			width: 2.4rem;
+			border-radius: 50%;
+			border: 1px solid $borderColor;
+            transition: background-color, border-color 0.3s ease 0s;
+
+            @media (max-width: $md3+px) {
+				width: 20px;
+				height: 20px;
+				font-size: 0.5rem;
+			}
+        }
+
+        &.active {
+            color: $mainColor;
+
+            &:before {
+                background-color: $mainColor;
+				border-color: $mainColor;
+				transform: translateY(-50%) scale(1, -1);
+				color: #fff
+            }
+        }
+
+        @media (min-width: 992px) {
+            &:hover {
+                color: $mainColor;
+            }
         }
     }
 
     &__text {
         padding-top: 1rem;
-
         & > *:last-child {
             margin-bottom: 0;
         }

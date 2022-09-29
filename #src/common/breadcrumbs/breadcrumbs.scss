@@ -2,27 +2,27 @@
     padding-left: 0;
     margin-bottom: 2rem;
     font-weight: 400;
-    font-size: 1.4rem;
-    line-height: 1.21em;
+    font-size: 1.6rem;
+    line-height: 1.9rem;
     color: $textColorSecondary;
 
     @media (max-width: $md3+px) {
         margin-bottom: 1rem;
-        font-size: 13px;
+        font-size: 14px;
         line-height: 16px;
     }
 
     & > li {
         display: inline-block;
         &:not(:last-child) {
-            margin-right: 1.8rem;
+            margin-right: 2rem;
 
             @media (max-width: $md3+px) {
                 margin-right: 1.3rem;
             }
             &:after {
                 content: "-";
-                margin-left: 2rem;
+                margin-left: 2.2rem;
 
                 @media (max-width: $md3+px) {
                     margin-left: 1.5rem;

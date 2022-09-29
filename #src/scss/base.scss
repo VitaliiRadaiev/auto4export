@@ -249,6 +249,7 @@ hr {
 	background: #ececec;
 	border: none;
 	outline: none;
+	margin: 0;
 }
 
 .ibg {
@@ -435,31 +436,51 @@ hr {
 	&__buttons {
 		flex: 0 0 auto;
 		display: flex;
-		gap: 4.2rem;
 		margin-left: auto;
 
-		@media (max-width: $md3+px) {
-			gap: 30px;
+		& .prev {
+			border-right: 0;
+			border-radius: 100px 0 0 100px;
+		}
+
+		& .next {
+			border-radius: 0 100px 100px 0;
 		}
 	}
 
 	&__btn {
-		font-weight: 700;
-		font-size: 14px;
-		line-height: 17px;
-		color: $textColorSecondary;
-		text-transform: uppercase;
+		font-weight: 500;
+		font-size: 1.6rem;
+		line-height: 1.9rem;
+		color: $textColor;
 		transition: all 0.3s ease;
 		white-space: no-wrap;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		align-items: center;
+		gap: 1rem;
+		border-radius: 100px;
+		border: 1px solid $borderColor;
+		padding: 1rem 2rem 0.8rem;
+		min-height: 4rem;
 
 		@media (max-width: $md3+px) {
-			font-size: 13px;
+			font-size: 14px;
 			line-height: 16px;
+			min-height: 32px;
+			padding: 0.8rem 1.6rem 0.6rem;
 		}
 
 		@media (min-width: 992px) {
 			&:hover {
-				color: $mainColor;
+				color: #fff;
+				border-color: $mainColor;
+				background-color: $mainColor;
+
+				&:after, &:before {
+					color: #fff;
+				}
 			}
 		}
 
@@ -467,25 +488,22 @@ hr {
 			&::before {
 				content: "";
 				font-family: "icomoon" !important;
-				content: "\e93d";
-				margin-right: 0.81em;
-				transition: all 0s ease;
+				content: "\e90d";
+				transition: all 0.3s ease;
 				font-size: 0.8em;
-				transform: scale(-1, 1);
-				display: inline-block;
 				font-weight: 400;
+				color: $mainColor;
 			}
 		}
 
 		&.next {
 			&:after {
 				font-weight: 400;
-				content: "";
 				font-family: "icomoon" !important;
-				content: "\e93d";
-				margin-left: 0.81em;
-				transition: all 0s ease;
+				content: "\e901";
+				transition: all 0.3s ease;
 				font-size: 0.8em;
+				color: $mainColor;
 			}
 		}
 	}
@@ -590,6 +608,10 @@ hr {
 	padding-right: 2.4rem;
 	display: inline-block;
 
+	@media (max-width: $md3+px) {
+		padding-right: 20px;
+	}
+
 	& .tooltip-icon {
 		width: 1.4rem;
 		position: absolute;
@@ -599,6 +621,10 @@ hr {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+
+		@media (max-width: $md3+px) {
+			width: 12px;
+		}
 
 		& svg {
 			width: 100%;
@@ -1347,7 +1373,7 @@ ul.list-with-icons {
 		position: relative;
 		z-index: 3;
 		padding: 4rem 4rem 4rem 13rem;
-		font-weight: 700;
+		font-weight: 500;
 		font-size: 2.7rem;
 		line-height: 1.9em;
 

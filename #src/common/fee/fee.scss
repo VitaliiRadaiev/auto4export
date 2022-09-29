@@ -1,5 +1,5 @@
 .fee-wrap {
-    transition: all .15s ease;
+    transition: all 0.15s ease;
 }
 .fee {
     position: relative;
@@ -15,12 +15,17 @@
     }
 
     &__title {
-        font-size: 1.4rem;
-        line-height: 1.21em;
+        font-size: 1.6rem;
+        line-height: 1.9rem;
         color: $mainColor;
         transition: all 0.3s ease;
         cursor: pointer;
         user-select: none;
+
+        @media (max-width: $md3+px) {
+            font-size: 14px;
+            line-height: 16px;
+        }
     }
 
     &__list {

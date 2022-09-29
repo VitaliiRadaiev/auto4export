@@ -1,15 +1,15 @@
 <form action="/">
     <div class="bid-card">
-        <div class="bid-card__border" data-border-dashed="top-left"></div>
-        <div class="bid-card__border-mob" data-border-dashed="simple"></div>
-        <div class="bid-card__body">
-            <div class="bid-card__row bid-card__row-1">
-                <div class="bid-card__status">
-                    <label data-tooltip="tooltip text">Bid Status</label>
-                    <p class="text-danger">OUTBID</p>
-                </div>
+        <div class="bid-card__row bid-card__row-1">
+            <div class="bid-card__status">
+                <label data-tooltip="tooltip text">Bid Status</label>
+                <p class="text-danger">Outbid</p>
+                <!-- text-primary   blue -->
+                <!-- text-success  green -->
             </div>
-            <div class="bid-card__row bid-card__row-2">
+        </div>
+        <div class="bid-card__row bid-card__row-2">
+            <div class="bid-card__body">
                 <ul class="bid-card__price card__prices">
                     <li>
                         <label>Current Bid</label>
@@ -34,11 +34,12 @@
                     </li>
                 </ul>
 
-                <div class="bid-card-value" >
+                <div class="bid-card-value">
                     <div class="bid-card-value__title">
                         Place Your Maximum Bid <span>($25 Bid Increments)</span>
                     </div>
-                    <div class="bid-card-value__body" data-bid-value data-min-value="100" data-increment="25" data-mask="$9{*}">
+                    <div class="bid-card-value__body" data-bid-value data-min-value="100" data-increment="25"
+                        data-mask="$9{*}">
                         <div class="bid-card-value__btn minus">
                             <img src="img/icons/minus.svg" alt="">
                         </div>

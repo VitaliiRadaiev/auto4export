@@ -134,14 +134,14 @@
 
         @media (max-width: $md2+px) {
             margin-bottom: 20px;
-            padding-right: 110px;
-            min-height: 42px;
+            display: flex;
+            gap: 2rem;
+            justify-content: space-between;
+            align-items: center;
         }
 
         @media (max-width: $md3+px) {
-            padding-right: 0px;
-            margin-bottom: 20px;
-            min-height: 76px;
+            display: block;
         }
 
         & > *:last-child {
@@ -466,8 +466,10 @@
         z-index: 5;
 
         @media (max-width: $md2+px) {
-            top: 3rem;
-            right: 3rem;
+            position: relative;
+            flex: 0 0 auto;
+            top: 0rem;
+            right: 0rem;
             display: flex;
         }
 
@@ -888,14 +890,15 @@
         }
 
         & .card__row-1 {
-            padding-right: 10.4rem;
+            padding-right: 0rem !important;
             margin-bottom: 2rem;
-            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
 
             @media (max-width: $md3+px) {
                 margin-bottom: 15px;
-                padding-right: 9.4rem;
-                min-height: auto;
             }
         }
 
@@ -922,11 +925,10 @@
         }
 
         & .card__title {
-            min-height: 2em;
-
             @media (max-width: $md3+px) {
                 font-size: 14px;
                 line-height: 16px;
+                margin-bottom: 0;
             }
         }
 
@@ -1021,12 +1023,14 @@
         }
 
         & .card__state-icons {
+            position: relative;
+            flex: 0 0 auto;
             display: flex;
             right: 0;
             top: 0;
 
             @media (max-width: $md3+px) {
-                position: absolute;
+                
             }
 
             & > li {
