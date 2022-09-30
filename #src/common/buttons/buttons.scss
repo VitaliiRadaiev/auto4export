@@ -28,6 +28,9 @@
         line-height: 1.1875em;
         white-space: nowrap;
         color: $textColorSecondary;
+        padding-top: 0.4rem;
+        padding-bottom: 0.3rem;
+        border-bottom: 1px solid transparent;
 
         @media (max-width: $md3+px) {
             font-size: 13px;
@@ -42,7 +45,7 @@
 
         &.tab-active {
             pointer-events: none;
-            text-decoration: underline;
+            border-bottom: 1px solid $mainColor;
             color:$mainColor;
         }
     }
@@ -100,6 +103,10 @@
         flex: 0 0 auto;
         height: 1em;
         width: auto;
+    }
+
+    &:active {
+        transform: translateY(2px);
     }
 
     &--md {
@@ -170,5 +177,11 @@
                 background-color: #A83A2C;
             }
         }
+    }
+}
+
+button {
+    &:active {
+        transform: translateY(2px);
     }
 }

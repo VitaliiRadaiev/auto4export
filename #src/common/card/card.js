@@ -16,7 +16,11 @@ if (cardSliders.length) {
             pagination: {
                 el: cardSlider.querySelector('.swiper-pagination'),
                 clickable: true,
-            }
+            },
+            navigation: {
+                nextEl: cardSlider.querySelector('.btn-next'),
+                prevEl: cardSlider.querySelector('.btn-prev'),
+            },
         });
     })
 }
@@ -182,6 +186,20 @@ if (cards.length) {
             ) {
                 e.preventDefault();
             }
+        })
+    })
+}
+
+
+let stars = document.querySelectorAll('.card__star');
+if(stars.length) {
+    stars.forEach(star => {
+        star.addEventListener('click', (e) => {
+            star.classList.add('show-text');
+
+            setTimeout(() => {
+                star.classList.remove('show-text');
+            }, 1000)
         })
     })
 }

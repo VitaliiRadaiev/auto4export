@@ -44,6 +44,8 @@
         margin-bottom: 3rem;
         display: flex;
         align-items: center;
+        position: relative;
+        z-index: 3;
 
         @media (max-width: $md3+px) {
             margin-bottom: 20px;
@@ -51,6 +53,11 @@
             justify-content: space-between;
             gap: 16px 10px;
         }
+    }
+
+    &__row-3 {
+        position: relative;
+        z-index: 2;
     }
 
     &__btn-filter {
@@ -69,6 +76,10 @@
 
         @media (min-width: 992px) {
             display: none;
+        }
+
+        @media (max-width: $md2+px) {
+            color: $mainColor;
         }
 
         @media (max-width: $md3+px) {
@@ -295,8 +306,7 @@
         }
     }
 
-    &__row-3 {
-    }
+
 
     &__list {
         padding-left: 0;

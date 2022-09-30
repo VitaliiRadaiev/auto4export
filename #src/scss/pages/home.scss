@@ -209,7 +209,8 @@
             padding: 2rem;
             border: 1px solid #ececec;
             border-radius: 1rem;
-            display: block;
+            gap: 0 2rem;
+            // display: block;
         }
 
         & > * {
@@ -219,9 +220,9 @@
                 flex: 0 1 calc(50% - 1rem);
             }
 
-            @media (max-width: $md3+px) {
-                flex: 0 1 100%;
-            }
+            // @media (max-width: $md3+px) {
+            //     flex: 0 1 100%;
+            // }
         }
 
         & .border-box {
@@ -255,21 +256,9 @@
 
         & .how-it-works__list-wrap {
             @media (max-width: $md2+px) {
-                overflow-x: scroll;
-                margin: -10px -30px 0;
-                padding: 10px 30px 0;
-
-                &::-webkit-scrollbar {
-                    width: 0px;
-                    height: 0px;
-                }
             }
 
             @media (max-width: $md3+px) {
-                margin-left: -20px;
-                margin-right: -20px;
-                padding-left: 20px;
-                padding-right: 20px;
             }
         }
 
@@ -277,6 +266,11 @@
             display: flex;
             gap: 2rem;
             margin-bottom: 1.6rem;
+
+            @media (max-width: $md2+px) {
+                flex-wrap: wrap;
+                margin-bottom: 0;
+            }
 
             @media (max-width: $md3+px) {
                 gap: 10px;
@@ -287,18 +281,14 @@
                 flex: 0 1 calc(16.6666667% - (2rem * 5 / 6));
 
                 @media (max-width: $md2+px) {
-                    flex: 0 0 auto;
+                    flex: 0 1 calc(33.3333333% - (2rem * 2 / 3));
+                }
+
+                @media (max-width: $md3+px) {
+                    flex: 0 1 100%;
                 }
 
                 &:last-child {
-                    @media (max-width: $md2+px) {
-                        padding-right: 30px;
-                    }
-
-                    @media (max-width: $md3+px) {
-                        padding-right: 20px;
-                    }
-
                     & .how-it-works__list-text {
                         color: #fff;
                     }
@@ -308,13 +298,6 @@
 
         & .how-it-works__list-item {
             position: relative;
-
-            @media (max-width: $md2+px) {
-                width: 240px;
-            }
-            @media (max-width: $md3+px) {
-                width: 230px;
-            }
         }
 
         & .how-it-works__list-layer-1 {
@@ -333,18 +316,47 @@
             height: 100%;
             padding: 5rem 2rem 3rem;
 
-            padding: 30px 15px 20px;
+            @media (max-width: $md3+px) {
+                padding: 20px 15px 20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
         }
 
         & .how-it-works__list-desk {
-            @media (max-width: $md3+px) {
+            @media (max-width: $md2+px) {
                 display: none;
             }
         }
 
         & .how-it-works__list-mob {
-            @media (min-width: 768px) {
+            height: 192px;
+            background-color: #fff;
+            border-radius: 1rem;
+            position: relative;
+            overflow: hidden;
+
+            @media (max-width: $md3+px) {
+                height: 120px;
+            }
+
+            @media (min-width: 992px) {
                 display: none;
+            }
+
+            & svg {
+                display: none;
+            }
+
+            & img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+                object-fit: cover;
             }
         }
 
@@ -406,6 +418,7 @@
         transform: translateX(1px);
 
         @media (max-width: $md2+px) {
+            display: none;
             width: 1319px;
             margin-left: 111px;
         }
@@ -447,7 +460,6 @@
                 }
 
                 @media (max-width: $md3+px) {
-                    
                     display: flex;
                     align-items: center;
                     padding-top: 1.2rem;
@@ -732,7 +744,6 @@
     }
 
     &__form-item-2 {
-
         @media (max-width: $md2+px) {
             & .input {
                 border-radius: 0 3.2rem 3.2rem 0;
@@ -833,16 +844,16 @@
 
             &:after {
                 position: absolute;
-                content: '';
+                content: "";
                 top: -2.4rem;
                 left: 50%;
                 width: calc(100% + 6rem);
                 height: calc(100% + 2.4rem);
                 transform: translateX(-50%);
-                background-color: #F9F9F9;
+                background-color: #f9f9f9;
                 z-index: -1;
                 opacity: 0;
-                transition: all .3s ease;
+                transition: all 0.3s ease;
 
                 @media (max-width: $md3+px) {
                     top: -20px;
@@ -864,7 +875,7 @@
 
                     @media (max-width: $md3+px) {
                         top: -2rem;
-                    height: calc(100% + 2rem);
+                        height: calc(100% + 2rem);
                     }
                 }
             }
@@ -903,23 +914,23 @@
             transform: translateY(-50%);
             right: 0;
             display: inline-block;
-			font-size: 0.6rem;
-			padding-top: 0.2rem;
-			color: $mainColor;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			height: 2.4rem;
-			width: 2.4rem;
-			border-radius: 50%;
-			border: 1px solid $borderColor;
+            font-size: 0.6rem;
+            padding-top: 0.2rem;
+            color: $mainColor;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 2.4rem;
+            width: 2.4rem;
+            border-radius: 50%;
+            border: 1px solid $borderColor;
             transition: background-color, border-color 0.3s ease 0s;
 
             @media (max-width: $md3+px) {
-				width: 20px;
-				height: 20px;
-				font-size: 0.5rem;
-			}
+                width: 20px;
+                height: 20px;
+                font-size: 0.5rem;
+            }
         }
 
         &.active {
@@ -927,9 +938,9 @@
 
             &:before {
                 background-color: $mainColor;
-				border-color: $mainColor;
-				transform: translateY(-50%) scale(1, -1);
-				color: #fff
+                border-color: $mainColor;
+                transform: translateY(-50%) scale(1, -1);
+                color: #fff;
             }
         }
 

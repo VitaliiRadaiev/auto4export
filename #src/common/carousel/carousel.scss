@@ -17,6 +17,7 @@
 
     &__slider {
         overflow: visible;
+
         & .swiper-slide {
             height: auto;
             width: auto;
@@ -117,11 +118,24 @@
     @media (max-width: $md3+px) {
         width: 230px;
     }
+
+    @media (min-width: 992px) {
+        &:hover {
+            box-shadow: 0px 12px 14px rgba(111, 111, 111, 0.1);
+            & .carousel-card__body {
+                border-color: $mainColor;
+            }
+        }
+    }
     &__img {
         height: 0;
         padding-bottom: 71.91%;
         overflow: hidden;
         border-radius: 1rem 1rem 0 0;
+
+        & a {
+            opacity: 1 !important;
+        }
     }
 
     &__body {
@@ -132,6 +146,7 @@
         border-radius: 0 0 1rem 1rem;
         display: flex;
         flex-direction: column;
+        transition: all .3s ease;
 
         @media (max-width: $md3+px) {
             padding: 20px 20px 18px;

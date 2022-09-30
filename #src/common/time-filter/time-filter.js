@@ -1,14 +1,80 @@
 let timeFilter = document.querySelector('[data-time-filter]');
 if(timeFilter) {
 
+    const setInactiveElements = (timeFilter, columns) => {
+        let startActiveEl = timeFilter.querySelector('.start-value .time-filter__dropdown-item.active')
+        let endActiveEl = timeFilter.querySelector('.end-value .time-filter__dropdown-item.active')
+
+        columns.forEach(column => {
+            if(column.classList.contains('start-value')) {
+                let items = column.querySelectorAll('.time-filter__dropdown-item');
+
+                items.forEach(item => {
+                    if(+item.innerText.trim() > +endActiveEl.innerText.trim()) {
+                        item.classList.add('inactive');
+                    } else {
+                        item.classList.remove('inactive');
+                    }
+                });
+            }
+
+            if(column.classList.contains('end-value')) {
+                let items = column.querySelectorAll('.time-filter__dropdown-item');
+
+                items.forEach(item => {
+                    if(+item.innerText.trim() < +startActiveEl.innerText.trim()) {
+                        item.classList.add('inactive');
+                    } else {
+                        item.classList.remove('inactive');
+                    }
+                });
+            }
+        })
+    }
+
     let columns = timeFilter.querySelectorAll('.time-filter__dropdown-col');
     let top = timeFilter.querySelector('.time-filter__top');
     let inputStart = timeFilter.querySelector('[data-time-filter-start]');
     let inputEnd = timeFilter.querySelector('[data-time-filter-end]');
     let startValue = timeFilter.querySelector('.time-filter__start-value');
     let endValue = timeFilter.querySelector('.time-filter__end-value');
+    let initStartValue = timeFilter.dataset.initStartValue;
+    let initEndValue = timeFilter.dataset.initEndValue;
 
     if(top) {
+        // init
+        inputStart.value = initStartValue.trim();
+        startValue.innerText = initStartValue.trim();
+
+        inputEnd.value = initEndValue.trim();
+        endValue.innerText = initEndValue.trim();
+
+        columns.forEach(column => {
+            if(column.classList.contains('start-value')) {
+                let items = column.querySelectorAll('.time-filter__dropdown-item');
+
+                items.forEach(item => {
+                    if(item.innerText.trim() === initStartValue.trim()) {
+                        item.classList.add('active');
+                    } else {
+                        item.classList.remove('active');
+                    }
+                });
+            }
+
+            if(column.classList.contains('end-value')) {
+                let items = column.querySelectorAll('.time-filter__dropdown-item');
+                items.forEach(item => {
+                    if(item.innerText.trim() === initEndValue.trim()) {
+                        item.classList.add('active');
+                    } else {
+                        item.classList.remove('active');
+                    }
+                });
+            }
+        })
+
+        setInactiveElements(timeFilter, columns);
         
         document.addEventListener('click', (e) => {
 
@@ -37,6 +103,45 @@ if(timeFilter) {
 
     if(columns.length) {
         let isChosen = [false, false];
+        const reset = () => {
+            isChosen[0] = false;
+            isChosen[1] = false;
+            timeFilter.classList.remove('active');
+            timeFilter.classList.remove('time-filter--selected');
+
+            inputStart.value = initStartValue.trim();
+            startValue.innerText = initStartValue.trim();
+    
+            inputEnd.value = initEndValue.trim();
+            endValue.innerText = initEndValue.trim();
+
+            columns.forEach(column => {
+                if(column.classList.contains('start-value')) {
+                    let items = column.querySelectorAll('.time-filter__dropdown-item');
+    
+                    items.forEach(item => {
+                        if(item.innerText.trim() === initStartValue.trim()) {
+                            item.classList.add('active');
+                        } else {
+                            item.classList.remove('active');
+                        }
+                    });
+                }
+    
+                if(column.classList.contains('end-value')) {
+                    let items = column.querySelectorAll('.time-filter__dropdown-item');
+                    items.forEach(item => {
+                        if(item.innerText.trim() === initEndValue.trim()) {
+                            item.classList.add('active');
+                        } else {
+                            item.classList.remove('active');
+                        }
+                    });
+                }
+            })
+
+            setInactiveElements(timeFilter, columns);
+        }
         columns.forEach(column => {
             let scrollWrap = column.querySelector('.time-filter__dropdown-scroll-wrap');
             let items = column.querySelectorAll('.time-filter__dropdown-item');
@@ -75,6 +180,8 @@ if(timeFilter) {
                             i.classList.remove('active');
                         })
 
+                        setInactiveElements(timeFilter, columns);
+
                         if(item.closest('.start-value')) {
                             inputStart.value = item.innerText.trim();
                             startValue.innerText = item.innerText.trim();
@@ -91,10 +198,20 @@ if(timeFilter) {
                             isChosen[0] = false;
                             isChosen[1] = false;
                             timeFilter.classList.remove('active');
+                            timeFilter.classList.add('time-filter--selected');
+
+                            if(this.mainFilterTop) {
+                                this.mainFilterTop.removeButton(inputStart.dataset.id);
+                                this.mainFilterTop.addButton(`${startValue.innerText}-${endValue.innerText}`, inputStart.dataset.id, reset);
+                            }
                         }
                     })
                 })
             }
         })
+
+        this.dateFilter = {
+            reset: reset,
+        }
     }
 }

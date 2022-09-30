@@ -1483,108 +1483,84 @@ if(aboutPreview) {
         })
     }
 };
-		let timeFilter = document.querySelector('[data-time-filter]');
-if(timeFilter) {
-
-    let columns = timeFilter.querySelectorAll('.time-filter__dropdown-col');
-    let top = timeFilter.querySelector('.time-filter__top');
-    let inputStart = timeFilter.querySelector('[data-time-filter-start]');
-    let inputEnd = timeFilter.querySelector('[data-time-filter-end]');
-    let startValue = timeFilter.querySelector('.time-filter__start-value');
-    let endValue = timeFilter.querySelector('.time-filter__end-value');
-
-    if(top) {
-        
-        document.addEventListener('click', (e) => {
-
-            if(e.target.closest('.time-filter__top')) {
-                timeFilter.classList.toggle('active');
-            } else {
-                if(!e.target.closest('.time-filter')) {
-                    timeFilter.classList.remove('active');
-                }
-            }
-
-            columns.forEach(column => {
-                let scrollWrap = column.querySelector('.time-filter__dropdown-scroll-wrap');
-    
-                if(scrollWrap.scrollTop > 10) {
-                    column.classList.add('scroll-top');
-                }
-    
-                if((scrollWrap.scrollHeight - (scrollWrap.scrollTop + scrollWrap.clientHeight)) > 10) {
-                    column.classList.add('scroll-bottom');
-                }
-
-            })
-        })
-    }
-
-    if(columns.length) {
-        let isChosen = [false, false];
-        columns.forEach(column => {
-            let scrollWrap = column.querySelector('.time-filter__dropdown-scroll-wrap');
-            let items = column.querySelectorAll('.time-filter__dropdown-item');
-
-            if(scrollWrap.scrollTop > 10) {
-                column.classList.add('scroll-top');
-            }
-
-            if((scrollWrap.scrollHeight - (scrollWrap.scrollTop + scrollWrap.clientHeight)) > 10) {
-                column.classList.add('scroll-bottom');
-            }
-
-            scrollWrap.addEventListener('scroll', () => {
-                if(scrollWrap.scrollTop > 10) {
-                    column.classList.add('scroll-top');
-                } else {
-                    column.classList.remove('scroll-top');
-                }
-    
-                if((scrollWrap.scrollHeight - (scrollWrap.scrollTop + scrollWrap.clientHeight)) > 10) {
-                    column.classList.add('scroll-bottom');
-                } else {
-                    column.classList.remove('scroll-bottom');
-                }
-            })
-
-            if(items.length) {
-                
-                items.forEach(item => {
-                    item.addEventListener('click', () => {
-                        item.classList.add('active');
-
-                        items.forEach(i => {
-                            if(i === item) return;
-
-                            i.classList.remove('active');
-                        })
-
-                        if(item.closest('.start-value')) {
-                            inputStart.value = item.innerText.trim();
-                            startValue.innerText = item.innerText.trim();
-                            isChosen[0] = true;
-                        }
-
-                        if(item.closest('.end-value')) {
-                            inputEnd.value = item.innerText.trim();
-                            endValue.innerText = item.innerText.trim();
-                            isChosen[1] = true;
-                        }
-
-                        if(isChosen.every(i => i === true)) {
-                            isChosen[0] = false;
-                            isChosen[1] = false;
-                            timeFilter.classList.remove('active');
-                        }
-                    })
-                })
-            }
-        })
-    }
-};
 		let mainFilter = document.querySelector('[data-main-filter]');
 if (mainFilter) {
+    const setUniqueIdForAllInputsEndSelectOptions = () => {
+        let elements = mainFilter.querySelectorAll('input, select option');
+        elements.forEach((el, index) => {
+            el.setAttribute('data-id', index);
+        })
+    }
+
+    setUniqueIdForAllInputsEndSelectOptions();
+
+    let mainFilterTop = document.querySelector('[data-main-filter-top]');
+    if(mainFilterTop) {
+        this.mainFilterTop = {
+            arrayOfCallbackFunctions: new Map(),
+            init() {
+                mainFilterTop.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    if(e.target.closest('[data-id]')) {
+                        let id = e.target.dataset.id;
+                        
+                        if(this.arrayOfCallbackFunctions.get(id)) {
+                            let callback = this.arrayOfCallbackFunctions.get(id);
+                            if(callback) callback();
+                            this.arrayOfCallbackFunctions.delete(id);
+                        } ;
+                        this.removeButton(id);
+                    }
+                })
+            },
+
+            addButton(text, id, callback = null) {
+                let btn = document.createElement('button');
+                btn.innerText = text;
+                btn.setAttribute('data-id', id);
+                btn.insertAdjacentHTML('beforeend', `
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none" class="_svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M12.728 5.09117C12.9623 4.85685 12.9623 4.47696 12.728 4.24264C12.4937 4.00833 12.1138 4.00833 11.8795 4.24264L8.48535 7.63675L5.09124 4.24264C4.85692 4.00833 4.47703 4.00833 4.24271 4.24264C4.0084 4.47696 4.0084 4.85685 4.24271 5.09117L7.63682 8.48528L4.24271 11.8794C4.0084 12.1137 4.0084 12.4936 4.24271 12.7279C4.47703 12.9622 4.85692 12.9622 5.09124 12.7279L8.48535 9.33381L11.8795 12.7279C12.1138 12.9622 12.4937 12.9622 12.728 12.7279C12.9623 12.4936 12.9623 12.1137 12.728 11.8794L9.33388 8.48528L12.728 5.09117Z"
+                    fill="#8C8C8C"></path>
+                </svg>
+                `);
+                mainFilterTop.prepend(btn);
+                mainFilterTop.classList.remove('main-filter-top--empty');
+
+                if(callback) {
+                    this.arrayOfCallbackFunctions.set(id, callback);
+                }
+            },
+
+            removeButton(id) {
+                let btn = mainFilterTop.querySelector(`[data-id="${id}"]`);
+                if(btn) {
+                    btn.remove();
+                    this.arrayOfCallbackFunctions.delete(id);
+
+                    if(mainFilterTop.children.length < 2) {
+                        mainFilterTop.classList.add('main-filter-top--empty');
+                    }
+                }
+            },
+
+            removeAllButtons() {
+                let buttons = mainFilterTop.querySelectorAll('[data-id]');
+                if(buttons.length) {
+                    buttons.forEach(btn => {
+                        btn.remove();
+                    })
+                }
+
+                this.arrayOfCallbackFunctions.clear();
+                mainFilterTop.classList.add('main-filter-top--empty');
+            }
+        }
+
+        if(this.mainFilterTop) this.mainFilterTop.init();
+    }
+
     let filterSelects = mainFilter.querySelectorAll('.filter-select');
     if (filterSelects.length) {
         filterSelects.forEach(filterSelect => {
@@ -1618,14 +1594,44 @@ if (mainFilter) {
                             filterSelect.classList.add('filter-select--selected');
                             headText.innerText = textEl.innerText;
                         }
+
+                        const removeChecked = () => {
+                            checkboxRadio.checked = false;
+                            filterSelect.classList.remove('filter-select--selected');
+                            headText.innerText = 'Select';
+                        }
     
                         checkboxRadio.addEventListener('change', () => {
                             if (checkboxRadio.checked) {
                                 filterSelect.classList.add('filter-select--selected');
                                 headText.innerText = textEl.innerText;
+
+                                if(this.mainFilterTop) {
+                                    this.mainFilterTop.addButton(textEl.innerText, checkboxRadio.dataset.id, removeChecked);
+
+                                    innerInputs.forEach(radio => {
+                                        if(radio.dataset.id === checkboxRadio.dataset.id) return;
+                                        this.mainFilterTop.removeButton(radio.dataset.id);
+                                    })
+                                }
                             }
                         })
                     } else if(checkboxRadio.type === 'checkbox') {
+                        let textEl = checkboxRadio.closest('.checkbox-radio').querySelector('.checkbox-radio__text');
+                        
+                        const removeChecked = () => {
+                            checkboxRadio.checked = false;
+
+                            let text = innerInputs.filter(i => i.checked).map(i => i.closest('.checkbox-radio').querySelector('.checkbox-radio__text').innerText);
+                            if(text.length) {
+                                filterSelect.classList.add('filter-select--selected');
+                                headText.innerText = text.join(', ');
+                            } else {
+                                filterSelect.classList.remove('filter-select--selected');
+                                headText.innerText = 'Select'
+                            }
+                        }
+
                         checkboxRadio.addEventListener('change', () => {
                             let text = innerInputs.filter(i => i.checked).map(i => i.closest('.checkbox-radio').querySelector('.checkbox-radio__text').innerText);
                             if(text.length) {
@@ -1634,6 +1640,16 @@ if (mainFilter) {
                             } else {
                                 filterSelect.classList.remove('filter-select--selected');
                                 headText.innerText = 'Select'
+                            }
+
+                            if(checkboxRadio.checked) {
+                                if(this.mainFilterTop) {
+                                    this.mainFilterTop.addButton(textEl.innerText, checkboxRadio.dataset.id, removeChecked);
+                                }
+                            } else {
+                                if(this.mainFilterTop) {
+                                    this.mainFilterTop.removeButton(checkboxRadio.dataset.id);
+                                }
                             }
                         })
                         
@@ -1690,6 +1706,40 @@ if (mainFilter) {
         })
     }
 
+    let defaultSelects = mainFilter.querySelectorAll('select');
+    if(defaultSelects.length) {
+        defaultSelects.forEach(select => {
+            const clearSelect = () => {
+                let selectInner = select.closest('.select');
+                let title = selectInner.querySelector('.select__value span');
+                let optionsEl = selectInner.querySelectorAll('.select__option');
+
+                select.value = '';
+                selectInner.classList.remove('_visited');
+                title.innerText = select.selectedOptions[0].text;
+                optionsEl.forEach(optionEl => optionEl.style.display = 'block');
+
+                let event = new Event("change", { bubbles: true });
+                select.dispatchEvent(event);
+            }
+
+            select.addEventListener('change', () => {
+                if(!select.value) return;
+
+                if(this.mainFilterTop) {
+                    this.mainFilterTop.addButton(select.selectedOptions[0].innerText, select.selectedOptions[0].dataset.id, clearSelect);
+                }
+
+                Array.from(select.options).forEach(option => {
+                    if(option.dataset.id === select.selectedOptions[0].dataset.id) return;
+                    if(this.mainFilterTop) {
+                        this.mainFilterTop.removeButton(option.dataset.id);
+                    }
+                })
+            })
+        })
+    }
+
     let btnOptions = mainFilter.querySelector('.main-filter__advanced');
     if(btnOptions) {
         let hideRows = mainFilter.querySelectorAll('.main-filter__row--hide');
@@ -1719,6 +1769,63 @@ if (mainFilter) {
         }
     }
 
+    let filterDate = mainFilter.querySelector('[data-filter-date]');
+    if(filterDate) {
+        let inputStart = filterDate.querySelector('.filter-date__col-1 input');
+        let inputEnd = filterDate.querySelector('.filter-date__col-2 input');
+        let isChosen = [false, false];
+
+        //init
+        let pickerStart = datepicker(inputStart, {
+            formatter: (input, date, instance) => {
+                const value = date.toLocaleDateString();
+                input.value = value;
+            },
+            onSelect: (instance, date) => {
+                isChosen[0] = true;
+                if(isChosen.every(i => i === true)) {
+                    isChosen[0] = false;
+                    isChosen[1] = false;
+                    filterDate.classList.add('filter-date--selected');
+
+                    if(this.mainFilterTop) {
+                        this.mainFilterTop.removeButton(inputStart.dataset.id);
+                        this.mainFilterTop.addButton(`${inputStart.value} - ${inputEnd.value}`, inputStart.dataset.id, this.filterDate.reset);
+                    }
+                }
+            }
+        })
+        let pickerEnd = datepicker(inputEnd, {
+            formatter: (input, date, instance) => {
+                const value = date.toLocaleDateString()
+                input.value = value
+            },
+            onSelect: (instance, date) => {
+                isChosen[1] = true;
+
+                if(isChosen.every(i => i === true)) {
+                    isChosen[0] = false;
+                    isChosen[1] = false;
+                    filterDate.classList.add('filter-date--selected');
+
+                    if(this.mainFilterTop) {
+                        this.mainFilterTop.removeButton(inputStart.dataset.id);
+                        this.mainFilterTop.addButton(`${inputStart.value} - ${inputEnd.value}`, inputStart.dataset.id, this.filterDate.reset);
+                    }
+                }
+            }
+        })
+        this.filterDate = {
+            reset() {
+                pickerStart.setDate()
+                pickerEnd.setDate()
+                isChosen[0] = false;
+                isChosen[1] = false;
+                filterDate.classList.remove('filter-date--selected');
+            }
+        }
+    }
+
     let btnReset = mainFilter.querySelector('.main-filter__reset');
     if(btnReset) {
         let form = btnReset.closest('form');
@@ -1734,7 +1841,8 @@ if (mainFilter) {
             })
         }
 
-        form.addEventListener('reset', () => {
+        form.addEventListener('reset', (e) => {
+           
             if(filterSelects.length) {
                 filterSelects.forEach(filterSelect => {
                     let head = filterSelect.querySelector('.filter-select__head-text');
@@ -1754,14 +1862,28 @@ if (mainFilter) {
                     let select = selectWrap.querySelector('select');
                     let selectInner = selectWrap.querySelector('.select');
                     let title = selectWrap.querySelector('.select__value span');
+                    let optionsEl = selectWrap.querySelectorAll('.select__option');
                     select.value = '';
                     selectInner.classList.remove('_visited');
                     title.innerText = select.selectedOptions[0].text;
+                    optionsEl.forEach(optionEl => optionEl.style.display = 'block');
 
                     let event = new Event("change", { bubbles: true });
                     select.dispatchEvent(event);
                 })
             }
+
+            if(this.dateFilter) {
+                this.dateFilter.reset();
+            }
+
+            if(this.filterDate) {
+                this.filterDate.reset();
+            }
+
+            if(this.mainFilterTop) {
+                this.mainFilterTop.removeAllButtons();
+            } 
         })
     }
 
@@ -1782,6 +1904,223 @@ if (mainFilter) {
                 mainMobileFilter.classList.remove('main-filter-mobile--open');
                 document.body.classList.remove('overflow-hidden');
             })
+        }
+    }
+};
+		let timeFilter = document.querySelector('[data-time-filter]');
+if(timeFilter) {
+
+    const setInactiveElements = (timeFilter, columns) => {
+        let startActiveEl = timeFilter.querySelector('.start-value .time-filter__dropdown-item.active')
+        let endActiveEl = timeFilter.querySelector('.end-value .time-filter__dropdown-item.active')
+
+        columns.forEach(column => {
+            if(column.classList.contains('start-value')) {
+                let items = column.querySelectorAll('.time-filter__dropdown-item');
+
+                items.forEach(item => {
+                    if(+item.innerText.trim() > +endActiveEl.innerText.trim()) {
+                        item.classList.add('inactive');
+                    } else {
+                        item.classList.remove('inactive');
+                    }
+                });
+            }
+
+            if(column.classList.contains('end-value')) {
+                let items = column.querySelectorAll('.time-filter__dropdown-item');
+
+                items.forEach(item => {
+                    if(+item.innerText.trim() < +startActiveEl.innerText.trim()) {
+                        item.classList.add('inactive');
+                    } else {
+                        item.classList.remove('inactive');
+                    }
+                });
+            }
+        })
+    }
+
+    let columns = timeFilter.querySelectorAll('.time-filter__dropdown-col');
+    let top = timeFilter.querySelector('.time-filter__top');
+    let inputStart = timeFilter.querySelector('[data-time-filter-start]');
+    let inputEnd = timeFilter.querySelector('[data-time-filter-end]');
+    let startValue = timeFilter.querySelector('.time-filter__start-value');
+    let endValue = timeFilter.querySelector('.time-filter__end-value');
+    let initStartValue = timeFilter.dataset.initStartValue;
+    let initEndValue = timeFilter.dataset.initEndValue;
+
+    if(top) {
+        // init
+        inputStart.value = initStartValue.trim();
+        startValue.innerText = initStartValue.trim();
+
+        inputEnd.value = initEndValue.trim();
+        endValue.innerText = initEndValue.trim();
+
+        columns.forEach(column => {
+            if(column.classList.contains('start-value')) {
+                let items = column.querySelectorAll('.time-filter__dropdown-item');
+
+                items.forEach(item => {
+                    if(item.innerText.trim() === initStartValue.trim()) {
+                        item.classList.add('active');
+                    } else {
+                        item.classList.remove('active');
+                    }
+                });
+            }
+
+            if(column.classList.contains('end-value')) {
+                let items = column.querySelectorAll('.time-filter__dropdown-item');
+                items.forEach(item => {
+                    if(item.innerText.trim() === initEndValue.trim()) {
+                        item.classList.add('active');
+                    } else {
+                        item.classList.remove('active');
+                    }
+                });
+            }
+        })
+
+        setInactiveElements(timeFilter, columns);
+        
+        document.addEventListener('click', (e) => {
+
+            if(e.target.closest('.time-filter__top')) {
+                timeFilter.classList.toggle('active');
+            } else {
+                if(!e.target.closest('.time-filter')) {
+                    timeFilter.classList.remove('active');
+                }
+            }
+
+            columns.forEach(column => {
+                let scrollWrap = column.querySelector('.time-filter__dropdown-scroll-wrap');
+    
+                if(scrollWrap.scrollTop > 10) {
+                    column.classList.add('scroll-top');
+                }
+    
+                if((scrollWrap.scrollHeight - (scrollWrap.scrollTop + scrollWrap.clientHeight)) > 10) {
+                    column.classList.add('scroll-bottom');
+                }
+
+            })
+        })
+    }
+
+    if(columns.length) {
+        let isChosen = [false, false];
+        const reset = () => {
+            isChosen[0] = false;
+            isChosen[1] = false;
+            timeFilter.classList.remove('active');
+            timeFilter.classList.remove('time-filter--selected');
+
+            inputStart.value = initStartValue.trim();
+            startValue.innerText = initStartValue.trim();
+    
+            inputEnd.value = initEndValue.trim();
+            endValue.innerText = initEndValue.trim();
+
+            columns.forEach(column => {
+                if(column.classList.contains('start-value')) {
+                    let items = column.querySelectorAll('.time-filter__dropdown-item');
+    
+                    items.forEach(item => {
+                        if(item.innerText.trim() === initStartValue.trim()) {
+                            item.classList.add('active');
+                        } else {
+                            item.classList.remove('active');
+                        }
+                    });
+                }
+    
+                if(column.classList.contains('end-value')) {
+                    let items = column.querySelectorAll('.time-filter__dropdown-item');
+                    items.forEach(item => {
+                        if(item.innerText.trim() === initEndValue.trim()) {
+                            item.classList.add('active');
+                        } else {
+                            item.classList.remove('active');
+                        }
+                    });
+                }
+            })
+
+            setInactiveElements(timeFilter, columns);
+        }
+        columns.forEach(column => {
+            let scrollWrap = column.querySelector('.time-filter__dropdown-scroll-wrap');
+            let items = column.querySelectorAll('.time-filter__dropdown-item');
+
+            if(scrollWrap.scrollTop > 10) {
+                column.classList.add('scroll-top');
+            }
+
+            if((scrollWrap.scrollHeight - (scrollWrap.scrollTop + scrollWrap.clientHeight)) > 10) {
+                column.classList.add('scroll-bottom');
+            }
+
+            scrollWrap.addEventListener('scroll', () => {
+                if(scrollWrap.scrollTop > 10) {
+                    column.classList.add('scroll-top');
+                } else {
+                    column.classList.remove('scroll-top');
+                }
+    
+                if((scrollWrap.scrollHeight - (scrollWrap.scrollTop + scrollWrap.clientHeight)) > 10) {
+                    column.classList.add('scroll-bottom');
+                } else {
+                    column.classList.remove('scroll-bottom');
+                }
+            })
+
+            if(items.length) {
+                
+                items.forEach(item => {
+                    item.addEventListener('click', () => {
+                        item.classList.add('active');
+
+                        items.forEach(i => {
+                            if(i === item) return;
+
+                            i.classList.remove('active');
+                        })
+
+                        setInactiveElements(timeFilter, columns);
+
+                        if(item.closest('.start-value')) {
+                            inputStart.value = item.innerText.trim();
+                            startValue.innerText = item.innerText.trim();
+                            isChosen[0] = true;
+                        }
+
+                        if(item.closest('.end-value')) {
+                            inputEnd.value = item.innerText.trim();
+                            endValue.innerText = item.innerText.trim();
+                            isChosen[1] = true;
+                        }
+
+                        if(isChosen.every(i => i === true)) {
+                            isChosen[0] = false;
+                            isChosen[1] = false;
+                            timeFilter.classList.remove('active');
+                            timeFilter.classList.add('time-filter--selected');
+
+                            if(this.mainFilterTop) {
+                                this.mainFilterTop.removeButton(inputStart.dataset.id);
+                                this.mainFilterTop.addButton(`${startValue.innerText}-${endValue.innerText}`, inputStart.dataset.id, reset);
+                            }
+                        }
+                    })
+                })
+            }
+        })
+
+        this.dateFilter = {
+            reset: reset,
         }
     }
 };
@@ -2811,7 +3150,11 @@ if (cardSliders.length) {
             pagination: {
                 el: cardSlider.querySelector('.swiper-pagination'),
                 clickable: true,
-            }
+            },
+            navigation: {
+                nextEl: cardSlider.querySelector('.btn-next'),
+                prevEl: cardSlider.querySelector('.btn-prev'),
+            },
         });
     })
 }
@@ -2977,6 +3320,20 @@ if (cards.length) {
             ) {
                 e.preventDefault();
             }
+        })
+    })
+}
+
+
+let stars = document.querySelectorAll('.card__star');
+if(stars.length) {
+    stars.forEach(star => {
+        star.addEventListener('click', (e) => {
+            star.classList.add('show-text');
+
+            setTimeout(() => {
+                star.classList.remove('show-text');
+            }, 1000)
         })
     })
 };

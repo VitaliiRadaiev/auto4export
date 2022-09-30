@@ -1,3 +1,13 @@
+<div class="main-filter-top main-filter-top--empty" data-main-filter-top>
+    <button class="main-filter-top__clear" data-action="reset-main-filter">
+        Clear all
+        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none" class="_svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M12.728 5.09117C12.9623 4.85685 12.9623 4.47696 12.728 4.24264C12.4937 4.00833 12.1138 4.00833 11.8795 4.24264L8.48535 7.63675L5.09124 4.24264C4.85692 4.00833 4.47703 4.00833 4.24271 4.24264C4.0084 4.47696 4.0084 4.85685 4.24271 5.09117L7.63682 8.48528L4.24271 11.8794C4.0084 12.1137 4.0084 12.4936 4.24271 12.7279C4.47703 12.9622 4.85692 12.9622 5.09124 12.7279L8.48535 9.33381L11.8795 12.7279C12.1138 12.9622 12.4937 12.9622 12.728 12.7279C12.9623 12.4936 12.9623 12.1137 12.728 11.8794L9.33388 8.48528L12.728 5.09117Z"
+                fill="#8C8C8C"></path>
+        </svg>
+    </button>
+</div>
 <div class="main-filter border-rudius" data-main-filter>
     <div class="main-filter__row">
         <div class="main-filter__title">Condition</div>
@@ -5,7 +15,7 @@
             <div class="select-wrap">
                 <select name="" class="_select">
                     <option value="" selected>Select</option>
-                    <option value="1" >All</option>
+                    <option value="1">All</option>
                     <option value="2">Cars</option>
                     <option value="3">Trucks</option>
                     <option value="4">Motorcycle</option>
@@ -331,9 +341,9 @@
     <div class="main-filter__row">
         <div class="main-filter__title">Year from/to</div>
         <div class="main-filter__years">
-            <div class="time-filter" data-time-filter>
-                <input data-time-filter-start value="1990" type="hidden" class="time-filter__input">
-                <input data-time-filter-end value="2021" type="hidden" class="time-filter__input">
+            <div class="time-filter" data-time-filter data-init-start-value="1990" data-init-end-value="2018">
+                <input data-time-filter-start  type="hidden" class="time-filter__input">
+                <input data-time-filter-end  type="hidden" class="time-filter__input">
                 <div class="time-filter__top">
                     From
                     <span class="time-filter__start-value">1990</span>
@@ -1686,19 +1696,20 @@
     </div>
     <div class="main-filter__row main-filter__row--hide">
         <div class="main-filter__title">Sale Date from/to</div>
-        <div class="main-filter__date filter-date border-rudius">
-            <div class="filter-date__col filter-date__col-1" data-datepicker>
-                <input type="text" value="12.02.2012">
+        <div class="main-filter__date filter-date border-rudius" data-filter-date>
+            <div class="filter-date__col filter-date__col-1">
+                <input type="text" >
             </div>
-            <div class="filter-date__col filter-date__col-2" data-datepicker>
-                <input type="text" value="12.03.2012">
+            <div class="filter-date__col filter-date__col-2">
+                <input type="text" >
             </div>
         </div>
     </div>
     <div class="main-filter__row main-filter__row--hide">
         <div class="main-filter__title">Current Bid Price Range</div>
         <div class="main-filter__range">
-            <div class="price-range" data-range data-min="100" data-max="26000" data-start="100" data-end="17000" data-step="100">
+            <div class="price-range" data-range data-min="100" data-max="26000" data-start="100" data-end="17000"
+                data-step="100">
                 <div class="price-range__slider"></div>
                 <div class="price-range__values">
                     <input type="hidden" class="price-range__input price-range__input--start">
@@ -1712,7 +1723,8 @@
     <div class="main-filter__row main-filter__row--hide">
         <div class="main-filter__title">Buy Now Price Range</div>
         <div class="main-filter__range">
-            <div class="price-range" data-range data-min="100" data-max="26000" data-start="100" data-end="17000" data-step="100">
+            <div class="price-range" data-range data-min="100" data-max="26000" data-start="100" data-end="17000"
+                data-step="100">
                 <div class="price-range__slider"></div>
                 <div class="price-range__values">
                     <input type="hidden" class="price-range__input price-range__input--start">
@@ -1726,7 +1738,8 @@
     <div class="main-filter__row main-filter__row--hide">
         <div class="main-filter__title">Lot Quality</div>
         <div class="main-filter__range">
-            <div class="price-range" data-range="quality" data-min="0.1" data-max="10" data-start="0.1" data-end="10" data-step="0.1">
+            <div class="price-range" data-range="quality" data-min="0.1" data-max="10" data-start="0.1" data-end="10"
+                data-step="0.1">
                 <div class="price-range__slider"></div>
                 <div class="price-range__values">
                     <input type="hidden" class="price-range__input price-range__input--start">

@@ -459,8 +459,8 @@ class App {
 	componentsScriptsBeforePageLoad() {
 		@@include('../common/about-preview/about-preview.js');
 		@@include('../common/rating/rating.js');
-		@@include('../common/time-filter/time-filter.js');
 		@@include('../common/main-filter/main-filter.js');
+		@@include('../common/time-filter/time-filter.js');
 		@@include('../common/price-range/price-range.js');
 		@@include('../common/timer/timer.js');
 		@@include('../common/auction-history/auction-history.js');

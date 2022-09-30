@@ -41,6 +41,9 @@
 
     & .swiper {
         width: 100%;
+
+        margin: -3px 0;
+        padding: 3px 0;
     }
 
     & .swiper-slide {
@@ -67,8 +70,9 @@
         @media (min-width: 992px) {
             &:hover {
                 & .search-top-filter__btn-text {
-                    background-color: $mainColor;
-                    color: #fff;
+                    border-color: $mainColor !important;
+                    background-color: $mainColor !important;
+                    color: #fff !important;
                 }
 
             }
@@ -94,6 +98,10 @@
                 border-color: $mainColor;
                 color: $mainColor;
             }
+        }
+
+        &:active {
+            transform: translateY(2px);
         }
     }
 

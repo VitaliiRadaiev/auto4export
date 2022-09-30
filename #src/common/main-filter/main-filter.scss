@@ -1,8 +1,86 @@
+.main-filter-top {
+    margin-bottom: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    @media (max-width: $md2+px) {
+        margin-bottom: 0;
+        padding: 3rem 3rem 0;
+    }
+
+    @media (max-width: $md2+px) {
+        padding: 2rem 2rem 0;
+    }
+
+    & button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        min-height: 3.8rem;
+        border-radius: 3.4rem;
+        border: 1px solid $borderColor;
+        outline: none;
+        background-color: transparent;
+        font-size: 1.6rem;
+        line-height: 1.1875em;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        color: $textColor;
+        padding: 1rem 2rem 0.9rem;
+
+        @media (max-width: $md3+px) {
+            font-size: 14px;
+            line-height: 16px;
+            min-height: 28px;
+            padding: 6px 14px;
+        }
+
+        @media (min-width: 992px) {
+            &:hover {
+                background-color: $mainColor;
+                color: #fff;
+                border-color: $mainColor;
+
+                & svg {
+                    color: #fff;
+                }
+            }
+        }
+
+        & img,
+        & svg {
+            flex: 0 0 auto;
+            width: 1.6rem;
+            height: auto;
+            margin-left: 0.6rem;
+            color: $textColorSecondary;
+            pointer-events: none;
+        }
+
+        &.main-filter-top__clear {
+            color: $textColorSecondary;
+        }
+    }
+
+    &__clear {
+    }
+
+    &--empty {
+        display: none;
+    }
+}
+
 .main-filter {
     padding: 3rem;
     display: flex;
     flex-direction: column;
     border: 1px solid #ececec;
+
+    @media (max-width: $md2+px) {
+        border: none;
+    }
 
     @media (max-width: $md3+px) {
         padding: 20px;
@@ -217,7 +295,7 @@
             width: 100%;
             border-radius: 3.2rem;
             overflow: hidden;
-            border: 1px solid $mainColor;
+            border: 1px solid $borderColor;
             font-size: 1.6rem;
             line-height: 1.18em;
             transition: all 0.3s ease;
@@ -225,6 +303,10 @@
             @media (max-width: $md3+px) {
                 font-size: 13px;
                 line-height: 15px;
+            }
+
+            &.time-filter--selected {
+                border: 1px solid $mainColor;
             }
 
             &.active {
@@ -443,10 +525,14 @@
 }
 
 .filter-date {
-    border: 1px solid $mainColor;
+    border: 1px solid $borderColor;
     background-color: #fff;
     display: flex;
     border-radius: 3.2rem;
+
+    &--selected {
+        border: 1px solid $mainColor;
+    }
 
     &__col {
         position: relative;
@@ -469,6 +555,7 @@
             width: 2.4rem;
             border-radius: 50%;
             border: 1px solid $borderColor;
+            pointer-events: none;
 
             @media (max-width: $md3+px) {
                 padding-top: 1px;
