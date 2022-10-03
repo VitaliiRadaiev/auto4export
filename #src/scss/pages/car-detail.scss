@@ -127,6 +127,9 @@
     }
 
     &__tables-wrap {
+        @media (min-width: 992px) {
+            padding-top: 2rem;
+        }
         @media (max-width: $md2+px) {
             display: flex;
             justify-content: space-between;

@@ -30,28 +30,19 @@
         }
 
         & .swiper-pagination {
-            left: 50%;
-            transform: translateX(-50%);
+            position: absolute;
             bottom: 2rem;
-            width: calc(100% - 11rem);
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
 
             @media (min-width: 768px) {
                 display: none;
             }
 
             & .swiper-pagination-bullet {
-                margin: 0;
-                opacity: 1;
-                background-color: #fff;
-                flex: 1 1 auto;
-                height: 2px;
-                border-radius: 10px;
+                opacity: 0.5;
 
                 &.swiper-pagination-bullet-active {
                     background-color: $mainColor;
+                    opacity: 1;
                 }
             }
         }

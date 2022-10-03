@@ -24,7 +24,7 @@
         display: flex;
         transition: all 0.3s ease;
         opacity: 1 !important;
-        font-size: 1.6rem;
+        font-size: 1.8rem;
         line-height: 1.1875em;
         white-space: nowrap;
         color: $textColorSecondary;
@@ -33,8 +33,8 @@
         border-bottom: 1px solid transparent;
 
         @media (max-width: $md3+px) {
-            font-size: 13px;
-            line-height: 15px;
+            font-size: 14px;
+            line-height: 16px;
         }
 
         @media (min-width: 992px) {
@@ -83,6 +83,10 @@
             background-color: $hover;
             color: #fff;
         }
+    }
+
+    @media (max-width: $md2+px) {
+        color: #fff !important;
     }
 
     &.inactive {
@@ -151,6 +155,10 @@
     &--light {
         background: #f9f9f9;
         color: $textColorSecondary;
+
+        @media (max-width: $md2+px) {
+            color: $textColorSecondary !important;
+        }
 
         @media (min-width: 992px) {
             &:hover {
