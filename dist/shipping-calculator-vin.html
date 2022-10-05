@@ -1437,19 +1437,19 @@ defer
                         <div class="hipping-calculator__col-1">
                             <div class="form">
                                 <div class="form__items">
-                                    <div class="form__item form__item--half">
+                                    <div class="form__item form__item--half-md">
                                         <label class="form__label">Vehicle Information</label>
                                         <input class="input" type="text" placeholder="Enter VIN/Lot Number">
                                     </div>
-                                    <div class="form__item form__item--half">
+                                    <div class="form__item form__item--half-md">
                                         <label class="form__label">Vehicle Type</label>
                                         <input class="input inactive text-primary text-uppercase" value="2013 Chevrolet Impala Ls 3.6L" type="text" placeholder="">
                                     </div>
-                                    <div class="form__item form__item--half">
+                                    <div class="form__item form__item--half-md">
                                         <label class="form__label">Ship From</label>
                                         <input class="input inactive" type="text" value="4354675432" placeholder="Enter ZIP Code">
                                     </div>
-                                    <div class="form__item form__item--half">
+                                    <div class="form__item form__item--half-md">
                                         <label class="form__label">From Port</label>
                                         <div class="select-wrap">
                                             <select name="" class="_select" data-id="fromPort">
@@ -1459,7 +1459,7 @@ defer
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="form__item form__item--half">
+                                    <div class="form__item form__item--half-md">
                                         <label class="form__label">Ship To</label>
                                         <div class="select-wrap">
                                             <select name="" class="_select " data-select-action >
@@ -1477,7 +1477,7 @@ defer
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="form__item form__item--half" data-id="toPort">
+                                    <div class="form__item form__item--half-md" data-id="toPort">
                                         <label class="form__label">To Port</label>
                                         <div class="select-wrap">
                                             <select name="" class="_select">
@@ -1487,11 +1487,11 @@ defer
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="form__item form__item--half d-none" data-id="destinationZip">
+                                    <div class="form__item form__item--half-md d-none" data-id="destinationZip">
                                         <label class="form__label">Destination Zip</label>
                                         <input class="input" type="text" placeholder="Enter">
                                     </div>
-                                    <div class="form__item form__item--half">
+                                    <div class="form__item form__item--half-md">
                                         <label class="form__label">Transportation Type</label>
                                         <div class="form__radio-group">
                                             <label class="radio" data-id="roro">
@@ -1506,7 +1506,7 @@ defer
                                             </label>
                                         </div>
                                     </div>
-                                    <div class="form__item form__item--half">
+                                    <div class="form__item form__item--half-md">
                                         <label class="form__label d-none d-md-block"></label>
                                         <div class="form__note">
                                             <img src="img/icons/info.svg" alt="">
@@ -1518,7 +1518,6 @@ defer
                         </div>
                         <div class="hipping-calculator__col-2">
                             <div class="hipping-price">
-                                <div class="hipping-price__border" data-border-dashed="top-left"></div>
                                 <div class="hipping-price__body">
                                     <div class="hipping-price__head">
                                         <div class="hipping-price__icon">
@@ -1533,27 +1532,27 @@ defer
                                         <ul class="simple-table-list">
                                             <li>
                                                 <label>Ocean Rate</label>
-                                                <p>$1,800</p>
+                                                <p class=""><strong>$1,800</strong></p>
                                             </li>
                                             <li>
                                                 <label>Ground Rate</label>
-                                                <p>$350</p>
+                                                <p class=""><strong>$350</strong></p>
                                             </li>
                                         </ul>
                                     </div>
-                                    <div class="hipping-price__total">
+                                    <div class="hipping-price__total mb-2">
                                         <label>Total</label>
                                         <p class="text-primary">$2,150</p>
                                     </div>
-                                    <!-- <div class="hipping-price__path">
-
-                                    </div> -->
+                                    <div class="hipping-price__path">
+                                        Houston - New-York
+                                    </div>
+                                    <button type="submit" class="hipping-price__submit btn-default">
+                                        Calculate
+                                        <img class="img-svg" src="img/icons/calculator.svg" alt="">
+                                    </button>
                                 </div>
                             </div>
-                            <button type="submit" class="hipping-calculator__submit btn-default">
-                                <img class="img-svg" src="img/icons/calculator.svg" alt="">
-                                Calculate
-                            </button>
                         </div>
                     </div>
                 </div>

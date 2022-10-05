@@ -1,0 +1,113 @@
+.blog-hero {
+
+    &__slider {
+        border-radius: 1rem;
+
+        & .swiper-slide {
+            background-color: $secondColor;
+            color: #fff;
+            overflow: hidden;
+            border-radius: 1rem;
+            height: auto;
+        }
+
+        & .swiper-pagination {
+            position: absolute;
+            left: auto;
+            right: 5rem;
+            bottom: 5rem;
+            width: auto;
+
+            @media (max-width: $md3+px) {
+                right: 20px;
+                bottom: 20px;
+            }
+
+            & .swiper-pagination-bullet {
+                opacity: 0.5;
+
+                & .swiper-pagination-bullet-active {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    &__text-wrap {
+        flex: 0 1 100%;
+        padding: 8rem 10rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        z-index: 2;
+        min-height: 42rem;
+
+        @media (max-width: $md2+px) {
+            flex: 0 1 100%;
+            padding: 6rem;
+        }
+
+        @media (max-width: $md3+px) {
+            padding: 30px 20px;
+            min-height: 238px;
+            display: block;
+        }
+
+        & .btn-default {
+            align-self: flex-start;
+            min-width: 16.1rem;
+
+            @media (max-width: $md3+px) {
+                min-width: 118px;
+            }
+        }
+    }
+
+    &__title {
+        max-width: 53.6rem;
+        margin-bottom: 4rem;
+
+        @media (max-width: $md3+px) {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__img {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 60.25%;
+        background-color: #000;
+
+        @media (max-width: $md2+px) {
+            width: 67.09%;
+        }
+
+        @media (max-width: $md3+px) {
+            width: 60.71%;
+        }
+
+        &:before {
+            position: absolute;
+            content: "";
+            z-index: 2;
+            top: 0;
+            left: -1px;
+            height: 100%;
+            width: 38.79%;
+            background: linear-gradient(270deg, rgba(34, 62, 112, 0.0001) 1.26%, #223E70 100%);
+            
+            @media (max-width: $md2+px) {
+                width: 75.78%;
+                min-width: 206px;
+            }
+
+        }
+
+        & img {
+            opacity: 0.85;
+        }
+    }
+}

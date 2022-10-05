@@ -251,6 +251,18 @@
         }
     }
 
+    &__path {
+        margin-bottom: 1.8rem;
+        font-size: 1.6rem;
+        line-height: 1.9rem;
+        color: $textColorSecondary;
+
+        @media (max-width: $md3+px) {
+            font-size: 13px;
+            line-height: 15px;
+        }
+    }
+
     &__submit {
         width: 100%;
     }

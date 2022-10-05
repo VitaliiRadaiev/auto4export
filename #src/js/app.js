@@ -68,6 +68,7 @@ class App {
 		@@include('../common/search-top-filter/search-top-filter.js');
 		@@include('../common/licenses/licenses.js');
 		@@include('../common/advantages/advantages.js');
+		@@include('../common/blog-hero/blog-hero.js');
 	}
 
 

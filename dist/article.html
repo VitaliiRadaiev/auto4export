@@ -1415,61 +1415,32 @@ defer
     <!-- == // TOP LINE ================== -->
 
     <main class="_page blog-page" data-padding-top-header-size>
-        <div class="p-50"></div>
-        <div class="container">
-            <ul class="breadcrumbs">
-     <li><a href="#">Home</a></li> <li><a href="#">Blogs</a></li>
-</ul>
-        </div>
-
-        <div class="container">
-            <h1 class="title-1">911 GT3 with Manthey Kit Is Quicker at the 'Ring</h1>
-        </div>
-
         <div class="padding-wrap pt-0">
-            <div class="article">
-                <div class="article__head">
-                    <div class="container">
-                        <div class="article__meta blog-card__meta">
-                            <div class="blog-card__meta-item">
-                                <img class="img-svg" src="img/icons/calendar.svg" alt="">
-                                28 Jun 2022
-                            </div>
-                            <div class="blog-card__meta-item">
-                                <img class="img-svg" src="img/icons/eye.svg" alt="">
-                                1456
-                            </div>
-                            <div class="blog-card__meta-item">
-                                <img class="img-svg" src="img/icons/chat.svg" alt="">
-                                23
-                            </div>
-
-                        </div>
-                        <div class="article__hero">
-                            <div class="article__hero-img border-rudius ibg">
-                                <img src="img/photo/article-hero-img.jpg" alt="">
-                            </div>
-                            <ul class="share-list border-rudius">
-                                <li>
-                                    <a href="#">
-                                        <img src="img/icons/facebook-color.svg" alt="">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img src="img/icons/twiter-color.svg" alt="">
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+            <div class="article-head">
+                <div class="article-head__bg">
+                    <div class="article-head__img ibg">
+                        <img src="img/photo/article-hero-img.jpg" alt="">
                     </div>
                 </div>
+                <div class="article-head__body container">
+                    <div class="article-head__breadcrumbs">
+                        <ul class="breadcrumbs">
+     <li><a href="#">Home</a></li> <li><a href="#">Blogs</a></li>
+</ul>
+                    </div>
+                    <h1 class="article-head__title title-1">911 GT3 with Manthey Kit Is Quicker at the 'Ring</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="padding-wrap ">
+            <div class="article">
                 <div class="article__body">
                     <div class="container">
                         <div class="main-grid main-grid--second">
                             <div class="main-grid__content">
                                 <div class="article__content-wrap">
-                                    <div class="article__text text-content">
+                                    <div class="article__text text-content text-content--md">
                                         <h3>
                                             Currently only offered in Europe, the Manthey kit helped cut 4.19 seconds
                                             off
@@ -1563,35 +1534,34 @@ defer
 
                                         <ul class="list-with-icons">
                                             <li>
-                                                <img src="img/photo/01.svg" alt="">
+                                                <span class="num">01</span>
                                                 Max speed: <span>191 mph</span>
                                             </li>
                                             <li>
-                                                <img src="img/photo/02.svg" alt="">
+                                                <span class="num">02</span>
                                                 0-62 mph: <span>3.6 secs</span>
                                             </li>
                                             <li>
-                                                <img src="img/photo/03.svg" alt="">
+                                                <span class="num">03</span>
                                                 Combined mpg: <span>33.2</span>
                                             </li>
                                             <li>
-                                                <img src="img/photo/04.svg" alt="">
+                                                <span class="num">04</span>
                                                 Engine layout: <span>2981cc turbocharged flat-six</span>
                                             </li>
                                             <li>
-                                                <img src="img/photo/05.svg" alt="">
+                                                <span class="num">05</span>
                                                 Power (PS): <span>450</span>
                                             </li>
                                             <li>
-                                                <img src="img/photo/06.svg" alt="">
+                                                <span class="num">06</span>
                                                 CO2: <span>192 g/km</span>
                                             </li>
                                         </ul>
 
                                         <div class="quote">
-                                            <div class="quote__border" data-border-dashed="simple"></div>
                                             <div class="quote__icon">
-                                                <img src="img/icons/quote-color.svg" alt="">
+                                                <img src="img/icons/quote.svg" alt="">
                                             </div>
                                             <div class="quote__body">
                                                 The Manthey Performance kit is currently available to order in Europe,
@@ -1638,6 +1608,9 @@ defer
                                                         </div>
                                                     </div>
                                                     <div class="article-comment__text-wrap">
+                                                        <div class="article-comment__icon">
+                                                            <img src="img/icons/quote.svg" alt="">
+                                                        </div>
                                                         <div class="article-comment__text">
                                                             I look forward to plastic versions of the aerodiscs and rear
                                                             wing becoming available at my local Autozone well before the
@@ -1650,8 +1623,8 @@ defer
                                                     </div>
                                                     <a href="#"
                                                         class="btn-default btn-default--sm article-comment__reply">
-                                                        <img class="img-svg" src="img/icons/reply.svg" alt="">
                                                         Reply
+                                                        <img class="img-svg" src="img/icons/reply.svg" alt="">
                                                     </a>
                                                 </div>
                                             </div>
@@ -1659,7 +1632,7 @@ defer
                                                 <div class="article-comment">
                                                     <div class="article-comment__head">
                                                         <div class="article-comment__photo">
-                                                            <img src="img/photo/avatar-default.jpg" alt="">
+                                                            <img class="img-svg" src="img/icons/user.svg" alt="">
                                                         </div>
                                                         <div>
                                                             <div class="article-comment__name">
@@ -1671,6 +1644,9 @@ defer
                                                         </div>
                                                     </div>
                                                     <div class="article-comment__text-wrap">
+                                                        <div class="article-comment__icon">
+                                                            <img src="img/icons/quote.svg" alt="">
+                                                        </div>
                                                         <div class="article-comment__text">
                                                             The kit? The driver? Track condition? Weather? All of the
                                                             above?...that's the $48,000.00 question???
@@ -1678,14 +1654,14 @@ defer
                                                     </div>
                                                     <a href="#"
                                                         class="btn-default btn-default--sm article-comment__reply">
-                                                        <img class="img-svg" src="img/icons/reply.svg" alt="">
                                                         Reply
+                                                        <img class="img-svg" src="img/icons/reply.svg" alt="">
                                                     </a>
                                                 </div>
                                                 <div class="article-comment">
                                                     <div class="article-comment__head">
                                                         <div class="article-comment__photo">
-                                                            <img src="img/photo/avatar-default.jpg" alt="">
+                                                            <img class="img-svg" src="img/icons/user.svg" alt="">
                                                         </div>
                                                         <div>
                                                             <div class="article-comment__name">
@@ -1697,49 +1673,58 @@ defer
                                                         </div>
                                                     </div>
                                                     <div class="article-comment__text-wrap">
+                                                        <div class="article-comment__icon">
+                                                            <img src="img/icons/quote.svg" alt="">
+                                                        </div>
                                                         <div class="article-comment__text">
                                                             Well sort of yes
                                                         </div>
                                                     </div>
                                                     <a href="#"
                                                         class="btn-default btn-default--sm article-comment__reply">
-                                                        <img class="img-svg" src="img/icons/reply.svg" alt="">
                                                         Reply
+                                                        <img class="img-svg" src="img/icons/reply.svg" alt="">
                                                     </a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+
                                     <form action="/">
-                                        <div class="leave-comment form">
-                                            <div class="form__items">
-                                                <div class="form__item form__item--half">
-                                                    <div class="input-wrap">
-                                                        <input type="text" class="input" placeholder="Name">
+                                        <h2 class="article-comments__title title-2">Leave a Comment</h2>
+                                        <div class="border-box border-box--md">
+                                            <div class="leave-comment form">
+                                                <div class="form__items">
+                                                    <div class="form__item form__item--half-md">
+                                                        <label class="form__label">Name</label>
+                                                        <div class="input-wrap">
+                                                            <input type="text" class="input" placeholder="Name">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form__item form__item--half-md">
+                                                        <label class="form__label">Email</label>
+                                                        <div class="input-wrap">
+                                                            <input type="email" class="input" placeholder="Email">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form__item">
+                                                        <label class="form__label">Comment</label>
+                                                        <textarea class="textarea" placeholder="Comment"></textarea>
                                                     </div>
                                                 </div>
-                                                <div class="form__item form__item--half">
-                                                    <div class="input-wrap">
-                                                        <input type="email" class="input" placeholder="Email">
-                                                    </div>
+                                                <div class="form__bottom">
+                                                    <button type="submit" class="form__submit btn-default">
+                                                        Post a Comment
+                                                        <img class="img-svg" src="img/icons/chat-2.svg" alt="">
+                                                    </button>
                                                 </div>
-                                                <div class="form__item">
-                                                    <textarea class="textarea" placeholder="Comment"></textarea>
-                                                </div>
-                                            </div>
-                                            <div class="form__bottom">
-                                                <button type="submit" class="form__submit btn-default">
-                                                    <img class="img-svg" src="img/icons/blogging.svg" alt="">
-                                                    Post a Comment
-                                                </button>
                                             </div>
                                         </div>
                                     </form>
                                 </div>
                             </div>
                             <div class="main-grid__side-column">
-                                <div class="categories-box border-rudius" data-categories-box>
-    <div class="categories-box__border" data-border-dashed="simple"></div>
+                                <div class="categories-box border-rudius border-box">
     <div class="categories-box__body">
         <h2 class="categories-box__title">Categories</h2>
         <div class="categories-box__list-wrap">
@@ -1787,25 +1772,6 @@ defer
                                         </button>
                                     </div>
                                 </form>
-
-                                <div class="question-box">
-    <div class="question-box__bg border-rudius ibg">
-        <picture>
-            <source srcset="img/photo/question-box-bg.jpg" media="(min-width: 992px)" >
-            <source srcset="img/photo/question-box-bg-tablet.jpg" media="(min-width: 768px)" >
-            <img  src="img/photo/question-box-bg-mob.jpg" alt="img">
-        </picture>
-    </div>
-    <div class="question-box__body">
-        <h2 class="question-box__title">
-            Do You Have <br> Any Questions? 
-        </h2>
-        <a href="#popup-question" data-popup="open-popup" class="question-box__btn btn-default">
-            Ask Question
-            <img src="img/icons/question.svg" alt="">
-        </a>
-    </div>
-</div>
                             </div>
                         </div>
                     </div>
@@ -1829,18 +1795,21 @@ defer
                                             <div class="carousel-card__img ibg">
                                                 <a href="#">
                                                     <img class="swiper-lazy"
-                                                        data-src="img/photo/featured-vehicles-card-img-1.jpg" alt="">
+                                                        data-src="img/photo/similar-article-img-1.jpg" alt="">
                                                     <div class="swiper-lazy-preloader"></div>
                                                 </a>
                                             </div>
-                                            <div class="carousel-card__title">
-                                                <a href="#">
-                                                    2013 Chevrolet Impala Ls 3.6L
-                                                </a>
-                                            </div>
-                                            <div class="carousel-card__date">
-                                                <img class="img-svg" src="img/icons/calendar.svg" alt="">
-                                                28 Jun 2022
+                                            <div class="carousel-card__body">
+                                                <div class="carousel-card__title">
+                                                    <a href="#">
+                                                        2023 Polestar 2 BST Edition 270 Is a 'Star with a Stripe and Go-Fast Parts
+                                                    </a>
+                                                </div>
+                                                <hr>
+                                                <div class="carousel-card__date">
+                                                    <img class="img-svg" src="img/icons/calendar.svg" alt="">
+                                                    28 Jun 2022
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -1849,20 +1818,22 @@ defer
                                             <div class="carousel-card__img ibg">
                                                 <a href="#">
                                                     <img class="swiper-lazy"
-                                                        data-src="img/photo/featured-vehicles-card-img-2.jpg" alt="">
+                                                        data-src="img/photo/similar-article-img-2.jpg" alt="">
                                                     <div class="swiper-lazy-preloader"></div>
                                                 </a>
                                             </div>
-                                            <div class="carousel-card__title">
-                                                <a href="#">
-                                                    2018 CHRYSLER PACIFICA
-                                                </a>
+                                            <div class="carousel-card__body">
+                                                <div class="carousel-card__title">
+                                                    <a href="#">
+                                                        Buick Electra-X Concept Gives Hints about the Future Electric Sub-Brand
+                                                    </a>
+                                                </div>
+                                                <hr>
+                                                <div class="carousel-card__date">
+                                                    <img class="img-svg" src="img/icons/calendar.svg" alt="">
+                                                    28 Jun 2022
+                                                </div>
                                             </div>
-                                            <div class="carousel-card__date">
-                                                <img class="img-svg" src="img/icons/calendar.svg" alt="">
-                                                28 Jun 2022
-                                            </div>
-                                           
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
@@ -1870,20 +1841,22 @@ defer
                                             <div class="carousel-card__img ibg">
                                                 <a href="#">
                                                     <img class="swiper-lazy"
-                                                        data-src="img/photo/featured-vehicles-card-img-3.jpg" alt="">
+                                                        data-src="img/photo/similar-article-img-3.jpg" alt="">
                                                     <div class="swiper-lazy-preloader"></div>
                                                 </a>
                                             </div>
-                                            <div class="carousel-card__title">
-                                                <a href="#">
-                                                    2015 MASERATI QUATTROPOR
-                                                </a>
+                                            <div class="carousel-card__body">
+                                                <div class="carousel-card__title">
+                                                    <a href="#">
+                                                        2022 Mercedes-Benz EQB Electric SUV Pricing Announced
+                                                    </a>
+                                                </div>
+                                                <hr>
+                                                <div class="carousel-card__date">
+                                                    <img class="img-svg" src="img/icons/calendar.svg" alt="">
+                                                    28 Jun 2022
+                                                </div>
                                             </div>
-                                            <div class="carousel-card__date">
-                                                <img class="img-svg" src="img/icons/calendar.svg" alt="">
-                                                28 Jun 2022
-                                            </div>
-                                            
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
@@ -1891,20 +1864,22 @@ defer
                                             <div class="carousel-card__img ibg">
                                                 <a href="#">
                                                     <img class="swiper-lazy"
-                                                        data-src="img/photo/featured-vehicles-card-img-4.jpg" alt="">
+                                                        data-src="img/photo/similar-article-img-4.jpg" alt="">
                                                     <div class="swiper-lazy-preloader"></div>
                                                 </a>
                                             </div>
-                                            <div class="carousel-card__title">
-                                                <a href="#">
-                                                    2005 Cadillac Escalade
-                                                </a>
+                                            <div class="carousel-card__body">
+                                                <div class="carousel-card__title">
+                                                    <a href="#">
+                                                        2023 BMW X1 Revealed with a Characterful New Design
+                                                    </a>
+                                                </div>
+                                                <hr>
+                                                <div class="carousel-card__date">
+                                                    <img class="img-svg" src="img/icons/calendar.svg" alt="">
+                                                    28 Jun 2022
+                                                </div>
                                             </div>
-                                            <div class="carousel-card__date">
-                                                <img class="img-svg" src="img/icons/calendar.svg" alt="">
-                                                28 Jun 2022
-                                            </div>
-                                            
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
@@ -1912,20 +1887,22 @@ defer
                                             <div class="carousel-card__img ibg">
                                                 <a href="#">
                                                     <img class="swiper-lazy"
-                                                        data-src="img/photo/featured-vehicles-card-img-5.jpg" alt="">
+                                                        data-src="img/photo/similar-article-img-5.jpg" alt="">
                                                     <div class="swiper-lazy-preloader"></div>
                                                 </a>
                                             </div>
-                                            <div class="carousel-card__title">
-                                                <a href="#">
-                                                    2016 Hyundai Elantra
-                                                </a>
+                                            <div class="carousel-card__body">
+                                                <div class="carousel-card__title">
+                                                    <a href="#">
+                                                        2023 Toyota RAV4 Woodland Edition Adds Off-Road Cred to the Hybrid
+                                                    </a>
+                                                </div>
+                                                <hr>
+                                                <div class="carousel-card__date">
+                                                    <img class="img-svg" src="img/icons/calendar.svg" alt="">
+                                                    28 Jun 2022
+                                                </div>
                                             </div>
-                                            <div class="carousel-card__date">
-                                                <img class="img-svg" src="img/icons/calendar.svg" alt="">
-                                                28 Jun 2022
-                                            </div>
-                                            
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
@@ -1933,26 +1910,27 @@ defer
                                             <div class="carousel-card__img ibg">
                                                 <a href="#">
                                                     <img class="swiper-lazy"
-                                                        data-src="img/photo/featured-vehicles-card-img-1.jpg" alt="">
+                                                        data-src="img/photo/similar-article-img-1.jpg" alt="">
                                                     <div class="swiper-lazy-preloader"></div>
                                                 </a>
                                             </div>
-                                            <div class="carousel-card__title">
-                                                <a href="#">
-                                                    2013 Chevrolet Impala Ls 3.6L
-                                                </a>
-                                            </div>
-                                            <div class="carousel-card__date">
-                                                <img class="img-svg" src="img/icons/calendar.svg" alt="">
-                                                28 Jun 2022
+                                            <div class="carousel-card__body">
+                                                <div class="carousel-card__title">
+                                                    <a href="#">
+                                                        2013 Chevrolet Impala Ls 3.6L
+                                                    </a>
+                                                </div>
+                                                <hr>
+                                                <div class="carousel-card__date">
+                                                    <img class="img-svg" src="img/icons/calendar.svg" alt="">
+                                                    28 Jun 2022
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="carousel__btn carousel__btn-prev"><i
-                                        class="icon-chevron-right"></i></div>
-                                <div class="carousel__btn carousel__btn-next"><i
-                                        class="icon-chevron-right"></i></div>
+                                <div class="carousel__btn carousel__btn-prev"><i class="icon-chevron-right"></i></div>
+                                <div class="carousel__btn carousel__btn-next"><i class="icon-chevron-right"></i></div>
                             </div>
                         </div>
                     </div>

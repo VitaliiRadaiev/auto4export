@@ -25,7 +25,7 @@
         display: flex;
         flex-wrap: wrap;
         gap: 2rem;
-        margin-bottom: 3rem;
+        margin-bottom: 2rem;
 
         @media (max-width: $md3+px) {
             gap: 10px;
@@ -65,6 +65,15 @@
                     & .input {
                         border: none;
                     }
+
+                    & .select__item {
+                        border: none;
+                    }
+
+                    & .textarea {
+                        border: none;
+                    }
+                    
                 }
 
             }
@@ -116,6 +125,30 @@
         @media (min-width: 768px) {
             & .input {
                 border-radius: 0 3.2rem 3.2rem 0;
+                border: none;
+            }
+
+            & .select._active {
+                & .select__item {
+                    border-radius: 0 2rem 2rem 2rem;
+                }
+            }
+
+            & .select__item {
+                border-radius: 0 3.2rem 3.2rem 0;
+                border: none;
+            }
+        }
+
+        @media (max-width: $md3+px) {
+            & .select._active {
+                & .select__item {
+                    border-radius: 0 0rem 2rem 2rem;
+                }
+            }
+
+            & .select__item {
+                border-radius: 0 0rem 3.2rem 3.2rem;
                 border: none;
             }
         }
@@ -458,7 +491,7 @@
     }
 
     &.text-uppercase {
-        font-weight: 700;
+        font-weight: 400;
     }
 
     &:focus {
@@ -634,7 +667,7 @@
     width: 100%;
     background: #fff;
     border-radius: 2.4rem;
-    height: 19rem;
+    height: 11rem;
     padding: 2.2rem 3rem;
     border: none;
     outline: none;
@@ -663,11 +696,11 @@
     }
 
     @media (max-width: $md3+px) {
-        height: 98px;
+        height: 100px;
         padding: 10px 20px;
         font-size: 14px;
         line-height: 17px;
-        border-radius: 20px;
+        border-radius: 22px;
     }
 
     &:focus {

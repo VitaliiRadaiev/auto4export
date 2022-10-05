@@ -197,6 +197,14 @@
     @media (max-width: $md3+px) {
         padding: 2rem;
     }
+
+    &--md {
+        padding: 4rem;
+
+        @media (max-width: $md3+px) {
+            padding: 2rem;
+        }
+    }
 }
 
 .search-vehicles {
