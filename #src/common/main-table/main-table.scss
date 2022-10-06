@@ -1,7 +1,7 @@
 .main-table {
     width: 100%;
-    font-size: 1.4rem;
-    line-height: 1.21em;
+    font-size: 1.6rem;
+    line-height: 1.9rem;
 
     &:not(:last-child) {
         margin-bottom: 3rem;
@@ -9,7 +9,7 @@
 
     @media (max-width: $md2+px) {
         display: block;
-        line-height: 1.29em;
+        line-height: 1.8rem;
         & tbody {
             display: block;
             width: 100%;
@@ -18,10 +18,8 @@
 
     @media (max-width: $md3+px) {
         font-size: 13px;
-        line-height: 16px;
+        line-height: 18px;
     }
-
-
 
     & tr {
         position: relative;
@@ -31,25 +29,16 @@
             flex-direction: column;
             width: 100%;
             padding: 30px 40px;
-            background: #fcfcfc;
+            background: #fff;
+            border: 1px solid $borderColor;
             border-radius: 10px;
-            gap: 20px;
+            gap: 15px;
         }
 
         @media (max-width: $md3+px) {
             padding: 20px;
             border-radius: 6px;
             gap: 16px;
-        }
-
-        &:nth-child(2n + 2) {
-            &:after {
-                background-color: #f9f9f9 !important;
-            }
-
-            @media (max-width: $md2+px) {
-                background-color: #f9f9f9;
-            }
         }
 
         &:first-child {
@@ -68,7 +57,8 @@
                     width: 100%;
                     height: calc(100% - 1rem);
                     z-index: 1;
-                    background-color: #fcfcfc;
+                    background-color: transparent;
+                    border: 1px solid #ECECEC;
                     border-radius: 1rem;
 
                     @media (max-width: $md3+px) {
@@ -127,14 +117,13 @@
 
         @media (max-width: $md2+px) {
             display: flex;
-            align-items: center;
             justify-content: space-between;
             height: auto;
             padding: 0;
             background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTAiIGN5PSIxMCIgcj0iNSIgZmlsbD0iI0Q5RDlEOSIvPgo8L3N2Zz4K);
             background-size: 2px;
             background-repeat: repeat-x;
-            background-position: left 0 bottom 44%;
+            background-position: left 0 top 0.9em;
 
 
 
@@ -149,7 +138,7 @@
         color: $textColorSecondary;
         display: inline-block;
         padding-right: 1rem;
-        background-color: #f9f9f9;
+        background-color: #fff;
         white-space: nowrap;
 
         @media (min-width: 992px) {
@@ -165,12 +154,8 @@
         @media (max-width: $md2+px) {
             margin-bottom: 0;
             padding-left: 1rem;
-            background-color: #f9f9f9;
+            background-color: #fff;
             text-align: right;
-
-            & strong {
-                font-weight: 700;
-            }
 
             @media (max-width: $md3+px) {
                 padding-left: 5px;

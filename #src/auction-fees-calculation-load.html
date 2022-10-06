@@ -36,7 +36,7 @@
                 <form action="">
                     <div class="auction-calculation">
                         <div class="auction-calculation__col-1">
-                            <div class="auction-calculation__form">
+                            <div class="auction-calculation__form border-box border-box--md">
                                 <div class="auction-calculation__form-row">
                                     <label class="form__label">Vehicle Information</label>
                                     <div class="auction-calculation__vehicle-input show-loader">
@@ -98,8 +98,7 @@
                         </div>
                         <div class="auction-calculation__col-2">
                             <div class="auction-calculation-info-box">
-                                <div class="auction-calculation-info-box__border" data-border-dashed="simple"></div>
-                                <div class="auction-calculation-info-box__body">
+                                <div class="auction-calculation-info-box__body border-box border-box--md">
                                     <ul class="auction-calculation-info-box__list">
                                         <li>
                                             <div>
@@ -159,85 +158,60 @@
 
         <div class="padding-wrap">
             <div class="container">
-                
-                    <h2 class="title-2">How it works</h2>
+                <div class="how-it-works-steps border-box">
+                    <h2 class="title-2 text-center">How it works</h2>
                     <ul class="list list-col-4">
                         <li>
+                            <div class="list__dot"></div>
                             <div class="list__icon">
-                                <img src="img/photo/01.svg" alt="">
+                                <span class="num">01</span>
                             </div>
                             <div class="list__inner">
                                 <div class="list__title">Enter VIN/LOT</div>
-                                <div class="list__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer porta eget sem sit amet fermentum.</div>
+                                <div class="list__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+                                    porta eget sem sit amet fermentum.</div>
                             </div>
                         </li>
                         <li>
+                            <div class="list__dot"></div>
                             <div class="list__icon">
-                                <img src="img/photo/02.svg" alt="">
+                                <span class="num">02</span>
                             </div>
                             <div class="list__inner">
                                 <div class="list__title">Enter Your Final Bid</div>
-                                <div class="list__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer porta eget sem sit amet fermentum.</div>
+                                <div class="list__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+                                    porta eget sem sit amet fermentum.</div>
                             </div>
                         </li>
                         <li>
+                            <div class="list__dot"></div>
                             <div class="list__icon">
-                                <img src="img/photo/03.svg" alt="">
+                                <span class="num">03</span>
                             </div>
                             <div class="list__inner">
                                 <div class="list__title">Click Enter</div>
-                                <div class="list__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer porta eget sem sit amet fermentum.</div>
+                                <div class="list__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+                                    porta eget sem sit amet fermentum.</div>
                             </div>
                         </li>
                         <li>
+                            <div class="list__dot"></div>
                             <div class="list__icon">
-                                <img src="img/photo/04.svg" alt="">
+                                <span class="num">04</span>
                             </div>
                             <div class="list__inner">
                                 <div class="list__title">See Total Price</div>
-                                <div class="list__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer porta eget sem sit amet fermentum.</div>
+                                <div class="list__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+                                    porta eget sem sit amet fermentum.</div>
                             </div>
                         </li>
                     </ul>
-                
+                </div>
             </div>
         </div>
 
         <div class="padding-wrap pb-0">
-            <section class="question">
-                <div class="question__bg">
-                    <picture>
-                        <source srcset="img/photo/guestion-bg-desk.jpg" media="(min-width: 992px)">
-                        <source srcset="img/photo/guestion-bg-tablet.jpg" media="(min-width: 768px)">
-                        <img src="img/photo/guestion-bg-mob.jpg" alt="img">
-                    </picture>
-                </div>
-                <div class="question__body container">
-                    <div class="question__head">
-                        <h2 class="question__title">Do You Have Any Questions? </h2>
-                        <div class="question__label">
-                            <img src="img/photo/question-icon.svg" alt="">
-                            Leave a request to contact a manager!
-                        </div>
-                    </div>
-                    <form action="#">
-                        <div class="question__form">
-                            <div class="question__form-item question__form-item-1">
-                                <input type="text" class="input" placeholder="Your Name">
-                            </div>
-                            <div class="question__form-item question__form-item-2" data-mask="9{*}">
-                                <input type="text" class="input" placeholder="Your Phone Number">
-                            </div>
-                            <div class="question__form-item question__form-item-3">
-                                <button type="submit" class="question__submit btn-default">
-                                    <i class="icon-arrow-right"></i>
-                                    Send
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </section>
+            @@include('common/question/_question.html')
         </div>
     </main>
 

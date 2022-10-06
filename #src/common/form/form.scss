@@ -78,6 +78,12 @@
 
             }
         }
+
+        &.mb-3 {
+            @media (min-width: 768px) {
+                margin-bottom: 3rem !important;
+            }
+        }
     }
 
     &__item {

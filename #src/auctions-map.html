@@ -31,10 +31,9 @@
                 <form action="#">
                     <div class="auctions-search">
                         <div class="auctions-search__form">
-                            <div class="auctions-search__form-border" data-border-dashed="simple"></div>
-                            <div class="auctions-search__form-body">
+                            <div class="auctions-search__form-body border-box border-box--md">
                                 <div class="form">
-                                    <div class="form__items">
+                                    <div class="form__items mb-3">
                                         <div class="form__item" data-datepicker>
                                             <label for="" class="form__label">Auction Date</label>
                                             <input class="input" type="text" placeholder="dd.mm.yy">
@@ -52,8 +51,8 @@
                                     </div>
                                     <div class="form__bottom">
                                         <button type="submit" class="form__submit btn-default mb-0">
-                                            <img class="img-svg" src="img/icons/search.svg" alt="">
                                             Find Branches
+                                            <img class="img-svg" src="img/icons/search.svg" alt="">
                                         </button>
                                     </div>
                                 </div>
@@ -315,40 +314,7 @@
         </div>
 
         <div class="padding-wrap pb-0">
-            <section class="question">
-                <div class="question__bg">
-                    <picture>
-                        <source srcset="img/photo/guestion-bg-desk.jpg" media="(min-width: 992px)">
-                        <source srcset="img/photo/guestion-bg-tablet.jpg" media="(min-width: 768px)">
-                        <img src="img/photo/guestion-bg-mob.jpg" alt="img">
-                    </picture>
-                </div>
-                <div class="question__body container">
-                    <div class="question__head">
-                        <h2 class="question__title">Do You Have Any Questions? </h2>
-                        <div class="question__label">
-                            <img src="img/photo/question-icon.svg" alt="">
-                            Leave a request to contact a manager!
-                        </div>
-                    </div>
-                    <form action="#">
-                        <div class="question__form">
-                            <div class="question__form-item question__form-item-1">
-                                <input type="text" class="input" placeholder="Your Name">
-                            </div>
-                            <div class="question__form-item question__form-item-2" data-mask="9{*}">
-                                <input type="text" class="input" placeholder="Your Phone Number">
-                            </div>
-                            <div class="question__form-item question__form-item-3">
-                                <button type="submit" class="question__submit btn-default">
-                                    <i class="icon-arrow-right"></i>
-                                    Send
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </section>
+            @@include('common/question/_question.html')
         </div>
     </main>
 
