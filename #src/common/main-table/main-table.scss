@@ -89,6 +89,13 @@
                 height: 100% !important;
             }
         }
+
+        @for $i from 1 through 500 {
+            &:nth-child(#{$i}) {
+                position: relative;
+                z-index: #{500 - $i} !important;
+            } 
+        }
     }
 
     & th {
@@ -98,7 +105,7 @@
         font-weight: 400;
 
         &:first-child {
-            padding-left: 4rem;
+            padding-left: 3rem;
         }
     }
 
@@ -111,7 +118,7 @@
 
         @media (min-width: 992px) {
             &:first-child {
-                padding-left: 4rem;
+                padding-left: 3rem;
             }
         }
 
@@ -132,6 +139,12 @@
             }
         }
 
+        &.has-btn {
+            @media (max-width: $md2+px) {
+                order: 1;
+                background: none !important;
+            }
+        }
     }
 
     &__mob-label {
@@ -187,6 +200,10 @@
             padding: 0.8rem 1.6rem;
 
             @media (max-width: $md2+px) {
+                width: auto;
+                margin-left: auto;
+            }
+            @media (max-width: $md3+px) {
                 width: 100%;
             }
         }

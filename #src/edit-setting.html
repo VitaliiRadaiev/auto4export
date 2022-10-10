@@ -18,7 +18,7 @@
         <div class="container">
             @@include('common/breadcrumbs/_breadcrumbs.html', {
             "arr": ['<a href="#">Home</a>', '<a href="#">My Account</a>', 'Edit Setting']
-            }) 
+            })
         </div>
 
         <div data-tabs>
@@ -44,7 +44,7 @@
                 <div data-tab-content="0">
                     <form action="/">
                         <div class="edit-setting">
-                            <div class="form">
+                            <div class="form border-box border-box--md">
                                 <div class="form__items form__items--has-labels">
                                     <div class="form__item form__item--third required">
                                         <div class="form__label">Name</div>
@@ -56,16 +56,21 @@
                                                 </div>
                                                 <div class="input-tooltip__text">
                                                     <p>
-                                                        Unfortunately, you can’t change your full name and email at this time. We apologize for this inconvenience. 
+                                                        Unfortunately, you can’t change your full name and email at this
+                                                        time. We apologize for this inconvenience.
                                                     </p>
                                                     <p>
-                                                        Please contact our support team at <strong><a href="#">1-800-680-8010</a></strong> or by email at <strong><a href="#" class="text-primary">info@auto4export.com</a></strong>.
+                                                        Please contact our support team at <strong><a
+                                                                href="#">1-800-680-8010</a></strong> or by email at
+                                                        <strong><a href="#"
+                                                                class="text-primary">info@auto4export.com</a></strong>.
                                                     </p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form__item form__item--third required" data-mask="9{*}" data-phone-location>
+                                    <div class="form__item form__item--third required" data-mask="9{*}"
+                                        data-phone-location>
                                         <div class="form__label">Phone</div>
                                         <div class="input-wrap">
                                             <input type="text" class="input">
@@ -81,10 +86,14 @@
                                                 </div>
                                                 <div class="input-tooltip__text">
                                                     <p>
-                                                        Unfortunately, you can’t change your full name and email at this time. We apologize for this inconvenience. 
+                                                        Unfortunately, you can’t change your full name and email at this
+                                                        time. We apologize for this inconvenience.
                                                     </p>
                                                     <p>
-                                                        Please contact our support team at <strong><a href="#">1-800-680-8010</a></strong> or by email at <strong><a href="#" class="text-primary">info@auto4export.com</a></strong>.
+                                                        Please contact our support team at <strong><a
+                                                                href="#">1-800-680-8010</a></strong> or by email at
+                                                        <strong><a href="#"
+                                                                class="text-primary">info@auto4export.com</a></strong>.
                                                     </p>
                                                 </div>
                                             </div>
@@ -145,16 +154,20 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="form__item form__item--empty form__item--third"></div>
+                                    <div class="form__item form__item--third d-flex flex-column">
+                                        <div class="form__label d-none d-lg-block"></div>
+                                        <div class="d-flex align-items-center justify-content-lg-end flex-grow-1">
+                                            <p class="mb-0"><span class="text-danger me-2">*</span>Required fields</p>
+                                        </div>
+                                    </div>
                                     <div class="form__item form__item--third-md">
                                         <div class="form__label d-none d-lg-block"></div>
-                                        <div class="d-block d-md-flex align-items-center justify-content-between">
-                                            <p class="mb-3 mb-md-0"><span class="text-danger me-2">*</span>Required fields</p>
-                                            <button type="submit" class="edit-setting__submit btn-default ">
-                                                <img src="img/icons/update-prifile.svg" alt="">
-                                                Update Profile
-                                            </button>
-                                        </div>
+
+                                        <button type="submit" class="edit-setting__submit btn-default ">
+                                            Update Profile
+                                            <img src="img/icons/update-prifile.svg" alt="">
+                                        </button>
+
                                     </div>
                                 </div>
                             </div>
@@ -164,7 +177,7 @@
                 <div data-tab-content="1">
                     <form action="/">
                         <div class="edit-setting">
-                            <div class="form">
+                            <div class="form border-box border-box--md">
                                 <div class="form__items form__items--has-labels">
                                     <div class="form__item form__item--third-md required">
                                         <div class="form__label">Current Password</div>
@@ -185,15 +198,20 @@
                                         </div>
                                     </div>
                                     <div class="form__item form__item--empty form__item--third"></div>
-                                    <div class="form__item form__item--empty form__item--third"></div>
-                                    <div class="form__item form__item--third-md">
-                                        <div class="d-block d-md-flex align-items-center justify-content-between">
-                                            <p class="mb-3 mb-md-0"><span class="text-danger me-2">*</span>Required fields</p>
-                                            <button type="submit" class="edit-setting__submit btn-default ">
-                                                <img src="img/icons/update-prifile.svg" alt="">
-                                                Update Profile
-                                            </button>
+                                    <div class="form__item form__item--third d-flex flex-column">
+                                        <div class="form__label d-none d-lg-block"></div>
+                                        <div class="d-flex align-items-center justify-content-lg-end flex-grow-1">
+                                            <p class="mb-0"><span class="text-danger me-2">*</span>Required fields</p>
                                         </div>
+                                    </div>
+                                    <div class="form__item form__item--third-md">
+                                        <div class="form__label d-none d-lg-block"></div>
+
+                                        <button type="submit" class="edit-setting__submit btn-default ">
+                                            Update Profile
+                                            <img src="img/icons/update-prifile.svg" alt="">
+                                        </button>
+
                                     </div>
                                 </div>
                             </div>

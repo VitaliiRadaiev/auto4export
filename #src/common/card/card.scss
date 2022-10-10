@@ -150,10 +150,54 @@
     }
 
     &__remove {
-        position: absolute;
+        position: absolute !important;
         top: 1.4rem;
         right: 1.4rem;
         z-index: 3;
+    }
+
+    &__remove-btn {
+        box-shadow: none;
+        outline: none;
+        border: none;
+        background: #ffffff;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 3.4rem;
+        width: 3.4rem;
+        color: rgba($textColorSecondary, 0.5);
+        transition: all 0.3s ease;
+
+        @media (max-width: $md3+px) {
+            width: 30px;
+            height: 30px;
+        }
+
+        & img,
+        & svg {
+            height: 1.6rem;
+            width: auto;
+
+            @media (max-width: $md3+px) {
+                height: 14px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            &:hover {
+                background-color: $mainColor;
+                color: #fff;
+            }
+        }
+    }
+
+    & .alert--show {
+        & .card__remove-btn {
+            background-color: $mainColor;
+            color: #fff;
+        }
     }
 
     &__row-1 {
@@ -852,7 +896,7 @@
 
             @media (max-width: $md3+px) {
                 font-size: 14px;
-                line-height: 17px;
+                line-height: 16px;
             }
         }
 
@@ -860,7 +904,7 @@
             margin-bottom: 0;
             font-weight: 500;
             font-size: 2rem;
-            line-height: 2.2em;
+            line-height: 2.3rem;
 
             @media (max-width: $md3+px) {
                 font-size: 16px;

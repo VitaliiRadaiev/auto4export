@@ -175,8 +175,9 @@
                 color: #fff;
 
                 & span {
-                    border-color: $borderColor;
-                    color: #fff;
+                    border-color: #fff;
+                    background-color: #fff;
+                    color: $mainColor;
                 }
             }
         }

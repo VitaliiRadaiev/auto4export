@@ -4,7 +4,7 @@
         let checkbox = switchDropdown.querySelector('.checkbox-switch input[type="checkbox"]');
         let btnCancell = switchDropdown.querySelector('.switch-dropdown__cancel');
 
-        if (checkbox && btnCancell) {
+        if (checkbox) {
             // init
             if (checkbox.checked) {
                 switchDropdown.classList.add('switch-dropdown--show-box');
@@ -17,7 +17,9 @@
                     switchDropdown.classList.remove('switch-dropdown--show-box');
                 }
             })
+        }
 
+        if(btnCancell) {
             btnCancell.addEventListener('click', () => {
                 checkbox.checked = false;
                 let event = new Event("change");

@@ -22,7 +22,6 @@
         padding: 3rem;
         display: flex;
         flex-direction: column;
-        gap: 3rem;
         transition: all .3s ease;
         opacity: 0;
         visibility: hidden;
@@ -31,13 +30,31 @@
             top: calc(100% + 0.6rem);
             padding: 20px;
             border-radius: 6px;
-            gap: 20px;
             width: 280px;
         }
     }
 
     &__box-row {
-        
+        &:not(:last-child) {
+            margin-bottom: 3rem;
+
+            @media (max-width: $md3+px) {
+                margin-bottom: 2rem;
+            }
+        }
+
+        &--with-line {
+            &:not(:last-child) {
+                margin-bottom: 3rem;
+                padding-bottom: 3rem;
+                border-bottom: 1px solid rgba(#ECECEC, 0.5);
+
+                @media (max-width: $md3+px) {
+                    margin-bottom: 2rem;
+                    padding-bottom: 2rem;
+                }
+            }
+        }
     }
 
     &__title {
@@ -63,7 +80,7 @@
 
         & > * {
             min-width: auto;
-            flex: 0 1 calc(50% - 0.5rem);
+            flex: 1 1 auto;
             padding: 0.8rem 2rem;
         }
     }

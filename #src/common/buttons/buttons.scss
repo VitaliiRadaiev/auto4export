@@ -91,7 +91,7 @@
     }
 
     &.inactive {
-        background-color: #fff !important;
+        background-color: #F9F9F9 !important;
         color: $textColorSecondary !important;
         pointer-events: none;
         font-weight: 500;
@@ -115,16 +115,15 @@
     }
 
     &--md {
-        min-height: 5.8rem;
-        font-weight: 700;
-        font-size: 1.4rem;
-        line-height: 1.21em;
-        text-transform: uppercase;
+        min-height: 5.4rem;
+        font-weight: 500;
+        font-size: 1.8rem;
+        line-height: 2.1rem;
 
         @media (max-width: $md3+px) {
-            min-height: 4.8rem;
-            font-size: 13px;
-            line-height: 16px;
+            min-height: 5rem;
+            font-size: 16px;
+            line-height: 19px;
             min-width: 180px;
         }
     }

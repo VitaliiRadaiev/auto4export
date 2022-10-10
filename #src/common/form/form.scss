@@ -168,9 +168,6 @@
     }
 
     &__item--third {
-        @media (min-width: 768px) {
-            flex: 0 1 calc(50% - 1rem);
-        }
         @media (min-width: 992px) {
             flex: 0 1 calc(33.3333333% - calc(2rem * 2 / 3));
         }
@@ -557,6 +554,7 @@
         cursor: pointer;
         width: 1.4rem;
         transition: all 0.3s ease;
+        opacity: 0.5;
 
         & img,
         & svg {

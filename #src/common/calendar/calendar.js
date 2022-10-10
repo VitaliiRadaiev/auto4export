@@ -4,13 +4,18 @@
         calendarCards.forEach(calendarCard => {
             let list = calendarCard.querySelector('.calendar__list');
             if(list) {
-                if(list.children.length > 4) {
-                    calendarCard.classList.add('calendar__card--big')
+                if(list.children.length > 3) {
+                    let collapseList = document.createElement('ul');
+                    collapseList.className = 'calendar__list calendar__list--collapse';
+                    collapseList.append(...Array.from(list.children).slice(3));
+                    list.after(collapseList);
+
                     let btn = calendarCard.querySelector('.calendar__more');
                     if(btn) {
-                        btn.classList.remove('d-none');
+                        btn.classList.add('calendar__more--visible');
                         btn.addEventListener('click', () => {
-                            calendarCard.classList.toggle('calendar__card--open')
+                            btn.classList.toggle('calendar__more--list-open');
+                            this.utils.slideToggle(collapseList, 300);
                         })
                     }
                 }
