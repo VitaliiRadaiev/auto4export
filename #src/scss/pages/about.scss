@@ -73,6 +73,28 @@
     }
 }
 
+.about-hero {
+    & .article-head__img img {
+        @media (max-width: $md4+px) {
+            object-position: 21%  50%;
+        }
+    }
+    & .article-head__title {
+        max-width: 57.6rem;
+        margin-bottom: 3rem;
+
+        @media (max-width: $md3+px) {
+            margin-bottom: 14px;
+        }
+    }
+
+    & .article-head__subtitle {
+        @media (max-width: $md3+px) {
+            max-width: 180px;
+        }
+    }
+}
+
 .who-we-are {
     display: flex;
     gap: 5rem;

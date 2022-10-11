@@ -35,15 +35,11 @@
     }
 
     &__body {
-        background-color: #f9f9f9;
         border-radius: 1rem;
         padding: 4rem;
-        display: flex;
-        flex-direction: column;
-        gap: 4rem;
+        border: 1px solid $borderColor;
 
         @media (max-width: $md3+px) {
-            border-radius: 6px;
             padding: 20px;
         }
     }
@@ -56,10 +52,75 @@
         @media (max-width: $md3+px) {
             gap: 20px;
         }
+
+        &:not(:last-child) {
+            margin-bottom: 4rem;
+
+            @media (max-width: $md3+px) {
+                margin-bottom: 2rem;
+            }
+        }
+
+        &--with-line {
+            &:not(:last-child) {
+                margin-bottom: 4rem;
+                padding-bottom: 4rem;
+                border-bottom: 1px solid #ececec;
+
+                @media (max-width: $md3+px) {
+                    margin-bottom: 2rem;
+                    padding-bottom: 2rem;
+                }
+            }
+        }
+    }
+
+    &__head {
+        position: relative;
+        padding-bottom: 4rem;
+
+        @media (max-width: $md3+px) {
+            padding-bottom: 2rem;
+        }
+
+        &:before {
+            position: absolute;
+            content: "";
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: calc(100% + 8rem);
+            height: calc(100% + 4rem);
+            z-index: 1;
+            background-color: #f9f9f9;
+            border-radius: 1rem 1rem 0 0;
+
+            @media (max-width: $md3+px) {
+                width: calc(100% + 4rem);
+                height: calc(100% + 2rem);
+            }
+        }
+
+        & > * {
+            position: relative;
+            z-index: 2;
+        }
     }
 
     &__title {
-        margin-bottom: 0;
+        margin-bottom: 3.4rem;
+
+        @media (max-width: $md3+px) {
+            margin-bottom: 1.4rem;
+        }
+
+        &.mb-3 {
+            margin-bottom: 3rem !important;
+
+            @media (max-width: $md3+px) {
+                margin-bottom: 1.6rem !important;
+            }
+        }
     }
 
     &__range {
@@ -69,7 +130,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 2rem;
+        gap: 1.6rem;
 
         @media (max-width: $md3+px) {
             flex-direction: column;
@@ -79,13 +140,13 @@
     }
 
     &__label {
-        font-weight: 700;
-        font-size: 1.6rem;
-        line-height: 1.1875em;
+        font-weight: 500;
+        font-size: 1.8rem;
+        line-height: 2.1rem;
 
         @media (max-width: $md3+px) {
             font-size: 14px;
-            line-height: 17px;
+            line-height: 16px;
         }
     }
 
@@ -94,10 +155,10 @@
         margin-bottom: 0;
         display: flex;
         align-items: center;
-        gap: 1.2rem;
+        gap: 1rem;
 
         @media (max-width: $md3+px) {
-            gap: 8px;
+            gap: 6.35px;
         }
 
         & > li {
@@ -113,11 +174,11 @@
 
         & svg,
         & img {
-            width: 2.4rem;
+            width: 3rem;
             height: auto;
 
             @media (max-width: $md3+px) {
-                width: 16px;
+                width: 18px;
             }
         }
     }
@@ -129,12 +190,12 @@
     }
 
     &__info-list {
-        font-size: 1.4rem;
-        line-height: 1.21em;
+        font-size: 1.6rem;
+        line-height: 2.8rem;
 
         @media (max-width: $md3+px) {
-            font-size: 13px;
-            line-height: 16px;
+            font-size: 14px;
+            line-height: 26px;
         }
 
         &:last-child {
@@ -157,28 +218,18 @@
     }
 
     &__tabs-nav {
-        margin-bottom: 4rem;
+        margin-bottom: 3rem;
         display: flex;
-        position: relative;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
 
         @media (max-width: $md3+px) {
-            margin-bottom: 30px;
-        }
-
-        &:before {
-            position: absolute;
-            content: "";
-            left: 0;
-            bottom: 0;
-            height: 2px;
-            width: 100%;
-            border-radius: 20px;
-            background-color: $borderColor;
+            margin-bottom: 20px;
         }
     }
 
     &__tabs-nav-item {
-        flex: 0 1 33.333333%;
     }
 
     &__tabs-content {
@@ -208,13 +259,13 @@
         & .simple-table-list {
             & label,
             & p {
-                background-color: #f9f9f9;
+                background-color: #fff;
             }
         }
     }
 
     &__total {
-        padding-top: 2rem;
+        padding-top: 2.6rem;
         border-top: 1px solid $borderColor;
         display: flex;
         align-items: center;
@@ -255,42 +306,125 @@
 }
 
 .make-deposit-nav-item {
-    text-align: center;
-    cursor: pointer;
-    padding-bottom: 2.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border-radius: 3.2rem;
+    padding: 0.7rem 2.3rem;
+    min-height: 4.4rem;
+    font-weight: 500;
+    font-size: 1.8rem;
+    line-height: 2.1rem;
+    border: 1px solid $borderColor;
     transition: all 0.3s ease;
-    position: relative;
-    padding-left: 0.3rem;
-    padding-right: 0.3rem;
+    text-align: center;
+    white-space: nowrap;
+    gap: 1rem;
+    opacity: 1 !important;
+    cursor: pointer;
 
     @media (max-width: $md3+px) {
-        padding-bottom: 14px;
+        min-height: 34px;
+        padding: 5px 20px;
+        font-size: 14px;
+        line-height: 16px;
+        width: 100%;
     }
 
     @media (min-width: 992px) {
         &:hover {
-            color: $mainColor;
-            & .make-deposit-nav-item__icon {
+            background-color: $mainColor;
+            color: #fff;
+
+            & span {
+                border-color: #fff;
+                background-color: #fff;
                 color: $mainColor;
+            }
+
+            & svg {
+                color: #fff;
             }
         }
     }
 
-    &.tab-active {
-        color: $mainColor;
-        & .make-deposit-nav-item__icon {
-            color: $mainColor;
+    &--edit {
+        margin-left: 2rem;
+
+        @media (max-width: $md3+px) {
+            margin-left: 10px;
+        }
+    }
+
+    &--back {
+        @media (max-width: $md2+px) {
+            margin-right: auto;
         }
 
-        &:before {
-            position: absolute;
-            content: "";
-            left: 0;
-            bottom: 0;
-            height: 2px;
-            width: 100%;
+        & img,
+        & svg {
+            height: 0.7em !important;
+            width: auto !important;
+            margin-right: 0;
+        }
+    }
+
+    & img,
+    & svg {
+        height: auto;
+        width: 1em;
+        flex: 0 0 auto;
+        color: rgba($textColorSecondary, 0.5);
+    }
+
+    &.active,
+    &.tab-active {
+        border-color: $mainColor;
+        color: $mainColor;
+        background-color: transparent;
+
+        & span {
             background-color: $mainColor;
-            border-radius: 20px;
+            border-color: $mainColor;
+            color: #fff;
+        }
+
+        & svg {
+            color: $mainColor;
+        }
+    }
+
+    &.inactive {
+        pointer-events: none;
+        background-color: transparent;
+        border-color: #d6dbdc;
+        color: $textColorSecondary;
+    }
+
+    & span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 3rem;
+        height: 3rem;
+        color: $textColorSecondary;
+        border-radius: 100px;
+        border: 1px solid $borderColor;
+        margin-left: 1.4rem;
+        transition: all 0.3s ease;
+        font-size: 1.6rem;
+        line-height: 1.9rem;
+        margin-right: -1.9rem;
+        padding: 0.2rem 0.3rem 0;
+
+        @media (max-width: $md3+px) {
+            height: 24px;
+            min-width: 24px;
+            margin-left: 10px;
+            margin-right: -15px;
+            font-size: 12px;
+            line-height: 14px;
         }
     }
 
@@ -329,32 +463,34 @@
 
 .cryptocurrency {
     &__icon {
-        height: 4rem;
-        width: 3.2rem;
+        height: 5.4rem;
+        width: 5.4rem;
+        border-radius: 50%;
+        border: 1px solid $borderColor;
         position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 0 auto 2rem;
+        margin: 0 auto 1.6rem;
 
         @media (max-width: $md3+px) {
-            height: 3rem;
-            width: 2.4rem;
-            margin-bottom: 12px;
+            height: 4rem;
+            width: 4rem;
+            margin-bottom: 10px;
         }
 
         & img,
         & svg {
-            height: 100%;
-            width: auto;
+            width: 16px;
+            height: auto;
         }
 
         & span {
             position: absolute;
             top: 0;
-            left: calc(100% + 1.4rem);
-            font-size: 1.2rem;
-            line-height: 1.16em;
+            left: calc(100% + 0.5rem);
+            font-size: 1.4rem;
+            line-height: 1.6rem;
             color: #fff;
             padding: 0.3rem 0.8rem;
             background-color: $mainColor;
@@ -362,25 +498,27 @@
 
             @media (max-width: $md3+px) {
                 left: calc(100% + 1rem);
+                font-size: 12px;
+                line-height: 14px;
             }
         }
     }
 
     &__text {
         text-align: center;
-        font-size: 1.6rem;
-        line-height: 1.38em;
+        font-size: 1.8rem;
+        line-height: 3rem;
         margin: 0 auto;
         width: 100%;
         max-width: 41.8rem;
 
         @media (max-width: $md3+px) {
             font-size: 14px;
-            line-height: 17px;
+            line-height: 24px;
         }
 
         & strong {
-            font-weight: 700;
+            font-weight: 500;
         }
     }
 }
@@ -389,51 +527,56 @@
     text-align: center;
 
     &__icon {
-        height: 4rem;
+        height: 5.4rem;
+        width: 5.4rem;
+        border-radius: 50%;
+        border: 1px solid $borderColor;
+        position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-bottom: 2rem;
+        margin: 0 auto 1.6rem;
 
         @media (max-width: $md3+px) {
-            height: 3rem;
-            margin-bottom: 12px;
+            height: 4rem;
+            width: 4rem;
+            margin-bottom: 10px;
         }
 
         & img,
         & svg {
-            height: 100%;
-            width: auto;
+            width: 16px;
+            height: auto;
         }
     }
 
     &__text {
-        font-size: 1.6rem;
-        line-height: 1.38em;
+        text-align: center;
+        font-size: 1.8rem;
+        line-height: 3rem;
         margin: 0 auto 2rem;
         width: 100%;
-        max-width: 59.8rem;
+        max-width: 53.4rem;
 
         @media (max-width: $md3+px) {
             font-size: 14px;
-            line-height: 17px;
-            margin-bottom: 10px;
+            line-height: 24px;
         }
 
         & strong {
-            font-weight: 700;
+            font-weight: 500;
         }
     }
 
     &__sub-text {
         font-size: 1.4rem;
-        line-height: 1.43em;
+        line-height: 2rem;
         color: $textColorSecondary;
         margin: 0 auto;
         max-width: 35.8rem;
 
         @media (max-width: $md3+px) {
-            font-size: 13px;
+            font-size: 14px;
             line-height: 16px;
         }
     }

@@ -1434,8 +1434,8 @@ defer
                         Back
                     </a>
                     <a href="#" class="dashboard-head-nav__btn dashboard-head-nav__btn--edit">
-                        <img class="img-svg" src="img/icons/gear.svg" alt="">
                         Edit profile
+                        <img class="img-svg" src="img/icons/editing.svg" alt="">
                     </a>
                 </div>
             </div>
@@ -1479,10 +1479,10 @@ defer
                         <div class="main-table__mob-label">Status</div>
                         <div class="main-table__value text-success">Verified</div>
                     </td>
-                    <td>
+                    <td class="has-btn">
                         <a href="#" class="main-table__btn btn-default btn-default--xs">
-                            <img class="img-svg" src="img/icons/download.svg" alt="">
                             Download
+                            <img class="img-svg" src="img/icons/download.svg" alt="">
                         </a>
                     </td>
                 </tr>
@@ -1494,7 +1494,7 @@ defer
                     <td>
                         <div class="main-table__mob-label">File</div>
                         <div class="main-table__value">
-                            21.03.2022
+                            <img src="img/photo/featured-vehicles-card-img-2.jpg" alt="" class="main-table__img">
                         </div>
                     </td>
                     <td>
@@ -1505,10 +1505,10 @@ defer
                         <div class="main-table__mob-label">Status</div>
                         <div class="main-table__value text-danger">Not Verified</div>
                     </td>
-                    <td>
+                    <td class="has-btn">
                         <a href="#" class="main-table__btn btn-default btn-default--xs">
-                            <img class="img-svg" src="img/icons/download.svg" alt="">
                             Download
+                            <img class="img-svg" src="img/icons/download.svg" alt="">
                         </a>
                     </td>
                 </tr>
@@ -1520,7 +1520,7 @@ defer
                     <td>
                         <div class="main-table__mob-label">File</div>
                         <div class="main-table__value">
-                            21.03.2022
+                            <img src="img/photo/featured-vehicles-card-img-3.jpg" alt="" class="main-table__img">
                         </div>
                     </td>
                     <td>
@@ -1531,10 +1531,10 @@ defer
                         <div class="main-table__mob-label">Status</div>
                         <div class="main-table__value text-secondary">Hold</div>
                     </td>
-                    <td>
+                    <td class="has-btn">
                         <a href="#" class="main-table__btn btn-default btn-default--xs">
-                            <img class="img-svg" src="img/icons/download.svg" alt="">
                             Download
+                            <img class="img-svg" src="img/icons/download.svg" alt="">
                         </a>
                     </td>
                 </tr>
@@ -1545,8 +1545,7 @@ defer
         <input class="drop-zone__input" type="file" multiple="multiple">
         <!-- accept=".jpg, .jpeg, .png, .pdf" -->
         <div class="drop-zone__body">
-            <div class="drop-zone__border" data-border-dashed="simple"></div>
-            <div class="drop-zone__inner">
+            <div class="drop-zone__inner border-box border-box--md">
                 <div class="drop-zone__icon">
                     <img src="img/icons/cloud.svg" alt="">
                 </div>
@@ -1650,8 +1649,6 @@ defer
                     inputFile.files = dt.files;
 
                     numberOfFilesHandler();
-
-                    console.dir(inputFile.files)
                 })
 
                 dropZone.on("removedfile", file => {

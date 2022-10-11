@@ -31,23 +31,25 @@
                         Back
                     </a>
                     <a href="#" class="dashboard-head-nav__btn dashboard-head-nav__btn--edit">
-                        <img class="img-svg" src="img/icons/gear.svg" alt="">
                         Edit profile
+                        <img class="img-svg" src="img/icons/editing.svg" alt="">
                     </a>
                 </div>
             </div>
         </div>
 
         <div class="container">
-            <h2 class="title-2">Notification Phone Number</h2>
             <form action="">
-                <div class="nofitications">
-                    <div class="nofitications__phone">
-                        <div class="nofitications__phone-input" data-mask="9{*}" data-phone-location>
-                            <input type="text" class="input">
+                <div class="nofitications border-box border-box--md">
+                    <div class="nofitications__row">
+                        <h2 class="title-2">Notification Phone Number</h2>
+                        <div class="nofitications__phone">
+                            <div class="nofitications__phone-input" data-mask="9{*}" data-phone-location>
+                                <input type="text" class="input">
+                            </div>
                         </div>
                     </div>
-                    <div>
+                    <div class="nofitications__row">
                         <ul class="nofitications__list">
                             <li>
                                 <h2 class="nofitications__list-title">Bids</h2>
@@ -102,6 +104,8 @@
                                 </ul>
                             </li>
                         </ul>
+                    </div>
+                    <div class="nofitications__row">
                         <ul class="nofitications__list">
                             <li>
                                 <h2 class="nofitications__list-title">Section 2</h2>
@@ -157,10 +161,19 @@
                             </li>
                         </ul>
                     </div>
-                    <button class="nofitications__submit btn-default" type="submit">
-                        <img class="img-svg" src="img/icons/circle-check-sm.svg" alt="">
-                        Save
-                    </button>
+                    <div class="nofitications__row">
+                        <div class="nofitications__bottom">
+                            <label class="checkbox-radio">
+                                <input type="checkbox" checked>
+                                <div class="checkbox-radio__square checkbox-radio__square--lg"></div>
+                                <div class="checkbox-radio__text">I Agree to Auto 4 Export <a href="#">Member Terms & Condition</a></div>
+                            </label>
+                            <button class="nofitications__submit btn-default" type="submit">
+                                Save
+                                <img class="img-svg" src="img/icons/floppy-disk.svg" alt="">
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </form>
         </div>

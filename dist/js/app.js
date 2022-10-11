@@ -881,7 +881,6 @@ if(topFilter) {
 								i.classList.remove('tab-active');
 								getContentItem(i.dataset.tabTrigger).classList.remove('tab-active');
 							})
-							window.borderDashed.update();
 						})
 					})
 				}

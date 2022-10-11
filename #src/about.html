@@ -14,34 +14,21 @@
     <!-- == // TOP LINE ================== -->
 
     <main class="_page about-page" data-padding-top-header-size>
-        <div class="p-50"></div>
-        <div class="container">
-            @@include('common/breadcrumbs/_breadcrumbs.html', {
-            "arr": ['<a href="#">Home</a>', 'About Us']
-            })
-        </div>
-
-        <div class="padding-wrap">
-            <div class="container">
-                <div class="hero">
-                    <div class="hero__bg ibg">
-                        <picture>
-                            <source srcset="img/photo/hero-bg-desk.jpg" media="(min-width: 992px)">
-                            <source srcset="img/photo/hero-bg-tablet.jpg" media="(min-width: 768px)">
-                            <img src="img/photo/hero-bg-mob.jpg" alt="img">
-                        </picture>
+        <div class="padding-wrap pt-0">
+            <div class="article-head about-hero">
+                <div class="article-head__bg">
+                    <div class="article-head__img ibg">
+                        <img src="img/photo/about-bg-1.jpg" alt="">
                     </div>
-                    <div class="hero__body">
-                        <h1 class="hero__title">
-                            We are Best Company Importing Vehicles From US
-                        </h1>
-                        <div class="hero__text">
-                            Auto4Export is a trademark of Bid N Drive Inc
-                        </div>
-                        <div class="hero__subtext">
-                            We are LICENSED and INSURED used car dealer in the USA since 2009
-                        </div>
+                </div>
+                <div class="article-head__body container">
+                    <div class="article-head__breadcrumbs">
+                        @@include('common/breadcrumbs/_breadcrumbs.html', {
+                        "arr": ['<a href="#">Home</a>', '<a href="#">About Us</a>']
+                        })
                     </div>
+                    <h1 class="article-head__title title-1">We are Best Company Importing Vehicles From US</h1>
+                    <div class="article-head__subtitle">Auto4Export is a trademark of Bid N Drive Inc</div>
                 </div>
             </div>
         </div>
@@ -70,88 +57,94 @@
                         </div>
                     </div>
                     <div class="who-we-are__col-2">
-                        <div class="advantages-card">
-                            <div class="advantages-card__border" data-border-dashed="simple"></div>
-                            <div class="advantages-card__body">
-                                <div class="advantages-card__head">
-                                    <div class="advantages-card__logo">
-                                        <img src="img/logo/logo-colour.svg" alt="">
-                                    </div>
-                                    <div class="advantages-card__img">
-                                        <img src="img/photo/advantages-card-img.png" alt="">
-                                    </div>
-                                </div>
-                                <ul class="advantages-card__list">
-                                    <li>
-                                        <div class="advantages-card__list-icon">
-                                            <img src="img/photo/01.svg" alt="">
-                                        </div>
-                                        <div class="advantages-card__list-title">
-                                            Access to the Major US auto auctions
-                                        </div>
-                                        <div class="advantages-card__list-text">
-                                            Copart, IAAI, Manheim, Egde Pipeline, Adesa
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="advantages-card__list-icon">
-                                            <img src="img/photo/02.svg" alt="">
-                                        </div>
-                                        <div class="advantages-card__list-title">
-                                            Fast shipping
-                                        </div>
-                                        <div class="advantages-card__list-text">
-                                            Fast and cheap to Klaipeda
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="advantages-card__list-icon">
-                                            <img src="img/photo/03.svg" alt="">
-                                        </div>
-                                        <div class="advantages-card__list-title">
-                                            Low fees
-                                        </div>
-                                        <div class="advantages-card__list-text">
-                                            The lowest fees on the market will make your car purchase even more
-                                            profitable
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="advantages-card__list-icon">
-                                            <img src="img/photo/04.svg" alt="">
-                                        </div>
-                                        <div class="advantages-card__list-title">
-                                            No hidden fees
-                                        </div>
-                                        <div class="advantages-card__list-text">
-                                            We do not issue any additional payments after paying for the car
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="advantages-card__list-icon">
-                                            <img src="img/photo/05.svg" alt="">
-                                        </div>
-                                        <div class="advantages-card__list-title">
-                                            Unlimited bids
-                                        </div>
-                                        <div class="advantages-card__list-text">
-                                            No charges applied for the lost auction
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="advantages-card__list-icon">
-                                            <img src="img/photo/06.svg" alt="">
-                                        </div>
-                                        <div class="advantages-card__list-title">
-                                            Free Membership
-                                        </div>
-                                        <div class="advantages-card__list-text">
-                                            Registration on our platform is ABSOLUTELY FREE
-                                        </div>
-                                    </li>
-                                </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="padding-wrap">
+            <div class="container">
+                <div class="advantages-card">
+                    <div class="advantages-card__border" data-border-dashed="simple"></div>
+                    <div class="advantages-card__body">
+                        <div class="advantages-card__head">
+                            <div class="advantages-card__logo">
+                                <img src="img/logo/logo-colour.svg" alt="">
+                            </div>
+                            <div class="advantages-card__img">
+                                <img src="img/photo/advantages-card-img.png" alt="">
                             </div>
                         </div>
+                        <ul class="advantages-card__list">
+                            <li>
+                                <div class="advantages-card__list-icon">
+                                    <img src="img/photo/01.svg" alt="">
+                                </div>
+                                <div class="advantages-card__list-title">
+                                    Access to the Major US auto auctions
+                                </div>
+                                <div class="advantages-card__list-text">
+                                    Copart, IAAI, Manheim, Egde Pipeline, Adesa
+                                </div>
+                            </li>
+                            <li>
+                                <div class="advantages-card__list-icon">
+                                    <img src="img/photo/02.svg" alt="">
+                                </div>
+                                <div class="advantages-card__list-title">
+                                    Fast shipping
+                                </div>
+                                <div class="advantages-card__list-text">
+                                    Fast and cheap to Klaipeda
+                                </div>
+                            </li>
+                            <li>
+                                <div class="advantages-card__list-icon">
+                                    <img src="img/photo/03.svg" alt="">
+                                </div>
+                                <div class="advantages-card__list-title">
+                                    Low fees
+                                </div>
+                                <div class="advantages-card__list-text">
+                                    The lowest fees on the market will make your car purchase even more
+                                    profitable
+                                </div>
+                            </li>
+                            <li>
+                                <div class="advantages-card__list-icon">
+                                    <img src="img/photo/04.svg" alt="">
+                                </div>
+                                <div class="advantages-card__list-title">
+                                    No hidden fees
+                                </div>
+                                <div class="advantages-card__list-text">
+                                    We do not issue any additional payments after paying for the car
+                                </div>
+                            </li>
+                            <li>
+                                <div class="advantages-card__list-icon">
+                                    <img src="img/photo/05.svg" alt="">
+                                </div>
+                                <div class="advantages-card__list-title">
+                                    Unlimited bids
+                                </div>
+                                <div class="advantages-card__list-text">
+                                    No charges applied for the lost auction
+                                </div>
+                            </li>
+                            <li>
+                                <div class="advantages-card__list-icon">
+                                    <img src="img/photo/06.svg" alt="">
+                                </div>
+                                <div class="advantages-card__list-title">
+                                    Free Membership
+                                </div>
+                                <div class="advantages-card__list-text">
+                                    Registration on our platform is ABSOLUTELY FREE
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>

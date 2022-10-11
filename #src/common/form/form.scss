@@ -615,7 +615,10 @@
         line-height: 1.1875em;
 
         @media (max-width: $md3+px) {
-            font-size: 13px;
+            padding-top: 1rem;
+            position: static;
+            transform: translate(0);
+            font-size: 14px;
             line-height: 16px;
             right: 16px;
         }
@@ -804,7 +807,7 @@
     }
 
     &__text {
-        font-weight: 500;
+        font-weight: 400;
         font-size: 1.6rem;
         line-height: 1.25em;
 
@@ -821,6 +824,10 @@
                 font-size: 13px;
                 line-height: 16px;
             }
+        }
+
+        & a {
+            color: $mainColor;
         }
     }
 }

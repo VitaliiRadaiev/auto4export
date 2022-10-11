@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;900&display=swap" rel="stylesheet">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/style.css">
@@ -1425,28 +1425,32 @@ defer
         <div class="container">
             <h1 class="title-1">Make Deposit</h1>
         </div>
-        <div class="padding-wrap pt-0">
+        <div class="padding-wrap pt-0 pb-0">
             <div class="container">
                 <div class="make-deposit">
                     <div class="make-deposit__col-1"></div>
                     <div class="make-deposit__col-2">
                         <div class="make-deposit__body">
-                            <div class="make-deposit__row make-deposit__row-1">
-                                <h2 class="make-deposit__title">
-                                    Move slider to set your Buying Power
-                                </h2>
-                                <div class="make-deposit__range">
-                                    <div class="price-range price-range--one-thumb" data-range="one-thumb" data-min="0"
-                                        data-max="130000" data-start="40000" data-end="null" data-step="100">
-                                        <div class="price-range__slider"></div>
-                                        <div class="price-range__values">
-                                            <input type="hidden" class="price-range__input price-range__input--start">
-                                            <input type="hidden" class="price-range__input price-range__input--end">
-                                            <span class="price-range__start-value">$0</span>
-                                            <span class="price-range__end-value">$130,000</span>
+                            <div class="make-deposit__row">
+                                <div class="make-deposit__head">
+                                    <h2 class="make-deposit__title text-center">
+                                        Move slider to set your Buying Power
+                                    </h2>
+                                    <div class="make-deposit__range">
+                                        <div class="price-range price-range--one-thumb" data-range="one-thumb" data-min="0"
+                                            data-max="130000" data-start="40000" data-end="null" data-step="100">
+                                            <div class="price-range__slider"></div>
+                                            <div class="price-range__values">
+                                                <input type="hidden" class="price-range__input price-range__input--start">
+                                                <input type="hidden" class="price-range__input price-range__input--end">
+                                                <span class="price-range__start-value">$0</span>
+                                                <span class="price-range__end-value">$130,000</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="make-deposit__row make-deposit__row--with-line">
                                 <div class="make-deposit__number-of-vehicles">
                                     <label class="make-deposit__label">Number of vehicles to bid</label>
                                     <ul class="make-deposit__number-of-vehicles-icons">
@@ -1482,6 +1486,8 @@ defer
                                         </li>
                                     </ul>
                                 </div>
+                            </div>
+                            <div class="make-deposit__row make-deposit__row--with-line">
                                 <div class="make-deposit__security">
                                     <label class="make-deposit__label">Secruty Deposit</label>
                                     <div class="bid-card-value">
@@ -1498,30 +1504,24 @@ defer
                                     </div>
                                 </div>
                             </div>
-                            <div class="make-deposit__row make-deposit__row-2">
-                                <h2 class="make-deposit__title">Payment Options</h2>
+                            <div class="make-deposit__row">
+                                <h2 class="make-deposit__title mb-0 text-center">Payment Options</h2>
                                 <div class="make-deposit__tabs" data-tabs>
                                     <div class="make-deposit__tabs-nav">
                                         <div class="make-deposit__tabs-nav-item make-deposit-nav-item tab-active"
                                             data-tab-trigger="0">
-                                            <div class="make-deposit-nav-item__icon">
-                                                <img class="img-svg" src="img/icons/credit-card-2.svg" alt="">
-                                            </div>
-                                            <div class="make-deposit-nav-item__title">Credit card</div>
+                                            Credit card
+                                            <img class="img-svg" src="img/icons/credit-card-2.svg" alt="">
                                         </div>
                                         <div class="make-deposit__tabs-nav-item make-deposit-nav-item "
                                             data-tab-trigger="1">
-                                            <div class="make-deposit-nav-item__icon">
-                                                <img class="img-svg" src="img/icons/bitcoin.svg" alt="">
-                                            </div>
-                                            <div class="make-deposit-nav-item__title">Pay by Cryptocurrency</div>
+                                            Pay by Cryptocurrency
+                                            <img class="img-svg" src="img/icons/bitcoin.svg" alt="">
                                         </div>
-                                        <div class="make-deposit__tabs-nav-item make-deposit-nav-item"
+                                        <div class="make-deposit__tabs-nav-item make-deposit-nav-item "
                                             data-tab-trigger="2">
-                                            <div class="make-deposit-nav-item__icon">
-                                                <img class="img-svg" src="img/icons/money-transfer.svg" alt="">
-                                            </div>
-                                            <div class="make-deposit-nav-item__title">Bank Wire transfer</div>
+                                            Bank Wire transfer
+                                            <img class="img-svg" src="img/icons/money-transfer.svg" alt="">
                                         </div>
                                     </div>
                                     <div class="make-deposit__tabs-content" data-tab-content="0">
@@ -1576,8 +1576,8 @@ defer
                                             </div>
                                             <div class="make-deposit__tabs-content-row">
                                                 <button type="submit" class="make-deposit__submit btn-default">
-                                                    <img class="img-svg" src="img/icons/circle-check-sm.svg" alt="">
                                                     Pay Now
+                                                    <img class="img-svg" src="img/icons/circle-check-sm.svg" alt="">
                                                 </button>
                                             </div>
                                         </div>
@@ -1609,15 +1609,11 @@ defer
                                                     <label for="" class="make-deposit__label">Total Due</label>
                                                     <p class="text-primary">$4,000</p>
                                                 </div>
-                                                <div class="make-deposit__text">
-                                                    After clicking "Pay Now" you will be redirected to Stripe Checkout
-                                                    to complete your purchase securely.
-                                                </div>
                                             </div>
                                             <div class="make-deposit__tabs-content-row">
                                                 <button type="submit" class="make-deposit__submit btn-default">
-                                                    <img class="img-svg" src="img/icons/circle-check-sm.svg" alt="">
                                                     Pay using Cryptocurrency
+                                                    <img class="img-svg" src="img/icons/circle-check-sm.svg" alt="">
                                                 </button>
                                             </div>
                                         </div>
@@ -1662,8 +1658,8 @@ defer
                                             </div>
                                             <div class="make-deposit__tabs-content-row">
                                                 <button type="submit" class="make-deposit__submit btn-default">
-                                                    <img class="img-svg" src="img/icons/circle-check-sm.svg" alt="">
                                                     Send me Invoice to Email
+                                                    <img class="img-svg" src="img/icons/circle-check-sm.svg" alt="">
                                                 </button>
                                             </div>
                                         </div>
@@ -1695,10 +1691,74 @@ defer
                 </div>
             </div>
         </div>
-        <div class="padding-wrap pb-0">
-            <div class="container">
-
-            </div>
+        <div class="p-70"></div>
+        <hr>
+        <div class="p-70"></div>
+        <div class="container">
+            <h2 class="title-2">Transaction History</h2>
+            <table class="main-table">
+                <tr>
+                    <th>
+                        Date
+                    </th>
+                    <th>
+                        Replenishment
+                    </th>
+                    <th>
+                        Type
+                    </th>
+                    <th>
+                        Amount
+                    </th>
+                    <th>
+                        Status
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="main-table__mob-label">Date</div>
+                        <div class="main-table__value">21.03.2022</div>
+                    </td>
+                    <td>
+                        <div class="main-table__mob-label">Replenishment</div>
+                        <div class="main-table__value">Replenishment</div>
+                    </td>
+                    <td>
+                        <div class="main-table__mob-label">Type</div>
+                        <div class="main-table__value">Visa xxxx xxxx xxxx 4456</div>
+                    </td>
+                    <td>
+                        <div class="main-table__mob-label">Amount</div>
+                        <div class="main-table__value"><strong>$4,000</strong></div>
+                    </td>
+                    <td>
+                        <div class="main-table__mob-label">Status</div>
+                        <div class="main-table__value text-success">Successfully</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="main-table__mob-label">Date</div>
+                        <div class="main-table__value">21.03.2022</div>
+                    </td>
+                    <td>
+                        <div class="main-table__mob-label">Replenishment</div>
+                        <div class="main-table__value">Replenishment</div>
+                    </td>
+                    <td>
+                        <div class="main-table__mob-label">Type</div>
+                        <div class="main-table__value">Visa xxxx xxxx xxxx 4456</div>
+                    </td>
+                    <td>
+                        <div class="main-table__mob-label">Amount</div>
+                        <div class="main-table__value"><strong>$2,000</strong></div>
+                    </td>
+                    <td>
+                        <div class="main-table__mob-label">Status</div>
+                        <div class="main-table__value text-secondary">Wait</div>
+                    </td>
+                </tr>
+            </table>
         </div>
         <div class="p-70"></div>
     </main>

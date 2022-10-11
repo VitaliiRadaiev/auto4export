@@ -3,8 +3,7 @@
         <input class="drop-zone__input" type="file" multiple="multiple">
         <!-- accept=".jpg, .jpeg, .png, .pdf" -->
         <div class="drop-zone__body">
-            <div class="drop-zone__border" data-border-dashed="simple"></div>
-            <div class="drop-zone__inner">
+            <div class="drop-zone__inner border-box border-box--md">
                 <div class="drop-zone__icon">
                     <img src="img/icons/cloud.svg" alt="">
                 </div>
@@ -108,8 +107,6 @@
                     inputFile.files = dt.files;
 
                     numberOfFilesHandler();
-
-                    console.dir(inputFile.files)
                 })
 
                 dropZone.on("removedfile", file => {
