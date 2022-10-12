@@ -5104,7 +5104,7 @@ h1 {
 h2 {
   font-weight: 500;
   font-size: 3rem;
-  line-height: 1.2em;
+  line-height: 3.5rem;
 }
 
 h3 {
@@ -5115,14 +5115,14 @@ h3 {
 
 h4 {
   font-weight: 500;
-  font-size: 1.6rem;
-  line-height: 1.1875em;
+  font-size: 1.8rem;
+  line-height: 2.1rem;
 }
 
 h5 {
-  font-size: 1.4rem;
-  line-height: 1.21em;
   font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 1.1875em;
 }
 
 .title-1 {
@@ -10019,8 +10019,8 @@ button:active {
 }
 
 .form__simple-text--sm {
-  font-size: 1.4rem;
-  line-height: 1.43em;
+  font-size: 1.6rem;
+  line-height: 2.8rem;
 }
 
 .form__note {
@@ -10093,8 +10093,8 @@ button:active {
 }
 
 .form__link {
-  font-size: 1.4rem;
-  line-height: 1.21em;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
 }
 
 .form__bottom-text {
@@ -10134,14 +10134,15 @@ button:active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   gap: 2rem;
 }
 
 .form__buttons .btn-default {
   min-width: auto;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 calc(50% - 1rem);
-          flex: 0 1 calc(50% - 1rem);
 }
 
 .form__address {
@@ -12632,7 +12633,7 @@ button:active {
           box-shadow: 0px 22px 24px rgba(51, 51, 51, 0.2);
   width: 100%;
   max-width: 51rem;
-  padding: 4rem;
+  padding: 5rem;
   position: relative;
 }
 
@@ -12644,18 +12645,32 @@ button:active {
   position: absolute;
   top: 2rem;
   right: 2rem;
-  padding: 0.5rem;
   cursor: pointer;
   z-index: 5;
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: 1px solid #DBDBDB;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.4rem;
+  color: #3E73CF;
 }
 
-.popup__close img {
-  width: 2.6rem;
+.popup__close img,
+.popup__close svg {
+  width: 100%;
   height: auto;
-  display: block;
 }
 
 .popup__message {
@@ -12671,12 +12686,12 @@ button:active {
 }
 
 .popup__message img {
-  width: 4rem;
+  width: 3rem;
   height: auto;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
-  margin-right: 2rem;
+  margin-right: 1rem;
 }
 
 .popup__message p {
@@ -12700,7 +12715,7 @@ button:active {
 }
 
 .confirm-bid__value {
-  font-weight: 700;
+  font-weight: 500;
   font-size: 4rem;
   line-height: 1.2em;
   text-align: center;
@@ -12711,31 +12726,30 @@ button:active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 0.9rem;
   border-radius: 1rem;
-  background-color: #f9f9f9;
+  border: 1px solid #DBDBDB;
 }
 
 .confirm-bid__vehicle-img {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
-  margin-right: 2rem;
-  width: 7rem;
-  height: 5rem;
+  width: 11rem;
+  min-height: 8rem;
   overflow: auto;
-  border-radius: 1rem;
+  border-radius: 1rem 0 0 1rem;
+  margin: -1px 0 -1px -1px;
 }
 
 .confirm-bid__vehicle-title {
-  font-weight: 700;
+  font-weight: 500;
   font-size: 1.8rem;
   line-height: 1.22em;
   color: #3E73CF;
-  text-transform: uppercase;
+  padding: 2rem 3rem;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 .confirm-bid__text {
@@ -12747,23 +12761,56 @@ button:active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   gap: 2rem;
 }
 
 .confirm-bid__buttons .btn-default {
   min-width: auto;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 calc(50% - 1rem);
-          flex: 0 1 calc(50% - 1rem);
-  padding-left: 1rem;
-  padding-right: 1rem;
 }
 
 .confirm-bid a {
   color: #3E73CF;
+}
+
+.confirm-bid__cancel-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  min-height: 4.8rem;
+  border-radius: 3.4rem;
+  width: 100%;
+  border: 1px solid #DBDBDB;
+  outline: none;
+  background-color: transparent;
+  font-size: 1.6rem;
+  line-height: 1.1875em;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  color: #989898;
+  padding: 0;
+}
+
+.confirm-bid__cancel-btn img,
+.confirm-bid__cancel-btn svg {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  width: 1.6rem;
+  height: auto;
+  margin-left: 0.6rem;
 }
 
 .trying-to-bid__icon {
@@ -12789,8 +12836,8 @@ button:active {
 }
 
 .trying-to-bid__text {
-  font-size: 1.4rem;
-  line-height: 1.43em;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
   margin-bottom: 3rem;
 }
 
@@ -12823,14 +12870,7 @@ button:active {
 }
 
 .popup-message__title {
-  font-size: 2rem;
-  line-height: 1.2em;
   margin-bottom: 0;
-}
-
-.popup-message__text {
-  font-size: 1.4rem;
-  line-height: 1.43em;
 }
 
 .verification {
@@ -17670,27 +17710,17 @@ form.dropzone > .dz-preview {
 .licenses__body {
   position: relative;
   z-index: 2;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  min-width: 0;
-  padding: 4rem 4rem 4rem 6rem;
-  gap: 7rem;
-  color: #fff;
 }
 
 .licenses__title {
-  margin-bottom: 0;
+  margin-bottom: 4rem;
 }
 
 .licenses__slider {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
-  width: 41.5rem;
+  width: 50rem;
   position: relative;
 }
 
@@ -17730,20 +17760,19 @@ form.dropzone > .dz-preview {
 }
 
 .licenses__slider-item img {
-  height: 14rem;
+  height: 17rem;
   width: auto;
   border-radius: 0.6rem;
 }
 
 .advantages {
   background: #f9f9f9;
-  border-radius: 6px;
-  padding: 30px 20px 20px;
+  padding: 35px 0;
 }
 
 .advantages__title {
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .advantages__body {
@@ -17759,34 +17788,25 @@ form.dropzone > .dz-preview {
   height: auto;
 }
 
-.advantages__list .swiper-wrapper {
-  margin-bottom: 20px;
-}
-
-.advantages__list .swiper-pagination {
-  position: static;
+.advantages__list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  gap: 6px;
+  padding-left: 0;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 0;
 }
 
-.advantages__list .swiper-pagination .swiper-pagination-bullet {
-  margin: 0;
-  height: 4px;
-  width: 4px;
-  opacity: 1;
-  background-color: #8c8c8c;
-}
-
-.advantages__list .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  background-color: #3E73CF;
+.advantages__list > li {
+  padding: 5rem 2rem;
+  border-radius: 1rem;
+  background-color: #fff;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  min-width: calc(20% - 1.6rem);
 }
 
 .advantages__list-icon {
@@ -17799,8 +17819,8 @@ form.dropzone > .dz-preview {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 74px;
-  margin-bottom: 1rem;
+  height: 24px;
+  margin-bottom: 1.2rem;
 }
 
 .advantages__list-icon img {
@@ -17809,26 +17829,76 @@ form.dropzone > .dz-preview {
 }
 
 .advantages__list-text {
-  font-size: 14px;
-  line-height: 17px;
+  max-width: 22.8rem;
   text-align: center;
-  padding: 0 13px;
+  margin: 0 auto;
+  font-size: 1.8rem;
+  line-height: 2.1rem;
 }
 
 .advantages__bottom {
   padding-top: 20px;
-  border-top: 1px solid #DBDBDB;
+  border-top: 1px solid rgba(219, 219, 219, 0.5);
 }
 
 .advantages__text {
   font-size: 13px;
-  line-height: 16px;
+  line-height: 18px;
   text-align: center;
   color: #989898;
 }
 
 .how-to-buy-card {
   position: relative;
+  background-color: #fff;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.how-to-buy-card.border-box {
+  border-radius: 1rem 0 1rem 1rem;
+}
+
+.how-to-buy-card__corner {
+  position: absolute;
+  top: -1px;
+  right: 0;
+  -webkit-transform: translateX(100%);
+      -ms-transform: translateX(100%);
+          transform: translateX(100%);
+  background-color: #fff;
+  z-index: 2;
+  width: 1.1rem;
+  height: 1.7rem;
+  -webkit-clip-path: polygon(0 0, 0% 100%, 100% 0);
+          clip-path: polygon(0 0, 0% 100%, 100% 0);
+}
+
+.how-to-buy-card__corner:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  height: 1px;
+  width: 100%;
+  background-color: #ececec;
+}
+
+.how-to-buy-card__corner::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  height: 2.8rem;
+  width: 1px;
+  background-color: #ececec;
+  -webkit-transform: rotate(32deg);
+      -ms-transform: rotate(32deg);
+          transform: rotate(32deg);
+  -webkit-transform-origin: top right;
+      -ms-transform-origin: top right;
+          transform-origin: top right;
 }
 
 .how-to-buy-card__border {
@@ -17883,50 +17953,37 @@ form.dropzone > .dz-preview {
 
 .how-to-buy-card__body {
   position: relative;
-  z-index: 2;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 4rem 4rem 4rem 6.5rem;
 }
 
 .how-to-buy-card__col-1 {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 9.5rem;
-          flex: 0 0 9.5rem;
-}
-
-.how-to-buy-card__col-2 {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-  border-left: 1px solid #DBDBDB;
-  padding-left: 4rem;
+  padding-bottom: 3rem;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid rgba(236, 236, 236, 0.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1.6rem;
 }
 
 .how-to-buy-card__icon {
-  width: 3rem;
-  margin-bottom: 2rem;
+  height: 4rem;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
 }
 
 .how-to-buy-card__icon img,
 .how-to-buy-card__icon svg {
-  width: 100%;
-  height: auto;
-}
-
-.how-to-buy-card__num {
-  height: 2.7rem;
-}
-
-.how-to-buy-card__num img,
-.how-to-buy-card__num svg {
-  height: 100%;
   width: auto;
+  height: 100%;
 }
 
-.how-to-buy-card__title {
-  margin-bottom: 3rem;
+.how-to-buy-card__num.num {
+  font-size: 3rem;
+  line-height: 3.5rem;
 }
 
 .how-to-buy-card__text {
@@ -17946,8 +18003,8 @@ form.dropzone > .dz-preview {
 }
 
 .how-to-buy-card__btn {
-  font-size: 1.4rem;
-  line-height: 1.21em;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
   cursor: pointer;
   position: relative;
   -webkit-transition: all 0.3s ease;
@@ -17955,12 +18012,13 @@ form.dropzone > .dz-preview {
   transition: all 0.3s ease;
   display: inline-block;
   padding-right: 1.6rem;
+  color: #989898;
 }
 
 .how-to-buy-card__btn:before {
   font-family: "icomoon" !important;
   position: absolute;
-  content: "\e93f";
+  content: "\e940";
   top: 50%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
@@ -17972,25 +18030,26 @@ form.dropzone > .dz-preview {
   transition: transform 0.3s ease;
   transition: transform 0.3s ease, -webkit-transform 0.3s ease;
   font-size: 0.6rem;
-  color: #3E73CF;
 }
 
 .how-to-buy-card .hide-after-that {
   display: none;
 }
 
-.how-to-buy-card--open .how-to-buy-card__border {
+.how-to-buy-card--open {
+  -webkit-box-shadow: 0px 12px 24px rgba(51, 51, 51, 0.2);
+          box-shadow: 0px 12px 24px rgba(51, 51, 51, 0.2);
+  border-color: transparent !important;
+}
+
+.how-to-buy-card--open .how-to-buy-card__corner {
+  -webkit-box-shadow: 0px 12px 24px rgba(51, 51, 51, 0.2);
+          box-shadow: 0px 12px 24px rgba(51, 51, 51, 0.2);
+}
+
+.how-to-buy-card--open .how-to-buy-card__corner::before,
+.how-to-buy-card--open .how-to-buy-card__corner::after {
   opacity: 0;
-}
-
-.how-to-buy-card--open .how-to-buy-card__bg {
-  opacity: 1;
-}
-
-.how-to-buy-card--open .how-to-buy-card__btn:before {
-  -webkit-transform: translateY(-50%) scale(1, -1);
-      -ms-transform: translateY(-50%) scale(1, -1);
-          transform: translateY(-50%) scale(1, -1);
 }
 
 .fee-wrap {
@@ -22134,13 +22193,7 @@ form.dropzone > .dz-preview {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 5rem;
-}
-
-.who-we-are__col-2 {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
+  gap: 5rem 10rem;
 }
 
 .who-we-are__row:not(:last-child) {
@@ -22149,6 +22202,10 @@ form.dropzone > .dz-preview {
 
 .who-we-are__text > *:last-child {
   margin-bottom: 0;
+}
+
+.who-we-are__images {
+  padding-left: 10rem;
 }
 
 .advantages-card {
@@ -22248,75 +22305,101 @@ form.dropzone > .dz-preview {
   color: #989898;
 }
 
-.what-we-offer {
-  position: relative;
-}
-
-.what-we-offer__lines {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
-
-.what-we-offer__lines img {
-  width: 100%;
-  height: auto;
-}
-
-.what-we-offer__body {
-  position: relative;
-  z-index: 2;
-  padding: 7rem 18rem 7rem 0;
+.about-advantages__logo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 11.5rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 7rem;
+  margin-bottom: 4rem;
 }
 
-.what-we-offer__title {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-  padding-top: 1.5rem;
+.about-advantages__logo img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
 }
 
-.what-we-offer__list {
+.about-advantages__list {
   padding-left: 0;
   margin-bottom: 0;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 auto;
-          flex: 0 0 auto;
-  width: 110rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  gap: 6rem 7rem;
+  gap: 4.8rem;
 }
 
-.what-we-offer__list > li {
+.about-advantages__list > li {
   -webkit-box-flex: 0;
-      -ms-flex: 0 1 calc(33.3333333% - 4.6666666667rem);
-          flex: 0 1 calc(33.3333333% - 4.6666666667rem);
+      -ms-flex: 0 1 calc(16.6666666667% - 4rem);
+          flex: 0 1 calc(16.6666666667% - 4rem);
+  text-align: center;
+}
+
+.about-advantages__list-img {
+  height: 0;
+  padding-bottom: 72.16%;
+  border-radius: 1rem;
+  overflow: hidden;
+  margin-bottom: 2.6rem;
+}
+
+.about-advantages__list-title {
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+  margin-bottom: 1.8rem;
+}
+
+.about-advantages__list-text {
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  color: #989898;
+}
+
+.what-we-offer__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 0;
+  margin-bottom: 0;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  position: relative;
 }
 
 .what-we-offer__list-icon {
-  width: 3rem;
-  margin-bottom: 2.9rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 4rem;
+  margin-bottom: 2rem;
 }
 
-.what-we-offer__list-icon img {
-  width: 100%;
-  height: auto;
+.what-we-offer__list-icon img,
+.what-we-offer__list-icon svg {
+  height: 100%;
+  width: auto;
 }
 
 .what-we-offer__list-text {
-  font-size: 1.6rem;
-  line-height: 1.1875em;
+  text-align: center;
+  padding: 0 1rem;
+  font-size: 1.8rem;
+  line-height: 2.1rem;
 }
 
 .how-to-buy__head {
@@ -22358,23 +22441,43 @@ form.dropzone > .dz-preview {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 9.8rem;
-  position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2rem;
 }
 
-.how-to-buy__body:before {
+.how-to-buy__item {
+  position: relative;
+  padding-right: 5.6rem;
+}
+
+.how-to-buy__item:not(:last-child):before {
   position: absolute;
   content: "";
+  top: 1.7rem;
+  right: 0;
+  width: 1px;
+  -webkit-transform: translateX(50%);
+      -ms-transform: translateX(50%);
+          transform: translateX(50%);
+  background-color: #DBDBDB;
+  height: calc(100% - 1.7rem + 1rem);
+}
+
+.how-to-buy__item-dot {
+  position: absolute;
   top: 0;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
-  height: calc(100% + 7rem);
+  right: 0;
+  z-index: 2;
+  -webkit-transform: translateX(50%);
+      -ms-transform: translateX(50%);
+          transform: translateX(50%);
   width: 0.7rem;
-  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTAiIGN5PSIxMCIgcj0iNSIgZmlsbD0iI0Q5RDlEOSIvPgo8L3N2Zz4K);
-  background-size: 0.7rem;
-  background-repeat: repeat-y;
+  height: 0.7rem;
+  border-radius: 50%;
+  background-color: #3E73CF;
 }
 
 .how-to-buy__col {
@@ -22567,10 +22670,8 @@ form.dropzone > .dz-preview {
   }
 
   .advantages {
-    border-radius: 1rem;
-    max-width: 708px;
-    padding: 6rem 5rem 5.5rem;
-    margin: 0 auto;
+    max-width: none;
+    padding: 7rem 0;
   }
 
   .advantages__title {
@@ -22578,7 +22679,7 @@ form.dropzone > .dz-preview {
   }
 
   .advantages__body {
-    margin-bottom: 5rem;
+    margin-bottom: 4rem;
     position: relative;
   }
 
@@ -22594,85 +22695,17 @@ form.dropzone > .dz-preview {
     width: 389px;
   }
 
-  .advantages__list {
-    position: relative;
-    z-index: 2;
-    padding-top: 5rem;
-  }
-
-  .advantages__list .swiper-wrapper {
-    margin-bottom: 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    gap: 16px 168px;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-
-  .advantages__list .swiper-slide {
-    width: auto;
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 220px;
-            flex: 0 0 220px;
-  }
-
-  .advantages__list .swiper-slide:nth-child(1) {
-    -webkit-box-ordinal-group: 2;
-        -ms-flex-order: 1;
-            order: 1;
-  }
-
-  .advantages__list .swiper-slide:nth-child(2) {
-    -webkit-box-ordinal-group: 4;
-        -ms-flex-order: 3;
-            order: 3;
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 240px;
-            flex: 0 0 240px;
-    padding: 0 10px;
-  }
-
-  .advantages__list .swiper-slide:nth-child(3) {
-    -webkit-box-ordinal-group: 3;
-        -ms-flex-order: 2;
-            order: 2;
-  }
-
-  .advantages__list .swiper-slide:nth-child(4) {
-    -webkit-box-ordinal-group: 5;
-        -ms-flex-order: 4;
-            order: 4;
-  }
-
-  .advantages__list .swiper-slide:nth-child(5) {
-    -webkit-box-ordinal-group: 6;
-        -ms-flex-order: 5;
-            order: 5;
-  }
-
-  .advantages__list .swiper-pagination {
-    display: none;
-  }
-
   .advantages__list-icon {
-    height: 10.5rem;
-  }
-
-  .advantages__list-text {
-    font-size: 1.6rem;
-    line-height: 1.1875em;
+    height: 3rem;
+    margin-bottom: 2rem;
   }
 
   .advantages__bottom {
-    padding-top: 5rem;
+    padding-top: 4rem;
   }
 
   .advantages__text {
-    max-width: 75rem;
+    max-width: 97.8rem;
     font-size: 1.6rem;
     line-height: 1.1875em;
     margin: 0 auto;
@@ -22774,6 +22807,41 @@ form.dropzone > .dz-preview {
     -webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
             transform: translateY(-50%);
+  }
+
+  .who-we-are__col-1 {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+  }
+
+  .who-we-are__col-2 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 23rem;
+            flex: 0 0 23rem;
+    border-left: 1px solid #ececec;
+  }
+
+  .what-we-offer__list > li {
+    padding: 4rem 2rem;
+    position: relative;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 50%;
+            flex: 0 1 50%;
+    border-bottom: 1px solid rgba(236, 236, 236, 0.5);
+  }
+
+  .what-we-offer__list > li:before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    right: 0;
+    -webkit-transform: translate(50%, -50%);
+        -ms-transform: translate(50%, -50%);
+            transform: translate(50%, -50%);
+    width: 1px;
+    height: calc(100% - 8rem);
+    background-color: rgba(236, 236, 236, 0.5);
   }
 }
 
@@ -23127,7 +23195,15 @@ form.dropzone > .dz-preview {
   }
 
   .popup__close:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: #3E73CF;
+    border-color: #3E73CF;
+    color: #fff;
+  }
+
+  .confirm-bid__cancel-btn:hover {
+    background-color: #3E73CF;
+    color: #fff;
+    border-color: #3E73CF;
   }
 
   .categories-box__list > li:not(:last-child) {
@@ -23427,73 +23503,32 @@ form.dropzone > .dz-preview {
     color: #3E73CF;
   }
 
-  .advantages {
-    max-width: none;
-    padding: 6rem 10rem 7rem;
-  }
-
   .advantages__lines {
     width: 111.9rem;
   }
 
-  .advantages__list .swiper-wrapper {
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    gap: 6rem;
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
+  .how-to-buy-card__body {
+    padding-left: 13rem;
   }
 
-  .advantages__list .swiper-slide {
-    width: auto;
-    -webkit-box-flex: 0;
-        -ms-flex: 0 1 calc(20% - 4.8rem);
-            flex: 0 1 calc(20% - 4.8rem);
+  .how-to-buy-card__body:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 9rem;
+    width: 1px;
+    height: 100%;
+    background-color: rgba(236, 236, 236, 0.5);
   }
 
-  .advantages__list .swiper-slide:nth-child(1) {
-    -webkit-box-ordinal-group: 2;
-        -ms-flex-order: 1;
-            order: 1;
-  }
-
-  .advantages__list .swiper-slide:nth-child(2) {
-    -webkit-box-ordinal-group: 3;
-        -ms-flex-order: 2;
-            order: 2;
-    -webkit-box-flex: 0;
-        -ms-flex: 0 1 calc(20% - 4.8rem);
-            flex: 0 1 calc(20% - 4.8rem);
-    padding: 0;
-    -webkit-transform: translateY(4rem);
-        -ms-transform: translateY(4rem);
-            transform: translateY(4rem);
-  }
-
-  .advantages__list .swiper-slide:nth-child(3) {
-    -webkit-box-ordinal-group: 4;
-        -ms-flex-order: 3;
-            order: 3;
-  }
-
-  .advantages__list .swiper-slide:nth-child(4) {
-    -webkit-box-ordinal-group: 5;
-        -ms-flex-order: 4;
-            order: 4;
-    -webkit-transform: translateY(4rem);
-        -ms-transform: translateY(4rem);
-            transform: translateY(4rem);
-  }
-
-  .advantages__list .swiper-slide:nth-child(5) {
-    -webkit-box-ordinal-group: 6;
-        -ms-flex-order: 5;
-            order: 5;
+  .how-to-buy-card__num {
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 
   .how-to-buy-card__btn:hover {
-    opacity: 0.7;
+    color: #191919;
   }
 
   .how-to-buy-card--revers .how-to-buy-card__border {
@@ -23710,10 +23745,46 @@ form.dropzone > .dz-preview {
     padding-right: 39rem;
   }
 
-  .who-we-are__col-1 {
+  .who-we-are__col-2 {
     -webkit-box-flex: 0;
-        -ms-flex: 0 0 73rem;
-            flex: 0 0 73rem;
+        -ms-flex: 0 0 60.5rem;
+            flex: 0 0 60.5rem;
+  }
+
+  .what-we-offer__list > li {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 33.3333333%;
+            flex: 0 1 33.3333333%;
+  }
+
+  .what-we-offer__list > li:nth-child(-n+3) {
+    padding-top: 0;
+  }
+
+  .what-we-offer__list > li:nth-child(-n+3)::before {
+    top: 0;
+    -webkit-transform: translate(50%, 0);
+        -ms-transform: translate(50%, 0);
+            transform: translate(50%, 0);
+    height: calc(100% - 4rem);
+  }
+
+  .what-we-offer__list > li:nth-last-child(-n+3) {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .what-we-offer__list > li:nth-last-child(-n+3)::before {
+    top: auto;
+    bottom: 0;
+    -webkit-transform: translate(50%, 0);
+        -ms-transform: translate(50%, 0);
+            transform: translate(50%, 0);
+    height: calc(100% - 4rem);
+  }
+
+  .what-we-offer__list > li:nth-child(3n+3)::before {
+    display: none;
   }
 
   .how-to-buy__col--2 {
@@ -24596,6 +24667,33 @@ form.dropzone > .dz-preview {
             flex-direction: column;
   }
 
+  .licenses__slider {
+    width: 180px;
+  }
+
+  .licenses__slider .swiper-slide:not(:last-child) {
+    padding-right: 0;
+  }
+
+  .licenses__slider .slider-btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .licenses__slider .slider-btn.swiper-button-disabled {
+    display: none;
+  }
+
+  .licenses__slider-item img {
+    width: 100%;
+    height: auto;
+  }
+
+  .advantages__list > li {
+    min-width: calc(50% - 1rem);
+  }
+
   .how-to-buy-card__border {
     -webkit-transform: scale(1);
         -ms-transform: scale(1);
@@ -24616,32 +24714,8 @@ form.dropzone > .dz-preview {
             transform: translate(-100%) scale(-1, 1);
   }
 
-  .how-to-buy-card__body {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: row-reverse;
-            flex-direction: row-reverse;
-    padding: 4rem 6.5rem 4rem 4rem;
-  }
-
-  .how-to-buy-card__col-1 {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: flex-end;
-  }
-
-  .how-to-buy-card__col-2 {
-    padding-left: 0;
-    border-left: none;
-    padding-right: 4rem;
-    border-right: 1px solid #DBDBDB;
+  .how-to-buy-card__num {
+    margin-right: 2.4rem;
   }
 
   .blog-hero__text-wrap {
@@ -25143,11 +25217,11 @@ form.dropzone > .dz-preview {
   }
 
   .who-we-are {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    gap: 30px;
+    gap: 40px;
+  }
+
+  .who-we-are__images {
+    padding-left: 5rem;
   }
 
   .advantages-card__head {
@@ -25164,26 +25238,14 @@ form.dropzone > .dz-preview {
             flex: 0 1 calc(33.3333333% - 1.6666666667rem);
   }
 
-  .what-we-offer {
-    max-width: 710px;
-    width: 100%;
-    margin: 0 auto;
+  .about-advantages__list {
+    gap: 3rem 1.4rem;
   }
 
-  .what-we-offer__body {
-    padding: 73px 48px 70px 0;
-    gap: 57px;
-  }
-
-  .what-we-offer__list {
-    width: 460px;
-    gap: 55px 40px;
-  }
-
-  .what-we-offer__list > li {
+  .about-advantages__list > li {
     -webkit-box-flex: 0;
-        -ms-flex: 0 1 calc(50% - 20px);
-            flex: 0 1 calc(50% - 20px);
+        -ms-flex: 0 1 calc(33.3333333333% - 0.9333333333rem);
+            flex: 0 1 calc(33.3333333333% - 0.9333333333rem);
   }
 
   .how-to-buy__head {
@@ -25197,24 +25259,8 @@ form.dropzone > .dz-preview {
             flex-direction: column;
   }
 
-  .how-to-buy__btn {
-    width: 100%;
-  }
-
-  .how-to-buy__body {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    gap: 4rem;
-    padding-left: 5rem;
-  }
-
-  .how-to-buy__body:before {
-    left: 0;
-    -webkit-transform: translate(0);
-        -ms-transform: translate(0);
-            transform: translate(0);
+  .how-to-buy__item {
+    padding-right: 3.4rem;
   }
 
   .how-to-buy__col {
@@ -25253,11 +25299,11 @@ form.dropzone > .dz-preview {
 
   h4 {
     font-size: 14px;
-    line-height: 17px;
+    line-height: 16px;
   }
 
   h5 {
-    font-size: 13px;
+    font-size: 14px;
     line-height: 16px;
   }
 
@@ -26733,7 +26779,7 @@ form.dropzone > .dz-preview {
 
   .form__simple-text--sm {
     font-size: 14px;
-    line-height: 17px;
+    line-height: 26px;
   }
 
   .form__note {
@@ -26757,14 +26803,19 @@ form.dropzone > .dz-preview {
             justify-content: space-between;
   }
 
+  .form__use-social-label {
+    font-size: 14px;
+    line-height: 16px;
+  }
+
   .form__use-social-list img,
   .form__use-social-list svg {
-    width: 38px;
+    width: 30px;
   }
 
   .form__link {
     font-size: 13px;
-    line-height: 16px;
+    line-height: 15px;
   }
 
   .form__bottom-text {
@@ -26784,17 +26835,7 @@ form.dropzone > .dz-preview {
   }
 
   .form__buttons {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
     gap: 10px;
-  }
-
-  .form__buttons .btn-default {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 1 100%;
-            flex: 0 1 100%;
   }
 
   .form.d-flex {
@@ -27280,9 +27321,20 @@ form.dropzone > .dz-preview {
     padding: 2rem;
   }
 
+  .popup__content .btn-default {
+    min-height: 50px;
+  }
+
+  .popup__content .form__title {
+    padding-right: 2rem;
+  }
+
   .popup__close {
     top: 1rem;
     right: 1rem;
+    height: 20px;
+    width: 20px;
+    padding: 3px;
   }
 
   .popup__message {
@@ -27304,21 +27356,15 @@ form.dropzone > .dz-preview {
     line-height: 31px;
   }
 
-  .confirm-bid__vehicle {
-    border-radius: 6px;
-  }
-
   .confirm-bid__vehicle-img {
-    border-radius: 6px;
-    width: 56px;
-    height: 40px;
-    margin-right: 13px;
+    width: 70px;
+    min-height: 50px;
   }
 
   .confirm-bid__vehicle-title {
-    font-weight: 700;
-    font-size: 13px;
+    font-size: 14px;
     line-height: 16px;
+    padding: 9px 10px;
   }
 
   .confirm-bid__text {
@@ -27327,15 +27373,12 @@ form.dropzone > .dz-preview {
   }
 
   .confirm-bid__buttons {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
     gap: 10px;
   }
 
-  .confirm-bid__buttons .btn-default {
-    width: 100%;
+  .confirm-bid__cancel-btn {
+    font-size: 14px;
+    line-height: 17px;
   }
 
   .trying-to-bid__icon {
@@ -27348,6 +27391,8 @@ form.dropzone > .dz-preview {
 
   .trying-to-bid__text {
     margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 16px;
   }
 
   .popup-message {
@@ -27356,11 +27401,6 @@ form.dropzone > .dz-preview {
 
   .popup-message__icon {
     height: 26px;
-  }
-
-  .popup-message__text {
-    font-size: 13px;
-    line-height: 18px;
   }
 
   .verification {
@@ -28141,17 +28181,16 @@ form.dropzone > .dz-preview {
     border-radius: 6px;
   }
 
-  .licenses__body {
-    display: block;
-    padding: 20px;
-  }
-
   .licenses__title {
     margin-bottom: 16px;
   }
 
   .licenses__slider {
     width: 100%;
+  }
+
+  .licenses__slider .swiper {
+    overflow: visible;
   }
 
   .licenses__slider .swiper-slide:not(:last-child) {
@@ -28161,10 +28200,30 @@ form.dropzone > .dz-preview {
   .licenses__slider .slider-btn {
     height: 30px;
     width: 30px;
+    display: none;
   }
 
   .licenses__slider-item img {
-    height: 81px;
+    height: 110px;
+    width: auto;
+  }
+
+  .advantages__list {
+    gap: 10px;
+  }
+
+  .advantages__list > li {
+    min-width: auto;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+    padding: 20px;
+  }
+
+  .advantages__list-text {
+    font-size: 14px;
+    line-height: 16px;
+    max-width: none;
   }
 
   .how-to-buy-card__border {
@@ -28175,41 +28234,32 @@ form.dropzone > .dz-preview {
     border-radius: 0 0.6rem 0.6rem 0.6rem;
   }
 
-  .how-to-buy-card__body {
-    display: block;
-    padding: 20px 20px 20px 20px;
-  }
-
   .how-to-buy-card__col-1 {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #DBDBDB;
-    margin-bottom: 20px;
-  }
-
-  .how-to-buy-card__col-2 {
-    padding: 0;
-    border: none;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    gap: 12px;
   }
 
   .how-to-buy-card__icon {
-    margin-bottom: 0;
-    margin-right: 10px;
-    width: 20px;
+    height: 30px;
   }
 
   .how-to-buy-card__num {
-    height: 20px;
+    margin-right: 8px;
   }
 
-  .how-to-buy-card__title {
-    margin-bottom: 20px;
+  .how-to-buy-card__num.num {
+    font-size: 20px;
+    line-height: 23px;
+  }
+
+  .how-to-buy-card__text {
+    margin-bottom: 14px;
+  }
+
+  .how-to-buy-card__btn {
+    font-size: 14px;
+    line-height: 16px;
   }
 
   .fee__title {
@@ -30048,8 +30098,38 @@ form.dropzone > .dz-preview {
     max-width: 180px;
   }
 
+  .who-we-are {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 30px;
+  }
+
+  .who-we-are__col-2 {
+    padding-top: 3rem;
+    position: relative;
+  }
+
+  .who-we-are__col-2:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 50%;
+    width: 100vw;
+    height: 1px;
+    background-color: #ececec;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+
   .who-we-are__row:not(:last-child) {
     margin-bottom: 30px;
+  }
+
+  .who-we-are__images {
+    padding-left: 0;
   }
 
   .advantages-card__body {
@@ -30102,67 +30182,94 @@ form.dropzone > .dz-preview {
     line-height: 16px;
   }
 
-  .what-we-offer {
-    margin-bottom: 30px;
+  .about-advantages__body {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
 
-  .what-we-offer__lines {
-    display: none;
-  }
-
-  .what-we-offer__body {
-    display: block;
-    padding: 0;
-  }
-
-  .what-we-offer__title {
-    padding-top: 0;
+  .about-advantages__logo {
+    height: 33px;
     margin-bottom: 20px;
   }
 
-  .what-we-offer__list {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+  .about-advantages__list {
     gap: 20px;
-    width: auto;
   }
 
-  .what-we-offer__list > li {
+  .about-advantages__list > li {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 100%;
             flex: 0 1 100%;
-    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 12px;
+    text-align: left;
+  }
+
+  .about-advantages__list-img {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    width: 60px;
+    height: 44px;
+  }
+
+  .about-advantages__list-title {
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 10px;
+  }
+
+  .about-advantages__list-text {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .what-we-offer__list {
+    display: block;
+  }
+
+  .what-we-offer__list > li {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+  }
+
+  .what-we-offer__list > li:first-child {
+    padding-top: 0;
+  }
+
+  .what-we-offer__list > li:last-child {
+    padding-bottom: 0;
+  }
+
+  .what-we-offer__list > li:not(:last-child) {
+    border-bottom: 1px solid rgba(236, 236, 236, 0.5);
   }
 
   .what-we-offer__list-icon {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
             flex: 0 0 auto;
+    height: 24px;
+    width: 30px;
     margin-bottom: 0;
-    margin-right: 1rem;
-    width: 20px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    margin-right: 12px;
   }
 
   .what-we-offer__list-text {
+    padding: 0;
+    text-align: left;
     font-size: 14px;
-    line-height: 17px;
+    line-height: 16px;
   }
 
   .how-to-buy__head {
@@ -30177,15 +30284,26 @@ form.dropzone > .dz-preview {
     gap: 20px;
   }
 
-  .how-to-buy__body {
-    padding-left: 30px;
-    gap: 20px;
+  .how-to-buy__btn {
+    width: 100%;
   }
 
-  .how-to-buy__body:before {
-    height: calc(100% + 3rem);
-    width: 0.7rem;
-    background-size: 0.6rem;
+  .how-to-buy__body {
+    gap: 10px;
+  }
+
+  .how-to-buy__item {
+    padding-right: 20px;
+  }
+
+  .how-to-buy__item:not(:last-child):before {
+    top: 12px;
+    height: calc(100% - 12px + 4px);
+  }
+
+  .how-to-buy__item-dot {
+    height: 5px;
+    width: 5px;
   }
 
   .how-to-buy__col {
@@ -30351,6 +30469,36 @@ form.dropzone > .dz-preview {
         -ms-flex: 0 1 auto;
             flex: 0 1 auto;
     margin-left: auto;
+  }
+
+  .what-we-offer__list > li:nth-child(-n+2) {
+    padding-top: 0;
+  }
+
+  .what-we-offer__list > li:nth-child(-n+2)::before {
+    top: 0;
+    -webkit-transform: translate(50%, 0);
+        -ms-transform: translate(50%, 0);
+            transform: translate(50%, 0);
+    height: calc(100% - 4rem);
+  }
+
+  .what-we-offer__list > li:nth-last-child(-n+2) {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .what-we-offer__list > li:nth-last-child(-n+2)::before {
+    top: auto;
+    bottom: 0;
+    -webkit-transform: translate(50%, 0);
+        -ms-transform: translate(50%, 0);
+            transform: translate(50%, 0);
+    height: calc(100% - 4rem);
+  }
+
+  .what-we-offer__list > li:nth-child(2n+2)::before {
+    display: none;
   }
 }
 

@@ -2836,7 +2836,7 @@ defer
     <div class="popup__body">
         <div class="popup__content border-rudius">
             <div class="popup__close" data-popup="close-popup">
-                <img src="img/icons/close.svg" alt="">
+                <img class="img-svg" src="img/icons/close.svg" alt="">
             </div>
             <div class="confirm-bid">
                 <h2 class="confirm-bid__title">
@@ -2878,13 +2878,13 @@ defer
                     By clicking "Confirm My Bid", <br> you agree to <a href="#">Purchase Order Agreement</a>
                 </div>
                 <div class="confirm-bid__buttons">
-                    <button type="button" class="btn-default btn-default--light" data-popup="close-popup">
-                        <img class="img-svg" src="img/icons/close.svg" alt="">
-                        Cancel
-                    </button>
                     <button type="submit" class="btn-default">
-                        <img class="img-svg" src="img/icons/circle-check-sm.svg" alt="">
                         Confirm My Bid
+                        <img class="img-svg" src="img/icons/square-check.svg" alt="">
+                    </button>
+                    <button type="button" class="confirm-bid__cancel-btn" data-popup="close-popup">
+                        Cancel
+                        <img class="img-svg" src="img/icons/close.svg" alt="">
                     </button>
                 </div>
             </div>
@@ -2897,7 +2897,7 @@ defer
 	<div class="popup__body">
 		<div class="popup__content popup__content--lg border-rudius">
             <div class="popup__close" data-popup="close-popup">
-                <img src="img/icons/close.svg" alt="">
+                <img class="img-svg" src="img/icons/close.svg" alt="">
             </div>
 
             <form action="/">
@@ -2976,8 +2976,8 @@ defer
                     </div>
                     <div class="form__submit-wrap">
                         <button type="submit" class="form__submit btn-default">
-                            <img class="img-svg" src="img/icons/plus-circle.svg" alt="">
                             Add
+                            <img class="img-svg" src="img/icons/plus-circle.svg" alt="">
                         </button>
                     </div>
                 </div>
@@ -2990,7 +2990,7 @@ defer
 	<div class="popup__body">
 		<div class="popup__content border-rudius">
             <div class="popup__close" data-popup="close-popup">
-                <img src="img/icons/close.svg" alt="">
+                <img class="img-svg" src="img/icons/close.svg" alt="">
             </div>
 
             <form action="/">
@@ -3046,17 +3046,17 @@ defer
                         <label class="checkbox-radio">
                             <input type="checkbox" checked>
                             <div class="checkbox-radio__square checkbox-radio__square--lg"></div>
-                            <div class="checkbox-radio__text checkbox-radio__text--sm text-nowrap">I agreement with the <a href="#">rules</a></div>
+                            <div class="checkbox-radio__text text-nowrap">I agreement with the <a href="#">rules</a></div>
                         </label>
                     </div>
                     <div class="form__buttons">
-                        <button type="button" class="btn-default btn-default--light" data-popup="close-popup">
-                            <img class="img-svg" src="img/icons/close.svg" alt="">
-                            Cancel
-                        </button>
                         <button type="submit" class="btn-default">
-                            <img class="img-svg" src="img/icons/circle-check-sm.svg" alt="">
                             By Now
+                            <img class="img-svg" src="img/icons/buy.svg" alt="">
+                        </button>
+                        <button type="button" class="confirm-bid__cancel-btn" data-popup="close-popup">
+                            Cancel
+                            <img class="img-svg" src="img/icons/close.svg" alt="">
                         </button>
                     </div>
                 </div>
@@ -3068,16 +3068,16 @@ defer
 	<div class="popup__body">
 		<div class="popup__content border-rudius">
             <div class="popup__close" data-popup="close-popup">
-                <img src="img/icons/close.svg" alt="">
+                <img class="img-svg" src="img/icons/close.svg" alt="">
             </div>
             <div class="popup-message">
                 <div class="popup-message__icon text-primary">
                     <img class="img-svg" src="img/icons/car.svg" alt="">
                 </div>
-                <h3 class="popup-message__title">
+                <h2 class="popup-message__title title-2">
                     THIS VEHICLE IS BEING SOLD IN IT`S CURRENT CONDITION ON AN 'AS IS' BASIS
-                </h3>
-                <div class="popup-message__text">
+                </h2>
+                <div class="popup-message__text text-content text-content--md">
                     No vehicles are retained or owned by Auto4Export. We make all known information concerning the vehicles available on our site. We can provide no further information beyond what is listed on the site.
                 </div>
             </div>

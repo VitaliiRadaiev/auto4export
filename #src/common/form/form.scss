@@ -59,9 +59,9 @@
             & .form__item {
                 @media (max-width: $md3+px) {
                     &:not(:last-child) {
-                        border-bottom: 1px solid rgba(#D6D6D6, 0.4);
+                        border-bottom: 1px solid rgba(#d6d6d6, 0.4);
                     }
-    
+
                     & .input {
                         border: none;
                     }
@@ -73,9 +73,7 @@
                     & .textarea {
                         border: none;
                     }
-                    
                 }
-
             }
         }
 
@@ -111,7 +109,7 @@
             position: relative;
             &:before {
                 position: absolute;
-                content: '';
+                content: "";
                 top: 0;
                 right: 0;
                 height: 100%;
@@ -124,7 +122,6 @@
                 border: none;
             }
         }
-
     }
 
     &__item--right {
@@ -158,7 +155,6 @@
                 border: none;
             }
         }
-
     }
 
     &__item--half-md {
@@ -243,12 +239,12 @@
         }
 
         &--sm {
-            font-size: 1.4rem;
-            line-height: 1.43em;
+            font-size: 1.6rem;
+            line-height: 2.8rem;
 
             @media (max-width: $md3+px) {
                 font-size: 14px;
-                line-height: 17px;
+                line-height: 26px;
             }
         }
     }
@@ -306,6 +302,11 @@
         font-weight: 400;
         font-size: 1.6rem;
         line-height: 1.9rem;
+
+        @media (max-width: $md3+px) {
+            font-size: 14px;
+            line-height: 16px;
+        }
     }
 
     &__use-social-list {
@@ -324,7 +325,7 @@
             height: auto;
 
             @media (max-width: $md3+px) {
-                width: 38px;
+                width: 30px;
             }
         }
     }
@@ -340,12 +341,12 @@
     }
 
     &__link {
-        font-size: 1.4rem;
-        line-height: 1.21em;
+        font-size: 1.6rem;
+        line-height: 1.9rem;
 
         @media (max-width: $md3+px) {
             font-size: 13px;
-            line-height: 16px;
+            line-height: 15px;
         }
     }
 
@@ -393,22 +394,17 @@
     }
 
     &__buttons {
-        display: flex;
-        gap: 2rem;
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
 
-        @media (max-width: $md3+px) {
-            flex-direction: column-reverse;
-            gap: 10px;
-        }
+		@media (max-width: $md3+px) {
+			gap: 10px;
+		}
 
-        & .btn-default {
-            min-width: auto;
-            flex: 0 1 calc(50% - 1rem);
-
-            @media (max-width: $md3+px) {
-                flex: 0 1 100%;
-            }
-        }
+		& .btn-default {
+			min-width: auto;
+		}
     }
 
     &__address {
@@ -533,7 +529,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
 
     @media (max-width: $md3+px) {
         right: 20px;

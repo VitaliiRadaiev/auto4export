@@ -138,7 +138,7 @@ h1 {
 h2 {
 	font-weight: 500;
 	font-size: 3rem;
-	line-height: 1.2em;
+	line-height: 3.5rem;
 
 	@media (max-width: $md3+px) {
 		font-size: 20px;
@@ -159,22 +159,22 @@ h3 {
 
 h4 {
 	font-weight: 500;
+	font-size: 1.8rem;
+	line-height: 2.1rem;
+
+	@media (max-width: $md3+px) {
+		font-size: 14px;
+		line-height: 16px;
+	}
+}
+
+h5 {
+	font-weight: 500;
 	font-size: 1.6rem;
 	line-height: 1.1875em;
 
 	@media (max-width: $md3+px) {
 		font-size: 14px;
-		line-height: 17px;
-	}
-}
-
-h5 {
-	font-size: 1.4rem;
-	line-height: 1.21em;
-	font-weight: 500;
-
-	@media (max-width: $md3+px) {
-		font-size: 13px;
 		line-height: 16px;
 	}
 }

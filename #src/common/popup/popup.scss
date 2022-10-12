@@ -48,7 +48,7 @@
 		box-shadow: 0px 22px 24px rgba(51, 51, 51, 0.2);
 		width: 100%;
 		max-width: 51rem;
-		padding: 4rem;
+		padding: 5rem;
 		position: relative;
 
 		@media (max-width: $md3+px) {
@@ -58,32 +58,57 @@
 		&--lg {
 			max-width: 63rem;
 		}
+
+		& .btn-default {
+			@media (max-width: $md3+px) {
+				min-height: 50px;
+			}
+		}
+
+		& .form__title {
+			@media (max-width: $md3+px) {
+				padding-right: 2rem;
+			}
+		}
 	}
 
 	&__close {
 		position: absolute;
 		top: 2rem;
 		right: 2rem;
-		padding: 0.5rem;
 		cursor: pointer;
 		z-index: 5;
 		transition: all 0.3s ease;
+		width: 3rem;
+		height: 3rem;
+		border-radius: 50%;
+		border: 1px solid $borderColor;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 0.4rem;
+		color: $mainColor;
 
 		@media (max-width: $md3+px) {
 			top: 1rem;
 			right: 1rem;
+			height: 20px;
+			width: 20px;
+			padding: 3px;
 		}
 
 		@media (min-width: 992px) {
 			&:hover {
-				background-color: rgba(#000, 0.1);
+				background-color: $mainColor;
+				border-color: $mainColor;
+				color: #fff;
 			}
 		}
 
-		& img {
-			width: 2.6rem;
+		& img,
+		& svg {
+			width: 100%;
 			height: auto;
-			display: block;
 		}
 	}
 
@@ -95,10 +120,10 @@
 		line-height: 1.2em;
 
 		& img {
-			width: 4rem;
+			width: 3rem;
 			height: auto;
 			flex: 0 0 auto;
-			margin-right: 2rem;
+			margin-right: 1rem;
 		}
 
 		& p {
@@ -131,7 +156,7 @@
 	}
 
 	&__value {
-		font-weight: 700;
+		font-weight: 500;
 		font-size: 4rem;
 		line-height: 1.2em;
 		text-align: center;
@@ -145,43 +170,36 @@
 
 	&__vehicle {
 		display: flex;
-		align-items: center;
-		padding: 0.9rem;
 		border-radius: 1rem;
-		background-color: #f9f9f9;
-
-		@media (max-width: $md3+px) {
-			border-radius: 6px;
-		}
+		border: 1px solid $borderColor;
 	}
 
 	&__vehicle-img {
 		flex: 0 0 auto;
-		margin-right: 2rem;
-		width: 7rem;
-		height: 5rem;
+		width: 11rem;
+		min-height: 8rem;
 		overflow: auto;
-		border-radius: 1rem;
+		border-radius: 1rem 0 0 1rem;
+		margin: -1px 0 -1px -1px;
 
 		@media (max-width: $md3+px) {
-			border-radius: 6px;
-			width: 56px;
-			height: 40px;
-			margin-right: 13px;
+			width: 70px;
+			min-height: 50px;
 		}
 	}
 
 	&__vehicle-title {
-		font-weight: 700;
+		font-weight: 500;
 		font-size: 1.8rem;
 		line-height: 1.22em;
 		color: $mainColor;
-		text-transform: uppercase;
+		padding: 2rem 3rem;
+		align-self: center;
 
 		@media (max-width: $md3+px) {
-			font-weight: 700;
-			font-size: 13px;
+			font-size: 14px;
 			line-height: 16px;
+			padding: 9px 10px;
 		}
 	}
 
@@ -200,28 +218,60 @@
 
 	&__buttons {
 		display: flex;
-		align-items: center;
+		flex-direction: column;
 		gap: 2rem;
 
 		@media (max-width: $md3+px) {
-			flex-direction: column-reverse;
 			gap: 10px;
 		}
 
 		& .btn-default {
 			min-width: auto;
-			flex: 0 1 calc(50% - 1rem);
-			padding-left: 1rem;
-			padding-right: 1rem;
-
-			@media (max-width: $md3+px) {
-				width: 100%;
-			}
 		}
 	}
 
 	& a {
 		color: $mainColor;
+	}
+
+	&__cancel-btn {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		min-height: 4.8rem;
+		border-radius: 3.4rem;
+		width: 100%;
+		border: 1px solid $borderColor;
+		outline: none;
+		background-color: transparent;
+		font-size: 1.6rem;
+		line-height: 1.1875em;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		color: $textColorSecondary;
+		padding: 0;
+
+		@media (max-width: $md3+px) {
+			font-size: 14px;
+			line-height: 17px;
+		}
+
+		@media (min-width: 992px) {
+			&:hover {
+				background-color: $mainColor;
+				color: #fff;
+				border-color: $mainColor;
+			}
+		}
+
+		& img,
+		& svg {
+			flex: 0 0 auto;
+			width: 1.6rem;
+			height: auto;
+			margin-left: 0.6rem;
+		}
 	}
 }
 
@@ -253,12 +303,14 @@
 	}
 
 	&__text {
-		font-size: 1.4rem;
-		line-height: 1.43em;
+		font-size: 1.6rem;
+		line-height: 1.9rem;
 		margin-bottom: 3rem;
 
 		@media (max-width: $md3+px) {
 			margin-bottom: 20px;
+			font-size: 14px;
+			line-height: 16px;
 		}
 	}
 
@@ -292,19 +344,11 @@
 	}
 
 	&__title {
-		font-size: 2rem;
-		line-height: 1.2em;
 		margin-bottom: 0;
 	}
 
 	&__text {
-		font-size: 1.4rem;
-		line-height: 1.43em;
-
-		@media (max-width: $md3+px) {
-			font-size: 13px;
-			line-height: 18px;
-		}
+		
 	}
 }
 

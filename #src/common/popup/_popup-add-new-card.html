@@ -3,15 +3,12 @@
 	<div class="popup__body">
 		<div class="popup__content popup__content--lg border-rudius">
             <div class="popup__close" data-popup="close-popup">
-                <img src="img/icons/close.svg" alt="">
+                <img class="img-svg" src="img/icons/close.svg" alt="">
             </div>
 
             <form action="/">
                 <div class="credit-card form d-flex">
                     <h2 class="form__title">Add New Card</h2>
-                    <div class="form__simple-text">
-                        Your Vehicle will be delivered
-                    </div>
                     <div class="form__items">
                         <div class="form__item" data-mask="9999 9999 9999 9999">
                             <label class="form__label">Your Card Number</label>
@@ -25,10 +22,10 @@
                                 <input type="text" class="input" placeholder="Enter">
                             </div>
                         </div>
-                        <div class="form__item form__item--half" data-mask="99.99.9999">
+                        <div class="form__item form__item--half" data-mask="99/99">
                             <label class="form__label">Card Valid To</label>
                             <div class="input-wrap">
-                                <input type="text" class="input" placeholder="dd.mm.yy">
+                                <input type="text" class="input" placeholder="MM/YY">
                             </div>
                         </div>
                         <div class="form__item form__item--half" data-mask="9{*}">
@@ -47,8 +44,8 @@
                     </div>                                 
                     <div class="form__submit-wrap">
                         <button type="submit" class="form__submit btn-default">
-                            <img class="img-svg" src="img/icons/add-card.svg" alt="">
                             Add Card
+                            <img class="img-svg" src="img/icons/circle-plus.svg" alt="">
                         </button>
                     </div>
                 </div>

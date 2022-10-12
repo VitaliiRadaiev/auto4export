@@ -46,52 +46,67 @@
         flex: 0 0 auto;
         width: 33rem;
 
-        @media (max-width: $md2+px) {
+        @media (max-width: $md3+px) {
             width: 100%;
         }
     }
 
     &__body {
         display: flex;
-        gap: 9.8rem;
+        flex-direction: column;
+        gap: 2rem;
+
+        @media (max-width: $md3+px) {
+            gap: 10px;
+        }
+    }
+
+    &__item {
         position: relative;
+        padding-right: 5.6rem;
 
         @media (max-width: $md2+px) {
-            flex-direction: column;
-            gap: 4rem;
-            padding-left: 5rem;
+            padding-right: 3.4rem;
         }
 
         @media (max-width: $md3+px) {
-            padding-left: 30px;
-            gap: 20px;
+            padding-right: 20px;
         }
 
-        &:before {
-            position: absolute;
-            content: '';
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            height: calc(100% + 7rem);
-            width: 0.7rem;
-            background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTAiIGN5PSIxMCIgcj0iNSIgZmlsbD0iI0Q5RDlEOSIvPgo8L3N2Zz4K);
-            background-size: 0.7rem;
-            background-repeat: repeat-y;
+        &:not(:last-child) {
+            &:before {
+                position: absolute;
+                content: '';
+                top: 1.7rem;
+                right: 0;
+                width: 1px;
+                transform: translateX(50%);
+                background-color: #DBDBDB;
+                height: calc(100% - 1.7rem + 1rem);
 
-            @media (max-width: $md2+px) {
-                left: 0;
-                transform: translate(0);
-            }
-
-            @media (max-width: $md3+px) {
-                height: calc(100% + 3rem);
-                width: 0.7rem;
-                background-size: 0.6rem;
+                @media (max-width: $md3+px) {
+                    top: 12px;
+                    height: calc(100% - 12px + 4px);
+                }
             }
         }
+    }
 
-        
+    &__item-dot {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 2;
+        transform: translateX(50%);
+        width: 0.7rem;
+        height: 0.7rem;
+        border-radius: 50%;
+        background-color: $mainColor;
+
+        @media (max-width: $md3+px) {
+            height: 5px;
+            width: 5px;
+        }
     }
 
     &__col {

@@ -1,5 +1,45 @@
 .how-to-buy-card {
     position: relative;
+    background-color: #fff;
+    transition: all 0.3s ease;
+
+    &.border-box {
+        border-radius: 1rem 0 1rem 1rem;
+    }
+
+    &__corner {
+        position: absolute;
+        top: -1px;
+        right: 0;
+        transform: translateX(100%);
+        background-color: #fff;
+        z-index: 2;
+        width: 1.1rem;
+        height: 1.7rem;
+        clip-path: polygon(0 0, 0% 100%, 100% 0);
+
+        &:before {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            height: 1px;
+            width: 100%;
+            background-color: #ececec;
+        }
+
+        &::after {
+            position: absolute;
+            content: "";
+            top: 0;
+            right: 0;
+            height: calc(((1.1rem * 2) + (1.7rem * 2)) / 2);
+            width: 1px;
+            background-color: #ececec;
+            transform: rotate(32deg);
+            transform-origin: top right;
+        }
+    }
 
     &__border {
         position: absolute;
@@ -41,10 +81,10 @@
         @media (max-width: $md3+px) {
             border-radius: 0 0.6rem 0.6rem 0.6rem;
         }
-        
+
         &:before {
             position: absolute;
-            content: '';
+            content: "";
             top: 0;
             right: 0;
             width: 1.2rem;
@@ -61,103 +101,95 @@
                 right: auto;
                 left: 0;
                 transform: translate(-100%) scale(-1, 1);
-                
             }
         }
     }
 
     &__body {
         position: relative;
-        z-index: 2;
-        display: flex;
-        padding: 4rem 4rem 4rem 6.5rem;
 
-        @media (max-width: $md2+px) {
-            flex-direction: row-reverse;
-            padding: 4rem 6.5rem 4rem 4rem;
-        }
-
-        @media (max-width: $md3+px) {
-            display: block;
-            padding: 20px 20px 20px 20px;
+        @media (min-width: 992px) {
+            padding-left: 13rem;
+            &:before {
+                position: absolute;
+                content: "";
+                top: 0;
+                left: 9rem;
+                width: 1px;
+                height: 100%;
+                background-color: rgba(#ececec, 0.5);
+            }
         }
     }
 
     &__col-1 {
-        flex: 0 0 9.5rem;
-
-        @media (max-width: $md2+px) {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-        }
+        padding-bottom: 3rem;
+        margin-bottom: 3rem;
+        border-bottom: 1px solid rgba(#ececec, 0.5);
+        display: flex;
+        align-items: center;
+        gap: 1.6rem;
 
         @media (max-width: $md3+px) {
-            flex-direction: row;
-            align-items: center;
-            padding-bottom: 15px;
-            border-bottom: 1px solid $borderColor;
-            margin-bottom: 20px;
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+            gap: 12px;
         }
     }
 
     &__col-2 {
-        flex: 1 1 auto;
-        border-left: 1px solid $borderColor;
-        padding-left: 4rem;
-
-        @media (max-width: $md2+px) {
-            padding-left: 0;
-            border-left: none;
-            padding-right: 4rem;
-            border-right: 1px solid $borderColor;
-        }
-
-        @media (max-width: $md3+px) {
-            padding: 0;
-            border: none;
-        }
     }
 
     &__icon {
-        width: 3rem;
-        margin-bottom: 2rem;
+        height: 4rem;
+        flex: 0 0 auto;
 
         @media (max-width: $md3+px) {
-            margin-bottom: 0;
-            margin-right: 10px;
-            width: 20px;
+            height: 30px;
         }
+
         & img,
         & svg {
-            width: 100%;
-            height: auto;
+            width: auto;
+            height: 100%;
         }
     }
 
     &__num {
-        height: 2.7rem;
+        @media (min-width: 992px) {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        @media (max-width: $md2+px) {
+            margin-right: 2.4rem;
+        }
 
         @media (max-width: $md3+px) {
-            height: 20px;
+            margin-right: 8px;
         }
-        & img,
-        & svg {
-            height: 100%;
-            width: auto;
+
+        &.num {
+            font-size: 3rem;
+            line-height: 3.5rem;
+
+            @media (max-width: $md3+px) {
+                font-size: 20px;
+                line-height: 23px;
+            }
         }
     }
 
     &__title {
-        margin-bottom: 3rem;
-
-        @media (max-width: $md3+px) {
-            margin-bottom: 20px;
-        }
     }
 
     &__text {
         margin-bottom: 2rem;
+
+        @media (max-width: $md3+px) {
+            margin-bottom: 14px;
+        }
 
         & > *:last-child {
             margin-bottom: 0;
@@ -173,24 +205,30 @@
     }
 
     &__btn {
-        font-size: 1.4rem;
-        line-height: 1.21em;
+        font-size: 1.6rem;
+        line-height: 1.9rem;
         cursor: pointer;
         position: relative;
         transition: all 0.3s ease;
         display: inline-block;
         padding-right: 1.6rem;
+        color: $textColorSecondary;
+
+        @media (max-width: $md3+px) {
+            font-size: 14px;
+            line-height: 16px;
+        }
 
         @media (min-width: 992px) {
             &:hover {
-                opacity: 0.7;
+                color: $textColor;
             }
         }
 
         &:before {
             font-family: "icomoon" !important;
             position: absolute;
-            content: "\e93f";
+            content: "\e940";
             top: 50%;
             -webkit-transform: translateY(-50%);
             -ms-transform: translateY(-50%);
@@ -202,7 +240,6 @@
             transition: transform 0.3s ease;
             transition: transform 0.3s ease, -webkit-transform 0.3s ease;
             font-size: 0.6rem;
-            color: $mainColor;
         }
     }
 
@@ -211,17 +248,14 @@
     }
 
     &--open {
-        & .how-to-buy-card__border {
-            opacity: 0;
-        }
+        box-shadow: 0px 12px 24px rgba(51, 51, 51, 0.2);
+        border-color: transparent !important;
 
-        & .how-to-buy-card__bg {
-            opacity: 1;
-        }
-
-        & .how-to-buy-card__btn {
-            &:before {
-                transform: translateY(-50%) scale(1, -1);
+        & .how-to-buy-card__corner {
+            box-shadow: 0px 12px 24px rgba(51, 51, 51, 0.2);
+            &::before,
+            &::after {
+                opacity: 0;
             }
         }
     }
@@ -241,10 +275,9 @@
                     right: auto;
                     left: 0;
                     transform: translate(-100%) scale(-1, 1);
-                    
                 }
             }
-    
+
             & .how-to-buy-card__body {
                 flex-direction: row-reverse;
                 padding: 4rem 6.5rem 4rem 4rem;

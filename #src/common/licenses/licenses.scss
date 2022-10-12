@@ -19,21 +19,10 @@
     &__body {
         position: relative;
         z-index: 2;
-        display: flex;
-        align-items: center;
-        min-width: 0;
-        padding: 4rem 4rem 4rem 6rem;
-        gap: 7rem;
-        color: #fff;
-
-        @media (max-width: $md3+px) {
-            display: block;
-            padding: 20px;
-        }
     }
 
     &__title {
-        margin-bottom: 0;
+        margin-bottom: 4rem;
 
         @media (max-width: $md3+px) {
             margin-bottom: 16px;
@@ -42,11 +31,21 @@
 
     &__slider {
         flex: 0 0 auto;
-        width: 41.5rem;
+        width: 50rem;
         position: relative;
+
+        @media (max-width: $md2+px) {
+            width: 180px;
+        }
 
         @media (max-width: $md3+px) {
             width: 100%;
+        }
+
+        & .swiper {
+            @media (max-width: $md3+px) {
+                overflow: visible;
+            }
         }
         
 
@@ -55,6 +54,10 @@
 
             &:not(:last-child) {
                 padding-right: 2rem;
+
+                @media (max-width: $md2+px) {
+                    padding-right: 0;
+                }
 
                 @media (max-width: $md3+px) {
                     padding-right: 10px;
@@ -68,9 +71,18 @@
             top: 50%;
             transform: translateY(-50%);
 
+            @media (max-width: $md2+px) {
+                display: flex;
+
+                &.swiper-button-disabled {
+                    display: none;
+                }
+            }
+
             @media (max-width: $md3+px) {
                 height: 30px;
                 width: 30px;
+                display: none;
             }
 
             &.btn-prev {
@@ -90,12 +102,18 @@
         }
 
         & img {
-            height: 14rem;
+            height: 17rem;
             width: auto;
             border-radius: 0.6rem;
 
+            @media (max-width: $md2+px) {
+                width: 100%;
+                height: auto;
+            }
+
             @media (max-width: $md3+px) {
-                height: 81px;
+                height: 110px;
+                width: auto;
             }
         }
     }

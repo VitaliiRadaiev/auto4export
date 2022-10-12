@@ -3,31 +3,30 @@
 	<div class="popup__body">
 		<div class="popup__content popup__content--lg border-rudius">
             <div class="popup__close" data-popup="close-popup">
-                <img src="img/icons/close.svg" alt="">
+                <img class="img-svg" src="img/icons/close.svg" alt="">
             </div>
 
             <form action="/">
-                <div class="verification">
-                    <div class="verification__head">
-                        <div class="verification__head-icon">
-                            <img src="img/icons/mobile-phone.svg" alt="">
-                        </div>
-                        <div class="verification__head-text">
-                            A verification code has been sent to your phone
+                <div class="verification form d-flex">
+                    <h2 class="form__title">A verification code has been sent to your phone</h2>
+                    <div class="form__items">
+                        <div class="form__item">
+                            <div class="input-wrap" data-mask="9{*}">
+                                <input type="text" class="input">
+                            </div>
                         </div>
                     </div>
-                    <div class="verification__body">
-                        <div class="input-wrap" data-mask="9{*}">
-                            <input type="text" class="input">
-                        </div>
-                        <button type="submit" class="btn-default">
-                            <img class="img-svg" src="img/icons/circle-check-sm.svg" alt="">
+                    <div class="form__submit-wrap">
+                        <button type="submit" class="form__submit btn-default">
                             Confirm
+                            <img class="img-svg" src="img/icons/circle-check-sm.svg" alt="">
                         </button>
                     </div>
                     <div class="verification__bottom">
                         <a href="#">Send code again</a>
-                        <p>SMS not coming? Write to us at info@auto4export.com</p>
+                    </div>
+                    <div class="form__bottom-text">
+                        <p class="text-secondary mb-0">SMS not coming? Write to us at info@auto4export.com</p>
                     </div>
                 </div>
             </form>
