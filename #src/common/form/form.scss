@@ -413,7 +413,7 @@
         color: $textColorSecondary;
     }
 
-    & a {
+    & a:not(.btn-default) {
         color: $mainColor;
     }
 

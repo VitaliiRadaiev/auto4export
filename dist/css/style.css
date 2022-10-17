@@ -5577,13 +5577,13 @@ hr {
 }
 
 [data-copy].copied:before {
-  display: block;
+  display: inline-block;
 }
 
 [data-copy]:before {
   position: absolute;
   bottom: calc(100% + 0.8rem);
-  right: 0;
+  left: calc(100% - 0.6rem);
   content: "Copied";
   color: #fff;
   background-color: #111f38;
@@ -5592,9 +5592,6 @@ hr {
   font-size: 1.2rem;
   line-height: 1.16em;
   pointer-events: none;
-  -webkit-transform: translateX(35%);
-      -ms-transform: translateX(35%);
-          transform: translateX(35%);
   -webkit-animation: fadeInUp 0.3s ease forwards;
           animation: fadeInUp 0.3s ease forwards;
   display: none;
@@ -5603,28 +5600,28 @@ hr {
 @-webkit-keyframes fadeInUp {
   from {
     opacity: 0;
-    -webkit-transform: translateX(35%) translateY(1rem);
-            transform: translateX(35%) translateY(1rem);
+    -webkit-transform: translateY(1rem);
+            transform: translateY(1rem);
   }
 
   to {
     opacity: 1;
-    -webkit-transform: translateX(35%) translateY(0rem);
-            transform: translateX(35%) translateY(0rem);
+    -webkit-transform: translateY(0rem);
+            transform: translateY(0rem);
   }
 }
 
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    -webkit-transform: translateX(35%) translateY(1rem);
-            transform: translateX(35%) translateY(1rem);
+    -webkit-transform: translateY(1rem);
+            transform: translateY(1rem);
   }
 
   to {
     opacity: 1;
-    -webkit-transform: translateX(35%) translateY(0rem);
-            transform: translateX(35%) translateY(0rem);
+    -webkit-transform: translateY(0rem);
+            transform: translateY(0rem);
   }
 }
 
@@ -8986,10 +8983,7 @@ button:active {
   width: 3rem;
   height: auto;
   max-height: 2.8rem;
-}
-
-.card__list > li > img path,
-.card__list > li > svg path {
+  opacity: 0.5;
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -10151,7 +10145,7 @@ button:active {
   color: #989898;
 }
 
-.form a {
+.form a:not(.btn-default) {
   color: #3E73CF;
 }
 
@@ -12961,6 +12955,75 @@ button:active {
   font-size: 1.4rem;
   line-height: 1.21em;
   color: #989898;
+}
+
+.join-live-auction__list {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.join-live-auction__list > li {
+  border-top: 1px solid #DBDBDB;
+  padding-top: 2rem;
+}
+
+.join-live-auction__list > li:not(:last-child) {
+  padding-bottom: 2rem;
+}
+
+.join-live-auction__list-item {
+  padding-left: 5rem;
+  position: relative;
+}
+
+.join-live-auction__list-title {
+  margin-bottom: 1rem;
+}
+
+.join-live-auction__list-title img,
+.join-live-auction__list-title svg {
+  color: #989898;
+  position: absolute;
+  top: 1rem;
+  left: 0.4rem;
+  width: 2rem;
+  height: auto;
+}
+
+.join-live-auction__list-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.join-live-auction__list-text {
+  margin-bottom: 2rem;
+  color: #989898;
+}
+
+.join-live-auction__list-text > *:last-child {
+  margin-bottom: 0;
+}
+
+.join-live-auction__btn {
+  width: 100%;
+}
+
+.join-live-auction__list-item--completed .join-live-auction__list-title {
+  color: #3ECF5C;
+  margin-bottom: 0;
+}
+
+.join-live-auction__list-item--completed .join-live-auction__list-title svg {
+  color: #3ECF5C;
+}
+
+.join-live-auction__list-item--completed .join-live-auction__list-body {
+  display: none;
 }
 
 .question-box {
@@ -20297,6 +20360,10 @@ form.dropzone > .dz-preview {
   width: 100%;
 }
 
+.hipping-price__submit.inactive {
+  background-color: #fff !important;
+}
+
 .contact-info {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -20565,13 +20632,15 @@ form.dropzone > .dz-preview {
   white-space: nowrap;
 }
 
-.auctions-head__btn.tab-active {
+.auctions-head__btn.tab-active,
+.auctions-head__btn.active {
   border-color: #3E73CF;
   color: #3E73CF;
   background-color: transparent;
 }
 
-.auctions-head__btn.tab-active span {
+.auctions-head__btn.tab-active span,
+.auctions-head__btn.active span {
   background-color: #3E73CF;
   border-color: #3E73CF;
   color: #fff;
@@ -23019,6 +23088,11 @@ form.dropzone > .dz-preview {
 
   .card:hover .card__body {
     border-color: #3E73CF;
+  }
+
+  .card:hover .card__list svg {
+    opacity: 1;
+    color: #3E73CF;
   }
 
   .card__images:hover .slider-btn {
@@ -27438,6 +27512,22 @@ form.dropzone > .dz-preview {
   .verification__bottom p {
     font-size: 13px;
     line-height: 16px;
+  }
+
+  .join-live-auction__list-item {
+    padding-left: 2rem;
+  }
+
+  .join-live-auction__list-title img,
+  .join-live-auction__list-title svg {
+    width: 1.2rem;
+    left: 0;
+    top: 0.9rem;
+  }
+
+  .join-live-auction__btn {
+    margin-left: -2rem;
+    width: calc(100% + 2rem);
   }
 
   .question-box__body {

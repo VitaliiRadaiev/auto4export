@@ -23,6 +23,11 @@
             & .card__body {
                 border-color: $mainColor;
             }
+
+            & .card__list svg {
+                opacity: 1;
+                color: $mainColor;
+            }
         }
     }
 
@@ -333,8 +338,9 @@
                 width: 3rem;
                 height: auto;
                 max-height: 2.8rem;
+                opacity: 0.5;
+                transition: all 0.3s ease;
                 & path {
-                    transition: all 0.3s ease;
                 }
             }
 

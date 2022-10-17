@@ -265,5 +265,9 @@
 
     &__submit {
         width: 100%;
+
+        &.inactive {
+            background-color: #fff !important;
+        }
     }
 }

@@ -182,7 +182,7 @@
             }
         }
 
-        &.tab-active {
+        &.tab-active, &.active {
             border-color: $mainColor;
             color: $mainColor;
             background-color: transparent;
