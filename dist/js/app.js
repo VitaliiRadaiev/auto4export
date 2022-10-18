@@ -388,10 +388,20 @@ let burger = document.querySelector('[data-burger]');
 let mobileMenu = document.querySelector('[data-mobile-menu]');
 let vehicleFinderMobButtons = document.querySelectorAll('[data-open-vehicle-list-by-id]');
 let vehicleFinderMobLists = Array.from(document.querySelectorAll('[data-vehicle-list-id]'));
-
+let isScroll = window.pageYOffset;
 if (header) {
     window.addEventListener('scroll', () => {
         header.classList.toggle('header--is-scroll', window.pageYOffset > 50);
+
+        if(window.pageYOffset > 50) {
+            if(window.pageYOffset > isScroll) {
+                header.classList.add('header--hide');
+            } else if(window.pageYOffset < isScroll) {
+                header.classList.remove('header--hide');
+            }
+        }
+
+        isScroll = window.pageYOffset;
     })
 }
 
@@ -497,6 +507,11 @@ if(popupLinks.length > 0) {
 	for (let index = 0; index < popupLinks.length; index++) {
 		const popupLink = popupLinks[index];
 		popupLink.addEventListener('click', function(e) {
+			if(e.target.closest('.tooltip-icon')) {
+				e.preventDefault();
+				return;
+			}
+
 			const popupName = popupLink.getAttribute('href').replace('#', '');
 			const curentPopup = document.getElementById(popupName);
 			popupOpen(curentPopup);
@@ -2410,7 +2425,7 @@ if(bigImgaeElements.length) {
     if (inputs.length) {
         inputs.forEach(input => {
             if (input.value.trim().length > 0) {
-                if(input.classList.contains('not-check')) return;
+                if (input.classList.contains('not-check')) return;
                 input.classList.add('auto-completed');
             }
 
@@ -2463,14 +2478,14 @@ if(bigImgaeElements.length) {
     }
 
     let phoneConfirmAll = document.querySelectorAll('[data-phone-confirm]');
-    if(phoneConfirmAll.length) {
+    if (phoneConfirmAll.length) {
         phoneConfirmAll.forEach(phoneConfirm => {
             let input = phoneConfirm.querySelector('input');
             let btn = phoneConfirm.querySelector('.phone-confirm');
 
-            if(input && btn) {
+            if (input && btn) {
                 input.addEventListener('input', () => {
-                    if(input.value.trim().length >= 9) {
+                    if (input.value.trim().length >= 9) {
                         btn.classList.add('phone-confirm--show');
                     } else {
                         btn.classList.remove('phone-confirm--show');
@@ -2481,120 +2496,118 @@ if(bigImgaeElements.length) {
     }
 
     let selectsHaveAction = document.querySelectorAll('[data-select-action]');
-    if(selectsHaveAction.length) {
+    if (selectsHaveAction.length) {
         selectsHaveAction.forEach(select => {
             select.addEventListener('change', () => {
-                if(select.selectedOptions[0].hasAttribute('data-set-element-as-inactive-by-id')) {
+                if (select.selectedOptions[0].hasAttribute('data-set-element-as-inactive-by-id')) {
                     let actionEl = document.querySelector(`[data-id="${select.selectedOptions[0].dataset.setElementAsInactiveById}"]`);
-                    
-                    if(actionEl) {
-                        if(actionEl.nodeName === 'SELECT') {
+
+                    if (actionEl) {
+                        if (actionEl.nodeName === 'SELECT') {
                             actionEl.parentElement.classList.add('inactive');
                             actionEl.classList.add('inactive');
 
-                            let selectWrapper = actionEl.closest('.select-wrap');
-                            let selectInner = selectWrapper.querySelector('.select');
+                            let selectWrapper = el.closest('.select');
                             let title = selectWrapper.querySelector('.select__value span');
                             actionEl.value = '';
-                            selectInner.classList.remove('_visited');
+                            selectWrapper.classList.remove('_visited');
                             title.innerText = actionEl.selectedOptions[0].text;
-        
+
                             let event = new Event("change", { bubbles: true });
                             actionEl.dispatchEvent(event);
                         } else {
                             actionEl.classList.add('inactive');
-                        }   
+                        }
                     }
                 }
 
-                if(select.selectedOptions[0].hasAttribute('data-set-element-as-active-by-id')) {
+                if (select.selectedOptions[0].hasAttribute('data-set-element-as-active-by-id')) {
                     let actionEl = document.querySelector(`[data-id="${select.selectedOptions[0].dataset.setElementAsActiveById}"]`);
-                    
-                    if(actionEl) {
-                        if(actionEl.nodeName === 'SELECT') {
+
+                    if (actionEl) {
+                        if (actionEl.nodeName === 'SELECT') {
                             actionEl.parentElement.classList.remove('inactive');
                             actionEl.classList.remove('inactive');
                         } else {
                             actionEl.classList.remove('inactive');
-                        }   
+                        }
                     }
                 }
 
-                if(select.selectedOptions[0].hasAttribute('data-set-elements-as-inactive-by-id')) {
+                if (select.selectedOptions[0].hasAttribute('data-set-elements-as-inactive-by-id')) {
                     let allId = select.selectedOptions[0].dataset.setElementsAsInactiveById.split(',').map(i => i.trim());
                     let actionElements = allId.map(id => document.querySelector(`[data-id="${id}"]`));
-                    
+
                     actionElements.forEach(el => {
-                        if(el) {
-                            if(el.nodeName === 'SELECT') {
+                        if (el) {
+                            if (el.nodeName === 'SELECT') {
                                 el.parentElement.classList.add('inactive');
                                 el.classList.add('inactive');
 
-                                let selectWrapper = el.closest('.select-wrap');
-                                let selectInner = selectWrapper.querySelector('.select');
+                                let selectWrapper = el.closest('.select');
                                 let title = selectWrapper.querySelector('.select__value span');
                                 el.value = '';
-                                selectInner.classList.remove('_visited');
+                                selectWrapper.classList.remove('_visited');
                                 title.innerText = el.selectedOptions[0].text;
-            
+
                                 let event = new Event("change", { bubbles: true });
                                 el.dispatchEvent(event);
 
                             } else {
                                 el.classList.add('inactive');
-                            }   
+                            }
                         }
                     })
                 }
 
-                if(select.selectedOptions[0].hasAttribute('data-set-elements-as-active-by-id')) {
+                if (select.selectedOptions[0].hasAttribute('data-set-elements-as-active-by-id')) {
                     let allId = select.selectedOptions[0].dataset.setElementsAsActiveById.split(',').map(i => i.trim());
                     let actionElements = allId.map(id => document.querySelector(`[data-id="${id}"]`));
-                    
+
                     actionElements.forEach(el => {
-                        if(el) {
-                            if(el.nodeName === 'SELECT') {
+                        if (el) {
+                            if (el.nodeName === 'SELECT') {
                                 el.parentElement.classList.remove('inactive');
                                 el.classList.remove('inactive');
                             } else {
                                 el.classList.remove('inactive');
-                            }   
+                            }
                         }
                     })
                 }
 
-                if(select.selectedOptions[0].hasAttribute('data-hide-element-by-id')) {
+                if (select.selectedOptions[0].hasAttribute('data-hide-element-by-id')) {
                     let actionEl = document.querySelector(`[data-id="${select.selectedOptions[0].dataset.hideElementById}"]`);
-                    
-                    if(actionEl) {
+
+                    if (actionEl) {
                         actionEl.classList.add('d-none');
                     }
                 }
 
-                if(select.selectedOptions[0].hasAttribute('data-show-element-by-id')) {
+                if (select.selectedOptions[0].hasAttribute('data-show-element-by-id')) {
                     let actionEl = document.querySelector(`[data-id="${select.selectedOptions[0].dataset.showElementById}"]`);
-                    if(actionEl) {
+                    if (actionEl) {
                         actionEl.classList.remove('d-none');
                     }
                 }
 
-                if(select.selectedOptions[0].hasAttribute('data-hide-elements-by-id')) {
+                if (select.selectedOptions[0].hasAttribute('data-hide-elements-by-id')) {
                     let allId = select.selectedOptions[0].dataset.hideElementsById.split(',').map(i => i.trim());
                     let actionElements = allId.map(id => document.querySelector(`[data-id="${id}"]`));
-                    
+
                     actionElements.forEach(el => {
-                        if(el) {
+                        if (el) {
                             el.classList.add('d-none');
                         }
                     })
                 }
 
-                if(select.selectedOptions[0].hasAttribute('data-show-elements-by-id')) {
+                if (select.selectedOptions[0].hasAttribute('data-show-elements-by-id')) {
                     let allId = select.selectedOptions[0].dataset.showElementsById.split(',').map(i => i.trim());
                     let actionElements = allId.map(id => document.querySelector(`[data-id="${id}"]`));
-                    
+
                     actionElements.forEach(el => {
-                        if(el) {
+                        if (el) {
                             el.classList.remove('d-none');
                         }
                     })
@@ -2604,224 +2617,298 @@ if(bigImgaeElements.length) {
     }
 
     let inputsHaveAction = document.querySelectorAll('[data-input-action]');
-    if(inputsHaveAction.length) {
+    if (inputsHaveAction.length) {
         inputsHaveAction.forEach(input => {
-            input.addEventListener('change', () => {
-                if(input.value.trim().length >= 1) {
-                    if(input.hasAttribute('data-set-element-as-inactive-by-id')) {
-                        let actionEl = document.querySelector(`[data-id="${input.dataset.setElementAsInactiveById}"]`);
-                        
-                        if(actionEl) {
-                            if(actionEl.nodeName === 'SELECT') {
-                                actionEl.parentElement.classList.add('inactive');
-                                actionEl.classList.add('inactive');
+            // init
+            if (input.checked) {
+                inputActionAtributesSet(input);
+            }
 
-                                let selectWrapper = actionEl.closest('.select-wrap');
-                                let selectInner = selectWrapper.querySelector('.select');
-                                let title = selectWrapper.querySelector('.select__value span');
-                                actionEl.value = '';
-                                selectInner.classList.remove('_visited');
-                                title.innerText = actionEl.selectedOptions[0].text;
-            
-                                let event = new Event("change", { bubbles: true });
-                                actionEl.dispatchEvent(event);
-                            } else {
-                                actionEl.classList.add('inactive');
-                            }   
-                        }
-                    }
-    
-                    if(input.hasAttribute('data-set-element-as-active-by-id')) {
-                        let actionEl = document.querySelector(`[data-id="${input.dataset.setElementAsActiveById}"]`);
-                        
-                        if(actionEl) {
-                            if(actionEl.nodeName === 'SELECT') {
-                                actionEl.parentElement.classList.remove('inactive');
-                                actionEl.classList.remove('inactive');
-                            } else {
-                                actionEl.classList.remove('inactive');
-                            }   
-                        }
-                    }
 
-                    if(input.hasAttribute('data-set-elements-as-inactive-by-id')) {
-                        let allId = input.dataset.setElementsAsInactiveById.split(',').map(i => i.trim());
-                        let actionElements = allId.map(id => document.querySelector(`[data-id="${id}"]`));
-                        
-                        actionElements.forEach(el => {
-                            if(el) {
-                                if(el.nodeName === 'SELECT') {
-                                    el.parentElement.classList.add('inactive');
-                                    el.classList.add('inactive');
-
-                                    let selectWrapper = el.closest('.select-wrap');
-                                    let selectInner = selectWrapper.querySelector('.select');
-                                    let title = selectWrapper.querySelector('.select__value span');
-                                    el.value = '';
-                                    selectInner.classList.remove('_visited');
-                                    title.innerText = el.selectedOptions[0].text;
-                
-                                    let event = new Event("change", { bubbles: true });
-                                    el.dispatchEvent(event);
-                                } else {
-                                    el.classList.add('inactive');
-                                }   
-                            }
-                        })
-                    }
-
-                    if(input.hasAttribute('data-set-elements-as-active-by-id')) {
-                        let allId = input.dataset.setElementsAsActiveById.split(',').map(i => i.trim());
-                        let actionElements = allId.map(id => document.querySelector(`[data-id="${id}"]`));
-                        
-                        actionElements.forEach(el => {
-                            if(el) {
-                                if(el.nodeName === 'SELECT') {
-                                    el.parentElement.classList.remove('inactive');
-                                    el.classList.remove('inactive');
-                                } else {
-                                    el.classList.remove('inactive');
-                                }   
-                            }
-                        })
-                    }
-    
-                    if(input.hasAttribute('data-hide-element-by-id')) {
-                        let actionEl = document.querySelector(`[data-id="${input.dataset.hideElementById}"]`);
-                        
-                        if(actionEl) {
-                            actionEl.classList.add('d-none');
-                        }
-                    }
-    
-                    if(input.hasAttribute('data-show-element-by-id')) {
-                        let actionEl = document.querySelector(`[data-id="${input.dataset.showElementById}"]`);
-                        if(actionEl) {
-                            actionEl.classList.remove('d-none');
-                        }
-                    }
-
-                    if(input.hasAttribute('data-hide-elements-by-id')) {
-                        let allId = input.dataset.hideElementsById.split(',').map(i => i.trim());
-                        let actionElements = allId.map(id => document.querySelector(`[data-id="${id}"]`));
-                        
-                        actionElements.forEach(el => {
-                            if(el) {
-                                el.classList.add('d-none');
-                            }
-                        })
-                    }
-
-                    if(input.hasAttribute('data-show-elements-by-id')) {
-                        let allId = input.dataset.showElementsById.split(',').map(i => i.trim());
-                        let actionElements = allId.map(id => document.querySelector(`[data-id="${id}"]`));
-                        
-                        actionElements.forEach(el => {
-                            if(el) {
-                                el.classList.remove('d-none');
-                            }
-                        })
-                    }
-
+            input.addEventListener('change', (e) => {
+                if (input.value.trim().length >= 1) {
+                    inputActionAtributesSet(input);
                 } else {
+                    inputActionAtributesUnSet(input);
+                }
 
-                    if(input.hasAttribute('data-set-element-as-inactive-by-id')) {
-                        let actionEl = document.querySelector(`[data-id="${input.dataset.setElementAsInactiveById}"]`);
-                        
-                        if(actionEl) {
-                            if(actionEl.nodeName === 'SELECT') {
-                                actionEl.parentElement.classList.remove('inactive');
-                                actionEl.classList.remove('inactive');
-                            } else {
-                                actionEl.classList.remove('inactive');
-                            }   
-                        }
-                    }
-    
-                    if(input.hasAttribute('data-set-element-as-active-by-id')) {
-                        let actionEl = document.querySelector(`[data-id="${input.dataset.setElementAsActiveById}"]`);
-                        
-                        if(actionEl) {
-                            if(actionEl.nodeName === 'SELECT') {
-                                actionEl.parentElement.classList.add('inactive');
-                                actionEl.classList.add('inactive');
-                            } else {
-                                actionEl.classList.add('inactive');
-                            }   
-                        }
-                    }
-
-                    if(input.hasAttribute('data-set-elements-as-inactive-by-id')) {
-                        let allId = input.dataset.setElementsAsInactiveById.split(',').map(i => i.trim());
-                        let actionElements = allId.map(id => document.querySelector(`[data-id="${id}"]`));
-                        
-                        actionElements.forEach(el => {
-                            if(el) {
-                                if(el.nodeName === 'SELECT') {
-                                    el.parentElement.classList.remove('inactive');
-                                    el.classList.remove('inactive');
-                                } else {
-                                    el.classList.remove('inactive');
-                                }   
-                            }
-                        })
-                    }
-
-                    if(input.hasAttribute('data-set-elements-as-active-by-id')) {
-                        let allId = input.dataset.setElementsAsActiveById.split(',').map(i => i.trim());
-                        let actionElements = allId.map(id => document.querySelector(`[data-id="${id}"]`));
-                        
-                        actionElements.forEach(el => {
-                            if(el) {
-                                if(el.nodeName === 'SELECT') {
-                                    el.parentElement.classList.add('inactive');
-                                    el.classList.add('inactive');
-                                } else {
-                                    el.classList.add('inactive');
-                                }   
-                            }
-                        })
-                    }
-    
-                    if(input.hasAttribute('data-hide-element-by-id')) {
-                        let actionEl = document.querySelector(`[data-id="${input.dataset.hideElementById}"]`);
-                        
-                        if(actionEl) {
-                            actionEl.classList.remove('d-none');
-                        }
-                    }
-    
-                    if(input.hasAttribute('data-show-element-by-id')) {
-                        let actionEl = document.querySelector(`[data-id="${input.dataset.showElementById}"]`);
-                        if(actionEl) {
-                            actionEl.classList.add('d-none');
-                        }
-                    }
-
-                    if(input.hasAttribute('data-hide-elements-by-id')) {
-                        let allId = input.dataset.hideElementsById.split(',').map(i => i.trim());
-                        let actionElements = allId.map(id => document.querySelector(`[data-id="${id}"]`));
-                        
-                        actionElements.forEach(el => {
-                            if(el) {
-                                el.classList.remove('d-none');
-                            }
-                        })
-                    }
-
-                    if(input.hasAttribute('data-show-elements-by-id')) {
-                        let allId = input.dataset.showElementsById.split(',').map(i => i.trim());
-                        let actionElements = allId.map(id => document.querySelector(`[data-id="${id}"]`));
-                        
-                        actionElements.forEach(el => {
-                            if(el) {
-                                el.classList.add('d-none');
-                            }
-                        })
+                if (input.type === 'checkbox' || input.type === 'radio') {
+                    if (e.target.checked) {
+                        inputActionAtributesSet(input);
+                    } else {
+                        inputActionAtributesUnSet(input);
                     }
                 }
             })
         })
+    }
+
+    function inputActionAtributesSet(input) {
+
+        if (input.hasAttribute('data-set-element-as-inactive-by-id')) {
+            let actionEl = document.querySelector(`[data-id="${input.dataset.setElementAsInactiveById}"]`);
+
+            if (actionEl) {
+                if (actionEl.nodeName === 'SELECT') {
+                    actionEl.parentElement.classList.add('inactive');
+                    actionEl.classList.add('inactive');
+
+                    let selectWrapper = actionEl.closest('.select');
+                    let title = selectWrapper.querySelector('.select__value span');
+                    actionEl.value = '';
+                    selectWrapper.classList.remove('_visited');
+                    title.innerText = actionEl.selectedOptions[0].text;
+
+                    let event = new Event("change", { bubbles: true });
+                    actionEl.dispatchEvent(event);
+                } else {
+                    actionEl.classList.add('inactive');
+                    el.parentElement.classList.add('inactive');
+                }
+            }
+        }
+
+        if (input.hasAttribute('data-set-element-as-active-by-id')) {
+            let actionEl = document.querySelector(`[data-id="${input.dataset.setElementAsActiveById}"]`);
+
+            if (actionEl) {
+                if (actionEl.nodeName === 'SELECT') {
+                    actionEl.parentElement.classList.remove('inactive');
+                    actionEl.classList.remove('inactive');
+                } else {
+                    actionEl.classList.remove('inactive');
+                    el.parentElement.classList.remove('inactive');
+                }
+            }
+        }
+
+        if (input.hasAttribute('data-set-elements-as-inactive-by-id')) {
+            let allId = input.dataset.setElementsAsInactiveById.split(',').map(i => i.trim());
+            let actionElements = allId.map(id => document.querySelector(`[data-id="${id}"]`));
+
+            actionElements.forEach(el => {
+                if (el) {
+                    if (el.nodeName === 'SELECT') {
+                        el.parentElement.classList.add('inactive');
+                        el.classList.add('inactive');
+
+                        let selectWrapper = el.closest('.select');
+                        let title = selectWrapper.querySelector('.select__value span');
+                        el.value = '';
+                        selectWrapper.classList.remove('_visited');
+                        title.innerText = el.selectedOptions[0].text;
+
+                        let event = new Event("change", { bubbles: true });
+                        el.dispatchEvent(event);
+                    } else {
+                        el.classList.add('inactive');
+                        el.parentElement.classList.add('inactive');
+                    }
+                }
+            })
+        }
+
+        if (input.hasAttribute('data-set-elements-as-active-by-id')) {
+            let allId = input.dataset.setElementsAsActiveById.split(',').map(i => i.trim());
+            let actionElements = allId.map(id => document.querySelector(`[data-id="${id}"]`));
+
+            actionElements.forEach(el => {
+                if (el) {
+                    if (el.nodeName === 'SELECT') {
+                        el.parentElement.classList.remove('inactive');
+                        el.classList.remove('inactive');
+                    } else {
+                        el.classList.remove('inactive');
+                        el.parentElement.classList.remove('inactive');
+                    }
+                }
+            })
+        }
+
+        if (input.hasAttribute('data-hide-element-by-id')) {
+            let actionEl = document.querySelector(`[data-id="${input.dataset.hideElementById}"]`);
+
+            if (actionEl) {
+                actionEl.classList.add('d-none');
+            }
+        }
+
+        if (input.hasAttribute('data-show-element-by-id')) {
+            let actionEl = document.querySelector(`[data-id="${input.dataset.showElementById}"]`);
+            if (actionEl) {
+                actionEl.classList.remove('d-none');
+            }
+        }
+
+        if (input.hasAttribute('data-hide-elements-by-id')) {
+            let allId = input.dataset.hideElementsById.split(',').map(i => i.trim());
+            let actionElements = allId.map(id => document.querySelector(`[data-id="${id}"]`));
+            actionElements.forEach(el => {
+                if (el) {
+                    el.classList.add('d-none');
+                }
+            })
+        }
+
+        if (input.hasAttribute('data-show-elements-by-id')) {
+            let allId = input.dataset.showElementsById.split(',').map(i => i.trim());
+            let actionElements = allId.map(id => document.querySelector(`[data-id="${id}"]`));
+
+            actionElements.forEach(el => {
+                if (el) {
+                    el.classList.remove('d-none');
+                }
+            })
+        }
+
+        if (input.hasAttribute('data-set-checked-by-id')) {
+            let allId = input.dataset.setCheckedById.split(',').map(i => i.trim());
+            let actionElements = allId.map(id => document.querySelector(`[data-id="${id}"]`));
+
+            actionElements.forEach(el => {
+                if (el) {
+                    if (el.type === 'checkbox' || el.type === 'radio') {
+                        el.checked = true;
+                    }
+                }
+            })
+        }
+        if (input.hasAttribute('data-unset-checked-by-id')) {
+            let allId = input.dataset.unsetCheckedById.split(',').map(i => i.trim());
+            let actionElements = allId.map(id => document.querySelector(`[data-id="${id}"]`));
+            actionElements.forEach(el => {
+                if (el) {
+                    if (el.type === 'checkbox' || el.type === 'radio') {
+                        el.checked = false;
+                    }
+                }
+            })
+        }
+    }
+
+    function inputActionAtributesUnSet(input) {
+        if (input.hasAttribute('data-set-element-as-inactive-by-id')) {
+            let actionEl = document.querySelector(`[data-id="${input.dataset.setElementAsInactiveById}"]`);
+
+            if (actionEl) {
+                if (actionEl.nodeName === 'SELECT') {
+                    actionEl.parentElement.classList.remove('inactive');
+                    actionEl.classList.remove('inactive');
+                } else {
+                    actionEl.classList.remove('inactive');
+                    el.parentElement.classList.remove('inactive');
+                }
+            }
+        }
+
+        if (input.hasAttribute('data-set-element-as-active-by-id')) {
+            let actionEl = document.querySelector(`[data-id="${input.dataset.setElementAsActiveById}"]`);
+
+            if (actionEl) {
+                if (actionEl.nodeName === 'SELECT') {
+                    actionEl.parentElement.classList.add('inactive');
+                    actionEl.classList.add('inactive');
+                } else {
+                    actionEl.classList.add('inactive');
+                    el.parentElement.classList.add('inactive');
+                }
+            }
+        }
+
+        if (input.hasAttribute('data-set-elements-as-inactive-by-id')) {
+            let allId = input.dataset.setElementsAsInactiveById.split(',').map(i => i.trim());
+            let actionElements = allId.map(id => document.querySelector(`[data-id="${id}"]`));
+
+            actionElements.forEach(el => {
+                if (el) {
+                    if (el.nodeName === 'SELECT') {
+                        el.parentElement.classList.remove('inactive');
+                        el.classList.remove('inactive');
+                    } else {
+                        el.classList.remove('inactive');
+                        el.parentElement.classList.remove('inactive');
+                    }
+                }
+            })
+        }
+
+        if (input.hasAttribute('data-set-elements-as-active-by-id')) {
+            let allId = input.dataset.setElementsAsActiveById.split(',').map(i => i.trim());
+            let actionElements = allId.map(id => document.querySelector(`[data-id="${id}"]`));
+
+            actionElements.forEach(el => {
+                if (el) {
+                    if (el.nodeName === 'SELECT') {
+                        el.parentElement.classList.add('inactive');
+                        el.classList.add('inactive');
+                    } else {
+                        el.classList.add('inactive');
+                        el.parentElement.classList.add('inactive');
+                    }
+                }
+            })
+        }
+
+        if (input.hasAttribute('data-hide-element-by-id')) {
+            let actionEl = document.querySelector(`[data-id="${input.dataset.hideElementById}"]`);
+
+            if (actionEl) {
+                actionEl.classList.remove('d-none');
+            }
+        }
+
+        if (input.hasAttribute('data-show-element-by-id')) {
+            let actionEl = document.querySelector(`[data-id="${input.dataset.showElementById}"]`);
+            if (actionEl) {
+                actionEl.classList.add('d-none');
+            }
+        }
+
+        if (input.hasAttribute('data-hide-elements-by-id')) {
+            let allId = input.dataset.hideElementsById.split(',').map(i => i.trim());
+            let actionElements = allId.map(id => document.querySelector(`[data-id="${id}"]`));
+
+            actionElements.forEach(el => {
+                if (el) {
+                    el.classList.remove('d-none');
+                }
+            })
+        }
+
+        if (input.hasAttribute('data-show-elements-by-id')) {
+            let allId = input.dataset.showElementsById.split(',').map(i => i.trim());
+            let actionElements = allId.map(id => document.querySelector(`[data-id="${id}"]`));
+
+            actionElements.forEach(el => {
+                if (el) {
+                    el.classList.add('d-none');
+                }
+            })
+        }
+
+        if (input.hasAttribute('data-set-checked-by-id')) {
+            let allId = input.dataset.setCheckedById.split(',').map(i => i.trim());
+            let actionElements = allId.map(id => document.querySelector(`[data-id="${id}"]`));
+
+            actionElements.forEach(el => {
+                if (el) {
+                    if (el.type === 'checkbox' || el.type === 'radio') {
+                        el.checked = true;
+                    }
+                }
+            })
+        }
+        if (input.hasAttribute('data-unset-checked-by-id')) {
+            let allId = input.dataset.unsetCheckedById.split(',').map(i => i.trim());
+            let actionElements = allId.map(id => document.querySelector(`[data-id="${id}"]`));
+            actionElements.forEach(el => {
+                if (el) {
+                    if (el.type === 'checkbox' || el.type === 'radio') {
+                        el.checked = false;
+                    }
+                }
+            })
+        }
     }
 }   ;
 		(function uploadFileHandler() {
@@ -3240,6 +3327,10 @@ let btnSetGrid = document.querySelector('[data-action="set-grid"]');
 if (btnSetList && btnSetGrid) {
     let list = document.querySelector('.main-search__list');
     // init
+    if(document.documentElement.clientWidth < 768) {
+        btnSetList.classList.remove('active')
+        btnSetGrid.classList.add('active')
+    }
     if (btnSetGrid.classList.contains('active')) {
         if (cards.length) {
             cards.forEach(card => {
@@ -3279,7 +3370,6 @@ if (btnSetList && btnSetGrid) {
             list.classList.remove('main-search__list--grid');
         }
 
-        window.borderDashed.update();
     })
 
     btnSetGrid.addEventListener('click', (e) => {
@@ -3307,8 +3397,6 @@ if (btnSetList && btnSetGrid) {
             list.classList.add('main-search__list--grid');
 
         }
-
-        window.borderDashed.update();
     })
 }
 

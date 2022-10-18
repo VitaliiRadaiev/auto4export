@@ -43,8 +43,8 @@
                                     <div class="form__item form__item--half-md">
                                         <label class="form__label">Vehicle Type</label>
                                         <input class="input inactive text-primary" type="text" placeholder="" data-id="vehicleTypeInput">
-                                        <div class="select-wrap d-none" data-id="vehicleTypeSelect">
-                                            <select name="" class="_select">
+                                        <div class="select-wrap d-none" data-id="vehicleType">
+                                            <select name="" class="_select inactive" data-id="vehicleTypeSelect">
                                                 <option value="" selected>Select Type</option>
                                                 <option value="1">Cars</option>
                                                 <option value="2">Trucks</option>
@@ -60,34 +60,57 @@
                                         <label class="form__label">Ship From</label>
                                         <input class="input" type="text" placeholder="Enter ZIP Code"
                                             data-input-action
-                                            data-hide-elements-by-id="vehicleTypeInput,toPort"
-                                            data-show-elements-by-id="vehicleTypeSelect,town"
-                                            data-set-element-as-active-by-id="shipTo"
+                                            data-hide-elements-by-id="vehicleTypeInput"
+                                            data-show-elements-by-id="vehicleType"
+                                            data-set-elements-as-active-by-id="shipTo,toPort"
                                         >
                                     </div>
                                     <div class="form__item form__item--half-md">
                                         <label class="form__label">From Port</label>
-                                        <input class="input inactive" type="text" placeholder="" data-id="fromPort">
-                                    </div>
-                                    <div class="form__item form__item--half-md">
-                                        <label class="form__label">Ship To</label>
                                         <div class="select-wrap">
-                                            <select name="" class="_select inactive" data-id="shipTo">
-                                                <option value="" selected>Select Destination Country</option>
-                                                <option value="1">Ukraine</option>
-                                                <option value="2">USA</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form__item form__item--half-md" data-id="toPort">
-                                        <label class="form__label">To Port</label>
-                                        <div class="select-wrap">
-                                            <select name="" class="_select inactive">
+                                            <select name="" class="_select inactive" data-id="fromPort">
                                                 <option value="" selected>Select Destination Port</option>
                                                 <option value="1">Odessa</option>
                                                 <option value="2">Houston</option>
                                             </select>
                                         </div>
+                                    </div>
+                                    <div class="form__item form__item--half-md">
+                                        <label class="form__label">Ship To</label>
+                                        <div class="select-wrap">
+                                            <select name="" class="_select inactive" data-id="shipTo" data-select-action>
+                                                <option value="" selected>Select Destination Country</option>
+                                                <option value="1"
+                                                data-set-elements-as-active-by-id="fromPort"
+                                                data-hide-elements-by-id="destinationZipWrap"
+                                                data-show-elements-by-id="toPortWrap"
+                                                >Ukraine</option>
+                                                <option value="2"
+                                                
+                                                data-set-elements-as-inactive-by-id="fromPort"
+                                                data-hide-elements-by-id="toPortWrap"
+                                                data-show-elements-by-id="destinationZipWrap"
+                                                >USA</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form__item form__item--half-md" data-id="toPortWrap">
+                                        <label class="form__label">To Port</label>
+                                        <div class="select-wrap">
+                                            <select name="" class="_select inactive" data-id="toPort" data-select-action>
+                                                <option value="" selected>Select Destination Port</option>
+                                                <option value="1"
+                                                data-set-elements-as-active-by-id="vehicleTypeSelect"
+                                                >Odessa</option>
+                                                <option value="2"
+                                                data-set-elements-as-active-by-id="vehicleTypeSelect"
+                                                >Houston</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form__item form__item--half-md d-none" data-id="destinationZipWrap">
+                                        <label class="form__label">Destination Zip</label>
+                                        <input class="input" type="text" placeholder="Enter ZIP Code">
                                     </div>
                                     <div class="form__item form__item--half-md d-none" data-id="town">
                                         <label class="form__label">Town</label>

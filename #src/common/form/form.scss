@@ -938,6 +938,11 @@
     cursor: pointer;
     user-select: none;
 
+    &.inactive {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+
     & input {
         position: absolute;
         z-index: -1;
@@ -952,6 +957,7 @@
                 left: calc(4.4rem - 2rem - 0.2rem);
             }
         }
+
     }
 
     &__thumb {

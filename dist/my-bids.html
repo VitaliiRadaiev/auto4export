@@ -1884,7 +1884,8 @@ defer
                                 <div class="main-table__mob-label">Shipping</div>
                                 <div class="main-table__value">
                                     <div class="alert alert--align-lg-left" data-alert>
-                                        <a href="#" class="text-primary alert__show-toggle">Add Shipping <br> I don't need shipping</a>
+                                        <a href="#shipping" data-popup="open-popup" class="text-primary">Add Shipping</a> <br>
+                                        <a href="#" class="text-primary alert__show-toggle">I don't need shipping</a>
                                         <div class="alert__body">
                                             <div class="alert__text">
                                                 Are you sure don't need shipping?
@@ -1896,7 +1897,7 @@ defer
                                                 </button>
                                                 <button type="button"
                                                     class="alert__cancel btn-default btn-default--sm">
-                                                    Reset all filters
+                                                    Cancel
                                                     <img class="img-svg" src="img/icons/close.svg" alt="">
                                                 </button>
                                             </div>
@@ -1948,7 +1949,7 @@ defer
                             </td>
                             <td>
                                 <div class="main-table__mob-label">Shipping</div>
-                                <div class="main-table__value"><span class="text-success me-3">Added</span> <a href="#" class="text-primary">Change</a> <div class="text-secondary">Cleveland - Odessa</div></div>
+                                <div class="main-table__value"><span class="text-success me-3">Added</span> <a href="#shipping" data-popup="open-popup" class="text-primary">Change</a> <div class="text-secondary">Cleveland - Odessa</div></div>
                             </td>
                             <td>
                                 <div class="main-table__mob-label">Shipping Price</div>
@@ -1994,11 +1995,11 @@ defer
                             </td>
                             <td>
                                 <div class="main-table__mob-label">Shipping</div>
-                                <div class="main-table__value"><span class="text-success me-3">Added</span> <a href="#" class="text-primary">Change</a> <div class="text-secondary">Cleveland - Odessa</div></div>
+                                <div class="main-table__value"><span class="text-success me-3">Added</span> <a href="#shipping" data-popup="open-popup" class="text-primary">Change</a> <div class="text-secondary">Cleveland - Odessa</div></div>
                             </td>
                             <td>
                                 <div class="main-table__mob-label">Shipping Price</div>
-                                <div class="main-table__value text-secondary"><div><strong class="text-dark">$1000</strong></div><a href="#" class="text-primary">Confirm</a></div>
+                                <div class="main-table__value text-secondary"><div><strong class="text-dark">$1000</strong></div><a href="#confirmBid" data-popup="open-popup" class="text-primary">Confirm</a></div>
                             </td>
                             <td>
                                 <div class="main-table__mob-label">Shipping Status</div>
@@ -2040,7 +2041,7 @@ defer
                             </td>
                             <td>
                                 <div class="main-table__mob-label">Shipping</div>
-                                <div class="main-table__value"><span class="text-success me-3">Added</span> <a href="#" class="text-primary">Change</a> <div class="text-secondary">Cleveland - Odessa</div></div>
+                                <div class="main-table__value"><span class="text-success me-3">Added</span> <a href="#shipping" data-popup="open-popup" class="text-secondary inactive">Change</a> <div class="text-secondary">Cleveland - Odessa</div></div>
                             </td>
                             <td>
                                 <div class="main-table__mob-label">Shipping Price</div>
@@ -2086,7 +2087,7 @@ defer
                             </td>
                             <td>
                                 <div class="main-table__mob-label">Shipping</div>
-                                <div class="main-table__value"><span class="text-success me-3">Added</span> <a href="#" class="text-primary">Change</a> <div class="text-secondary">Cleveland - Odessa</div></div>
+                                <div class="main-table__value"><span class="text-success me-3">Added</span> <a href="#shipping" data-popup="open-popup" class="text-secondary inactive">Change</a> <div class="text-secondary">Cleveland - Odessa</div></div>
                             </td>
                             <td>
                                 <div class="main-table__mob-label">Shipping Price</div>
@@ -2132,7 +2133,7 @@ defer
                             </td>
                             <td>
                                 <div class="main-table__mob-label">Shipping</div>
-                                <div class="main-table__value"><span class="text-success me-3">Added</span> <a href="#" class="text-primary">Change</a> <div class="text-secondary">Cleveland - Odessa</div></div>
+                                <div class="main-table__value"><span class="text-success me-3">Added</span> <a href="#shipping" data-popup="open-popup" class="text-secondary inactive">Change</a> <div class="text-secondary">Cleveland - Odessa</div></div>
                             </td>
                             <td>
                                 <div class="main-table__mob-label">Shipping Price</div>
@@ -2532,6 +2533,147 @@ defer
     </div>
 </footer>
     <!-- == // FOOTER ================== -->
+
+    <div class="popup" id="confirmBid">
+    <div class="popup__body">
+        <div class="popup__content border-rudius">
+            <div class="popup__close" data-popup="close-popup">
+                <img class="img-svg" src="img/icons/close.svg" alt="">
+            </div>
+            <div class="confirm-bid">
+                <h2 class="confirm-bid__title">
+                    Confirm You Bid
+                </h2>
+                <div class="confirm-bid__value">
+                    $131
+                </div>
+                <a href="#" class="confirm-bid__vehicle">
+                    <div class="confirm-bid__vehicle-img ibg">
+                        <img src="img/photo/car-img-1.jpg" alt="">
+                    </div>
+                    <div class="confirm-bid__vehicle-title">
+                        2013 Chevrolet Impala Ls 3.6L
+                    </div>
+                </a>
+                <div class="confirm-bid__info-list">
+                    <ul class="simple-table-list">
+                        <li>
+                            <label>VIN</label>
+                            <p>4YDT2662493150186</p>
+                        </li>
+                        <li>
+                            <label>Transaction Fee</label>
+                            <p>2022</p>
+                        </li>
+                        <li>
+                            <label>Documentation Fee</label>
+                            <p>Year</p>
+                        </li>
+                        <li>
+                            <label>Modal</label>
+                            <p>Xs</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="confirm-bid__text">
+                    By clicking "Confirm My Bid", <br> you agree to <a href="#">Purchase Order Agreement</a>
+                </div>
+                <div class="confirm-bid__buttons">
+                    <button type="submit" class="btn-default">
+                        Confirm My Bid
+                        <img class="img-svg" src="img/icons/square-check.svg" alt="">
+                    </button>
+                    <button type="button" class="confirm-bid__cancel-btn" data-popup="close-popup">
+                        Cancel
+                        <img class="img-svg" src="img/icons/close.svg" alt="">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ 
+    <div class="popup" id="shipping">
+   
+	<div class="popup__body">
+		<div class="popup__content popup__content--lg border-rudius">
+            <div class="popup__close" data-popup="close-popup">
+                <img class="img-svg" src="img/icons/close.svg" alt="">
+            </div>
+
+            <form action="/">
+                <div class="form d-flex">
+                    <h2 class="form__title">Add Shipping</h2>
+                    <div class="form__simple-text">
+                        Your Vehicle will be delivered
+                    </div>
+                    <div class="form__items">
+                        <div class="form__item">
+                            <label class="form__labell">From</label>
+                            <div class="input-wrap">
+                                <input type="text" class="input inactive" value="CLEVELAND WEST, OH" placeholder="Enter">
+                            </div>
+                        </div>
+                        <div class="form__item">
+                            <label class="form__labell">To</label>
+                            <div class="select-wrap">
+                                <select name="" class="_select" data-select-action>
+                                    <option value="" selected>Enter</option>
+                                    <option value="1" 
+                                    data-hide-elements-by-id="zip,state,town"
+                                    data-show-element-by-id="port"
+                                    >Ukraine</option>
+                                    <option value="2"
+                                    data-hide-element-by-id="port"
+                                    data-show-elements-by-id="zip,state,town"
+                                    >USA</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form__item" data-id="port">
+                            <label class="form__labell">Port</label>
+                            <div class="select-wrap">
+                                <select name="" class="_select">
+                                    <option value="" selected>Enter</option>
+                                    <option value="1" >0000</option>
+                                    <option value="2">1111</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form__item d-none" data-id="zip">
+                            <label class="form__labell">ZIP</label>
+                            <div class="input-wrap">
+                                <input type="text" class="input" placeholder="Enter">
+                            </div>
+                        </div>
+                        <div class="form__item d-none" data-id="state">
+                            <label class="form__labell">State</label>
+                            <div class="input-wrap">
+                                <input type="text" class="input inactive" placeholder="Enter">
+                            </div>
+                        </div>
+                        <div class="form__item d-none" data-id="town">
+                            <label class="form__labell">Town</label>
+                            <div class="input-wrap">
+                                <input type="text" class="input inactive" placeholder="Enter">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form__address">
+                        Cleveland - Odessa
+                    </div>
+                    <div class="form__submit-wrap">
+                        <button type="submit" class="form__submit btn-default">
+                            Send Request
+                            <img class="img-svg" src="img/icons/send.svg" alt="">
+                        </button>
+                    </div>
+                </div>
+            </form>
+		</div>
+	</div>
+</div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="js/jQueryScripts.min.js"></script>

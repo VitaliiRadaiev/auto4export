@@ -487,7 +487,8 @@
                                 <div class="main-table__mob-label">Shipping</div>
                                 <div class="main-table__value">
                                     <div class="alert alert--align-lg-left" data-alert>
-                                        <a href="#" class="text-primary alert__show-toggle">Add Shipping <br> I don't need shipping</a>
+                                        <a href="#shipping" data-popup="open-popup" class="text-primary">Add Shipping</a> <br>
+                                        <a href="#" class="text-primary alert__show-toggle">I don't need shipping</a>
                                         <div class="alert__body">
                                             <div class="alert__text">
                                                 Are you sure don't need shipping?
@@ -499,7 +500,7 @@
                                                 </button>
                                                 <button type="button"
                                                     class="alert__cancel btn-default btn-default--sm">
-                                                    Reset all filters
+                                                    Cancel
                                                     <img class="img-svg" src="img/icons/close.svg" alt="">
                                                 </button>
                                             </div>
@@ -551,7 +552,7 @@
                             </td>
                             <td>
                                 <div class="main-table__mob-label">Shipping</div>
-                                <div class="main-table__value"><span class="text-success me-3">Added</span> <a href="#" class="text-primary">Change</a> <div class="text-secondary">Cleveland - Odessa</div></div>
+                                <div class="main-table__value"><span class="text-success me-3">Added</span> <a href="#shipping" data-popup="open-popup" class="text-primary">Change</a> <div class="text-secondary">Cleveland - Odessa</div></div>
                             </td>
                             <td>
                                 <div class="main-table__mob-label">Shipping Price</div>
@@ -597,11 +598,11 @@
                             </td>
                             <td>
                                 <div class="main-table__mob-label">Shipping</div>
-                                <div class="main-table__value"><span class="text-success me-3">Added</span> <a href="#" class="text-primary">Change</a> <div class="text-secondary">Cleveland - Odessa</div></div>
+                                <div class="main-table__value"><span class="text-success me-3">Added</span> <a href="#shipping" data-popup="open-popup" class="text-primary">Change</a> <div class="text-secondary">Cleveland - Odessa</div></div>
                             </td>
                             <td>
                                 <div class="main-table__mob-label">Shipping Price</div>
-                                <div class="main-table__value text-secondary"><div><strong class="text-dark">$1000</strong></div><a href="#" class="text-primary">Confirm</a></div>
+                                <div class="main-table__value text-secondary"><div><strong class="text-dark">$1000</strong></div><a href="#confirmBid" data-popup="open-popup" class="text-primary">Confirm</a></div>
                             </td>
                             <td>
                                 <div class="main-table__mob-label">Shipping Status</div>
@@ -643,7 +644,7 @@
                             </td>
                             <td>
                                 <div class="main-table__mob-label">Shipping</div>
-                                <div class="main-table__value"><span class="text-success me-3">Added</span> <a href="#" class="text-primary">Change</a> <div class="text-secondary">Cleveland - Odessa</div></div>
+                                <div class="main-table__value"><span class="text-success me-3">Added</span> <a href="#shipping" data-popup="open-popup" class="text-secondary inactive">Change</a> <div class="text-secondary">Cleveland - Odessa</div></div>
                             </td>
                             <td>
                                 <div class="main-table__mob-label">Shipping Price</div>
@@ -689,7 +690,7 @@
                             </td>
                             <td>
                                 <div class="main-table__mob-label">Shipping</div>
-                                <div class="main-table__value"><span class="text-success me-3">Added</span> <a href="#" class="text-primary">Change</a> <div class="text-secondary">Cleveland - Odessa</div></div>
+                                <div class="main-table__value"><span class="text-success me-3">Added</span> <a href="#shipping" data-popup="open-popup" class="text-secondary inactive">Change</a> <div class="text-secondary">Cleveland - Odessa</div></div>
                             </td>
                             <td>
                                 <div class="main-table__mob-label">Shipping Price</div>
@@ -735,7 +736,7 @@
                             </td>
                             <td>
                                 <div class="main-table__mob-label">Shipping</div>
-                                <div class="main-table__value"><span class="text-success me-3">Added</span> <a href="#" class="text-primary">Change</a> <div class="text-secondary">Cleveland - Odessa</div></div>
+                                <div class="main-table__value"><span class="text-success me-3">Added</span> <a href="#shipping" data-popup="open-popup" class="text-secondary inactive">Change</a> <div class="text-secondary">Cleveland - Odessa</div></div>
                             </td>
                             <td>
                                 <div class="main-table__mob-label">Shipping Price</div>
@@ -945,6 +946,9 @@
     <!-- == FOOTER ================== -->
     @@include('common/footer/_footer.html',{})
     <!-- == // FOOTER ================== -->
+
+    @@include('common/popup/_popup-confirm-bid.html') 
+    @@include('common/popup/_popup-add-shipping.html')
 
     @@include('_js-bottom.html',{})
 </body>

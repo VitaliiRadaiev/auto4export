@@ -6,6 +6,10 @@
     z-index: 47;
    // box-shadow: 0px 22px 24px rgba(32, 33, 34, 0.2);
     color: #fff;
+    transition: all .3s ease;
+    &.header--hide {
+        transform: translateY(-102%);
+    }
 
     &__row-1 {
         background-color: #3e73cf;

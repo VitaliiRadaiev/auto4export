@@ -814,26 +814,26 @@
         &.active {
             color: $mainColor;
 
-            &:before {
-                font-family: "icomoon" !important;
-                position: absolute;
-                content: "\e90e";
-                top: 56%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                z-index: 3;
-                color: #fff;
-                font-size: 0.6em;
+            & .check {
+                fill: #fff;
             }
 
             &:after {
                 content: attr(data-content-2);
+            }
+
+            &:before {
+                content: attr(data-hover-content-2);
             }
         }
 
         &.show-text {
             &::after {
                 display: block;
+            }
+
+            &::before {
+                display: none !important;
             }
         }
 
@@ -850,15 +850,15 @@
         @media (min-width: 992px) {
             &:hover {
                 color: $mainColor;
+
+                &::before {
+                    display: block;
+                }
             }
         }
 
         &:active {
             transform: scale(1.1);
-
-            @media (max-width: $md3+px) {
-                transform: translateY(-50%) scale(1.1);
-            }
         }
 
         &:after {
@@ -866,6 +866,23 @@
             bottom: calc(100% + 0.8rem);
             left: 50%;
             content: attr(data-content-1);
+            color: #fff;
+            background-color: #111F38;
+            border-radius: 0.6rem;
+            padding: 0.4rem 0.8rem;
+            font-size: 1.2rem;
+            line-height: 1.16em;
+            pointer-events: none;
+            transform: translateX(-50%);
+            animation: fadeInUp 0.3s ease forwards;
+            display: none;
+        }
+
+        &::before {
+            position: absolute;
+            bottom: calc(100% + 0.8rem);
+            left: 50%;
+            content: attr(data-hover-content-1);
             color: #fff;
             background-color: #111F38;
             border-radius: 0.6rem;

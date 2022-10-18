@@ -55,6 +55,10 @@ let btnSetGrid = document.querySelector('[data-action="set-grid"]');
 if (btnSetList && btnSetGrid) {
     let list = document.querySelector('.main-search__list');
     // init
+    if(document.documentElement.clientWidth < 768) {
+        btnSetList.classList.remove('active')
+        btnSetGrid.classList.add('active')
+    }
     if (btnSetGrid.classList.contains('active')) {
         if (cards.length) {
             cards.forEach(card => {
@@ -94,7 +98,6 @@ if (btnSetList && btnSetGrid) {
             list.classList.remove('main-search__list--grid');
         }
 
-        window.borderDashed.update();
     })
 
     btnSetGrid.addEventListener('click', (e) => {
@@ -122,8 +125,6 @@ if (btnSetList && btnSetGrid) {
             list.classList.add('main-search__list--grid');
 
         }
-
-        window.borderDashed.update();
     })
 }
 

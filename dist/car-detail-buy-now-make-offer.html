@@ -1466,7 +1466,7 @@ defer
                     </li>
                 </ul>
 
-                <button type="button" class="card__star" data-content-1="Add to Watchlist" data-content-2="Remove from Watchlist">
+                <button type="button" class="card__star" data-content-1="Added to Watchlist" data-content-2="Removed from Watchlist" data-hover-content-1="Add to Watchlist" data-hover-content-2="Remove from Watchlist">
                     <!-- class="card__star active" -->
                     <img class="img-svg" src="img/icons/star.svg" alt="">
                 </button>
@@ -1764,7 +1764,8 @@ defer
                 </div>
                 <div class="car-detail-grid__col-3">
                     <div data-da=".car-detail-grid__col-1,991.98,last">
-                        <form action="/">
+                        <div class="z-index-3">
+                            <form action="/">
     <div class="bid-card">
         <div class="bid-card__row bid-card__row-1">
             <div class="bid-card__status">
@@ -1854,8 +1855,9 @@ defer
         </div>
     </div>
 </form>
+                        </div>
 
-                        <a href="#popup-message-2" class="info-box  border-rudius" data-popup="open-popup">
+                        <a href="#popup-message-2" class="info-box  border-rudius z-index-2" data-popup="open-popup">
                             <!-- info-box--unauthorized -->
                             <div class="info-box__img">
                                 <img class="img-svg" src="img/icons/car.svg" alt="">
@@ -1865,7 +1867,7 @@ defer
                             </div>
                         </a>
 
-                        <div class="buy-now border-box box">
+                        <div class="buy-now border-box box z-index-1">
                             <div class="box__inner">
                                 <h2 class="box__title">
                                     Want It Now?
@@ -2151,7 +2153,7 @@ defer
             <div class="head__col-2">
                 <ul class="buttons-group">
                     <li>
-                        <a href="#" class="active" data-tab-trigger="0">By model</a>
+                        <a href="#" class="tab-active" data-tab-trigger="0">By model</a>
                     </li>
                     <li>
                         <a href="#" class="" data-tab-trigger="1">By location</a>
@@ -2962,13 +2964,13 @@ defer
                         <div class="form__item d-none" data-id="state">
                             <label class="form__labell">State</label>
                             <div class="input-wrap">
-                                <input type="text" class="input inactive" placeholder="Enter">
+                                <input type="text" class="input inactive" value="Texas" placeholder="Enter">
                             </div>
                         </div>
                         <div class="form__item d-none" data-id="town">
                             <label class="form__labell">Town</label>
                             <div class="input-wrap">
-                                <input type="text" class="input inactive" placeholder="Enter">
+                                <input type="text" class="input inactive" value="Houston" placeholder="Enter">
                             </div>
                         </div>
                     </div>

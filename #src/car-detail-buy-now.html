@@ -69,7 +69,7 @@
                     </li>
                 </ul>
 
-                <button type="button" class="card__star" data-content-1="Add to Watchlist" data-content-2="Remove from Watchlist">
+                <button type="button" class="card__star" data-content-1="Added to Watchlist" data-content-2="Removed from Watchlist" data-hover-content-1="Add to Watchlist" data-hover-content-2="Remove from Watchlist">
                     <!-- class="card__star active" -->
                     <img class="img-svg" src="img/icons/star.svg" alt="">
                 </button>
@@ -141,9 +141,11 @@
                 </div>
                 <div class="car-detail-grid__col-3">
                     <div data-da=".car-detail-grid__col-1,991.98,last">
-                        @@include('common/bid-card/_bid-card.html')
+                        <div class="z-index-3">
+                            @@include('common/bid-card/_bid-card.html')
+                        </div>
 
-                        <a href="#popup-message-2" class="info-box  border-rudius" data-popup="open-popup">
+                        <a href="#popup-message-2" class="info-box  border-rudius z-index-2" data-popup="open-popup">
                             <!-- info-box--unauthorized -->
                             <div class="info-box__img">
                                 <img class="img-svg" src="img/icons/car.svg" alt="">
@@ -153,7 +155,7 @@
                             </div>
                         </a>
 
-                        <div class="buy-now border-box box">
+                        <div class="buy-now border-box box z-index-1">
                             <div class="box__inner">
                                 <h2 class="box__title">
                                     Want It Now?

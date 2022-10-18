@@ -102,17 +102,17 @@
                                     <div class="form__item form__item--third required">
                                         <div class="form__label">Country</div>
                                         <div class="select-wrap">
-                                            <select name="" class="_select">
+                                            <select name="" class="_select" data-select-action>
                                                 <option value="" selected>Select</option>
-                                                <option value="1">USA</option>
-                                                <option value="2">Ukraine</option>
+                                                <option value="1" data-set-element-as-active-by-id="state">USA</option>
+                                                <option value="2" data-set-element-as-inactive-by-id="state">Ukraine</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="form__item form__item--third required">
                                         <div class="form__label">State</div>
                                         <div class="select-wrap">
-                                            <select name="" class="_select">
+                                            <select name="" class="_select" data-id="state">
                                                 <option value="" selected>Select</option>
                                                 <option value="1">Texas</option>
                                                 <option value="2">Odessa</option>

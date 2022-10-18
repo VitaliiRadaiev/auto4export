@@ -3,16 +3,9 @@
     margin-bottom: 0;
     display: flex;
     align-items: center;
+    gap: 1rem;
 
     & > li {
-        &:not(:last-child) {
-            margin-right: 4rem;
-
-            @media (max-width: $md3+px) {
-                margin-right: 32px;
-            }
-        }
-
         &:last-child {
             @media (max-width: $md3+px) {
                 padding-right: 20px;
@@ -22,31 +15,99 @@
 
     & a {
         display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent;
+        border-radius: 3.2rem;
+        padding: 0.7rem 2.6rem;
+        min-height: 4rem;
+        font-weight: 500;
+        font-size: 1.6rem;
+        line-height: 1.18em;
+        border: 1px solid $borderColor;
         transition: all 0.3s ease;
-        opacity: 1 !important;
-        font-size: 1.8rem;
-        line-height: 1.1875em;
+        text-align: center;
         white-space: nowrap;
-        color: $textColorSecondary;
-        padding-top: 0.4rem;
-        padding-bottom: 0.3rem;
-        border-bottom: 1px solid transparent;
+        gap: 1rem;
+        opacity: 1 !important;
+        box-sizing: border-box;
 
         @media (max-width: $md3+px) {
+            min-height: 34px;
+            padding: 5px 15px;
             font-size: 14px;
             line-height: 16px;
         }
 
         @media (min-width: 992px) {
             &:hover {
-                color: $mainColor;
+                background-color: $mainColor;
+                color: #fff;
+
+                & span {
+                    border-color: #fff;
+                    background-color: #fff;
+                    color: $mainColor;
+                }
+
+                & svg {
+                    color: #fff;
+                }
             }
         }
 
+        & img,
+        & svg {
+            height: 1em;
+            width: auto;
+            flex: 0 0 auto;
+            color: $mainColor;
+        }
+
+        &.active,
         &.tab-active {
+            border-color: $mainColor;
+            color: $mainColor;
+            background-color: transparent;
+
+            & span {
+                background-color: $mainColor;
+                border-color: $mainColor;
+                color: #fff;
+            }
+        }
+
+        &.inactive {
             pointer-events: none;
-            border-bottom: 1px solid $mainColor;
-            color:$mainColor;
+            background-color: transparent;
+            border-color: #d6dbdc;
+            color: $textColorSecondary;
+        }
+
+        & span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-width: 3rem;
+            height: 3rem;
+            color: $textColorSecondary;
+            border-radius: 100px;
+            border: 1px solid $borderColor;
+            margin-left: 1.4rem;
+            transition: all 0.3s ease;
+            font-size: 1.6rem;
+            line-height: 1.9rem;
+            margin-right: -1.9rem;
+            padding: 0.2rem 0.3rem 0;
+
+            @media (max-width: $md3+px) {
+                height: 24px;
+                min-width: 24px;
+                margin-left: 10px;
+                margin-right: -15px;
+                font-size: 12px;
+                line-height: 14px;
+            }
         }
     }
 }
@@ -91,7 +152,7 @@
     }
 
     &.inactive {
-        background-color: #F9F9F9 !important;
+        background-color: #f9f9f9 !important;
         color: $textColorSecondary !important;
         pointer-events: none;
         font-weight: 500;
@@ -137,12 +198,12 @@
         @media (max-width: $md3+px) {
             font-size: 14px;
             line-height: 16px;
-            min-height: 34px; 
+            min-height: 34px;
         }
-    } 
+    }
 
     &--xs {
-        font-size: 1.6rem; 
+        font-size: 1.6rem;
         line-height: 1.1875em;
         min-height: 4rem;
         min-width: auto;
@@ -158,8 +219,7 @@
     &--light {
         background: transparent;
         color: $textColor;
-        border:1px solid $borderColor;
-
+        border: 1px solid $borderColor;
 
         @media (min-width: 992px) {
             &:hover {
@@ -167,7 +227,8 @@
                 border-color: $mainColor;
                 color: #fff;
 
-                & svg, i {
+                & svg,
+                i {
                     color: #fff;
                 }
             }
@@ -177,7 +238,8 @@
             color: $textColor !important;
         }
 
-        & svg, i {
+        & svg,
+        i {
             color: $mainColor;
         }
     }
@@ -196,7 +258,7 @@
 
         @media (min-width: 992px) {
             &:hover {
-                background-color: #A83A2C;
+                background-color: #a83a2c;
             }
         }
     }

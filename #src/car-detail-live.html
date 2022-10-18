@@ -17,6 +17,10 @@
         <div class="p-50"></div>
         <div class="container">
             <div class="navigation">
+                <a href="#" class="navigation__btn navigation__btn--back">
+                    <img class="img-svg" src="img/icons/arrow-left.svg" alt="">
+                    Back
+                </a> 
                 @@include('common/breadcrumbs/_breadcrumbs.html', {
                 "arr": ['<a href="#">Home</a>', '<a href="#">Vehicle Finder</a>', '<a href="#">Cars</a>', 'Chevrolet']
                 })
@@ -69,7 +73,7 @@
                     </li>
                 </ul>
 
-                <button type="button" class="card__star" data-content-1="Add to Watchlist" data-content-2="Remove from Watchlist">
+                <button type="button" class="card__star" data-content-1="Added to Watchlist" data-content-2="Removed from Watchlist" data-hover-content-1="Add to Watchlist" data-hover-content-2="Remove from Watchlist">
                     <!-- class="card__star active" -->
                     <img class="img-svg" src="img/icons/star.svg" alt="">
                 </button>

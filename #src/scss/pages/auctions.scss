@@ -110,7 +110,7 @@
 .auctions-head {
     margin-bottom: 5rem;
     display: flex;
-    gap: 5rem;
+    gap: 2rem 5rem;
     justify-content: space-between;
     align-items: center;
 
@@ -184,8 +184,8 @@
 
         &.tab-active, &.active {
             border-color: $mainColor;
-            color: $mainColor;
-            background-color: transparent;
+            color: #fff;
+            background-color: $mainColor;
 
             & span {
                 background-color: $mainColor;
@@ -255,29 +255,40 @@
     }
 
     &__calendar-nav-title {
-        font-weight: 700;
+        font-weight: 500;
         font-size: 2rem;
         line-height: 1.2em;
         padding: 0 2rem;
+
+        @media (max-width: $md2+px) {
+            padding: 0;
+        }
     }
 
     &--with-text {
-        justify-content: initial;
-        gap: 2rem 7.4rem;
+        @media (min-width: 992px) {
+            flex-wrap: wrap;
+        }
 
-        @media (max-width: $md3+px) {
-            gap: 12px;
+        & .auctions-head__text {
+            flex: 0 1 100%;
+        }
+
+        & .auctions-head__buttons {
+            @media (max-width: $md2+px) {
+                order: 1;
+            }
         }
     }
 
     &--calendar {
-        @media (max-width: $md2+px) {
-            flex-direction: row;
-        }
+        // @media (max-width: $md2+px) {
+        //     flex-direction: row;
+        // }
 
-        @media (max-width: $md3+px) {
-            flex-direction: column;
-        }
+        // @media (max-width: $md3+px) {
+        //     flex-direction: column;
+        // }
     }
 }
 

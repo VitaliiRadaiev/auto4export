@@ -4,10 +4,20 @@ let burger = document.querySelector('[data-burger]');
 let mobileMenu = document.querySelector('[data-mobile-menu]');
 let vehicleFinderMobButtons = document.querySelectorAll('[data-open-vehicle-list-by-id]');
 let vehicleFinderMobLists = Array.from(document.querySelectorAll('[data-vehicle-list-id]'));
-
+let isScroll = window.pageYOffset;
 if (header) {
     window.addEventListener('scroll', () => {
         header.classList.toggle('header--is-scroll', window.pageYOffset > 50);
+
+        if(window.pageYOffset > 50) {
+            if(window.pageYOffset > isScroll) {
+                header.classList.add('header--hide');
+            } else if(window.pageYOffset < isScroll) {
+                header.classList.remove('header--hide');
+            }
+        }
+
+        isScroll = window.pageYOffset;
     })
 }
 
