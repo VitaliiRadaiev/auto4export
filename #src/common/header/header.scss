@@ -42,11 +42,9 @@
         align-items: center;
 
         @media (max-width: $md3+px) {
-            display: grid;
-            grid-template-columns: auto auto auto;
-            column-gap: 30px;
-            row-gap: 12px;
             justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px 12px;
         }
     }
 
@@ -70,19 +68,13 @@
             margin-right: 0;
             max-width: 100px;
         }
-    }
 
-    &__logo-mob {
-        @media (min-width: 768px) {
-            display: none;
-        }
-        width: 100%;
-        max-width: 82px;
-
-        & img,
-        & svg {
-            width: 100%;
-            height: auto;
+        @media (max-width: 374.98px) {
+            max-width:76px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-self: center;
         }
     }
 
@@ -96,7 +88,7 @@
 
         @media (max-width: $md3+px) {
             order: 1;
-            grid-column: span 3;
+            flex: 0 1 100%;
             margin-right: 0;
         }
     }
@@ -114,7 +106,7 @@
         align-items: center;
 
         @media (max-width: $md2+px) {
-            display: none;
+            margin-left: auto;
         }
     }
 
@@ -130,11 +122,11 @@
         border: 1px solid rgba(#fff, 0.4);
 
         @media (max-width: $md3+px) {
-            min-height: 40px;
-            font-size: 14px;
-            line-height: 16px;
-            gap: 8px;
-            padding: 10px 24px;
+            min-height: 36px;
+            font-size: 12px;
+            line-height: 14px;
+            gap: 6px;
+            padding: 10px 16px;
         }
 
         @media (min-width: 992px) {
@@ -156,7 +148,12 @@
             color: #fff;
 
             @media (max-width: $md3+px) {
-                height: 16px;
+                height: 14px;
+                
+            }
+
+            @media (max-width: 389.98px)  {
+                display: none;
             }
         }
 
