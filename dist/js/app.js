@@ -1164,8 +1164,17 @@ if(topFilter) {
             for (let index = 0; index < selects.length; index++) {
                 const select = selects[index];
                 const select_body_options = select.querySelector('.select__options');
+                const select_input = select.querySelector('.select__input');
                 select.classList.remove('_active');
                 _slideUp(select_body_options, 100);
+
+                if(select_input) {
+                    if(select_input.value.trim().length == 0) {
+                        select_input.value = select_input.dataset.value;
+                        select.classList.remove('_visited');
+                    }
+                }
+
             }
         }
     }
@@ -1218,7 +1227,7 @@ if(topFilter) {
         const select_type = original.getAttribute('data-type');
         const select_input = select.querySelector('.select__input');
 
-        select_item.addEventListener('click', function () {
+        select_item.addEventListener('click', function (e) {
             let selects = document.querySelectorAll('.select');
             for (let index = 0; index < selects.length; index++) {
                 const select = selects[index];
@@ -1228,8 +1237,28 @@ if(topFilter) {
                     _slideUp(select_body_options, 100);
                 }
             }
-            _slideToggle(select_body_options, 100);
+
+            if(select.classList.contains('_active')) {
+                if(e.target.closest('.select__input')) return;
+            }
+            
             select.classList.toggle('_active');
+
+            if(select_input) {
+                if(select.classList.contains('_active')) {
+                    select_input.focus();
+                } else {
+                    select_input.blur();
+
+                    if(select_input.value.trim().length == 0) {
+                        select_input.value = select_input.dataset.value;
+                        select.classList.remove('_visited');
+                    }
+                }
+                
+            }
+
+            _slideToggle(select_body_options, 100);
         });
 
         for (let index = 0; index < select_options.length; index++) {
@@ -1252,6 +1281,7 @@ if(topFilter) {
                 if (select_type == 'input') {
                     select_input.value = select_option_text;
                     original.value = select_option_value;
+                    select.classList.add('_visited');
                 } else {
                     select.querySelector('.select__value').innerHTML = '<span>' + select_option_text + '</span>';
                     original.value = select_option_value;

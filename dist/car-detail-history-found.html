@@ -152,6 +152,10 @@ defer
 
                 <div class="header__account-sub-menu">
                     <div class="header__account-sub-menu-row">
+                        <div class="header__account-sub-menu-user">Hi, John!</div>
+                        <div class="header__account-sub-menu-bidder">Bidder #14571</div>
+                    </div>
+                    <div class="header__account-sub-menu-row">
                         <ul class="header__account-sub-menu-list">
                             <li>
                                 <a href="#">Dashboard</a>
@@ -2944,7 +2948,7 @@ defer
     </div>
 </div>
 
-    <div class="popup" id="groupShipping">
+    <div class="popup popup--open" id="groupShipping">
    
 	<div class="popup__body">
 		<div class="popup__content popup__content--lg border-rudius">
@@ -2968,7 +2972,7 @@ defer
                         <div class="form__item">
                             <label class="form__labell">To</label>
                             <div class="select-wrap">
-                                <select name="" class="_select" data-select-action>
+                                <select name="" class="_select" data-select-action data-type="input">
                                     <option value="" selected>Enter</option>
                                     <option value="1" 
                                     data-hide-elements-by-id="zip,state,town"

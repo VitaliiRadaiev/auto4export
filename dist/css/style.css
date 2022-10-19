@@ -6738,6 +6738,12 @@ ul.list-with-icons span:not(.num) {
   border-bottom: 1px solid #DBDBDB;
 }
 
+.header__account-sub-menu-user {
+  margin-bottom: 0.6rem;
+  font-size: 2rem;
+  line-height: 1.2em;
+}
+
 .header__account-sub-menu-list {
   padding-left: 0;
   margin-bottom: 0;
@@ -9688,8 +9694,14 @@ button:active {
 }
 
 .select._visited .select__value,
-.select.not-placeholder .select__value {
+.select._visited .select__input,
+.select.not-placeholder .select__value,
+.select.not-placeholder .select__input {
   color: #191919;
+}
+
+.select:not(._active) .select__input {
+  pointer-events: none;
 }
 
 .select__item {
@@ -9763,6 +9775,16 @@ button:active {
   width: 100%;
   background-color: transparent;
   height: 100%;
+  outline: none;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  color: inherit;
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 1.222em;
+  font-family: "Roboto", sans-serif;
 }
 
 .select__options {
@@ -10312,7 +10334,8 @@ button:active {
   border-color: #3E73CF;
 }
 
-.input.auto-completed:not(.inactive) {
+.input.auto-completed:not(.inactive),
+.input.success-with-icon:not(.inactive) {
   background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAxOCAxNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE3LjczNjQgMC4yNzkxOTdDMTcuMzg0OSAtMC4wOTMwNjU2IDE2LjgxNTEgLTAuMDkzMDY1NiAxNi40NjM2IDAuMjc5MTk3TDUuNjgxMDUgMTEuNjk5TDEuNTM2NDEgNy4zMDk0N0MxLjE4NDk2IDYuOTM3MjEgMC42MTUxNDYgNi45MzcyNSAwLjI2MzYxOSA3LjMwOTQ3Qy0wLjA4Nzg3MjkgNy42ODE3IC0wLjA4Nzg3MjkgOC4yODUxOCAwLjI2MzYxOSA4LjY1NzQ1TDUuMDQ0NjUgMTMuNzIwOUM1LjM5NiAxNC4wOTMyIDUuOTY2MjQgMTQuMDkyOSA2LjMxNzQ1IDEzLjcyMDlMMTcuNzM2NCAxLjYyNzIxQzE4LjA4NzkgMS4yNTQ5OCAxOC4wODc5IDAuNjUxNDU5IDE3LjczNjQgMC4yNzkxOTdaIiBmaWxsPSIjNUJDNzQ5Ii8+Cjwvc3ZnPgo=);
   background-position: top 50% right 2.7rem;
   background-size: 1.8rem auto;
@@ -10328,6 +10351,35 @@ button:active {
 
 .input.text-uppercase {
   font-weight: 400;
+}
+
+.input.error:not(.inactive) {
+  color: #E3433A;
+  border-color: #E3433A;
+}
+
+.input.error:not(.inactive)::-webkit-input-placeholder {
+  color: #E3433A;
+}
+
+.input.error:not(.inactive)::-moz-placeholder {
+  color: #E3433A;
+}
+
+.input.error:not(.inactive):-ms-input-placeholder {
+  color: #E3433A;
+}
+
+.input.error:not(.inactive)::-ms-input-placeholder {
+  color: #E3433A;
+}
+
+.input.error:not(.inactive)::placeholder {
+  color: #E3433A;
+}
+
+.input.success:not(.inactive) {
+  border-color: #3ECF5C;
 }
 
 .input:focus::-webkit-input-placeholder {
@@ -26855,6 +26907,11 @@ form.dropzone > .dz-preview {
     height: 20px;
     font-size: 0.5rem;
     right: 15px;
+  }
+
+  .select__input {
+    font-size: 14px;
+    line-height: 16px;
   }
 
   .select__options {

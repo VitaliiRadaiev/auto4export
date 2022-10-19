@@ -475,7 +475,7 @@
         border-color: $mainColor;
     }
 
-    &.auto-completed:not(.inactive) {
+    &.auto-completed:not(.inactive), &.success-with-icon:not(.inactive) {
         background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAxOCAxNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE3LjczNjQgMC4yNzkxOTdDMTcuMzg0OSAtMC4wOTMwNjU2IDE2LjgxNTEgLTAuMDkzMDY1NiAxNi40NjM2IDAuMjc5MTk3TDUuNjgxMDUgMTEuNjk5TDEuNTM2NDEgNy4zMDk0N0MxLjE4NDk2IDYuOTM3MjEgMC42MTUxNDYgNi45MzcyNSAwLjI2MzYxOSA3LjMwOTQ3Qy0wLjA4Nzg3MjkgNy42ODE3IC0wLjA4Nzg3MjkgOC4yODUxOCAwLjI2MzYxOSA4LjY1NzQ1TDUuMDQ0NjUgMTMuNzIwOUM1LjM5NiAxNC4wOTMyIDUuOTY2MjQgMTQuMDkyOSA2LjMxNzQ1IDEzLjcyMDlMMTcuNzM2NCAxLjYyNzIxQzE4LjA4NzkgMS4yNTQ5OCAxOC4wODc5IDAuNjUxNDU5IDE3LjczNjQgMC4yNzkxOTdaIiBmaWxsPSIjNUJDNzQ5Ii8+Cjwvc3ZnPgo=);
         background-position: top 50% right 2.7rem;
         background-size: 1.8rem auto;
@@ -491,6 +491,19 @@
 
     &.text-uppercase {
         font-weight: 400;
+    }
+
+    &.error:not(.inactive) {
+        color: $dangerColor;
+        border-color: $dangerColor;
+
+        &::placeholder {
+            color: $dangerColor;
+        }
+    }
+
+    &.success:not(.inactive) {
+        border-color: $successColor;
     }
 
     &:focus {
