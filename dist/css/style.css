@@ -6412,6 +6412,18 @@ ul.list-with-icons span:not(.num) {
   height: auto;
 }
 
+.header__logo > a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .header__search {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
@@ -25971,7 +25983,7 @@ form.dropzone > .dz-preview {
     line-height: 14px;
     gap: 6px;
     padding: 10px 16px;
-    color: #3E73CF;
+    color: #191919 !important;
   }
 
   .header__btn img,

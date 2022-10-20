@@ -199,11 +199,11 @@ defer
                 <img class="img-svg" src="img/icons/deposit.svg" alt="">
             </a>
             <div class="header__buttons-group">
-                <a href="#" class="header__btn header__btn--left not-hover">
+                <a href="#logIn" data-popup="open-popup" class="header__btn header__btn--left not-hover">
                     Log in
                     <img src="img/icons/log-in.svg" alt="" class="img-svg">
                 </a>
-                <a href="#" class="header__btn header__btn--right not-hover">
+                <a href="#signUp" data-popup="open-popup" class="header__btn header__btn--right not-hover">
                     Sing Up
                     <img src="img/icons/add-user.svg" alt="" class="img-svg">
                 </a>
@@ -2773,6 +2773,133 @@ defer
         </div>
     </div>
 </footer>
+
+
+
+
+<div class="popup" id="logIn">
+   
+	<div class="popup__body">
+		<div class="popup__content border-rudius">
+            <div class="popup__close" data-popup="close-popup">
+                <img class="img-svg" src="img/icons/close.svg" alt="">
+            </div>
+
+            <form action="/">
+                <div class="form d-flex">
+                    <h2 class="form__title">Log In</h2>
+                    <div class="form__items">
+                        <div class="form__item">
+                            <input type="email" class="input" placeholder="Email Adress">
+                        </div>
+                        <div class="form__item">
+                            <div class="input-wrap">
+                                <input type="password" class="input" placeholder="Password">
+                            </div>
+                        </div>
+                        <div class="form__item">
+                            <div class="d-flex align-items-center justify-content-between gap-5">
+                                <label class="checkbox-radio">
+                                    <input type="checkbox" checked>
+                                    <div class="checkbox-radio__square checkbox-radio__square--lg"></div>
+                                    <div class="checkbox-radio__text text-nowrap">Remember me</div>
+                                </label>
+
+                                <a class="form__link text-end" href="#resetPassword" data-popup="open-popup">Forgot your password?</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form__submit-wrap">
+                        <button type="submit" class="form__submit btn-default">
+                            Log In
+                            <img class="img-svg" src="img/icons/log-in.svg" alt="">
+                        </button>
+                    </div>
+                    <div class="form__use-social justify-content-between">
+                        <div class="form__use-social-label">OR Login with social</div>
+                        <ul class="form__use-social-list">
+                            <li>
+                                <a href="#">
+                                    <img class="img-svg" src="img/icons/facebook-color.svg" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img class="img-svg" src="img/icons/google-color.svg" alt="">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="form__bottom-text">
+                        Don't Have Account? <a href="#signUp" data-popup="open-popup">Click Register</a>
+                    </div>
+                </div>
+            </form>
+		</div>
+	</div>
+</div>
+<div class="popup" id="signUp">
+   
+	<div class="popup__body">
+		<div class="popup__content border-rudius">
+            <div class="popup__close" data-popup="close-popup">
+                <img class="img-svg" src="img/icons/close.svg" alt="">
+            </div>
+
+            <form action="/">
+                <div class="form d-flex">
+                    <h2 class="form__title">Sign Up</h2>
+                    <div class="form__items">
+                        <div class="form__item">
+                            <input type="email" class="input" placeholder="Email Adress">
+                        </div>
+                        <div class="form__item">
+                            <div class="input-wrap">
+                                <input type="password" class="input" placeholder="Password">
+                            </div>
+                        </div>
+                        <div class="form__item">
+                            <div class="input-wrap">
+                                <input type="password" class="input" placeholder="Retype Your Password">
+                            </div>
+                        </div>
+                        <div class="form__item">
+                            <label class="checkbox-radio">
+                                <input type="checkbox" checked>
+                                <div class="checkbox-radio__square checkbox-radio__square--lg"></div>
+                                <div class="checkbox-radio__text checkbox-radio__text--sm text-nowrap">I Agree to Auto 4 Export <a href="#">Member Terms & Condition</a></div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form__submit-wrap">
+                        <button type="submit" class="form__submit btn-default">
+                            Register
+                            <img class="img-svg" src="img/icons/add-user.svg" alt="">
+                        </button>
+                    </div>
+                    <div class="form__use-social justify-content-between">
+                        <div class="form__use-social-label">OR Login with social</div>
+                        <ul class="form__use-social-list">
+                            <li>
+                                <a href="#">
+                                    <img class="img-svg" src="img/icons/facebook-color.svg" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img class="img-svg" src="img/icons/google-color.svg" alt="">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="form__bottom-text">
+                        Already Have Account? <a href="#logIn" data-popup="open-popup">Log In</a>
+                    </div>
+                </div>
+            </form>
+		</div>
+	</div>
+</div>
     <!-- == // FOOTER ================== -->
 
     <div class="popup" id="groupShipping">

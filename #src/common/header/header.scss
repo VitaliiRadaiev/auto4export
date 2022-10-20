@@ -60,6 +60,13 @@
             height: auto;
         }
 
+        
+        & > a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
         @media (max-width: $md2+px) {
             margin-right: 33px;
         }
@@ -136,7 +143,7 @@
             line-height: 14px;
             gap: 6px;
             padding: 10px 16px;
-            color: $mainColor;
+            color: $textColor !important;
         }
 
         @media (min-width: 992px) {
