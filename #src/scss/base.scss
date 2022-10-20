@@ -680,6 +680,12 @@ hr {
 	}
 }
 
+[data-fancybox] {
+	@media (max-width: $md3+px) {
+		pointer-events: none;
+	}
+}
+
 .swiper-lazy-preloader {
 	border-color: $mainColor !important;
 	border-top-color: transparent !important;

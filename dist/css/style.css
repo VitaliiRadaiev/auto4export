@@ -6526,6 +6526,9 @@ ul.list-with-icons span:not(.num) {
   border-radius: 50%;
   background-color: #111f38;
   position: relative;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
 }
 
 .header__burger span {
@@ -24173,6 +24176,7 @@ form.dropzone > .dz-preview {
 
   .header__search {
     margin-right: 20px;
+    min-width: 22rem;
   }
 
   .header__language {
@@ -24181,6 +24185,10 @@ form.dropzone > .dz-preview {
 
   .header__buttons-group {
     margin-left: auto;
+    margin-right: 2rem;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
   }
 
   .header__btn-login {
@@ -25660,6 +25668,10 @@ form.dropzone > .dz-preview {
     width: 12px;
   }
 
+  [data-fancybox] {
+    pointer-events: none;
+  }
+
   .swiper-pagination .swiper-pagination-bullet {
     width: 4px;
     height: 4px;
@@ -25947,17 +25959,25 @@ form.dropzone > .dz-preview {
     margin-right: 0;
   }
 
+  .header__buttons-group {
+    margin-right: 0;
+  }
+
   .header__btn {
+    border-color: #3E73CF;
+    background-color: #fff;
     min-height: 36px;
     font-size: 12px;
     line-height: 14px;
     gap: 6px;
     padding: 10px 16px;
+    color: #3E73CF;
   }
 
   .header__btn img,
   .header__btn svg {
     height: 14px;
+    color: #3E73CF;
   }
 
   .header__btn--right img,

@@ -84,6 +84,7 @@
 
         @media (max-width: $md2+px) {
             margin-right: 20px;
+            min-width: 22rem;
         }
 
         @media (max-width: $md3+px) {
@@ -107,6 +108,12 @@
 
         @media (max-width: $md2+px) {
             margin-left: auto;
+            margin-right: 2rem;
+            flex: 0 0 auto;
+        }
+
+        @media (max-width: $md3+px) {
+            margin-right: 0;
         }
     }
 
@@ -122,11 +129,14 @@
         border: 1px solid rgba(#fff, 0.4);
 
         @media (max-width: $md3+px) {
+            border-color: $mainColor;
+            background-color: #fff;
             min-height: 36px;
             font-size: 12px;
             line-height: 14px;
             gap: 6px;
             padding: 10px 16px;
+            color: $mainColor;
         }
 
         @media (min-width: 992px) {
@@ -149,7 +159,7 @@
 
             @media (max-width: $md3+px) {
                 height: 14px;
-                
+                color: $mainColor;
             }
 
             @media (max-width: 389.98px)  {
@@ -236,6 +246,7 @@
         border-radius: 50%;
         background-color: #111f38;
         position: relative;
+        flex: 0 0 auto;
 
         @media (max-width: $md3+px) {
             height: 36px;
@@ -555,6 +566,7 @@
         }
 
         & .header__search {
+           
             @media (max-width: $md3+px) {
                 flex: 0 1 100%;
             }
