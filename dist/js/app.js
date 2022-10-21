@@ -2646,6 +2646,15 @@ if(bigImgaeElements.length) {
         })
     }
 
+    let inputsHaveActionClick = document.querySelectorAll('[data-input-action-click]');
+    if(inputsHaveActionClick.length) {
+        inputsHaveActionClick.forEach(input => {
+            input.addEventListener('click', () => {
+                inputActionAtributesSet(input)
+            })
+        })
+    }
+
     let inputsHaveAction = document.querySelectorAll('[data-input-action]');
     if (inputsHaveAction.length) {
         inputsHaveAction.forEach(input => {
@@ -2811,6 +2820,17 @@ if(bigImgaeElements.length) {
                     if (el.type === 'checkbox' || el.type === 'radio') {
                         el.checked = false;
                     }
+                }
+            })
+        }
+
+        if (input.hasAttribute('data-clear-inputs-by-id')) {
+            let allId = input.dataset.clearInputsById.split(',').map(i => i.trim());
+            let actionElements = allId.map(id => document.querySelector(`[data-id="${id}"]`));
+            actionElements.forEach(el => {
+                if (el) {
+                    el.classList.remove('completed');
+                    el.value = '';
                 }
             })
         }
@@ -3564,23 +3584,22 @@ if (carDetailImages) {
         let input = bidValue.querySelector('.bid-card-value__input');
         let btnMinus = bidValue.querySelector('.bid-card-value__btn.minus');
         let btnPlus = bidValue.querySelector('.bid-card-value__btn.plus');
-        let minValue = +bidValue.dataset.minValue;
         let increments = +bidValue.dataset.increment;
 
         if (input && btnMinus && btnPlus) {
             // init
             if (!input.value.trim()) {
-                input.value = minValue
+                input.value = +bidValue.dataset.minValue
             }
 
-            if(getNum(input.value) < minValue) {
-                input.value = minValue
+            if(getNum(input.value) < +bidValue.dataset.minValue) {
+                input.value = +bidValue.dataset.minValue
             }
 
             btnPlus.addEventListener('click', () => {
                 input.value = getNum(input.value) + increments;
 
-                if(getNum(input.value) > minValue) {
+                if(getNum(input.value) > +bidValue.dataset.minValue) {
                     bidValue.classList.remove('min-value');
                 }
             })
@@ -3588,8 +3607,8 @@ if (carDetailImages) {
             btnMinus.addEventListener('click', () => {
                 input.value = getNum(input.value) - increments;
 
-                if(getNum(input.value) <= minValue) {
-                    input.value = minValue
+                if(getNum(input.value) <= +bidValue.dataset.minValue) {
+                    input.value = +bidValue.dataset.minValue
                     bidValue.classList.add('min-value');
                 }
             })

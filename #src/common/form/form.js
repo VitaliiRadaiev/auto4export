@@ -194,6 +194,15 @@
         })
     }
 
+    let inputsHaveActionClick = document.querySelectorAll('[data-input-action-click]');
+    if(inputsHaveActionClick.length) {
+        inputsHaveActionClick.forEach(input => {
+            input.addEventListener('click', () => {
+                inputActionAtributesSet(input)
+            })
+        })
+    }
+
     let inputsHaveAction = document.querySelectorAll('[data-input-action]');
     if (inputsHaveAction.length) {
         inputsHaveAction.forEach(input => {
@@ -359,6 +368,17 @@
                     if (el.type === 'checkbox' || el.type === 'radio') {
                         el.checked = false;
                     }
+                }
+            })
+        }
+
+        if (input.hasAttribute('data-clear-inputs-by-id')) {
+            let allId = input.dataset.clearInputsById.split(',').map(i => i.trim());
+            let actionElements = allId.map(id => document.querySelector(`[data-id="${id}"]`));
+            actionElements.forEach(el => {
+                if (el) {
+                    el.classList.remove('completed');
+                    el.value = '';
                 }
             })
         }

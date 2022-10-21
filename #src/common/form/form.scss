@@ -1047,3 +1047,8 @@
         background-image: url("../img/flags/flags@2x.png");
     }
 }
+
+
+[data-input-action-click] {
+    pointer-events: auto !important;
+}

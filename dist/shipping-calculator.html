@@ -1434,7 +1434,13 @@ defer
                                 <div class="form__items">
                                     <div class="form__item form__item--half-md">
                                         <label class="form__label">Vehicle Information</label>
-                                        <input class="input" type="text" placeholder="Enter VIN/Lot Number">
+                                        <input class="input" type="text" placeholder="Enter VIN/Lot Number" data-id="VehicleInfo" 
+                                        data-input-action-click
+                                        data-set-elements-as-active-by-id="VehicleInfo"
+                                        data-hide-elements-by-id="vehicleType"
+                                        data-show-elements-by-id="vehicleTypeInput"
+                                        data-clear-inputs-by-id="zipCode"
+                                        >
                                     </div>
                                     <div class="form__item form__item--half-md">
                                         <label class="form__label">Vehicle Type</label>
@@ -1454,11 +1460,12 @@ defer
                                     </div>
                                     <div class="form__item form__item--half-md">
                                         <label class="form__label">Ship From</label>
-                                        <input class="input" type="text" placeholder="Enter ZIP Code"
+                                        <input class="input" type="text" placeholder="Enter ZIP Code" data-id="zipCode"
                                             data-input-action
                                             data-hide-elements-by-id="vehicleTypeInput"
                                             data-show-elements-by-id="vehicleType"
                                             data-set-elements-as-active-by-id="shipTo,toPort"
+                                            data-set-elements-as-inactive-by-id="VehicleInfo"
                                         >
                                     </div>
                                     <div class="form__item form__item--half-md">

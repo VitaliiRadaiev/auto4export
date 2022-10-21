@@ -10960,6 +10960,10 @@ button:active {
   background-image: url("../img/flags/flags.png");
 }
 
+[data-input-action-click] {
+  pointer-events: auto !important;
+}
+
 .about-preview__title {
   margin-bottom: 3rem;
 }
