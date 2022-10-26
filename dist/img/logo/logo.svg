@@ -5,13 +5,13 @@
         <g id="Logo-5" transform="translate(-1284.000000, -276.000000)">
             <g id="2" transform="translate(1100.000000, 0.000000)">
                 <g id="Logo-2" transform="translate(184.000000, 276.000000)">
-                    <text id="Drive" font-family="Geometria-ExtraBoldItalic, Geometria" font-size="120" font-style="italic" font-weight="700" fill="#FFFFFF">
+                    <text id="Drive" font-family="'Roboto', sans-serif" font-size="120" font-style="italic" font-weight="700" fill="#FFFFFF">
                         <tspan x="342" y="94">DRIVE</tspan>
                     </text>
                     <g id="N" transform="translate(222.921000, 9.900000)" fill="#C5D5F0" fill-rule="nonzero">
                         <polygon id="Path" points="82.641 65.526 92.91 0 121.598 0 103.668 114.1 79.544 114.1 39.12 48.248 28.851 114.1 0 114.1 17.93 0 42.869 0"></polygon>
                     </g>
-                    <text id="Bid" font-family="Geometria-ExtraBoldItalic, Geometria" font-size="120" font-style="italic" font-weight="700" fill="#FFFFFF">
+                    <text id="Bid" font-family="'Roboto', sans-serif" font-size="120" font-style="italic" font-weight="700" fill="#FFFFFF">
                         <tspan x="0.08" y="94">BID</tspan>
                     </text>
                     <polygon id="Rectangle" fill="#C5D5F0" points="347.269959 106 725.172499 106 721.990645 124 344 124"></polygon>

@@ -97,7 +97,7 @@ defer
         <div class="header__body container">
             <div class="header__logo">
                 <a href="#">
-                    <img src="img/logo/logo.svg" alt="">
+                    <img class="img-svg" src="img/logo/logo.svg" alt="">
                 </a>
             </div>
             <div class="header__search">
@@ -1470,6 +1470,9 @@ defer
                             <a href="#attention2" data-popup="open-popup">Attention Offer Price</a>
                         </li>
                         <li>
+                            <a href="#attention3" data-popup="open-popup">Attention Make Offer</a>
+                        </li>
+                        <li>
                             <a href="#shipping" data-popup="open-popup">Add Shipping</a>
                         </li>
                         <li>
@@ -2488,6 +2491,100 @@ defer
                         <button type="submit" class="btn-default">
                             By Now
                             <img class="img-svg" src="img/icons/buy.svg" alt="">
+                        </button>
+                        <button type="button" class="confirm-bid__cancel-btn" data-popup="close-popup">
+                            Cancel
+                            <img class="img-svg" src="img/icons/close.svg" alt="">
+                        </button>
+                    </div>
+                </div>
+            </form>
+		</div>
+	</div>
+</div>
+    <div class="popup" id="attention3">
+   
+	<div class="popup__body">
+		<div class="popup__content border-rudius">
+            <div class="popup__close" data-popup="close-popup">
+                <img class="img-svg" src="img/icons/close.svg" alt="">
+            </div>
+
+            <form action="/">
+                <div class="form d-flex">
+                    <h2 class="form__title">
+                        Attention!
+                    </h2>
+                    <div class="form__simple-text form__simple-text--sm">
+                        <p>
+                            By clicking "Buy now", you are buying this lot for $17,000 plus applicable fees.
+                        </p>
+                        <p>
+                            Should you fail to complete this transaction, you will be subject to any and all applicable relist fees.
+                        </p>
+                    </div>
+                    <div class="form__row">
+                        <div class="bid-card-value" >
+                            <label class="form__label">Set My Offer Price</label>
+                            <div class="bid-card-value__body" data-bid-value data-min-value="100" data-increment="100" data-mask="$9{*}">
+                                <div class="bid-card-value__btn minus">
+                                    <img src="img/icons/minus.svg" alt="">
+                                </div>
+                                <input type="text" class="bid-card-value__input" value="16900">
+                                <div class="bid-card-value__btn plus">
+                                    <img src="img/icons/plus.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form__info-list">
+                        <ul class="simple-table-list">
+                            <li>
+                                <label>My Offer</label>
+                                <p><strong>$17,000</strong></p>
+                            </li>
+                            <li class="position-relative fee-wrap">
+                                <label>
+                                    <div class="fee" data-fee>
+                                        <div class="fee__title">+Fee</div>
+                                        <div class="fee__list border-rudius">
+                                            <ul class="simple-table-list">
+                                                <li>
+                                                    <label>Auction Fees</label>
+                                                    <p><strong>$300</strong></p>
+                                                </li>
+                                                <li>
+                                                    <label>Transaction Fee</label>
+                                                    <p><strong>$100</strong></p>
+                                                </li>
+                                                <li>
+                                                    <label>Documentation Fee</label>
+                                                    <p><strong>$100</strong></p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </label>
+                                <p><strong>$500</strong></p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="form__price">
+                        <label>Final Price</label>
+                        <p class="text-primary">$12,000</p>
+                    </div>
+                    <div class="form__row">
+                        <label class="checkbox-radio">
+                            <input type="checkbox" checked>
+                            <div class="checkbox-radio__square checkbox-radio__square--lg"></div>
+                            <div class="checkbox-radio__text text-nowrap">I agreement with the <a href="#">rules</a></div>
+                        </label>
+                    </div>
+                    <div class="form__buttons">
+                        <button type="submit" class="btn-default">
+                            Send My Offer
+                            <img class="img-svg" src="img/icons/send.svg" alt="">
                         </button>
                         <button type="button" class="confirm-bid__cancel-btn" data-popup="close-popup">
                             Cancel
