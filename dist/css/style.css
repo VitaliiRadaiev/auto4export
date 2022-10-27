@@ -5018,6 +5018,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  background-color: #fff;
 }
 
 body:not(.mobile) a:not(.not-hover):hover {
