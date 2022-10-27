@@ -14893,6 +14893,8 @@ button:active {
   width: 100%;
   font-size: 1.6rem;
   line-height: 1.9rem;
+  position: relative;
+  z-index: 2;
 }
 
 .main-table:not(:last-child) {
