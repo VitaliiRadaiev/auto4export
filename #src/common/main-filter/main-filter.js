@@ -108,18 +108,21 @@ if (mainFilter) {
                         if (checkboxRadio.checked) {
                             filterSelect.classList.add('filter-select--selected');
                             headText.innerText = textEl.innerText;
+                            headText.setAttribute('title', textEl.innerText);
                         }
 
                         const removeChecked = () => {
                             checkboxRadio.checked = false;
                             filterSelect.classList.remove('filter-select--selected');
                             headText.innerText = 'Select';
+                            headText.setAttribute('title', '');
                         }
     
                         checkboxRadio.addEventListener('change', () => {
                             if (checkboxRadio.checked) {
                                 filterSelect.classList.add('filter-select--selected');
                                 headText.innerText = textEl.innerText;
+                                headText.setAttribute('title', textEl.innerText);
 
                                 if(this.mainFilterTop) {
                                     this.mainFilterTop.addButton(textEl.innerText, checkboxRadio.dataset.id, removeChecked);
@@ -141,9 +144,11 @@ if (mainFilter) {
                             if(text.length) {
                                 filterSelect.classList.add('filter-select--selected');
                                 headText.innerText = text.join(', ');
+                                headText.setAttribute('title', text.join(', '));
                             } else {
                                 filterSelect.classList.remove('filter-select--selected');
                                 headText.innerText = 'Select'
+                                headText.setAttribute('title', '');
                             }
                         }
 
@@ -152,9 +157,11 @@ if (mainFilter) {
                             if(text.length) {
                                 filterSelect.classList.add('filter-select--selected');
                                 headText.innerText = text.join(', ');
+                                headText.setAttribute('title', text.join(', '));
                             } else {
                                 filterSelect.classList.remove('filter-select--selected');
                                 headText.innerText = 'Select'
+                                headText.setAttribute('title', '');
                             }
 
                             if(checkboxRadio.checked) {

@@ -100,6 +100,11 @@ defer
                     <img class="img-svg" src="img/logo/logo.svg" alt="">
                 </a>
             </div>
+            <div class="header__logo-mob">
+                <a href="#">
+                    <img class="img-svg" src="img/logo/logo-mob.svg" alt="">
+                </a>
+            </div>
             <div class="header__search">
                 <form action="/">
                     <div class="search-head">
@@ -146,13 +151,13 @@ defer
                 </li>
             </ul>
             <div class="header__account">
-                <a href="#" class="header__account-link not-hover">
+                <a href="#" class="header__account-link not-hover" data-action="open-mobile-account-menu">
                     <img class="img-svg" src="img/icons/user.svg" alt="">
                 </a>
 
                 <div class="header__account-sub-menu">
                     <div class="header__account-sub-menu-row">
-                        <div class="header__account-sub-menu-user">Hi, John!</div>
+                        <div class="header__account-sub-menu-user">Hi, <strong>Huan Rodrigez</strong></div>
                         <div class="header__account-sub-menu-bidder">Bidder #14571</div>
                     </div>
                     <div class="header__account-sub-menu-row">
@@ -709,7 +714,7 @@ defer
                         </li>
                         <li class="menu-item-has-children">
                             <a class="menu__link" href="#">
-                                Support                  
+                                Support
                             </a>
                             <ul class="sub-menu">
                                 <li><a class="sub-menu__link" href="#">How to Buy</a></li>
@@ -816,16 +821,20 @@ defer
                         <a class="mobile-menu__list-link" href="#">Vehicle Finder</a>
                         <ul class="mobile-menu__sub-menu">
                             <li>
-                                <a class="mobile-menu__sub-menu-link" href="#" data-open-vehicle-list-by-id="0">Popular makes</a>
+                                <a class="mobile-menu__sub-menu-link" href="#" data-open-vehicle-list-by-id="0">Popular
+                                    makes</a>
                             </li>
                             <li>
-                                <a class="mobile-menu__sub-menu-link" href="#" data-open-vehicle-list-by-id="1">Vehicle types</a>
+                                <a class="mobile-menu__sub-menu-link" href="#" data-open-vehicle-list-by-id="1">Vehicle
+                                    types</a>
                             </li>
                             <li>
-                                <a class="mobile-menu__sub-menu-link" href="#" data-open-vehicle-list-by-id="2">Title</a>
+                                <a class="mobile-menu__sub-menu-link" href="#"
+                                    data-open-vehicle-list-by-id="2">Title</a>
                             </li>
                             <li>
-                                <a class="mobile-menu__sub-menu-link" href="#" data-open-vehicle-list-by-id="3">Featured lots</a>
+                                <a class="mobile-menu__sub-menu-link" href="#" data-open-vehicle-list-by-id="3">Featured
+                                    lots</a>
                             </li>
                         </ul>
                     </li>
@@ -1405,6 +1414,85 @@ defer
                 </div>
             </div>
         </div>
+    </div>
+</div>
+
+<div class="mobile-account-menu" data-mobile-account-menu>
+    <div class="mobile-account-menu__body">
+        <div class="mobile-account-menu__arrow"><i class="icon-chevron-right"></i></div>
+        
+        <div class="mobile-account-menu__head">
+            <div class="mobile-account-menu__head-row">
+                <ul class="header__action">
+                    <li>
+                        <a href="#">
+                            <img class="img-svg" src="img/icons/wallet.svg" alt="">
+                            <span>$23,000</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img class="img-svg" src="img/icons/star.svg" alt="">
+                            <span>4</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="mobile-account-menu__head-row">
+                <a href="#" class="header__make-deposit btn-default">
+                    Make Deposit
+                    <img class="img-svg" src="img/icons/deposit.svg" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="mobile-account-menu__scroll-wrap">
+            <div class="mobile-account-menu__scroll-wrap-inner">
+                <div class="header__account-sub-menu">
+                    <div class="header__account-sub-menu-row">
+                        <div class="header__account-sub-menu-user">Hi, <strong>Huan Rodrigez</strong></div>
+                        <div class="header__account-sub-menu-bidder">Bidder #14571</div>
+                    </div>
+                    <div class="header__account-sub-menu-row">
+                        <ul class="header__account-sub-menu-list">
+                            <li>
+                                <a href="#">Dashboard</a>
+                            </li>
+                            <li>
+                                <a href="#">Transactions</a>
+                            </li>
+                            <li>
+                                <a href="#">Documents and IDs</a>
+                            </li>
+                            <li>
+                                <a href="#">Billing Information</a>
+                            </li>
+                            <li>
+                                <a href="#">Watchlist</a>
+                            </li>
+                            <li>
+                                <a href="#">My Bids</a>
+                            </li>
+                            <li>
+                                <a href="#">Nofitications</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="header__account-sub-menu-row">
+                        <a href="#" class="header__account-sub-menu-link">
+                            Edit profile
+                            <img class="img-svg" src="img/icons/editing.svg" alt="">
+                        </a>
+                    </div>
+                    <div class="header__account-sub-menu-row">
+                        <a href="#" class="header__account-sub-menu-link">
+                            Logout
+                            <img class="img-svg" src="img/icons/exit.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
     </div>
 </div>
     <!-- == // TOP LINE ================== -->

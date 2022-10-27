@@ -362,6 +362,7 @@
     }
 
     &--open {
+        z-index: 5;
         & .filter-select__inner {
             box-shadow: 0px 12px 24px rgba(51, 51, 51, 0.2);
             border: 1px solid transparent !important;
@@ -427,18 +428,10 @@
         }
 
         &-text {
-            background-color: #fff;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            left: 2rem;
-            width: calc(100% - 5.4rem);
-            padding: 0.5rem 0;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            max-width: calc(100vw - 40px);
-            pointer-events: none;
+            width: 100%;
         }
 
         &:before {
@@ -522,6 +515,49 @@
             }
         }
     }
+}
+
+.filter-select-wrap {
+
+    &--lg {
+        & .main-filter__select {
+            height: 6.4rem;
+
+            @media (max-width: $md3+px) {
+                height: 50px;
+            }
+        }
+
+        & .filter-select__head {
+            height: 6.4rem;
+            padding: 0.5rem 4.5rem 0.5rem 3rem;
+            font-size: 1.8rem;
+			line-height: 1.222em;
+            font-family: $mainFontFamily;
+
+			@media (max-width: $md3+px) {
+				font-size: 14px;
+				line-height: 16px;
+                height: 50px;
+                padding: 5px 35px 5px 20px;
+			}
+        
+            &::before {
+                right: 2rem;
+                height: 2.4rem;
+                width: 2.4rem;
+
+                @media (max-width: $md3+px) {
+                    width: 20px;
+                    height: 20px;
+                    font-size: 0.5rem;
+                    right: 15px;
+    
+                }
+            }
+        }
+    }
+
 }
 
 .filter-date {

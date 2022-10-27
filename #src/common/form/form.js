@@ -72,11 +72,12 @@
             }
         })
     }
-
+ 
     let selectsHaveAction = document.querySelectorAll('[data-select-action]');
     if (selectsHaveAction.length) {
         selectsHaveAction.forEach(select => {
             select.addEventListener('change', () => {
+                
                 if (select.selectedOptions[0].hasAttribute('data-set-element-as-inactive-by-id')) {
                     let actionEl = document.querySelector(`[data-id="${select.selectedOptions[0].dataset.setElementAsInactiveById}"]`);
 

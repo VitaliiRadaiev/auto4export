@@ -389,6 +389,8 @@ let mobileMenu = document.querySelector('[data-mobile-menu]');
 let vehicleFinderMobButtons = document.querySelectorAll('[data-open-vehicle-list-by-id]');
 let vehicleFinderMobLists = Array.from(document.querySelectorAll('[data-vehicle-list-id]'));
 let isScroll = window.pageYOffset;
+let mobileAccountMenu = document.querySelector('[data-mobile-account-menu]');
+
 if (header) {
     window.addEventListener('scroll', () => {
         header.classList.toggle('header--is-scroll', window.pageYOffset > 50);
@@ -489,6 +491,30 @@ if(vehicleFinderMobButtons.length && vehicleFinderMobLists.length) {
         }
 
     })
+}
+
+if(mobileAccountMenu) {
+    let openButtons = document.querySelectorAll('[data-action="open-mobile-account-menu"]');
+    if(openButtons.length) {
+        openButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                if(document.documentElement.clientWidth < 992) {
+                    e.preventDefault();
+                    btn.addEventListener('click', () => {
+                        mobileAccountMenu.classList.add('mobile-account-menu--open');
+                        document.body.classList.add('overflow-hidden');
+                    })
+                }
+            })
+        })
+
+    
+        mobileAccountMenu.addEventListener('click', (e) => {
+            if(e.target.closest('.mobile-account-menu__body')) return;
+            mobileAccountMenu.classList.remove('mobile-account-menu--open');
+            document.body.classList.remove('overflow-hidden');
+        })
+    }
 };
 	}
 
@@ -1282,6 +1308,8 @@ if(topFilter) {
                     select_input.value = select_option_text;
                     original.value = select_option_value;
                     select.classList.add('_visited');
+                    let event = new Event("change", { bubbles: true });
+                    original.dispatchEvent(event);
                 } else {
                     select.querySelector('.select__value').innerHTML = '<span>' + select_option_text + '</span>';
                     original.value = select_option_value;
@@ -1676,18 +1704,21 @@ if (mainFilter) {
                         if (checkboxRadio.checked) {
                             filterSelect.classList.add('filter-select--selected');
                             headText.innerText = textEl.innerText;
+                            headText.setAttribute('title', textEl.innerText);
                         }
 
                         const removeChecked = () => {
                             checkboxRadio.checked = false;
                             filterSelect.classList.remove('filter-select--selected');
                             headText.innerText = 'Select';
+                            headText.setAttribute('title', '');
                         }
     
                         checkboxRadio.addEventListener('change', () => {
                             if (checkboxRadio.checked) {
                                 filterSelect.classList.add('filter-select--selected');
                                 headText.innerText = textEl.innerText;
+                                headText.setAttribute('title', textEl.innerText);
 
                                 if(this.mainFilterTop) {
                                     this.mainFilterTop.addButton(textEl.innerText, checkboxRadio.dataset.id, removeChecked);
@@ -1709,9 +1740,11 @@ if (mainFilter) {
                             if(text.length) {
                                 filterSelect.classList.add('filter-select--selected');
                                 headText.innerText = text.join(', ');
+                                headText.setAttribute('title', text.join(', '));
                             } else {
                                 filterSelect.classList.remove('filter-select--selected');
                                 headText.innerText = 'Select'
+                                headText.setAttribute('title', '');
                             }
                         }
 
@@ -1720,9 +1753,11 @@ if (mainFilter) {
                             if(text.length) {
                                 filterSelect.classList.add('filter-select--selected');
                                 headText.innerText = text.join(', ');
+                                headText.setAttribute('title', text.join(', '));
                             } else {
                                 filterSelect.classList.remove('filter-select--selected');
                                 headText.innerText = 'Select'
+                                headText.setAttribute('title', '');
                             }
 
                             if(checkboxRadio.checked) {
@@ -2524,11 +2559,12 @@ if(bigImgaeElements.length) {
             }
         })
     }
-
+ 
     let selectsHaveAction = document.querySelectorAll('[data-select-action]');
     if (selectsHaveAction.length) {
         selectsHaveAction.forEach(select => {
             select.addEventListener('change', () => {
+                
                 if (select.selectedOptions[0].hasAttribute('data-set-element-as-inactive-by-id')) {
                     let actionEl = document.querySelector(`[data-id="${select.selectedOptions[0].dataset.setElementAsInactiveById}"]`);
 

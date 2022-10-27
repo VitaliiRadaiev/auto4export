@@ -5,6 +5,8 @@ let mobileMenu = document.querySelector('[data-mobile-menu]');
 let vehicleFinderMobButtons = document.querySelectorAll('[data-open-vehicle-list-by-id]');
 let vehicleFinderMobLists = Array.from(document.querySelectorAll('[data-vehicle-list-id]'));
 let isScroll = window.pageYOffset;
+let mobileAccountMenu = document.querySelector('[data-mobile-account-menu]');
+
 if (header) {
     window.addEventListener('scroll', () => {
         header.classList.toggle('header--is-scroll', window.pageYOffset > 50);
@@ -105,4 +107,28 @@ if(vehicleFinderMobButtons.length && vehicleFinderMobLists.length) {
         }
 
     })
+}
+
+if(mobileAccountMenu) {
+    let openButtons = document.querySelectorAll('[data-action="open-mobile-account-menu"]');
+    if(openButtons.length) {
+        openButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                if(document.documentElement.clientWidth < 992) {
+                    e.preventDefault();
+                    btn.addEventListener('click', () => {
+                        mobileAccountMenu.classList.add('mobile-account-menu--open');
+                        document.body.classList.add('overflow-hidden');
+                    })
+                }
+            })
+        })
+
+    
+        mobileAccountMenu.addEventListener('click', (e) => {
+            if(e.target.closest('.mobile-account-menu__body')) return;
+            mobileAccountMenu.classList.remove('mobile-account-menu--open');
+            document.body.classList.remove('overflow-hidden');
+        })
+    }
 }

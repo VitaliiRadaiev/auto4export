@@ -208,6 +208,8 @@
                     select_input.value = select_option_text;
                     original.value = select_option_value;
                     select.classList.add('_visited');
+                    let event = new Event("change", { bubbles: true });
+                    original.dispatchEvent(event);
                 } else {
                     select.querySelector('.select__value').innerHTML = '<span>' + select_option_text + '</span>';
                     original.value = select_option_value;
